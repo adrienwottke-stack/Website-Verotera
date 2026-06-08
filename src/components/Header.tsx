@@ -7,12 +7,12 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
 const NAV_ITEMS = [
-  { label: "What we do", href: "/#what-we-do", anchorId: "#what-we-do" },
-  { label: "Industries", href: "/#industries", anchorId: "#industries" },
-  { label: "Solutions", href: "/solutions", anchorId: "#solutions" },
-  { label: "Why VEROTERA", href: "/#why-verotera", anchorId: "#why-verotera" },
-  { label: "About", href: "/about", anchorId: null },
-  { label: "Contact", href: "/#contact", anchorId: "#contact" },
+  { label: "What we do", href: "/#what-we-do", anchorId: "#what-we-do", redirectOnly: false },
+  { label: "Industries", href: "/#industries", anchorId: "#industries", redirectOnly: false },
+  { label: "Solutions", href: "/solutions", anchorId: "#solutions", redirectOnly: true },
+  { label: "Why VEROTERA", href: "/#why-verotera", anchorId: "#why-verotera", redirectOnly: false },
+  { label: "About", href: "/about", anchorId: "#about", redirectOnly: true },
+  { label: "Contact", href: "/#contact", anchorId: "#contact", redirectOnly: false },
 ];
 
 export default function Header() {
@@ -62,9 +62,10 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [pathname]);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, anchorId: string | null) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, anchorId: string | null, redirectOnly: boolean) => {
     setIsOpen(false);
-    if (anchorId && pathname === "/") {
+    // Only intercept scrolling for anchors that are NOT page redirect links
+    if (anchorId && pathname === "/" && !redirectOnly) {
       e.preventDefault();
       const el = document.querySelector(anchorId);
       if (el) {
@@ -116,7 +117,7 @@ export default function Header() {
             <Link
               key={item.label}
               href={item.href}
-              onClick={(e) => handleNavClick(e, item.href, item.anchorId)}
+              onClick={(e) => handleNavClick(e, item.href, item.anchorId, item.redirectOnly)}
               className={`font-sans text-sm font-medium tracking-wide transition-all duration-200 relative py-1 focus:outline-none hover:text-brand-cyan ${
                 activeSection === item.href
                   ? "text-brand-cyan font-semibold"
@@ -135,7 +136,7 @@ export default function Header() {
         <div className="hidden md:block">
           <Link
             href="/#contact"
-            onClick={(e) => handleNavClick(e, "/#contact", "#contact")}
+            onClick={(e) => handleNavClick(e, "/#contact", "#contact", false)}
             className="inline-flex items-center justify-center px-6 py-2.5 rounded-full font-display text-sm font-semibold tracking-wide text-[#020617] bg-brand-cyan hover:bg-brand-cyan/90 transition-all duration-300 shadow-[0_0_15px_rgba(45,212,191,0.2)] hover:shadow-[0_0_25px_rgba(45,212,191,0.4)] transform hover:-translate-y-0.5 active:translate-y-0"
           >
             Talk to us
@@ -164,7 +165,7 @@ export default function Header() {
             <Link
               key={item.label}
               href={item.href}
-              onClick={(e) => handleNavClick(e, item.href, item.anchorId)}
+              onClick={(e) => handleNavClick(e, item.href, item.anchorId, item.redirectOnly)}
               className={`font-sans text-lg font-medium tracking-wide transition-colors py-2 border-b border-white/5 focus:outline-none hover:text-brand-cyan ${
                 activeSection === item.href ? "text-brand-cyan font-bold" : "text-slate-300"
               }`}
@@ -174,7 +175,7 @@ export default function Header() {
           ))}
           <Link
             href="/#contact"
-            onClick={(e) => handleNavClick(e, "/#contact", "#contact")}
+            onClick={(e) => handleNavClick(e, "/#contact", "#contact", false)}
             className="mt-4 flex items-center justify-center px-6 py-3 rounded-full font-display text-base font-semibold tracking-wide text-[#020617] bg-brand-cyan hover:bg-brand-cyan/90 transition-colors shadow-lg"
           >
             Talk to us

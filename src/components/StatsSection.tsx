@@ -70,7 +70,7 @@ export default function StatsSection() {
   ];
 
   return (
-    <section className="relative py-24 sm:py-32 bg-[#050b18] border-t border-white/5 overflow-hidden">
+    <section id="about" className="relative py-24 sm:py-32 bg-[#050b18] border-t border-white/5 overflow-hidden">
       {/* Background glowing spheres */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-brand-cyan/5 rounded-full blur-[130px] pointer-events-none" />
 
