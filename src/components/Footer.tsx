@@ -1,18 +1,25 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Mail } from "lucide-react";
 
 export default function Footer() {
+  const pathname = usePathname();
+
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const el = document.querySelector(href);
-    if (el) {
-      const top = (el as HTMLElement).offsetTop - 90;
-      window.scrollTo({
-        top,
-        behavior: "smooth",
-      });
+    if (pathname === "/" && href.startsWith("/#")) {
+      e.preventDefault();
+      const anchorId = href.replace("/", ""); // e.g. '#contact'
+      const el = document.querySelector(anchorId);
+      if (el) {
+        const top = (el as HTMLElement).offsetTop - 90;
+        window.scrollTo({
+          top,
+          behavior: "smooth",
+        });
+      }
     }
   };
 
@@ -25,11 +32,13 @@ export default function Footer() {
         
         {/* Logo and Description Area */}
         <div className="md:col-span-5 flex flex-col items-start text-left">
-          <a
-            href="#"
+          <Link
+            href="/"
             onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
+              if (pathname === "/") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
             }}
             className="flex items-center gap-2 mb-6"
           >
@@ -42,7 +51,7 @@ export default function Footer() {
                 sizes="144px"
               />
             </div>
-          </a>
+          </Link>
           <p className="font-sans text-sm text-slate-400 max-w-sm leading-relaxed mb-6">
             Driving a smarter, cleaner future through advanced semiconductors, AI-driven systems engineering, and sustainable power electronics.
           </p>
@@ -62,31 +71,28 @@ export default function Footer() {
             </span>
             <ul className="space-y-4">
               <li>
-                <a
-                  href="#solutions"
-                  onClick={(e) => handleScroll(e, "#solutions")}
+                <Link
+                  href="/solutions#power-modules"
                   className="font-sans text-sm text-slate-400 hover:text-brand-cyan transition-colors"
                 >
                   Power Modules
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#solutions"
-                  onClick={(e) => handleScroll(e, "#solutions")}
+                <Link
+                  href="/solutions#systems-engineering"
                   className="font-sans text-sm text-slate-400 hover:text-brand-cyan transition-colors"
                 >
                   Systems Engineering
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#solutions"
-                  onClick={(e) => handleScroll(e, "#solutions")}
+                <Link
+                  href="/solutions#ai-solutions"
                   className="font-sans text-sm text-slate-400 hover:text-brand-cyan transition-colors"
                 >
                   AI Software Tools
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -98,31 +104,29 @@ export default function Footer() {
             </span>
             <ul className="space-y-4">
               <li>
-                <a
-                  href="#why-verotera"
-                  onClick={(e) => handleScroll(e, "#why-verotera")}
+                <Link
+                  href="/about"
                   className="font-sans text-sm text-slate-400 hover:text-brand-cyan transition-colors"
                 >
                   About us
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#why-verotera"
-                  onClick={(e) => handleScroll(e, "#why-verotera")}
+                <Link
+                  href="/about#leadership"
                   className="font-sans text-sm text-slate-400 hover:text-brand-cyan transition-colors"
                 >
                   Leadership
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#contact"
-                  onClick={(e) => handleScroll(e, "#contact")}
+                <Link
+                  href="/#contact"
+                  onClick={(e) => handleScroll(e, "/#contact")}
                   className="font-sans text-sm text-slate-400 hover:text-brand-cyan transition-colors"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -134,31 +138,28 @@ export default function Footer() {
             </span>
             <ul className="space-y-4">
               <li>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
+                <Link
+                  href="/impressum"
                   className="font-sans text-sm text-slate-400 hover:text-brand-cyan transition-colors"
                 >
-                  Impressum
-                </a>
+                  Impressum (Legal Notice)
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
+                <Link
+                  href="/privacy-policy"
                   className="font-sans text-sm text-slate-400 hover:text-brand-cyan transition-colors"
                 >
                   Datenschutz (Privacy)
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
+                <Link
+                  href="/cookie-policy"
                   className="font-sans text-sm text-slate-400 hover:text-brand-cyan transition-colors"
                 >
                   Cookie Policy
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
