@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Shield, Lock, Eye, RefreshCw, FileText } from "lucide-react";
+import { Shield, Lock, Eye, RefreshCw, FileText, ArrowLeft } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -15,6 +16,17 @@ export default function PrivacyPolicyPage() {
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-brand-cyan/5 rounded-full blur-[100px] pointer-events-none" />
 
         <section className="max-w-4xl mx-auto px-6 text-left">
+          {/* Back Button */}
+          <div className="mb-8">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/5 bg-white/5 hover:bg-brand-cyan/10 hover:border-brand-cyan/20 text-slate-300 hover:text-brand-cyan transition-all duration-300 font-sans text-xs font-semibold uppercase tracking-wider group focus:outline-none"
+            >
+              <ArrowLeft className="w-3.5 h-3.5 transition-transform duration-300 group-hover:-translate-x-1" />
+              Back to Home
+            </Link>
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}

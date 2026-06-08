@@ -2,9 +2,10 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Compass, Eye, Rocket, MapPin, Award, GraduationCap, Quote, CheckCircle2, ChevronRight } from "lucide-react";
+import { Compass, Eye, Rocket, MapPin, Award, GraduationCap, Quote, CheckCircle2, ChevronRight, ArrowLeft } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 export default function AboutPage() {
   const leadershipSpecs = [
@@ -22,6 +23,17 @@ export default function AboutPage() {
         {/* Background decorative mesh glows */}
         <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-brand-cyan/5 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-brand-blue/5 blur-[150px] pointer-events-none" />
+
+        {/* Back Button */}
+        <div className="max-w-7xl mx-auto px-6 mb-8 text-left">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/5 bg-white/5 hover:bg-brand-cyan/10 hover:border-brand-cyan/20 text-slate-300 hover:text-brand-cyan transition-all duration-300 font-sans text-xs font-semibold uppercase tracking-wider group focus:outline-none"
+          >
+            <ArrowLeft className="w-3.5 h-3.5 transition-transform duration-300 group-hover:-translate-x-1" />
+            Back to Home
+          </Link>
+        </div>
 
         {/* Hero Banner Section */}
         <section className="max-w-7xl mx-auto px-6 mb-20 text-left">
