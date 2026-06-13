@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // One-off Node image-processing utility (not part of the app bundle).
+    "remove_white.js",
   ]),
 ]);
 

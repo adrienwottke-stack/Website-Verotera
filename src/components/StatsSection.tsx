@@ -157,7 +157,7 @@ export default function StatsSection() {
               <div className="relative p-6 rounded-2xl bg-surface-light border border-brand-navy/8">
                 <Quote className="absolute top-4 left-4 w-10 h-10 text-brand-cyan/5 pointer-events-none" />
                 <p className="font-sans text-sm text-brand-navy/60 italic leading-relaxed relative z-10">
-                  „Bei VEROTERA haben wir ein Team geformt, das die Lücke zwischen Halbleiterphysik und industriellem OEM-Einsatz überbrückt. Unser Ziel ist es, die Fragmentierung der Branche zu durchbrechen und integrierte, hocheffiziente und zertifizierte Lösungen anzubieten, die die globale Elektrifizierung beschleunigen. Keine generischen Slogans – nur zuverlässige Hochleistungshardware, die durch maßgeschneiderte KI-Modellierungswerkzeuge schneller entwickelt wird."
+                  „Bei VEROTERA haben wir ein Team geformt, das die Lücke zwischen Halbleiterphysik und industriellem OEM-Einsatz überbrückt. Unser Ziel ist es, die Fragmentierung der Branche zu durchbrechen und integrierte, hocheffiziente und zertifizierte Lösungen anzubieten, die die globale Elektrifizierung beschleunigen. Keine generischen Slogans – nur zuverlässige Hochleistungshardware, die durch maßgeschneiderte KI-Modellierungswerkzeuge schneller entwickelt wird.&ldquo;
                 </p>
               </div>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cpu, Settings, BrainCircuit, ShieldAlert, Sparkles, Check, CheckCircle2, TableProperties, HelpCircle, ArrowLeft } from "lucide-react";
+import { Cpu, Settings, BrainCircuit, ShieldAlert, Sparkles, Check, TableProperties, ArrowLeft } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
@@ -63,7 +63,7 @@ export default function SolutionsPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-sans text-lg text-slate-300 max-w-3xl leading-relaxed"
           >
-            We don't offer generic templates or standalone hardware components. We provide fully integrated power modules, certified system development, and AI design optimization.
+            We don&apos;t offer generic templates or standalone hardware components. We provide fully integrated power modules, certified system development, and AI design optimization.
           </motion.p>
         </section>
 
@@ -273,7 +273,7 @@ export default function SolutionsPage() {
               <h2 className="font-display text-2xl font-bold text-white">Silicon vs. Wide-Bandgap (SiC/GaN)</h2>
             </div>
             <p className="font-sans text-sm text-slate-300 mb-8 leading-relaxed max-w-3xl">
-              Compare how next-generation WBG materials, optimized through VEROTERA's packaging and systems design, outperform traditional silicon components in target high-power applications.
+              Compare how next-generation WBG materials, optimized through VEROTERA&apos;s packaging and systems design, outperform traditional silicon components in target high-power applications.
             </p>
 
             {/* Table wrapper */}

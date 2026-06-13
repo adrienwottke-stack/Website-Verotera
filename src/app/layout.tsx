@@ -15,13 +15,26 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://verotera.com"),
   title: "VEROTERA | Next-Gen Leistungselektronik & KI-Systeme",
-  description: "VEROTERA wandelt Wide-Bandgap (SiC/GaN) Halbleiterchips der nächsten Generation in hocheffiziente Leistungsmodule und komplett zertifizierte Systeme um, beschleunigt durch KI-Tools. Wir schlagen die Brücke zwischen Halbleiterphysik und realer Elektrifizierung.",
-  keywords: ["VEROTERA", "Leistungselektronik", "Halbleiter", "SiC", "GaN", "Wide-Bandgap", "Elektromobilität", "Erneuerbare Energien", "Rechenzentren", "KI-Hardware", "Funktionale Sicherheit", "ISO 26262"],
+  description:
+    "VEROTERA wandelt Wide-Bandgap (SiC/GaN) Halbleiterchips in hocheffiziente Leistungsmodule und komplett zertifizierte Systeme um.",
+  keywords: [
+    "Leistungselektronik",
+    "Wide-Bandgap",
+    "Halbleiter",
+    "SiC",
+    "GaN",
+    "Netzteile",
+    "KI-Rechenzentren",
+    "Elektromobilität",
+    "Grüner Wasserstoff",
+  ],
   authors: [{ name: "VEROTERA GmbH" }],
   openGraph: {
     title: "VEROTERA | Next-Gen Leistungselektronik & KI-Systeme",
-    description: "Wide-Bandgap Leistungsmodule und zertifizierte Systeme beschleunigt durch KI. Hocheffiziente Elektrifizierung für Automotive, Solar und Rechenzentren.",
+    description:
+      "VEROTERA wandelt Wide-Bandgap (SiC/GaN) Halbleiterchips in hocheffiziente Leistungsmodule und komplett zertifizierte Systeme um.",
     url: "https://verotera.com",
     siteName: "VEROTERA",
     locale: "de_DE",

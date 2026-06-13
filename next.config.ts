@@ -11,6 +11,13 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      { source: "/impressum", destination: "/legal/imprint", permanent: true },
+      { source: "/privacy-policy", destination: "/legal/privacy-policy", permanent: true },
+      { source: "/cookie-policy", destination: "/legal/privacy-policy", permanent: true },
+    ];
+  },
 };
 
 export default withSentryConfig(nextConfig, {

@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import BrandWatermark from "./BrandWatermark";
 
@@ -107,9 +108,9 @@ export default function Solutions() {
           <p className="text-sm text-brand-navy/50 mb-6 max-w-2xl mx-auto">
             Unsere Applikations- und Technologieexperten unterstützen Sie bei Auslegung, Validierung und Aufbau von SiC- und GaN-Lösungen, die exakt auf Ihre Systemanforderungen zugeschnitten sind.
           </p>
-          <a href="/#contact" className="inline-flex items-center gap-2 px-7 py-3 rounded-lg bg-brand-navy text-white font-semibold text-sm hover:bg-brand-navy/90 transition-colors">
+          <Link href="/#contact" className="inline-flex items-center gap-2 px-7 py-3 rounded-lg bg-brand-navy text-white font-semibold text-sm hover:bg-brand-navy/90 transition-colors">
             Jetzt starten <ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
 
       </div>

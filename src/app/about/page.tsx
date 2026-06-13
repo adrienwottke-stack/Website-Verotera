@@ -1,257 +1,258 @@
-"use client";
-
-import { motion } from "framer-motion";
+import type { Metadata } from "next";
 import Image from "next/image";
-import { Compass, Eye, Rocket, MapPin, Award, GraduationCap, Quote, CheckCircle2, ChevronRight, ArrowLeft } from "lucide-react";
+import { Compass, Eye, Rocket, Target, MapPin, Quote, CheckCircle2, Server, Car, Sun, Factory, Droplets } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Link from "next/link";
+import PageHero from "@/components/PageHero";
+import Reveal from "@/components/Reveal";
+
+export const metadata: Metadata = {
+  title: "About Us - [VEROTERA] Innovative Wide-Bandgap Semiconductor Modules",
+  description:
+    "VEROTERA's advanced WBG power modules are engineered to deliver unmatched performance, enabling smarter, more efficient systems across e-mobility, renewable-energy, and data centers.",
+  keywords: ["Über VEROTERA", "Aly Mashaly", "Vision", "Mission", "WBG Halbleiter"],
+};
+
+const objectives = [
+  "Leistungsdichte erhöhen und Bauraum auf Systemebene reduzieren.",
+  "Wirkungsgrad steigern und thermische Verlustleistung minimieren.",
+  "Zuverlässigkeit, Nachvollziehbarkeit und Zertifizierbarkeit von WBG-Lösungen stärken.",
+  "Entwicklungszyklen durch agentische KI, strukturierte Wissensmodelle und Human-in-the-Loop-Prozesse beschleunigen.",
+  "Europäische und globale Wertschöpfung in kritischen Elektrifizierungsanwendungen unterstützen.",
+];
+
+const impactAreas = [
+  { icon: Server, title: "AI Data Centers", text: "Kompakte und effiziente Stromversorgungsarchitekturen für Hochleistungsrechenzentren." },
+  { icon: Car, title: "E-Mobility", text: "Robuste WBG-Leistungselektronik für elektrische Antriebs- und Ladeinfrastrukturen." },
+  { icon: Sun, title: "Renewable Energy", text: "Effiziente Umrichterlösungen für Wind, Solar und Energiespeicher." },
+  { icon: Factory, title: "Industrial Electrification", text: "Höhere Leistungsdichte und Zuverlässigkeit für die industrielle Automatisierung." },
+  { icon: Droplets, title: "Green Hydrogen", text: "Effiziente Leistungselektronik für Elektrolyseur-Systeme und DC-basierte Energiepfade." },
+];
+
+const credentials = [
+  "25+ Jahre Erfahrung in der WBG-Leistungselektronik",
+  "Entwickler von 100+ System-Produkten",
+  "Experte für funktionale Sicherheit (ISO 26262, IEC 61508)",
+  "Pionier des KI-gestützten Systems Engineering",
+];
 
 export default function AboutPage() {
-  const leadershipSpecs = [
-    { category: "Innovation Track Record", items: ["100+ products developed and launched", "1500+ customers acquired globally", "Multiple patents in semiconductor technology", "Industry recognition for sustainable innovation"] },
-    { category: "Professional Excellence", items: ["25+ years industry experience", "Expert in WBG semiconductors", "AI-driven systems engineering pioneer", "International market development"] },
-    { category: "Technical Expertise", items: ["Power electronics design", "Advanced packaging technologies", "Functional safety standards (ISO 26262, IEC 61508)", "Sustainable technology development"] },
-    { category: "Strategic Vision", items: ["Global market expansion", "Technology roadmap planning", "OEM & semiconductor partnership building", "Sustainable business practices"] }
-  ];
-
   return (
-    <div className="flex flex-col min-h-screen bg-[#020617] text-slate-100 antialiased">
+    <div className="flex flex-col min-h-screen bg-white text-brand-navy antialiased">
       <Header />
 
-      <main className="flex-grow pt-32 pb-24 relative overflow-hidden">
-        {/* Background decorative mesh glows */}
-        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-brand-cyan/5 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-brand-blue/5 blur-[150px] pointer-events-none" />
+      <main className="flex-grow">
+        <PageHero
+          eyebrow="Über VEROTERA"
+          icon={Compass}
+          title={
+            <>
+              Advanced Semiconductor Technologies.
+              <br />
+              <span className="text-brand-cyan">Wide-Bandgap at the Core.</span>
+            </>
+          }
+          subtitle="VEROTERA entwickelt und ermöglicht fortschrittliche WBG-Leistungselektronik für anspruchsvolle Elektrifizierungsanwendungen. Durch die Verbindung von SiC/GaN-Technologien, innovativem Packaging und agentischer KI schlagen wir die Brücke zwischen technologischer Komplexität und industrieller Umsetzung."
+          width="wide"
+        />
 
-        {/* Back Button */}
-        <div className="max-w-7xl mx-auto px-6 mb-8 text-left">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/5 bg-white/5 hover:bg-brand-cyan/10 hover:border-brand-cyan/20 text-slate-300 hover:text-brand-cyan transition-all duration-300 font-sans text-xs font-semibold uppercase tracking-wider group focus:outline-none"
-          >
-            <ArrowLeft className="w-3.5 h-3.5 transition-transform duration-300 group-hover:-translate-x-1" />
-            Back to Home
-          </Link>
-        </div>
-
-        {/* Hero Banner Section */}
-        <section className="max-w-7xl mx-auto px-6 mb-20 text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand-cyan/20 bg-brand-cyan/5 text-brand-cyan text-xs font-semibold uppercase tracking-wider mb-6"
-          >
-            <Compass className="w-3.5 h-3.5" />
-            About VEROTERA GmbH
-          </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6"
-          >
-            Bridging the gap between <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-blue">
-              Semiconductor Physics & System Demand
-            </span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-sans text-lg text-slate-300 max-w-3xl leading-relaxed"
-          >
-            VEROTERA is a next-generation semiconductor company driven by deep system-level understanding. We operate across the full stack — from solid-state physics to certified subsystems — designing technologies that reflect the actual constraints of modern electrification.
-          </motion.p>
-        </section>
-
-        {/* Vision & Mission Grid */}
-        <section className="max-w-7xl mx-auto px-6 mb-24 grid grid-cols-1 lg:grid-cols-2 gap-8 relative z-10">
-          {/* Vision */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="p-8 sm:p-10 rounded-3xl border border-white/5 bg-brand-navy-card backdrop-blur-md relative overflow-hidden group"
-          >
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-brand-cyan/30 to-transparent" />
-            <div className="p-4 rounded-2xl bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan w-fit mb-8">
-              <Eye className="w-6 h-6" />
-            </div>
-            <h2 className="font-display text-2xl font-bold text-white mb-4">Our Vision</h2>
-            <p className="font-sans text-slate-300 leading-relaxed">
-              We envision a future where sustainable mobility, high-compute data centers, and clean industrial energy grids thrive through cutting-edge, energy-efficient power electronics. By bridging the gap between chip layouts and system architectures, we aim to deliver wide-bandgap (SiC/GaN) technologies that minimize efficiency drops where it matters most, building a cleaner, smarter, and more secure world.
-            </p>
-          </motion.div>
-
-          {/* Mission */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="p-8 sm:p-10 rounded-3xl border border-white/5 bg-brand-navy-card backdrop-blur-md relative overflow-hidden group"
-          >
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-brand-emerald/30 to-transparent" />
-            <div className="p-4 rounded-2xl bg-brand-emerald/10 border border-brand-emerald/20 text-brand-emerald w-fit mb-8">
-              <Rocket className="w-6 h-6" />
-            </div>
-            <h2 className="font-display text-2xl font-bold text-white mb-4">Our Mission</h2>
-            <p className="font-sans text-slate-300 leading-relaxed">
-              At VEROTERA, we drive structural innovation across automotive, renewables, and compute grids. We do this by delivering advanced packaging systems, functional safety validation (ISO 26262), and robust cybersecurity layers — accelerated by custom AI simulation software. Operating from our NRW development hub in Germany, we align semiconductor materials with real OEM requirements to compress time-to-market.
-            </p>
-          </motion.div>
-        </section>
-
-        {/* Strategic Infrastructure Callout */}
-        <section className="max-w-7xl mx-auto px-6 mb-28">
-          <div className="p-6 sm:p-8 rounded-3xl border border-white/5 bg-brand-navy-light/40 backdrop-blur-sm flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-4 text-left">
-              <div className="p-3.5 rounded-2xl bg-brand-cyan/10 border border-brand-cyan/25 text-brand-cyan shrink-0">
-                <MapPin className="w-6 h-6" />
+        {/* Vision & Mission */}
+        <section className="py-16 sm:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <Reveal>
+              <div className="glass-panel h-full p-8 sm:p-10 relative overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-brand-cyan to-transparent" />
+                <div className="p-4 rounded-2xl bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan w-fit mb-6">
+                  <Eye className="w-6 h-6" />
+                </div>
+                <h2 className="font-display text-2xl font-bold text-brand-navy mb-4">Unsere Vision</h2>
+                <p className="font-sans text-brand-navy/65 leading-relaxed">
+                  Unsere Vision ist es, ein globaler Deep-Tech-Enabler für
+                  Wide-Bandgap-Leistungselektronik und agentische KI-gestützte Engineering-Systeme zu
+                  werden. Wir sehen Wide-Bandgap-Technologien als Kernbaustein für eine effizientere,
+                  resilientere und elektrifizierte industrielle Zukunft.
+                </p>
               </div>
-              <div>
-                <h3 className="font-display text-lg font-bold text-white mb-1">R&D Center Meerbusch (NRW), Germany</h3>
-                <p className="font-sans text-sm text-slate-400">Positioned in Germany's high-tech corridor, driving next-generation power electronics design and verification.</p>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <div className="glass-panel h-full p-8 sm:p-10 relative overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-brand-emerald to-transparent" />
+                <div className="p-4 rounded-2xl bg-brand-emerald/10 border border-brand-emerald/20 text-brand-emerald w-fit mb-6">
+                  <Rocket className="w-6 h-6" />
+                </div>
+                <h2 className="font-display text-2xl font-bold text-brand-navy mb-4">Unsere Mission</h2>
+                <p className="font-sans text-brand-navy/65 leading-relaxed">
+                  VEROTERA verbindet SiC- und GaN-Technologien, innovatives Packaging und eine Agentic
+                  AI Ecosystem Architecture. Ziel ist es, komplexe Entwicklungsaufgaben in der
+                  Leistungselektronik schneller, nachvollziehbarer und systematischer zu lösen.
+                  Cognitive Orchestration bildet dabei den methodischen Kern.
+                </p>
               </div>
-            </div>
-            <div className="px-5 py-2 rounded-full border border-white/10 bg-white/5 text-xs text-slate-300 font-semibold uppercase tracking-wider shrink-0">
-              Strategic EU Hub
-            </div>
+            </Reveal>
           </div>
         </section>
 
-        {/* Founder & CEO Leadership Deep-Dive */}
-        <section id="leadership" className="max-w-7xl mx-auto px-6 mb-24 relative z-10">
-          <div className="text-center mb-16 max-w-2xl mx-auto">
+        {/* Objectives */}
+        <section className="py-16 sm:py-20 bg-surface-light border-y border-brand-navy/8">
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="flex items-center gap-3 mb-8">
+              <Target className="w-6 h-6 text-brand-cyan" />
+              <h2 className="font-display text-2xl sm:text-3xl font-bold text-brand-navy">Unsere Ziele</h2>
+            </div>
+            <ul className="space-y-4 list-none m-0 p-0">
+              {objectives.map((o) => (
+                <li key={o} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-brand-emerald shrink-0 mt-0.5" />
+                  <span className="text-brand-navy/70">{o}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Why it matters */}
+        <section className="py-16 sm:py-20 bg-white">
+          <div className="max-w-5xl mx-auto px-6">
             <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-2 block">
-              Leadership
+              Warum es relevant ist
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4">
-              Pioneering Power Electronics
+            <h2 className="font-display text-2xl sm:text-3xl font-bold text-brand-navy mb-5">
+              Integration entscheidet über die nächste Phase der Elektrifizierung
             </h2>
-            <p className="font-sans text-sm sm:text-base text-slate-400 leading-relaxed">
-              Expert-led semiconductor design and systems engineering, bringing decades of technical validation to global OEMs.
+            <p className="text-brand-navy/65 leading-relaxed">
+              Die nächste Phase der Elektrifizierung wird nicht allein durch bessere Halbleiter
+              entschieden, sondern durch deren erfolgreiche Integration in leistungsfähige Systeme. AI
+              Data Centers, E-Mobility, Renewable Energy und Industrial Electrification erhöhen die
+              Anforderungen an Effizienz, Kompaktheit, thermische Beherrschbarkeit und Verfügbarkeit.
+              Wide-Bandgap-Technologien sind dafür ein zentraler Enabler – sie benötigen aber tiefes
+              Packaging-, Applikations- und Systemverständnis.
             </p>
           </div>
+        </section>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* Founder Card Info */}
-            <div className="lg:col-span-5 flex justify-center">
-              <div className="w-full max-w-[440px] p-6 sm:p-8 rounded-3xl border border-brand-cyan/15 bg-brand-navy/60 glass-panel shadow-2xl relative overflow-hidden">
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-cyan to-brand-blue" />
-                
-                <div className="flex flex-col items-center text-center mb-6">
-                  {/* Photo */}
-                  <div className="relative w-32 h-32 rounded-3xl overflow-hidden bg-slate-800 border border-white/10 mb-4 shadow-inner">
-                    <Image
-                      src="https://verotera.com/images/aly-mashaly-founder-2.png"
-                      alt="Aly Mashaly - Founder & CEO"
-                      fill
-                      className="object-cover"
-                      sizes="128px"
-                    />
+        {/* Impact areas */}
+        <section className="py-16 sm:py-20 bg-surface-light border-y border-brand-navy/8">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-3xl mb-12">
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-2 block">
+                Wo wir Wirkung erzeugen
+              </span>
+              <h2 className="font-display text-2xl sm:text-3xl font-bold text-brand-navy">
+                Anwendungsfelder & Systemnutzen
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {impactAreas.map((a, i) => (
+                <Reveal key={a.title} delay={i * 0.07}>
+                  <div className="glass-panel glass-panel-hover h-full p-7">
+                    <div className="p-3 rounded-xl bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan w-fit mb-4">
+                      <a.icon className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-display text-base font-bold text-brand-navy mb-2">{a.title}</h3>
+                    <p className="text-sm text-brand-navy/60 leading-relaxed">{a.text}</p>
                   </div>
-                  <h3 className="font-display text-2xl font-bold text-white mb-1">Aly Mashaly</h3>
-                  <p className="font-sans text-xs text-brand-cyan font-bold uppercase tracking-wider mb-4">
-                    Founder & CEO
-                  </p>
-                  <div className="flex flex-col gap-2 items-center text-xs text-slate-400">
-                    <span className="flex items-center gap-1.5 justify-center">
-                      <GraduationCap className="w-4 h-4 text-brand-cyan" />
-                      25+ Years WBG Power Electronics Innovation
-                    </span>
-                    <span className="flex items-center gap-1.5 justify-center">
-                      <Award className="w-4 h-4 text-brand-cyan" />
-                      Developer of 100+ System-Level Products
-                    </span>
-                  </div>
-                </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
 
-                <div className="relative p-6 rounded-2xl bg-brand-navy-light/60 border border-white/5 text-left">
-                  <Quote className="absolute top-4 left-4 w-10 h-10 text-brand-cyan/5 pointer-events-none" />
-                  <p className="font-sans text-xs sm:text-sm text-slate-300 italic leading-relaxed relative z-10">
-                    "We established VEROTERA to cut through the fragmentation in current hardware development pipelines. By aligning physical solid-state characteristics directly with certification guidelines, we build custom power solutions with significantly lower development cycles. We bring engineering execution back to the forefront."
-                  </p>
-                </div>
-              </div>
+        {/* Leadership */}
+        <section id="leadership" className="py-16 sm:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center max-w-2xl mx-auto mb-14">
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-2 block">
+                Leadership
+              </span>
+              <h2 className="font-display text-2xl sm:text-3xl font-bold text-brand-navy mb-3">
+                Pionierarbeit in der Leistungselektronik
+              </h2>
+              <p className="text-brand-navy/60">
+                Expertengeführtes Halbleiterdesign und Systems Engineering mit jahrzehntelanger
+                technischer Erfahrung für globale OEMs.
+              </p>
             </div>
 
-            {/* Technical Track Record Spec Grid */}
-            <div className="lg:col-span-7 space-y-8 text-left">
-              <div className="prose prose-invert max-w-none">
-                <h3 className="font-display text-2xl font-bold text-white mb-4">Founder & Executive Experience</h3>
-                <p className="font-sans text-slate-300 leading-relaxed mb-6">
-                  Aly Mashaly is an internationally recognized leader in developing high-density, energy-efficient power modules. Over his career, he has driven R&amp;D efforts yielding multi-billion-dollar revenues and coordinated strategic partnerships between Tier-1 semiconductor firms and global automotive/grid OEMs.
-                </p>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+              {/* Founder card */}
+              <div className="lg:col-span-5">
+                <div className="glass-panel p-8 relative overflow-hidden">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-cyan to-brand-blue" />
+                  <div className="flex flex-col items-center text-center mb-6">
+                    <div className="relative w-32 h-32 rounded-3xl overflow-hidden bg-surface-light border border-brand-navy/10 mb-4">
+                      <Image
+                        src="https://verotera.com/images/aly-mashaly-founder-2.png"
+                        alt="Aly Mashaly – Founder & CEO"
+                        fill
+                        className="object-cover"
+                        sizes="128px"
+                      />
+                    </div>
+                    <h3 className="font-display text-2xl font-bold text-brand-navy mb-1">Aly Mashaly</h3>
+                    <p className="font-sans text-xs text-brand-cyan font-bold uppercase tracking-wider">
+                      Founder &amp; CEO
+                    </p>
+                  </div>
+                  <div className="relative p-6 rounded-2xl bg-surface-light border border-brand-navy/8">
+                    <Quote className="absolute top-3 left-3 w-9 h-9 text-brand-cyan/10 pointer-events-none" />
+                    <p className="font-sans text-sm text-brand-navy/70 italic leading-relaxed relative z-10">
+                      „Wir haben VEROTERA gegründet, um die Fragmentierung heutiger
+                      Hardware-Entwicklungspipelines aufzubrechen. Indem wir physikalische
+                      Halbleitereigenschaften direkt mit Zertifizierungsanforderungen verknüpfen,
+                      entwickeln wir maßgeschneiderte Leistungslösungen mit deutlich kürzeren
+                      Entwicklungszyklen.“
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {leadershipSpecs.map((spec) => (
-                  <div key={spec.category} className="p-6 rounded-2xl border border-white/5 bg-brand-navy-card hover:border-brand-cyan/20 transition-all duration-300">
-                    <h4 className="font-display text-sm font-bold text-brand-cyan uppercase tracking-wider mb-4 border-b border-white/5 pb-2">
-                      {spec.category}
-                    </h4>
-                    <ul className="space-y-3">
-                      {spec.items.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2.5">
-                          <CheckCircle2 className="w-4 h-4 text-brand-emerald shrink-0 mt-0.5" />
-                          <span className="font-sans text-xs text-slate-300 leading-normal">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+              {/* Experience */}
+              <div className="lg:col-span-7 space-y-6">
+                <h3 className="font-display text-2xl font-bold text-brand-navy">
+                  Gründer- & Führungserfahrung
+                </h3>
+                <p className="font-sans text-brand-navy/65 leading-relaxed">
+                  Aly Mashaly ist ein international anerkannter Experte für die Entwicklung
+                  hochdichter, energieeffizienter Leistungsmodule. Im Laufe seiner Karriere hat er
+                  F&amp;E-Initiativen mit signifikanten Umsätzen vorangetrieben und strategische
+                  Partnerschaften zwischen Tier-1-Halbleiterunternehmen und globalen Automotive- und
+                  Netz-OEMs koordiniert.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {credentials.map((c) => (
+                    <div key={c} className="flex items-start gap-2.5 rounded-xl border border-brand-navy/8 bg-surface-light px-5 py-4">
+                      <CheckCircle2 className="w-4 h-4 text-brand-emerald shrink-0 mt-0.5" />
+                      <span className="text-sm text-brand-navy/70">{c}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Industrial Focus Section */}
-        <section className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="p-8 sm:p-12 rounded-3xl border border-white/5 bg-brand-navy-card overflow-hidden relative text-left">
-            <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[300px] h-[300px] bg-brand-blue/5 rounded-full blur-[100px] pointer-events-none" />
-            
-            <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-2 block">
-              Application Scope
-            </span>
-            <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-8">
-              Target Markets & Integration Verticals
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="space-y-3">
-                <div className="flex items-center gap-2 text-brand-cyan font-semibold">
-                  <ChevronRight className="w-4 h-4" />
-                  <span>Automotive Electrification</span>
+        {/* R&D location */}
+        <section className="py-16 bg-surface-light border-t border-brand-navy/8">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="glass-panel p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex items-center gap-4 text-left">
+                <div className="p-3.5 rounded-2xl bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan shrink-0">
+                  <MapPin className="w-6 h-6" />
                 </div>
-                <p className="font-sans text-xs sm:text-sm text-slate-400 leading-relaxed">
-                  Engineered modules for EV propulsion systems, onboard chargers (OBC), and auxiliary power systems. Incorporating full ASIL-D structural safety parameters.
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                <div className="flex items-center gap-2 text-brand-cyan font-semibold">
-                  <ChevronRight className="w-4 h-4" />
-                  <span>Renewables & Storage</span>
+                <div>
+                  <h3 className="font-display text-lg font-bold text-brand-navy mb-1">
+                    R&amp;D-Center Meerbusch (NRW), Deutschland
+                  </h3>
+                  <p className="font-sans text-sm text-brand-navy/55">
+                    Im Hightech-Korridor Deutschlands – Entwicklung und Verifikation von
+                    Leistungselektronik der nächsten Generation.
+                  </p>
                 </div>
-                <p className="font-sans text-xs sm:text-sm text-slate-400 leading-relaxed">
-                  Power conversion architectures for photovoltaic string inverters, battery management systems (BMS), and grid coupling filters.
-                </p>
               </div>
-
-              <div className="space-y-3">
-                <div className="flex items-center gap-2 text-brand-cyan font-semibold">
-                  <ChevronRight className="w-4 h-4" />
-                  <span>Industrial Computations</span>
-                </div>
-                <p className="font-sans text-xs sm:text-sm text-slate-400 leading-relaxed">
-                  High-current power supplies for high-density AI computer racks, active filter networks, and smart process automation grids.
-                </p>
-              </div>
+              <span className="px-5 py-2 rounded-full border border-brand-navy/10 bg-white text-xs text-brand-navy/60 font-semibold uppercase tracking-wider shrink-0">
+                Strategischer EU-Hub
+              </span>
             </div>
           </div>
         </section>

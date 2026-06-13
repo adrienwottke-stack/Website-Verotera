@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cpu, Layers, ShieldCheck, Sparkles, ArrowRight, ArrowDown } from "lucide-react";
+import { Cpu, Layers, ShieldCheck, Sparkles, ArrowDown } from "lucide-react";
 import BrandWatermark from "./BrandWatermark";
 
 export default function ExplainSection() {
