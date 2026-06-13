@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Mail } from "lucide-react";
+import BrandWatermark from "./BrandWatermark";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -24,160 +24,176 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-[#020617] border-t border-white/5 pt-16 pb-12 overflow-hidden">
-      {/* Subtle grid background */}
-      <div className="absolute inset-0 tech-grid opacity-10 pointer-events-none" />
+    <footer className="dark-section relative bg-brand-navy border-t border-white/5 pt-16 pb-10 overflow-hidden">
+      <BrandWatermark position="bottom-right" tint="light" size={420} opacity={0.035} />
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 items-start mb-16">
-        
-        {/* Logo and Description Area */}
-        <div className="md:col-span-5 flex flex-col items-start text-left">
-          <Link
-            href="/"
-            onClick={(e) => {
-              if (pathname === "/") {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }
-            }}
-            className="flex items-center gap-2 mb-6"
-          >
-            <div className="relative w-36 h-9">
-              <Image
-                src="https://verotera.com/images/verotera-logo2.png"
-                alt="VEROTERA Logo"
-                fill
-                className="object-contain"
-                sizes="144px"
-              />
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-12">
+
+          {/* Left Side: Logo + Description + Tagline + LinkedIn */}
+          <div className="lg:col-span-5 flex flex-col items-start text-left">
+            {/* Logo Block */}
+            <Link
+              href="/"
+              onClick={(e) => {
+                if (pathname === "/") {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
+              className="flex items-center gap-2 mb-6"
+            >
+              <div className="bg-transparent flex items-center gap-2.5">
+                <Image
+                  src="/images/v-signet-transparent.png"
+                  alt="VEROTERA"
+                  width={32}
+                  height={32}
+                  className="object-contain h-8 w-8"
+                />
+                <Image
+                  src="/images/verotera-wordmark.png"
+                  alt="VEROTERA"
+                  width={174}
+                  height={20}
+                  className="object-contain h-5 w-auto"
+                />
+              </div>
+            </Link>
+
+            {/* Description */}
+            <p className="text-sm text-white/60 max-w-sm leading-relaxed mb-5">
+              VEROTERA entwickelt Wide-Bandgap-Halbleitertechnologien mit tiefem
+              Systemverständnis – für eine effizientere, nachhaltigere Welt.
+            </p>
+
+            {/* Claim */}
+            <p className="text-sm font-bold text-white tracking-widest uppercase mb-8">
+              YOUR GOAL. OUR TECH. ONE VISION.
+            </p>
+
+            {/* LinkedIn Section */}
+            <p className="text-sm font-semibold text-brand-cyan mb-3">Folgen Sie uns</p>
+            <a
+              href="https://www.linkedin.com/company/verotera"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+              LinkedIn
+            </a>
+          </div>
+
+          {/* Right Side: 3 Link Columns */}
+          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8 w-full">
+
+            {/* Column 1: SUPPORT */}
+            <div className="flex flex-col text-left">
+              <span className="text-xs font-bold text-white uppercase tracking-wider mb-5">
+                Support
+              </span>
+              <ul className="space-y-4">
+                <li>
+                  <Link
+                    href="/support"
+                    className="text-sm text-white/60 hover:text-brand-cyan transition-colors"
+                  >
+                    Technische Unterstützung
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/#contact"
+                    onClick={(e) => handleScroll(e, "/#contact")}
+                    className="text-sm text-white/60 hover:text-brand-cyan transition-colors"
+                  >
+                    Kontakt
+                  </Link>
+                </li>
+              </ul>
             </div>
-          </Link>
-          <p className="font-sans text-sm text-slate-400 max-w-sm leading-relaxed mb-6">
-            Driving a smarter, cleaner future through advanced semiconductors, AI-driven systems engineering, and sustainable power electronics.
-          </p>
-          <div className="flex gap-4 text-xs font-semibold text-brand-cyan tracking-wider uppercase">
-            <span>HQ · Germany</span>
-            <span className="text-slate-600">|</span>
-            <span>Global Market Reach</span>
+
+            {/* Column 2: CORPORATE */}
+            <div className="flex flex-col text-left">
+              <span className="text-xs font-bold text-white uppercase tracking-wider mb-5">
+                Corporate
+              </span>
+              <ul className="space-y-4">
+                <li>
+                  <Link
+                    href="/about"
+                    className="text-sm text-white/60 hover:text-brand-cyan transition-colors"
+                  >
+                    Über VEROTERA
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/about#karriere"
+                    className="text-sm text-white/60 hover:text-brand-cyan transition-colors"
+                  >
+                    Karriere
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/about#compliance"
+                    className="text-sm text-white/60 hover:text-brand-cyan transition-colors"
+                  >
+                    Ethik & Compliance
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 3: RECHTLICHES */}
+            <div className="flex flex-col text-left col-span-2 sm:col-span-1">
+              <span className="text-xs font-bold text-white uppercase tracking-wider mb-5">
+                Rechtliches
+              </span>
+              <ul className="space-y-4">
+                <li>
+                  <Link
+                    href="/impressum"
+                    className="text-sm text-white/60 hover:text-brand-cyan transition-colors"
+                  >
+                    Impressum
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/privacy-policy"
+                    className="text-sm text-white/60 hover:text-brand-cyan transition-colors"
+                  >
+                    Datenschutz & Cookies
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/terms-of-use"
+                    className="text-sm text-white/60 hover:text-brand-cyan transition-colors"
+                  >
+                    Nutzungsbedingungen
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
           </div>
         </div>
 
-        {/* Columns Grid */}
-        <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8 w-full">
-          {/* Column 1: Solutions */}
-          <div className="flex flex-col text-left">
-            <span className="text-xs font-bold text-white uppercase tracking-wider mb-6">
-              Solutions
-            </span>
-            <ul className="space-y-4">
-              <li>
-                <Link
-                  href="/solutions#power-modules"
-                  className="font-sans text-sm text-slate-400 hover:text-brand-cyan transition-colors"
-                >
-                  Power Modules
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/solutions#systems-engineering"
-                  className="font-sans text-sm text-slate-400 hover:text-brand-cyan transition-colors"
-                >
-                  Systems Engineering
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/solutions#ai-solutions"
-                  className="font-sans text-sm text-slate-400 hover:text-brand-cyan transition-colors"
-                >
-                  AI Software Tools
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 2: Company */}
-          <div className="flex flex-col text-left">
-            <span className="text-xs font-bold text-white uppercase tracking-wider mb-6">
-              Company
-            </span>
-            <ul className="space-y-4">
-              <li>
-                <Link
-                  href="/about"
-                  className="font-sans text-sm text-slate-400 hover:text-brand-cyan transition-colors"
-                >
-                  About us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about#leadership"
-                  className="font-sans text-sm text-slate-400 hover:text-brand-cyan transition-colors"
-                >
-                  Leadership
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/#contact"
-                  onClick={(e) => handleScroll(e, "/#contact")}
-                  className="font-sans text-sm text-slate-400 hover:text-brand-cyan transition-colors"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3: Legal */}
-          <div className="flex flex-col text-left col-span-2 sm:col-span-1">
-            <span className="text-xs font-bold text-white uppercase tracking-wider mb-6">
-              Legal Info
-            </span>
-            <ul className="space-y-4">
-              <li>
-                <Link
-                  href="/impressum"
-                  className="font-sans text-sm text-slate-400 hover:text-brand-cyan transition-colors"
-                >
-                  Impressum (Legal Notice)
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/privacy-policy"
-                  className="font-sans text-sm text-slate-400 hover:text-brand-cyan transition-colors"
-                >
-                  Datenschutz (Privacy)
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/cookie-policy"
-                  className="font-sans text-sm text-slate-400 hover:text-brand-cyan transition-colors"
-                >
-                  Cookie Policy
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-
-      {/* Footer Bottom Block */}
-      <div className="max-w-7xl mx-auto px-6 relative z-10 border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <span className="font-sans text-xs text-slate-500 text-center sm:text-left">
-          © 2025 VEROTERA GmbH. All rights reserved. Registered in Germany.
-        </span>
-        <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 text-slate-500">
-          <Mail className="w-3.5 h-3.5" />
-          <span className="text-[10px] font-semibold uppercase tracking-wider">
-            info@verotera.com
+        {/* Bottom Copyright Bar */}
+        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <span className="text-xs text-white/40 text-center sm:text-left">
+            Nutzungsbedingungen | Datenschutz und Cookie-Richtlinie | Barrierefreiheitserklärung |{" "}
+            © 2026 VEROTERA GmbH – Alle Rechte vorbehalten.
           </span>
         </div>
+
       </div>
     </footer>
   );

@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#020617] text-slate-100 antialiased selection:bg-brand-cyan/30 selection:text-brand-cyan">
+    <div className="flex flex-col min-h-screen bg-white text-brand-navy antialiased selection:bg-brand-cyan/30 selection:text-brand-cyan">
       {/* Dynamic Sticky Header Navigation */}
       <Header />
 

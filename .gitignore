@@ -42,3 +42,8 @@ next-env.d.ts
 
 # Sentry Config File
 .env.sentry-build-plugin
+
+# Internal source material & local tooling – not part of the website code
+/Kunden Input/
+/.claude/
+/remove_white.js

@@ -1,125 +1,140 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Layers, ShieldAlert, Workflow, Zap } from "lucide-react";
+import BrandWatermark from "./BrandWatermark";
 
 export default function WhyVerotera() {
   const badges = [
     {
-      title: "Full Stack",
+      title: "Vom Chip bis zum System",
       icon: Layers,
-      highlight: "Chip-to-System",
-      description: "We understand the entire stack. From semiconductor solid-state physics to thermal grease interfaces and industrial vehicle mounting.",
+      highlight: "Full Stack",
+      description: "Wir verstehen den gesamten Stack. Von der Halbleiterphysik bis zur Wärmeleitmasse und industriellen Fahrzeugmontage.",
     },
     {
-      title: "System-Level",
+      title: "Tiefes Systemverständnis",
       icon: ShieldAlert,
-      highlight: "Safety & Compliance",
-      description: "Our engineering targets optimal system cost, functional safety (ISO 26262), and overall efficiency, rather than just isolated module optimizations.",
+      highlight: "System-Level",
+      description: "Unser Engineering zielt auf optimale Systemkosten, funktionale Sicherheit (ISO 26262) und Gesamteffizienz – nicht nur auf isolierte Moduloptimierungen.",
     },
     {
-      title: "Industry Bridge",
+      title: "Brücke zwischen Nachfrage & Innovation",
       icon: Workflow,
-      highlight: "OEM Alignment",
-      description: "We act as the direct physical bridge, translating cutting-edge raw wafer innovations into ready-to-deploy, rugged packages for Tier-1 OEMs.",
+      highlight: "Industry Bridge",
+      description: "Wir fungieren als direkte physische Brücke und übersetzen modernste Wafer-Innovationen in einsatzbereite, robuste Pakete für Tier-1-OEMs.",
     },
     {
-      title: "Fast Execution",
+      title: "Beschleunigte Entwicklungszyklen mit KI",
       icon: Zap,
-      highlight: "AI-Driven Timelines",
-      description: "By using our custom generative AI design agents, we simulate physics and validate circuit safety layouts in hours, cutting prototyping time in half.",
+      highlight: "Fast Execution",
+      description: "Mit unseren KI-Design-Agenten simulieren wir Physik und validieren Schaltkreis-Sicherheitslayouts in Stunden – und halbieren die Prototypisierungszeit.",
     },
   ];
 
   return (
-    <section id="why-verotera" className="relative py-24 sm:py-32 bg-[#020617] overflow-hidden">
-      {/* Background decoration grid */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-brand-blue/5 rounded-full blur-[120px] pointer-events-none" />
+    <section id="why-verotera" className="relative py-24 sm:py-32 bg-white overflow-hidden">
+      {/* Decorative blurred background lights */}
+      <div className="absolute right-0 top-1/4 w-[420px] h-[420px] bg-brand-blue/[0.05] rounded-full blur-[130px] pointer-events-none" />
+      <BrandWatermark position="bottom-left" tint="navy" size={480} opacity={0.045} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
-          {/* Left Column: Descriptive Narrative */}
-          <div className="lg:col-span-6 text-left">
-            <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-3 block">
-              Our Core Edge
-            </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-white mb-6 leading-tight">
-              One team, from chip physics to complete system
-            </h2>
-            <p className="font-sans text-base sm:text-lg text-slate-300 leading-relaxed mb-8">
-              Most power electronics companies are highly fragmented. They either build semiconductor chips or design systems. They don't talk to each other.
-            </p>
-            <p className="font-sans text-sm sm:text-base text-slate-400 leading-relaxed mb-8">
-              <strong>VEROTERA does both.</strong> This full-stack, cohesive understanding lets us cut expensive integration cycles, drastically shorten thermal validation loops, and deliver higher overall power efficiencies. We build the physical and engineering bridge between semiconductor raw material innovation and real-world electrification demand.
-            </p>
 
-            {/* Premium Diagram Box representing the bridge */}
-            <div className="p-6 rounded-2xl border border-white/5 bg-brand-navy-light/40 backdrop-blur-sm relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                VEROTERA Ecosystem
+        {/* Split Panel: Navy Box (left) + Image (right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+
+          {/* Left: Navy Content Box */}
+          <div className="lg:col-span-6">
+            <div className="bg-brand-navy rounded-2xl p-10 sm:p-14 h-full flex flex-col justify-between">
+              {/* V-Signet Logo */}
+              <div className="mb-6">
+                <Image
+                  src="/images/v-signet-transparent.png"
+                  alt="VEROTERA Signet"
+                  width={32}
+                  height={32}
+                  className="w-8 h-8"
+                />
               </div>
-              <span className="text-xs font-semibold text-brand-cyan tracking-wider uppercase block mb-3">
-                The Conventional Gap vs Our Bridge
-              </span>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-500/80 shrink-0" />
-                  <span className="font-sans text-xs text-slate-400">
-                    Traditional Chip Maker: <em>\"Here is the raw wafer chip. Good luck packaging it.\"</em>
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-500/80 shrink-0" />
-                  <span className="font-sans text-xs text-slate-400">
-                    Traditional OEM Designer: <em>\"We bought a module, but thermal matching failed under load.\"</em>
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 pt-2 border-t border-white/5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-brand-cyan shrink-0 animate-pulse" />
-                  <span className="font-sans text-xs text-brand-cyan font-medium">
-                    VEROTERA: Unified chip, packaging, thermal model, safety codes, and custom enclosure.
-                  </span>
-                </div>
+
+              <div>
+                <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-3 leading-tight">
+                  Nachhaltigen Einfluss schaffen – langfristig erfolgreich sein.
+                </h2>
+                <p className="text-white/70 text-sm mb-6">
+                  Technologie- und Systempartner für WBG-Leistungsmodule der nächsten Generation
+                </p>
+                <p className="text-white/60 text-sm leading-relaxed mb-8">
+                  VEROTERAs fortschrittliche WBG-Leistungsmodule sind darauf ausgelegt, höchste Leistung zu liefern – für intelligentere und effizientere Systeme in KI-Rechenzentren, im Bereich des grünen Wasserstoffs, der E-Mobilität, erneuerbarer Energien und industrieller Automatisierung.
+                </p>
+
+                <span className="text-brand-cyan text-xs font-bold uppercase tracking-wider mb-2 block">
+                  Lösungen
+                </span>
+                <p className="text-white font-bold text-lg mb-8">
+                  VeroCore X → VeroCore SiC – VeroCore GaN
+                </p>
+
+                <a
+                  href="/solutions"
+                  className="inline-flex items-center gap-2 bg-brand-cyan text-brand-navy font-semibold px-6 py-3 rounded-lg text-sm hover:bg-brand-cyan/90 transition-colors duration-200"
+                >
+                  Mehr erfahren
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Dynamic Badges Grid */}
-          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {badges.map((badge, index) => (
-              <motion.div
-                key={badge.title}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.12 }}
-                className="p-6 rounded-2xl border border-white/5 bg-brand-navy/60 glass-panel-hover group relative overflow-hidden"
-              >
-                {/* Header Row */}
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2.5 rounded-lg bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan group-hover:bg-brand-cyan/20 group-hover:border-brand-cyan/30 transition-all duration-300">
-                    <badge.icon className="w-5 h-5" />
-                  </div>
-                  <h3 className="font-display text-lg font-bold text-white group-hover:text-brand-cyan transition-colors duration-300">
-                    {badge.title}
-                  </h3>
-                </div>
-
-                {/* Subtag */}
-                <span className="text-[9px] font-bold text-brand-emerald tracking-wider uppercase block mb-3">
-                  {badge.highlight}
-                </span>
-
-                {/* Description */}
-                <p className="font-sans text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  {badge.description}
-                </p>
-              </motion.div>
-            ))}
+          {/* Right: Image */}
+          <div className="lg:col-span-6">
+            <div className="relative h-full min-h-[500px] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/our-tech.png"
+                alt="VEROTERA Technologie"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
           </div>
 
         </div>
+
+        {/* 4 Advantage Badges */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {badges.map((badge, index) => (
+            <motion.div
+              key={badge.title}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.12 }}
+              className="p-6 rounded-2xl border border-brand-navy/8 bg-white shadow-sm group relative overflow-hidden"
+            >
+              {/* Header Row */}
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 rounded-lg bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan group-hover:bg-brand-cyan/20 group-hover:border-brand-cyan/30 transition-all duration-300">
+                  <badge.icon className="w-5 h-5" />
+                </div>
+                <h3 className="font-display text-base font-bold text-brand-navy group-hover:text-brand-cyan transition-colors duration-300 leading-tight">
+                  {badge.title}
+                </h3>
+              </div>
+
+              {/* Subtag */}
+              <span className="text-[9px] font-bold text-brand-emerald tracking-wider uppercase block mb-3">
+                {badge.highlight}
+              </span>
+
+              {/* Description */}
+              <p className="font-sans text-xs sm:text-sm text-brand-navy/60 leading-relaxed">
+                {badge.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
       </div>
     </section>
   );

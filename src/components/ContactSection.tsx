@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, MapPin, Send, CheckCircle2, Sparkles, Building2, User } from "lucide-react";
+import BrandWatermark from "./BrandWatermark";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -19,65 +20,66 @@ export default function ContactSection() {
     if (!formData.name || !formData.email || !formData.message) return;
 
     setStatus("submitting");
-    
+
     // Simulate backend api response delay
     await new Promise((resolve) => setTimeout(resolve, 1200));
-    
+
     setStatus("success");
     setFormData({ name: "", email: "", company: "", message: "" });
   };
 
   return (
-    <section id="contact" className="relative py-24 sm:py-32 bg-[#020617] overflow-hidden">
+    <section id="contact" className="relative py-24 sm:py-32 bg-surface-light overflow-hidden">
       {/* Decorative blurred background orb */}
-      <div className="absolute bottom-0 left-0 w-[450px] h-[450px] bg-brand-cyan/5 rounded-full blur-[110px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[450px] h-[450px] bg-brand-cyan/[0.07] rounded-full blur-[110px] pointer-events-none" />
+      <BrandWatermark position="top-left" tint="navy" size={460} opacity={0.045} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
-          
+
           {/* Left Column: Claims & Info */}
           <div className="lg:col-span-5 flex flex-col justify-between text-left">
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-3 block">
-                Connect with Us
+                Kontakt aufnehmen
               </span>
-              <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-white mb-6">
-                Tell us your goal.<br />
-                We'll bring the tech.
+              <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-brand-navy mb-6">
+                Schildern Sie uns Ihr Ziel.<br />
+                Wir bringen die Technik.
               </h2>
               <p className="font-sans text-brand-cyan text-lg font-semibold tracking-wide uppercase mb-8">
-                Your goal. Our tech. One vision.
+                Ihr Ziel. Unsere Technik. Eine Vision.
               </p>
-              <p className="font-sans text-base text-slate-300 leading-relaxed mb-12">
-                Whether you need specialized wide-bandgap modules, functional safety HIL testing for ISO 26262, or wish to explore our AI layout tools - our engineering team is ready to assist.
+              <p className="font-sans text-base text-brand-navy/60 leading-relaxed mb-12">
+                Ob Sie spezialisierte Wide-Bandgap-Module, funktionale Sicherheitstests nach ISO 26262 benötigen oder unsere KI-Entwicklungswerkzeuge erkunden möchten – unser Engineering-Team steht bereit.
               </p>
             </div>
 
             {/* Direct Details */}
-            <div className="space-y-6 pt-6 border-t border-white/5">
+            <div className="space-y-6 pt-6 border-t border-brand-navy/8">
               <div className="flex items-center gap-4">
-                <div className="p-3 rounded-xl bg-brand-navy-light border border-white/5 text-brand-cyan shrink-0">
+                <div className="p-3 rounded-xl bg-white border border-brand-navy/8 text-brand-cyan shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">
-                    Location & Headquarters
+                  <span className="text-[10px] font-bold text-brand-navy/50 uppercase tracking-widest block mb-0.5">
+                    Standort & Hauptsitz
                   </span>
-                  <span className="font-sans text-sm text-slate-200">
+                  <span className="font-sans text-sm text-brand-navy/80">
                     VEROTERA GmbH · NRW, Germany
                   </span>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="p-3 rounded-xl bg-brand-navy-light border border-white/5 text-brand-cyan shrink-0">
+                <div className="p-3 rounded-xl bg-white border border-brand-navy/8 text-brand-cyan shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">
-                    Email Inquiry
+                  <span className="text-[10px] font-bold text-brand-navy/50 uppercase tracking-widest block mb-0.5">
+                    E-Mail Anfrage
                   </span>
-                  <a href="mailto:info@verotera.com" className="font-sans text-sm text-slate-200 hover:text-brand-cyan transition-colors">
+                  <a href="mailto:info@verotera.com" className="font-sans text-sm text-brand-navy/80 hover:text-brand-cyan transition-colors">
                     info@verotera.com
                   </a>
                 </div>
@@ -87,8 +89,8 @@ export default function ContactSection() {
 
           {/* Right Column: Glassmorphism Interactive Form */}
           <div className="lg:col-span-7">
-            <div className="relative h-full min-h-[460px] rounded-3xl border border-white/5 bg-brand-navy/60 backdrop-blur-md p-8 sm:p-10 shadow-2xl flex flex-col justify-center">
-              
+            <div className="relative h-full min-h-[460px] rounded-3xl border border-brand-navy/8 bg-white p-8 sm:p-10 shadow-sm flex flex-col justify-center">
+
               <AnimatePresence mode="wait">
                 {status !== "success" ? (
                   <motion.form
@@ -102,38 +104,38 @@ export default function ContactSection() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       {/* Name input */}
                       <div className="relative flex flex-col">
-                        <label htmlFor="name" className="text-xs font-semibold text-slate-300 uppercase tracking-wide mb-2.5">
+                        <label htmlFor="name" className="text-xs font-semibold text-brand-navy/60 uppercase tracking-wide mb-2.5">
                           Name *
                         </label>
                         <div className="relative">
-                          <User className="absolute left-4 top-3.5 w-4 h-4 text-slate-500" />
+                          <User className="absolute left-4 top-3.5 w-4 h-4 text-brand-navy/30" />
                           <input
                             id="name"
                             type="text"
                             required
-                            placeholder="Your Name"
+                            placeholder="Ihr Name"
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                            className="w-full pl-11 pr-4 py-3 bg-[#030816] rounded-xl border border-white/5 text-slate-200 text-sm placeholder:text-slate-600 focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all"
+                            className="w-full pl-11 pr-4 py-3 bg-white rounded-xl border border-brand-navy/15 text-brand-navy text-sm placeholder:text-brand-navy/30 focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all"
                           />
                         </div>
                       </div>
 
                       {/* Email input */}
                       <div className="relative flex flex-col">
-                        <label htmlFor="email" className="text-xs font-semibold text-slate-300 uppercase tracking-wide mb-2.5">
-                          Email *
+                        <label htmlFor="email" className="text-xs font-semibold text-brand-navy/60 uppercase tracking-wide mb-2.5">
+                          E-Mail *
                         </label>
                         <div className="relative">
-                          <Mail className="absolute left-4 top-3.5 w-4 h-4 text-slate-500" />
+                          <Mail className="absolute left-4 top-3.5 w-4 h-4 text-brand-navy/30" />
                           <input
                             id="email"
                             type="email"
                             required
-                            placeholder="you@company.com"
+                            placeholder="sie@unternehmen.de"
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            className="w-full pl-11 pr-4 py-3 bg-[#030816] rounded-xl border border-white/5 text-slate-200 text-sm placeholder:text-slate-600 focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all"
+                            className="w-full pl-11 pr-4 py-3 bg-white rounded-xl border border-brand-navy/15 text-brand-navy text-sm placeholder:text-brand-navy/30 focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all"
                           />
                         </div>
                       </div>
@@ -141,35 +143,35 @@ export default function ContactSection() {
 
                     {/* Company input */}
                     <div className="relative flex flex-col">
-                      <label htmlFor="company" className="text-xs font-semibold text-slate-300 uppercase tracking-wide mb-2.5">
-                        Company
+                      <label htmlFor="company" className="text-xs font-semibold text-brand-navy/60 uppercase tracking-wide mb-2.5">
+                        Unternehmen
                       </label>
                       <div className="relative">
-                        <Building2 className="absolute left-4 top-3.5 w-4 h-4 text-slate-500" />
+                        <Building2 className="absolute left-4 top-3.5 w-4 h-4 text-brand-navy/30" />
                         <input
                           id="company"
                           type="text"
-                          placeholder="Your Organization"
+                          placeholder="Ihr Unternehmen"
                           value={formData.company}
                           onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                          className="w-full pl-11 pr-4 py-3 bg-[#030816] rounded-xl border border-white/5 text-slate-200 text-sm placeholder:text-slate-600 focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all"
+                          className="w-full pl-11 pr-4 py-3 bg-white rounded-xl border border-brand-navy/15 text-brand-navy text-sm placeholder:text-brand-navy/30 focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all"
                         />
                       </div>
                     </div>
 
                     {/* Message input */}
                     <div className="relative flex flex-col">
-                      <label htmlFor="message" className="text-xs font-semibold text-slate-300 uppercase tracking-wide mb-2.5">
-                        Message *
+                      <label htmlFor="message" className="text-xs font-semibold text-brand-navy/60 uppercase tracking-wide mb-2.5">
+                        Nachricht *
                       </label>
                       <textarea
                         id="message"
                         required
                         rows={4}
-                        placeholder="Tell us about your power electronics requirements..."
+                        placeholder="Beschreiben Sie Ihr Projekt oder Ihr Anliegen…"
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full px-4 py-3 bg-[#030816] rounded-xl border border-white/5 text-slate-200 text-sm placeholder:text-slate-600 focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all resize-none"
+                        className="w-full px-4 py-3 bg-white rounded-xl border border-brand-navy/15 text-brand-navy text-sm placeholder:text-brand-navy/30 focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all resize-none"
                       />
                     </div>
 
@@ -182,12 +184,12 @@ export default function ContactSection() {
                       {status === "submitting" ? (
                         <>
                           <div className="w-5 h-5 rounded-full border-2 border-[#020617] border-t-transparent animate-spin" />
-                          <span>Establishing Connection...</span>
+                          <span>Wird gesendet...</span>
                         </>
                       ) : (
                         <>
                           <Send className="w-4 h-4" />
-                          <span>Send Message</span>
+                          <span>Nachricht senden</span>
                         </>
                       )}
                     </button>
@@ -211,20 +213,20 @@ export default function ContactSection() {
                       <CheckCircle2 className="w-10 h-10" />
                       <Sparkles className="absolute -top-1 -right-1 w-5 h-5 text-brand-cyan animate-bounce" />
                     </div>
-                    
-                    <h3 className="font-display text-2xl font-bold text-white">
-                      Message Sent Successfully!
+
+                    <h3 className="font-display text-2xl font-bold text-brand-navy">
+                      Nachricht erfolgreich gesendet!
                     </h3>
-                    
-                    <p className="font-sans text-sm text-slate-300 max-w-md leading-relaxed">
-                      Thank you for contacting **VEROTERA**. Our engineering team will review your application specifications and get in touch with you within 24 business hours.
+
+                    <p className="font-sans text-sm text-brand-navy/60 max-w-md leading-relaxed">
+                      Vielen Dank für Ihre Kontaktaufnahme. Unser Engineering-Team wird Ihre Anfrage prüfen und sich innerhalb von 24 Geschäftsstunden bei Ihnen melden.
                     </p>
 
                     <button
                       onClick={() => setStatus("idle")}
-                      className="px-6 py-2.5 rounded-full font-display text-xs font-semibold tracking-wider text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all"
+                      className="px-6 py-2.5 rounded-full font-display text-xs font-semibold tracking-wider text-brand-navy/60 hover:text-brand-navy bg-brand-navy/5 hover:bg-brand-navy/10 border border-brand-navy/10 hover:border-brand-navy/20 transition-all"
                     >
-                      Send Another Message
+                      Weitere Nachricht senden
                     </button>
                   </motion.div>
                 )}

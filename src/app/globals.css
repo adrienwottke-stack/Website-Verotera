@@ -4,12 +4,18 @@
   --font-sans: var(--font-inter), sans-serif;
   --font-display: var(--font-space-grotesk), sans-serif;
   
-  --color-brand-cyan: #2dd4bf;
-  --color-brand-blue: #3b82f6;
+  /* Brand Colors – extracted from PPTX & Logo */
+  --color-brand-cyan: #22b8cf;
+  --color-brand-blue: #2e86c1;
   --color-brand-emerald: #10b981;
-  --color-brand-navy: #020617;
-  --color-brand-navy-light: #0b1528;
-  --color-brand-navy-card: rgba(8, 17, 36, 0.5);
+  --color-brand-navy: #234554;
+  --color-brand-navy-light: #2d5a6e;
+  --color-brand-navy-card: #234554;
+  
+  /* Light theme surface colors – subtly tinted toward brand blue */
+  --color-surface-white: #ffffff;
+  --color-surface-light: #edf2f8;
+  --color-surface-muted: #e3ebf3;
   
   --animate-circuit: circuit 3s linear infinite;
   
@@ -20,8 +26,9 @@
 }
 
 :root {
-  --background: #020617;
-  --foreground: #f8fafc;
+  --background: #ffffff;
+  --foreground: #1a2a35;
+  --section-alt: #eef3f8;
 }
 
 body {
@@ -30,12 +37,12 @@ body {
   overflow-x: hidden;
 }
 
-/* Glassmorphism Panel */
+/* ── Card / Panel styles (light theme) ── */
 .glass-panel {
-  background: rgba(8, 17, 36, 0.5);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #ffffff;
+  border: 1px solid #e0e7ec;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(35, 69, 84, 0.06);
 }
 
 .glass-panel-hover {
@@ -43,16 +50,35 @@ body {
 }
 
 .glass-panel-hover:hover {
-  background: rgba(12, 25, 52, 0.65);
-  border-color: rgba(6, 182, 212, 0.3);
-  box-shadow: 0 0 25px rgba(6, 182, 212, 0.15);
+  border-color: #22b8cf;
+  box-shadow: 0 4px 24px rgba(34, 184, 207, 0.12);
   transform: translateY(-2px);
+}
+
+/* ── Dark section panels (Header, Footer, Hero) ── */
+.dark-section {
+  background-color: #234554;
+  color: #f4f7f9;
+}
+
+.dark-section .glass-panel {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+}
+
+.dark-section .glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(34, 184, 207, 0.4);
+  box-shadow: 0 0 25px rgba(34, 184, 207, 0.15);
 }
 
 /* Active Nav Links styling */
 .active-nav-link {
-  color: #2dd4bf;
-  text-shadow: 0 0 8px rgba(45, 212, 191, 0.6);
+  color: #22b8cf;
+  text-shadow: 0 0 8px rgba(34, 184, 207, 0.5);
 }
 
 /* Scrollbar styles */
@@ -62,23 +88,28 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #020617;
+  background: #f4f7f9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #c5d0d8;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #06b6d4;
+  background: #22b8cf;
 }
 
-/* Custom Grid Mesh background */
+/* ── Alternating section backgrounds ── */
+.section-alt {
+  background-color: var(--section-alt);
+}
+
+/* Custom Grid Mesh background (for dark sections only) */
 .tech-grid {
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
@@ -86,4 +117,29 @@ body {
 .circuit-line {
   stroke-dasharray: 100;
   animation: circuit 4s linear infinite;
+}
+
+/* ── Light-theme typography helpers ── */
+.text-brand-heading {
+  color: #234554;
+}
+
+.text-brand-body {
+  color: #3a5565;
+}
+
+.text-brand-muted {
+  color: #6b8a99;
+}
+
+/* ── Brand V-signet watermark (subtle recurring motif) ──
+   Uses the signet PNG as an alpha mask, filled with a flat brand
+   colour, so the V renders as a crisp single-tone ghost at any
+   opacity. Colour, size, opacity & position come from inline styles. */
+.v-watermark {
+  -webkit-mask: url("/images/v-signet-transparent.png") center / contain no-repeat;
+  mask: url("/images/v-signet-transparent.png") center / contain no-repeat;
+  background-color: #234554;
+  pointer-events: none;
+  user-select: none;
 }

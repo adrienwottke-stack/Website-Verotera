@@ -15,16 +15,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "VEROTERA | Next-Gen Power Electronics & AI Systems",
-  description: "VEROTERA turns next-generation wide-bandgap (SiC/GaN) semiconductor chips into highly efficient power modules and complete certified systems, accelerated by AI tools. Building the bridge between semiconductor physics and real-world electrification.",
-  keywords: ["VEROTERA", "power electronics", "semiconductor", "SiC", "GaN", "wide-bandgap", "electric vehicles", "renewable energy", "data centers", "AI hardware", "functional safety", "ISO 26262"],
+  title: "VEROTERA | Next-Gen Leistungselektronik & KI-Systeme",
+  description: "VEROTERA wandelt Wide-Bandgap (SiC/GaN) Halbleiterchips der nächsten Generation in hocheffiziente Leistungsmodule und komplett zertifizierte Systeme um, beschleunigt durch KI-Tools. Wir schlagen die Brücke zwischen Halbleiterphysik und realer Elektrifizierung.",
+  keywords: ["VEROTERA", "Leistungselektronik", "Halbleiter", "SiC", "GaN", "Wide-Bandgap", "Elektromobilität", "Erneuerbare Energien", "Rechenzentren", "KI-Hardware", "Funktionale Sicherheit", "ISO 26262"],
   authors: [{ name: "VEROTERA GmbH" }],
   openGraph: {
-    title: "VEROTERA | Next-Gen Power Electronics & AI Systems",
-    description: "Wide-bandgap power modules and certified systems accelerated by AI. High-efficiency electrification for automotive, solar, and data centers.",
+    title: "VEROTERA | Next-Gen Leistungselektronik & KI-Systeme",
+    description: "Wide-Bandgap Leistungsmodule und zertifizierte Systeme beschleunigt durch KI. Hocheffiziente Elektrifizierung für Automotive, Solar und Rechenzentren.",
     url: "https://verotera.com",
     siteName: "VEROTERA",
-    locale: "en_US",
+    locale: "de_DE",
     type: "website",
   },
 };
@@ -36,10 +36,10 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="de"
       className={`${spaceGrotesk.variable} ${inter.variable} scroll-smooth`}
     >
-      <body className="bg-[#020617] text-slate-100 font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
+      <body className="bg-white text-brand-navy font-sans antialiased selection:bg-brand-cyan/30 selection:text-brand-cyan">
         {children}
       </body>
     </html>

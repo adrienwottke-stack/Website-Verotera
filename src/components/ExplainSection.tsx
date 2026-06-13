@@ -2,29 +2,30 @@
 
 import { motion } from "framer-motion";
 import { Cpu, Layers, ShieldCheck, Sparkles, ArrowRight, ArrowDown } from "lucide-react";
+import BrandWatermark from "./BrandWatermark";
 
 export default function ExplainSection() {
   const flowSteps = [
     {
       step: "01",
-      title: "Chip Packaging",
+      title: "Chip-Verkapselung",
       icon: Layers,
       highlight: "SiC & GaN",
-      description: "We package advanced Silicon Carbide (SiC) and Gallium Nitride (GaN) semiconductor chips directly into robust micro-packages, preparing them for peak thermal and electrical performance.",
+      description: "Wir verkapseln fortschrittliche Siliziumkarbid- (SiC) und Galliumnitrid- (GaN) Halbleiterchips direkt in robuste Mikropakete – für maximale thermische und elektrische Leistung.",
     },
     {
       step: "02",
-      title: "Power Modules",
+      title: "Leistungsmodule",
       icon: Cpu,
       highlight: "Wide-Bandgap",
-      description: "These packages are integrated into high-density wide-bandgap power modules. They handle extreme voltages, deliver higher efficiency, run cooler, and are significantly smaller.",
+      description: "Diese Pakete werden in hochdichte Wide-Bandgap-Leistungsmodule integriert. Sie beherrschen extreme Spannungen, liefern höhere Effizienz, laufen kühler und sind deutlich kompakter.",
     },
     {
       step: "03",
-      title: "Complete Systems",
+      title: "Komplettsysteme",
       icon: ShieldCheck,
-      highlight: "Certified & Ready",
-      description: "We integrate the power modules into complete, application-ready power systems (e.g. inverters) including functional safety (ISO 26262, IEC 61508) and cybersecurity.",
+      highlight: "Zertifiziert & Einsatzbereit",
+      description: "Wir integrieren die Leistungsmodule in vollständige, anwendungsfertige Leistungssysteme (z. B. Wechselrichter) inkl. funktionaler Sicherheit (ISO 26262, IEC 61508) und Cybersicherheit.",
     },
   ];
 
@@ -53,9 +54,11 @@ export default function ExplainSection() {
   };
 
   return (
-    <section id="what-we-do" className="relative py-24 sm:py-32 bg-[#020617] border-y border-white/5 overflow-hidden">
+    <section id="what-we-do" className="relative py-24 sm:py-32 bg-white border-y border-brand-blue/10 overflow-hidden">
       {/* Decorative blurred background lights */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-brand-cyan/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-brand-cyan/8 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-brand-blue/[0.05] rounded-full blur-[130px] pointer-events-none" />
+      <BrandWatermark position="bottom-right" tint="blue" size={460} opacity={0.05} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
@@ -67,35 +70,35 @@ export default function ExplainSection() {
             viewport={{ once: true }}
             className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-3 block"
           >
-            The 10-Second Summary
+            Die 10-Sekunden-Zusammenfassung
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-white mb-6"
+            className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy mb-6"
           >
-            What we do in 10 seconds
+            Was wir in 10 Sekunden tun
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-sans text-base sm:text-lg text-slate-300 leading-relaxed"
+            className="font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed"
           >
-            Everything electric needs to convert and control power. We design and build the high-performance modules and certified systems that do exactly that - with **less energy lost**, **less weight**, and **much faster development**.
+            Alles Elektrische muss Energie umwandeln und steuern. Wir entwickeln und bauen die Hochleistungsmodule und zertifizierten Systeme, die genau das leisten – mit weniger Energieverlust, weniger Gewicht und deutlich schnellerer Entwicklung.
           </motion.p>
         </div>
 
         {/* The Flowchart Area wrapped in the AI acceleration bracket */}
-        <div className="relative p-6 sm:p-12 rounded-3xl border border-dashed border-brand-cyan/20 bg-brand-navy-card backdrop-blur-sm">
+        <div className="relative p-6 sm:p-12 rounded-3xl border border-dashed border-brand-cyan/20 bg-surface-light">
           
           {/* AI Bracket Header Tag */}
           <div className="absolute -top-4 left-1/2 -translate-x-1/2 flex items-center gap-2 px-6 py-1.5 rounded-full border border-brand-emerald/30 bg-brand-navy/90 text-brand-emerald text-xs font-semibold tracking-wider uppercase shadow-md">
             <Sparkles className="w-3.5 h-3.5 animate-pulse text-brand-emerald" />
-            <span>Accelerated by AI Engineering Tools</span>
+            <span>Beschleunigt durch KI-Engineering-Tools</span>
           </div>
 
           <motion.div
@@ -106,7 +109,7 @@ export default function ExplainSection() {
             className="grid grid-cols-1 lg:grid-cols-11 gap-6 lg:gap-2 items-center"
           >
             {/* Step 1: Chip Packaging */}
-            <motion.div variants={cardVariants} className="lg:col-span-3 h-full flex flex-col justify-between p-6 sm:p-8 rounded-2xl border border-white/5 bg-brand-navy/40 glass-panel-hover relative overflow-hidden group">
+            <motion.div variants={cardVariants} className="lg:col-span-3 h-full flex flex-col justify-between p-6 sm:p-8 rounded-2xl border border-brand-navy/8 bg-white shadow-sm relative overflow-hidden group">
               {/* Card Accent Top Glow */}
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-brand-cyan/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
@@ -115,15 +118,15 @@ export default function ExplainSection() {
                   <div className="p-3 rounded-xl bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan">
                     <Layers className="w-6 h-6" />
                   </div>
-                  <span className="font-display text-4xl font-bold text-slate-700/60 group-hover:text-brand-cyan/25 transition-colors duration-300">
+                  <span className="font-display text-4xl font-bold text-brand-navy/15 group-hover:text-brand-cyan/25 transition-colors duration-300">
                     {flowSteps[0].step}
                   </span>
                 </div>
-                <h3 className="font-display text-xl font-bold text-white mb-2">{flowSteps[0].title}</h3>
+                <h3 className="font-display text-xl font-bold text-brand-navy mb-2">{flowSteps[0].title}</h3>
                 <span className="inline-block text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-brand-cyan/10 text-brand-cyan mb-4 border border-brand-cyan/25">
                   {flowSteps[0].highlight}
                 </span>
-                <p className="font-sans text-sm text-slate-300 leading-relaxed">
+                <p className="font-sans text-sm text-brand-navy/60 leading-relaxed">
                   {flowSteps[0].description}
                 </p>
               </div>
@@ -154,7 +157,7 @@ export default function ExplainSection() {
             </div>
 
             {/* Step 2: Power Modules */}
-            <motion.div variants={cardVariants} className="lg:col-span-3 h-full flex flex-col justify-between p-6 sm:p-8 rounded-2xl border border-white/5 bg-brand-navy/40 glass-panel-hover relative overflow-hidden group">
+            <motion.div variants={cardVariants} className="lg:col-span-3 h-full flex flex-col justify-between p-6 sm:p-8 rounded-2xl border border-brand-navy/8 bg-white shadow-sm relative overflow-hidden group">
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-brand-blue/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
               <div>
@@ -162,15 +165,15 @@ export default function ExplainSection() {
                   <div className="p-3 rounded-xl bg-brand-blue/10 border border-brand-blue/20 text-brand-blue">
                     <Cpu className="w-6 h-6" />
                   </div>
-                  <span className="font-display text-4xl font-bold text-slate-700/60 group-hover:text-brand-blue/25 transition-colors duration-300">
+                  <span className="font-display text-4xl font-bold text-brand-navy/15 group-hover:text-brand-blue/25 transition-colors duration-300">
                     {flowSteps[1].step}
                   </span>
                 </div>
-                <h3 className="font-display text-xl font-bold text-white mb-2">{flowSteps[1].title}</h3>
+                <h3 className="font-display text-xl font-bold text-brand-navy mb-2">{flowSteps[1].title}</h3>
                 <span className="inline-block text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-brand-blue/10 text-brand-blue mb-4 border border-brand-blue/25">
                   {flowSteps[1].highlight}
                 </span>
-                <p className="font-sans text-sm text-slate-300 leading-relaxed">
+                <p className="font-sans text-sm text-brand-navy/60 leading-relaxed">
                   {flowSteps[1].description}
                 </p>
               </div>
@@ -200,7 +203,7 @@ export default function ExplainSection() {
             </div>
 
             {/* Step 3: Complete Systems */}
-            <motion.div variants={cardVariants} className="lg:col-span-3 h-full flex flex-col justify-between p-6 sm:p-8 rounded-2xl border border-white/5 bg-brand-navy/40 glass-panel-hover relative overflow-hidden group">
+            <motion.div variants={cardVariants} className="lg:col-span-3 h-full flex flex-col justify-between p-6 sm:p-8 rounded-2xl border border-brand-navy/8 bg-white shadow-sm relative overflow-hidden group">
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-brand-cyan/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
               <div>
@@ -208,15 +211,15 @@ export default function ExplainSection() {
                   <div className="p-3 rounded-xl bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan">
                     <ShieldCheck className="w-6 h-6" />
                   </div>
-                  <span className="font-display text-4xl font-bold text-slate-700/60 group-hover:text-brand-cyan/25 transition-colors duration-300">
+                  <span className="font-display text-4xl font-bold text-brand-navy/15 group-hover:text-brand-cyan/25 transition-colors duration-300">
                     {flowSteps[2].step}
                   </span>
                 </div>
-                <h3 className="font-display text-xl font-bold text-white mb-2">{flowSteps[2].title}</h3>
+                <h3 className="font-display text-xl font-bold text-brand-navy mb-2">{flowSteps[2].title}</h3>
                 <span className="inline-block text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-brand-cyan/10 text-brand-cyan mb-4 border border-brand-cyan/25">
                   {flowSteps[2].highlight}
                 </span>
-                <p className="font-sans text-sm text-slate-300 leading-relaxed">
+                <p className="font-sans text-sm text-brand-navy/60 leading-relaxed">
                   {flowSteps[2].description}
                 </p>
               </div>
@@ -229,8 +232,8 @@ export default function ExplainSection() {
             <div className="p-2.5 rounded-lg bg-brand-emerald/10 border border-brand-emerald/20 text-brand-emerald shrink-0">
               <Sparkles className="w-5 h-5 animate-pulse" />
             </div>
-            <p className="font-sans text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
-              <strong>The AI Advantage:</strong> Custom AI modeling algorithms operate across all three levels. Rather than traditional trial-and-error prototyping, our software agents automate design rules, select optimal cooling layouts, and validate thermal characteristics, cutting dev cycle time in half.
+            <p className="font-sans text-xs sm:text-sm text-brand-navy/60 max-w-2xl leading-relaxed">
+              <strong>Der KI-Vorteil:</strong> Maßgeschneiderte KI-Modellierungsalgorithmen wirken auf allen drei Ebenen. Anstelle von traditionellem Trial-and-Error-Prototyping automatisieren unsere Software-Agenten Designregeln, wählen optimale Kühllayouts und validieren thermische Eigenschaften – das halbiert die Entwicklungszeit.
             </p>
           </div>
 

@@ -1,18 +1,19 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const NAV_ITEMS = [
-  { label: "What we do", href: "/#what-we-do", anchorId: "#what-we-do", redirectOnly: false },
-  { label: "Industries", href: "/#industries", anchorId: "#industries", redirectOnly: false },
-  { label: "Solutions", href: "/solutions", anchorId: "#solutions", redirectOnly: true },
-  { label: "Why VEROTERA", href: "/#why-verotera", anchorId: "#why-verotera", redirectOnly: false },
-  { label: "About", href: "/about", anchorId: "#about", redirectOnly: true },
-  { label: "Contact", href: "/#contact", anchorId: "#contact", redirectOnly: false },
+  { label: "Lösungen",      href: "/solutions",   anchorId: null,          redirectOnly: true },
+  { label: "Applikationen", href: "/#industries", anchorId: "#industries", redirectOnly: false },
+  { label: "Support",       href: "/#contact",    anchorId: "#contact",    redirectOnly: false },
+  { label: "Über uns",      href: "/about",       anchorId: null,          redirectOnly: true },
+  { label: "Kontakt",       href: "/#contact",    anchorId: "#contact",    redirectOnly: false },
+  { label: "News",          href: "/#news",       anchorId: null,          redirectOnly: true },
+  { label: "Karriere",      href: "/karriere",    anchorId: null,          redirectOnly: true },
 ];
 
 export default function Header() {
@@ -20,7 +21,6 @@ export default function Header() {
   const [activeSection, setActiveSection] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
-  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,9 +31,9 @@ export default function Header() {
         return;
       }
 
-      const scrollPos = window.scrollY + 120; // offset for sticky header
+      const scrollPos = window.scrollY + 90;
       let currentSection = "";
-      
+
       for (const item of NAV_ITEMS) {
         if (!item.anchorId) continue;
         const el = document.querySelector(item.anchorId);
@@ -46,7 +46,7 @@ export default function Header() {
           }
         }
       }
-      
+
       if (
         window.innerHeight + window.scrollY >=
         document.documentElement.scrollHeight - 60
@@ -62,124 +62,162 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [pathname]);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, anchorId: string | null, redirectOnly: boolean) => {
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+    anchorId: string | null,
+    redirectOnly: boolean
+  ) => {
     setIsOpen(false);
-    // Only intercept scrolling for anchors that are NOT page redirect links
     if (anchorId && pathname === "/" && !redirectOnly) {
       e.preventDefault();
       const el = document.querySelector(anchorId);
       if (el) {
-        const top = (el as HTMLElement).offsetTop - 90;
-        window.scrollTo({
-          top,
-          behavior: "smooth",
-        });
+        const top = (el as HTMLElement).offsetTop - 70;
+        window.scrollTo({ top, behavior: "smooth" });
       }
     }
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || pathname !== "/"
-          ? "bg-brand-navy/90 backdrop-blur-md border-b border-white/5 py-4"
-          : "bg-transparent py-6"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <Link
-          href="/"
-          onClick={(e) => {
-            if (pathname === "/") {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-              setActiveSection("");
-            }
-          }}
-          className="flex items-center gap-2 group focus:outline-none"
-        >
-          <div className="relative w-36 h-9 transition-transform duration-300 group-hover:scale-[1.02]">
-            <Image
-              src="https://verotera.com/images/verotera-logo2.png"
-              alt="VEROTERA Logo"
-              fill
-              priority
-              className="object-contain"
-              sizes="144px"
-            />
-          </div>
-        </Link>
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Main Navigation Bar */}
+      <div
+        className={`bg-white border-b border-gray-200 transition-shadow duration-300 ${
+          isScrolled ? "shadow-sm" : ""
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
 
-        {/* Desktop Nav Items */}
-        <nav className="hidden md:flex items-center gap-8">
-          {NAV_ITEMS.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              onClick={(e) => handleNavClick(e, item.href, item.anchorId, item.redirectOnly)}
-              className={`font-sans text-sm font-medium tracking-wide transition-all duration-200 relative py-1 focus:outline-none hover:text-brand-cyan ${
-                activeSection === item.href
-                  ? "text-brand-cyan font-semibold"
-                  : "text-slate-300"
-              }`}
-            >
-              {item.label}
-              {activeSection === item.href && (
-                <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-cyan rounded-full shadow-[0_0_8px_rgba(45,212,191,0.6)]" />
-              )}
-            </Link>
-          ))}
-        </nav>
-
-        {/* CTA Button */}
-        <div className="hidden md:block">
+          {/* Logo */}
           <Link
-            href="/#contact"
-            onClick={(e) => handleNavClick(e, "/#contact", "#contact", false)}
-            className="inline-flex items-center justify-center px-6 py-2.5 rounded-full font-display text-sm font-semibold tracking-wide text-[#020617] bg-brand-cyan hover:bg-brand-cyan/90 transition-all duration-300 shadow-[0_0_15px_rgba(45,212,191,0.2)] hover:shadow-[0_0_25px_rgba(45,212,191,0.4)] transform hover:-translate-y-0.5 active:translate-y-0"
+            href="/"
+            onClick={(e) => {
+              if (pathname === "/") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setActiveSection("");
+              }
+            }}
+            className="flex items-center group focus:outline-none shrink-0"
           >
-            Talk to us
+            <div className="flex items-center gap-2.5 bg-brand-navy rounded-lg px-3 py-2 transition-transform duration-300 group-hover:scale-[1.02]">
+              <Image
+                src="/images/v-signet-transparent.png"
+                alt="VEROTERA Signet"
+                width={24}
+                height={24}
+                priority
+                className="object-contain h-6 w-6"
+              />
+              <Image
+                src="/images/verotera-wordmark.png"
+                alt="VEROTERA"
+                width={139}
+                height={16}
+                priority
+                className="object-contain h-4 w-auto"
+              />
+            </div>
           </Link>
-        </div>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-slate-300 hover:text-brand-cyan p-2 focus:outline-none"
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-        >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+          {/* Desktop Nav Items */}
+          <nav aria-label="Hauptnavigation" className="hidden md:flex">
+            <ul className="flex items-center gap-5 list-none m-0 p-0">
+              {NAV_ITEMS.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    onClick={(e) =>
+                      handleNavClick(e, item.href, item.anchorId, item.redirectOnly)
+                    }
+                    className={`font-sans text-sm tracking-wide transition-all duration-200 relative py-1 focus:outline-none ${
+                      activeSection === item.href
+                        ? "text-brand-navy font-semibold"
+                        : "text-brand-navy/70 font-medium hover:text-brand-navy"
+                    }`}
+                  >
+                    {item.label}
+                    {activeSection === item.href && (
+                      <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-cyan rounded-full" />
+                    )}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Right-side controls */}
+          <div className="hidden md:flex items-center gap-4 shrink-0">
+            {/* Language Toggle */}
+            <span className="text-sm font-medium text-brand-navy/60 select-none">
+              DE{" "}
+              <span className="text-brand-navy/30">|</span>{" "}
+              EN
+            </span>
+
+            {/* My VEROTERA Login Button */}
+            <Link
+              href="/login"
+              className="inline-flex items-center justify-center px-5 py-2 rounded-full text-sm font-semibold tracking-wide text-white bg-brand-navy hover:bg-brand-navy/85 transition-all duration-200 shadow-sm"
+            >
+              My VEROTERA Login
+            </Link>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-brand-navy/70 hover:text-brand-navy p-2 focus:outline-none"
+            aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Drawer menu */}
+      {/* Mobile Drawer Menu */}
       <div
-        className={`fixed inset-y-0 right-0 z-40 w-full max-w-xs bg-brand-navy/95 backdrop-blur-lg border-l border-white/5 shadow-2xl transition-transform duration-300 transform md:hidden ${
+        className={`fixed inset-y-0 right-0 z-40 w-full max-w-xs bg-white border-l border-gray-200 shadow-2xl transition-transform duration-300 transform md:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
-        style={{ top: "72px" }}
+        style={{ top: "64px" }}
       >
-        <nav className="flex flex-col gap-6 p-8">
-          {NAV_ITEMS.map((item) => (
+        <nav aria-label="Mobile Navigation">
+          <ul className="flex flex-col gap-1 p-6 list-none m-0">
+            {NAV_ITEMS.map((item) => (
+              <li key={item.label}>
+                <Link
+                  href={item.href}
+                  onClick={(e) =>
+                    handleNavClick(e, item.href, item.anchorId, item.redirectOnly)
+                  }
+                  className={`block font-sans text-base font-medium tracking-wide transition-colors py-2.5 px-2 rounded-lg focus:outline-none ${
+                    activeSection === item.href
+                      ? "text-brand-navy font-bold bg-brand-navy/5"
+                      : "text-brand-navy/70 hover:text-brand-navy hover:bg-brand-navy/5"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div className="px-6 pb-4 flex items-center gap-3">
+            <span className="text-sm font-medium text-brand-navy/60">
+              DE <span className="text-brand-navy/30">|</span> EN
+            </span>
+          </div>
+
+          <div className="px-6">
             <Link
-              key={item.label}
-              href={item.href}
-              onClick={(e) => handleNavClick(e, item.href, item.anchorId, item.redirectOnly)}
-              className={`font-sans text-lg font-medium tracking-wide transition-colors py-2 border-b border-white/5 focus:outline-none hover:text-brand-cyan ${
-                activeSection === item.href ? "text-brand-cyan font-bold" : "text-slate-300"
-              }`}
+              href="/login"
+              className="flex items-center justify-center px-6 py-3 rounded-full text-base font-semibold tracking-wide text-white bg-brand-navy hover:bg-brand-navy/85 transition-colors shadow-sm"
             >
-              {item.label}
+              My VEROTERA Login
             </Link>
-          ))}
-          <Link
-            href="/#contact"
-            onClick={(e) => handleNavClick(e, "/#contact", "#contact", false)}
-            className="mt-4 flex items-center justify-center px-6 py-3 rounded-full font-display text-base font-semibold tracking-wide text-[#020617] bg-brand-cyan hover:bg-brand-cyan/90 transition-colors shadow-lg"
-          >
-            Talk to us
-          </Link>
+          </div>
         </nav>
       </div>
     </header>
