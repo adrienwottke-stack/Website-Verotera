@@ -8,33 +8,33 @@ import BrandWatermark from "./BrandWatermark";
 const solutions = [
   {
     category: "Technologie Spotlight",
-    title: "Gallium Nitride (GaN)",
-    image: "/images/GaN.png",
-    href: "/solutions#gan",
+    title: "Galliumnitrid (GaN)",
+    image: "/images/power-module-gan-white.png",
+    href: "/solutions/technology-spotlight-gallium-nitride",
   },
   {
     category: "Technologie Spotlight",
-    title: "Silicium Carbide (SiC)",
-    image: "/images/SiC.png",
-    href: "/solutions#sic",
+    title: "Siliziumkarbid (SiC)",
+    image: "/images/power-module-sic.png",
+    href: "/solutions/technology-spotlight-silicium-carbide",
   },
   {
     category: "KI-Rechenzentren",
-    title: "Rack Power Distribution Unit Smart PDU",
-    image: "/images/ai-data-center-rack.png",
-    href: "/solutions#ai-datacenter",
+    title: "Rack Power Distribution Unit – Smart PDU",
+    image: "/images/ai-data-center-infrastructure.png",
+    href: "/solutions/rack-power-distribution",
   },
   {
     category: "Automotive",
     title: "Power Train – Antriebsstrang",
-    image: "/images/sic-gan-car.png",
-    href: "/solutions#automotive",
+    image: "/images/emobility-automotive.png",
+    href: "/applications/automotive-emobility",
   },
   {
     category: "E-Mobility",
     title: "Elektrifizierung von Nutzfahrzeugen",
     image: "/images/electric-truck.png",
-    href: "/solutions#emobility",
+    href: "/applications/automotive-emobility",
   },
 ];
 
@@ -89,12 +89,12 @@ export default function Solutions() {
                 <h3 className="font-display text-sm font-bold text-brand-navy mb-4 leading-snug flex-1">
                   {sol.title}
                 </h3>
-                <a
+                <Link
                   href={sol.href}
                   className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-brand-cyan text-brand-navy text-xs font-semibold hover:bg-brand-cyan/90 transition-colors duration-200 w-full justify-center"
                 >
                   Mehr erfahren <ArrowRight className="w-3.5 h-3.5" />
-                </a>
+                </Link>
               </div>
             </motion.div>
           ))}

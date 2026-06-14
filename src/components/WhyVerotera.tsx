@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { Layers, ShieldAlert, Workflow, Zap } from "lucide-react";
 import BrandWatermark from "./BrandWatermark";
 
@@ -59,6 +60,9 @@ export default function WhyVerotera() {
               </div>
 
               <div>
+                <span className="text-brand-cyan text-xs font-bold uppercase tracking-widest mb-3 block">
+                  Ihr Ziel. Unsere Technik. Eine Vision.
+                </span>
                 <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-3 leading-tight">
                   Nachhaltigen Einfluss schaffen – langfristig erfolgreich sein.
                 </h2>
@@ -76,12 +80,12 @@ export default function WhyVerotera() {
                   VeroCore X → VeroCore SiC – VeroCore GaN
                 </p>
 
-                <a
-                  href="/solutions"
+                <Link
+                  href="/solutions/wbg-power-modules"
                   className="inline-flex items-center gap-2 bg-brand-cyan text-brand-navy font-semibold px-6 py-3 rounded-lg text-sm hover:bg-brand-cyan/90 transition-colors duration-200"
                 >
                   Mehr erfahren
-                </a>
+                </Link>
               </div>
             </div>
           </div>

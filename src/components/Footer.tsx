@@ -71,8 +71,8 @@ export default function Footer() {
                 <Image
                   src="/images/verotera-wordmark.png"
                   alt="VEROTERA"
-                  width={174}
-                  height={20}
+                  width={824}
+                  height={95}
                   className="object-contain h-5 w-auto"
                 />
               </div>

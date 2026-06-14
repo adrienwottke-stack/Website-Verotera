@@ -4,6 +4,7 @@ import ExplainSection from "@/components/ExplainSection";
 import Industries from "@/components/Industries";
 import Solutions from "@/components/Solutions";
 import WhyVerotera from "@/components/WhyVerotera";
+import FeaturesAgenticAI from "@/components/FeaturesAgenticAI";
 import StatsSection from "@/components/StatsSection";
 import ContactSection from "@/components/ContactSection";
 import NewsInsights from "@/components/NewsInsights";
@@ -16,28 +17,31 @@ export default function Home() {
       <Header />
 
       <main className="flex-grow">
-        {/* Hero Section */}
+        {/* Hero Section (CSV: Hero) */}
         <Hero />
 
         {/* 10-Second Flowchart Key Explainer */}
         <ExplainSection />
 
-        {/* Industries Section */}
-        <Industries />
+        {/* Benefits Section (CSV: Your Goals. Our Tech. One Vision.) */}
+        <WhyVerotera />
 
-        {/* 3 Pillars Solution Section */}
+        {/* Technology Section (CSV: GaN / SiC / Smart PDU / Automotive) */}
         <Solutions />
 
-        {/* Why VEROTERA Core Advantage Section */}
-        <WhyVerotera />
+        {/* Industries / Applications proof */}
+        <Industries />
+
+        {/* Features Section (CSV: Agentische KI im Systems Engineering) */}
+        <FeaturesAgenticAI />
 
         {/* Stats, Patented Metrics & Founder Feature */}
         <StatsSection />
 
-        {/* Contact Form with simulated API success feedback */}
+        {/* Contact Form — primary conversion block */}
         <ContactSection />
 
-        {/* News & Insights Section */}
+        {/* News & Insights Section (CSV: News, last before footer) */}
         <NewsInsights />
       </main>
 

@@ -132,13 +132,21 @@ export default function Hero() {
 
             <p className="text-sm text-white/70 leading-relaxed mb-8">{active.text}</p>
 
-            <Link
-              href={active.ctaHref}
-              className="inline-flex items-center gap-2 bg-brand-cyan text-brand-navy font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:bg-brand-cyan/90 hover:shadow-[0_0_20px_rgba(34,184,207,0.4)]"
-            >
-              Discover more
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                href={active.ctaHref}
+                className="inline-flex items-center justify-center gap-2 bg-brand-cyan text-brand-navy font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:bg-brand-cyan/90 hover:shadow-[0_0_20px_rgba(34,184,207,0.4)]"
+              >
+                Discover more
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/#contact"
+                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 rounded-lg hover:bg-white/10 hover:border-white/50 transition-colors duration-200"
+              >
+                Kontakt aufnehmen
+              </Link>
+            </div>
           </motion.div>
 
           {/* Right side — intentionally empty, background image shows through */}

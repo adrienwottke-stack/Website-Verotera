@@ -89,8 +89,8 @@ export default function Header() {
               <Image
                 src="/images/verotera-wordmark.png"
                 alt="VEROTERA"
-                width={139}
-                height={16}
+                width={824}
+                height={95}
                 priority
                 className="object-contain h-4 w-auto"
               />
@@ -181,15 +181,21 @@ export default function Header() {
           </nav>
 
           {/* Right-side controls */}
-          <div className="hidden lg:flex items-center gap-4 shrink-0">
+          <div className="hidden lg:flex items-center gap-3 shrink-0">
             <span className="text-sm font-medium text-brand-navy/60 select-none">
               DE <span className="text-brand-navy/30">|</span> EN
             </span>
             <Link
               href="/login"
-              className="inline-flex items-center justify-center px-5 py-2 rounded-full text-sm font-semibold tracking-wide text-white bg-brand-navy hover:bg-brand-navy/85 transition-all duration-200 shadow-sm"
+              className="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-semibold tracking-wide text-brand-navy border border-brand-navy/20 hover:border-brand-navy/40 hover:bg-brand-navy/5 transition-all duration-200"
             >
-              My VEROTERA Login
+              Login
+            </Link>
+            <Link
+              href="/contacts"
+              className="inline-flex items-center justify-center px-5 py-2 rounded-full text-sm font-semibold tracking-wide text-brand-navy bg-brand-cyan hover:bg-brand-cyan/90 transition-all duration-200 shadow-sm hover:shadow-[0_0_18px_rgba(34,184,207,0.35)]"
+            >
+              Kontakt aufnehmen
             </Link>
           </div>
 
@@ -280,11 +286,18 @@ export default function Header() {
             </span>
           </div>
 
-          <div className="px-6 pb-8">
+          <div className="px-6 pb-8 flex flex-col gap-3">
+            <Link
+              href="/contacts"
+              onClick={() => setIsOpen(false)}
+              className="flex items-center justify-center px-6 py-3 rounded-full text-base font-semibold tracking-wide text-brand-navy bg-brand-cyan hover:bg-brand-cyan/90 transition-colors shadow-sm"
+            >
+              Kontakt aufnehmen
+            </Link>
             <Link
               href="/login"
               onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center px-6 py-3 rounded-full text-base font-semibold tracking-wide text-white bg-brand-navy hover:bg-brand-navy/85 transition-colors shadow-sm"
+              className="flex items-center justify-center px-6 py-3 rounded-full text-base font-semibold tracking-wide text-brand-navy border border-brand-navy/20 hover:bg-brand-navy/5 transition-colors"
             >
               My VEROTERA Login
             </Link>

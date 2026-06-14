@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Mail, MapPin, Send, CheckCircle2, Sparkles, Building2, User } from "lucide-react";
 import BrandWatermark from "./BrandWatermark";
 
@@ -91,13 +91,12 @@ export default function ContactSection() {
           <div className="lg:col-span-7">
             <div className="relative h-full min-h-[460px] rounded-3xl border border-brand-navy/8 bg-white p-8 sm:p-10 shadow-sm flex flex-col justify-center">
 
-              <AnimatePresence mode="wait">
-                {status !== "success" ? (
+              {status !== "success" ? (
                   <motion.form
                     key="contact-form"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
                     onSubmit={handleSubmit}
                     className="space-y-6"
                   >
@@ -193,13 +192,17 @@ export default function ContactSection() {
                         </>
                       )}
                     </button>
+
+                    <p className="text-center text-xs text-brand-navy/45">
+                      Antwort i.&nbsp;d.&nbsp;R. innerhalb von 24&nbsp;Geschäftsstunden · kein Verkaufsdruck
+                    </p>
                   </motion.form>
                 ) : (
                   <motion.div
                     key="success-screen"
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
                     className="flex flex-col items-center justify-center text-center p-6 space-y-6"
                   >
                     {/* Confetti decoration particles inside Success Frame */}
@@ -230,7 +233,6 @@ export default function ContactSection() {
                     </button>
                   </motion.div>
                 )}
-              </AnimatePresence>
 
             </div>
           </div>
