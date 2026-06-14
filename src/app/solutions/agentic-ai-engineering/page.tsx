@@ -9,9 +9,9 @@ import SplitFeature from "@/components/SplitFeature";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Agentic AI in Systems Engineering",
+  title: "How Agentic AI Accelerates SiC & GaN Engineering",
   description:
-    "Agentic AI Ecosystem Architecture - Shift from passive AI assistants (copilots) to autonomous agents that reason, plan, and act to deliver complex, multi-step engineering outcomes.",
+    "Shift from passive AI copilots to autonomous agents that reason, plan, and act to deliver complex, multi-step engineering outcomes.",
   keywords: ["ai-driven systems engineering", "agentic AI", "semiconductor simulation"],
 };
 

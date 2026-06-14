@@ -7,9 +7,9 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "About Us - [VEROTERA] Innovative Wide-Bandgap Semiconductor Modules",
+  title: "About VEROTERA – Wide-Bandgap Semiconductor Modules",
   description:
-    "VEROTERA's advanced WBG power modules are engineered to deliver unmatched performance, enabling smarter, more efficient systems across e-mobility, renewable-energy, and data centers.",
+    "VEROTERA's advanced WBG power modules deliver unmatched performance for smarter, more efficient systems across e-mobility, renewable energy and data centers.",
   keywords: ["Über VEROTERA", "Aly Mashaly", "Vision", "Mission", "WBG Halbleiter"],
 };
 

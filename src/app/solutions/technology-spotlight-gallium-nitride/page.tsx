@@ -7,7 +7,7 @@ import SpotlightTable from "@/components/SpotlightTable";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Technologie Spotlight Galliumnitrid (GaN)",
+  title: "GaN in AI Data Center Power Distribution",
   description:
     "GaN in AI data center power distribution: NVIDIA's 800 VDC rack architecture is a structural inflection point for GaN.",
   keywords: ["gallium nitride - GaN", "NVIDIA 800V DC rack", "high speed switching"],

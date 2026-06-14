@@ -8,7 +8,7 @@ import SplitFeature from "@/components/SplitFeature";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Electrification of Commercial Vehicles – Next Gen Drive Technology",
+  title: "Advancing Technologies for Zero-Emission e-Mobility",
   description:
     "Silicon Carbide (SiC) and Gallium Nitride (GaN) are accelerating the transition to electrified commercial vehicles",
   keywords: ["powertrain", "aux-inverter", "onboard-charging", "commercial vehicles", "TCO"],

@@ -9,9 +9,9 @@ import PduFlowchart from "@/components/PduFlowchart";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "AI Data Center – Rack Power Distribution Unit (PDU)",
+  title: "Wide-Bandgap Technology for the Future of AI Data Centers",
   description:
-    "The Full-GaN DC/DC converter represents a key enabling technology for the Power Shelf, replacing conventional silicon MOSFETs with Gallium Nitride (GaN) devices",
+    "The Full-GaN DC/DC converter is a key enabling technology for the Power Shelf, replacing silicon MOSFETs with Gallium Nitride (GaN) devices.",
   keywords: ["rack power distribution unit", "AI data center", "power shelf"],
 };
 

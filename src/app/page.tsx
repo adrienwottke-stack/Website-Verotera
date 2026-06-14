@@ -6,6 +6,7 @@ import Solutions from "@/components/Solutions";
 import WhyVerotera from "@/components/WhyVerotera";
 import StatsSection from "@/components/StatsSection";
 import ContactSection from "@/components/ContactSection";
+import NewsInsights from "@/components/NewsInsights";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -35,6 +36,9 @@ export default function Home() {
 
         {/* Contact Form with simulated API success feedback */}
         <ContactSection />
+
+        {/* News & Insights Section */}
+        <NewsInsights />
       </main>
 
       {/* Corporate Footer with statutory legal segments */}

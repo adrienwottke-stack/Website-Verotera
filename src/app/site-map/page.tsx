@@ -16,8 +16,7 @@ const groups: { heading: string; links: { label: string; href: string }[] }[] = 
     heading: "Allgemein",
     links: [
       { label: "Startseite", href: "/" },
-      { label: "Über uns", href: "/about" },
-      { label: "Karriere", href: "/careers" },
+      { label: "News & Insights", href: "/news" },
       { label: "Kontakt", href: "/contacts" },
     ],
   },
@@ -34,8 +33,27 @@ const groups: { heading: string; links: { label: string; href: string }[] }[] = 
   {
     heading: "Applikationen",
     links: [
+      { label: "WBG Leistungsmodule & Technologie", href: "/solutions/wbg-power-modules" },
+      { label: "AI Data Center", href: "/solutions/rack-power-distribution" },
       { label: "Automotive & E-Mobilität", href: "/applications/automotive-emobility" },
       { label: "Grüner Wasserstoff", href: "/applications/hydrogen" },
+    ],
+  },
+  {
+    heading: "Unternehmen",
+    links: [
+      { label: "Über VEROTERA", href: "/about" },
+      { label: "Karriere", href: "/careers" },
+      { label: "Ethik & Compliance", href: "/ethics-compliance" },
+    ],
+  },
+  {
+    heading: "Ressourcen",
+    links: [
+      { label: "Produktdokumentation", href: "/resources/product-documentation" },
+      { label: "Qualität & Zertifizierungen", href: "/resources/quality-certifications" },
+      { label: "Garantie", href: "/resources/warranty" },
+      { label: "Patente", href: "/resources/patents" },
     ],
   },
   {

@@ -18,14 +18,30 @@ const SOLUTIONS: NavLeaf[] = [
 ];
 
 const APPLICATIONS: NavLeaf[] = [
+  { label: "WBG Leistungsmodule & Technologie", href: "/solutions/wbg-power-modules" },
+  { label: "AI Data Center", href: "/solutions/rack-power-distribution" },
   { label: "Automotive & E-Mobilität", href: "/applications/automotive-emobility" },
   { label: "Grüner Wasserstoff", href: "/applications/hydrogen" },
+];
+
+const SUPPORT: NavLeaf[] = [
+  { label: "Technische Unterstützung", href: "/contacts" },
+  { label: "Kontakte", href: "/contacts" },
+];
+
+const ABOUT: NavLeaf[] = [
+  { label: "Über VEROTERA", href: "/about" },
+  { label: "Company Contacts", href: "/contacts" },
+  { label: "Führungsteam", href: "/about#leadership" },
+  { label: "Ethik & Compliance", href: "/ethics-compliance" },
 ];
 
 const NAV_ITEMS: NavItem[] = [
   { label: "Lösungen", children: SOLUTIONS },
   { label: "Applikationen", children: APPLICATIONS },
-  { label: "Über uns", href: "/about" },
+  { label: "Support", children: SUPPORT },
+  { label: "Über uns", children: ABOUT },
+  { label: "News", href: "/news" },
   { label: "Karriere", href: "/careers" },
   { label: "Kontakt", href: "/contacts" },
 ];
@@ -82,7 +98,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav aria-label="Hauptnavigation" className="hidden md:flex">
+          <nav aria-label="Hauptnavigation" className="hidden lg:flex">
             <ul className="flex items-center gap-1 list-none m-0 p-0">
               {NAV_ITEMS.map((item) => {
                 const active = isItemActive(item);
@@ -124,7 +140,7 @@ export default function Header() {
                       >
                         <ul className="w-72 bg-white border border-gray-200 rounded-xl shadow-lg p-2 list-none m-0">
                           {item.children.map((leaf) => (
-                            <li key={leaf.href}>
+                            <li key={leaf.label}>
                               <Link
                                 href={leaf.href}
                                 className={`block px-3 py-2.5 rounded-lg text-sm transition-colors duration-150 ${
@@ -165,7 +181,7 @@ export default function Header() {
           </nav>
 
           {/* Right-side controls */}
-          <div className="hidden md:flex items-center gap-4 shrink-0">
+          <div className="hidden lg:flex items-center gap-4 shrink-0">
             <span className="text-sm font-medium text-brand-navy/60 select-none">
               DE <span className="text-brand-navy/30">|</span> EN
             </span>
@@ -180,7 +196,7 @@ export default function Header() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-brand-navy/70 hover:text-brand-navy p-2 focus:outline-none"
+            className="lg:hidden text-brand-navy/70 hover:text-brand-navy p-2 focus:outline-none"
             aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -190,7 +206,7 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed inset-y-0 right-0 z-40 w-full max-w-xs bg-white border-l border-gray-200 shadow-2xl transition-transform duration-300 transform md:hidden overflow-y-auto ${
+        className={`fixed inset-y-0 right-0 z-40 w-full max-w-xs bg-white border-l border-gray-200 shadow-2xl transition-transform duration-300 transform lg:hidden overflow-y-auto ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         style={{ top: "64px" }}
@@ -221,7 +237,7 @@ export default function Header() {
                       }`}
                     >
                       {item.children.map((leaf) => (
-                        <li key={leaf.href}>
+                        <li key={leaf.label}>
                           <Link
                             href={leaf.href}
                             onClick={() => setIsOpen(false)}

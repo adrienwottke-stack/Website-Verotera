@@ -7,7 +7,7 @@ import SpotlightTable from "@/components/SpotlightTable";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Technologie Spotlight Siliziumkarbid (SiC)",
+  title: "SiC – Power Semiconductor of the Electrification Age",
   description:
     "SiC: The Wide-Bandgap Platform Driving Efficiency in Electric Vehicles, Solar Energy, and Green Hydrogen – From Device to System",
   keywords: ["silicium carbide - SiC", "traction inverter", "hydrogen converters"],

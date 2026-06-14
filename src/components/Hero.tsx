@@ -1,47 +1,113 @@
 "use client";
 
+import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+
+type Slide = {
+  image: string;
+  alt: string;
+  title: string;
+  subtitle: string;
+  text: string;
+  ctaHref: string;
+};
+
+const SLIDES: Slide[] = [
+  {
+    image: "/images/robotics-production.png",
+    alt: "Halbleiterfertigung mit Robotik",
+    title: "Advanced Semiconductor Technologies",
+    subtitle: "Wide-Bandgap at the Core",
+    text: "WBG-Leistungsmodule – vom Chip über das Modul bis zum zertifizierten Komplettsystem.",
+    ctaHref: "/solutions/wbg-power-modules",
+  },
+  {
+    image: "/images/data-center.png",
+    alt: "KI-Rechenzentrum mit Wide-Bandgap-Leistungselektronik",
+    title: "AI Data Center – Rack Power Distribution",
+    subtitle: "Rack Power Distribution Unit (PDU)",
+    text: "Full-GaN DC/DC-Wandler für die Stromverteilung der nächsten Rechenzentrumsgeneration.",
+    ctaHref: "/solutions/rack-power-distribution",
+  },
+  {
+    image: "/images/agentic-ai.png",
+    alt: "Agentische KI im Systems Engineering",
+    title: "Agentic AI in Systems Engineering",
+    subtitle: "Autonome Agenten für SiC & GaN",
+    text: "Von Copiloten zu autonomen Agenten, die komplexe Engineering-Aufgaben planen und beschleunigen.",
+    ctaHref: "/solutions/agentic-ai-engineering",
+  },
+];
+
+const AUTO_MS = 6500;
 
 export default function Hero() {
-  const scrollTo = (href: string) => {
-    const el = document.querySelector(href);
-    if (el) {
-      const top = (el as HTMLElement).offsetTop - 90;
-      window.scrollTo({ top, behavior: "smooth" });
-    }
-  };
+  const count = SLIDES.length;
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
 
-  const tabs = [
-    { label: "WBG Leistungsmodule & Technologie", href: "#what-we-do" },
-    { label: "KI-Rechenzentren", href: "#industries" },
-    { label: "Agentische KI im Systems Engineering", href: "#solutions" },
-  ];
+  const go = useCallback(
+    (delta: number) => setIndex((i) => (i + delta + count) % count),
+    [count],
+  );
+
+  // Auto-rotation — paused on hover/focus and when the user prefers reduced motion.
+  useEffect(() => {
+    if (paused) return;
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+    const id = setInterval(() => setIndex((i) => (i + 1) % count), AUTO_MS);
+    return () => clearInterval(id);
+  }, [count, index, paused]);
+
+  const active = SLIDES[index];
 
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden">
-      {/* Full-bleed background image */}
+    <section
+      aria-roledescription="carousel"
+      aria-label="VEROTERA Highlights"
+      className="relative min-h-screen flex flex-col overflow-hidden"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocusCapture={() => setPaused(true)}
+      onBlurCapture={() => setPaused(false)}
+    >
+      {/* Full-bleed background images — stacked, crossfaded via CSS opacity */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/data-center.png"
-          alt="KI-Rechenzentrum mit Wide-Bandgap-Leistungselektronik"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
+        {SLIDES.map((slide, i) => (
+          <div
+            key={slide.ctaHref}
+            aria-hidden={i !== index}
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+              i === index ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Image
+              src={slide.image}
+              alt={slide.alt}
+              fill
+              priority={i === 0}
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
+        ))}
         {/* Dark overlay over entire image */}
         <div className="absolute inset-0 bg-black/50" />
       </div>
 
-      {/* Main content area — takes up the full screen minus the tab bar */}
-      <div className="relative z-10 flex-1 flex items-center pt-16 pb-20">
+      {/* Main content area */}
+      <div className="relative z-10 flex-1 flex items-center pt-16 pb-24">
         <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Left glass panel */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            key={index}
+            initial={{ opacity: 0, x: -24 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="lg:col-span-6 bg-[#1d3040]/85 backdrop-blur-sm rounded-xl p-10 sm:p-14"
           >
             {/* Logo row */}
@@ -58,28 +124,21 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* H1 */}
             <h1 className="font-display text-3xl sm:text-4xl font-bold text-white leading-tight mb-4">
-              Advanced Semiconductor Technologies
+              {active.title}
             </h1>
 
-            {/* Sub-headline */}
-            <p className="text-lg text-white/80 mb-4">
-              Wide-Bandgap at the Core
-            </p>
+            <p className="text-lg text-white/80 mb-4">{active.subtitle}</p>
 
-            {/* Tagline */}
-            <p className="text-sm text-white/70 leading-relaxed mb-8">
-              Ihr Technologie- und Systempartner für WBG-Leistungsmodule der nächsten Generation. Entdecken Sie die umfassende Systemkompetenz für die elektrifizierte Welt.
-            </p>
+            <p className="text-sm text-white/70 leading-relaxed mb-8">{active.text}</p>
 
-            {/* CTA Button */}
-            <button
-              onClick={() => scrollTo("#what-we-do")}
-              className="inline-block bg-brand-cyan text-brand-navy font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:bg-brand-cyan/90 hover:shadow-[0_0_20px_rgba(34,184,207,0.4)]"
+            <Link
+              href={active.ctaHref}
+              className="inline-flex items-center gap-2 bg-brand-cyan text-brand-navy font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:bg-brand-cyan/90 hover:shadow-[0_0_20px_rgba(34,184,207,0.4)]"
             >
-              Mehr erfahren
-            </button>
+              Discover more
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </motion.div>
 
           {/* Right side — intentionally empty, background image shows through */}
@@ -87,19 +146,47 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Tab navigation bar — pinned to bottom of section */}
+      {/* Controls bar — pinned to bottom of section */}
       <div className="relative z-10 bg-brand-navy/90 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap">
-            {tabs.map((tab) => (
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between py-4 gap-4">
+          {/* Slide indicators */}
+          <div className="flex items-center gap-3">
+            {SLIDES.map((slide, i) => (
               <button
-                key={tab.label}
-                onClick={() => scrollTo(tab.href)}
-                className="px-6 py-4 text-sm text-white/70 hover:text-white border-b-2 border-transparent hover:border-brand-cyan transition-all duration-200 whitespace-nowrap"
+                key={slide.ctaHref}
+                type="button"
+                onClick={() => setIndex(i)}
+                aria-label={`Slide ${i + 1}: ${slide.subtitle}`}
+                aria-current={i === index ? "true" : undefined}
+                className="group py-2 focus:outline-none"
               >
-                {tab.label}
+                <span
+                  className={`block h-1.5 rounded-full transition-all duration-300 ${
+                    i === index ? "w-9 bg-brand-cyan" : "w-4 bg-white/30 group-hover:bg-white/55"
+                  }`}
+                />
               </button>
             ))}
+          </div>
+
+          {/* Prev / Next */}
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => go(-1)}
+              aria-label="Vorheriger Slide"
+              className="p-2 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              type="button"
+              onClick={() => go(1)}
+              aria-label="Nächster Slide"
+              className="p-2 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
           </div>
         </div>
       </div>

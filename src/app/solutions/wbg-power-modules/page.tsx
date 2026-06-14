@@ -7,9 +7,9 @@ import PageHero from "@/components/PageHero";
 import SplitFeature from "@/components/SplitFeature";
 
 export const metadata: Metadata = {
-  title: "High-Efficiency Power Module Solutions for a Sustainable Future",
+  title: "Innovative Wide-Bandgap Semiconductor Solutions",
   description:
-    "VEROTERA operates across the full stack – from chip physics to complete systems – and design technologies that reflect the actual needs and constraints of modern applications",
+    "VEROTERA operates across the full stack – from chip physics to complete systems, designing technologies for the real needs of modern applications.",
   keywords: ["wide bandgap semiconductors", "SiC modules", "GaN technology"],
 };
 

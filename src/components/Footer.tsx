@@ -3,19 +3,22 @@ import Link from "next/link";
 import BrandWatermark from "./BrandWatermark";
 
 const RESOURCE_LINKS = [
-  { label: "Produktdokumentation", href: "/solutions/wbg-power-modules" },
+  { label: "Produktdokumentation", href: "/resources/product-documentation" },
+  { label: "Qualität & Zertifizierungen", href: "/resources/quality-certifications" },
+  { label: "Garantie", href: "/resources/warranty" },
+  { label: "Patente", href: "/resources/patents" },
   { label: "Site Map", href: "/site-map" },
 ];
 
 const SUPPORT_LINKS = [
-  { label: "Supportanfrage stellen", href: "/contacts" },
   { label: "Technische Unterstützung", href: "/contacts" },
+  { label: "Kontakt", href: "/contacts" },
 ];
 
 const CORPORATE_LINKS = [
   { label: "Über VEROTERA", href: "/about" },
   { label: "Karriere", href: "/careers" },
-  { label: "Ethik & Compliance", href: "/legal/privacy-policy" },
+  { label: "Ethik & Compliance", href: "/ethics-compliance" },
 ];
 
 const LEGAL_LINKS = [
