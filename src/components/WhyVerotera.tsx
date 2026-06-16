@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { Layers, ShieldAlert, Workflow, Zap } from "lucide-react";
 import BrandWatermark from "./BrandWatermark";
 
@@ -42,12 +41,35 @@ export default function WhyVerotera() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
-        {/* Split Panel: Navy Box (left) + Image (right) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+        {/* Section Header (CSV: Your Goal. Our Tech. One Vision.) */}
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
+          <span className="font-display text-2xl sm:text-3xl font-bold text-brand-cyan block">
+            Your Goal. Our Tech. One Vision.
+          </span>
+          <p className="mt-4 font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed">
+            Wir gestalten den industriellen Wandel mit innovativen Wide-Bandgap-Halbleiter-Packaging-Technologien.
+          </p>
+        </div>
 
-          {/* Left: Navy Content Box */}
+        {/* Split Panel: Image (left) + Navy Box (right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-stretch">
+
+          {/* Left: Image */}
           <div className="lg:col-span-6">
-            <div className="bg-brand-navy rounded-2xl p-10 sm:p-14 h-full flex flex-col justify-between">
+            <div className="relative h-full min-h-[460px] rounded-2xl overflow-hidden border border-brand-navy/8">
+              <Image
+                src="/images/robotics-production.png"
+                alt="Collaborative Intelligence – Menschen und Präzision in der WBG-Fertigung"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </div>
+
+          {/* Right: Navy Content Box */}
+          <div className="lg:col-span-6">
+            <div className="bg-brand-navy rounded-2xl p-10 sm:p-14 h-full flex flex-col justify-center">
               {/* V-Signet Logo */}
               <div className="mb-6">
                 <Image
@@ -59,53 +81,28 @@ export default function WhyVerotera() {
                 />
               </div>
 
-              <div>
-                <span className="text-brand-cyan text-xs font-bold uppercase tracking-widest mb-3 block">
-                  Ihr Ziel. Unsere Technik. Eine Vision.
-                </span>
-                <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-3 leading-tight">
-                  Nachhaltigen Einfluss schaffen – langfristig erfolgreich sein.
-                </h2>
-                <p className="text-white/70 text-sm mb-6">
-                  Technologie- und Systempartner für WBG-Leistungsmodule der nächsten Generation
-                </p>
-                <p className="text-white/60 text-sm leading-relaxed mb-8">
-                  VEROTERAs fortschrittliche WBG-Leistungsmodule sind darauf ausgelegt, höchste Leistung zu liefern – für intelligentere und effizientere Systeme in KI-Rechenzentren, im Bereich des grünen Wasserstoffs, der E-Mobilität, erneuerbarer Energien und industrieller Automatisierung.
-                </p>
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-2 leading-tight">
+                Innovative Wide-Bandgap Halbleitermodule
+              </h3>
+              <p className="text-brand-cyan font-semibold text-lg mb-2">
+                Collaborative Intelligence
+              </p>
+              <p className="text-white/70 text-sm mb-8">
+                Powered by People and Precision – Connecting Global Expertise
+              </p>
 
-                <span className="text-brand-cyan text-xs font-bold uppercase tracking-wider mb-2 block">
-                  Lösungen
-                </span>
-                <p className="text-white font-bold text-lg mb-8">
-                  VeroCore X → VeroCore SiC – VeroCore GaN
-                </p>
-
-                <Link
-                  href="/solutions/wbg-power-modules"
-                  className="inline-flex items-center gap-2 bg-brand-cyan text-brand-navy font-semibold px-6 py-3 rounded-lg text-sm hover:bg-brand-cyan/90 transition-colors duration-200"
-                >
-                  Mehr erfahren
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Right: Image */}
-          <div className="lg:col-span-6">
-            <div className="relative h-full min-h-[500px] rounded-2xl overflow-hidden">
-              <Image
-                src="/images/our-tech.png"
-                alt="VEROTERA Technologie"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+              <span className="text-brand-cyan text-xs font-bold uppercase tracking-widest mb-3 block">
+                Applikationen
+              </span>
+              <p className="text-white/60 text-sm leading-relaxed">
+                VEROTERAs fortschrittliche WBG-Leistungsmodule sind darauf ausgelegt, höchste Leistung zu liefern – für intelligentere und effizientere Systeme in KI-Rechenzentren, E-Mobilität, erneuerbaren Energien, grünem Wasserstoff oder der Industrie-Automation. Wir gestalten die Zukunft des Engineerings durch intelligente Zusammenarbeit zwischen Menschen, Systemen und künstlicher Intelligenz – mit adaptiven, resilienten und nachhaltigen Lösungen, die mit ihrer Umgebung wachsen.
+              </p>
             </div>
           </div>
 
         </div>
 
-        {/* 4 Advantage Badges */}
+        {/* 4 Advantage Badges (CSV: Full Stack / System-Level / Industry Bridge / Fast Execution) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {badges.map((badge, index) => (
             <motion.div

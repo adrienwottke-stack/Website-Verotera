@@ -123,7 +123,7 @@ export default function StatsSection() {
                 {/* Founder Photo */}
                 <div className="relative w-28 h-28 rounded-2xl overflow-hidden bg-surface-light border border-brand-navy/8 shrink-0">
                   <Image
-                    src="https://verotera.com/images/aly-mashaly-founder-2.png"
+                    src="/images/aly-mashaly-founder-2.png"
                     alt="Aly Mashaly - VEROTERA Founder"
                     fill
                     className="object-cover"

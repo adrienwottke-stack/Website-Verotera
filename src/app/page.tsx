@@ -1,13 +1,16 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import ExplainSection from "@/components/ExplainSection";
-import Industries from "@/components/Industries";
-import Solutions from "@/components/Solutions";
+import ValueStatement from "@/components/ValueStatement";
 import WhyVerotera from "@/components/WhyVerotera";
+import AdvancedPackaging from "@/components/AdvancedPackaging";
+import ElectrifiedWorld from "@/components/ElectrifiedWorld";
+import ElectrifiedWorldCards from "@/components/ElectrifiedWorldCards";
+import EfficiencyDemand from "@/components/EfficiencyDemand";
+import WbgModuleSolutions from "@/components/WbgModuleSolutions";
 import FeaturesAgenticAI from "@/components/FeaturesAgenticAI";
+import AgenticEcosystem from "@/components/AgenticEcosystem";
 import StatsSection from "@/components/StatsSection";
 import ContactSection from "@/components/ContactSection";
-import NewsInsights from "@/components/NewsInsights";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -17,35 +20,44 @@ export default function Home() {
       <Header />
 
       <main className="flex-grow">
-        {/* Hero Section (CSV: Hero) */}
+        {/* Slide 2 — Hero */}
         <Hero />
 
-        {/* 10-Second Flowchart Key Explainer */}
-        <ExplainSection />
+        {/* Slide 3 — Advanced Semiconductors. Applied Engineering. Sustainable Impact. */}
+        <ValueStatement />
 
-        {/* Benefits Section (CSV: Your Goals. Our Tech. One Vision.) */}
+        {/* Slide 4+5 — Your Goal / Collaborative Intelligence + 4 Value Cards */}
         <WhyVerotera />
 
-        {/* Technology Section (CSV: GaN / SiC / Smart PDU / Automotive) */}
-        <Solutions />
+        {/* Slide 6 — Advanced Packaging */}
+        <AdvancedPackaging />
 
-        {/* Industries / Applications proof */}
-        <Industries />
+        {/* Slide 7 — The Electrified World (+40%) */}
+        <ElectrifiedWorld />
 
-        {/* Features Section (CSV: Agentische KI im Systems Engineering) */}
+        {/* Slide 8 — Electrified World detail cards */}
+        <ElectrifiedWorldCards />
+
+        {/* Slide 9 — Effizienzanforderung (+300 / -60 / -40) */}
+        <EfficiencyDemand />
+
+        {/* Slide 10 — Hocheffiziente WBG Leistungsmodullösungen */}
+        <WbgModuleSolutions />
+
+        {/* Slide 11 — Agentische KI / V-Modell */}
         <FeaturesAgenticAI />
 
-        {/* Stats, Patented Metrics & Founder Feature */}
+        {/* Slide 12 — Agentic AI Ecosystem Architecture */}
+        <AgenticEcosystem />
+
+        {/* Slide 13 — Stats + Founder */}
         <StatsSection />
 
-        {/* Contact Form — primary conversion block */}
+        {/* Slide 14 — Kontakt */}
         <ContactSection />
-
-        {/* News & Insights Section (CSV: News, last before footer) */}
-        <NewsInsights />
       </main>
 
-      {/* Corporate Footer with statutory legal segments */}
+      {/* Slide 15 — Corporate Footer */}
       <Footer />
     </div>
   );

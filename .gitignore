@@ -47,3 +47,7 @@ next-env.d.ts
 /Kunden Input/
 /.claude/
 /remove_white.js
+
+# Local review-render scratch (temporary)
+/tmp_render_review.py
+/tmp_review_pages/

@@ -21,7 +21,7 @@ const SLIDES: Slide[] = [
     alt: "Halbleiterfertigung mit Robotik",
     title: "Advanced Semiconductor Technologies",
     subtitle: "Wide-Bandgap at the Core",
-    text: "WBG-Leistungsmodule – vom Chip über das Modul bis zum zertifizierten Komplettsystem.",
+    text: "The Bridge between System-Level Demand and Semiconductor Innovation",
     ctaHref: "/solutions/wbg-power-modules",
   },
   {
@@ -137,14 +137,8 @@ export default function Hero() {
                 href={active.ctaHref}
                 className="inline-flex items-center justify-center gap-2 bg-brand-cyan text-brand-navy font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:bg-brand-cyan/90 hover:shadow-[0_0_20px_rgba(34,184,207,0.4)]"
               >
-                Discover more
+                Mehr erfahren
                 <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/#contact"
-                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-semibold px-6 py-3 rounded-lg hover:bg-white/10 hover:border-white/50 transition-colors duration-200"
-              >
-                Kontakt aufnehmen
               </Link>
             </div>
           </motion.div>

@@ -182,7 +182,7 @@ export default function AboutPage() {
                   <div className="flex flex-col items-center text-center mb-6">
                     <div className="relative w-32 h-32 rounded-3xl overflow-hidden bg-surface-light border border-brand-navy/10 mb-4">
                       <Image
-                        src="https://verotera.com/images/aly-mashaly-founder-2.png"
+                        src="/images/aly-mashaly-founder-2.png"
                         alt="Aly Mashaly – Founder & CEO"
                         fill
                         className="object-cover"
