@@ -118,7 +118,7 @@ export default function WhyVerotera() {
               </div>
 
               {/* Subtag */}
-              <span className="text-[9px] font-bold text-brand-emerald tracking-wider uppercase block mb-3">
+              <span className="text-[9px] font-bold text-brand-navy tracking-wider uppercase block mb-3">
                 {badge.highlight}
               </span>
 

@@ -42,7 +42,7 @@ export default function AdvancedPackaging() {
 
         {/* Section Header (centered) */}
         <Reveal className="max-w-4xl mx-auto text-center mb-16 sm:mb-24">
-          <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
+          <span className="text-lg font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
             Das volle Potenzial von SiC &amp; GaN ausschöpfen
           </span>
           <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-brand-navy mb-6">

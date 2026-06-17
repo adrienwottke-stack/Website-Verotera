@@ -4,8 +4,8 @@ import BrandWatermark from "@/components/BrandWatermark";
 
 const images = [
   {
-    src: "/images/ai-data-center-header.png",
-    alt: "KI-Rechenzentrum Header",
+    src: "/images/ai-data-center-infrastructure.png",
+    alt: "KI-Rechenzentrum Infrastruktur",
   },
   {
     src: "/images/ai-data-center-rack.png",
