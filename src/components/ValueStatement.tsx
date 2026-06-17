@@ -66,6 +66,7 @@ export default function ValueStatement() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 20vw"
+                  quality={90}
                 />
               </div>
             ))}
