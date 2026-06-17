@@ -58,7 +58,7 @@ export default function WhyVerotera() {
           <div className="lg:col-span-6">
             <div className="relative h-full min-h-[460px] rounded-2xl overflow-hidden border border-brand-navy/8">
               <Image
-                src="/images/robotics-production.png"
+                src="/images/wafer-production.jpg"
                 alt="Collaborative Intelligence – Menschen und Präzision in der WBG-Fertigung"
                 fill
                 className="object-cover"
@@ -69,34 +69,28 @@ export default function WhyVerotera() {
 
           {/* Right: Navy Content Box */}
           <div className="lg:col-span-6">
-            <div className="bg-brand-navy rounded-2xl p-10 sm:p-14 h-full flex flex-col justify-center">
-              {/* V-Signet Logo */}
-              <div className="mb-6">
-                <Image
-                  src="/images/v-signet-transparent.png"
-                  alt="VEROTERA Signet"
-                  width={32}
-                  height={32}
-                  className="w-8 h-8"
-                />
+            <div className="relative bg-brand-navy rounded-2xl p-10 sm:p-14 h-full flex flex-col justify-center overflow-hidden">
+              {/* Faint grey V-signet watermark behind the text */}
+              <BrandWatermark position="bottom-right" tint="light" size={360} opacity={0.06} />
+
+              <div className="relative z-10">
+                <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-2 leading-tight">
+                  Innovative Wide-Bandgap Halbleitermodule
+                </h3>
+                <p className="text-brand-cyan font-semibold text-lg mb-2">
+                  Collaborative Intelligence
+                </p>
+                <p className="text-white/70 text-sm mb-8">
+                  Powered by People and Precision – Connecting Global Expertise
+                </p>
+
+                <span className="text-brand-cyan text-xs font-bold uppercase tracking-widest mb-3 block">
+                  Applikationen
+                </span>
+                <p className="text-white/60 text-sm leading-relaxed">
+                  VEROTERAs fortschrittliche WBG-Leistungsmodule sind darauf ausgelegt, höchste Leistung zu liefern – für intelligentere und effizientere Systeme in KI-Rechenzentren, E-Mobilität, erneuerbaren Energien, grünem Wasserstoff oder der Industrie-Automation. Wir gestalten die Zukunft des Engineerings durch intelligente Zusammenarbeit zwischen Menschen, Systemen und künstlicher Intelligenz – mit adaptiven, resilienten und nachhaltigen Lösungen, die mit ihrer Umgebung wachsen.
+                </p>
               </div>
-
-              <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-2 leading-tight">
-                Innovative Wide-Bandgap Halbleitermodule
-              </h3>
-              <p className="text-brand-cyan font-semibold text-lg mb-2">
-                Collaborative Intelligence
-              </p>
-              <p className="text-white/70 text-sm mb-8">
-                Powered by People and Precision – Connecting Global Expertise
-              </p>
-
-              <span className="text-brand-cyan text-xs font-bold uppercase tracking-widest mb-3 block">
-                Applikationen
-              </span>
-              <p className="text-white/60 text-sm leading-relaxed">
-                VEROTERAs fortschrittliche WBG-Leistungsmodule sind darauf ausgelegt, höchste Leistung zu liefern – für intelligentere und effizientere Systeme in KI-Rechenzentren, E-Mobilität, erneuerbaren Energien, grünem Wasserstoff oder der Industrie-Automation. Wir gestalten die Zukunft des Engineerings durch intelligente Zusammenarbeit zwischen Menschen, Systemen und künstlicher Intelligenz – mit adaptiven, resilienten und nachhaltigen Lösungen, die mit ihrer Umgebung wachsen.
-              </p>
             </div>
           </div>
 
