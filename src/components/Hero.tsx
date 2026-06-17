@@ -112,16 +112,22 @@ export default function Hero() {
           >
             {/* Logo row */}
             <div className="flex items-center gap-3 mb-8">
-              <Image
-                src="/images/v-signet-transparent.png"
-                alt="VEROTERA Signet"
-                width={40}
-                height={40}
-                className="object-contain"
-              />
-              <span className="font-display text-white text-lg font-bold tracking-widest uppercase">
-                VEROTERA
-              </span>
+              <div className="flex items-center gap-2.5">
+                <Image
+                  src="/images/v-signet-transparent.png"
+                  alt="VEROTERA Signet"
+                  width={48}
+                  height={48}
+                  className="object-contain h-6 w-6 scale-150"
+                />
+                <Image
+                  src="/images/verotera-wordmark.png"
+                  alt="VEROTERA"
+                  width={824}
+                  height={95}
+                  className="object-contain h-4 w-auto"
+                />
+              </div>
             </div>
 
             <h1 className="font-display text-3xl sm:text-4xl font-bold text-white leading-tight mb-4">

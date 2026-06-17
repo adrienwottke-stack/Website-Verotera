@@ -81,10 +81,10 @@ export default function Header() {
               <Image
                 src="/images/v-signet-transparent.png"
                 alt="VEROTERA Signet"
-                width={24}
-                height={24}
+                width={48}
+                height={48}
                 priority
-                className="object-contain h-6 w-6"
+                className="object-contain h-6 w-6 scale-150"
               />
               <Image
                 src="/images/verotera-wordmark.png"
