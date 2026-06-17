@@ -21,15 +21,15 @@ const SLIDES: Slide[] = [
     alt: "Halbleiterfertigung mit Robotik",
     title: "Advanced Semiconductor Technologies",
     subtitle: "Wide-Bandgap at the Core",
-    text: "The Bridge between System-Level Demand and Semiconductor Innovation",
+    text: "Hocheffiziente WBG Leistungsmodullösungen für eine nachhaltige Zukunft\nVom Chip bis zum System – Technologiekompetenz für die elektrifizierte Welt.",
     ctaHref: "/solutions/wbg-power-modules",
   },
   {
     image: "/images/data-center.png",
     alt: "KI-Rechenzentrum mit Wide-Bandgap-Leistungselektronik",
     title: "AI Data Center – Rack Power Distribution",
-    subtitle: "Rack Power Distribution Unit (PDU)",
-    text: "Full-GaN DC/DC-Wandler für die Stromverteilung der nächsten Rechenzentrumsgeneration.",
+    subtitle: "SiC/GaN Technologie maximiert Effizienz und Leistungsdichte",
+    text: "Smart PDU – Leistungskonvertierung im Herz des 800 VDC Rack.\nFull-GaN DC-DC Wandler.",
     ctaHref: "/solutions/rack-power-distribution",
   },
   {
@@ -136,7 +136,7 @@ export default function Hero() {
 
             <p className="text-lg text-white/80 mb-4">{active.subtitle}</p>
 
-            <p className="text-sm text-white/70 leading-relaxed mb-8">{active.text}</p>
+            <p className="text-sm text-white/70 leading-relaxed mb-8 whitespace-pre-line">{active.text}</p>
 
             <div className="flex flex-col sm:flex-row gap-3">
               <Link

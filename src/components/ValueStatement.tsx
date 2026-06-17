@@ -4,24 +4,24 @@ import BrandWatermark from "@/components/BrandWatermark";
 
 const images = [
   {
-    src: "/images/sic-gan-car.png",
-    alt: "Elektrofahrzeug mit SiC- und GaN-Leistungselektronik",
+    src: "/images/ai-data-center-header.png",
+    alt: "KI-Rechenzentrum Header",
   },
   {
-    src: "/images/ai-data-center-infrastructure.png",
-    alt: "KI-Rechenzentrum mit effizienter Stromversorgung",
+    src: "/images/ai-data-center-rack.png",
+    alt: "KI-Rechenzentrum Rack Power Distribution",
   },
   {
-    src: "/images/sic-wafer.jpg",
-    alt: "Siliziumkarbid-Wafer in der Halbleiterfertigung",
+    src: "/images/emobility-automotive.png",
+    alt: "Elektromobilität und Automotive",
   },
   {
-    src: "/images/our-tech.png",
-    alt: "Leistungselektronik-Schaltkreis – Kerntechnologie von VEROTERA",
+    src: "/images/green-hydrogen.png",
+    alt: "Erneuerbare Energie und grüner Wasserstoff",
   },
   {
     src: "/images/robotics-production.png",
-    alt: "Industrielle Robotik in der automatisierten Produktion",
+    alt: "Industrielle Automatisierung und Robotik",
   },
 ];
 
@@ -33,7 +33,7 @@ export default function ValueStatement() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <Reveal>
           <div className="text-center max-w-4xl mx-auto">
-            <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
+            <span className="text-lg font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
               Advanced Semiconductors. Applied Engineering. Sustainable Impact.
             </span>
             <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy mb-8">
