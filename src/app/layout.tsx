@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Work_Sans, Inter } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const workSans = Work_Sans({
+  variable: "--font-work-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 const inter = Inter({
@@ -50,7 +50,7 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${spaceGrotesk.variable} ${inter.variable} scroll-smooth`}
+      className={`${workSans.variable} ${inter.variable} scroll-smooth`}
     >
       <body className="bg-white text-brand-navy font-sans antialiased selection:bg-brand-cyan/30 selection:text-brand-cyan">
         {children}

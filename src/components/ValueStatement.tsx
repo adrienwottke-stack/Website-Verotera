@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
-import BrandWatermark from "@/components/BrandWatermark";
 
 const images = [
   {
@@ -27,8 +26,7 @@ const images = [
 
 export default function ValueStatement() {
   return (
-    <section className="relative py-24 sm:py-32 bg-white overflow-hidden">
-      <BrandWatermark position="bottom-right" tint="blue" size={460} opacity={0.05} />
+    <section className="relative py-24 sm:py-32 bg-white overflow-hidden shadow-[0_-8px_30px_rgba(0,0,0,0.12)]">
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <Reveal>

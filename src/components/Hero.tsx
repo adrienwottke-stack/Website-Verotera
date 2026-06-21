@@ -70,7 +70,7 @@ export default function Hero() {
     <section
       aria-roledescription="carousel"
       aria-label="VEROTERA Highlights"
-      className="relative min-h-screen flex flex-col overflow-hidden"
+      className="sticky top-0 h-screen w-full flex flex-col overflow-hidden z-0"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}

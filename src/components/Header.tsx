@@ -11,7 +11,7 @@ type NavItem = { label: string; href?: string; children?: NavLeaf[] };
 
 const SOLUTIONS: NavLeaf[] = [
   { label: "WBG-Leistungsmodule", href: "/solutions/wbg-power-modules" },
-  { label: "Rack Power Distribution", href: "/solutions/rack-power-distribution" },
+  { label: "Stromverteilereinheit (Rack PDU)", href: "/solutions/rack-power-distribution" },
   { label: "Agentische KI im Systems Engineering", href: "/solutions/agentic-ai-engineering" },
   { label: "Spotlight: Galliumnitrid (GaN)", href: "/solutions/technology-spotlight-gallium-nitride" },
   { label: "Spotlight: Siliziumkarbid (SiC)", href: "/solutions/technology-spotlight-silicium-carbide" },

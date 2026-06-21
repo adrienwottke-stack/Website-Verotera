@@ -34,10 +34,10 @@ export default function AgenticEcosystem() {
         </Reveal>
 
         {/* Split: image left, navy panel right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Image */}
           <Reveal className="lg:col-span-6">
-            <div className="relative h-full min-h-[320px] lg:min-h-[480px] rounded-2xl overflow-hidden">
+            <div className="relative h-full min-h-[320px] lg:min-h-[480px] rounded-2xl overflow-hidden border border-brand-navy/8">
               <Image
                 src="/images/agentic-ai-system.png"
                 alt="Agentische KI im Systems Engineering"
@@ -48,20 +48,20 @@ export default function AgenticEcosystem() {
             </div>
           </Reveal>
 
-          {/* Navy panel */}
+          {/* Text panel */}
           <Reveal delay={0.1} className="lg:col-span-6">
-            <div className="bg-brand-navy rounded-2xl p-10 sm:p-14 h-full flex flex-col justify-center">
-              <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-1 leading-tight">
+            <div className="lg:pl-10 h-full flex flex-col justify-center py-6">
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-brand-navy mb-1 leading-tight">
                 Agentische KI im Systems Engineering
               </h3>
-              <p className="text-brand-cyan font-semibold text-base mb-8">
+              <p className="text-brand-blue font-semibold text-base mb-8">
                 Smarter Design Decision
               </p>
 
-              <span className="text-brand-cyan text-xs font-bold uppercase tracking-wider block mb-3">
+              <span className="text-brand-blue text-xs font-bold uppercase tracking-wider block mb-3">
                 Lösungen
               </span>
-              <p className="text-white/70 text-sm sm:text-base leading-relaxed mb-6">
+              <p className="text-brand-navy/70 text-sm sm:text-base leading-relaxed mb-6">
                 VEROTERA stellt KI-gestützte Methoden, intelligente Agenten und modellbasierte
                 Frameworks bereit – und ermöglicht damit:
               </p>
@@ -70,12 +70,12 @@ export default function AgenticEcosystem() {
                 {bullets.map((b) => (
                   <li key={b} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-brand-emerald shrink-0 mt-0.5" />
-                    <span className="text-white/80 text-sm sm:text-base">{b}</span>
+                    <span className="text-brand-navy/80 text-sm sm:text-base">{b}</span>
                   </li>
                 ))}
               </ul>
 
-              <p className="text-white/60 text-sm leading-relaxed italic">
+              <p className="text-brand-navy/60 text-sm leading-relaxed italic">
                 Unsere Lösungen verwandeln Komplexität in Klarheit – sie beschleunigen
                 Innovation und erschließen die kollektive Intelligenz von
                 Engineering-Organisationen.

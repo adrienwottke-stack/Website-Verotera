@@ -16,7 +16,7 @@ interface PageHeroProps {
 /**
  * Shared light-theme hero for all subpages. Sits below the fixed header,
  * carries the brand eyebrow + V-signet watermark, and matches the
- * landing-page typography (Space Grotesk display, navy on white).
+ * landing-page typography (Work Sans display, navy on white).
  */
 export default function PageHero({
   eyebrow,
@@ -31,20 +31,22 @@ export default function PageHero({
       <BrandWatermark position="top-right" tint="blue" size={460} opacity={0.05} />
 
       <div className={`${width === "wide" ? "max-w-7xl" : "max-w-5xl"} mx-auto px-6 relative z-10`}>
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 mb-8 text-xs font-semibold uppercase tracking-wider text-brand-navy/60 hover:text-brand-cyan transition-colors group focus:outline-none"
-        >
-          <ArrowLeft className="w-3.5 h-3.5 transition-transform duration-300 group-hover:-translate-x-1" />
-          Zurück zur Startseite
-        </Link>
+        <div className="flex flex-wrap items-center gap-6 mb-8">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-navy/60 hover:text-brand-cyan transition-colors group focus:outline-none"
+          >
+            <ArrowLeft className="w-3.5 h-3.5 transition-transform duration-300 group-hover:-translate-x-1" />
+            Zurück zur Startseite
+          </Link>
 
-        {eyebrow && (
-          <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand-cyan/25 bg-brand-cyan/5 text-brand-cyan text-xs font-semibold uppercase tracking-wider mb-6">
-            {Icon && <Icon className="w-3.5 h-3.5" />}
-            {eyebrow}
-          </span>
-        )}
+          {eyebrow && (
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand-cyan/25 bg-brand-cyan/5 text-brand-cyan text-xs font-semibold uppercase tracking-wider">
+              {Icon && <Icon className="w-3.5 h-3.5" />}
+              {eyebrow}
+            </span>
+          )}
+        </div>
 
         <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-navy mb-5 leading-tight">
           {title}

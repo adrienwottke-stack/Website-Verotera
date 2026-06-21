@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Layers, ShieldAlert, Workflow, Zap } from "lucide-react";
-import BrandWatermark from "./BrandWatermark";
 
 export default function WhyVerotera() {
   const badges = [
@@ -35,9 +34,6 @@ export default function WhyVerotera() {
 
   return (
     <section id="why-verotera" className="relative py-24 sm:py-32 bg-white overflow-hidden">
-      {/* Decorative blurred background lights */}
-      <div className="absolute right-0 top-1/4 w-[420px] h-[420px] bg-brand-blue/[0.05] rounded-full blur-[130px] pointer-events-none" />
-      <BrandWatermark position="bottom-left" tint="navy" size={480} opacity={0.045} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
@@ -67,30 +63,25 @@ export default function WhyVerotera() {
             </div>
           </div>
 
-          {/* Right: Navy Content Box */}
-          <div className="lg:col-span-6">
-            <div className="relative bg-brand-navy rounded-2xl p-10 sm:p-14 h-full flex flex-col justify-center overflow-hidden">
-              {/* Faint grey V-signet watermark behind the text */}
-              <BrandWatermark position="bottom-right" tint="light" size={360} opacity={0.06} />
+          {/* Right: Text Content */}
+          <div className="lg:col-span-6 flex flex-col justify-center lg:pl-10">
+            <div>
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-brand-navy mb-2 leading-tight">
+                Innovative Wide-Bandgap Halbleitermodule
+              </h3>
+              <p className="text-brand-blue font-semibold text-lg mb-2">
+                Collaborative Intelligence
+              </p>
+              <p className="text-brand-navy/60 text-sm mb-8">
+                Powered by People and Precision – Connecting Global Expertise
+              </p>
 
-              <div className="relative z-10">
-                <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-2 leading-tight">
-                  Innovative Wide-Bandgap Halbleitermodule
-                </h3>
-                <p className="text-brand-cyan font-semibold text-lg mb-2">
-                  Collaborative Intelligence
-                </p>
-                <p className="text-white/70 text-sm mb-8">
-                  Powered by People and Precision – Connecting Global Expertise
-                </p>
-
-                <span className="text-brand-cyan text-xs font-bold uppercase tracking-widest mb-3 block">
-                  Applikationen
-                </span>
-                <p className="text-white/60 text-sm leading-relaxed">
-                  VEROTERAs fortschrittliche WBG-Leistungsmodule sind darauf ausgelegt, höchste Leistung zu liefern – für intelligentere und effizientere Systeme in KI-Rechenzentren, E-Mobilität, erneuerbaren Energien, grünem Wasserstoff oder der Industrie-Automation. Wir gestalten die Zukunft des Engineerings durch intelligente Zusammenarbeit zwischen Menschen, Systemen und künstlicher Intelligenz – mit adaptiven, resilienten und nachhaltigen Lösungen, die mit ihrer Umgebung wachsen.
-                </p>
-              </div>
+              <span className="text-brand-blue text-xs font-bold uppercase tracking-widest mb-3 block">
+                Applikationen
+              </span>
+              <p className="text-brand-navy/70 text-sm leading-relaxed">
+                VEROTERAs fortschrittliche WBG-Leistungsmodule sind darauf ausgelegt, höchste Leistung zu liefern – für intelligentere und effizientere Systeme in KI-Rechenzentren, E-Mobilität, erneuerbaren Energien, grünem Wasserstoff oder der Industrie-Automation. Wir gestalten die Zukunft des Engineerings durch intelligente Zusammenarbeit zwischen Menschen, Systemen und künstlicher Intelligenz – mit adaptiven, resilienten und nachhaltigen Lösungen, die mit ihrer Umgebung wachsen.
+              </p>
             </div>
           </div>
 

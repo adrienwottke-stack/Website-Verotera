@@ -1,7 +1,5 @@
 import Image from "next/image";
-import { Check } from "lucide-react";
 import Reveal from "./Reveal";
-import BrandWatermark from "./BrandWatermark";
 
 const DELIVERS = [
   "Anforderungsanalyse",
@@ -11,62 +9,69 @@ const DELIVERS = [
   "Strukturierte Ergebnisse",
 ];
 
+/** Power-module thumbnail + the agentic-AI deliverables list. */
+function ModuleAndDelivers({ className = "" }: { className?: string }) {
+  return (
+    <div className={className}>
+      <div className="relative w-[130px] aspect-[4/3] rounded-lg overflow-hidden border border-brand-navy/8 bg-surface-light shadow-sm mb-5">
+        <Image
+          src="/images/power-module-black.png"
+          alt="VEROTERA Wide-Bandgap Leistungsmodul"
+          fill
+          className="object-cover"
+          sizes="130px"
+        />
+      </div>
+      <ul className="space-y-2 list-none m-0 p-0">
+        {DELIVERS.map((item) => (
+          <li key={item} className="flex items-center gap-2.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan shrink-0" />
+            <span className="text-sm font-semibold text-brand-navy/80">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default function FeaturesAgenticAI() {
   return (
     <section id="features" className="relative py-24 sm:py-32 bg-white overflow-hidden">
       {/* Decorative blurred background light */}
       <div className="absolute left-1/4 top-0 w-[420px] h-[420px] bg-brand-cyan/[0.06] rounded-full blur-[130px] pointer-events-none" />
-      <BrandWatermark position="top-right" tint="blue" size={460} opacity={0.05} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-3 block">
+        {/* Section Header — bold tagline as title, orchestration line below (matches reference) */}
+        <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight">
             Schneller. Präziser. Besser. Produktentwicklung mit agentischer KI
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy">
-            Orchestrierte Intelligenz für das Systems Engineering
           </h2>
+          <p className="mt-4 font-sans text-lg sm:text-xl text-brand-navy/60">
+            Orchestrierte Intelligenz für das Systems Engineering
+          </p>
         </div>
 
-        {/* Left: power module + delivers · Right: V-model lifecycle diagram */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-
-          {/* Left column — power module image + what agentic AI delivers */}
-          <Reveal className="lg:col-span-4 xl:col-span-3 order-2 lg:order-1">
-            <div className="relative w-full max-w-[260px] mx-auto lg:mx-0 aspect-[4/3] rounded-xl overflow-hidden border border-brand-navy/8 bg-surface-light mb-8">
-              <Image
-                src="/images/power-module-black.png"
-                alt="VEROTERA Wide-Bandgap Leistungsmodul"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 260px, 260px"
-              />
-            </div>
-            <ul className="space-y-3 list-none m-0 p-0">
-              {DELIVERS.map((item) => (
-                <li key={item} className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-brand-cyan shrink-0" />
-                  <span className="text-sm sm:text-base font-semibold text-brand-navy/75">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-
-          {/* Right column — V-model funnel graphic */}
-          <Reveal delay={0.1} className="lg:col-span-8 xl:col-span-9 order-1 lg:order-2">
+        {/* V-model funnel hero (V-signet at the centre); module + delivers overlaid on the left */}
+        <Reveal>
+          <div className="relative">
             <Image
-              src="/images/v-model.png"
+              src="/images/v-model-agentic.png"
               alt="Agentische KI über den gesamten V-Modell-Entwicklungszyklus – von Product Innovation Ideation über System Architecture Design bis Verification & Validation und End-of-Life"
-              width={1083}
-              height={395}
+              width={4294}
+              height={1507}
               className="w-full h-auto"
-              sizes="(max-width: 1024px) 100vw, 75vw"
+              sizes="(max-width: 1280px) 100vw, 1180px"
             />
-          </Reveal>
 
-        </div>
+            {/* Desktop: floated into the funnel's empty lower-left */}
+            <ModuleAndDelivers className="hidden lg:block absolute left-0 top-[40%]" />
+          </div>
+        </Reveal>
+
+        {/* Mobile / tablet: stacked below the funnel */}
+        <ModuleAndDelivers className="lg:hidden mt-10 max-w-xs mx-auto" />
+
       </div>
     </section>
   );

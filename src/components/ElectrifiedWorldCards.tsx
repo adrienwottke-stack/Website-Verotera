@@ -8,25 +8,25 @@ const CARDS = [
     label: "Elektromobilität",
     description:
       "Bis 2030 werden mehr als 300 Millionen Elektrofahrzeuge erwartet. Jedes Elektrofahrzeug benötigt etwa drei- bis fünfmal mehr Leistungselektronik als ein Fahrzeug mit Verbrennungsmotor.",
-    image: "/images/electric-truck.png",
+    image: "/images/e-mobility.png",
   },
   {
     label: "Industrielle Elektrifizierung",
     description:
       "Auf die Industrie entfallen 40 % des weltweiten Energieverbrauchs. Die Elektrifizierung von Motoren und Antrieben schreitet immer schneller voran.",
-    image: "/images/robotics-production.png",
+    image: "/images/industrial-automation.png",
   },
   {
     label: "Erneuerbare Energien",
     description:
       "Erneuerbare Energien sollen bis 2035 mehr als 55 % des weltweiten Strombedarfs decken.",
-    image: "/images/green-hydrogen.png",
+    image: "/images/renewable-energy.png",
   },
   {
     label: "KI Rechenzentren",
     description:
       "Der weltweite Strombedarf von Rechenzentren wird sich bis 2030 verdoppeln. Die Energieeffizienz ist die wichtigste Planungsvorgabe.",
-    image: "/images/data-center.png",
+    image: "/images/ai-data-center.png",
   },
 ];
 
@@ -37,7 +37,7 @@ export default function ElectrifiedWorldCards() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {CARDS.map((card, index) => (
             <Reveal key={card.label} delay={index * 0.1}>
-              <div className="relative h-56 rounded-2xl overflow-hidden group shadow-lg">
+              <div className="relative h-72 rounded-2xl overflow-hidden group shadow-lg">
                 {/* Background image */}
                 <div className="absolute inset-0 z-0">
                   <Image
@@ -48,7 +48,7 @@ export default function ElectrifiedWorldCards() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   {/* Dark gradient overlay for text readability */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/90 via-[#020617]/70 to-[#020617]/60" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/80 via-[#020617]/50 to-[#020617]/20" />
                 </div>
 
                 {/* Two-column inner layout over the image */}

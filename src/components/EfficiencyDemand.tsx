@@ -37,14 +37,14 @@ export default function EfficiencyDemand() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 sm:gap-16">
           {cards.map((card, index) => (
             <Reveal key={card.value} delay={index * 0.12}>
-              <div className="bg-brand-navy rounded-2xl p-8 text-center shadow-lg h-full flex flex-col items-center justify-center">
-                <p className="font-display text-4xl sm:text-5xl font-extrabold text-brand-cyan mb-4">
+              <div className="text-center h-full flex flex-col items-center justify-start">
+                <p className="font-display text-5xl sm:text-6xl font-extrabold text-brand-blue mb-4">
                   {card.value}
                 </p>
-                <p className="font-sans text-sm text-white/80 leading-relaxed">
+                <p className="font-sans text-sm sm:text-base text-brand-navy/70 leading-relaxed max-w-xs">
                   {card.label}
                 </p>
               </div>

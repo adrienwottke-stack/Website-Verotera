@@ -24,7 +24,7 @@ function SafeCounter({ value, suffix = "", duration = 2 }: CounterProps) {
     const end = value;
     const totalMiliseconds = duration * 1000;
     const incrementTime = Math.max(Math.floor(totalMiliseconds / end), 15);
-    
+
     const timer = setInterval(() => {
       start += Math.ceil(end / (totalMiliseconds / incrementTime));
       if (start >= end) {
@@ -78,7 +78,7 @@ export default function StatsSection() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
-          
+
           {/* Left Area: Stats Counts */}
           <div className="lg:col-span-6 flex flex-col justify-center">
             <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-3 block">
@@ -118,7 +118,7 @@ export default function StatsSection() {
             >
               {/* Top Accent line */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-cyan via-brand-blue to-brand-cyan" />
-              
+
               <div className="flex flex-col sm:flex-row gap-6 items-center mb-6">
                 {/* Founder Photo */}
                 <div className="relative w-28 h-28 rounded-2xl overflow-hidden bg-surface-light border border-brand-navy/8 shrink-0">

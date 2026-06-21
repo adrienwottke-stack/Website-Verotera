@@ -20,7 +20,7 @@ const solutions = [
   },
   {
     category: "KI-Rechenzentren",
-    title: "Rack Power Distribution Unit – Smart PDU",
+    title: "Stromverteilereinheit – Smart PDU",
     image: "/images/ai-data-center-infrastructure.png",
     href: "/solutions/rack-power-distribution",
   },

@@ -12,7 +12,7 @@ export default function WbgModuleSolutions() {
     <section className="relative py-24 sm:py-32 bg-white overflow-hidden">
       <BrandWatermark position="top-right" tint="navy" size={480} opacity={0.045} />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-6 relative z-10">
         {/* Centered header */}
         <Reveal className="text-center max-w-4xl mx-auto mb-16">
           <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan block mb-4">
@@ -23,28 +23,27 @@ export default function WbgModuleSolutions() {
           </h2>
         </Reveal>
 
-        {/* Split: image left, navy panel right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Image */}
-          <Reveal className="lg:col-span-6">
-            <div className="relative h-full min-h-[320px] lg:min-h-[480px] rounded-2xl overflow-hidden">
+        {/* Single unified layout: image left + text right, no background container */}
+        <Reveal>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Image half */}
+            <div className="relative lg:col-span-5 min-h-[260px] lg:min-h-[480px] rounded-2xl overflow-hidden border border-brand-navy/8">
               <Image
-                src="/images/power-module-sic.png"
-                alt="VEROTERA Wide-Bandgap Leistungsmodul"
+                src="/images/ai-data-center-header.png"
+                alt="VEROTERA Chip und Wafer – vom Wafer über das Leistungsmodul bis zum Rechenzentrum"
                 fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                quality={90}
+                className="object-cover object-[20%_center]"
+                sizes="100vw"
               />
             </div>
-          </Reveal>
 
-          {/* Navy panel */}
-          <Reveal delay={0.1} className="lg:col-span-6">
-            <div className="bg-brand-navy rounded-2xl p-10 sm:p-14 h-full flex flex-col justify-center">
-              <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-6 leading-tight">
+            {/* Text half */}
+            <div className="lg:col-span-7 flex flex-col justify-center py-6">
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-brand-navy mb-6 leading-tight">
                 Innovative Wide-Bandgap-Halbleiterlösungen
               </h3>
-              <p className="text-white/70 text-sm sm:text-base leading-relaxed mb-4">
+              <p className="text-brand-navy/70 text-sm sm:text-base leading-relaxed mb-4">
                 Verotera steht für ein neues Verständnis von WBG-Halbleitertechnologie:
                 präzise, systemdurchdacht und konsequent auf reale Anwendungen ausgerichtet.
                 Unser Team vereint jahrelange Praxiserfahrung aus Wechselrichterentwicklung,
@@ -53,7 +52,7 @@ export default function WbgModuleSolutions() {
                 hin zu hocheffizienten Gesamtsystemen – wir entwickeln Lösungen, die nicht nur
                 technisch überzeugen, sondern in der Praxis den Unterschied machen.
               </p>
-              <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+              <p className="text-brand-navy/70 text-sm sm:text-base leading-relaxed">
                 Diese einzigartige Positionierung ermöglicht es, Integrationskosten zu senken,
                 Entwicklungszyklen zu beschleunigen und höhere Systemeffizienz zu liefern. Mit
                 starken Branchennetzwerken und ausgewiesener Glaubwürdigkeit in der OEM- und
@@ -62,8 +61,8 @@ export default function WbgModuleSolutions() {
                 Markteinführung.
               </p>
             </div>
-          </Reveal>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
