@@ -40,10 +40,10 @@ export default function RackPowerDistributionPage() {
 
       <main className="flex-grow">
         <PageHero
-          eyebrow="KI-Rechenzentren"
+          eyebrow="Sustainable AI Data Center"
           icon={Server}
-          title="Rack Power Distribution Unit (PDU)"
-          subtitle="Der Full-GaN-DC/DC-Wandler ist eine Schlüsseltechnologie für das Power Shelf – er ersetzt konventionelle Silizium-MOSFETs durch Galliumnitrid (GaN) und ebnet den Weg zur 800-V-DC-Rack-Architektur."
+          title="Stromverteilereinheit - Rack Power Distribution Unit (PDU)"
+          subtitle="Wide-Bandgap SiC/GaN-Technologie gestaltet die Zukunft moderner KI-Rechenzentren."
           width="wide"
         />
 
