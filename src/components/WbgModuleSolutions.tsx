@@ -12,7 +12,7 @@ export default function WbgModuleSolutions() {
     <section className="relative py-24 sm:py-32 bg-white overflow-hidden">
       <BrandWatermark position="top-right" tint="navy" size={480} opacity={0.045} />
 
-      <div className="max-w-[1600px] mx-auto px-6 relative z-10">
+      <div className="max-w-[1800px] mx-auto px-6 lg:px-10 relative z-10">
         {/* Centered header */}
         <Reveal className="text-center max-w-4xl mx-auto mb-16">
           <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan block mb-4">
