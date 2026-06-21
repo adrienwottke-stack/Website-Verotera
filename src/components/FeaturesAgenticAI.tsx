@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
+import VModelFunnel from "./VModelFunnel";
 
 const DELIVERS = [
   "Anforderungsanalyse",
@@ -52,20 +53,13 @@ export default function FeaturesAgenticAI() {
           </p>
         </div>
 
-        {/* V-model funnel hero (V-signet at the centre); module + delivers overlaid on the left */}
+        {/* Interactive vector V-model funnel (V-signet at the centre); module + delivers overlaid on the left */}
         <Reveal>
           <div className="relative">
-            <Image
-              src="/images/v-model-agentic.png"
-              alt="Agentische KI über den gesamten V-Modell-Entwicklungszyklus – von Product Innovation Ideation über System Architecture Design bis Verification & Validation und End-of-Life"
-              width={4294}
-              height={1507}
-              className="w-full h-auto"
-              sizes="(max-width: 1280px) 100vw, 1180px"
-            />
+            <VModelFunnel />
 
             {/* Desktop: floated into the funnel's empty lower-left */}
-            <ModuleAndDelivers className="hidden lg:block absolute left-0 top-[40%]" />
+            <ModuleAndDelivers className="hidden lg:block absolute left-0 bottom-[6%] z-10" />
           </div>
         </Reveal>
 
