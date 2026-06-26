@@ -136,7 +136,7 @@ export default function VModelInteractive() {
   const right = PHASES.filter((p) => p.arm === "right");
 
   return (
-    <div className="rounded-3xl border border-brand-navy/8 bg-surface-light p-6 sm:p-10">
+    <div className="font-display rounded-3xl border border-brand-navy/8 bg-surface-light p-6 sm:p-10">
       <div className="mb-8 text-center">
         <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-2 block">
           Interaktives V-Modell

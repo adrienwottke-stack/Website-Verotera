@@ -12,7 +12,7 @@ const VB_W = 1100;
 const VB_H = 520;
 const CX = VB_W / 2;
 const TILEH = 56;
-const SLOPE = 0.87; // horizontal shift per vertical unit along the V diagonal (steeper = wider top notch)
+const SLOPE = 0.76; // horizontal shift per vertical unit along the V diagonal (steeper = wider top notch)
 const DX = SLOPE * TILEH; // lean of an arm parallelogram from top to bottom edge
 
 const inner = (y: number) => 409 + SLOPE * (y - 108);
@@ -122,6 +122,19 @@ const THREAD = `M ${PI[0]} ${PI[1]} L ${SRA[0] - 8} ${SRA[1]} Q ${SRA[0]} ${SRA[
 // short feed from the signet into the thread
 const FEED = `M ${SRA[0]} ${SRA[1]} Q ${(SRA[0] + SIGNET[0]) / 2} ${SRA[1] + 2} ${SIGNET[0] - 26} ${SIGNET[1] + 2}`;
 
+/**
+ * Cubic-bezier arc from a left-arm node → Agentic AI signet.
+ * Routes through y=8 (above all tiles) via the far-left of the diagram,
+ * so the in-tile portion is hidden by tile polygons (rendered on top)
+ * and only the clean outer arc + top sweep + notch descent are visible.
+ */
+const convPath = ([nx, ny]: Pt): string => {
+  const arcY = 8;                          // above tile row (tiles start y=40)
+  const cp1x = Math.max(15, nx * 0.28);   // pull hard left, proportional to x
+  const cp2x = SIGNET[0] - 80;            // approach signet from upper-left
+  return `M ${nx} ${ny} C ${cp1x} ${arcY} ${cp2x} ${arcY} ${SIGNET[0]} ${SIGNET[1]}`;
+};
+
 export default function VModelFunnel() {
   const [hovered, setHovered] = useState<string | null>(null);
   const activeTile = TILES.find((t) => t.id === hovered) ?? null;
@@ -136,7 +149,36 @@ export default function VModelFunnel() {
           <filter id="vm-glow" x="-60%" y="-60%" width="220%" height="220%">
             <feGaussianBlur stdDeviation="3" />
           </filter>
+          <filter id="pkt-glow" x="-250%" y="-250%" width="600%" height="600%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="b" />
+            <feMerge>
+              <feMergeNode in="b" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          {/* Convergence paths: each left-arm node → Agentic AI signet */}
+          {NODES.map((node, i) => (
+            <path key={i} id={`vm-path-${i}`} d={convPath(node)} />
+          ))}
+          <style>{`
+            @keyframes vm-flow { to { stroke-dashoffset: -14; } }
+          `}</style>
         </defs>
+
+        {/* Path lines — rendered UNDER tiles so in-tile portions are hidden */}
+        <g style={{ pointerEvents: "none" }}>
+          {NODES.map(([nx, ny], i) => {
+            const d = convPath([nx, ny]);
+            return (
+              <g key={`pathline-${i}`}>
+                <path d={d} fill="none" stroke="#22d3ee" strokeWidth="12" opacity="0.06" filter="url(#vm-glow)" strokeLinecap="round" />
+                <path d={d} fill="none" stroke="#22d3ee" strokeWidth="4" opacity="0.16" filter="url(#vm-glow)" strokeLinecap="round" />
+                <path d={d} fill="none" stroke="#22d3ee" strokeWidth="1.7" strokeDasharray="8 6" strokeLinecap="round" opacity="0.72"
+                  style={{ animation: "vm-flow 1.0s linear infinite" }} />
+              </g>
+            );
+          })}
+        </g>
 
         {/* Tiles — hovered one is rendered last so it sits on top */}
         {[...TILES.filter((t) => t.id !== hovered), ...TILES.filter((t) => t.id === hovered)].map((t) => {
@@ -197,20 +239,39 @@ export default function VModelFunnel() {
           );
         })}
 
-        {/* Agent thread — one calm line tracing the active (left) arm, with a node per phase */}
+        {/* Dots + nodes + signet glow — rendered OVER tiles */}
         <g style={{ pointerEvents: "none" }}>
-          {/* soft glow underlay */}
-          <path d={THREAD} fill="none" stroke="#22d3ee" strokeWidth="7" opacity="0.16" filter="url(#vm-glow)" strokeLinecap="round" strokeLinejoin="round" />
-          <path d={FEED} fill="none" stroke="#22d3ee" strokeWidth="6" opacity="0.14" filter="url(#vm-glow)" strokeLinecap="round" />
-          {/* crisp line */}
-          <path d={THREAD} fill="none" stroke="#22d3ee" strokeWidth="2.2" opacity="0.9" strokeLinecap="round" strokeLinejoin="round" />
-          <path d={FEED} fill="none" stroke="#22d3ee" strokeWidth="1.6" opacity="0.55" strokeLinecap="round" />
-          {/* nodes, one per left-arm phase */}
+          {/* Convergence pulse at signet */}
+          <circle cx={SIGNET[0]} cy={SIGNET[1]} r="14" fill="#22d3ee" opacity="0">
+            <animate attributeName="r" values="10;32" dur="2.0s" repeatCount="indefinite" calcMode="spline" keySplines="0.3 0 0.7 1" keyTimes="0;1" />
+            <animate attributeName="opacity" values="0.14;0" dur="2.0s" repeatCount="indefinite" calcMode="spline" keySplines="0.3 0 0.7 1" keyTimes="0;1" />
+          </circle>
+
+          {/* Traveling data-packet dots — follow full arc path */}
+          {NODES.map(([, ], i) => (
+            <circle key={`dot-${i}`} r="3.4" fill="#22d3ee" filter="url(#pkt-glow)">
+              <animateMotion dur="2.2s" begin={`${i * 0.44}s`} repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
+                <mpath href={`#vm-path-${i}`} />
+              </animateMotion>
+              <animate attributeName="opacity" values="0;0.95;0.95;0" keyTimes="0;0.08;0.88;1" dur="2.2s" begin={`${i * 0.44}s`} repeatCount="indefinite" />
+            </circle>
+          ))}
+
+          {/* Node ping rings + glowing cores */}
           {NODES.map(([x, y], i) => (
             <g key={`node-${i}`}>
-              <circle cx={x} cy={y} r="9" fill="#22d3ee" opacity="0.22" filter="url(#vm-glow)" />
-              <circle cx={x} cy={y} r="4.5" fill="#22d3ee" />
-              <circle cx={x} cy={y} r="1.7" fill="#ffffff" />
+              <circle cx={x} cy={y} r="5" fill="none" stroke="#22d3ee" strokeWidth="1">
+                <animate attributeName="r" values="5;26" dur="2.6s" begin={`${i * 0.52}s`} repeatCount="indefinite" calcMode="spline" keySplines="0.3 0 0.7 1" keyTimes="0;1" />
+                <animate attributeName="opacity" values="0.6;0" dur="2.6s" begin={`${i * 0.52}s`} repeatCount="indefinite" calcMode="spline" keySplines="0.3 0 0.7 1" keyTimes="0;1" />
+                <animate attributeName="stroke-width" values="1.5;0.3" dur="2.6s" begin={`${i * 0.52}s`} repeatCount="indefinite" calcMode="spline" keySplines="0.3 0 0.7 1" keyTimes="0;1" />
+              </circle>
+              <circle cx={x} cy={y} r="5" fill="none" stroke="#22d3ee" strokeWidth="1.5">
+                <animate attributeName="r" values="5;14" dur="1.8s" begin={`${i * 0.52 + 0.35}s`} repeatCount="indefinite" calcMode="spline" keySplines="0.3 0 0.7 1" keyTimes="0;1" />
+                <animate attributeName="opacity" values="0.55;0" dur="1.8s" begin={`${i * 0.52 + 0.35}s`} repeatCount="indefinite" calcMode="spline" keySplines="0.3 0 0.7 1" keyTimes="0;1" />
+              </circle>
+              <circle cx={x} cy={y} r="10" fill="#22d3ee" opacity="0.28" filter="url(#vm-glow)" />
+              <circle cx={x} cy={y} r="5" fill="#22d3ee" />
+              <circle cx={x} cy={y} r="2" fill="#ffffff" />
             </g>
           ))}
         </g>
