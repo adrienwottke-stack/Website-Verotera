@@ -110,10 +110,8 @@ const SIGNET: Pt = [476, 74];
 
 // "Agent thread": glowing nodes at each left-arm phase (inner-edge midpoints),
 // connected by one calm line that the signet feeds into.
-const NODES: Pt[] = LEFT.map((t) => [
-  (t.pts[1][0] + t.pts[2][0]) / 2,
-  (t.pts[1][1] + t.pts[2][1]) / 2,
-]);
+// Inner-top corner of each left-arm tile (pts[1] = top-right/inner-top vertex)
+const NODES: Pt[] = LEFT.map((t) => t.pts[1] as Pt);
 const PI = NODES[0];
 const SRA = NODES[1];
 const SAD = NODES[4];
