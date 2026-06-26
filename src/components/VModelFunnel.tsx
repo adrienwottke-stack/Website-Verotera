@@ -129,8 +129,8 @@ const FEED = `M ${SRA[0]} ${SRA[1]} Q ${(SRA[0] + SIGNET[0]) / 2} ${SRA[1] + 2} 
  * Lower nodes use a direct quadratic-bezier through the open central notch.
  */
 const convPath = ([nx, ny]: Pt): string => {
-  if (ny < 80) {
-    // Big arc: go far left + above tile row, then sweep right to signet
+  if (ny < 80 && nx < 300) {
+    // Node 0 only: big arc going far left + above tile row to avoid tile-1 text
     const arcY = 8;
     const cp1x = Math.max(15, nx * 0.28);
     return `M ${nx} ${ny} C ${cp1x} ${arcY} ${SIGNET[0] - 80} ${arcY} ${SIGNET[0]} ${SIGNET[1]}`;
@@ -173,7 +173,7 @@ export default function VModelFunnel() {
 
         {/* Top-node arcs UNDER tiles (ny < 80) — in-tile portions hidden, outer arc visible */}
         <g style={{ pointerEvents: "none" }}>
-          {NODES.filter(([, ny]) => ny < 80).map(([nx, ny], i) => {
+          {NODES.filter(([nx, ny]) => ny < 80 && nx < 300).map(([nx, ny], i) => {
             const d = convPath([nx, ny]);
             return (
               <g key={`pathline-top-${i}`}>
@@ -247,7 +247,7 @@ export default function VModelFunnel() {
 
         {/* Lower-node paths OVER tiles (ny >= 80) — direct Q-bezier through open notch */}
         <g style={{ pointerEvents: "none" }}>
-          {NODES.filter(([, ny]) => ny >= 80).map(([nx, ny], i) => {
+          {NODES.filter(([nx, ny]) => ny >= 80 || nx >= 300).map(([nx, ny], i) => {
             const d = convPath([nx, ny]);
             return (
               <g key={`pathline-low-${i}`}>
