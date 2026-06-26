@@ -123,16 +123,22 @@ const THREAD = `M ${PI[0]} ${PI[1]} L ${SRA[0] - 8} ${SRA[1]} Q ${SRA[0]} ${SRA[
 const FEED = `M ${SRA[0]} ${SRA[1]} Q ${(SRA[0] + SIGNET[0]) / 2} ${SRA[1] + 2} ${SIGNET[0] - 26} ${SIGNET[1] + 2}`;
 
 /**
- * Cubic-bezier arc from a left-arm node → Agentic AI signet.
- * Routes through y=8 (above all tiles) via the far-left of the diagram,
- * so the in-tile portion is hidden by tile polygons (rendered on top)
- * and only the clean outer arc + top sweep + notch descent are visible.
+ * Path from a left-arm node → Agentic AI signet.
+ * Top nodes (y < 80) use a big cubic-bezier arc that sweeps left and above
+ * the tile row so tile text is never crossed (in-tile portion hidden under tiles).
+ * Lower nodes use a direct quadratic-bezier through the open central notch.
  */
 const convPath = ([nx, ny]: Pt): string => {
-  const arcY = 8;                          // above tile row (tiles start y=40)
-  const cp1x = Math.max(15, nx * 0.28);   // pull hard left, proportional to x
-  const cp2x = SIGNET[0] - 80;            // approach signet from upper-left
-  return `M ${nx} ${ny} C ${cp1x} ${arcY} ${cp2x} ${arcY} ${SIGNET[0]} ${SIGNET[1]}`;
+  if (ny < 80) {
+    // Big arc: go far left + above tile row, then sweep right to signet
+    const arcY = 8;
+    const cp1x = Math.max(15, nx * 0.28);
+    return `M ${nx} ${ny} C ${cp1x} ${arcY} ${SIGNET[0] - 80} ${arcY} ${SIGNET[0]} ${SIGNET[1]}`;
+  }
+  // Direct arc through the open central notch (no tile text in this zone)
+  const cx = (nx + SIGNET[0]) / 2;
+  const cy = Math.min(ny, SIGNET[1]) - 22;
+  return `M ${nx} ${ny} Q ${cx} ${cy} ${SIGNET[0]} ${SIGNET[1]}`;
 };
 
 export default function VModelFunnel() {
@@ -165,12 +171,12 @@ export default function VModelFunnel() {
           `}</style>
         </defs>
 
-        {/* Path lines — rendered UNDER tiles so in-tile portions are hidden */}
+        {/* Top-node arcs UNDER tiles (ny < 80) — in-tile portions hidden, outer arc visible */}
         <g style={{ pointerEvents: "none" }}>
-          {NODES.map(([nx, ny], i) => {
+          {NODES.filter(([, ny]) => ny < 80).map(([nx, ny], i) => {
             const d = convPath([nx, ny]);
             return (
-              <g key={`pathline-${i}`}>
+              <g key={`pathline-top-${i}`}>
                 <path d={d} fill="none" stroke="#22d3ee" strokeWidth="12" opacity="0.06" filter="url(#vm-glow)" strokeLinecap="round" />
                 <path d={d} fill="none" stroke="#22d3ee" strokeWidth="4" opacity="0.16" filter="url(#vm-glow)" strokeLinecap="round" />
                 <path d={d} fill="none" stroke="#22d3ee" strokeWidth="1.7" strokeDasharray="8 6" strokeLinecap="round" opacity="0.72"
@@ -238,6 +244,21 @@ export default function VModelFunnel() {
             </g>
           );
         })}
+
+        {/* Lower-node paths OVER tiles (ny >= 80) — direct Q-bezier through open notch */}
+        <g style={{ pointerEvents: "none" }}>
+          {NODES.filter(([, ny]) => ny >= 80).map(([nx, ny], i) => {
+            const d = convPath([nx, ny]);
+            return (
+              <g key={`pathline-low-${i}`}>
+                <path d={d} fill="none" stroke="#22d3ee" strokeWidth="12" opacity="0.06" filter="url(#vm-glow)" strokeLinecap="round" />
+                <path d={d} fill="none" stroke="#22d3ee" strokeWidth="4" opacity="0.16" filter="url(#vm-glow)" strokeLinecap="round" />
+                <path d={d} fill="none" stroke="#22d3ee" strokeWidth="1.7" strokeDasharray="8 6" strokeLinecap="round" opacity="0.72"
+                  style={{ animation: "vm-flow 1.0s linear infinite" }} />
+              </g>
+            );
+          })}
+        </g>
 
         {/* Dots + nodes + signet glow — rendered OVER tiles */}
         <g style={{ pointerEvents: "none" }}>
