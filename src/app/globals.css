@@ -5,7 +5,8 @@
   --font-display: var(--font-work-sans), sans-serif;
   
   /* Brand Colors – extracted from PPTX & Logo */
-  --color-brand-cyan: #22b8cf;
+  --color-brand-cyan: #10A6E2;
+  --color-brand-cyan-end: #22b8cf;
   --color-brand-blue: #2e86c1;
   --color-brand-emerald: #10b981;
   --color-brand-navy: #234554;
@@ -50,8 +51,8 @@ body {
 }
 
 .glass-panel-hover:hover {
-  border-color: #22b8cf;
-  box-shadow: 0 4px 24px rgba(34, 184, 207, 0.12);
+  border-color: #10A6E2;
+  box-shadow: 0 4px 24px rgba(16, 166, 226, 0.12);
   transform: translateY(-2px);
 }
 
@@ -71,14 +72,14 @@ body {
 
 .dark-section .glass-panel-hover:hover {
   background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(34, 184, 207, 0.4);
-  box-shadow: 0 0 25px rgba(34, 184, 207, 0.15);
+  border-color: rgba(16, 166, 226, 0.4);
+  box-shadow: 0 0 25px rgba(16, 166, 226, 0.15);
 }
 
 /* Active Nav Links styling */
 .active-nav-link {
-  color: #22b8cf;
-  text-shadow: 0 0 8px rgba(34, 184, 207, 0.5);
+  color: #10A6E2;
+  text-shadow: 0 0 8px rgba(16, 166, 226, 0.5);
 }
 
 /* Scrollbar styles */
@@ -97,7 +98,18 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #22b8cf;
+  background: #10A6E2;
+}
+
+/* ── Brand gradient button ── */
+.btn-brand-gradient {
+  background: linear-gradient(90deg, #10A6E2, #22b8cf);
+  color: #ffffff;
+  transition: opacity 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-brand-gradient:hover {
+  opacity: 0.92;
+  box-shadow: 0 0 20px rgba(16, 166, 226, 0.35);
 }
 
 /* ── Alternating section backgrounds ── */

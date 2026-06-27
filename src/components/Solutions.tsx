@@ -91,7 +91,7 @@ export default function Solutions() {
                 </h3>
                 <Link
                   href={sol.href}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-brand-cyan text-brand-navy text-xs font-semibold hover:bg-brand-cyan/90 transition-colors duration-200 w-full justify-center"
+                  className="btn-brand-gradient inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold w-full justify-center"
                 >
                   Mehr erfahren <ArrowRight className="w-3.5 h-3.5" />
                 </Link>

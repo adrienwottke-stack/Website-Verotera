@@ -108,36 +108,33 @@ const TILES: Tile[] = [
 // "Agentic AI" lockup never overlaps the surrounding tiles.
 const SIGNET: Pt = [476, 74];
 
-// "Agent thread": glowing nodes at each left-arm phase (inner-edge midpoints),
-// connected by one calm line that the signet feeds into.
-// Inner-top corner of each left-arm tile (pts[1] = top-right/inner-top vertex)
-const NODES: Pt[] = LEFT.map((t) => t.pts[1] as Pt);
-const PI = NODES[0];
-const SRA = NODES[1];
-const SAD = NODES[4];
-// pi → (rounded corner at sra) → straight diagonal down through ucd/rs → sad
-const THREAD = `M ${PI[0]} ${PI[1]} L ${SRA[0] - 8} ${SRA[1]} Q ${SRA[0]} ${SRA[1]} ${SRA[0] + 9} ${SRA[1] + 12} L ${SAD[0]} ${SAD[1]}`;
-// short feed from the signet into the thread
-const FEED = `M ${SRA[0]} ${SRA[1]} Q ${(SRA[0] + SIGNET[0]) / 2} ${SRA[1] + 2} ${SIGNET[0] - 26} ${SIGNET[1] + 2}`;
+// Phase connection nodes = centroid of each left-arm tile (path anchors at tile centres).
+const NODES: Pt[] = LEFT.map((t) => centroid(t.pts));
 
-/**
- * Path from a left-arm node → Agentic AI signet.
- * Top nodes (y < 80) use a big cubic-bezier arc that sweeps left and above
- * the tile row so tile text is never crossed (in-tile portion hidden under tiles).
- * Lower nodes use a direct quadratic-bezier through the open central notch.
- */
+const Sx = SIGNET[0];
+const Sy = SIGNET[1];
+
+/* N0 (Product Innovation): wide arc that sweeps above all tiles then lands at the
+ * tile centre. Control points sit at y = -44 (above the viewBox top row) so the
+ * arc floats clearly over the diagram — requires the expanded viewBox below. */
+const [n0x, n0y] = NODES[0];
+const N0_PATH = `M ${n0x.toFixed(1)} ${n0y.toFixed(1)} C ${(n0x + 90).toFixed(1)} -44 ${(Sx - 90).toFixed(1)} -44 ${Sx} ${Sy}`;
+
+/* N1–N4: gentle inward-curved cubic bezier from each tile centroid → signet.
+ * Paths are rendered before tiles, so the in-tile segment is auto-hidden. */
 const convPath = ([nx, ny]: Pt): string => {
-  if (ny < 80 && nx < 300) {
-    // Node 0 only: big arc going far left + above tile row to avoid tile-1 text
-    const arcY = 8;
-    const cp1x = Math.max(15, nx * 0.28);
-    return `M ${nx} ${ny} C ${cp1x} ${arcY} ${SIGNET[0] - 80} ${arcY} ${SIGNET[0]} ${SIGNET[1]}`;
-  }
-  // Direct arc through the open central notch (no tile text in this zone)
-  const cx = (nx + SIGNET[0]) / 2;
-  const cy = Math.min(ny, SIGNET[1]) - 22;
-  return `M ${nx} ${ny} Q ${cx} ${cy} ${SIGNET[0]} ${SIGNET[1]}`;
+  const dx = Sx - nx, dy = Sy - ny;
+  const dist = Math.hypot(dx, dy);
+  const px = -dy / dist, py = dx / dist; // perpendicular toward open notch
+  const bend = Math.min(26, dist * 0.10);
+  const cp1x = nx + dx * 0.33 + px * bend;
+  const cp1y = ny + dy * 0.33 + py * bend;
+  const cp2x = Sx - dx * 0.33 + px * bend;
+  const cp2y = Sy - dy * 0.33 + py * bend;
+  return `M ${nx.toFixed(1)} ${ny.toFixed(1)} C ${cp1x.toFixed(1)} ${cp1y.toFixed(1)} ${cp2x.toFixed(1)} ${cp2y.toFixed(1)} ${Sx} ${Sy}`;
 };
+
+const ALL_PATHS = [N0_PATH, ...NODES.slice(1).map(convPath)];
 
 export default function VModelFunnel() {
   const [hovered, setHovered] = useState<string | null>(null);
@@ -160,7 +157,7 @@ export default function VModelFunnel() {
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
-          {/* Convergence paths: each left-arm node → Agentic AI signet */}
+          {/* Individual paths: each left-arm node → Agentic AI signet */}
           {NODES.map((node, i) => (
             <path key={i} id={`vm-path-${i}`} d={convPath(node)} />
           ))}
@@ -169,12 +166,12 @@ export default function VModelFunnel() {
           `}</style>
         </defs>
 
-        {/* Top-node arcs UNDER tiles (ny < 80) — in-tile portions hidden, outer arc visible */}
+        {/* Individual glowing paths — rendered BEFORE tiles so in-tile portions tuck cleanly under */}
         <g style={{ pointerEvents: "none" }}>
-          {NODES.filter(([nx, ny]) => ny < 80 && nx < 300).map(([nx, ny], i) => {
-            const d = convPath([nx, ny]);
+          {NODES.map((node, i) => {
+            const d = convPath(node);
             return (
-              <g key={`pathline-top-${i}`}>
+              <g key={`pathline-${i}`}>
                 <path d={d} fill="none" stroke="#22d3ee" strokeWidth="12" opacity="0.06" filter="url(#vm-glow)" strokeLinecap="round" />
                 <path d={d} fill="none" stroke="#22d3ee" strokeWidth="4" opacity="0.16" filter="url(#vm-glow)" strokeLinecap="round" />
                 <path d={d} fill="none" stroke="#22d3ee" strokeWidth="1.7" strokeDasharray="8 6" strokeLinecap="round" opacity="0.72"
@@ -196,7 +193,6 @@ export default function VModelFunnel() {
               style={{
                 transition: "transform .25s ease",
                 cursor: "pointer",
-                filter: isHover ? "drop-shadow(0 8px 16px rgba(15,41,66,.35))" : "none",
               }}
               onMouseEnter={() => setHovered(t.id)}
               onMouseLeave={() => setHovered((h) => (h === t.id ? null : h))}
@@ -243,21 +239,6 @@ export default function VModelFunnel() {
           );
         })}
 
-        {/* Lower-node paths OVER tiles (ny >= 80) — direct Q-bezier through open notch */}
-        <g style={{ pointerEvents: "none" }}>
-          {NODES.filter(([nx, ny]) => ny >= 80 || nx >= 300).map(([nx, ny], i) => {
-            const d = convPath([nx, ny]);
-            return (
-              <g key={`pathline-low-${i}`}>
-                <path d={d} fill="none" stroke="#22d3ee" strokeWidth="12" opacity="0.06" filter="url(#vm-glow)" strokeLinecap="round" />
-                <path d={d} fill="none" stroke="#22d3ee" strokeWidth="4" opacity="0.16" filter="url(#vm-glow)" strokeLinecap="round" />
-                <path d={d} fill="none" stroke="#22d3ee" strokeWidth="1.7" strokeDasharray="8 6" strokeLinecap="round" opacity="0.72"
-                  style={{ animation: "vm-flow 1.0s linear infinite" }} />
-              </g>
-            );
-          })}
-        </g>
-
         {/* Dots + nodes + signet glow — rendered OVER tiles */}
         <g style={{ pointerEvents: "none" }}>
           {/* Convergence pulse at signet */}
@@ -269,7 +250,7 @@ export default function VModelFunnel() {
           {/* Traveling data-packet dots — follow full arc path */}
           {NODES.map(([, ], i) => (
             <circle key={`dot-${i}`} r="3.4" fill="#22d3ee" filter="url(#pkt-glow)">
-              <animateMotion dur="2.2s" begin={`${i * 0.44}s`} repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
+              <animateMotion dur="2.2s" begin={`${i * 0.44}s`} repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear">
                 <mpath href={`#vm-path-${i}`} />
               </animateMotion>
               <animate attributeName="opacity" values="0;0.95;0.95;0" keyTimes="0;0.08;0.88;1" dur="2.2s" begin={`${i * 0.44}s`} repeatCount="indefinite" />
@@ -306,7 +287,7 @@ export default function VModelFunnel() {
       {/* Hover detail caption (HTML overlay, positioned at the active tile) */}
       {activeTile && (
         <div
-          className="pointer-events-none absolute z-20 w-[230px] rounded-xl border border-brand-navy/10 bg-white/95 px-4 py-3 shadow-xl backdrop-blur-sm transition-opacity duration-200"
+          className="pointer-events-none absolute z-20 w-[230px] rounded-xl border border-brand-navy/10 bg-white px-4 py-3 shadow-lg transition-opacity duration-200"
           style={{
             left: `${(acx / VB_W) * 100}%`,
             top: `${(acy / VB_H) * 100}%`,

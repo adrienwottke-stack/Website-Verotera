@@ -141,7 +141,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href={active.ctaHref}
-                className="inline-flex items-center justify-center gap-2 bg-brand-cyan text-brand-navy font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:bg-brand-cyan/90 hover:shadow-[0_0_20px_rgba(34,184,207,0.4)]"
+                className="btn-brand-gradient inline-flex items-center justify-center gap-2 font-semibold px-6 py-3 rounded-lg"
               >
                 Mehr erfahren
                 <ArrowRight className="w-4 h-4" />

@@ -59,21 +59,21 @@ export default function Footer() {
 
           {/* Left: Logo + tagline + LinkedIn */}
           <div className="lg:col-span-4 flex flex-col items-start text-left">
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="bg-transparent flex items-center gap-2.5">
+            <Link href="/" className="flex items-center mb-6">
+              <div className="flex items-center gap-2.5 bg-brand-navy rounded-lg px-3 py-2">
                 <Image
                   src="/images/v-signet-transparent.png"
-                  alt="VEROTERA"
-                  width={32}
-                  height={32}
-                  className="object-contain h-8 w-8"
+                  alt="VEROTERA Signet"
+                  width={48}
+                  height={48}
+                  className="object-contain h-6 w-6 scale-150"
                 />
                 <Image
                   src="/images/verotera-wordmark.png"
                   alt="VEROTERA"
                   width={824}
                   height={95}
-                  className="object-contain h-5 w-auto"
+                  className="object-contain h-4 w-auto"
                 />
               </div>
             </Link>
