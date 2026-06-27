@@ -108,8 +108,13 @@ const TILES: Tile[] = [
 // "Agentic AI" lockup never overlaps the surrounding tiles.
 const SIGNET: Pt = [476, 74];
 
-// Phase connection nodes = centroid of each left-arm tile (path anchors at tile centres).
-const NODES: Pt[] = LEFT.map((t) => centroid(t.pts));
+// Phase connection nodes:
+//   N0 (PI): midpoint of top edge (pts[0]↔pts[1]) — arc arrives from above
+//   N1–N4:   midpoint of inner edge (pts[1]↔pts[2]) — paths arrive from the right
+const NODES: Pt[] = LEFT.map((t, i) => i === 0
+  ? [(t.pts[0][0] + t.pts[1][0]) / 2, t.pts[0][1]] as Pt
+  : [(t.pts[1][0] + t.pts[2][0]) / 2, (t.pts[1][1] + t.pts[2][1]) / 2] as Pt
+);
 
 const Sx = SIGNET[0];
 const Sy = SIGNET[1];
@@ -145,7 +150,7 @@ export default function VModelFunnel() {
 
   return (
     <div className="relative w-full select-none">
-      <svg viewBox={`0 0 ${VB_W} ${VB_H}`} className="w-full h-auto" role="img" aria-label="Interaktives V-Modell des Entwicklungszyklus mit agentischer KI">
+      <svg viewBox={`0 -50 ${VB_W} ${VB_H + 50}`} className="w-full h-auto" role="img" aria-label="Interaktives V-Modell des Entwicklungszyklus mit agentischer KI">
         <defs>
           <filter id="vm-glow" x="-60%" y="-60%" width="220%" height="220%">
             <feGaussianBlur stdDeviation="3" />
@@ -157,9 +162,9 @@ export default function VModelFunnel() {
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
-          {/* Individual paths: each left-arm node → Agentic AI signet */}
-          {NODES.map((node, i) => (
-            <path key={i} id={`vm-path-${i}`} d={convPath(node)} />
+          {/* Individual paths: each left-arm tile centre → Agentic AI signet */}
+          {ALL_PATHS.map((d, i) => (
+            <path key={i} id={`vm-path-${i}`} d={d} />
           ))}
           <style>{`
             @keyframes vm-flow { to { stroke-dashoffset: -14; } }
@@ -168,17 +173,14 @@ export default function VModelFunnel() {
 
         {/* Individual glowing paths — rendered BEFORE tiles so in-tile portions tuck cleanly under */}
         <g style={{ pointerEvents: "none" }}>
-          {NODES.map((node, i) => {
-            const d = convPath(node);
-            return (
-              <g key={`pathline-${i}`}>
-                <path d={d} fill="none" stroke="#22d3ee" strokeWidth="12" opacity="0.06" filter="url(#vm-glow)" strokeLinecap="round" />
-                <path d={d} fill="none" stroke="#22d3ee" strokeWidth="4" opacity="0.16" filter="url(#vm-glow)" strokeLinecap="round" />
-                <path d={d} fill="none" stroke="#22d3ee" strokeWidth="1.7" strokeDasharray="8 6" strokeLinecap="round" opacity="0.72"
-                  style={{ animation: "vm-flow 1.0s linear infinite" }} />
-              </g>
-            );
-          })}
+          {ALL_PATHS.map((d, i) => (
+            <g key={`pathline-${i}`}>
+              <path d={d} fill="none" stroke="#22d3ee" strokeWidth="12" opacity="0.06" filter="url(#vm-glow)" strokeLinecap="round" />
+              <path d={d} fill="none" stroke="#22d3ee" strokeWidth="4" opacity="0.16" filter="url(#vm-glow)" strokeLinecap="round" />
+              <path d={d} fill="none" stroke="#22d3ee" strokeWidth="1.7" strokeDasharray="8 6" strokeLinecap="round" opacity="0.72"
+                style={{ animation: "vm-flow 1.0s linear infinite" }} />
+            </g>
+          ))}
         </g>
 
         {/* Tiles — hovered one is rendered last so it sits on top */}
