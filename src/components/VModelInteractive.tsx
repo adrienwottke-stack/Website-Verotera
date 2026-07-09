@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { FileSearch, LayoutGrid, Activity, Thermometer, CheckCircle2, Terminal } from "lucide-react";
+import { useLang } from "@/components/LangProvider";
+import type { Lang } from "@/lib/i18n";
 
 type Phase = {
   id: string;
@@ -13,83 +15,175 @@ type Phase = {
   logs: string[];
 };
 
-const PHASES: Phase[] = [
-  {
-    id: "requirements",
-    step: "01",
-    label: "Anforderungen",
-    icon: FileSearch,
-    agent: "Spec Agent",
-    arm: "left",
-    logs: [
-      "$ spec-agent --parse-standards",
-      "→ Lade IEC 60747, AEC-Q101, JEDEC …",
-      "→ 142 Constraints extrahiert",
-      "→ Mapping auf Engineering-Knowledge-Graph",
-      "✓ Spezifikation validiert (0 Konflikte)",
-    ],
+const PHASES: Record<Lang, Phase[]> = {
+  de: [
+    {
+      id: "requirements",
+      step: "01",
+      label: "Anforderungen",
+      icon: FileSearch,
+      agent: "Spec Agent",
+      arm: "left",
+      logs: [
+        "$ spec-agent --parse-standards",
+        "→ Lade IEC 60747, AEC-Q101, JEDEC …",
+        "→ 142 Constraints extrahiert",
+        "→ Mapping auf Engineering-Knowledge-Graph",
+        "✓ Spezifikation validiert (0 Konflikte)",
+      ],
+    },
+    {
+      id: "layout",
+      step: "02",
+      label: "Layout & Topologie",
+      icon: LayoutGrid,
+      agent: "Layout Agent",
+      arm: "left",
+      logs: [
+        "$ layout-agent --synthesize",
+        "→ Topologie-Exploration: LLC, DAB, 3L-NPC",
+        "→ Busbar-Routing optimiert (parasitär < 5 nH)",
+        "→ Kriechstrecken-/Luftstrecken-Check: OK",
+        "✓ Layout-Kandidat #3 ausgewählt",
+      ],
+    },
+    {
+      id: "simulation",
+      step: "03",
+      label: "Simulation",
+      icon: Activity,
+      agent: "Sim Agent",
+      arm: "bottom",
+      logs: [
+        "$ sim-agent --run spice+fem",
+        "→ Generiere Stimulus-Vektoren (240)",
+        "→ Doppelpuls-Test @ 800 V / 600 A",
+        "→ Schaltverluste: −62 % vs. Si-IGBT",
+        "✓ Keine Abweichung von der Spezifikation",
+      ],
+    },
+    {
+      id: "thermal",
+      step: "04",
+      label: "Thermik",
+      icon: Thermometer,
+      agent: "Thermal Agent",
+      arm: "right",
+      logs: [
+        "$ thermal-agent --fem-solve",
+        "→ Verlustleistungs-Mapping geladen",
+        "→ Sperrschichttemperatur Tj: 168 °C",
+        "→ Kühlkörper-Layout angepasst",
+        "✓ Tj < 175 °C Grenzwert eingehalten",
+      ],
+    },
+    {
+      id: "verification",
+      step: "05",
+      label: "Verifikation",
+      icon: CheckCircle2,
+      agent: "Verify Agent",
+      arm: "right",
+      logs: [
+        "$ verify-agent --qualification-matrix",
+        "→ AEC-Q & IEC 60747 Coverage: 100 %",
+        "→ Compliance-Dokumentation generiert",
+        "→ Offene Zuverlässigkeitsrisiken: 0",
+        "✓ Freigabe-Paket erstellt",
+      ],
+    },
+  ],
+  en: [
+    {
+      id: "requirements",
+      step: "01",
+      label: "Requirements",
+      icon: FileSearch,
+      agent: "Spec Agent",
+      arm: "left",
+      logs: [
+        "$ spec-agent --parse-standards",
+        "→ Loading IEC 60747, AEC-Q101, JEDEC …",
+        "→ 142 constraints extracted",
+        "→ Mapped onto engineering knowledge graph",
+        "✓ Specification validated (0 conflicts)",
+      ],
+    },
+    {
+      id: "layout",
+      step: "02",
+      label: "Layout & Topology",
+      icon: LayoutGrid,
+      agent: "Layout Agent",
+      arm: "left",
+      logs: [
+        "$ layout-agent --synthesize",
+        "→ Topology exploration: LLC, DAB, 3L-NPC",
+        "→ Busbar routing optimized (parasitics < 5 nH)",
+        "→ Creepage/clearance check: OK",
+        "✓ Layout candidate #3 selected",
+      ],
+    },
+    {
+      id: "simulation",
+      step: "03",
+      label: "Simulation",
+      icon: Activity,
+      agent: "Sim Agent",
+      arm: "bottom",
+      logs: [
+        "$ sim-agent --run spice+fem",
+        "→ Generating stimulus vectors (240)",
+        "→ Double-pulse test @ 800 V / 600 A",
+        "→ Switching losses: −62% vs. Si IGBT",
+        "✓ No deviation from specification",
+      ],
+    },
+    {
+      id: "thermal",
+      step: "04",
+      label: "Thermal",
+      icon: Thermometer,
+      agent: "Thermal Agent",
+      arm: "right",
+      logs: [
+        "$ thermal-agent --fem-solve",
+        "→ Power-loss mapping loaded",
+        "→ Junction temperature Tj: 168 °C",
+        "→ Heatsink layout adjusted",
+        "✓ Tj < 175 °C limit maintained",
+      ],
+    },
+    {
+      id: "verification",
+      step: "05",
+      label: "Verification",
+      icon: CheckCircle2,
+      agent: "Verify Agent",
+      arm: "right",
+      logs: [
+        "$ verify-agent --qualification-matrix",
+        "→ AEC-Q & IEC 60747 coverage: 100%",
+        "→ Compliance documentation generated",
+        "→ Open reliability risks: 0",
+        "✓ Release package created",
+      ],
+    },
+  ],
+};
+
+const UI: Record<Lang, { eyebrow: string; title: string; hint: string }> = {
+  de: {
+    eyebrow: "Interaktives V-Modell",
+    title: "Autonome KI-Agenten je Engineering-Phase",
+    hint: "Wählen Sie eine Phase, um zu sehen, welcher spezialisierte Agent sie beschleunigt.",
   },
-  {
-    id: "layout",
-    step: "02",
-    label: "Layout & Topologie",
-    icon: LayoutGrid,
-    agent: "Layout Agent",
-    arm: "left",
-    logs: [
-      "$ layout-agent --synthesize",
-      "→ Topologie-Exploration: LLC, DAB, 3L-NPC",
-      "→ Busbar-Routing optimiert (parasitär < 5 nH)",
-      "→ Kriechstrecken-/Luftstrecken-Check: OK",
-      "✓ Layout-Kandidat #3 ausgewählt",
-    ],
+  en: {
+    eyebrow: "Interactive V-Model",
+    title: "Autonomous AI agents for every engineering phase",
+    hint: "Select a phase to see which specialized agent accelerates it.",
   },
-  {
-    id: "simulation",
-    step: "03",
-    label: "Simulation",
-    icon: Activity,
-    agent: "Sim Agent",
-    arm: "bottom",
-    logs: [
-      "$ sim-agent --run spice+fem",
-      "→ Generiere Stimulus-Vektoren (240)",
-      "→ Doppelpuls-Test @ 800 V / 600 A",
-      "→ Schaltverluste: −62 % vs. Si-IGBT",
-      "✓ Keine Abweichung von der Spezifikation",
-    ],
-  },
-  {
-    id: "thermal",
-    step: "04",
-    label: "Thermik",
-    icon: Thermometer,
-    agent: "Thermal Agent",
-    arm: "right",
-    logs: [
-      "$ thermal-agent --fem-solve",
-      "→ Verlustleistungs-Mapping geladen",
-      "→ Sperrschichttemperatur Tj: 168 °C",
-      "→ Kühlkörper-Layout angepasst",
-      "✓ Tj < 175 °C Grenzwert eingehalten",
-    ],
-  },
-  {
-    id: "verification",
-    step: "05",
-    label: "Verifikation",
-    icon: CheckCircle2,
-    agent: "Verify Agent",
-    arm: "right",
-    logs: [
-      "$ verify-agent --qualification-matrix",
-      "→ AEC-Q & IEC 60747 Coverage: 100 %",
-      "→ Compliance-Dokumentation generiert",
-      "→ Offene Zuverlässigkeitsrisiken: 0",
-      "✓ Freigabe-Paket erstellt",
-    ],
-  },
-];
+};
 
 function PhaseButton({
   phase,
@@ -129,23 +223,26 @@ function PhaseButton({
 }
 
 export default function VModelInteractive() {
+  const lang = useLang();
+  const phases = PHASES[lang];
+  const ui = UI[lang];
   const [activeId, setActiveId] = useState<string>("requirements");
-  const active = PHASES.find((p) => p.id === activeId) ?? PHASES[0];
-  const left = PHASES.filter((p) => p.arm === "left");
-  const bottom = PHASES.filter((p) => p.arm === "bottom");
-  const right = PHASES.filter((p) => p.arm === "right");
+  const active = phases.find((p) => p.id === activeId) ?? phases[0];
+  const left = phases.filter((p) => p.arm === "left");
+  const bottom = phases.filter((p) => p.arm === "bottom");
+  const right = phases.filter((p) => p.arm === "right");
 
   return (
     <div className="font-display rounded-3xl border border-brand-navy/8 bg-surface-light p-6 sm:p-10">
       <div className="mb-8 text-center">
         <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-2 block">
-          Interaktives V-Modell
+          {ui.eyebrow}
         </span>
         <h3 className="font-display text-xl sm:text-2xl font-bold text-brand-navy">
-          Autonome KI-Agenten je Engineering-Phase
+          {ui.title}
         </h3>
         <p className="text-sm text-brand-navy/55 mt-2">
-          Wählen Sie eine Phase, um zu sehen, welcher spezialisierte Agent sie beschleunigt.
+          {ui.hint}
         </p>
       </div>
 

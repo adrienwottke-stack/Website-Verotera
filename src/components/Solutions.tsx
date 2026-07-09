@@ -4,41 +4,117 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import BrandWatermark from "./BrandWatermark";
+import { useLang, useLocalePath } from "@/components/LangProvider";
+import type { Lang } from "@/lib/i18n";
 
-const solutions = [
+type SolutionCard = { category: string; title: string; image: string; href: string };
+
+const COPY: Record<
+  Lang,
   {
-    category: "Technologie Spotlight",
-    title: "Galliumnitrid (GaN)",
-    image: "/images/power-module-gan-white.png",
-    href: "/solutions/technology-spotlight-gallium-nitride",
+    eyebrow: string;
+    headline: string;
+    sub: string;
+    learnMore: string;
+    ctaLead: string;
+    ctaBody: string;
+    ctaButton: string;
+    cards: SolutionCard[];
+  }
+> = {
+  de: {
+    eyebrow: "Lösungen & Technologien",
+    headline: "Von der Anwendungsanforderung zur systemgerechten WBG-Halbleiterlösung",
+    sub: "SiC und GaN – für jede Applikation die richtige Lösung.",
+    learnMore: "Mehr erfahren",
+    ctaLead:
+      "Benötigen Sie Expertenunterstützung, um innovative WBG-Technologie in anwendungsreife Systemlösungen zu überführen?",
+    ctaBody:
+      "Unsere Applikations- und Technologieexperten unterstützen Sie bei Auslegung, Validierung und Aufbau von SiC- und GaN-Lösungen, die exakt auf Ihre Systemanforderungen zugeschnitten sind.",
+    ctaButton: "Jetzt starten",
+    cards: [
+      {
+        category: "Technologie Spotlight",
+        title: "Galliumnitrid (GaN)",
+        image: "/images/power-module-gan-white.png",
+        href: "/solutions/technology-spotlight-gallium-nitride",
+      },
+      {
+        category: "Technologie Spotlight",
+        title: "Siliziumkarbid (SiC)",
+        image: "/images/power-module-sic.png",
+        href: "/solutions/technology-spotlight-silicium-carbide",
+      },
+      {
+        category: "KI-Rechenzentren",
+        title: "Stromverteilereinheit – Smart PDU",
+        image: "/images/ai-data-center-infrastructure.png",
+        href: "/solutions/rack-power-distribution",
+      },
+      {
+        category: "Automotive",
+        title: "Power Train – Antriebsstrang",
+        image: "/images/emobility-automotive.png",
+        href: "/applications/automotive-emobility",
+      },
+      {
+        category: "E-Mobility",
+        title: "Elektrifizierung von Nutzfahrzeugen",
+        image: "/images/electric-truck.png",
+        href: "/applications/automotive-emobility",
+      },
+    ],
   },
-  {
-    category: "Technologie Spotlight",
-    title: "Siliziumkarbid (SiC)",
-    image: "/images/power-module-sic.png",
-    href: "/solutions/technology-spotlight-silicium-carbide",
+  en: {
+    eyebrow: "Solutions & Technologies",
+    headline: "From application requirements to system-optimized WBG semiconductor solutions",
+    sub: "SiC and GaN — the right solution for every application.",
+    learnMore: "Learn more",
+    ctaLead:
+      "Need expert support to turn innovative WBG technology into application-ready system solutions?",
+    ctaBody:
+      "Our application and technology experts support you in designing, validating and building SiC and GaN solutions tailored exactly to your system requirements.",
+    ctaButton: "Get started",
+    cards: [
+      {
+        category: "Technology Spotlight",
+        title: "Gallium Nitride (GaN)",
+        image: "/images/power-module-gan-white.png",
+        href: "/solutions/technology-spotlight-gallium-nitride",
+      },
+      {
+        category: "Technology Spotlight",
+        title: "Silicon Carbide (SiC)",
+        image: "/images/power-module-sic.png",
+        href: "/solutions/technology-spotlight-silicium-carbide",
+      },
+      {
+        category: "AI Data Centers",
+        title: "Power Distribution Unit – Smart PDU",
+        image: "/images/ai-data-center-infrastructure.png",
+        href: "/solutions/rack-power-distribution",
+      },
+      {
+        category: "Automotive",
+        title: "Power Train",
+        image: "/images/emobility-automotive.png",
+        href: "/applications/automotive-emobility",
+      },
+      {
+        category: "E-Mobility",
+        title: "Electrification of Commercial Vehicles",
+        image: "/images/electric-truck.png",
+        href: "/applications/automotive-emobility",
+      },
+    ],
   },
-  {
-    category: "KI-Rechenzentren",
-    title: "Stromverteilereinheit – Smart PDU",
-    image: "/images/ai-data-center-infrastructure.png",
-    href: "/solutions/rack-power-distribution",
-  },
-  {
-    category: "Automotive",
-    title: "Power Train – Antriebsstrang",
-    image: "/images/emobility-automotive.png",
-    href: "/applications/automotive-emobility",
-  },
-  {
-    category: "E-Mobility",
-    title: "Elektrifizierung von Nutzfahrzeugen",
-    image: "/images/electric-truck.png",
-    href: "/applications/automotive-emobility",
-  },
-];
+};
 
 export default function Solutions() {
+  const lang = useLang();
+  const p = useLocalePath();
+  const t = COPY[lang];
+
   return (
     <section id="solutions" className="relative py-24 sm:py-32 bg-white overflow-hidden">
       {/* Decorative blurred background lights */}
@@ -50,19 +126,19 @@ export default function Solutions() {
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-16">
           <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-3 block">
-            Lösungen & Technologien
+            {t.eyebrow}
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy mb-5">
-            Von der Anwendungsanforderung zur systemgerechten WBG-Halbleiterlösung
+            {t.headline}
           </h2>
           <p className="font-sans text-base text-brand-navy/60">
-            SiC und GaN – für jede Applikation die richtige Lösung.
+            {t.sub}
           </p>
         </div>
 
         {/* 5-Card Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
-          {solutions.map((sol, i) => (
+          {t.cards.map((sol, i) => (
             <motion.div
               key={sol.title}
               initial={{ opacity: 0, y: 25 }}
@@ -90,10 +166,10 @@ export default function Solutions() {
                   {sol.title}
                 </h3>
                 <Link
-                  href={sol.href}
+                  href={p(sol.href)}
                   className="btn-brand-gradient inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold w-full justify-center"
                 >
-                  Mehr erfahren <ArrowRight className="w-3.5 h-3.5" />
+                  {t.learnMore} <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
             </motion.div>
@@ -103,13 +179,13 @@ export default function Solutions() {
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
           <p className="text-base text-brand-navy/70 mb-2 font-medium">
-            Benötigen Sie Expertenunterstützung, um innovative WBG-Technologie in anwendungsreife Systemlösungen zu überführen?
+            {t.ctaLead}
           </p>
           <p className="text-sm text-brand-navy/50 mb-6 max-w-2xl mx-auto">
-            Unsere Applikations- und Technologieexperten unterstützen Sie bei Auslegung, Validierung und Aufbau von SiC- und GaN-Lösungen, die exakt auf Ihre Systemanforderungen zugeschnitten sind.
+            {t.ctaBody}
           </p>
-          <Link href="/#contact" className="inline-flex items-center gap-2 px-7 py-3 rounded-lg bg-brand-navy text-white font-semibold text-sm hover:bg-brand-navy/90 transition-colors">
-            Jetzt starten <ArrowRight className="w-4 h-4" />
+          <Link href={p("/#contact")} className="inline-flex items-center gap-2 px-7 py-3 rounded-lg bg-brand-navy text-white font-semibold text-sm hover:bg-brand-navy/90 transition-colors">
+            {t.ctaButton} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 

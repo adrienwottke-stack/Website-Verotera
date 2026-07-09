@@ -3,35 +3,85 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import BrandWatermark from "@/components/BrandWatermark";
+import { useLang } from "@/components/LangProvider";
+import type { Lang } from "@/lib/i18n";
 
-const COLUMNS = [
-  {
-    title: "Das Potenzial der Chips wird nicht voll ausgeschöpft",
-    stat: "bis zu 30%",
-    label: "Effizienzsteigerung",
-    description: "Advanced Packaging optimiert elektrische Pfade und parasitäre Effekte",
+type Column = { title: string; stat: string; label: string; description: string };
+
+const COPY: Record<
+  Lang,
+  { eyebrow: string; lead: string; closing: string; columns: Column[] }
+> = {
+  de: {
+    eyebrow: "Das volle Potenzial von SiC & GaN ausschöpfen",
+    lead: "Das fehlende Bindeglied zwischen Chip-Potenzial und Leistung in der Praxis",
+    closing:
+      "Unsere innovativen Lösungen für Advanced Packaging adressieren vier grundlegende Herausforderungen moderner Leistungshalbleitertechnologie:",
+    columns: [
+      {
+        title: "Das Potenzial der Chips wird nicht voll ausgeschöpft",
+        stat: "bis zu 30%",
+        label: "Effizienzsteigerung",
+        description: "Advanced Packaging optimiert elektrische Pfade und parasitäre Effekte",
+      },
+      {
+        title: "Mangelhaftes Wärmemanagement",
+        stat: "+20–30%",
+        label: "Längere Lebensdauer",
+        description: "Eigenentwickeltes thermisches Design",
+      },
+      {
+        title: "Schwingungen bei der Parallelschaltung",
+        stat: "bis zu 50%",
+        label: "EMI-Reduzierung",
+        description: "Innovative Gate-Ansteuerungstechnik",
+      },
+      {
+        title: "Lange Entwicklungszyklen",
+        stat: "30%",
+        label: "Kürzere Markteinführungszeit",
+        description: "Standardisierte modulare Advanced Packaging Plattform",
+      },
+    ],
   },
-  {
-    title: "Mangelhaftes Wärmemanagement",
-    stat: "+20–30%",
-    label: "Längere Lebensdauer",
-    description: "Eigenentwickeltes thermisches Design",
+  en: {
+    eyebrow: "Unlocking the full potential of SiC & GaN",
+    lead: "The missing link between chip potential and real-world performance",
+    closing:
+      "Our innovative advanced packaging solutions address four fundamental challenges of modern power semiconductor technology:",
+    columns: [
+      {
+        title: "Chip potential is left untapped",
+        stat: "up to 30%",
+        label: "Efficiency gain",
+        description: "Advanced packaging optimizes electrical paths and parasitic effects",
+      },
+      {
+        title: "Inadequate thermal management",
+        stat: "+20–30%",
+        label: "Longer lifetime",
+        description: "Proprietary thermal design",
+      },
+      {
+        title: "Oscillations in parallel operation",
+        stat: "up to 50%",
+        label: "EMI reduction",
+        description: "Innovative gate-drive technology",
+      },
+      {
+        title: "Long development cycles",
+        stat: "30%",
+        label: "Faster time to market",
+        description: "Standardized modular advanced packaging platform",
+      },
+    ],
   },
-  {
-    title: "Schwingungen bei der Parallelschaltung",
-    stat: "bis zu 50%",
-    label: "EMI-Reduzierung",
-    description: "Innovative Gate-Ansteuerungstechnik",
-  },
-  {
-    title: "Lange Entwicklungszyklen",
-    stat: "30%",
-    label: "Kürzere Markteinführungszeit",
-    description: "Standardisierte modulare Advanced Packaging Plattform",
-  },
-];
+};
 
 export default function AdvancedPackaging() {
+  const lang = useLang();
+  const t = COPY[lang];
+
   return (
     <section className="relative py-24 sm:py-32 bg-white overflow-hidden">
       {/* Decorative blurred background light */}
@@ -43,23 +93,22 @@ export default function AdvancedPackaging() {
         {/* Section Header (centered) */}
         <Reveal className="max-w-4xl mx-auto text-center mb-16 sm:mb-24">
           <span className="text-lg font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
-            Das volle Potenzial von SiC &amp; GaN ausschöpfen
+            {t.eyebrow}
           </span>
           <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-brand-navy mb-6">
             Advanced Packaging
           </h2>
           <p className="font-sans text-lg sm:text-xl text-brand-navy/70 leading-relaxed mb-8">
-            Das fehlende Bindeglied zwischen Chip-Potenzial und Leistung in der Praxis
+            {t.lead}
           </p>
           <p className="font-sans text-base sm:text-lg font-semibold text-brand-navy leading-relaxed">
-            Unsere innovativen Lösungen für Advanced Packaging adressieren vier grundlegende
-            Herausforderungen moderner Leistungshalbleitertechnologie:
+            {t.closing}
           </p>
         </Reveal>
 
         {/* 4-column Challenge / Stat grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {COLUMNS.map((col, index) => (
+          {t.columns.map((col, index) => (
             <Reveal
               key={col.title}
               delay={index * 0.12}

@@ -32,10 +32,14 @@ const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.S
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
-  return ROUTES.map(({ path, priority, changeFrequency }) => ({
-    url: `${BASE_URL}${path}`,
-    lastModified,
-    changeFrequency,
-    priority,
-  }));
+  // German lives at the unprefixed URLs, English under /en (see src/proxy.ts).
+  return ROUTES.flatMap(({ path, priority, changeFrequency }) => {
+    const deUrl = `${BASE_URL}${path}`;
+    const enUrl = `${BASE_URL}/en${path === "/" ? "" : path}`;
+    const alternates = { languages: { de: deUrl, en: enUrl } };
+    return [
+      { url: deUrl, lastModified, changeFrequency, priority, alternates },
+      { url: enUrl, lastModified, changeFrequency, priority, alternates },
+    ];
+  });
 }

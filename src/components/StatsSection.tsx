@@ -5,6 +5,60 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { Award, GraduationCap, Quote } from "lucide-react";
 import BrandWatermark from "./BrandWatermark";
+import { useLang } from "@/components/LangProvider";
+import type { Lang } from "@/lib/i18n";
+
+const COPY: Record<
+  Lang,
+  {
+    eyebrow: string;
+    headlineA: string;
+    headlineB: string;
+    intro: string;
+    stats: { label: string; value: number; suffix: string }[];
+    founderRole: string;
+    founderFact1: string;
+    founderFact2: string;
+    quote: string;
+  }
+> = {
+  de: {
+    eyebrow: "Bewiesene Erfolgsbilanz",
+    headlineA: "Zahlen sprechen lauter",
+    headlineB: "als Technologie-Schlagworte",
+    intro:
+      "Wir fokussieren uns auf messbare Engineering-Leistungen. Unser Team hat aktiv Elektronik weltweit für industrielle Stromnetze und sicherheitskritische Plattformen entwickelt, simuliert, zertifiziert und eingesetzt.",
+    stats: [
+      { label: "Entwickelte Produkte", value: 100, suffix: "+" },
+      { label: "Kunden weltweit", value: 1500, suffix: "+" },
+      { label: "Jahre Expertise", value: 25, suffix: "+" },
+      { label: "Patente in Halbleitertechnologie", value: 18, suffix: "+" },
+    ],
+    founderRole: "Gründer & Geschäftsführer",
+    founderFact1: "25+ Jahre Halbleiterinnovation",
+    founderFact2: "Wide-Bandgap (SiC/GaN) Experte",
+    quote:
+      "„Bei VEROTERA haben wir ein Team geformt, das die Lücke zwischen Halbleiterphysik und industriellem OEM-Einsatz überbrückt. Unser Ziel ist es, die Fragmentierung der Branche zu durchbrechen und integrierte, hocheffiziente und zertifizierte Lösungen anzubieten, die die globale Elektrifizierung beschleunigen. Keine generischen Slogans – nur zuverlässige Hochleistungshardware, die durch maßgeschneiderte KI-Modellierungswerkzeuge schneller entwickelt wird.“",
+  },
+  en: {
+    eyebrow: "Proven Track Record",
+    headlineA: "Numbers speak louder",
+    headlineB: "than technology buzzwords",
+    intro:
+      "We focus on measurable engineering results. Our team has actively developed, simulated, certified and deployed electronics worldwide for industrial power grids and safety-critical platforms.",
+    stats: [
+      { label: "Products developed", value: 100, suffix: "+" },
+      { label: "Customers worldwide", value: 1500, suffix: "+" },
+      { label: "Years of expertise", value: 25, suffix: "+" },
+      { label: "Semiconductor technology patents", value: 18, suffix: "+" },
+    ],
+    founderRole: "Founder & Managing Director",
+    founderFact1: "25+ years of semiconductor innovation",
+    founderFact2: "Wide-bandgap (SiC/GaN) expert",
+    quote:
+      "“At VEROTERA we have built a team that bridges the gap between semiconductor physics and industrial OEM deployment. Our goal is to break through the industry's fragmentation and offer integrated, highly efficient, certified solutions that accelerate global electrification. No generic slogans — just reliable high-performance hardware, developed faster with tailor-made AI modeling tools.”",
+  },
+};
 
 interface CounterProps {
   value: number;
@@ -47,28 +101,9 @@ function SafeCounter({ value, suffix = "", duration = 2 }: CounterProps) {
 }
 
 export default function StatsSection() {
-  const statsList = [
-    {
-      label: "Entwickelte Produkte",
-      value: 100,
-      suffix: "+",
-    },
-    {
-      label: "Kunden weltweit",
-      value: 1500,
-      suffix: "+",
-    },
-    {
-      label: "Jahre Expertise",
-      value: 25,
-      suffix: "+",
-    },
-    {
-      label: "Patente in Halbleitertechnologie",
-      value: 18,
-      suffix: "+",
-    },
-  ];
+  const lang = useLang();
+  const t = COPY[lang];
+  const statsList = t.stats;
 
   return (
     <section id="about" className="relative py-24 sm:py-32 bg-white border-t border-brand-blue/10 overflow-hidden">
@@ -82,14 +117,14 @@ export default function StatsSection() {
           {/* Left Area: Stats Counts */}
           <div className="lg:col-span-6 flex flex-col justify-center">
             <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-3 block">
-              Bewiesene Erfolgsbilanz
+              {t.eyebrow}
             </span>
             <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy mb-6">
-              Zahlen sprechen lauter <br className="hidden sm:inline" />
-              als Technologie-Schlagworte
+              {t.headlineA} <br className="hidden sm:inline" />
+              {t.headlineB}
             </h2>
             <p className="font-sans text-base text-brand-navy/60 leading-relaxed mb-12">
-              Wir fokussieren uns auf messbare Engineering-Leistungen. Unser Team hat aktiv Elektronik weltweit für industrielle Stromnetze und sicherheitskritische Plattformen entwickelt, simuliert, zertifiziert und eingesetzt.
+              {t.intro}
             </p>
 
             {/* Grid of numbers */}
@@ -137,17 +172,17 @@ export default function StatsSection() {
                     Aly Mashaly
                   </h3>
                   <p className="font-sans text-xs text-brand-cyan font-semibold uppercase tracking-wider mb-2.5">
-                    Gründer & Geschäftsführer
+                    {t.founderRole}
                   </p>
 
                   <div className="flex flex-col gap-1.5 items-center sm:items-start text-xs text-brand-navy/50">
                     <span className="flex items-center gap-1.5">
                       <GraduationCap className="w-3.5 h-3.5 text-brand-cyan" />
-                      25+ Jahre Halbleiterinnovation
+                      {t.founderFact1}
                     </span>
                     <span className="flex items-center gap-1.5">
                       <Award className="w-3.5 h-3.5 text-brand-cyan" />
-                      Wide-Bandgap (SiC/GaN) Experte
+                      {t.founderFact2}
                     </span>
                   </div>
                 </div>
@@ -157,7 +192,7 @@ export default function StatsSection() {
               <div className="relative p-6 rounded-2xl bg-surface-light border border-brand-navy/8">
                 <Quote className="absolute top-4 left-4 w-10 h-10 text-brand-cyan/5 pointer-events-none" />
                 <p className="font-sans text-sm text-brand-navy/60 italic leading-relaxed relative z-10">
-                  „Bei VEROTERA haben wir ein Team geformt, das die Lücke zwischen Halbleiterphysik und industriellem OEM-Einsatz überbrückt. Unser Ziel ist es, die Fragmentierung der Branche zu durchbrechen und integrierte, hocheffiziente und zertifizierte Lösungen anzubieten, die die globale Elektrifizierung beschleunigen. Keine generischen Slogans – nur zuverlässige Hochleistungshardware, die durch maßgeschneiderte KI-Modellierungswerkzeuge schneller entwickelt wird.&ldquo;
+                  {t.quote}
                 </p>
               </div>
 

@@ -1,11 +1,36 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Reveal from "./Reveal";
 import { NEWS_ITEMS } from "@/data/news";
+import { useLang, useLocalePath } from "@/components/LangProvider";
+import type { Lang } from "@/lib/i18n";
+
+const COPY: Record<
+  Lang,
+  { headline: string; lead: string; allNews: string; readMore: string }
+> = {
+  de: {
+    headline: "Neuigkeiten & Einblicke",
+    lead: "Aktuelles rund um Wide-Bandgap-Halbleiter, Applikationen und Lösungen – regelmäßig neue Beiträge.",
+    allNews: "Alle News ansehen",
+    readMore: "Read more",
+  },
+  en: {
+    headline: "News & Insights",
+    lead: "The latest on wide-bandgap semiconductors, applications and solutions — new articles regularly.",
+    allNews: "View all news",
+    readMore: "Read more",
+  },
+};
 
 export default function NewsInsights() {
-  const items = NEWS_ITEMS.filter((n) => n.featured).slice(0, 3);
+  const lang = useLang();
+  const p = useLocalePath();
+  const t = COPY[lang];
+  const items = NEWS_ITEMS[lang].filter((n) => n.featured).slice(0, 3);
 
   return (
     <section id="news" className="relative py-24 sm:py-32 bg-white border-t border-brand-blue/10">
@@ -16,18 +41,17 @@ export default function NewsInsights() {
               News & Insights
             </span>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-brand-navy leading-tight">
-              Neuigkeiten & Einblicke
+              {t.headline}
             </h2>
             <p className="font-sans text-base text-brand-navy/60 leading-relaxed mt-4">
-              Aktuelles rund um Wide-Bandgap-Halbleiter, Applikationen und Lösungen – regelmäßig neue
-              Beiträge.
+              {t.lead}
             </p>
           </div>
           <Link
-            href="/news"
+            href={p("/news")}
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-brand-navy border border-brand-navy/15 hover:border-brand-cyan hover:text-brand-cyan transition-colors shrink-0 self-start"
           >
-            Alle News ansehen
+            {t.allNews}
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -36,7 +60,7 @@ export default function NewsInsights() {
           {items.map((item, i) => (
             <Reveal key={item.href} delay={i * 0.08}>
               <Link
-                href={item.href}
+                href={p(item.href)}
                 className="group block h-full rounded-2xl overflow-hidden border border-brand-navy/8 bg-white hover:shadow-lg hover:border-brand-cyan/30 transition-all duration-300"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-surface-light">
@@ -60,7 +84,7 @@ export default function NewsInsights() {
                   </h3>
                   <p className="text-sm text-brand-navy/60 leading-relaxed mb-4">{item.excerpt}</p>
                   <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-cyan">
-                    Read more
+                    {t.readMore}
                     <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </span>
                 </div>

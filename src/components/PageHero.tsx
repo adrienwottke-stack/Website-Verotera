@@ -1,8 +1,7 @@
 import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 import BrandWatermark from "./BrandWatermark";
+import BackHomeLink from "./BackHomeLink";
 
 interface PageHeroProps {
   eyebrow?: string;
@@ -32,13 +31,7 @@ export default function PageHero({
 
       <div className={`${width === "wide" ? "max-w-7xl" : "max-w-5xl"} mx-auto px-6 relative z-10`}>
         <div className="flex flex-wrap items-center gap-6 mb-8">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-navy/60 hover:text-brand-cyan transition-colors group focus:outline-none"
-          >
-            <ArrowLeft className="w-3.5 h-3.5 transition-transform duration-300 group-hover:-translate-x-1" />
-            Zurück zur Startseite
-          </Link>
+          <BackHomeLink />
 
           {eyebrow && (
             <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand-cyan/25 bg-brand-cyan/5 text-brand-cyan text-xs font-semibold uppercase tracking-wider">

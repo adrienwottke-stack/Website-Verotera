@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { useLang } from "@/components/LangProvider";
+import { localePath, type Lang } from "@/lib/i18n";
 
 type Slide = {
   image: string;
@@ -15,37 +17,73 @@ type Slide = {
   ctaHref: string;
 };
 
-const SLIDES: Slide[] = [
-  {
-    image: "/images/robotics-production.png",
-    alt: "Halbleiterfertigung mit Robotik",
-    title: "Advanced Semiconductor Technologies",
-    subtitle: "Wide-Bandgap at the Core",
-    text: "Hocheffiziente WBG Leistungsmodullösungen für eine nachhaltige Zukunft\nVom Chip bis zum System – Technologiekompetenz für die elektrifizierte Welt.",
-    ctaHref: "/solutions/wbg-power-modules",
-  },
-  {
-    image: "/images/data-center.png",
-    alt: "KI-Rechenzentrum mit Wide-Bandgap-Leistungselektronik",
-    title: "AI Data Center – Rack Power Distribution",
-    subtitle: "SiC/GaN Technologie maximiert Effizienz und Leistungsdichte",
-    text: "Smart PDU – Leistungskonvertierung im Herz des 800 VDC Rack.\nFull-GaN DC-DC Wandler.",
-    ctaHref: "/solutions/rack-power-distribution",
-  },
-  {
-    image: "/images/agentic-ai.png",
-    alt: "Agentische KI im Systems Engineering",
-    title: "Agentic AI in Systems Engineering",
-    subtitle: "Autonome Agenten für SiC & GaN",
-    text: "Von Copiloten zu autonomen Agenten, die komplexe Engineering-Aufgaben planen und beschleunigen.",
-    ctaHref: "/solutions/agentic-ai-engineering",
-  },
-];
+const SLIDES: Record<Lang, Slide[]> = {
+  de: [
+    {
+      image: "/images/robotics-production.png",
+      alt: "Halbleiterfertigung mit Robotik",
+      title: "Advanced Semiconductor Technologies",
+      subtitle: "Wide-Bandgap at the Core",
+      text: "Hocheffiziente WBG Leistungsmodullösungen für eine nachhaltige Zukunft\nVom Chip bis zum System – Technologiekompetenz für die elektrifizierte Welt.",
+      ctaHref: "/solutions/wbg-power-modules",
+    },
+    {
+      image: "/images/data-center.png",
+      alt: "KI-Rechenzentrum mit Wide-Bandgap-Leistungselektronik",
+      title: "AI Data Center – Rack Power Distribution",
+      subtitle: "SiC/GaN Technologie maximiert Effizienz und Leistungsdichte",
+      text: "Smart PDU – Leistungskonvertierung im Herz des 800 VDC Rack.\nFull-GaN DC-DC Wandler.",
+      ctaHref: "/solutions/rack-power-distribution",
+    },
+    {
+      image: "/images/agentic-ai.png",
+      alt: "Agentische KI im Systems Engineering",
+      title: "Agentic AI in Systems Engineering",
+      subtitle: "Autonome Agenten für SiC & GaN",
+      text: "Von Copiloten zu autonomen Agenten, die komplexe Engineering-Aufgaben planen und beschleunigen.",
+      ctaHref: "/solutions/agentic-ai-engineering",
+    },
+  ],
+  en: [
+    {
+      image: "/images/robotics-production.png",
+      alt: "Semiconductor manufacturing with robotics",
+      title: "Advanced Semiconductor Technologies",
+      subtitle: "Wide-Bandgap at the Core",
+      text: "Highly efficient WBG power module solutions for a sustainable future.\nFrom chip to system — technology expertise for the electrified world.",
+      ctaHref: "/solutions/wbg-power-modules",
+    },
+    {
+      image: "/images/data-center.png",
+      alt: "AI data center with wide-bandgap power electronics",
+      title: "AI Data Center – Rack Power Distribution",
+      subtitle: "SiC/GaN technology maximizes efficiency and power density",
+      text: "Smart PDU — power conversion at the heart of the 800 VDC rack.\nFull-GaN DC-DC converters.",
+      ctaHref: "/solutions/rack-power-distribution",
+    },
+    {
+      image: "/images/agentic-ai.png",
+      alt: "Agentic AI in systems engineering",
+      title: "Agentic AI in Systems Engineering",
+      subtitle: "Autonomous agents for SiC & GaN",
+      text: "From copilots to autonomous agents that plan and accelerate complex engineering tasks.",
+      ctaHref: "/solutions/agentic-ai-engineering",
+    },
+  ],
+};
+
+const UI: Record<Lang, { cta: string; prev: string; next: string }> = {
+  de: { cta: "Mehr erfahren", prev: "Vorheriger Slide", next: "Nächster Slide" },
+  en: { cta: "Learn more", prev: "Previous slide", next: "Next slide" },
+};
 
 const AUTO_MS = 6500;
 
 export default function Hero() {
-  const count = SLIDES.length;
+  const lang = useLang();
+  const slides = SLIDES[lang];
+  const ui = UI[lang];
+  const count = slides.length;
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -64,7 +102,7 @@ export default function Hero() {
     return () => clearInterval(id);
   }, [count, index, paused]);
 
-  const active = SLIDES[index];
+  const active = slides[index];
 
   return (
     <section
@@ -78,7 +116,7 @@ export default function Hero() {
     >
       {/* Full-bleed background images — stacked, crossfaded via CSS opacity */}
       <div className="absolute inset-0 z-0">
-        {SLIDES.map((slide, i) => (
+        {slides.map((slide, i) => (
           <div
             key={slide.ctaHref}
             aria-hidden={i !== index}
@@ -140,10 +178,10 @@ export default function Hero() {
 
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                href={active.ctaHref}
+                href={localePath(lang, active.ctaHref)}
                 className="btn-brand-gradient inline-flex items-center justify-center gap-2 font-semibold px-6 py-3 rounded-lg"
               >
-                Mehr erfahren
+                {ui.cta}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -159,7 +197,7 @@ export default function Hero() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between py-4 gap-4">
           {/* Slide indicators */}
           <div className="flex items-center gap-3">
-            {SLIDES.map((slide, i) => (
+            {slides.map((slide, i) => (
               <button
                 key={slide.ctaHref}
                 type="button"
@@ -182,7 +220,7 @@ export default function Hero() {
             <button
               type="button"
               onClick={() => go(-1)}
-              aria-label="Vorheriger Slide"
+              aria-label={ui.prev}
               className="p-2 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -190,7 +228,7 @@ export default function Hero() {
             <button
               type="button"
               onClick={() => go(1)}
-              aria-label="Nächster Slide"
+              aria-label={ui.next}
               className="p-2 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
             >
               <ChevronRight className="w-5 h-5" />

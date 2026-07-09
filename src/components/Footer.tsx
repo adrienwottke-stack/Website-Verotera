@@ -1,34 +1,110 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import BrandWatermark from "./BrandWatermark";
+import { useLang, useLocalePath } from "@/components/LangProvider";
+import type { Lang } from "@/lib/i18n";
 
-const RESOURCE_LINKS = [
-  { label: "Produktdokumentation", href: "/resources/product-documentation" },
-  { label: "Qualität & Zertifizierungen", href: "/resources/quality-certifications" },
-  { label: "Garantie", href: "/resources/warranty" },
-  { label: "Patente", href: "/resources/patents" },
-  { label: "Site Map", href: "/site-map" },
-];
+type FooterLink = { label: string; href: string };
 
-const SUPPORT_LINKS = [
-  { label: "Technische Unterstützung", href: "/contacts" },
-  { label: "Kontakt", href: "/contacts" },
-];
+const COPY: Record<
+  Lang,
+  {
+    resources: { title: string; links: FooterLink[] };
+    support: { title: string; links: FooterLink[] };
+    corporate: { title: string; links: FooterLink[] };
+    legal: FooterLink[];
+    tagline: string;
+    follow: string;
+    rights: string;
+  }
+> = {
+  de: {
+    resources: {
+      title: "Ressourcen",
+      links: [
+        { label: "Produktdokumentation", href: "/resources/product-documentation" },
+        { label: "Qualität & Zertifizierungen", href: "/resources/quality-certifications" },
+        { label: "Garantie", href: "/resources/warranty" },
+        { label: "Patente", href: "/resources/patents" },
+        { label: "Site Map", href: "/site-map" },
+      ],
+    },
+    support: {
+      title: "Support",
+      links: [
+        { label: "Technische Unterstützung", href: "/contacts" },
+        { label: "Kontakt", href: "/contacts" },
+      ],
+    },
+    corporate: {
+      title: "Corporate",
+      links: [
+        { label: "Über VEROTERA", href: "/about" },
+        { label: "Karriere", href: "/careers" },
+        { label: "Ethik & Compliance", href: "/ethics-compliance" },
+      ],
+    },
+    legal: [
+      { label: "Impressum", href: "/legal/imprint" },
+      { label: "Datenschutzerklärung", href: "/legal/privacy-policy" },
+      { label: "Nutzungsbedingungen", href: "/legal/terms-of-use" },
+      { label: "Barrierefreiheitserklärung", href: "/legal/accessibility" },
+    ],
+    tagline:
+      "VEROTERA entwickelt Wide-Bandgap-Halbleitertechnologien mit tiefem Systemverständnis – für eine effizientere, nachhaltigere Welt.",
+    follow: "Folgen Sie uns",
+    rights: "© 2026 VEROTERA GmbH – Alle Rechte vorbehalten.",
+  },
+  en: {
+    resources: {
+      title: "Resources",
+      links: [
+        { label: "Product Documentation", href: "/resources/product-documentation" },
+        { label: "Quality & Certifications", href: "/resources/quality-certifications" },
+        { label: "Warranty", href: "/resources/warranty" },
+        { label: "Patents", href: "/resources/patents" },
+        { label: "Site Map", href: "/site-map" },
+      ],
+    },
+    support: {
+      title: "Support",
+      links: [
+        { label: "Technical Support", href: "/contacts" },
+        { label: "Contact", href: "/contacts" },
+      ],
+    },
+    corporate: {
+      title: "Corporate",
+      links: [
+        { label: "About VEROTERA", href: "/about" },
+        { label: "Careers", href: "/careers" },
+        { label: "Ethics & Compliance", href: "/ethics-compliance" },
+      ],
+    },
+    legal: [
+      { label: "Imprint", href: "/legal/imprint" },
+      { label: "Privacy Policy", href: "/legal/privacy-policy" },
+      { label: "Terms of Use", href: "/legal/terms-of-use" },
+      { label: "Accessibility Statement", href: "/legal/accessibility" },
+    ],
+    tagline:
+      "VEROTERA develops wide-bandgap semiconductor technologies with deep system understanding — for a more efficient, more sustainable world.",
+    follow: "Follow us",
+    rights: "© 2026 VEROTERA GmbH – All rights reserved.",
+  },
+};
 
-const CORPORATE_LINKS = [
-  { label: "Über VEROTERA", href: "/about" },
-  { label: "Karriere", href: "/careers" },
-  { label: "Ethik & Compliance", href: "/ethics-compliance" },
-];
-
-const LEGAL_LINKS = [
-  { label: "Impressum", href: "/legal/imprint" },
-  { label: "Datenschutzerklärung", href: "/legal/privacy-policy" },
-  { label: "Nutzungsbedingungen", href: "/legal/terms-of-use" },
-  { label: "Barrierefreiheitserklärung", href: "/legal/accessibility" },
-];
-
-function LinkColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {
+function LinkColumn({
+  title,
+  links,
+  p,
+}: {
+  title: string;
+  links: FooterLink[];
+  p: (href: string) => string;
+}) {
   return (
     <div className="flex flex-col text-left">
       <span className="text-xs font-bold text-white uppercase tracking-wider mb-5">{title}</span>
@@ -36,7 +112,7 @@ function LinkColumn({ title, links }: { title: string; links: { label: string; h
         {links.map((link) => (
           <li key={link.label}>
             <Link
-              href={link.href}
+              href={p(link.href)}
               className="text-sm text-white/60 hover:text-brand-cyan transition-colors"
             >
               {link.label}
@@ -49,6 +125,10 @@ function LinkColumn({ title, links }: { title: string; links: { label: string; h
 }
 
 export default function Footer() {
+  const lang = useLang();
+  const p = useLocalePath();
+  const t = COPY[lang];
+
   return (
     <footer className="dark-section relative bg-[#234554] border-t border-white/5 pt-16 pb-10 overflow-hidden">
       <BrandWatermark position="bottom-right" tint="light" size={420} opacity={0.035} />
@@ -59,7 +139,7 @@ export default function Footer() {
 
           {/* Left: Logo + tagline + LinkedIn */}
           <div className="lg:col-span-4 flex flex-col items-start text-left">
-            <Link href="/" className="flex items-center mb-6">
+            <Link href={p("/")} className="flex items-center mb-6">
               <div className="flex items-center gap-2.5 bg-brand-navy rounded-lg px-3 py-2">
                 <Image
                   src="/images/v-signet-transparent.png"
@@ -79,15 +159,14 @@ export default function Footer() {
             </Link>
 
             <p className="text-sm text-white/60 max-w-sm leading-relaxed mb-5">
-              VEROTERA entwickelt Wide-Bandgap-Halbleitertechnologien mit tiefem
-              Systemverständnis – für eine effizientere, nachhaltigere Welt.
+              {t.tagline}
             </p>
 
             <p className="text-sm font-bold text-white tracking-widest uppercase mb-8">
               YOUR GOAL. OUR TECH. ONE VISION.
             </p>
 
-            <p className="text-sm font-semibold text-brand-cyan mb-3">Folgen Sie uns</p>
+            <p className="text-sm font-semibold text-brand-cyan mb-3">{t.follow}</p>
             <a
               href="https://www.linkedin.com/company/verotera"
               target="_blank"
@@ -103,19 +182,19 @@ export default function Footer() {
 
           {/* Right: 3 link columns */}
           <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8 w-full">
-            <LinkColumn title="Ressourcen" links={RESOURCE_LINKS} />
-            <LinkColumn title="Support" links={SUPPORT_LINKS} />
-            <LinkColumn title="Corporate" links={CORPORATE_LINKS} />
+            <LinkColumn title={t.resources.title} links={t.resources.links} p={p} />
+            <LinkColumn title={t.support.title} links={t.support.links} p={p} />
+            <LinkColumn title={t.corporate.title} links={t.corporate.links} p={p} />
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 list-none m-0 p-0">
-            {LEGAL_LINKS.map((link) => (
+            {t.legal.map((link) => (
               <li key={link.href}>
                 <Link
-                  href={link.href}
+                  href={p(link.href)}
                   className="text-xs text-white/50 hover:text-brand-cyan transition-colors"
                 >
                   {link.label}
@@ -124,7 +203,7 @@ export default function Footer() {
             ))}
           </ul>
           <span className="text-xs text-white/40">
-            © 2026 VEROTERA GmbH – Alle Rechte vorbehalten.
+            {t.rights}
           </span>
         </div>
 

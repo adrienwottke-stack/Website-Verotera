@@ -3,34 +3,96 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Layers, ShieldAlert, Workflow, Zap } from "lucide-react";
+import { useLang } from "@/components/LangProvider";
+import type { Lang } from "@/lib/i18n";
+
+const BADGE_ICONS = [Layers, ShieldAlert, Workflow, Zap];
+const BADGE_HIGHLIGHTS = ["Full Stack", "System-Level", "Industry Bridge", "Fast Execution"];
+
+const COPY: Record<
+  Lang,
+  {
+    intro: string;
+    imageAlt: string;
+    panelTitle: string;
+    panelSub: string;
+    panelMeta: string;
+    panelEyebrow: string;
+    panelBody: string;
+    badges: { title: string; description: string }[];
+  }
+> = {
+  de: {
+    intro:
+      "Wir gestalten den industriellen Wandel mit innovativen Wide-Bandgap-Halbleiter-Packaging-Technologien.",
+    imageAlt: "Collaborative Intelligence – Menschen und Präzision in der WBG-Fertigung",
+    panelTitle: "Innovative Wide-Bandgap Halbleitermodule",
+    panelSub: "Collaborative Intelligence",
+    panelMeta: "Powered by People and Precision – Connecting Global Expertise",
+    panelEyebrow: "Applikationen",
+    panelBody:
+      "VEROTERAs fortschrittliche WBG-Leistungsmodule sind darauf ausgelegt, höchste Leistung zu liefern – für intelligentere und effizientere Systeme in KI-Rechenzentren, E-Mobilität, erneuerbaren Energien, grünem Wasserstoff oder der Industrie-Automation. Wir gestalten die Zukunft des Engineerings durch intelligente Zusammenarbeit zwischen Menschen, Systemen und künstlicher Intelligenz – mit adaptiven, resilienten und nachhaltigen Lösungen, die mit ihrer Umgebung wachsen.",
+    badges: [
+      {
+        title: "Vom Chip bis zum System",
+        description:
+          "Wir verstehen den gesamten Stack. Von der Halbleiterphysik bis zur Wärmeleitmasse und industriellen Fahrzeugmontage.",
+      },
+      {
+        title: "Tiefes Systemverständnis",
+        description:
+          "Unser Engineering zielt auf optimale Systemkosten, funktionale Sicherheit (ISO 26262) und Gesamteffizienz – nicht nur auf isolierte Moduloptimierungen.",
+      },
+      {
+        title: "Brücke zwischen Nachfrage & Innovation",
+        description:
+          "Wir fungieren als direkte physische Brücke und übersetzen modernste Wafer-Innovationen in einsatzbereite, robuste Pakete für Tier-1-OEMs.",
+      },
+      {
+        title: "Beschleunigte Entwicklungszyklen mit KI",
+        description:
+          "Mit unseren KI-Design-Agenten simulieren wir Physik und validieren Schaltkreis-Sicherheitslayouts in Stunden – und halbieren die Prototypisierungszeit.",
+      },
+    ],
+  },
+  en: {
+    intro:
+      "We shape the industrial transformation with innovative wide-bandgap semiconductor packaging technologies.",
+    imageAlt: "Collaborative intelligence — people and precision in WBG manufacturing",
+    panelTitle: "Innovative Wide-Bandgap Semiconductor Modules",
+    panelSub: "Collaborative Intelligence",
+    panelMeta: "Powered by People and Precision – Connecting Global Expertise",
+    panelEyebrow: "Applications",
+    panelBody:
+      "VEROTERA's advanced WBG power modules are engineered to deliver peak performance — enabling smarter, more efficient systems in AI data centers, e-mobility, renewable energy, green hydrogen and industrial automation. We shape the future of engineering through intelligent collaboration between people, systems and artificial intelligence — with adaptive, resilient and sustainable solutions that grow with their environment.",
+    badges: [
+      {
+        title: "From Chip to System",
+        description:
+          "We understand the entire stack — from semiconductor physics to thermal interface materials and industrial vehicle assembly.",
+      },
+      {
+        title: "Deep System Understanding",
+        description:
+          "Our engineering targets optimal system cost, functional safety (ISO 26262) and overall efficiency — not just isolated module optimizations.",
+      },
+      {
+        title: "Bridging Demand & Innovation",
+        description:
+          "We act as a direct physical bridge, translating cutting-edge wafer innovations into deployment-ready, rugged packages for tier-1 OEMs.",
+      },
+      {
+        title: "AI-Accelerated Development Cycles",
+        description:
+          "Our AI design agents simulate physics and validate circuit safety layouts in hours — cutting prototyping time in half.",
+      },
+    ],
+  },
+};
 
 export default function WhyVerotera() {
-  const badges = [
-    {
-      title: "Vom Chip bis zum System",
-      icon: Layers,
-      highlight: "Full Stack",
-      description: "Wir verstehen den gesamten Stack. Von der Halbleiterphysik bis zur Wärmeleitmasse und industriellen Fahrzeugmontage.",
-    },
-    {
-      title: "Tiefes Systemverständnis",
-      icon: ShieldAlert,
-      highlight: "System-Level",
-      description: "Unser Engineering zielt auf optimale Systemkosten, funktionale Sicherheit (ISO 26262) und Gesamteffizienz – nicht nur auf isolierte Moduloptimierungen.",
-    },
-    {
-      title: "Brücke zwischen Nachfrage & Innovation",
-      icon: Workflow,
-      highlight: "Industry Bridge",
-      description: "Wir fungieren als direkte physische Brücke und übersetzen modernste Wafer-Innovationen in einsatzbereite, robuste Pakete für Tier-1-OEMs.",
-    },
-    {
-      title: "Beschleunigte Entwicklungszyklen mit KI",
-      icon: Zap,
-      highlight: "Fast Execution",
-      description: "Mit unseren KI-Design-Agenten simulieren wir Physik und validieren Schaltkreis-Sicherheitslayouts in Stunden – und halbieren die Prototypisierungszeit.",
-    },
-  ];
+  const lang = useLang();
+  const t = COPY[lang];
 
   return (
     <section id="why-verotera" className="relative py-24 sm:py-32 bg-white overflow-hidden">
@@ -43,7 +105,7 @@ export default function WhyVerotera() {
             Your Goal. Our Tech. One Vision.
           </span>
           <p className="mt-4 font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed">
-            Wir gestalten den industriellen Wandel mit innovativen Wide-Bandgap-Halbleiter-Packaging-Technologien.
+            {t.intro}
           </p>
         </div>
 
@@ -55,7 +117,7 @@ export default function WhyVerotera() {
             <div className="relative h-full min-h-[460px] rounded-2xl overflow-hidden border border-brand-navy/8">
               <Image
                 src="/images/wafer-production.jpg"
-                alt="Collaborative Intelligence – Menschen und Präzision in der WBG-Fertigung"
+                alt={t.imageAlt}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -67,20 +129,20 @@ export default function WhyVerotera() {
           <div className="lg:col-span-6 flex flex-col justify-center lg:pl-10">
             <div>
               <h3 className="font-display text-2xl sm:text-3xl font-bold text-brand-navy mb-2 leading-tight">
-                Innovative Wide-Bandgap Halbleitermodule
+                {t.panelTitle}
               </h3>
               <p className="text-brand-blue font-semibold text-lg mb-2">
-                Collaborative Intelligence
+                {t.panelSub}
               </p>
               <p className="text-brand-navy/60 text-sm mb-8">
-                Powered by People and Precision – Connecting Global Expertise
+                {t.panelMeta}
               </p>
 
               <span className="text-brand-blue text-xs font-bold uppercase tracking-widest mb-3 block">
-                Applikationen
+                {t.panelEyebrow}
               </span>
               <p className="text-brand-navy/70 text-sm leading-relaxed">
-                VEROTERAs fortschrittliche WBG-Leistungsmodule sind darauf ausgelegt, höchste Leistung zu liefern – für intelligentere und effizientere Systeme in KI-Rechenzentren, E-Mobilität, erneuerbaren Energien, grünem Wasserstoff oder der Industrie-Automation. Wir gestalten die Zukunft des Engineerings durch intelligente Zusammenarbeit zwischen Menschen, Systemen und künstlicher Intelligenz – mit adaptiven, resilienten und nachhaltigen Lösungen, die mit ihrer Umgebung wachsen.
+                {t.panelBody}
               </p>
             </div>
           </div>
@@ -89,36 +151,39 @@ export default function WhyVerotera() {
 
         {/* 4 Advantage Badges (CSV: Full Stack / System-Level / Industry Bridge / Fast Execution) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {badges.map((badge, index) => (
-            <motion.div
-              key={badge.title}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.12 }}
-              className="p-6 rounded-2xl border border-brand-navy/8 bg-white shadow-sm group relative overflow-hidden"
-            >
-              {/* Header Row */}
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2.5 rounded-lg bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan group-hover:bg-brand-cyan/20 group-hover:border-brand-cyan/30 transition-all duration-300">
-                  <badge.icon className="w-5 h-5" />
+          {t.badges.map((badge, index) => {
+            const Icon = BADGE_ICONS[index];
+            return (
+              <motion.div
+                key={badge.title}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.12 }}
+                className="p-6 rounded-2xl border border-brand-navy/8 bg-white shadow-sm group relative overflow-hidden"
+              >
+                {/* Header Row */}
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2.5 rounded-lg bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan group-hover:bg-brand-cyan/20 group-hover:border-brand-cyan/30 transition-all duration-300">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="font-display text-base font-bold text-brand-navy group-hover:text-brand-cyan transition-colors duration-300 leading-tight">
+                    {badge.title}
+                  </h3>
                 </div>
-                <h3 className="font-display text-base font-bold text-brand-navy group-hover:text-brand-cyan transition-colors duration-300 leading-tight">
-                  {badge.title}
-                </h3>
-              </div>
 
-              {/* Subtag */}
-              <span className="text-[9px] font-bold text-brand-navy tracking-wider uppercase block mb-3">
-                {badge.highlight}
-              </span>
+                {/* Subtag */}
+                <span className="text-[9px] font-bold text-brand-navy tracking-wider uppercase block mb-3">
+                  {BADGE_HIGHLIGHTS[index]}
+                </span>
 
-              {/* Description */}
-              <p className="font-sans text-xs sm:text-sm text-brand-navy/60 leading-relaxed">
-                {badge.description}
-              </p>
-            </motion.div>
-          ))}
+                {/* Description */}
+                <p className="font-sans text-xs sm:text-sm text-brand-navy/60 leading-relaxed">
+                  {badge.description}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
 
       </div>

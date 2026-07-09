@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { Zap, RefreshCcw, Cable, Cpu, Server, ArrowRight, ArrowDown } from "lucide-react";
+import { useLang } from "@/components/LangProvider";
+import type { Lang } from "@/lib/i18n";
 
 type Node = {
   id: string;
@@ -12,92 +14,174 @@ type Node = {
   detail: string;
 };
 
-const NODES: Node[] = [
-  {
-    id: "grid",
-    label: "Stromnetz (AC)",
-    icon: Zap,
-    caption: "480 VAC Einspeisung",
-    specs: [
-      { k: "Eingang", v: "3-phasig 480 VAC" },
-      { k: "Funktion", v: "Netzanbindung" },
-    ],
-    detail:
-      "Dreiphasige Mittelspannungseinspeisung aus dem Versorgungsnetz. Ausgangspunkt der Energieverteilung im KI-Rechenzentrum.",
+const NODES: Record<Lang, Node[]> = {
+  de: [
+    {
+      id: "grid",
+      label: "Stromnetz (AC)",
+      icon: Zap,
+      caption: "480 VAC Einspeisung",
+      specs: [
+        { k: "Eingang", v: "3-phasig 480 VAC" },
+        { k: "Funktion", v: "Netzanbindung" },
+      ],
+      detail:
+        "Dreiphasige Mittelspannungseinspeisung aus dem Versorgungsnetz. Ausgangspunkt der Energieverteilung im KI-Rechenzentrum.",
+    },
+    {
+      id: "sst",
+      label: "SST / Gleichrichter",
+      icon: RefreshCcw,
+      caption: "98,5 % Wirkungsgrad (GaN)",
+      specs: [
+        { k: "Wirkungsgrad", v: "98,5 %" },
+        { k: "Technologie", v: "GaN-Bauelemente" },
+        { k: "Wandlung", v: "AC → 800 V DC" },
+      ],
+      detail:
+        "Der Solid-State-Transformer (SST) wandelt die Netz-Wechselspannung mit GaN-Bauelementen in eine 800-V-Gleichspannung um – bei 98,5 % Wirkungsgrad und drastisch reduziertem Bauvolumen gegenüber Netzfrequenz-Transformatoren.",
+    },
+    {
+      id: "bus",
+      label: "800 V DC-Bus",
+      icon: Cable,
+      caption: "Verlustarmes Backbone",
+      specs: [
+        { k: "Spannung", v: "800 V DC" },
+        { k: "Vorteil", v: "−40 % I²R-Verluste" },
+      ],
+      detail:
+        "Das 800-V-DC-Backbone verteilt Energie verlustarm im Rack. Die höhere Busspannung senkt den Strom und damit die I²R-Verluste in den Stromschienen deutlich gegenüber klassischen 48-V-Architekturen.",
+    },
+    {
+      id: "pdu",
+      label: "Smart PDU",
+      icon: Cpu,
+      caption: "Aktives Lastmanagement",
+      specs: [
+        { k: "Telemetrie", v: "Echtzeit pro Kanal" },
+        { k: "Schutz", v: "Solid-State Breaker" },
+        { k: "Steuerung", v: "Aktives Lastmanagement" },
+      ],
+      detail:
+        "Die Smart Power Distribution Unit überwacht jeden Ausgangskanal in Echtzeit, priorisiert Lasten dynamisch und schaltet über Solid-State-Breaker sicher ab – ohne mechanischen Verschleiß und mit vollständiger Telemetrie.",
+    },
+    {
+      id: "gpu",
+      label: "GPU-Shelves",
+      icon: Server,
+      caption: "48 V / 12 V Point-of-Load",
+      specs: [
+        { k: "Ausgang", v: "48 V / 12 V" },
+        { k: "Last", v: "KI-Beschleuniger" },
+      ],
+      detail:
+        "Kompakte Point-of-Load-Wandler setzen die 800 V direkt am GPU-Shelf auf 48 V / 12 V um und versorgen die KI-Beschleuniger mit maximaler Leistungsdichte bei minimalem Verteilungsverlust.",
+    },
+  ],
+  en: [
+    {
+      id: "grid",
+      label: "Utility Grid (AC)",
+      icon: Zap,
+      caption: "480 VAC feed",
+      specs: [
+        { k: "Input", v: "3-phase 480 VAC" },
+        { k: "Function", v: "Grid connection" },
+      ],
+      detail:
+        "Three-phase medium-voltage feed from the utility grid — the starting point of power distribution in the AI data center.",
+    },
+    {
+      id: "sst",
+      label: "SST / Rectifier",
+      icon: RefreshCcw,
+      caption: "98.5% efficiency (GaN)",
+      specs: [
+        { k: "Efficiency", v: "98.5%" },
+        { k: "Technology", v: "GaN devices" },
+        { k: "Conversion", v: "AC → 800 V DC" },
+      ],
+      detail:
+        "The solid-state transformer (SST) converts grid AC into 800 V DC using GaN devices — at 98.5% efficiency and a drastically smaller footprint than line-frequency transformers.",
+    },
+    {
+      id: "bus",
+      label: "800 V DC Bus",
+      icon: Cable,
+      caption: "Low-loss backbone",
+      specs: [
+        { k: "Voltage", v: "800 V DC" },
+        { k: "Benefit", v: "−40% I²R losses" },
+      ],
+      detail:
+        "The 800 V DC backbone distributes power through the rack with minimal loss. The higher bus voltage lowers current — cutting I²R losses in the busbars significantly compared with classic 48 V architectures.",
+    },
+    {
+      id: "pdu",
+      label: "Smart PDU",
+      icon: Cpu,
+      caption: "Active load management",
+      specs: [
+        { k: "Telemetry", v: "Real-time per channel" },
+        { k: "Protection", v: "Solid-state breakers" },
+        { k: "Control", v: "Active load management" },
+      ],
+      detail:
+        "The smart power distribution unit monitors every output channel in real time, prioritizes loads dynamically and disconnects safely via solid-state breakers — with no mechanical wear and full telemetry.",
+    },
+    {
+      id: "gpu",
+      label: "GPU Shelves",
+      icon: Server,
+      caption: "48 V / 12 V point-of-load",
+      specs: [
+        { k: "Output", v: "48 V / 12 V" },
+        { k: "Load", v: "AI accelerators" },
+      ],
+      detail:
+        "Compact point-of-load converters step the 800 V down to 48 V / 12 V right at the GPU shelf, powering the AI accelerators with maximum power density and minimal distribution loss.",
+    },
+  ],
+};
+
+const UI: Record<Lang, { eyebrow: string; title: string; hint: string }> = {
+  de: {
+    eyebrow: "Interaktives Diagramm",
+    title: "Der Leistungspfad im KI-Rechenzentrum",
+    hint: "Klicken Sie auf einen Knoten, um die technischen Daten der jeweiligen Stufe anzuzeigen.",
   },
-  {
-    id: "sst",
-    label: "SST / Gleichrichter",
-    icon: RefreshCcw,
-    caption: "98,5 % Wirkungsgrad (GaN)",
-    specs: [
-      { k: "Wirkungsgrad", v: "98,5 %" },
-      { k: "Technologie", v: "GaN-Bauelemente" },
-      { k: "Wandlung", v: "AC → 800 V DC" },
-    ],
-    detail:
-      "Der Solid-State-Transformer (SST) wandelt die Netz-Wechselspannung mit GaN-Bauelementen in eine 800-V-Gleichspannung um – bei 98,5 % Wirkungsgrad und drastisch reduziertem Bauvolumen gegenüber Netzfrequenz-Transformatoren.",
+  en: {
+    eyebrow: "Interactive Diagram",
+    title: "The power path in the AI data center",
+    hint: "Click a node to see the technical data for each stage.",
   },
-  {
-    id: "bus",
-    label: "800 V DC-Bus",
-    icon: Cable,
-    caption: "Verlustarmes Backbone",
-    specs: [
-      { k: "Spannung", v: "800 V DC" },
-      { k: "Vorteil", v: "−40 % I²R-Verluste" },
-    ],
-    detail:
-      "Das 800-V-DC-Backbone verteilt Energie verlustarm im Rack. Die höhere Busspannung senkt den Strom und damit die I²R-Verluste in den Stromschienen deutlich gegenüber klassischen 48-V-Architekturen.",
-  },
-  {
-    id: "pdu",
-    label: "Smart PDU",
-    icon: Cpu,
-    caption: "Aktives Lastmanagement",
-    specs: [
-      { k: "Telemetrie", v: "Echtzeit pro Kanal" },
-      { k: "Schutz", v: "Solid-State Breaker" },
-      { k: "Steuerung", v: "Aktives Lastmanagement" },
-    ],
-    detail:
-      "Die Smart Power Distribution Unit überwacht jeden Ausgangskanal in Echtzeit, priorisiert Lasten dynamisch und schaltet über Solid-State-Breaker sicher ab – ohne mechanischen Verschleiß und mit vollständiger Telemetrie.",
-  },
-  {
-    id: "gpu",
-    label: "GPU-Shelves",
-    icon: Server,
-    caption: "48 V / 12 V Point-of-Load",
-    specs: [
-      { k: "Ausgang", v: "48 V / 12 V" },
-      { k: "Last", v: "KI-Beschleuniger" },
-    ],
-    detail:
-      "Kompakte Point-of-Load-Wandler setzen die 800 V direkt am GPU-Shelf auf 48 V / 12 V um und versorgen die KI-Beschleuniger mit maximaler Leistungsdichte bei minimalem Verteilungsverlust.",
-  },
-];
+};
 
 export default function PduFlowchart() {
+  const lang = useLang();
+  const nodes = NODES[lang];
+  const ui = UI[lang];
   const [activeId, setActiveId] = useState<string>("sst");
-  const active = NODES.find((n) => n.id === activeId) ?? NODES[0];
+  const active = nodes.find((n) => n.id === activeId) ?? nodes[0];
 
   return (
     <div className="rounded-3xl border border-brand-navy/8 bg-surface-light p-6 sm:p-10">
       <div className="mb-8 text-center">
         <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-2 block">
-          Interaktives Diagramm
+          {ui.eyebrow}
         </span>
         <h3 className="font-display text-xl sm:text-2xl font-bold text-brand-navy">
-          Der Leistungspfad im KI-Rechenzentrum
+          {ui.title}
         </h3>
         <p className="text-sm text-brand-navy/55 mt-2">
-          Klicken Sie auf einen Knoten, um die technischen Daten der jeweiligen Stufe anzuzeigen.
+          {ui.hint}
         </p>
       </div>
 
       {/* Flow nodes */}
       <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-center gap-2">
-        {NODES.map((node, i) => {
+        {nodes.map((node, i) => {
           const isActive = node.id === activeId;
           return (
             <div key={node.id} className="flex flex-col lg:flex-row items-center lg:flex-1">
@@ -129,7 +213,7 @@ export default function PduFlowchart() {
               </button>
 
               {/* Connector */}
-              {i < NODES.length - 1 && (
+              {i < nodes.length - 1 && (
                 <span className="text-brand-cyan/60 my-1 lg:my-0 lg:mx-1 shrink-0">
                   <ArrowRight className="hidden lg:block w-5 h-5" />
                   <ArrowDown className="block lg:hidden w-5 h-5" />

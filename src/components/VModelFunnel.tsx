@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useLang } from "@/components/LangProvider";
 
 /* ---------------------------------------------------------------------------
  * Interactive, fully vector V-model funnel (replaces the former raster PNG).
@@ -104,6 +105,24 @@ const TILES: Tile[] = [
   ...TRUNK.map((t) => ({ ...t, fill: BLUE, fillHi: BLUE_HI, text: NAVY })),
 ];
 
+// English hover captions (tile titles are already English); "Testphase" also
+// gets an English label.
+const EN_OVERRIDES: Record<string, { detail: string; lines?: string[] }> = {
+  pi: { detail: "AI-assisted ideation and innovation screening at project start." },
+  sra: { detail: "Automated extraction and validation of system requirements." },
+  ucd: { detail: "Use cases incl. safety & security goals, derived model-based." },
+  rs: { detail: "Complete, conflict-free specification via an engineering knowledge graph." },
+  sad: { detail: "Topology and architecture exploration with AI design agents." },
+  eol: { detail: "Sustainable end-of-life: recycling and re-use strategy." },
+  om: { detail: "Predictive maintenance across the entire operating life." },
+  pq: { detail: "Performance and reliability qualification per AEC-Q / IEC." },
+  vv: { detail: "Verification & validation against the specification — 100% coverage." },
+  testphase: { lines: ["Test Phase"], detail: "Double-pulse and load tests pre-qualified virtually." },
+  she: { detail: "Co-design of software and hardware in one continuous flow." },
+  md: { detail: "Mechanical and thermal design optimized parametrically." },
+  ir: { detail: "Integration and release with automated qualification." },
+};
+
 // Signet sits in the widest (top) part of the central notch so the
 // "Agentic AI" lockup never overlaps the surrounding tiles.
 const SIGNET: Pt = [476, 74];
@@ -142,15 +161,27 @@ const convPath = ([nx, ny]: Pt): string => {
 const ALL_PATHS = [N0_PATH, ...NODES.slice(1).map(convPath)];
 
 export default function VModelFunnel() {
+  const lang = useLang();
+  const tiles =
+    lang === "en" ? TILES.map((t) => ({ ...t, ...EN_OVERRIDES[t.id] })) : TILES;
   const [hovered, setHovered] = useState<string | null>(null);
-  const activeTile = TILES.find((t) => t.id === hovered) ?? null;
+  const activeTile = tiles.find((t) => t.id === hovered) ?? null;
   const [acx, acy] = activeTile ? centroid(activeTile.pts) : [0, 0];
   // place caption above the tile, but below it for the very top rows
   const above = acy > 150;
 
   return (
     <div className="relative w-full select-none">
-      <svg viewBox={`0 -50 ${VB_W} ${VB_H + 50}`} className="w-full h-auto" role="img" aria-label="Interaktives V-Modell des Entwicklungszyklus mit agentischer KI">
+      <svg
+        viewBox={`0 -50 ${VB_W} ${VB_H + 50}`}
+        className="w-full h-auto"
+        role="img"
+        aria-label={
+          lang === "en"
+            ? "Interactive V-model of the development cycle with agentic AI"
+            : "Interaktives V-Modell des Entwicklungszyklus mit agentischer KI"
+        }
+      >
         <defs>
           <filter id="vm-glow" x="-60%" y="-60%" width="220%" height="220%">
             <feGaussianBlur stdDeviation="3" />
@@ -184,7 +215,7 @@ export default function VModelFunnel() {
         </g>
 
         {/* Tiles — hovered one is rendered last so it sits on top */}
-        {[...TILES.filter((t) => t.id !== hovered), ...TILES.filter((t) => t.id === hovered)].map((t) => {
+        {[...tiles.filter((t) => t.id !== hovered), ...tiles.filter((t) => t.id === hovered)].map((t) => {
           const [cx, cy] = centroid(t.pts);
           const isHover = t.id === hovered;
           const scale = isHover ? 1.06 : 1;

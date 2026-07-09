@@ -2,43 +2,89 @@
 
 import Image from "next/image";
 import { RotateCcw } from "lucide-react";
+import { useLang } from "@/components/LangProvider";
+import type { Lang } from "@/lib/i18n";
 
-const CARDS = [
-  {
-    label: "Elektromobilität",
-    stat: "300 Mio.",
-    statLabel: "Elektrofahrzeuge bis 2030",
-    description:
-      "Jedes Elektrofahrzeug benötigt etwa drei- bis fünfmal mehr Leistungselektronik als ein Fahrzeug mit Verbrennungsmotor.",
-    image: "/images/e-mobility.png",
-  },
-  {
-    label: "Industrielle Elektrifizierung",
-    stat: "40 %",
-    statLabel: "des weltweiten Energieverbrauchs",
-    description:
-      "Die Elektrifizierung von Motoren und Antrieben schreitet immer schneller voran.",
-    image: "/images/industrial-automation.png",
-  },
-  {
-    label: "Erneuerbare Energien",
-    stat: "55 %",
-    statLabel: "des Strombedarfs bis 2035",
-    description:
-      "Erneuerbare Energien sollen bis 2035 mehr als 55 % des weltweiten Strombedarfs decken.",
-    image: "/images/renewable-energy.png",
-  },
-  {
-    label: "KI Rechenzentren",
-    stat: "×2",
-    statLabel: "Strombedarf bis 2030",
-    description:
-      "Der weltweite Strombedarf von Rechenzentren wird sich bis 2030 verdoppeln. Die Energieeffizienz ist die wichtigste Planungsvorgabe.",
-    image: "/images/ai-data-center.png",
-  },
-];
+type Card = {
+  label: string;
+  stat: string;
+  statLabel: string;
+  description: string;
+  image: string;
+};
 
-function FlipCard({ card }: { card: (typeof CARDS)[0] }) {
+const CARDS: Record<Lang, Card[]> = {
+  de: [
+    {
+      label: "Elektromobilität",
+      stat: "300 Mio.",
+      statLabel: "Elektrofahrzeuge bis 2030",
+      description:
+        "Jedes Elektrofahrzeug benötigt etwa drei- bis fünfmal mehr Leistungselektronik als ein Fahrzeug mit Verbrennungsmotor.",
+      image: "/images/card-emobility.png",
+    },
+    {
+      label: "Industrielle Elektrifizierung",
+      stat: "40 %",
+      statLabel: "des weltweiten Energieverbrauchs",
+      description:
+        "Die Elektrifizierung von Motoren und Antrieben schreitet immer schneller voran.",
+      image: "/images/card-industrial.png",
+    },
+    {
+      label: "Erneuerbare Energien",
+      stat: "55 %",
+      statLabel: "des Strombedarfs bis 2035",
+      description:
+        "Erneuerbare Energien sollen bis 2035 mehr als 55 % des weltweiten Strombedarfs decken.",
+      image: "/images/card-renewables.png",
+    },
+    {
+      label: "KI Rechenzentren",
+      stat: "×2",
+      statLabel: "Strombedarf bis 2030",
+      description:
+        "Der weltweite Strombedarf von Rechenzentren wird sich bis 2030 verdoppeln. Die Energieeffizienz ist die wichtigste Planungsvorgabe.",
+      image: "/images/card-ai-datacenter.png",
+    },
+  ],
+  en: [
+    {
+      label: "E-Mobility",
+      stat: "300 M",
+      statLabel: "electric vehicles by 2030",
+      description:
+        "Every electric vehicle needs roughly three to five times more power electronics than a combustion-engine car.",
+      image: "/images/card-emobility.png",
+    },
+    {
+      label: "Industrial Electrification",
+      stat: "40 %",
+      statLabel: "of global energy consumption",
+      description:
+        "The electrification of motors and drives is accelerating rapidly.",
+      image: "/images/card-industrial.png",
+    },
+    {
+      label: "Renewable Energy",
+      stat: "55 %",
+      statLabel: "of electricity demand by 2035",
+      description:
+        "Renewables are set to cover more than 55% of global electricity demand by 2035.",
+      image: "/images/card-renewables.png",
+    },
+    {
+      label: "AI Data Centers",
+      stat: "×2",
+      statLabel: "electricity demand by 2030",
+      description:
+        "Global data-center electricity demand will double by 2030. Energy efficiency is the number-one design requirement.",
+      image: "/images/card-ai-datacenter.png",
+    },
+  ],
+};
+
+function FlipCard({ card }: { card: Card }) {
   return (
     <div className="h-72 [perspective:1000px] group cursor-pointer">
       <div className="relative w-full h-full transition-transform duration-700 ease-in-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
@@ -99,13 +145,16 @@ function FlipCard({ card }: { card: (typeof CARDS)[0] }) {
 }
 
 export default function ElectrifiedWorldCards() {
+  const lang = useLang();
+  const cards = CARDS[lang];
+
   return (
     <section className="relative py-24 sm:py-32 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         {/* ── Desktop: 2×2 flip-card grid ── */}
         <div className="hidden md:grid grid-cols-2 gap-6">
-          {CARDS.map((card) => (
+          {cards.map((card) => (
             <FlipCard key={card.label} card={card} />
           ))}
         </div>
@@ -115,7 +164,7 @@ export default function ElectrifiedWorldCards() {
           className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 px-6"
           style={{ scrollbarWidth: "none" }}
         >
-          {CARDS.map((card) => (
+          {cards.map((card) => (
             <div
               key={card.label}
               className="snap-center flex-shrink-0 w-[85vw] rounded-2xl overflow-hidden shadow-lg"
@@ -155,7 +204,7 @@ export default function ElectrifiedWorldCards() {
 
         {/* Scroll-indicator dots (mobile only) */}
         <div className="md:hidden flex justify-center gap-2 mt-5">
-          {CARDS.map((card) => (
+          {cards.map((card) => (
             <div
               key={card.label}
               className="w-1.5 h-1.5 rounded-full bg-brand-navy/20"
