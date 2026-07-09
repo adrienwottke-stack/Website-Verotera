@@ -147,8 +147,8 @@ export default function ContactSection() {
           {t.headline}
         </h2>
 
-        {/* Intro Tagline */}
-        <p className="font-sans text-brand-cyan text-lg font-semibold tracking-wide uppercase mb-6 max-w-2xl mx-auto">
+        {/* Lead */}
+        <p className="font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed mb-6 max-w-2xl mx-auto">
           {t.tagline}
         </p>
 

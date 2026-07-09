@@ -12,26 +12,27 @@ const BADGE_HIGHLIGHTS = ["Full Stack", "System-Level", "Industry Bridge", "Fast
 const COPY: Record<
   Lang,
   {
-    intro: string;
+    headline: string;
+    body: string;
     imageAlt: string;
-    panelTitle: string;
-    panelSub: string;
-    panelMeta: string;
     panelEyebrow: string;
+    panelTitle: string;
+    panelMeta: string;
     panelBody: string;
     badges: { title: string; description: string }[];
   }
 > = {
   de: {
-    intro:
+    headline:
       "Wir gestalten den industriellen Wandel mit innovativen Wide-Bandgap-Halbleiter-Packaging-Technologien.",
+    body:
+      "VEROTERAs fortschrittliche WBG-Leistungsmodule sind darauf ausgelegt, höchste Leistung zu liefern – für intelligentere und effizientere Systeme in KI-Rechenzentren, E-Mobilität, erneuerbaren Energien, grünem Wasserstoff oder der Industrie-Automation.",
     imageAlt: "Collaborative Intelligence – Menschen und Präzision in der WBG-Fertigung",
-    panelTitle: "Innovative Wide-Bandgap Halbleitermodule",
-    panelSub: "Collaborative Intelligence",
+    panelEyebrow: "Innovative Wide-Bandgap Halbleitermodule",
+    panelTitle: "Collaborative Intelligence",
     panelMeta: "Powered by People and Precision – Connecting Global Expertise",
-    panelEyebrow: "Applikationen",
     panelBody:
-      "VEROTERAs fortschrittliche WBG-Leistungsmodule sind darauf ausgelegt, höchste Leistung zu liefern – für intelligentere und effizientere Systeme in KI-Rechenzentren, E-Mobilität, erneuerbaren Energien, grünem Wasserstoff oder der Industrie-Automation. Wir gestalten die Zukunft des Engineerings durch intelligente Zusammenarbeit zwischen Menschen, Systemen und künstlicher Intelligenz – mit adaptiven, resilienten und nachhaltigen Lösungen, die mit ihrer Umgebung wachsen.",
+      "Wir gestalten die Zukunft des Engineerings durch intelligente Zusammenarbeit zwischen Menschen, Systemen und künstlicher Intelligenz – mit adaptiven, resilienten und nachhaltigen Lösungen, die mit ihrer Umgebung wachsen.",
     badges: [
       {
         title: "Vom Chip bis zum System",
@@ -56,15 +57,16 @@ const COPY: Record<
     ],
   },
   en: {
-    intro:
+    headline:
       "We shape the industrial transformation with innovative wide-bandgap semiconductor packaging technologies.",
+    body:
+      "VEROTERA's advanced WBG power modules are engineered to deliver peak performance — enabling smarter, more efficient systems in AI data centers, e-mobility, renewable energy, green hydrogen and industrial automation.",
     imageAlt: "Collaborative intelligence — people and precision in WBG manufacturing",
-    panelTitle: "Innovative Wide-Bandgap Semiconductor Modules",
-    panelSub: "Collaborative Intelligence",
+    panelEyebrow: "Innovative Wide-Bandgap Semiconductor Modules",
+    panelTitle: "Collaborative Intelligence",
     panelMeta: "Powered by People and Precision – Connecting Global Expertise",
-    panelEyebrow: "Applications",
     panelBody:
-      "VEROTERA's advanced WBG power modules are engineered to deliver peak performance — enabling smarter, more efficient systems in AI data centers, e-mobility, renewable energy, green hydrogen and industrial automation. We shape the future of engineering through intelligent collaboration between people, systems and artificial intelligence — with adaptive, resilient and sustainable solutions that grow with their environment.",
+      "We shape the future of engineering through intelligent collaboration between people, systems and artificial intelligence — with adaptive, resilient and sustainable solutions that grow with their environment.",
     badges: [
       {
         title: "From Chip to System",
@@ -99,13 +101,16 @@ export default function WhyVerotera() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
-        {/* Section Header (CSV: Your Goal. Our Tech. One Vision.) */}
-        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <span className="font-display text-2xl sm:text-3xl font-bold text-brand-cyan block">
+        {/* Section Header — Teaser → Headline → Body */}
+        <div className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
+          <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
             Your Goal. Our Tech. One Vision.
           </span>
-          <p className="mt-4 font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed">
-            {t.intro}
+          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight">
+            {t.headline}
+          </h2>
+          <p className="mt-6 font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed max-w-3xl mx-auto">
+            {t.body}
           </p>
         </div>
 
@@ -128,19 +133,16 @@ export default function WhyVerotera() {
           {/* Right: Text Content */}
           <div className="lg:col-span-6 flex flex-col justify-center lg:pl-10">
             <div>
+              <span className="text-brand-blue text-xs font-bold uppercase tracking-widest mb-3 block">
+                {t.panelEyebrow}
+              </span>
               <h3 className="font-display text-2xl sm:text-3xl font-bold text-brand-navy mb-2 leading-tight">
                 {t.panelTitle}
               </h3>
-              <p className="text-brand-blue font-semibold text-lg mb-2">
-                {t.panelSub}
-              </p>
               <p className="text-brand-navy/60 text-sm mb-8">
                 {t.panelMeta}
               </p>
 
-              <span className="text-brand-blue text-xs font-bold uppercase tracking-widest mb-3 block">
-                {t.panelEyebrow}
-              </span>
               <p className="text-brand-navy/70 text-sm leading-relaxed">
                 {t.panelBody}
               </p>

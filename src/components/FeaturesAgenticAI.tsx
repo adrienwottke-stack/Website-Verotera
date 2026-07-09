@@ -8,7 +8,7 @@ import type { Lang } from "@/lib/i18n";
 
 const COPY: Record<
   Lang,
-  { delivers: string[]; moduleAlt: string; headline: string; sub: string }
+  { delivers: string[]; moduleAlt: string; teaser: string; headline: string; body: string }
 > = {
   de: {
     delivers: [
@@ -19,8 +19,10 @@ const COPY: Record<
       "Strukturierte Ergebnisse",
     ],
     moduleAlt: "VEROTERA Wide-Bandgap Leistungsmodul",
-    headline: "Schneller. Präziser. Besser. Produktentwicklung mit agentischer KI",
-    sub: "Orchestrierte Intelligenz für das Systems Engineering",
+    teaser: "Schneller. Präziser. Besser.",
+    headline: "Produktentwicklung mit agentischer KI",
+    body:
+      "Orchestrierte Intelligenz für das Systems Engineering: Unsere KI-Agenten begleiten den gesamten Entwicklungszyklus – von der Anforderungsanalyse über Ideation, Safety- & Security-Konzepte und Design-Exploration bis zu strukturierten Ergebnissen.",
   },
   en: {
     delivers: [
@@ -31,8 +33,10 @@ const COPY: Record<
       "Structured deliverables",
     ],
     moduleAlt: "VEROTERA wide-bandgap power module",
-    headline: "Faster. More precise. Better. Product development with agentic AI",
-    sub: "Orchestrated intelligence for systems engineering",
+    teaser: "Faster. More precise. Better.",
+    headline: "Product development with agentic AI",
+    body:
+      "Orchestrated intelligence for systems engineering: our AI agents support the entire development cycle — from requirements analysis through ideation, safety & security concepts and design exploration to structured deliverables.",
   },
 };
 
@@ -80,13 +84,16 @@ export default function FeaturesAgenticAI() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
-        {/* Section Header — bold tagline as title, orchestration line below (matches reference) */}
+        {/* Section Header — Teaser → Headline → Body */}
         <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16">
+          <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
+            {t.teaser}
+          </span>
           <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight">
             {t.headline}
           </h2>
-          <p className="mt-4 font-sans text-lg sm:text-xl text-brand-navy/60">
-            {t.sub}
+          <p className="mt-4 font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed max-w-3xl mx-auto">
+            {t.body}
           </p>
         </div>
 

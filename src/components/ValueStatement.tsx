@@ -16,10 +16,10 @@ const COPY: Record<
   }
 > = {
   de: {
-    eyebrow: "Advanced Semiconductors. Applied Engineering. Sustainable Impact.",
+    eyebrow: "Unsere Mission",
     headline: "Der Wert einer Technologie zeigt sich in dem, was sie ermöglicht.",
     body:
-      "Bei VEROTERA bemisst sich der Wert einer Technologie an dem, was sie ermöglicht. Wir überführen Wide-Bandgap-Bauelemente SiC & GaN in robuste, effiziente Leistungssysteme und verbinden Bauteil-Know-how mit Applikations-Engineering, damit unsere Kunden Systeme entwickeln, die effizienter, zuverlässiger und nachhaltiger sind.",
+      "Bei VEROTERA überführen wir Wide-Bandgap-Bauelemente SiC & GaN in robuste, effiziente Leistungssysteme und verbinden Bauteil-Know-how mit Applikations-Engineering, damit unsere Kunden Systeme entwickeln, die effizienter, zuverlässiger und nachhaltiger sind.",
     closing:
       "Vom Prototyp bis zur Serie treiben wir die Elektrifizierung von Mobilität, Industrie, Energie und Rechenzentren voran.",
     alts: [
@@ -31,10 +31,10 @@ const COPY: Record<
     ],
   },
   en: {
-    eyebrow: "Advanced Semiconductors. Applied Engineering. Sustainable Impact.",
+    eyebrow: "Our Mission",
     headline: "The value of a technology lies in what it makes possible.",
     body:
-      "At VEROTERA, a technology is worth what it enables. We turn wide-bandgap SiC & GaN devices into robust, efficient power systems — combining component know-how with application engineering so our customers can build systems that are more efficient, more reliable and more sustainable.",
+      "At VEROTERA, we turn wide-bandgap SiC & GaN devices into robust, efficient power systems — combining component know-how with application engineering so our customers can build systems that are more efficient, more reliable and more sustainable.",
     closing:
       "From prototype to series production, we drive the electrification of mobility, industry, energy and data centers.",
     alts: [
@@ -65,7 +65,7 @@ export default function ValueStatement() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <Reveal>
           <div className="text-center max-w-4xl mx-auto">
-            <span className="text-lg font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
+            <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
               {t.eyebrow}
             </span>
             <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy mb-8">
