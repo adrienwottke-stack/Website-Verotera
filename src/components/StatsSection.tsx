@@ -116,14 +116,14 @@ export default function StatsSection() {
 
           {/* Left Area: Stats Counts */}
           <div className="lg:col-span-6 flex flex-col justify-center">
-            <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-3 block">
+            <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
               {t.eyebrow}
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy mb-6">
+            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight mb-6">
               {t.headlineA} <br className="hidden sm:inline" />
               {t.headlineB}
             </h2>
-            <p className="font-sans text-base text-brand-navy/60 leading-relaxed mb-12">
+            <p className="font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed mb-12">
               {t.intro}
             </p>
 

@@ -68,11 +68,11 @@ export default function EfficiencyDemand() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <Reveal>
-          <div className="text-center max-w-4xl mx-auto mb-14">
+          <div className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
               {t.eyebrow}
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy">
+            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight">
               {t.headline}
             </h2>
           </div>

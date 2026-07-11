@@ -91,14 +91,14 @@ export default function AdvancedPackaging() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         {/* Section Header (centered) */}
-        <Reveal className="max-w-4xl mx-auto text-center mb-16 sm:mb-24">
-          <span className="text-lg font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
+        <Reveal className="max-w-4xl mx-auto text-center mb-14 sm:mb-16">
+          <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
             {t.eyebrow}
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-brand-navy mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight mb-6">
             Advanced Packaging
           </h2>
-          <p className="font-sans text-lg sm:text-xl text-brand-navy/70 leading-relaxed mb-8">
+          <p className="font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed mb-6">
             {t.lead}
           </p>
           <p className="font-sans text-base sm:text-lg font-semibold text-brand-navy leading-relaxed">

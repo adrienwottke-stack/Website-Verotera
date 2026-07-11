@@ -52,7 +52,7 @@ const IMAGE_SOURCES = [
   "/images/ai-data-center-rack.png",
   "/images/emobility-automotive.png",
   "/images/green-hydrogen.png",
-  "/images/robotics-production.png",
+  "/images/automation-robotics.png",
 ];
 
 export default function ValueStatement() {
@@ -68,10 +68,10 @@ export default function ValueStatement() {
             <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
               {t.eyebrow}
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy mb-8">
+            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight mb-6">
               {t.headline}
             </h2>
-            <p className="font-sans text-base text-brand-navy/60 leading-relaxed max-w-3xl mx-auto mb-6">
+            <p className="font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed max-w-3xl mx-auto mb-6">
               {t.body}
             </p>
             <p className="font-sans text-base sm:text-lg font-semibold text-brand-navy leading-relaxed max-w-3xl mx-auto">

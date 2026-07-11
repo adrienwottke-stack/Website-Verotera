@@ -138,12 +138,12 @@ export default function ContactSection() {
 
       <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
         {/* Eyebrow */}
-        <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-3 block">
+        <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
           {t.eyebrow}
         </span>
 
         {/* Headline */}
-        <h2 className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-brand-navy mb-6">
+        <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight mb-6">
           {t.headline}
         </h2>
 

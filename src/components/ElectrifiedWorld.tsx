@@ -37,7 +37,7 @@ export default function ElectrifiedWorld() {
             <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
               {t.eyebrow}
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy mb-10">
+            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight mb-10">
               The Electrified World
             </h2>
 
@@ -53,7 +53,7 @@ export default function ElectrifiedWorld() {
               {t.source}
             </p>
 
-            <p className="font-sans text-base text-brand-navy/60 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed max-w-2xl mx-auto">
               {t.body}
             </p>
           </div>

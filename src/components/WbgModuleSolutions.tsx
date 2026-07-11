@@ -54,11 +54,11 @@ export default function WbgModuleSolutions() {
 
       <div className="max-w-[1800px] mx-auto px-6 lg:px-10 relative z-10">
         {/* Centered header */}
-        <Reveal className="text-center max-w-4xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan block mb-4">
+        <Reveal className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
+          <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
             {t.eyebrow}
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight">
             {t.headline}
           </h2>
         </Reveal>

@@ -45,22 +45,26 @@ function ModuleAndDelivers({
   className = "",
   delivers,
   moduleAlt,
+  showImage = true,
 }: {
   className?: string;
   delivers: string[];
   moduleAlt: string;
+  showImage?: boolean;
 }) {
   return (
     <div className={className}>
-      <div className="relative w-[130px] aspect-[4/3] rounded-lg overflow-hidden border border-brand-navy/8 bg-surface-light shadow-sm mb-5">
-        <Image
-          src="/images/power-module-black.png"
-          alt={moduleAlt}
-          fill
-          className="object-cover"
-          sizes="130px"
-        />
-      </div>
+      {showImage && (
+        <div className="relative w-[130px] aspect-[4/3] rounded-lg overflow-hidden border border-brand-navy/8 bg-surface-light shadow-sm mb-5">
+          <Image
+            src="/images/power-module-black.png"
+            alt={moduleAlt}
+            fill
+            className="object-cover"
+            sizes="130px"
+          />
+        </div>
+      )}
       <ul className="space-y-2 list-none m-0 p-0">
         {delivers.map((item) => (
           <li key={item} className="flex items-center gap-2.5">
@@ -85,14 +89,14 @@ export default function FeaturesAgenticAI() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         {/* Section Header — Teaser → Headline → Body */}
-        <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
           <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
             {t.teaser}
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight mb-6">
             {t.headline}
           </h2>
-          <p className="mt-4 font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed max-w-3xl mx-auto">
+          <p className="font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed max-w-3xl mx-auto">
             {t.body}
           </p>
         </div>
@@ -116,6 +120,7 @@ export default function FeaturesAgenticAI() {
           className="lg:hidden mt-10 max-w-xs mx-auto"
           delivers={t.delivers}
           moduleAlt={t.moduleAlt}
+          showImage={false}
         />
 
       </div>
