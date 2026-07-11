@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Reveal from "./Reveal";
 import VModelFunnel from "./VModelFunnel";
 import { useLang } from "@/components/LangProvider";
@@ -8,74 +7,21 @@ import type { Lang } from "@/lib/i18n";
 
 const COPY: Record<
   Lang,
-  { delivers: string[]; moduleAlt: string; teaser: string; headline: string; body: string }
+  { teaser: string; headline: string; body: string }
 > = {
   de: {
-    delivers: [
-      "Anforderungsanalyse",
-      "Ideation",
-      "Safety & Security Konzepte",
-      "Design-Exploration",
-      "Strukturierte Ergebnisse",
-    ],
-    moduleAlt: "VEROTERA Wide-Bandgap Leistungsmodul",
     teaser: "Schneller. Präziser. Besser.",
     headline: "Produktentwicklung mit agentischer KI",
     body:
       "Orchestrierte Intelligenz für das Systems Engineering: Unsere KI-Agenten begleiten den gesamten Entwicklungszyklus – von der Anforderungsanalyse über Ideation, Safety- & Security-Konzepte und Design-Exploration bis zu strukturierten Ergebnissen.",
   },
   en: {
-    delivers: [
-      "Requirements analysis",
-      "Ideation",
-      "Safety & security concepts",
-      "Design exploration",
-      "Structured deliverables",
-    ],
-    moduleAlt: "VEROTERA wide-bandgap power module",
     teaser: "Faster. More precise. Better.",
     headline: "Product development with agentic AI",
     body:
       "Orchestrated intelligence for systems engineering: our AI agents support the entire development cycle — from requirements analysis through ideation, safety & security concepts and design exploration to structured deliverables.",
   },
 };
-
-/** Power-module thumbnail + the agentic-AI deliverables list. */
-function ModuleAndDelivers({
-  className = "",
-  delivers,
-  moduleAlt,
-  showImage = true,
-}: {
-  className?: string;
-  delivers: string[];
-  moduleAlt: string;
-  showImage?: boolean;
-}) {
-  return (
-    <div className={className}>
-      {showImage && (
-        <div className="relative w-[130px] aspect-[4/3] rounded-lg overflow-hidden border border-brand-navy/8 bg-surface-light shadow-sm mb-5">
-          <Image
-            src="/images/power-module-black.png"
-            alt={moduleAlt}
-            fill
-            className="object-cover"
-            sizes="130px"
-          />
-        </div>
-      )}
-      <ul className="space-y-2 list-none m-0 p-0">
-        {delivers.map((item) => (
-          <li key={item} className="flex items-center gap-2.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan shrink-0" />
-            <span className="text-sm font-semibold text-brand-navy/80">{item}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
 
 export default function FeaturesAgenticAI() {
   const lang = useLang();
@@ -101,27 +47,10 @@ export default function FeaturesAgenticAI() {
           </p>
         </div>
 
-        {/* Interactive vector V-model funnel (V-signet at the centre); module + delivers overlaid on the left */}
+        {/* Interactive vector V-model funnel (V-signet at the centre) */}
         <Reveal>
-          <div className="relative">
-            <VModelFunnel />
-
-            {/* Desktop: floated into the funnel's empty lower-left */}
-            <ModuleAndDelivers
-              className="hidden lg:block absolute left-0 bottom-[6%] z-10"
-              delivers={t.delivers}
-              moduleAlt={t.moduleAlt}
-            />
-          </div>
+          <VModelFunnel />
         </Reveal>
-
-        {/* Mobile / tablet: stacked below the funnel */}
-        <ModuleAndDelivers
-          className="lg:hidden mt-10 max-w-xs mx-auto"
-          delivers={t.delivers}
-          moduleAlt={t.moduleAlt}
-          showImage={false}
-        />
 
       </div>
     </section>
