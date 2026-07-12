@@ -7,6 +7,7 @@ import PageHero from "@/components/PageHero";
 import SplitFeature from "@/components/SplitFeature";
 import Reveal from "@/components/Reveal";
 import { hasLang, localePath, type Lang } from "@/lib/i18n";
+import { buildMetadata, type PageMeta } from "@/lib/seo";
 
 const HIGHLIGHT_ICONS = [Grid3x3, Activity, Waves];
 
@@ -134,7 +135,7 @@ const COPY: Record<
   },
 };
 
-const META: Record<Lang, Metadata> = {
+const META: Record<Lang, PageMeta> = {
   de: {
     title: "Efficient Power Electronics for Green Hydrogen",
     description:
@@ -155,7 +156,8 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  return META[hasLang(lang) ? lang : "de"];
+  const l = hasLang(lang) ? lang : "de";
+  return buildMetadata(l, "/applications/hydrogen", META[l]);
 }
 
 export default async function HydrogenPage({

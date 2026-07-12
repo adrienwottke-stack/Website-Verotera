@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import { hasLang, localePath, type Lang } from "@/lib/i18n";
+import { buildMetadata, type PageMeta } from "@/lib/seo";
 
 const PILLAR_ICONS = [Gauge, ShieldCheck, Recycle];
 
@@ -92,7 +93,7 @@ const COPY: Record<
   },
 };
 
-const META: Record<Lang, Metadata> = {
+const META: Record<Lang, PageMeta> = {
   de: {
     title: "Qualitätsrichtlinie & Zertifizierungen | VEROTERA",
     description:
@@ -113,7 +114,8 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  return META[hasLang(lang) ? lang : "de"];
+  const l = hasLang(lang) ? lang : "de";
+  return buildMetadata(l, "/resources/quality-certifications", META[l]);
 }
 
 export default async function QualityCertificationsPage({

@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+import { hasLang, type Lang } from "@/lib/i18n";
+import { buildMetadata, type PageMeta } from "@/lib/seo";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ValueStatement from "@/components/ValueStatement";
@@ -12,6 +15,51 @@ import AgenticEcosystem from "@/components/AgenticEcosystem";
 import StatsSection from "@/components/StatsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+
+const META: Record<Lang, PageMeta> = {
+  de: {
+    title: "VEROTERA | Next-Gen Leistungselektronik & KI-Systeme",
+    description:
+      "VEROTERA wandelt Wide-Bandgap (SiC/GaN) Halbleiterchips in hocheffiziente Leistungsmodule und komplett zertifizierte Systeme um.",
+    keywords: [
+      "Leistungselektronik",
+      "Wide-Bandgap",
+      "Halbleiter",
+      "SiC",
+      "GaN",
+      "Netzteile",
+      "KI-Rechenzentren",
+      "Elektromobilität",
+      "Grüner Wasserstoff",
+    ],
+  },
+  en: {
+    title: "VEROTERA | Next-Gen Power Electronics & AI Systems",
+    description:
+      "VEROTERA turns wide-bandgap (SiC/GaN) semiconductor chips into highly efficient power modules and fully certified systems.",
+    keywords: [
+      "Power electronics",
+      "Wide bandgap",
+      "Semiconductors",
+      "SiC",
+      "GaN",
+      "Power supplies",
+      "AI data centers",
+      "E-mobility",
+      "Green hydrogen",
+    ],
+  },
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const l = hasLang(lang) ? lang : "de";
+  return buildMetadata(l, "/", META[l]);
+}
 
 export default function Home() {
   return (

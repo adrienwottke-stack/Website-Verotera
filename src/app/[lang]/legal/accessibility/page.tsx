@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import { hasLang, type Lang } from "@/lib/i18n";
+import { buildMetadata, type PageMeta } from "@/lib/seo";
 
 const MEASURE_ICONS = [Contrast, Keyboard, Eye];
 
@@ -98,7 +99,7 @@ const COPY: Record<
   },
 };
 
-const META: Record<Lang, Metadata> = {
+const META: Record<Lang, PageMeta> = {
   de: {
     title: "Barrierefreiheitserklärung - [VEROTERA]",
     description: "Erklärung zur Barrierefreiheit der VEROTERA Website.",
@@ -117,7 +118,8 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  return META[hasLang(lang) ? lang : "de"];
+  const l = hasLang(lang) ? lang : "de";
+  return buildMetadata(l, "/legal/accessibility", META[l]);
 }
 
 export default async function AccessibilityPage({

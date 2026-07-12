@@ -1,2 +1,3 @@
 @AGENTS.md
 @DESIGN.md
+@SKELETON.md

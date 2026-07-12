@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import { hasLang, localePath, type Lang } from "@/lib/i18n";
+import { buildMetadata, type PageMeta } from "@/lib/seo";
 
 type Group = { heading: string; links: { label: string; href: string }[] };
 
@@ -130,7 +131,7 @@ const COPY: Record<
   },
 };
 
-const META: Record<Lang, Metadata> = {
+const META: Record<Lang, PageMeta> = {
   de: {
     title: "Site Map - [VEROTERA]",
     description: "Übersicht aller Seiten der VEROTERA Website.",
@@ -149,7 +150,8 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  return META[hasLang(lang) ? lang : "de"];
+  const l = hasLang(lang) ? lang : "de";
+  return buildMetadata(l, "/site-map", META[l]);
 }
 
 export default async function SiteMapPage({

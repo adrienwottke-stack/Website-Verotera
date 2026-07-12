@@ -7,6 +7,7 @@ import PageHero from "@/components/PageHero";
 import SplitFeature from "@/components/SplitFeature";
 import Reveal from "@/components/Reveal";
 import { hasLang, localePath, type Lang } from "@/lib/i18n";
+import { buildMetadata, type PageMeta } from "@/lib/seo";
 
 const HIGHLIGHT_ICONS = [Gauge, BatteryCharging, Wind, TrendingDown];
 
@@ -173,7 +174,7 @@ const COPY: Record<
   },
 };
 
-const META: Record<Lang, Metadata> = {
+const META: Record<Lang, PageMeta> = {
   de: {
     title: "Advancing Technologies for Zero-Emission e-Mobility",
     description:
@@ -194,7 +195,8 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  return META[hasLang(lang) ? lang : "de"];
+  const l = hasLang(lang) ? lang : "de";
+  return buildMetadata(l, "/applications/automotive-emobility", META[l]);
 }
 
 export default async function AutomotiveEmobilityPage({

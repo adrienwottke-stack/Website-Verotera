@@ -6,6 +6,7 @@ import PageHero from "@/components/PageHero";
 import SpotlightTable from "@/components/SpotlightTable";
 import Reveal from "@/components/Reveal";
 import { hasLang, type Lang } from "@/lib/i18n";
+import { buildMetadata, type PageMeta } from "@/lib/seo";
 
 const TREND_ICONS = [Cpu, ServerCog, Bot];
 
@@ -153,7 +154,7 @@ const COPY: Record<
   },
 };
 
-const META: Record<Lang, Metadata> = {
+const META: Record<Lang, PageMeta> = {
   de: {
     title: "GaN in AI Data Center Power Distribution",
     description:
@@ -174,7 +175,8 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  return META[hasLang(lang) ? lang : "de"];
+  const l = hasLang(lang) ? lang : "de";
+  return buildMetadata(l, "/solutions/technology-spotlight-gallium-nitride", META[l]);
 }
 
 export default async function GaNSpotlightPage({

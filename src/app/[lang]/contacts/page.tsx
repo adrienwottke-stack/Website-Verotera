@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 import { hasLang, type Lang } from "@/lib/i18n";
+import { buildMetadata, type PageMeta } from "@/lib/seo";
 
 const DETAIL_ICONS = [MapPin, Mail, Phone, Clock];
 
@@ -78,7 +79,7 @@ const COPY: Record<
   },
 };
 
-const META: Record<Lang, Metadata> = {
+const META: Record<Lang, PageMeta> = {
   de: {
     title: "Contact Us - [VEROTERA]",
     description: "Send us a message and we'll get back to you as soon as possible.",
@@ -97,7 +98,8 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  return META[hasLang(lang) ? lang : "de"];
+  const l = hasLang(lang) ? lang : "de";
+  return buildMetadata(l, "/contacts", META[l]);
 }
 
 export default async function ContactsPage({

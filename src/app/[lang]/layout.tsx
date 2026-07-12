@@ -3,6 +3,7 @@ import { Work_Sans, Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import { LangProvider } from "@/components/LangProvider";
 import { LANGS, hasLang, type Lang } from "@/lib/i18n";
+import { SITE_URL, organizationJsonLd } from "@/lib/seo";
 import "../globals.css";
 
 const workSans = Work_Sans({
@@ -63,20 +64,15 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const t = META[hasLang(lang) ? lang : "de"];
+  // Canonical, hreflang and Open Graph are set per page via buildMetadata()
+  // (src/lib/seo.ts) — an openGraph block here would be inherited verbatim
+  // by every subpage and mislabel shared links.
   return {
-    metadataBase: new URL("https://verotera.com"),
+    metadataBase: new URL(SITE_URL),
     title: t.title,
     description: t.description,
     keywords: t.keywords,
     authors: [{ name: "VEROTERA GmbH" }],
-    openGraph: {
-      title: t.title,
-      description: t.description,
-      url: "https://verotera.com",
-      siteName: "VEROTERA",
-      locale: lang === "en" ? "en_US" : "de_DE",
-      type: "website",
-    },
   };
 }
 
@@ -96,6 +92,10 @@ export default async function RootLayout({
       className={`${workSans.variable} ${inter.variable} scroll-smooth`}
     >
       <body className="bg-white text-brand-navy font-sans antialiased selection:bg-brand-cyan/30 selection:text-brand-cyan">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: organizationJsonLd() }}
+        />
         <LangProvider lang={lang}>{children}</LangProvider>
       </body>
     </html>

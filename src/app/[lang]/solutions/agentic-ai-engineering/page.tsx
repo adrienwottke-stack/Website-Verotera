@@ -8,6 +8,7 @@ import VModelInteractive from "@/components/VModelInteractive";
 import SplitFeature from "@/components/SplitFeature";
 import Reveal from "@/components/Reveal";
 import { hasLang, localePath, type Lang } from "@/lib/i18n";
+import { buildMetadata, type PageMeta } from "@/lib/seo";
 
 const LAYER_ICONS = [Network, Users, Layers, Database];
 
@@ -121,7 +122,7 @@ const COPY: Record<
   },
 };
 
-const META: Record<Lang, Metadata> = {
+const META: Record<Lang, PageMeta> = {
   de: {
     title: "How Agentic AI Accelerates SiC & GaN Engineering",
     description:
@@ -142,7 +143,8 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  return META[hasLang(lang) ? lang : "de"];
+  const l = hasLang(lang) ? lang : "de";
+  return buildMetadata(l, "/solutions/agentic-ai-engineering", META[l]);
 }
 
 export default async function AgenticAiEngineeringPage({

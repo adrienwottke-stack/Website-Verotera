@@ -6,6 +6,7 @@ import PageHero from "@/components/PageHero";
 import SpotlightTable from "@/components/SpotlightTable";
 import Reveal from "@/components/Reveal";
 import { hasLang, type Lang } from "@/lib/i18n";
+import { buildMetadata, type PageMeta } from "@/lib/seo";
 
 const TREND_ICONS = [ShieldCheck, Car, BatteryCharging];
 
@@ -150,7 +151,7 @@ const COPY: Record<
   },
 };
 
-const META: Record<Lang, Metadata> = {
+const META: Record<Lang, PageMeta> = {
   de: {
     title: "SiC – Power Semiconductor of the Electrification Age",
     description:
@@ -171,7 +172,8 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  return META[hasLang(lang) ? lang : "de"];
+  const l = hasLang(lang) ? lang : "de";
+  return buildMetadata(l, "/solutions/technology-spotlight-silicium-carbide", META[l]);
 }
 
 export default async function SiCSpotlightPage({

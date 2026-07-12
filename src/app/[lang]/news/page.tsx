@@ -8,6 +8,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import { NEWS_ITEMS } from "@/data/news";
 import { hasLang, localePath, type Lang } from "@/lib/i18n";
+import { buildMetadata, type PageMeta } from "@/lib/seo";
 
 const COPY: Record<
   Lang,
@@ -27,7 +28,7 @@ const COPY: Record<
   },
 };
 
-const META: Record<Lang, Metadata> = {
+const META: Record<Lang, PageMeta> = {
   de: {
     title: "News & Insights | VEROTERA",
     description:
@@ -48,7 +49,8 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  return META[hasLang(lang) ? lang : "de"];
+  const l = hasLang(lang) ? lang : "de";
+  return buildMetadata(l, "/news", META[l]);
 }
 
 export default async function NewsPage({
