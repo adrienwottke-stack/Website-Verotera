@@ -30,8 +30,8 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Skip Next internals, the Sentry tunnel and any file with an extension
-    // (favicon.ico, sitemap.xml, robots.txt, /images/*, fonts, ...)
-    "/((?!_next|monitoring|.*\\..*).*)",
+    // Skip Next internals, API routes, the Sentry tunnel and any file with an
+    // extension (favicon.ico, sitemap.xml, robots.txt, /images/*, fonts, ...)
+    "/((?!_next|api|monitoring|.*\\..*).*)",
   ],
 };

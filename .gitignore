@@ -51,3 +51,6 @@ next-env.d.ts
 # Local review-render scratch (temporary)
 /tmp_render_review.py
 /tmp_review_pages/
+
+.vercel
+.env*

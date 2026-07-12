@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Mail, Send, CheckCircle2, Building2, User } from "lucide-react";
 import { useLang } from "@/components/LangProvider";
 import type { Lang } from "@/lib/i18n";
@@ -22,6 +22,7 @@ const COPY: Record<
     successTitle: string;
     successBody: string;
     successAgain: string;
+    errorBody: string;
   }
 > = {
   de: {
@@ -39,6 +40,8 @@ const COPY: Record<
     successBody:
       "Vielen Dank für Ihre Kontaktaufnahme. Unser Engineering-Team prüft Ihre Anfrage und meldet sich innerhalb von 24 Geschäftsstunden bei Ihnen.",
     successAgain: "Weitere Nachricht senden",
+    errorBody:
+      "Ihre Nachricht konnte gerade nicht übermittelt werden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an",
   },
   en: {
     nameLabel: "Name *",
@@ -55,6 +58,8 @@ const COPY: Record<
     successBody:
       "Thank you for reaching out. Our engineering team will review your inquiry and get back to you within 24 business hours.",
     successAgain: "Send another message",
+    errorBody:
+      "Your message could not be delivered right now. Please try again or email us directly at",
   },
 };
 
@@ -62,15 +67,27 @@ export default function ContactForm() {
   const lang = useLang();
   const t = COPY[lang];
   const [formData, setFormData] = useState({ name: "", email: "", company: "", message: "" });
-  const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
+  // "website" is a honeypot only bots fill in; the API discards those quietly.
+  const [honeypot, setHoneypot] = useState("");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
     setStatus("submitting");
-    await new Promise((resolve) => setTimeout(resolve, 1200));
-    setStatus("success");
-    setFormData({ name: "", email: "", company: "", message: "" });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, website: honeypot }),
+      });
+      if (!res.ok) throw new Error(`contact API responded ${res.status}`);
+      setStatus("success");
+      setFormData({ name: "", email: "", company: "", message: "" });
+    } catch {
+      // Keep the entered data so the visitor can simply retry.
+      setStatus("error");
+    }
   };
 
   const inputClass =
@@ -78,16 +95,29 @@ export default function ContactForm() {
 
   return (
     <div className="relative h-full min-h-[460px] rounded-3xl border border-brand-navy/8 bg-white p-8 sm:p-10 shadow-sm flex flex-col justify-center">
-      <AnimatePresence mode="wait">
-        {status !== "success" ? (
+      {/* No AnimatePresence: exit animations never fire in this build (the
+          success screen would wait forever). Keyed motion.divs with
+          enter-only animations swap instantly and fade in. */}
+      {status !== "success" ? (
           <motion.form
             key="contact-form"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
             onSubmit={handleSubmit}
             className="space-y-6"
           >
+            <div aria-hidden="true" className="absolute -left-[9999px] top-0 h-px w-px overflow-hidden">
+              <label htmlFor="cf-website">Website</label>
+              <input
+                id="cf-website"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+              />
+            </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="relative flex flex-col">
                 <label htmlFor="cf-name" className="text-xs font-semibold text-brand-navy/60 uppercase tracking-wide mb-2.5">
@@ -158,6 +188,19 @@ export default function ContactForm() {
               />
             </div>
 
+            {status === "error" && (
+              <p
+                role="alert"
+                className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 font-sans text-sm text-red-700"
+              >
+                {t.errorBody}{" "}
+                <a href="mailto:info@verotera.com" className="font-semibold underline underline-offset-2">
+                  info@verotera.com
+                </a>
+                .
+              </p>
+            )}
+
             <button
               type="submit"
               disabled={status === "submitting"}
@@ -181,7 +224,6 @@ export default function ContactForm() {
             key="success-screen"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
             className="flex flex-col items-center justify-center text-center p-6 space-y-6"
           >
             <div className="p-5 rounded-full bg-brand-emerald/10 border border-brand-emerald/20 text-brand-emerald shadow-[0_0_25px_rgba(16,185,129,0.15)]">
@@ -201,7 +243,6 @@ export default function ContactForm() {
             </button>
           </motion.div>
         )}
-      </AnimatePresence>
     </div>
   );
 }
