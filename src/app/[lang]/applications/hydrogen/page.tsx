@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Droplets, ArrowRight, Grid3x3, Waves, Activity } from "lucide-react";
+import Image from "next/image";
+import { Droplets } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
-import SplitFeature from "@/components/SplitFeature";
 import Reveal from "@/components/Reveal";
-import { hasLang, localePath, type Lang } from "@/lib/i18n";
+import BrandWatermark from "@/components/BrandWatermark";
+import ContactSection from "@/components/ContactSection";
+import { hasLang, type Lang } from "@/lib/i18n";
 import { buildMetadata, type PageMeta } from "@/lib/seo";
-
-const HIGHLIGHT_ICONS = [Grid3x3, Activity, Waves];
-
-type Feature = { alt: string; eyebrow: string; title: string; body: string[]; bullets: string[] };
 
 const COPY: Record<
   Lang,
@@ -19,119 +16,45 @@ const COPY: Record<
     heroEyebrow: string;
     heroTitle: string;
     heroSubtitle: string;
-    highlights: { title: string; text: string }[];
-    f1: Feature;
-    f2: Feature;
-    ctaTitle: string;
-    ctaBody: string;
-    ctaButton: string;
+    s1Teaser: string;
+    s1Headline: string;
+    s1Body: string;
+    s1ImageAlt: string;
+    pubEyebrow: string;
+    pubTitle: string;
+    pubBody: string;
+    pubMeta: string;
   }
 > = {
   de: {
     heroEyebrow: "Grüner Wasserstoff",
-    heroTitle: "Effiziente Leistungselektronik für grünen Wasserstoff",
-    heroSubtitle:
-      "Die Effizienz der grünen Wasserstoffproduktion hängt an der Leistungselektronik. Wide-Bandgap-Halbleiter steigern Wirkungsgrad und Leistungsdichte entlang des gesamten DC-Energiepfads.",
-    highlights: [
-      {
-        title: "Netzkopplung",
-        text: "AC/DC-Gleichrichter koppeln Elektrolyseure ans Netz und an erneuerbare Quellen – netzkonform und mit hohem Leistungsfaktor.",
-      },
-      {
-        title: "Hochfrequente DC-DC-Wandler",
-        text: "WBG-basierte DC-DC-Stufen liefern den hohen Strom bei niedriger Spannung, den PEM- und AEM-Elektrolyseure benötigen.",
-      },
-      {
-        title: "Reduzierte Oberwellen",
-        text: "Höhere Schaltfrequenzen und präzise Regelung minimieren Stromrippel und Oberwellenverluste im Elektrolyseur-Stack.",
-      },
-    ],
-    f1: {
-      alt: "Anlage für grünen Wasserstoff",
-      eyebrow: "Grid Coupling",
-      title: "Vom Netz zum Elektrolyseur",
-      body: [
-        "Grüner Wasserstoff entsteht durch Elektrolyse mit Strom aus erneuerbaren Quellen. Die entscheidende Schnittstelle ist die Leistungselektronik, die volatilen Wind- und Solarstrom in den präzise geregelten Gleichstrom des Elektrolyseurs überführt.",
-        "SiC-basierte Gleichrichter koppeln den Elektrolyseur netzkonform an und halten den Leistungsfaktor hoch – bei minimalen Wandlungsverlusten.",
-      ],
-      bullets: [
-        "Netzkonforme AC/DC-Stufe",
-        "Kopplung an Wind & Solar",
-        "Hoher Leistungsfaktor",
-        "Minimale Wandlungsverluste",
-      ],
-    },
-    f2: {
-      alt: "AEM-Elektrolyseur",
-      eyebrow: "DC-DC Conversion",
-      title: "Hochstrom für PEM- und AEM-Stacks",
-      body: [
-        "Elektrolyseur-Stacks benötigen sehr hohe Ströme bei niedriger Spannung. Hochfrequente DC-DC-Wandler mit Wide-Bandgap-Halbleitern liefern diese Leistung kompakt und mit hohem Wirkungsgrad.",
-        "Die hohe Schaltfrequenz reduziert Stromrippel und Oberwellenverluste im Stack – das verbessert sowohl den Systemwirkungsgrad als auch die Lebensdauer der Membran.",
-      ],
-      bullets: [
-        "Hochstrom bei niedriger Spannung",
-        "Geringer Stromrippel",
-        "Reduzierte Oberwellenverluste",
-        "Längere Membran-Lebensdauer",
-      ],
-    },
-    ctaTitle: "Skalieren Sie Ihre Elektrolyse-Leistungselektronik",
-    ctaBody: "Wir entwickeln effiziente Umrichter- und DC-DC-Lösungen für PEM- und AEM-Elektrolyseure.",
-    ctaButton: "Kontakt aufnehmen",
+    heroTitle: "Effiziente Leistungselektronik aus NRW für grünen Wasserstoff",
+    heroSubtitle: "Wide-Bandgap-Halbleiter steigern Effizienz und Leistungsdichte.",
+    s1Teaser: "Eine Schlüsseltechnologie in der DC-Leistungskonvertierung für Elektrolyseure",
+    s1Headline: "Wide-Bandgap-Halbleiter von VEROTERA",
+    s1Body:
+      "Die Effizienz der grünen Wasserstoffproduktion hängt maßgeblich von der Leistungselektronik ab. Wide-Bandgap-Halbleiter steigern Effizienz und Leistungsdichte – und bilden damit die technologische Grundlage für skalierbare Elektrolysesysteme.",
+    s1ImageAlt: "AEM-Elektrolyseur in Container-Bauweise für die grüne Wasserstoffproduktion",
+    pubEyebrow: "Fachbeitrag",
+    pubTitle: "„Effiziente Leistungselektronik aus NRW für grünen Wasserstoff“",
+    pubBody:
+      "Wie Wide-Bandgap-Halbleiter Wirkungsgrad und Leistungsdichte in der Elektrolyse erhöhen: VEROTERA im NMWP-Magazin „Wasserstoff für den Strukturwandel in NRW – Technologien, Anwendungen und Wertschöpfung“.",
+    pubMeta: "NMWP-Magazin · Heft 17 · Cluster NMWP.NRW",
   },
   en: {
     heroEyebrow: "Green Hydrogen",
-    heroTitle: "Efficient power electronics for green hydrogen",
-    heroSubtitle:
-      "The efficiency of green hydrogen production hinges on power electronics. Wide-bandgap semiconductors increase efficiency and power density along the entire DC energy path.",
-    highlights: [
-      {
-        title: "Grid Coupling",
-        text: "AC/DC rectifiers couple electrolyzers to the grid and to renewable sources — grid-compliant and with a high power factor.",
-      },
-      {
-        title: "High-Frequency DC-DC Converters",
-        text: "WBG-based DC-DC stages deliver the high current at low voltage that PEM and AEM electrolyzers require.",
-      },
-      {
-        title: "Reduced Harmonics",
-        text: "Higher switching frequencies and precise control minimize current ripple and harmonic losses in the electrolyzer stack.",
-      },
-    ],
-    f1: {
-      alt: "Green hydrogen plant",
-      eyebrow: "Grid Coupling",
-      title: "From the grid to the electrolyzer",
-      body: [
-        "Green hydrogen is produced by electrolysis powered by renewable electricity. The decisive interface is the power electronics that turn volatile wind and solar power into the precisely regulated direct current the electrolyzer needs.",
-        "SiC-based rectifiers couple the electrolyzer to the grid in a compliant way and keep the power factor high — with minimal conversion losses.",
-      ],
-      bullets: [
-        "Grid-compliant AC/DC stage",
-        "Coupling to wind & solar",
-        "High power factor",
-        "Minimal conversion losses",
-      ],
-    },
-    f2: {
-      alt: "AEM electrolyzer",
-      eyebrow: "DC-DC Conversion",
-      title: "High current for PEM and AEM stacks",
-      body: [
-        "Electrolyzer stacks require very high currents at low voltage. High-frequency DC-DC converters with wide-bandgap semiconductors deliver this power compactly and with high efficiency.",
-        "The high switching frequency reduces current ripple and harmonic losses in the stack — improving both system efficiency and membrane lifetime.",
-      ],
-      bullets: [
-        "High current at low voltage",
-        "Low current ripple",
-        "Reduced harmonic losses",
-        "Longer membrane lifetime",
-      ],
-    },
-    ctaTitle: "Scale your electrolysis power electronics",
-    ctaBody: "We develop efficient converter and DC-DC solutions for PEM and AEM electrolyzers.",
-    ctaButton: "Get in touch",
+    heroTitle: "Efficient power electronics from NRW for green hydrogen",
+    heroSubtitle: "Wide-bandgap semiconductors increase efficiency and power density.",
+    s1Teaser: "A key technology in DC power conversion for electrolyzers",
+    s1Headline: "Wide-bandgap semiconductors from VEROTERA",
+    s1Body:
+      "The efficiency of green hydrogen production hinges on power electronics. Wide-bandgap semiconductors increase efficiency and power density — forming the technological foundation for scalable electrolysis systems.",
+    s1ImageAlt: "Containerized AEM electrolyzer for green hydrogen production",
+    pubEyebrow: "Featured Article",
+    pubTitle: "“Efficient power electronics from NRW for green hydrogen”",
+    pubBody:
+      "How wide-bandgap semiconductors raise efficiency and power density in electrolysis: VEROTERA in the NMWP magazine “Wasserstoff für den Strukturwandel in NRW” (Hydrogen for structural change in NRW — technologies, applications and value creation).",
+    pubMeta: "NMWP magazine · Issue 17 · NMWP.NRW cluster",
   },
 };
 
@@ -139,14 +62,26 @@ const META: Record<Lang, PageMeta> = {
   de: {
     title: "Efficient Power Electronics for Green Hydrogen",
     description:
-      "The efficiency of green hydrogen production hinges on power electronics. Wide-bandgap semiconductors increase efficiency and power density",
-    keywords: ["power electronics", "green hydrogen", "electrolyzers", "DC-DC converter"],
+      "The efficiency of green hydrogen production hinges on power electronics. Wide-bandgap semiconductors increase efficiency and power density.",
+    keywords: [
+      "power electronics",
+      "green hydrogen",
+      "electrolyzers",
+      "DC power conversion",
+      "wide-bandgap semiconductors",
+    ],
   },
   en: {
     title: "Efficient Power Electronics for Green Hydrogen",
     description:
-      "The efficiency of green hydrogen production hinges on power electronics. Wide-bandgap semiconductors increase efficiency and power density",
-    keywords: ["power electronics", "green hydrogen", "electrolyzers", "DC-DC converter"],
+      "The efficiency of green hydrogen production hinges on power electronics. Wide-bandgap semiconductors increase efficiency and power density.",
+    keywords: [
+      "power electronics",
+      "green hydrogen",
+      "electrolyzers",
+      "DC power conversion",
+      "wide-bandgap semiconductors",
+    ],
   },
 };
 
@@ -174,6 +109,7 @@ export default async function HydrogenPage({
       <Header />
 
       <main className="flex-grow">
+        {/* Folie 38 — Deckblatt */}
         <PageHero
           eyebrow={t.heroEyebrow}
           icon={Droplets}
@@ -182,68 +118,59 @@ export default async function HydrogenPage({
           width="wide"
         />
 
-        {/* Highlights */}
-        <section className="py-16 sm:py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {t.highlights.map((h, i) => {
-              const Icon = HIGHLIGHT_ICONS[i];
-              return (
-                <Reveal key={h.title} delay={i * 0.1}>
-                  <div className="glass-panel glass-panel-hover h-full p-7">
-                    <div className="p-3 rounded-xl bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan w-fit mb-4">
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <h3 className="font-display text-lg font-bold text-brand-navy mb-2">{h.title}</h3>
-                    <p className="text-sm text-brand-navy/60 leading-relaxed">{h.text}</p>
+        {/* Folie 39 — Pattern B: Split Bild ↔ Text */}
+        <section className="relative py-24 sm:py-32 bg-white overflow-hidden">
+          <BrandWatermark position="bottom-left" tint="blue" size={460} opacity={0.05} />
+          <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-brand-cyan/[0.07] rounded-full blur-[110px] pointer-events-none" />
+
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            {/* Sektions-Header: Teaser → Headline → Body */}
+            <Reveal className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
+                {t.s1Teaser}
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight mb-6">
+                {t.s1Headline}
+              </h2>
+              <p className="font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed max-w-3xl mx-auto">
+                {t.s1Body}
+              </p>
+            </Reveal>
+
+            {/* Split: AEM-Elektrolyseur links ↔ Fachbeitrag rechts */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              <Reveal className="lg:col-span-6">
+                <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-brand-navy/8 bg-surface-light shadow-sm flex items-center justify-center p-6">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src="/images/hydrogen-aem-electrolyzer.jpg"
+                      alt={t.s1ImageAlt}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
                   </div>
-                </Reveal>
-              );
-            })}
+                </div>
+              </Reveal>
+
+              <Reveal delay={0.12} className="lg:col-span-6">
+                <span className="text-xs font-bold uppercase tracking-wider text-brand-navy/40">
+                  {t.pubEyebrow}
+                </span>
+                <h3 className="font-display text-2xl sm:text-3xl font-bold text-brand-navy leading-tight mt-2 mb-6">
+                  {t.pubTitle}
+                </h3>
+                <p className="font-sans text-sm sm:text-base text-brand-navy/70 leading-relaxed mb-4">
+                  {t.pubBody}
+                </p>
+                <p className="font-sans text-sm text-brand-navy/40">{t.pubMeta}</p>
+              </Reveal>
+            </div>
           </div>
         </section>
 
-        {/* Features */}
-        <section className="py-16 sm:py-24 bg-surface-light border-y border-brand-navy/8">
-          <div className="max-w-7xl mx-auto px-6 space-y-24">
-            <SplitFeature
-              image="/images/green-hydrogen.png"
-              alt={t.f1.alt}
-              imageSide="right"
-              eyebrow={t.f1.eyebrow}
-              title={t.f1.title}
-              body={t.f1.body}
-              bullets={t.f1.bullets}
-            />
-
-            <SplitFeature
-              image="/images/hydrogen-aem-electrolyzer.jpg"
-              alt={t.f2.alt}
-              imageSide="left"
-              eyebrow={t.f2.eyebrow}
-              title={t.f2.title}
-              body={t.f2.body}
-              bullets={t.f2.bullets}
-            />
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-16 bg-white border-t border-brand-navy/8">
-          <div className="max-w-3xl mx-auto px-6 text-center">
-            <h2 className="font-display text-2xl sm:text-3xl font-bold text-brand-navy mb-4">
-              {t.ctaTitle}
-            </h2>
-            <p className="text-brand-navy/60 mb-8">
-              {t.ctaBody}
-            </p>
-            <Link
-              href={localePath(lang, "/contacts")}
-              className="inline-flex items-center gap-2 px-7 py-3 rounded-lg bg-brand-navy text-white font-semibold text-sm hover:bg-brand-navy/90 transition-colors"
-            >
-              {t.ctaButton} <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </section>
+        {/* Schluss-CTA */}
+        <ContactSection />
       </main>
 
       <Footer />

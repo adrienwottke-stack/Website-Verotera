@@ -5,6 +5,19 @@ export const SITE_URL = "https://verotera.com";
 export const SITE_NAME = "VEROTERA";
 
 /**
+ * Shared social-sharing image (src/app/opengraph-image.png). Referenced
+ * explicitly because the file convention emits no og:image tags for pages
+ * inside the dynamic [lang] segment (and broke the Vercel build when the
+ * file lived there). Alt text mirrors src/app/opengraph-image.alt.txt.
+ */
+const OG_IMAGE = {
+  url: `${SITE_URL}/opengraph-image.png`,
+  width: 1200,
+  height: 630,
+  alt: "VEROTERA — Next-Gen Power Electronics & AI Systems. Wide-Bandgap (SiC/GaN), from chip to system.",
+};
+
+/**
  * Public absolute URL of a page. German lives at the unprefixed URLs,
  * English under /en (see src/proxy.ts and src/app/sitemap.ts).
  */
@@ -74,11 +87,13 @@ export function buildMetadata(lang: Lang, path: string, meta: PageMeta): Metadat
       siteName: SITE_NAME,
       locale: lang === "en" ? "en_US" : "de_DE",
       type: "website",
+      images: [OG_IMAGE],
     },
     twitter: {
       card: "summary_large_image",
       title: meta.title,
       description: meta.description,
+      images: [OG_IMAGE.url],
     },
   };
 }

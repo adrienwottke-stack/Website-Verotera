@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
+import BrandWatermark from "@/components/BrandWatermark";
+import ContactSection from "@/components/ContactSection";
 import { hasLang, localePath, type Lang } from "@/lib/i18n";
 import { buildMetadata, type PageMeta } from "@/lib/seo";
 
@@ -20,7 +22,8 @@ const COPY: Record<
     cultureTitle: string;
     cultureBody: string;
     values: { title: string; text: string }[];
-    openPositions: string;
+    jobsEyebrow: string;
+    jobsTitle: string;
     apply: string;
     initiativeA: string;
     initiativeB: string;
@@ -50,7 +53,8 @@ const COPY: Record<
         text: "Modernste Engineering-Werkzeuge, KI-gestützte Workflows und ein Umfeld, in dem technische Tiefe und Neugier gefördert werden.",
       },
     ],
-    openPositions: "Offene Stellen",
+    jobsEyebrow: "Karriere bei VEROTERA",
+    jobsTitle: "Offene Stellen",
     apply: "Jetzt bewerben",
     initiativeA: "Keine passende Stelle dabei? Wir freuen uns über Initiativbewerbungen an",
     initiativeB: ".",
@@ -101,7 +105,8 @@ const COPY: Record<
         text: "State-of-the-art engineering tools, AI-assisted workflows and an environment that rewards technical depth and curiosity.",
       },
     ],
-    openPositions: "Open Positions",
+    jobsEyebrow: "Careers at VEROTERA",
+    jobsTitle: "Open Positions",
     apply: "Apply now",
     initiativeA: "No matching role? We welcome unsolicited applications at",
     initiativeB: ".",
@@ -133,13 +138,15 @@ const COPY: Record<
 
 const META: Record<Lang, PageMeta> = {
   de: {
-    title: "Your Career at the Core of WBG Innovation",
-    description: "Erfahren Sie mehr über die Karriere-Möglichkeiten bei VEROTERA",
+    title: "Karriere-Möglichkeiten bei VEROTERA",
+    description:
+      "Gestalten Sie Ihre Karriere bei VEROTERA mit und entwickeln Sie fortschrittliche SiC- und GaN-Halbleiterlösungen für effiziente Leistungselektronik.",
     keywords: ["Karriere bei VEROTERA", "Jobs Meerbusch", "Halbleiter Stellen"],
   },
   en: {
-    title: "Your Career at the Core of WBG Innovation",
-    description: "Learn more about career opportunities at VEROTERA",
+    title: "Career Opportunities at VEROTERA",
+    description:
+      "Shape your career at VEROTERA and help develop advanced SiC and GaN semiconductor solutions for efficient, high-performance power electronics.",
     keywords: ["Careers at VEROTERA", "Jobs Meerbusch", "Semiconductor positions"],
   },
 };
@@ -176,31 +183,42 @@ export default async function CareersPage({
           width="wide"
         />
 
-        {/* Culture */}
-        <section className="py-16 sm:py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="max-w-3xl mb-12">
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-2 block">
+        {/* Culture — Pattern C (Icon-Card-Grid) */}
+        <section className="relative py-24 sm:py-32 bg-white overflow-hidden">
+          <BrandWatermark position="top-right" tint="blue" size={460} opacity={0.05} />
+          <div
+            className="absolute bottom-0 left-0 w-[450px] h-[450px] bg-brand-cyan/[0.07] rounded-full blur-[110px] pointer-events-none"
+            aria-hidden="true"
+          />
+
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <Reveal className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
                 {t.cultureEyebrow}
               </span>
-              <h2 className="font-display text-2xl sm:text-3xl font-bold text-brand-navy mb-4">
+              <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight mb-6">
                 {t.cultureTitle}
               </h2>
-              <p className="text-brand-navy/60 leading-relaxed">
+              <p className="font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed max-w-3xl mx-auto">
                 {t.cultureBody}
               </p>
-            </div>
+            </Reveal>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {t.values.map((v, i) => {
                 const Icon = VALUE_ICONS[i];
                 return (
-                  <Reveal key={v.title} delay={i * 0.1}>
-                    <div className="glass-panel glass-panel-hover h-full p-7">
-                      <div className="p-3 rounded-xl bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan w-fit mb-4">
-                        <Icon className="w-5 h-5" />
+                  <Reveal key={v.title} delay={i * 0.12} className="h-full">
+                    <div className="group h-full p-6 rounded-2xl border border-brand-navy/8 bg-white shadow-sm transition-all duration-300 hover:border-brand-cyan/40 hover:shadow-[0_4px_24px_rgba(16,166,226,0.12)] hover:-translate-y-0.5">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="p-2.5 rounded-lg bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan">
+                          <Icon className="w-5 h-5" />
+                        </div>
+                        <h3 className="font-display text-base font-bold text-brand-navy leading-tight group-hover:text-brand-cyan transition-colors">
+                          {v.title}
+                        </h3>
                       </div>
-                      <h3 className="font-display text-lg font-bold text-brand-navy mb-2">{v.title}</h3>
-                      <p className="text-sm text-brand-navy/60 leading-relaxed">{v.text}</p>
+                      <p className="font-sans text-sm text-brand-navy/60 leading-relaxed">{v.text}</p>
                     </div>
                   </Reveal>
                 );
@@ -209,33 +227,47 @@ export default async function CareersPage({
           </div>
         </section>
 
-        {/* Open positions */}
-        <section className="py-16 sm:py-20 bg-surface-light border-y border-brand-navy/8">
-          <div className="max-w-5xl mx-auto px-6">
-            <h2 className="font-display text-2xl sm:text-3xl font-bold text-brand-navy mb-8">
-              {t.openPositions}
-            </h2>
-            <div className="space-y-5">
+        {/* Open positions — Card-Liste (C-Variante) */}
+        <section className="relative py-20 sm:py-28 bg-white overflow-hidden">
+          <BrandWatermark position="bottom-left" tint="navy" size={460} opacity={0.045} />
+          <div
+            className="absolute top-0 right-0 w-[420px] h-[420px] bg-brand-blue/[0.05] rounded-full blur-[120px] pointer-events-none"
+            aria-hidden="true"
+          />
+
+          <div className="max-w-5xl mx-auto px-6 relative z-10">
+            <Reveal className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
+                {t.jobsEyebrow}
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight">
+                {t.jobsTitle}
+              </h2>
+            </Reveal>
+
+            <div className="space-y-6">
               {t.jobs.map((job, i) => (
-                <Reveal key={job.title} delay={i * 0.08}>
-                  <div className="glass-panel glass-panel-hover p-7 flex flex-col lg:flex-row lg:items-center gap-5">
+                <Reveal key={job.title} delay={i * 0.12}>
+                  <div className="group p-6 rounded-2xl border border-brand-navy/8 bg-white shadow-sm transition-all duration-300 hover:border-brand-cyan/40 hover:shadow-[0_4px_24px_rgba(16,166,226,0.12)] hover:-translate-y-0.5 flex flex-col lg:flex-row lg:items-center gap-6">
                     <div className="flex-1">
-                      <h3 className="font-display text-lg font-bold text-brand-navy mb-2">{job.title}</h3>
-                      <div className="flex flex-wrap gap-4 mb-3 text-xs text-brand-navy/55">
-                        <span className="inline-flex items-center gap-1.5">
+                      <h3 className="font-display text-lg font-bold text-brand-navy leading-tight mb-3 group-hover:text-brand-cyan transition-colors">
+                        {job.title}
+                      </h3>
+                      <div className="flex flex-wrap gap-4 mb-3">
+                        <span className="inline-flex items-center gap-1.5 font-sans text-xs text-brand-navy/55">
                           <Clock className="w-3.5 h-3.5 text-brand-cyan" />
                           {job.type}
                         </span>
-                        <span className="inline-flex items-center gap-1.5">
+                        <span className="inline-flex items-center gap-1.5 font-sans text-xs text-brand-navy/55">
                           <MapPin className="w-3.5 h-3.5 text-brand-cyan" />
                           {job.location}
                         </span>
                       </div>
-                      <p className="text-sm text-brand-navy/60 leading-relaxed">{job.description}</p>
+                      <p className="font-sans text-sm text-brand-navy/60 leading-relaxed">{job.description}</p>
                     </div>
                     <Link
                       href={localePath(lang, "/contacts")}
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-brand-cyan text-brand-navy text-sm font-semibold hover:bg-brand-cyan/90 transition-colors shrink-0"
+                      className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg bg-brand-navy text-white font-semibold text-sm hover:bg-brand-navy/90 transition-colors shrink-0"
                     >
                       {t.apply} <ArrowRight className="w-4 h-4" />
                     </Link>
@@ -244,15 +276,19 @@ export default async function CareersPage({
               ))}
             </div>
 
-            <p className="mt-10 text-center text-sm text-brand-navy/55">
-              {t.initiativeA}{" "}
-              <a href="mailto:info@verotera.com" className="text-brand-cyan hover:underline">
-                info@verotera.com
-              </a>
-              {t.initiativeB}
-            </p>
+            <Reveal delay={t.jobs.length * 0.12}>
+              <p className="mt-12 text-center font-sans text-sm text-brand-navy/55">
+                {t.initiativeA}{" "}
+                <a href="mailto:info@verotera.com" className="text-brand-cyan hover:underline">
+                  info@verotera.com
+                </a>
+                {t.initiativeB}
+              </p>
+            </Reveal>
           </div>
         </section>
+
+        <ContactSection />
       </main>
 
       <Footer />
