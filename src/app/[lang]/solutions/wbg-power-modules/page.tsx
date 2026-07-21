@@ -66,7 +66,7 @@ const COPY: Record<
     s1Closing:
       "VEROTERA entwickelt in Deutschland die Leistungshalbleiterlösungen, die Europa für die Elektrifizierung von Mobilität und Industrie braucht. SiC und GaN sind keine Importware – sie sind unsere Kerntechnologie: entwickelt hier, skaliert für Europa.",
     s1ImageAlt:
-      "WBG-Leistungsmodul im KI-Rechenzentrum – vom Halbleiter-Wafer bis zur Rack-Infrastruktur",
+      "Halbleiter-Wafer in der Fertigung – Ausgangspunkt der WBG-Leistungselektronik",
 
     s2Teaser: "Innovative WBG-Halbleiterlösungen der nächsten Generation",
     s2Title: "Technologie- & Systempartner",
@@ -120,7 +120,7 @@ const COPY: Record<
     s1Closing:
       "VEROTERA develops in Germany the power semiconductor solutions Europe needs for the electrification of mobility and industry. SiC and GaN are not imported goods — they are our core technology: developed here, scaled for Europe.",
     s1ImageAlt:
-      "WBG power module in an AI data center — from semiconductor wafer to rack infrastructure",
+      "Semiconductor wafer in fabrication — the starting point of WBG power electronics",
 
     s2Teaser: "Innovative next-generation WBG semiconductor solutions",
     s2Title: "Technology & System Partner",
@@ -243,11 +243,11 @@ export default async function WbgPowerModulesPage({
               <Reveal delay={0.12} className="lg:col-span-5">
                 <div className="relative min-h-[260px] lg:min-h-[480px] rounded-2xl overflow-hidden border border-brand-navy/8 bg-surface-light shadow-sm">
                   <Image
-                    src="/images/ai-data-center-header.png"
+                    src="/images/power-module-ai-fol-2.png"
                     alt={t.s1ImageAlt}
                     fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover object-left"
+                    sizes="(max-width: 1024px) 300vw, 1280px"
                   />
                 </div>
               </Reveal>
@@ -347,7 +347,7 @@ export default async function WbgPowerModulesPage({
                   {t.s3Bullets.map((bullet) => (
                     <li key={bullet} className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-5 h-5 text-brand-cyan shrink-0 mt-0.5" />
-                      <span className="font-sans text-sm sm:text-base text-white/80">{bullet}</span>
+                      <span className="font-sans text-sm text-white/80">{bullet}</span>
                     </li>
                   ))}
                 </ul>

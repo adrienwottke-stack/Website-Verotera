@@ -1,131 +1,218 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Server, ArrowRight, Gauge, Activity, Cable } from "lucide-react";
+import Image from "next/image";
+import {
+  Server,
+  BrainCircuit,
+  Leaf,
+  Zap,
+  Cpu,
+  RefreshCcw,
+  Droplets,
+  PlugZap,
+} from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
-import SplitFeature from "@/components/SplitFeature";
-import PduFlowchart from "@/components/PduFlowchart";
 import Reveal from "@/components/Reveal";
-import { hasLang, localePath, type Lang } from "@/lib/i18n";
+import BrandWatermark from "@/components/BrandWatermark";
+import ContactSection from "@/components/ContactSection";
+import PduPowerArchitecture from "@/components/PduPowerArchitecture";
+import { hasLang, type Lang } from "@/lib/i18n";
 import { buildMetadata, type PageMeta } from "@/lib/seo";
 
-const HIGHLIGHT_ICONS = [Cable, Gauge, Activity];
+const S2_ICONS = [BrainCircuit, Leaf, Zap];
+const S4_ICONS = [Cpu, RefreshCcw, Droplets, PlugZap];
 
 const COPY: Record<
   Lang,
   {
+    heroEyebrow: string;
     heroTitle: string;
     heroSubtitle: string;
-    highlights: { title: string; text: string }[];
-    f1: { alt: string; eyebrow: string; title: string; body: string[]; bullets: string[] };
-    f2: { alt: string; eyebrow: string; title: string; body: string[]; bullets: string[] };
-    ctaTitle: string;
-    ctaBody: string;
-    ctaButton: string;
+    s1Teaser: string;
+    s1Headline: string;
+    s1SubEyebrow: string;
+    s1Title: string;
+    s1Body: string;
+    s1ImageAlt: string;
+    s2Teaser: string;
+    s2Headline: string;
+    s2Cards: { title: string; text: string }[];
+    s2ImageAlt: string;
+    s3Teaser: string;
+    s3Headline: string;
+    s3Body: string;
+    s4Teaser: string;
+    s4Headline: string;
+    s4Stats: { title: string; value: string; label: string; text: string }[];
+    s4Features: { title: string; subtag: string; text: string }[];
   }
 > = {
   de: {
-    heroTitle: "Stromverteilereinheit - Rack Power Distribution Unit (PDU)",
-    heroSubtitle: "Wide-Bandgap SiC/GaN-Technologie gestaltet die Zukunft moderner KI-Rechenzentren.",
-    highlights: [
+    heroEyebrow: "Stromverteilereinheit – Smart PDU",
+    heroTitle: "AI Data Center – Rack Power Distribution Unit (PDU)",
+    heroSubtitle: "800 VDC Architektur für die künftige Generation von KI-Rechenzentren.",
+    s1Teaser: "Sustainable AI Data Center",
+    s1Headline: "Wide-Bandgap SiC/GaN-Technologie gestaltet die Zukunft moderner KI-Rechenzentren.",
+    s1SubEyebrow: "Lösungen",
+    s1Title: "Full-GaN DC-DC Wandler",
+    s1Body:
+      "Der Full-GaN DC/DC-Wandler steht für eine Schlüsseltechnologie im Bereich der Stromverteilereinheit auf Rack-Ebene. Er ersetzt konventionelle Silizium-MOSFETs durch Galliumnitrid-Schaltelemente auf Primär- und Sekundärseite und erreicht damit die Effizienz- und Leistungsdichteziele, die zukünftige 800-VDC-Rack-Architekturen erfordern.",
+    s1ImageAlt: "KI-Rechenzentrum auf Rack-Ebene mit Power Shelfs und Power Distribution Units",
+    s2Teaser: "Integration von Wide-Bandgap-Halbleitern in das KI-Ökosystem",
+    s2Headline: "GaN & 800 VDC Rack Power Architektur",
+    s2Cards: [
       {
-        title: "800 V DC-Verteilung",
-        text: "Höhere Busspannung senkt Ströme und I²R-Verluste – kompaktere Stromschienen bei höherer Rack-Leistung.",
+        title: "KI",
+        text: "Künstliche Intelligenz verändert nahezu alle Branchen in einem noch nie dagewesenen Tempo – und die Rechenzentren, die diese Revolution antreiben, wachsen ebenso rasant. Das Training eines einzelnen großen Sprachmodells kann so viel Strom verbrauchen wie hunderte von Haushalten in einem Jahr. Da KI-Workloads in allen Sektoren zunehmen, wird der kumulierte Einfluss auf die globalen Energiesysteme immer deutlicher. Die Internationale Energieagentur prognostiziert, dass der Stromverbrauch von Rechenzentren von 415 TWh im Jahr 2024 auf rund 945 TWh bis 2030 ansteigen wird.",
       },
       {
-        title: "Power-Shelf-Effizienz",
-        text: "Full-GaN-DC/DC-Wandler erreichen > 98 % Wirkungsgrad und ersetzen klassische Silizium-MOSFETs.",
+        title: "Nachhaltige KI",
+        text: "Die zentrale Herausforderung ist nicht nur das schiere Ausmaß – sondern die Effizienz. In konventionellen KI-Rechenzentrumsarchitekturen durchläuft Energie mehrere Wandlungsstufen zwischen dem Versorgungsnetz und dem Prozessor, mit kumulierten Verlusten von 14 bis 18 Prozent. Bei Rack-Leistungsniveaus von nahezu einem Megawatt entspricht das Hunderten von Kilowatt verschwendeter Energie pro Rack – direkt übersetzt in CO₂-Emissionen und Kühlinfrastruktur.",
       },
       {
-        title: "Aktives Lastmanagement",
-        text: "Echtzeit-Telemetrie und Solid-State-Breaker priorisieren Lasten dynamisch und schalten sicher ab.",
+        title: "800 VDC Architektur",
+        text: "Der Übergang zur 800-VDC-Rack-Verteilung verändert diese Gleichung grundlegend. Durch die Bereitstellung von Hochspannungsgleichstrom von der Anlagenebene bis zum Rack werden die Wandlungsstufen von vier oder fünf auf drei reduziert – die Gesamtverluste sinken auf rund 5 bis 6 Prozent. Im Mittelpunkt dieser Architektur steht die Smart PDU – ein Full-GaN DC/DC-Wandler mit einem Wirkungsgrad von 98 % und mehr, speziell entwickelt für 800-VDC-Rack-Infrastrukturen und darauf ausgelegt, hochdichte KI-Rechenleistung technisch realisierbar und energetisch verantwortungsvoll zu machen.",
       },
     ],
-    f1: {
-      alt: "800 V DC Rack-Architektur",
-      eyebrow: "Architektur",
-      title: "Vom Netz bis zum GPU-Shelf",
-      body: [
-        "Moderne KI-Racks ziehen Leistungen im Bereich von 100 kW und mehr. Eine 800-V-DC-Verteilung – wie in der NVIDIA-Rack-Architektur und bei OCP 2025 vorgestellt – reduziert die Verteilungsverluste drastisch gegenüber klassischen 48-V-Bussen.",
-        "Ein Solid-State-Transformer wandelt die Netz-Wechselspannung mit GaN-Bauelementen direkt in 800 V DC. Die Smart PDU verteilt diese Energie verlustarm und intelligent an die GPU-Shelves.",
-      ],
-      bullets: [
-        "100 kW+ Rack-Leistung",
-        "OCP-/NVIDIA-konforme 800-V-Architektur",
-        "GaN-SST mit 98,5 % Wirkungsgrad",
-        "Point-of-Load 48 V / 12 V",
-      ],
-    },
-    f2: {
-      alt: "Full-GaN Power Shelf",
-      eyebrow: "Power Shelf",
-      title: "Full-GaN DC/DC-Wandler",
-      body: [
-        "Im Power Shelf ersetzen GaN-HEMTs die Silizium-MOSFETs. Topologien wie die 3-Level-Halbbrücke mit Matrix-Transformator schalten bei rund 1 MHz und erreichen Systemwirkungsgrade um 98 %.",
-        "Die hohe Schaltfrequenz schrumpft die Magnetik und ermöglicht Leistungsdichten von mehreren tausend Watt pro Kubikzoll – entscheidend für die Packungsdichte im Rack.",
-      ],
-      bullets: [
-        "GaN-HEMTs statt Si-MOSFETs",
-        "~1 MHz Schaltfrequenz",
-        "Systemwirkungsgrad ~98 %",
-        "Sehr hohe Leistungsdichte",
-      ],
-    },
-    ctaTitle: "Planen Sie eine 800-V-DC-Rack-Infrastruktur?",
-    ctaBody: "Wir unterstützen Sie bei Auslegung, Wandlertopologie und Validierung Ihrer Power-Shelf-Lösung.",
-    ctaButton: "Kontakt aufnehmen",
+    s2ImageAlt: "KI-Rechenzentrum-Infrastruktur – Stromversorgungskette vom Transformator bis zum Compute Rack",
+    s3Teaser: "800 VDC → 54/48 VDC → Point-of-Load",
+    s3Headline: "Vom Utility Grid bis zum Compute Rack Level",
+    s3Body:
+      "Der Leistungspfad der 800-VDC-Architektur über alle drei Ebenen: vom Versorgungsnetz über das Facility Level bis zur Smart PDU im Compute Rack.",
+    s4Teaser: "KI-Rechenzentrum – Rack Power Distribution Unit (PDU)",
+    s4Headline: "800 VDC vs. konventionelle AC/DC Architekturen",
+    s4Stats: [
+      {
+        title: "Einstufige Wandlung",
+        value: "≥ 98,0 %",
+        label: "Spitzenwirkungsgrad",
+        text: "Kein PFC-Eingang erforderlich – die 800-VDC-Einspeisung geht direkt in den LLC-DCX. Eine Wandlungsstufe weniger gegenüber AC/DC-Designs.",
+      },
+      {
+        title: "Höhere Leistungsdichte",
+        value: "6×",
+        label: "kW pro HE vs. 18-kW-AC-Shelf",
+        text: "> 12 kW pro Modul im Full-Brick-Formfaktor. Die flüssigkeitsgekühlte Kühlplatte ermöglicht 3–4-fach höhere Leistung pro Rack-Einheit im Vergleich zu luftgekühlten AC-Shelves.",
+      },
+      {
+        title: "Reduzierte I²R-Verluste",
+        value: "−45 %",
+        label: "vs. 54 VDC Busbar",
+        text: "800-VDC-Verteilung führt bei gleicher Leistung 6-mal weniger Strom als 48 VDC – Kabelverluste um den Faktor 36 reduziert.",
+      },
+      {
+        title: "Zentrale Verwaltung",
+        value: "1 vs. 4",
+        label: "Verwaltungseinheiten",
+        text: "Ein Shelf, ein PMBus-Controller, ein Ethernet-Port – gegenüber vier parallelen AC-Shelves für die gleiche Leistung.",
+      },
+    ],
+    s4Features: [
+      {
+        title: "GaN Technologie",
+        subtag: "~1 MHz Schaltfrequenz",
+        text: "E-Mode GaN 650 V auf der Primärseite ermöglicht MHz-Schaltfrequenz – planare Magnetics, kleinere Passivkomponenten und höhere Leistungsdichte gegenüber Si-basierten AC-Wandlern.",
+      },
+      {
+        title: "Aktive Hot-Swap Sequenzierung",
+        subtag: "8+1 · N+1 Redundanz",
+        text: "ISOP-spezifische, koordinierte Anlauf- und Einfügungssteuerung verhindert Spannungsspitzen im Reihenstapel.",
+      },
+      {
+        title: "Flüssigkeitskühlung",
+        subtag: "2 HE für 96 kW netto",
+        text: "Obligatorische Flüssigkeitskühlung ermöglicht stabilen Hochfrequenzbetrieb und eine kompakte Bauform – kein Lüfterlärm, keine Luftstromabhängigkeit.",
+      },
+      {
+        title: "Native HVDC Architektur",
+        subtag: "800 VDC Direkteinspeisung",
+        text: "Von Grund auf für 800 VDC ausgelegt – keine AC/DC-Vorstufe im Rack. Kompatibel mit den NVIDIA-MGX- und OCP-Kyber-Ökosystem-Roadmaps.",
+      },
+    ],
   },
   en: {
-    heroTitle: "Power Distribution Unit - Rack Power Distribution Unit (PDU)",
-    heroSubtitle: "Wide-bandgap SiC/GaN technology shapes the future of modern AI data centers.",
-    highlights: [
+    heroEyebrow: "Rack Power Distribution – Smart PDU",
+    heroTitle: "AI Data Center – Rack Power Distribution Unit (PDU)",
+    heroSubtitle: "800 VDC architecture for the next generation of AI data centers.",
+    s1Teaser: "Sustainable AI Data Center",
+    s1Headline: "Wide-bandgap SiC/GaN technology is shaping the future of modern AI data centers.",
+    s1SubEyebrow: "Solutions",
+    s1Title: "Full-GaN DC-DC Converter",
+    s1Body:
+      "The Full-GaN DC/DC converter represents a key enabling technology for rack-level power distribution. It replaces conventional silicon MOSFETs with gallium nitride switches on both the primary and secondary side — achieving the efficiency and power-density targets that future 800 VDC rack architectures demand.",
+    s1ImageAlt: "AI data center at rack level with power shelves and power distribution units",
+    s2Teaser: "Integrating wide-bandgap semiconductors into the AI ecosystem",
+    s2Headline: "GaN & 800 VDC Rack Power Architecture",
+    s2Cards: [
       {
-        title: "800 V DC Distribution",
-        text: "Higher bus voltage cuts currents and I²R losses — more compact busbars at higher rack power.",
+        title: "AI",
+        text: "Artificial intelligence is transforming nearly every industry at an unprecedented pace — and the data centers powering this revolution are growing just as rapidly. Training a single large language model can consume as much electricity as hundreds of households in a year. As AI workloads increase across all sectors, the cumulative impact on global energy systems becomes ever more apparent. The International Energy Agency projects that data center electricity consumption will rise from 415 TWh in 2024 to around 945 TWh by 2030.",
       },
       {
-        title: "Power Shelf Efficiency",
-        text: "Full-GaN DC/DC converters reach > 98% efficiency, replacing classic silicon MOSFETs.",
+        title: "Sustainable AI",
+        text: "The central challenge is not just sheer scale — it is efficiency. In conventional AI data center architectures, energy passes through multiple conversion stages between the utility grid and the processor, with cumulative losses of 14 to 18 percent. At rack power levels approaching one megawatt, that equates to hundreds of kilowatts of wasted energy per rack — translating directly into CO₂ emissions and cooling infrastructure.",
       },
       {
-        title: "Active Load Management",
-        text: "Real-time telemetry and solid-state breakers prioritize loads dynamically and disconnect safely.",
+        title: "800 VDC Architecture",
+        text: "The transition to 800 VDC rack distribution fundamentally changes this equation. By delivering high-voltage direct current from the facility level to the rack, conversion stages are reduced from four or five to three — total losses fall to around 5 to 6 percent. At the heart of this architecture is the Smart PDU — a Full-GaN DC/DC converter with 98%+ efficiency, purpose-built for 800 VDC rack infrastructures and designed to make high-density AI compute technically feasible and energetically responsible.",
       },
     ],
-    f1: {
-      alt: "800 V DC rack architecture",
-      eyebrow: "Architecture",
-      title: "From the grid to the GPU shelf",
-      body: [
-        "Modern AI racks draw power in the range of 100 kW and beyond. An 800 V DC distribution — as introduced in the NVIDIA rack architecture and at OCP 2025 — drastically reduces distribution losses compared with classic 48 V buses.",
-        "A solid-state transformer converts grid AC directly into 800 V DC using GaN devices. The smart PDU distributes this power to the GPU shelves — intelligently and with minimal loss.",
-      ],
-      bullets: [
-        "100 kW+ rack power",
-        "OCP/NVIDIA-compliant 800 V architecture",
-        "GaN SST with 98.5% efficiency",
-        "Point-of-load 48 V / 12 V",
-      ],
-    },
-    f2: {
-      alt: "Full-GaN power shelf",
-      eyebrow: "Power Shelf",
-      title: "Full-GaN DC/DC converters",
-      body: [
-        "In the power shelf, GaN HEMTs replace silicon MOSFETs. Topologies like the 3-level half-bridge with matrix transformer switch at around 1 MHz and reach system efficiencies near 98%.",
-        "The high switching frequency shrinks the magnetics and enables power densities of several thousand watts per cubic inch — decisive for packing density in the rack.",
-      ],
-      bullets: [
-        "GaN HEMTs instead of Si MOSFETs",
-        "~1 MHz switching frequency",
-        "System efficiency ~98%",
-        "Very high power density",
-      ],
-    },
-    ctaTitle: "Planning an 800 V DC rack infrastructure?",
-    ctaBody: "We support you with sizing, converter topology and validation of your power shelf solution.",
-    ctaButton: "Get in touch",
+    s2ImageAlt: "AI data center infrastructure — power chain from transformer to compute rack",
+    s3Teaser: "800 VDC → 54/48 VDC → Point of Load",
+    s3Headline: "From the utility grid to the compute rack level",
+    s3Body:
+      "The power path of the 800 VDC architecture across all three levels: from the utility grid through the facility level to the Smart PDU in the compute rack.",
+    s4Teaser: "AI Data Center – Rack Power Distribution Unit (PDU)",
+    s4Headline: "800 VDC vs. conventional AC/DC architectures",
+    s4Stats: [
+      {
+        title: "Single-Stage Conversion",
+        value: "≥ 98.0%",
+        label: "peak efficiency",
+        text: "No PFC front end required — the 800 VDC feed goes straight into the LLC-DCX. One conversion stage fewer than AC/DC designs.",
+      },
+      {
+        title: "Higher Power Density",
+        value: "6×",
+        label: "kW per rack unit vs. 18 kW AC shelf",
+        text: "> 12 kW per module in a full-brick form factor. The liquid-cooled cold plate enables 3–4× higher power per rack unit compared with air-cooled AC shelves.",
+      },
+      {
+        title: "Reduced I²R Losses",
+        value: "−45%",
+        label: "vs. 54 VDC busbar",
+        text: "At equal power, 800 VDC distribution carries 6× less current than 48 VDC — cutting cable losses by a factor of 36.",
+      },
+      {
+        title: "Centralized Management",
+        value: "1 vs. 4",
+        label: "management units",
+        text: "One shelf, one PMBus controller, one Ethernet port — versus four parallel AC shelves for the same power.",
+      },
+    ],
+    s4Features: [
+      {
+        title: "GaN Technology",
+        subtag: "~1 MHz switching frequency",
+        text: "650 V e-mode GaN on the primary side enables MHz switching — planar magnetics, smaller passives and higher power density than Si-based AC converters.",
+      },
+      {
+        title: "Active Hot-Swap Sequencing",
+        subtag: "8+1 · N+1 redundancy",
+        text: "ISOP-specific coordinated start-up and insertion control prevents voltage spikes across the series stack.",
+      },
+      {
+        title: "Liquid Cooling",
+        subtag: "2 RU for 96 kW net",
+        text: "Mandatory liquid cooling enables stable high-frequency operation and a compact form factor — no fan noise, no airflow dependency.",
+      },
+      {
+        title: "Native HVDC Architecture",
+        subtag: "800 VDC direct feed",
+        text: "Designed for 800 VDC from the ground up — no AC/DC front end in the rack. Compatible with the NVIDIA MGX and OCP Kyber ecosystem roadmaps.",
+      },
+    ],
   },
 };
 
@@ -133,14 +220,14 @@ const META: Record<Lang, PageMeta> = {
   de: {
     title: "Wide-Bandgap Technology for the Future of AI Data Centers",
     description:
-      "The Full-GaN DC/DC converter is a key enabling technology for the Power Shelf, replacing silicon MOSFETs with Gallium Nitride (GaN) devices.",
-    keywords: ["rack power distribution unit", "AI data center", "power shelf"],
+      "Der Full-GaN DC/DC-Wandler ist die Schlüsseltechnologie des Power Shelf: GaN ersetzt Silizium-MOSFETs in 800-VDC-Rack-Architekturen.",
+    keywords: ["rack power distribution unit", "AI data center", "Full-GaN DC-DC Converter"],
   },
   en: {
     title: "Wide-Bandgap Technology for the Future of AI Data Centers",
     description:
       "The Full-GaN DC/DC converter is a key enabling technology for the Power Shelf, replacing silicon MOSFETs with Gallium Nitride (GaN) devices.",
-    keywords: ["rack power distribution unit", "AI data center", "power shelf"],
+    keywords: ["rack power distribution unit", "AI data center", "Full-GaN DC-DC converter"],
   },
 };
 
@@ -169,27 +256,178 @@ export default async function RackPowerDistributionPage({
 
       <main className="flex-grow">
         <PageHero
-          eyebrow="Sustainable AI Data Center"
+          eyebrow={t.heroEyebrow}
           icon={Server}
           title={t.heroTitle}
           subtitle={t.heroSubtitle}
           width="wide"
         />
 
-        {/* Highlights */}
-        <section className="py-16 sm:py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
+        {/* Section 1 — Pattern B: Full-GaN DC-DC Wandler (Folie 17) */}
+        <section className="relative py-24 sm:py-32 bg-white overflow-hidden">
+          <BrandWatermark position="top-right" tint="blue" size={460} opacity={0.05} />
+
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <Reveal className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
+                {t.s1Teaser}
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight">
+                {t.s1Headline}
+              </h2>
+            </Reveal>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              <Reveal className="lg:col-span-6">
+                <span className="text-xs font-bold uppercase tracking-wider text-brand-navy/40 mb-2 block">
+                  {t.s1SubEyebrow}
+                </span>
+                <h3 className="font-display text-2xl sm:text-3xl font-bold text-brand-navy leading-tight mb-6">
+                  {t.s1Title}
+                </h3>
+                <p className="font-sans text-sm sm:text-base text-brand-navy/70 leading-relaxed">
+                  {t.s1Body}
+                </p>
+              </Reveal>
+
+              <Reveal delay={0.12} className="lg:col-span-6">
+                <div className="relative min-h-[260px] lg:min-h-[480px] rounded-2xl overflow-hidden border border-brand-navy/8 bg-surface-light shadow-sm">
+                  <Image
+                    src="/images/ai-data-center-header-left.png"
+                    alt={t.s1ImageAlt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 2 — Pattern C: GaN & 800 VDC Rack Power Architektur (Folien 18+19) */}
+        <section className="relative py-24 sm:py-32 bg-surface-light border-y border-brand-navy/8 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <Reveal className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
+                {t.s2Teaser}
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight">
+                {t.s2Headline}
+              </h2>
+            </Reveal>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {t.highlights.map((h, i) => {
-                const Icon = HIGHLIGHT_ICONS[i];
+              {t.s2Cards.map((card, i) => {
+                const Icon = S2_ICONS[i];
                 return (
-                  <Reveal key={h.title} delay={i * 0.1}>
-                    <div className="glass-panel glass-panel-hover h-full p-7">
-                      <div className="p-3 rounded-xl bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan w-fit mb-4">
-                        <Icon className="w-5 h-5" />
+                  <Reveal key={card.title} delay={i * 0.12} className="h-full">
+                    <div className="h-full p-6 rounded-2xl border border-brand-navy/8 bg-white shadow-sm">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="p-2.5 rounded-lg bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan">
+                          <Icon className="w-5 h-5" />
+                        </div>
+                        <h3 className="font-display text-base font-bold text-brand-navy leading-tight">
+                          {card.title}
+                        </h3>
                       </div>
-                      <h3 className="font-display text-lg font-bold text-brand-navy mb-2">{h.title}</h3>
-                      <p className="text-sm text-brand-navy/60 leading-relaxed">{h.text}</p>
+                      <p className="font-sans text-sm text-brand-navy/60 leading-relaxed">{card.text}</p>
+                    </div>
+                  </Reveal>
+                );
+              })}
+            </div>
+
+            <Reveal delay={0.12} className="mt-14">
+              <div className="relative aspect-[16/10] max-w-4xl mx-auto rounded-2xl overflow-hidden border border-brand-navy/8 bg-white shadow-sm flex items-center justify-center p-6">
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/images/ai-data-center-infrastructure.png"
+                    alt={t.s2ImageAlt}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 1024px) 100vw, 896px"
+                  />
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* Section 3 — Pattern J: 800-VDC-Leistungsarchitektur (Folie 20) */}
+        <section className="relative py-24 sm:py-32 bg-white overflow-hidden">
+          <BrandWatermark position="bottom-left" tint="navy" size={460} opacity={0.045} />
+          <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-brand-cyan/[0.07] rounded-full blur-[110px] pointer-events-none" />
+
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <Reveal className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
+                {t.s3Teaser}
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight mb-6">
+                {t.s3Headline}
+              </h2>
+              <p className="font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed max-w-3xl mx-auto">
+                {t.s3Body}
+              </p>
+            </Reveal>
+
+            <PduPowerArchitecture />
+          </div>
+        </section>
+
+        {/* Section 4 — Pattern D + C: 800 VDC vs. AC/DC (Folie 21) */}
+        <section className="relative py-20 sm:py-28 bg-white overflow-hidden">
+          <BrandWatermark position="top-right" tint="blue" size={460} opacity={0.05} />
+          <div className="absolute bottom-0 left-0 w-[450px] h-[450px] bg-brand-blue/[0.05] rounded-full blur-[120px] pointer-events-none" />
+
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <Reveal className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
+                {t.s4Teaser}
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight">
+                {t.s4Headline}
+              </h2>
+            </Reveal>
+
+            {/* Stat-Spalten (Pattern D) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {t.s4Stats.map((stat, i) => (
+                <Reveal key={stat.title} delay={i * 0.12} className="h-full">
+                  <div className="h-full flex flex-col items-center text-center">
+                    <h3 className="font-display text-base font-semibold text-brand-navy leading-snug mb-6 min-h-[3rem]">
+                      {stat.title}
+                    </h3>
+                    <p className="font-display text-4xl sm:text-5xl font-extrabold text-brand-cyan leading-none mb-3">
+                      {stat.value}
+                    </p>
+                    <p className="font-sans text-base text-brand-navy/70 mb-3">{stat.label}</p>
+                    <p className="font-sans text-sm text-brand-navy/60 leading-relaxed">{stat.text}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+
+            {/* Technologie-Merkmale (Pattern C) */}
+            <div className="mt-16 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {t.s4Features.map((feature, i) => {
+                const Icon = S4_ICONS[i];
+                return (
+                  <Reveal key={feature.title} delay={i * 0.1} className="h-full">
+                    <div className="group h-full p-6 rounded-2xl border border-brand-navy/8 bg-white shadow-sm transition-all duration-300 hover:border-brand-cyan/40 hover:shadow-[0_4px_24px_rgba(16,166,226,0.12)] hover:-translate-y-0.5">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="p-2.5 rounded-lg bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan">
+                          <Icon className="w-5 h-5" />
+                        </div>
+                        <h3 className="font-display text-base font-bold text-brand-navy leading-tight group-hover:text-brand-cyan transition-colors">
+                          {feature.title}
+                        </h3>
+                      </div>
+                      <span className="text-[9px] font-bold text-brand-navy tracking-wider uppercase block mb-3">
+                        {feature.subtag}
+                      </span>
+                      <p className="font-sans text-sm text-brand-navy/60 leading-relaxed">{feature.text}</p>
                     </div>
                   </Reveal>
                 );
@@ -198,55 +436,8 @@ export default async function RackPowerDistributionPage({
           </div>
         </section>
 
-        {/* Interactive Flowchart */}
-        <section className="py-16 sm:py-20 bg-surface-light border-y border-brand-navy/8">
-          <div className="max-w-7xl mx-auto px-6">
-            <PduFlowchart />
-          </div>
-        </section>
-
-        {/* Narrative features */}
-        <section className="py-20 sm:py-28 bg-white">
-          <div className="max-w-7xl mx-auto px-6 space-y-24">
-            <SplitFeature
-              image="/images/ai-data-center-rack.png"
-              alt={t.f1.alt}
-              imageSide="right"
-              eyebrow={t.f1.eyebrow}
-              title={t.f1.title}
-              body={t.f1.body}
-              bullets={t.f1.bullets}
-            />
-
-            <SplitFeature
-              image="/images/data-center-power.png"
-              alt={t.f2.alt}
-              imageSide="left"
-              eyebrow={t.f2.eyebrow}
-              title={t.f2.title}
-              body={t.f2.body}
-              bullets={t.f2.bullets}
-            />
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-16 bg-surface-light border-t border-brand-navy/8">
-          <div className="max-w-3xl mx-auto px-6 text-center">
-            <h2 className="font-display text-2xl sm:text-3xl font-bold text-brand-navy mb-4">
-              {t.ctaTitle}
-            </h2>
-            <p className="text-brand-navy/60 mb-8">
-              {t.ctaBody}
-            </p>
-            <Link
-              href={localePath(lang, "/contacts")}
-              className="inline-flex items-center gap-2 px-7 py-3 rounded-lg bg-brand-navy text-white font-semibold text-sm hover:bg-brand-navy/90 transition-colors"
-            >
-              {t.ctaButton} <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </section>
+        {/* Seitenabschluss — ContactSection (Standard-CTA) */}
+        <ContactSection />
       </main>
 
       <Footer />

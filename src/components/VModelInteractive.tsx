@@ -27,9 +27,9 @@ const PHASES: Record<Lang, Phase[]> = {
       logs: [
         "$ spec-agent --parse-standards",
         "→ Lade IEC 60747, AEC-Q101, JEDEC …",
-        "→ 142 Constraints extrahiert",
+        "→ Constraints extrahiert und klassifiziert",
         "→ Mapping auf Engineering-Knowledge-Graph",
-        "✓ Spezifikation validiert (0 Konflikte)",
+        "✓ Spezifikation validiert",
       ],
     },
     {
@@ -42,9 +42,9 @@ const PHASES: Record<Lang, Phase[]> = {
       logs: [
         "$ layout-agent --synthesize",
         "→ Topologie-Exploration: LLC, DAB, 3L-NPC",
-        "→ Busbar-Routing optimiert (parasitär < 5 nH)",
+        "→ Busbar-Routing auf minimale Parasitäten optimiert",
         "→ Kriechstrecken-/Luftstrecken-Check: OK",
-        "✓ Layout-Kandidat #3 ausgewählt",
+        "✓ Layout-Kandidat ausgewählt",
       ],
     },
     {
@@ -56,9 +56,9 @@ const PHASES: Record<Lang, Phase[]> = {
       arm: "bottom",
       logs: [
         "$ sim-agent --run spice+fem",
-        "→ Generiere Stimulus-Vektoren (240)",
-        "→ Doppelpuls-Test @ 800 V / 600 A",
-        "→ Schaltverluste: −62 % vs. Si-IGBT",
+        "→ Generiere Stimulus-Vektoren",
+        "→ Doppelpuls-Tests über den Arbeitsbereich",
+        "→ Schaltverluste gegen Zielwerte bewertet",
         "✓ Keine Abweichung von der Spezifikation",
       ],
     },
@@ -72,9 +72,9 @@ const PHASES: Record<Lang, Phase[]> = {
       logs: [
         "$ thermal-agent --fem-solve",
         "→ Verlustleistungs-Mapping geladen",
-        "→ Sperrschichttemperatur Tj: 168 °C",
+        "→ Sperrschichttemperatur Tj ermittelt",
         "→ Kühlkörper-Layout angepasst",
-        "✓ Tj < 175 °C Grenzwert eingehalten",
+        "✓ Tj-Grenzwert eingehalten",
       ],
     },
     {
@@ -86,9 +86,9 @@ const PHASES: Record<Lang, Phase[]> = {
       arm: "right",
       logs: [
         "$ verify-agent --qualification-matrix",
-        "→ AEC-Q & IEC 60747 Coverage: 100 %",
+        "→ AEC-Q & IEC 60747 Coverage geprüft",
         "→ Compliance-Dokumentation generiert",
-        "→ Offene Zuverlässigkeitsrisiken: 0",
+        "→ Zuverlässigkeitsrisiken bewertet und dokumentiert",
         "✓ Freigabe-Paket erstellt",
       ],
     },
@@ -104,9 +104,9 @@ const PHASES: Record<Lang, Phase[]> = {
       logs: [
         "$ spec-agent --parse-standards",
         "→ Loading IEC 60747, AEC-Q101, JEDEC …",
-        "→ 142 constraints extracted",
+        "→ Constraints extracted and classified",
         "→ Mapped onto engineering knowledge graph",
-        "✓ Specification validated (0 conflicts)",
+        "✓ Specification validated",
       ],
     },
     {
@@ -119,9 +119,9 @@ const PHASES: Record<Lang, Phase[]> = {
       logs: [
         "$ layout-agent --synthesize",
         "→ Topology exploration: LLC, DAB, 3L-NPC",
-        "→ Busbar routing optimized (parasitics < 5 nH)",
+        "→ Busbar routing optimized for minimal parasitics",
         "→ Creepage/clearance check: OK",
-        "✓ Layout candidate #3 selected",
+        "✓ Layout candidate selected",
       ],
     },
     {
@@ -133,9 +133,9 @@ const PHASES: Record<Lang, Phase[]> = {
       arm: "bottom",
       logs: [
         "$ sim-agent --run spice+fem",
-        "→ Generating stimulus vectors (240)",
-        "→ Double-pulse test @ 800 V / 600 A",
-        "→ Switching losses: −62% vs. Si IGBT",
+        "→ Generating stimulus vectors",
+        "→ Double-pulse tests across the operating range",
+        "→ Switching losses evaluated against targets",
         "✓ No deviation from specification",
       ],
     },
@@ -149,9 +149,9 @@ const PHASES: Record<Lang, Phase[]> = {
       logs: [
         "$ thermal-agent --fem-solve",
         "→ Power-loss mapping loaded",
-        "→ Junction temperature Tj: 168 °C",
+        "→ Junction temperature Tj determined",
         "→ Heatsink layout adjusted",
-        "✓ Tj < 175 °C limit maintained",
+        "✓ Tj limit maintained",
       ],
     },
     {
@@ -163,9 +163,9 @@ const PHASES: Record<Lang, Phase[]> = {
       arm: "right",
       logs: [
         "$ verify-agent --qualification-matrix",
-        "→ AEC-Q & IEC 60747 coverage: 100%",
+        "→ AEC-Q & IEC 60747 coverage reviewed",
         "→ Compliance documentation generated",
-        "→ Open reliability risks: 0",
+        "→ Reliability risks assessed and documented",
         "✓ Release package created",
       ],
     },

@@ -26,6 +26,7 @@ const COPY: Record<
     messagePlaceholder: string;
     sending: string;
     send: string;
+    errorBody: string;
     footnote: React.ReactNode;
     successTitle: string;
     successBody: string;
@@ -59,6 +60,8 @@ const COPY: Record<
     messagePlaceholder: "Beschreiben Sie Ihr Projekt oder Ihr Anliegen…",
     sending: "Wird gesendet...",
     send: "Nachricht senden",
+    errorBody:
+      "Ihre Nachricht konnte gerade nicht übermittelt werden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an",
     footnote: (
       <>Antwort i.&nbsp;d.&nbsp;R. innerhalb von 24&nbsp;Geschäftsstunden · kein Verkaufsdruck</>
     ),
@@ -94,6 +97,8 @@ const COPY: Record<
     messagePlaceholder: "Describe your project or inquiry…",
     sending: "Sending...",
     send: "Send message",
+    errorBody:
+      "Your message could not be delivered right now. Please try again or email us directly at",
     footnote: <>Typically answered within 24&nbsp;business hours · no sales pressure</>,
     successTitle: "Message sent successfully!",
     successBody:
@@ -115,19 +120,28 @@ export default function ContactSection() {
     message: "",
   });
 
-  const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
+  // "website" is a honeypot only bots fill in; the API discards those quietly.
+  const [honeypot, setHoneypot] = useState("");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
     setStatus("submitting");
-
-    // Simulate backend api response delay
-    await new Promise((resolve) => setTimeout(resolve, 1200));
-
-    setStatus("success");
-    setFormData({ name: "", email: "", company: "", message: "" });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, website: honeypot }),
+      });
+      if (!res.ok) throw new Error(`contact API responded ${res.status}`);
+      setStatus("success");
+      setFormData({ name: "", email: "", company: "", message: "" });
+    } catch {
+      // Keep the entered data so the visitor can simply retry.
+      setStatus("error");
+    }
   };
 
   return (
@@ -185,6 +199,18 @@ export default function ContactSection() {
                 onSubmit={handleSubmit}
                 className="space-y-6"
               >
+                <div aria-hidden="true" className="absolute -left-[9999px] top-0 h-px w-px overflow-hidden">
+                  <label htmlFor="cs-website">Website</label>
+                  <input
+                    id="cs-website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                  />
+                </div>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {/* Name input */}
                   <div className="relative flex flex-col">
@@ -258,6 +284,19 @@ export default function ContactSection() {
                     className="w-full px-4 py-3 bg-white rounded-xl border border-brand-navy/15 text-brand-navy text-sm placeholder:text-brand-navy/30 focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan/20 transition-all resize-none"
                   />
                 </div>
+
+                {status === "error" && (
+                  <p
+                    role="alert"
+                    className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 font-sans text-sm text-red-700"
+                  >
+                    {t.errorBody}{" "}
+                    <a href="mailto:info@verotera.com" className="font-semibold underline underline-offset-2">
+                      info@verotera.com
+                    </a>
+                    .
+                  </p>
+                )}
 
                 {/* Submit Button */}
                 <button

@@ -250,7 +250,7 @@ export default async function AutomotiveEmobilityPage({
                   {t.techBullets.map((item) => (
                     <li key={item} className="flex items-start gap-2.5">
                       <Check className="w-5 h-5 text-brand-cyan shrink-0 mt-0.5" />
-                      <span className="font-sans text-sm sm:text-base text-brand-navy/70 leading-relaxed">
+                      <span className="font-sans text-sm text-brand-navy/70">
                         {item}
                       </span>
                     </li>

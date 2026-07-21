@@ -185,9 +185,9 @@ export default async function CareersPage({
 
         {/* Culture — Pattern C (Icon-Card-Grid) */}
         <section className="relative py-24 sm:py-32 bg-white overflow-hidden">
-          <BrandWatermark position="top-right" tint="blue" size={460} opacity={0.05} />
+          <BrandWatermark position="bottom-left" tint="navy" size={460} opacity={0.045} />
           <div
-            className="absolute bottom-0 left-0 w-[450px] h-[450px] bg-brand-cyan/[0.07] rounded-full blur-[110px] pointer-events-none"
+            className="absolute top-0 right-0 w-[450px] h-[450px] bg-brand-cyan/[0.07] rounded-full blur-[110px] pointer-events-none"
             aria-hidden="true"
           />
 
@@ -229,9 +229,9 @@ export default async function CareersPage({
 
         {/* Open positions — Card-Liste (C-Variante) */}
         <section className="relative py-20 sm:py-28 bg-white overflow-hidden">
-          <BrandWatermark position="bottom-left" tint="navy" size={460} opacity={0.045} />
+          <BrandWatermark position="top-right" tint="blue" size={460} opacity={0.05} />
           <div
-            className="absolute top-0 right-0 w-[420px] h-[420px] bg-brand-blue/[0.05] rounded-full blur-[120px] pointer-events-none"
+            className="absolute bottom-0 left-0 w-[420px] h-[420px] bg-brand-blue/[0.05] rounded-full blur-[120px] pointer-events-none"
             aria-hidden="true"
           />
 
@@ -277,7 +277,7 @@ export default async function CareersPage({
             </div>
 
             <Reveal delay={t.jobs.length * 0.12}>
-              <p className="mt-12 text-center font-sans text-sm text-brand-navy/55">
+              <p className="mt-12 text-center font-sans text-sm text-brand-navy/40">
                 {t.initiativeA}{" "}
                 <a href="mailto:info@verotera.com" className="text-brand-cyan hover:underline">
                   info@verotera.com
