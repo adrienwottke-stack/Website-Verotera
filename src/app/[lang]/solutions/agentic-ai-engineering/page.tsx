@@ -153,7 +153,7 @@ const COPY: Record<
       ],
     },
     lifecycle: {
-      eyebrow: "Agentic Product Development Lifecycle",
+      eyebrow: "Time-to-Market",
       headline:
         "Kollaborative Systemintelligenz beschleunigt die Produktentwicklung – von der Anforderung bis zur Marktreife",
       body: "Moderne agentische KI-Systeme wandeln sich durch Large Language Models (LLMs) und Reinforcement Learning von einfachen, reaktiven Chatbots zu autonom handelnden Agenten. Diese Kombination löst komplexe, mehrstufige Probleme, indem Sprachverständnis mit gezielter Handlungsplanung und kontinuierlicher Optimierung verknüpft wird.",
@@ -334,7 +334,7 @@ const COPY: Record<
       ],
     },
     lifecycle: {
-      eyebrow: "Agentic Product Development Lifecycle",
+      eyebrow: "Time-to-Market",
       headline:
         "Collaborative system intelligence accelerates product development — from requirement to market readiness",
       body: "Powered by large language models (LLMs) and reinforcement learning, modern agentic AI systems evolve from simple, reactive chatbots into autonomously acting agents. This combination solves complex, multi-step problems by linking language understanding with targeted action planning and continuous optimisation.",
