@@ -35,6 +35,10 @@ type Tile = {
   fill: string;
   fillHi: string;
   text: string; // text colour
+  /** Right V-arm: outside our scope (early concept phase) — rendered visually
+   *  recessed so the five left phases carry the message. Full opacity on hover
+   *  so the tiles stay readable and their captions still work. */
+  muted?: boolean;
 };
 
 const centroid = (pts: Pt[]): Pt => [
@@ -101,6 +105,7 @@ const TILES: Tile[] = [
     fill: BLUE,
     fillHi: BLUE_HI,
     text: NAVY,
+    muted: true,
   })),
   ...TRUNK.map((t) => ({ ...t, fill: BLUE, fillHi: BLUE_HI, text: NAVY })),
 ];
@@ -223,8 +228,9 @@ export default function VModelFunnel() {
             <g
               key={t.id}
               transform={`translate(${cx} ${cy}) scale(${scale}) translate(${-cx} ${-cy})`}
+              opacity={t.muted && !isHover ? 0.42 : 1}
               style={{
-                transition: "transform .25s ease",
+                transition: "transform .25s ease, opacity .25s ease",
                 cursor: "pointer",
               }}
               onMouseEnter={() => setHovered(t.id)}
