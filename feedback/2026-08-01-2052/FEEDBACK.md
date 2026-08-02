@@ -361,7 +361,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 16:21
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119980/
 
-### [ ] #143 - desktop (1604px) - Thorsten Sigges
+### [x] #143 - desktop (1604px) - Thorsten Sigges
 
 > Auch diesen Bereich löschen
 

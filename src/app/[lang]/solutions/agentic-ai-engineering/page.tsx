@@ -62,11 +62,6 @@ const COPY: Record<
       headline: string;
       body: string;
     };
-    roadmap: {
-      eyebrow: string;
-      headline: string;
-      steps: { step: string; title: string; text: string }[];
-    };
     solutions: {
       subEyebrow: string;
       title: string;
@@ -185,32 +180,6 @@ const COPY: Record<
       eyebrow: "Agentische KI im V-Modell",
       headline: "Schneller. Präziser. Besser.",
       body: "Produktentwicklung mit agentischer KI: Orchestrierte Intelligenz begleitet jede Phase des V-Modells – von der Use-Case-Definition über Safety & Security, Design-Exploration und Systemarchitektur bis zu Verifikation, Validierung und Release.",
-    },
-    roadmap: {
-      eyebrow: "Strategische Roadmap",
-      headline: "Agentische KI im WBG-Engineering einführen",
-      steps: [
-        {
-          step: "01",
-          title: "Pilot: KI-gestützte Technologieauswahl",
-          text: "Ein begrenztes Multi-Agenten-System für das SiC/GaN-Shortlisting einer Produktfamilie einführen. Time-to-Decision, Abdeckung und Akzeptanz im Engineering messen, bevor skaliert wird.",
-        },
-        {
-          step: "02",
-          title: "Fundament: Engineering-Wissensgraph",
-          text: "Strukturiertes Wissen ist der Treibstoff agentischer KI: eine WBG-Ontologie verknüpft Bauteilparameter, Anforderungen, Qualifikationsstandards (AEC-Q, IEC), Materialdaten und Fehlermodi – die gemeinsame Datenschicht aller Agenten.",
-        },
-        {
-          step: "03",
-          title: "Skalieren: Agentischer Entwicklungs-Lifecycle",
-          text: "KI-Agenten an jedem Systems-Engineering-Gate verankern – von den Anforderungen bis zur Qualifikation – mit Human-in-the-Loop-Freigaben, vollständiger Auditierbarkeit und kontinuierlichen Feedback-Schleifen.",
-        },
-        {
-          step: "04",
-          title: "Operationalisieren: Kognitive Orchestrierung",
-          text: "Eine persistente Orchestrierungsschicht koordiniert Spezialagenten über alle Engineering-Domänen hinweg – elektrisch, thermisch, mechanisch, Compliance – mit geteiltem Kontext und Gedächtnis.",
-        },
-      ],
     },
     solutions: {
       subEyebrow: "Lösungen",
@@ -337,32 +306,6 @@ const COPY: Record<
       eyebrow: "Agentic AI across the V-model",
       headline: "Faster. More precise. Better.",
       body: "Product development with agentic AI: orchestrated intelligence supports every phase of the V-model — from use-case definition, safety & security and design exploration to system architecture, verification, validation and release.",
-    },
-    roadmap: {
-      eyebrow: "Strategic Roadmap",
-      headline: "Deploying agentic AI in WBG power electronics engineering",
-      steps: [
-        {
-          step: "01",
-          title: "Pilot: AI-Assisted Technology Selection",
-          text: "Deploy a bounded multi-agent system for SiC/GaN shortlisting on one product family. Measure time-to-decision, coverage and engineer acceptance before scaling.",
-        },
-        {
-          step: "02",
-          title: "Foundation: Engineering Knowledge Graph",
-          text: "Structured knowledge is the fuel of agentic AI: a WBG ontology links device parameters, requirements, qualification standards (AEC-Q, IEC), material data and failure modes — the shared data layer for all agents.",
-        },
-        {
-          step: "03",
-          title: "Scale: Agentic Development Lifecycle",
-          text: "Embed AI agents at every systems engineering gate — from requirements through qualification — with human-in-the-loop approvals, full auditability and continuous feedback loops.",
-        },
-        {
-          step: "04",
-          title: "Operationalise: Cognitive Orchestration",
-          text: "A persistent orchestration layer coordinates specialist agents across all engineering domains — electrical, thermal, mechanical, compliance — with shared context and memory.",
-        },
-      ],
     },
     solutions: {
       subEyebrow: "Solutions",
@@ -651,38 +594,6 @@ export default async function AgenticAiEngineeringPage({
             <Reveal delay={0.12}>
               <VModelInteractive />
             </Reveal>
-          </div>
-        </section>
-
-        {/* Spotlight — Pattern C: Strategische Roadmap */}
-        <section className="relative py-24 sm:py-32 bg-white overflow-hidden">
-          <div className="absolute bottom-0 left-0 w-[420px] h-[420px] bg-brand-blue/[0.05] rounded-full blur-[120px] pointer-events-none" />
-
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <Reveal className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
-                {t.roadmap.eyebrow}
-              </span>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight">
-                {t.roadmap.headline}
-              </h2>
-            </Reveal>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {t.roadmap.steps.map((s, i) => (
-                <Reveal key={s.title} delay={i * 0.1}>
-                  <div className="h-full p-6 rounded-2xl border border-brand-navy/8 bg-white shadow-sm">
-                    <span className="w-9 h-9 rounded-lg bg-brand-cyan/10 border border-brand-cyan/20 flex items-center justify-center font-display text-sm font-bold text-brand-cyan mb-4">
-                      {s.step}
-                    </span>
-                    <h3 className="font-display text-base font-bold text-brand-navy leading-tight mb-2">
-                      {s.title}
-                    </h3>
-                    <p className="font-sans text-sm text-brand-navy/60 leading-relaxed">{s.text}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
           </div>
         </section>
 
