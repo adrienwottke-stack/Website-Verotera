@@ -116,7 +116,6 @@ const COPY: Record<
       title: "Der Mensch bleibt stets zentral",
       paragraphs: [
         "Collaborative Intelligence bedeutet nicht, dem Menschen Arbeit abzunehmen, sondern ihm eine Entscheidung zu geben, die er verantworten kann.",
-        "Als Human-in-the-Loop trifft der Mensch die finalen Entscheidungen, steuert den Prozess aktiv und prägt die Qualität der Ergebnisse maßgeblich durch sein Fachwissen und Urteilsvermögen.",
       ],
       imageAlt: "Agentische KI im Systems Engineering",
     },
@@ -292,7 +291,6 @@ const COPY: Record<
       title: "The human remains central",
       paragraphs: [
         "Collaborative Intelligence does not mean taking work off people's hands – it means giving them a decision they can stand behind.",
-        "As the human-in-the-loop, the engineer makes the final decisions, actively steers the process and decisively shapes the quality of the results through expertise and judgement.",
       ],
       imageAlt: "Agentic AI in systems engineering",
     },
