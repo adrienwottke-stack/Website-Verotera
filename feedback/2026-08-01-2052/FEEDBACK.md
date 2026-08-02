@@ -293,7 +293,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 16:06
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119818/
 
-### [ ] #137 - desktop (1604px) - Thorsten Sigges
+### [x] #137 - desktop (1604px) - Thorsten Sigges
 
 > 02 — Funktionsblöcke
 > Wiederkehrende Bausteine der Leistungselektronik – Gate-Treiber, Kühlpfad, Filter – als definierte Blöcke mit Schnittstellen und Randbedingungen.

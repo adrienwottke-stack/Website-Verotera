@@ -165,8 +165,8 @@ const COPY: Record<
         },
         {
           step: "02",
-          title: "Technologieauswahl",
-          text: "Multikriterielle Agentenauswertung von SiC vs. GaN: Anwendung, Spannungsklasse, Schaltfrequenz, Tj-Grenzwerte, Kosten, Reifegrad. Automatisierte Shortlist mit nachvollziehbarer Begründung.",
+          title: "Funktionsblöcke",
+          text: "Wiederkehrende Bausteine der Leistungselektronik – Gate-Treiber, Kühlpfad, Filter – als definierte Blöcke mit Schnittstellen und Randbedingungen.",
         },
         {
           step: "03",
@@ -346,8 +346,8 @@ const COPY: Record<
         },
         {
           step: "02",
-          title: "Technology Selection",
-          text: "Multi-criteria agent evaluation of SiC vs. GaN: application, voltage class, switching frequency, Tj limits, cost, maturity. An automated shortlist with traceable rationale.",
+          title: "Functional Blocks",
+          text: "Recurring building blocks of power electronics – gate driver, cooling path, filter – as defined blocks with interfaces and constraints.",
         },
         {
           step: "03",
