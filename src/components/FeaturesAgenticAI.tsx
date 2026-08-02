@@ -10,13 +10,13 @@ const COPY: Record<
   { teaser: string; headline: string; body: string }
 > = {
   de: {
-    teaser: "Schneller. Präziser. Besser.",
+    teaser: "Früher. Belegbar. Belastbar.",
     headline: "Produktentwicklung mit agentischer KI",
     body:
       "Orchestrierte Intelligenz für das Systems Engineering: Unsere KI-Agenten begleiten den gesamten Entwicklungszyklus – von der Anforderungsanalyse über Ideation, Safety- & Security-Konzepte und Design-Exploration bis zu strukturierten Ergebnissen.",
   },
   en: {
-    teaser: "Faster. More precise. Better.",
+    teaser: "Earlier. Documented. Dependable.",
     headline: "Product development with agentic AI",
     body:
       "Orchestrated intelligence for systems engineering: our AI agents support the entire development cycle — from requirements analysis through ideation, safety & security concepts and design exploration to structured deliverables.",

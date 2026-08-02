@@ -734,7 +734,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-24 17:59
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12110412/
 
-### [ ] #98 - desktop (1604px) - Thorsten Sigges
+### [x] #98 - desktop (1604px) - Thorsten Sigges
 
 > Eyebrow (kleine Schrift)
 > „Früher. Belegbar. Belastbar.“ (DE)
