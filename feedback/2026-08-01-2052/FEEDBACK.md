@@ -229,7 +229,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 15:31
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119591/
 
-### [ ] #131 - desktop (1604px) - Thorsten Sigges
+### [x] #131 - desktop (1604px) - Thorsten Sigges
 
 > 04 — Absicherung
 > Belastbarkeit statt Plausibilität: prüft die Ergebnisse gegen Evidenz, hinterlegte Regeln und definierte Prüfkriterien. Was die Prüfung nicht besteht, wird markiert und eskaliert – keine ungeprüfte Ausgabe. (DE)
