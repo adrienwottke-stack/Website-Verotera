@@ -635,7 +635,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-24 14:19
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12108537/
 
-### [ ] #79 - desktop (1904px) - Thorsten Sigges
+### [x] #79 - desktop (1904px) - Thorsten Sigges
 
 > (Bereich: Hero-Header) "AI-Enhanced WBG Semiconductor Engineering" (DE und EN)
 

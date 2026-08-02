@@ -38,7 +38,7 @@ const SLIDES: Record<Lang, Slide[]> = {
     {
       image: "/images/agentic-ai.png",
       alt: "Agentische KI im Systems Engineering",
-      title: "Agentic AI in Systems Engineering",
+      title: "AI-Enhanced WBG Semiconductor Engineering",
       subtitle: "Autonome Agenten für SiC & GaN",
       text: "Von Copiloten zu autonomen Agenten, die komplexe Engineering-Aufgaben planen und beschleunigen.",
       ctaHref: "/solutions/agentic-ai-engineering",
@@ -64,7 +64,7 @@ const SLIDES: Record<Lang, Slide[]> = {
     {
       image: "/images/agentic-ai.png",
       alt: "Agentic AI in systems engineering",
-      title: "Agentic AI in Systems Engineering",
+      title: "AI-Enhanced WBG Semiconductor Engineering",
       subtitle: "Autonomous agents for SiC & GaN",
       text: "From copilots to autonomous agents that plan and accelerate complex engineering tasks.",
       ctaHref: "/solutions/agentic-ai-engineering",
