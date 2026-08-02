@@ -193,7 +193,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 15:29
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119580/
 
-### [ ] #128 - desktop (1604px) - Thorsten Sigges
+### [x] #128 - desktop (1604px) - Thorsten Sigges
 
 > 01 — Orchestrierung
 > Verantwortlich für den Ablauf: zerlegt die Aufgabe in Teilschritte, leitet jeden Schritt an den zuständigen Bereich und führt den Zustand des Workflows – welcher Schritt läuft, was offen ist, was entschieden wurde. Sie koordiniert, ohne selbst zu bewerten. (DE)

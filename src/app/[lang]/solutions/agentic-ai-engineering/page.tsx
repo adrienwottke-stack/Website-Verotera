@@ -126,9 +126,9 @@ const COPY: Record<
       body: "Der Kern besteht aus fünf Verantwortungsbereichen, die ein Prinzip teilen: Interpretation und Herleitung sind getrennt. Das Sprachmodell versteht den Kontext, aber die nachvollziehbare Begründung entsteht im Wissensgraph und in den Regeln – nicht im Modell verborgen.",
       layers: [
         {
-          tag: "Layer 01",
-          title: "Orchestrierungsschicht",
-          text: "Ein LLM-basierter kognitiver Orchestrator zerlegt Engineering-Aufgaben in Teilziele, weist Spezialagenten zu, überwacht den Fortschritt und löst Konflikte zwischen konkurrierenden Design-Anforderungen.",
+          tag: "01",
+          title: "Orchestrierung",
+          text: "Verantwortlich für den Ablauf: zerlegt die Aufgabe in Teilschritte, leitet jeden Schritt an den zuständigen Bereich und führt den Zustand des Workflows – welcher Schritt läuft, was offen ist, was entschieden wurde. Sie koordiniert, ohne selbst zu bewerten.",
         },
         {
           tag: "Layer 02",
@@ -302,9 +302,9 @@ const COPY: Record<
       body: "The core consists of five areas of responsibility that share one principle: interpretation and derivation are kept apart. The language model understands the context, but the traceable justification is built in the knowledge graph and the rules – not hidden inside the model.",
       layers: [
         {
-          tag: "Layer 01",
-          title: "Orchestration Layer",
-          text: "An LLM-based cognitive orchestrator decomposes engineering tasks into sub-goals, assigns specialist agents, monitors progress and resolves conflicts between competing design constraints.",
+          tag: "01",
+          title: "Orchestration",
+          text: "Responsible for the flow: breaks the task into steps, routes each step to the relevant area, and maintains the state of the workflow – which step is running, what is open, what has been decided. It coordinates without assessing anything itself.",
         },
         {
           tag: "Layer 02",
