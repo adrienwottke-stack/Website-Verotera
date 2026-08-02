@@ -24,7 +24,7 @@ const COPY: Record<
   de: {
     sectionEyebrow: "Collaborative Intelligence – ein neuro-symbolischer Ansatz",
     lead:
-      "Vom passiven KI-Assistenten zum autonomen Agenten – der zielgerichtet plant, entscheidet und komplexe, mehrstufige Engineering-Ergebnisse liefert.",
+      "Die KI erweitert das Ingenieururteil – Von der Empfehlung zur belegten Entscheidungsgrundlage – nachvollziehbar und reproduzierbar.",
     imageAlt: "Agentische KI im Systems Engineering",
     title: "Agentische KI im Systems Engineering",
     sub: "Smarter Design Decision",
@@ -44,7 +44,7 @@ const COPY: Record<
   en: {
     sectionEyebrow: "Collaborative Intelligence – a neurosymbolic approach",
     lead:
-      "From passive AI assistant to autonomous agent — one that plans purposefully, makes decisions and delivers complex, multi-stage engineering outcomes.",
+      "AI extends engineering judgment – turning a recommendation into a documented basis for decisions: traceable and reproducible.",
     imageAlt: "Agentic AI in systems engineering",
     title: "Agentic AI in Systems Engineering",
     sub: "Smarter Design Decisions",

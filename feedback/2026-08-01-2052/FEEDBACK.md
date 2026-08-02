@@ -791,7 +791,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 10:52
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12118229/
 
-### [ ] #104 - desktop (1604px) - Thorsten Sigges
+### [x] #104 - desktop (1604px) - Thorsten Sigges
 
 > Headline
 > „Die KI erweitert das Ingenieururteil – Von der Empfehlung zur belegten Entscheidungsgrundlage – nachvollziehbar und reproduzierbar.“ (DE)
