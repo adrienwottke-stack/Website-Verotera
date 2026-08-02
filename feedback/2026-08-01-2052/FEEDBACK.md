@@ -781,7 +781,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 10:02
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12118015/
 
-### [ ] #103 - desktop (1604px) - Thorsten Sigges
+### [x] #103 - desktop (1604px) - Thorsten Sigges
 
 > Eyebrow
 > Collaborative Intelligence – ein neuro-symbolischer Ansatz (DE)

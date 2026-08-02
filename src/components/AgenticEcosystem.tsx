@@ -10,6 +10,7 @@ import type { Lang } from "@/lib/i18n";
 const COPY: Record<
   Lang,
   {
+    sectionEyebrow: string;
     lead: string;
     imageAlt: string;
     title: string;
@@ -21,6 +22,7 @@ const COPY: Record<
   }
 > = {
   de: {
+    sectionEyebrow: "Collaborative Intelligence – ein neuro-symbolischer Ansatz",
     lead:
       "Vom passiven KI-Assistenten zum autonomen Agenten – der zielgerichtet plant, entscheidet und komplexe, mehrstufige Engineering-Ergebnisse liefert.",
     imageAlt: "Agentische KI im Systems Engineering",
@@ -40,6 +42,7 @@ const COPY: Record<
       "Unsere Lösungen verwandeln Komplexität in Klarheit – sie beschleunigen Innovation und erschließen die kollektive Intelligenz von Engineering-Organisationen.",
   },
   en: {
+    sectionEyebrow: "Collaborative Intelligence – a neurosymbolic approach",
     lead:
       "From passive AI assistant to autonomous agent — one that plans purposefully, makes decisions and delivers complex, multi-stage engineering outcomes.",
     imageAlt: "Agentic AI in systems engineering",
@@ -77,7 +80,7 @@ export default function AgenticEcosystem() {
         {/* Centered header */}
         <Reveal className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
           <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
-            Agentic AI Ecosystem Architecture
+            {t.sectionEyebrow}
           </span>
           <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight">
             {t.lead}
