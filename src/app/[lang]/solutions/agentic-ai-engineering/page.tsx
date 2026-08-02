@@ -121,7 +121,7 @@ const COPY: Record<
     },
     architecture: {
       eyebrow: "Engineering Core",
-      headline: "Von der Orchestrierung zum institutionellen Gedächtnis",
+      headline: "Ein neuro-symbolischer Kern – auditierbar von Grund auf.",
       layers: [
         {
           tag: "Layer 01",
@@ -296,7 +296,7 @@ const COPY: Record<
     },
     architecture: {
       eyebrow: "Engineering Core",
-      headline: "From orchestration to institutional memory",
+      headline: "A neurosymbolic core – auditable by design.",
       layers: [
         {
           tag: "Layer 01",

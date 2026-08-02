@@ -173,7 +173,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 14:16
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119116/
 
-### [ ] #126 - desktop (1604px) - Thorsten Sigges
+### [x] #126 - desktop (1604px) - Thorsten Sigges
 
 > Ein neuro-symbolischer Kern – auditierbar von Grund auf. (DE)
 > 
