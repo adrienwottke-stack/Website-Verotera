@@ -120,7 +120,7 @@ const COPY: Record<
       imageAlt: "Agentische KI im Systems Engineering",
     },
     architecture: {
-      eyebrow: "Agentic AI Ecosystem Architecture",
+      eyebrow: "Engineering Core",
       headline: "Von der Orchestrierung zum institutionellen Gedächtnis",
       layers: [
         {
@@ -295,7 +295,7 @@ const COPY: Record<
       imageAlt: "Agentic AI in systems engineering",
     },
     architecture: {
-      eyebrow: "Agentic AI Ecosystem Architecture",
+      eyebrow: "Engineering Core",
       headline: "From orchestration to institutional memory",
       layers: [
         {
