@@ -180,7 +180,7 @@ const COPY: Record<
       eyebrow: "Structured Requirement Object",
       headline:
         "Physik begründet, Evidenz validiert, Ingenieursregeln führen – und Collaborative Intelligence macht das Ergebnis nachvollziehbar.",
-      body: "Produktentwicklung mit agentischer KI: Orchestrierte Intelligenz begleitet jede Phase des V-Modells – von der Use-Case-Definition über Safety & Security, Design-Exploration und Systemarchitektur bis zu Verifikation, Validierung und Release.",
+      body: "Ein maschinenlesbares Artefakt, das die bewertete Entscheidung samt Herleitung, Annahmen und Risiken trägt – in kanonischer Form, aus der sich Exportsichten wie ReqIF oder SysML ableiten.",
     },
     solutions: {
       subEyebrow: "Lösungen",
@@ -307,7 +307,7 @@ const COPY: Record<
       eyebrow: "Structured Requirement Object",
       headline:
         "Engineering truth is established by physics, validated by evidence, governed by engineering rules, and communicated through Collaborative Intelligence.",
-      body: "Product development with agentic AI: orchestrated intelligence supports every phase of the V-model — from use-case definition, safety & security and design exploration to system architecture, verification, validation and release.",
+      body: "A machine-readable artifact that carries the assessed decision together with its derivation, assumptions and risks – in a canonical form from which export views such as ReqIF or SysML are derived.",
     },
     solutions: {
       subEyebrow: "Solutions",

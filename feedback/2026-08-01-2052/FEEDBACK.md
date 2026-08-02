@@ -387,7 +387,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 16:24
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12120004/
 
-### [ ] #146 - desktop (1604px) - Thorsten Sigges
+### [x] #146 - desktop (1604px) - Thorsten Sigges
 
 > Ein maschinenlesbares Artefakt, das die bewertete Entscheidung samt Herleitung, Annahmen und Risiken trägt – in kanonischer Form, aus der sich Exportsichten wie ReqIF oder SysML ableiten. (DE)
 > 
