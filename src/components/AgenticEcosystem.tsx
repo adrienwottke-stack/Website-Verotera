@@ -30,11 +30,10 @@ const COPY: Record<
     intro:
       "VEROTERA strukturiert die folgenreichste Entscheidung der frühen Entwicklungsphase: die Wide-Bandgap-Technologieauswahl – bewertet, begründet und auf ihre Quellen zurückführbar.",
     bullets: [
-      "Schnellere und zuverlässigere Systementwicklung",
-      "Nahtlose Zusammenarbeit zwischen Teams und Technologien",
-      "Adaptive Modelle, die aus Daten und Kontext lernen",
-      "Eine klare Brücke zwischen Innovation und Umsetzung",
-      "On-Prem: Maximale Datensicherheit & DSGVO",
+      "Weniger teure und zeitintensive Redesign-Schleifen durch belastbare Frühentscheidungen",
+      "SiC/GaN-Technologiepfade nachvollziehbar bewertet – nicht aus dem Bauch",
+      "Annahmen und Risiken explizit dokumentiert, die Herleitung aus Regeln und Standards nachvollziehbar – kein Blackbox-Modell",
+      "On-Premise-Betrieb: eigene Daten und IP bleiben im Haus, DSGVO-konform",
     ],
     closing:
       "Unsere Lösungen verwandeln Komplexität in Klarheit – sie beschleunigen Innovation und erschließen die kollektive Intelligenz von Engineering-Organisationen.",
@@ -49,11 +48,10 @@ const COPY: Record<
     intro:
       "VEROTERA brings structure to the most consequential decision of the early development phase: the Wide-Bandgap technology choice – assessed, justified and traceable to its sources.",
     bullets: [
-      "Faster, more reliable system development",
-      "Seamless collaboration across teams and technologies",
-      "Adaptive models that learn from data and context",
-      "A clear bridge between innovation and execution",
-      "On-prem: maximum data security & GDPR compliance",
+      "Fewer costly redesign loops through dependable early decisions",
+      "SiC/GaN technology paths assessed transparently – not from good feeling",
+      "Assumptions and risks documented explicitly, the derivation traceable to rules and standards – no black-box-model",
+      "On-premise operation: your data and IP stay in-house, GDPR-compliant",
     ],
     closing:
       "Our solutions turn complexity into clarity — accelerating innovation and unlocking the collective intelligence of engineering organizations.",

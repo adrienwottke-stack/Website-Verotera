@@ -820,7 +820,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 11:25
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12118369/
 
-### [ ] #107 - desktop (1604px) - Thorsten Sigges
+### [x] #107 - desktop (1604px) - Thorsten Sigges
 
 > Nur 4 Punkte auflisten:
 > •	Weniger teure und zeitintensive Redesign-Schleifen durch belastbare Frühentscheidungen
