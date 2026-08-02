@@ -744,7 +744,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 09:54
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12117985/
 
-### [ ] #99 - desktop (1904px) - Thorsten Sigges
+### [x] #99 - desktop (1904px) - Thorsten Sigges
 
 > Headline
 > „Technologieentscheidungen in der Konzeptphase“ (DE)
