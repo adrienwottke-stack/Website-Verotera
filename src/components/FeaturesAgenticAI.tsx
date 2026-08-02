@@ -13,13 +13,13 @@ const COPY: Record<
     teaser: "Früher. Belegbar. Belastbar.",
     headline: "Technologieentscheidungen in der Konzeptphase",
     body:
-      "Orchestrierte Intelligenz für das Systems Engineering: Unsere KI-Agenten begleiten den gesamten Entwicklungszyklus – von der Anforderungsanalyse über Ideation, Safety- & Security-Konzepte und Design-Exploration bis zu strukturierten Ergebnissen.",
+      "In der sehr frühen Konzeptphase werden Systemanforderungen und Randbedingungen normalisiert, implizite Annahmen und Zielkonflikte identifiziert und SiC/GaN-Technologiepfade gegen abgeleitete Kriterien bewertet – qualitativ bis semi-quantitativ, mit expliziter Unsicherheitskennzeichnung. Ausgabe ist ein System Design Concept samt Trade-off-Bewertung, Annahmen- und Risikoübersicht. Die Entscheidungsverantwortung verbleibt beim Ingenieur.",
   },
   en: {
     teaser: "Earlier. Documented. Dependable.",
     headline: "Technology decisions in the concept phase",
     body:
-      "Orchestrated intelligence for systems engineering: our AI agents support the entire development cycle — from requirements analysis through ideation, safety & security concepts and design exploration to structured deliverables.",
+      "In the early concept phase, the impact of decisions is highest and the available data is most limited. System requirements and constraints are normalized, implicit assumptions and conflicting objectives are identified, and SiC/GaN technology paths are assessed against derived criteria – qualitatively to semi-qualitatively, with explicit flagging of uncertainty. The output is a System Design Concept with a trade-off assessment and an overview of assumptions and risks. Decision responsibility remains with the engineer.",
   },
 };
 

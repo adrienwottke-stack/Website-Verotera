@@ -754,7 +754,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 09:56
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12117990/
 
-### [ ] #100 - desktop (1904px) - Thorsten Sigges
+### [x] #100 - desktop (1904px) - Thorsten Sigges
 
 > Text
 > „In der sehr frühen Konzeptphase werden Systemanforderungen und Randbedingungen normalisiert, implizite Annahmen und Zielkonflikte identifiziert und SiC/GaN-Technologiepfade gegen abgeleitete Kriterien bewertet – qualitativ bis semi-quantitativ, mit expliziter Unsicherheitskennzeichnung. Ausgabe ist ein System Design Concept samt Trade-off-Bewertung, Annahmen- und Risikoübersicht. Die Entscheidungsverantwortung verbleibt beim Ingenieur.“
