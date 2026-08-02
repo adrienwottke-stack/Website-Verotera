@@ -7,11 +7,7 @@ import {
   BrainCircuit,
   CheckCircle2,
   ChevronDown,
-  CircuitBoard,
-  GitBranch,
   Network,
-  Scale,
-  Share2,
   ShieldCheck,
   Workflow,
 } from "lucide-react";
@@ -26,7 +22,6 @@ import { hasLang, localePath, type Lang } from "@/lib/i18n";
 import { buildMetadata, type PageMeta } from "@/lib/seo";
 
 const LAYER_ICONS = [Workflow, Network, BrainCircuit, ShieldCheck, Bot];
-const TOOL_ICONS = [Scale, CircuitBoard, GitBranch, Share2];
 
 const COPY: Record<
   Lang,
@@ -66,15 +61,6 @@ const COPY: Record<
       eyebrow: string;
       headline: string;
       body: string;
-    };
-    wbg: {
-      eyebrow: string;
-      headline: string;
-      body: string;
-      stats: { value: string; label: string }[];
-      moduleAlt: string;
-      emobilityAlt: string;
-      tools: { title: string; text: string }[];
     };
     roadmap: {
       eyebrow: string;
@@ -199,35 +185,6 @@ const COPY: Record<
       eyebrow: "Agentische KI im V-Modell",
       headline: "Schneller. Präziser. Besser.",
       body: "Produktentwicklung mit agentischer KI: Orchestrierte Intelligenz begleitet jede Phase des V-Modells – von der Use-Case-Definition über Safety & Security, Design-Exploration und Systemarchitektur bis zu Verifikation, Validierung und Release.",
-    },
-    wbg: {
-      eyebrow: "SiC & GaN Leistungselektronik",
-      headline: "Wie agentische KI das SiC- & GaN-Engineering beschleunigt",
-      body: "Agentenbasierte Systeme komprimieren SiC/GaN-Designzyklen von Wochen auf Tage – Technologiebewertung, Moduldesign und Topologie-Exploration laufen parallel statt in sequenziellen Expertenworkflows.",
-      stats: [
-        { value: "10×", label: "schnellere Technologieauswahl" },
-        { value: "60 %", label: "weniger Simulationsschleifen" },
-      ],
-      moduleAlt: "GaN-Leistungsmodul für hocheffiziente Leistungselektronik",
-      emobilityAlt: "SiC- und GaN-Anwendungen in der E-Mobilität",
-      tools: [
-        {
-          title: "Technologieauswahl (SiC vs. GaN)",
-          text: "Automatisierter Multikriterien-Vergleich: Spannungsklasse (650 V–10 kV), Schaltfrequenz, Tj-Grenzwerte, Gate-Drive-Komplexität, Avalanche-Festigkeit, Kosten und Verfügbarkeit – als nachvollziehbare Entscheidungsmatrix entlang der Applikationsziele.",
-        },
-        {
-          title: "Power Module Design",
-          text: "Simultane autonome Optimierung von Gate-Treiber, DCB-Layout, Wärmeübergang, Verguss und Verbindungstechnik gegen IEC/JEDEC-Standards – Kriech- und Luftstrecken-Verletzungen, parasitäre Induktivitäts-Hotspots und thermische Engpässe werden in Echtzeit erkannt.",
-        },
-        {
-          title: "System-Topologien",
-          text: "Multi-Agenten-Co-Simulation von LLC-Resonanz-, DAB-, Bridgeless-PFC-, 3-Level-NPC- und CHB-Topologien – automatisiertes Verlust-Benchmarking, THD-Prognose und EMV-Vorprüfung gegen CISPR/EN 55032 in einem einzigen Agenten-Loop.",
-        },
-        {
-          title: "Knowledge Graph für WBG-Engineering",
-          text: "Ein strukturierter Engineering-Wissensgraph verknüpft Bauteilparameter, Anwendungsdomänen, Qualifikationsdaten, Fehlermodi, Lieferanten-Roadmaps und Materialeigenschaften – für fundiertes, kontextbewusstes Agenten-Reasoning.",
-        },
-      ],
     },
     roadmap: {
       eyebrow: "Strategische Roadmap",
@@ -380,35 +337,6 @@ const COPY: Record<
       eyebrow: "Agentic AI across the V-model",
       headline: "Faster. More precise. Better.",
       body: "Product development with agentic AI: orchestrated intelligence supports every phase of the V-model — from use-case definition, safety & security and design exploration to system architecture, verification, validation and release.",
-    },
-    wbg: {
-      eyebrow: "SiC & GaN Power Electronics",
-      headline: "How agentic AI accelerates SiC & GaN engineering",
-      body: "Agent-based systems compress SiC/GaN design cycles from weeks to days — technology evaluation, module design and topology exploration run in parallel instead of sequential expert workflows.",
-      stats: [
-        { value: "10×", label: "faster technology selection" },
-        { value: "60%", label: "fewer simulation loops" },
-      ],
-      moduleAlt: "GaN power module for high-efficiency power electronics",
-      emobilityAlt: "SiC and GaN applications in e-mobility",
-      tools: [
-        {
-          title: "Technology Selection (SiC vs. GaN)",
-          text: "Automated multi-objective comparison: voltage class (650 V–10 kV), switching frequency, Tj limits, gate-drive complexity, avalanche rating, cost and availability — a traceable decision matrix aligned with application targets.",
-        },
-        {
-          title: "Power Module Design",
-          text: "Concurrent autonomous optimisation of gate driver, DCB layout, thermal interface, encapsulant and interconnects against IEC/JEDEC standards — detecting creepage/clearance violations, parasitic inductance hotspots and thermal bottlenecks in real time.",
-        },
-        {
-          title: "System Topologies",
-          text: "Multi-agent co-simulation explores LLC resonant, DAB, bridgeless PFC, 3-level NPC and cascaded H-bridge topologies — automated loss benchmarking, THD prediction and EMI pre-screening against CISPR/EN 55032 in a single agent loop.",
-        },
-        {
-          title: "Knowledge Graph for WBG Engineering",
-          text: "A structured engineering knowledge graph links device parameters, application domains, qualification data, failure modes, supplier roadmaps and material properties — grounded, context-aware reasoning for every agent.",
-        },
-      ],
     },
     roadmap: {
       eyebrow: "Strategic Roadmap",
@@ -723,88 +651,6 @@ export default async function AgenticAiEngineeringPage({
             <Reveal delay={0.12}>
               <VModelInteractive />
             </Reveal>
-          </div>
-        </section>
-
-        {/* Spotlight — Pattern B/D + C: Agentic AI im WBG-Halbleiterprozess */}
-        <section className="relative py-24 sm:py-32 bg-white overflow-hidden">
-          <BrandWatermark position="bottom-left" tint="navy" size={480} opacity={0.045} />
-
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <Reveal className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
-                {t.wbg.eyebrow}
-              </span>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight mb-6">
-                {t.wbg.headline}
-              </h2>
-              <p className="font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed max-w-3xl mx-auto">
-                {t.wbg.body}
-              </p>
-            </Reveal>
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-16">
-              <Reveal className="lg:col-span-6">
-                <div className="grid gap-4">
-                  <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-brand-navy/8 bg-surface-light shadow-sm flex items-center justify-center p-6">
-                    <div className="relative w-full h-full">
-                      <Image
-                        src="/images/power-module-gan-white.png"
-                        alt={t.wbg.moduleAlt}
-                        fill
-                        className="object-contain"
-                        sizes="(max-width: 1024px) 100vw, 50vw"
-                      />
-                    </div>
-                  </div>
-                  <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-brand-navy/8 bg-surface-light shadow-sm">
-                    <Image
-                      src="/images/emobility-automotive.png"
-                      alt={t.wbg.emobilityAlt}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                    />
-                  </div>
-                </div>
-              </Reveal>
-
-              <Reveal delay={0.12} className="lg:col-span-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-                  {t.wbg.stats.map((stat) => (
-                    <div key={stat.label} className="flex flex-col items-center text-center">
-                      <span className="font-display text-5xl sm:text-6xl font-extrabold text-brand-cyan mb-3">
-                        {stat.value}
-                      </span>
-                      <span className="font-sans text-base text-brand-navy/70">{stat.label}</span>
-                    </div>
-                  ))}
-                </div>
-              </Reveal>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {t.wbg.tools.map((tool, i) => {
-                const Icon = TOOL_ICONS[i];
-                return (
-                  <Reveal key={tool.title} delay={i * 0.1}>
-                    <div className="h-full p-6 sm:p-8 rounded-2xl border border-brand-navy/8 bg-white shadow-sm flex gap-5 items-start">
-                      <div className="p-2.5 rounded-lg bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan shrink-0">
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <h3 className="font-display text-lg font-bold text-brand-navy leading-tight mb-2">
-                          {tool.title}
-                        </h3>
-                        <p className="font-sans text-sm text-brand-navy/60 leading-relaxed">
-                          {tool.text}
-                        </p>
-                      </div>
-                    </div>
-                  </Reveal>
-                );
-              })}
-            </div>
           </div>
         </section>
 
