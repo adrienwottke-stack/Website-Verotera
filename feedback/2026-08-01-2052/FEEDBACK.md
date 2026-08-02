@@ -573,7 +573,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-28 08:35
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12126600/
 
-### [ ] #158 - desktop (1604px) - Thorsten Sigges
+### [x] #158 - desktop (1604px) - Thorsten Sigges
 
 > Statement (DE): Die kanonische Form ist maßgeblich. SysML und ReqIF sind Exportsichten. Herleitung, Eskalation und Provenance sind in keinem Zielformat nativ abbildbar – nur die kanonische Form trägt sie vollständig.
 > Statement (EN): The canonical form is authoritative. SysML and ReqIF are export views. Derivation, escalation and provenance cannot be represented natively in any target format – only the canonical form carries them in full.
