@@ -63,15 +63,6 @@ const COPY: Record<
       body: string;
       statement: string;
     };
-    solutions: {
-      subEyebrow: string;
-      title: string;
-      body: string;
-      intro: string;
-      bullets: string[];
-      closing: string;
-      imageAlt: string;
-    };
   }
 > = {
   de: {
@@ -185,23 +176,6 @@ const COPY: Record<
       statement:
         "Die kanonische Form ist maßgeblich. SysML und ReqIF sind Exportsichten. Herleitung, Eskalation und Provenance sind in keinem Zielformat nativ abbildbar – nur die kanonische Form trägt sie vollständig.",
     },
-    solutions: {
-      subEyebrow: "Lösungen",
-      title: "Smarter Design Decisions",
-      body: "Vom passiven KI-Assistenten zum autonomen Agenten – der zielgerichtet plant, entscheidet und komplexe, mehrstufige Engineering-Ergebnisse liefert.",
-      intro:
-        "VEROTERA stellt KI-gestützte Methoden, intelligente Agenten und modellbasierte Frameworks bereit – und ermöglicht damit:",
-      bullets: [
-        "Schnellere und zuverlässigere Systementwicklung",
-        "Nahtlose Zusammenarbeit zwischen Teams und Technologien",
-        "Adaptive Modelle, die aus Daten und Kontext lernen",
-        "Eine klare Brücke zwischen Innovation und Umsetzung",
-        "On-Prem: Maximale Datensicherheit & DSGVO",
-      ],
-      closing:
-        "Unsere Lösungen verwandeln Komplexität in Klarheit – sie beschleunigen Innovation und erschließen die kollektive Intelligenz von Engineering-Organisationen.",
-      imageAlt: "KI-gestützte Systems-Engineering-Plattform",
-    },
   },
   en: {
     heroEyebrow: "AI-Enhanced WBG Semiconductor Engineering",
@@ -313,23 +287,6 @@ const COPY: Record<
       body: "A machine-readable artifact that carries the assessed decision together with its derivation, assumptions and risks – in a canonical form from which export views such as ReqIF or SysML are derived.",
       statement:
         "The canonical form is authoritative. SysML and ReqIF are export views. Derivation, escalation and provenance cannot be represented natively in any target format – only the canonical form carries them in full.",
-    },
-    solutions: {
-      subEyebrow: "Solutions",
-      title: "Smarter Design Decisions",
-      body: "From passive AI assistant to autonomous agent — one that plans purposefully, makes decisions and delivers complex, multi-stage engineering outcomes.",
-      intro:
-        "VEROTERA provides AI-powered methods, intelligent agents and model-based frameworks — enabling:",
-      bullets: [
-        "Faster, more reliable system development",
-        "Seamless collaboration across teams and technologies",
-        "Adaptive models that learn from data and context",
-        "A clear bridge between innovation and execution",
-        "On-prem: maximum data security & GDPR compliance",
-      ],
-      closing:
-        "Our solutions turn complexity into clarity — accelerating innovation and unlocking the collective intelligence of engineering organizations.",
-      imageAlt: "AI-powered systems engineering platform",
     },
   },
 };
@@ -607,53 +564,6 @@ export default async function AgenticAiEngineeringPage({
                 {t.vmodel.statement}
               </p>
             </Reveal>
-          </div>
-        </section>
-
-        {/* Slide 26 — Pattern G: Navy-Emphasis-Split (Lösungen) */}
-        <section className="relative py-20 sm:py-28 bg-brand-navy overflow-hidden">
-          <BrandWatermark position="top-right" tint="light" size={460} opacity={0.06} />
-
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-              <Reveal className="lg:col-span-6">
-                <span className="text-xs font-bold uppercase tracking-wider text-white/50 block mb-3">
-                  {t.solutions.subEyebrow}
-                </span>
-                <h3 className="font-display text-2xl sm:text-3xl font-bold text-white leading-tight mb-6">
-                  {t.solutions.title}
-                </h3>
-                <p className="font-sans text-sm sm:text-base text-white/70 leading-relaxed mb-4">
-                  {t.solutions.body}
-                </p>
-                <p className="font-sans text-sm sm:text-base text-white/70 leading-relaxed mb-6">
-                  {t.solutions.intro}
-                </p>
-                <ul className="space-y-3 list-none m-0 p-0 mb-8">
-                  {t.solutions.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-5 h-5 text-brand-cyan shrink-0 mt-0.5" />
-                      <span className="font-sans text-sm text-white/80">{b}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="font-sans text-sm sm:text-base font-semibold text-white leading-relaxed">
-                  {t.solutions.closing}
-                </p>
-              </Reveal>
-
-              <Reveal delay={0.12} className="lg:col-span-6">
-                <div className="relative min-h-[280px] lg:min-h-[460px] h-full rounded-3xl overflow-hidden border border-white/10 bg-brand-navy-light shadow-lg">
-                  <Image
-                    src="/images/ai-systems-gui.jpg"
-                    alt={t.solutions.imageAlt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
-              </Reveal>
-            </div>
           </div>
         </section>
 

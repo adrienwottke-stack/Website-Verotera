@@ -582,7 +582,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-28 08:36
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12126601/
 
-### [ ] #159 - desktop (1604px) - Thorsten Sigges
+### [x] #159 - desktop (1604px) - Thorsten Sigges
 
 > Auch diesen Bereich entfernen.
 
@@ -724,7 +724,7 @@ _Hinfaellig durch die Thread-Antwort unten: bleibt englisch. Keine Code-Aenderun
 - **Erstellt:** 2026-07-24 17:55
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12110386/
 
-### [ ] #89 - desktop (1582px) - Aly Mashaly
+### [x] #89 - desktop (1582px) - Aly Mashaly
 
 > Ich weiß nicht, ob wieder IEA hier auf unsere Webseite zetieren dürfen. ICh würde es sicherheitshalbe rausnehmen.
 
@@ -779,7 +779,7 @@ _Hinfaellig durch die Thread-Antwort unten: bleibt englisch. Keine Code-Aenderun
 - **Erstellt:** 2026-07-27 09:57
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12117995/
 
-### [ ] #102 - desktop (1604px) - Thorsten Sigges
+### [x] #102 - desktop (1604px) - Thorsten Sigges
 
 > Wir gehen hier nicht auf die einzelnen Phasen ein - die Grafik soll aufzeigen, dass wir in einer sehr frühen Phase (die fünf linken Phasen) begleiten - die rechte V-Seite kann optional visuell etwas zurück genommen werden (oder "out of scope" betiteln)
 
