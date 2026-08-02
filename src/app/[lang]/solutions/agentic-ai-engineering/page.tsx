@@ -180,8 +180,8 @@ const COPY: Record<
         },
         {
           step: "05",
-          title: "Simulation & Validierung",
-          text: "LLM-orchestrierte SPICE/FEM-Schleifen. KI-Agenten generieren Stimulusvektoren, interpretieren Ergebnisse, kennzeichnen Abweichungen von der Spezifikation und schlagen autonom Korrekturmaßnahmen vor.",
+          title: "Parametrische Modelle",
+          text: "Physikalische Zusammenhänge als parametrische Objekte – getrennt von den Regeln, sodass Berechnung und Entscheidungslogik nicht vermischt werden.",
         },
         {
           step: "06",
@@ -361,8 +361,8 @@ const COPY: Record<
         },
         {
           step: "05",
-          title: "Simulation & Validation",
-          text: "LLM-orchestrated SPICE/FEM loops. AI agents generate stimulus vectors, interpret results, flag deviations from specification and autonomously propose corrective actions.",
+          title: "Parametric Models",
+          text: "Physical relationships as parametric objects – kept separate from the rules, so that calculation and decision logic are not intermixed.",
         },
         {
           step: "06",
