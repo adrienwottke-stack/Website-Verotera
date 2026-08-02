@@ -113,7 +113,7 @@ const COPY: Record<
     hitl: {
       eyebrow: "Human-in-the-Loop",
       headline: "Entscheidungen brauchen Nachvollziehbarkeit",
-      body: "KI-Agenten sind autonome Softwareeinheiten, die in definierten Umgebungen wahrnehmen, entscheiden und handeln.",
+      body: "Wir liefern die Grundlage, nicht das Urteil. Das System trifft keine Technologieentscheidung – es ist nicht dafür ausgelegt. Es liefert bewertete Optionen, offengelegte Annahmen und eine Risikoübersicht: Entscheidungsgrundlagen, keine Entscheidung. Die Wahl trifft der Ingenieur, der sie verantwortet – und weil jede Bewertung auf ihre Regeln und Quellen zurückführbar ist, kann er sie prüfen, hinterfragen und vor einem Review vertreten.",
       subEyebrow: "Model-Based Systems Engineering",
       title: "Der Mensch bleibt stets zentral",
       paragraphs: [
@@ -290,7 +290,7 @@ const COPY: Record<
     hitl: {
       eyebrow: "Human-in-the-Loop",
       headline: "Decisions need traceability",
-      body: "AI agents are autonomous software entities that perceive, decide and act within defined environments.",
+      body: "We provide the basis, not the decision. The system makes no technology decision – it is not built to. It delivers assessed options, disclosed assumptions and a risk overview. The choice is made by the engineer, who is accountable for it – and because every assessment is traceable to its rules and sources, it can be examined, challenged and defended in review.",
       subEyebrow: "Model-Based Systems Engineering",
       title: "The human remains central",
       paragraphs: [

@@ -120,7 +120,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 13:57
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119028/
 
-### [ ] #120 - desktop (1604px) - Thorsten Sigges
+### [x] #120 - desktop (1604px) - Thorsten Sigges
 
 > Text
 > „Wie liefern die Grundlage, nicht das Urteil. Das System trifft keine Technologieentscheidung – es ist nicht dafür ausgelegt. Es liefert bewertete Optionen, offengelegte Annahmen und eine Risikoübersicht: Entscheidungsgrundlagen, keine Entscheidung. Die Wahl trifft der Ingenieur, der sie verantwortet – und weil jede Bewertung auf ihre Regeln und Quellen zurückführbar ist, kann er sie prüfen, hinterfragen und vor einem Review vertreten.“ (DE)
