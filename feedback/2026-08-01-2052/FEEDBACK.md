@@ -1,4 +1,4 @@
-# Kundenfeedback - V2 - Review ready for Aly
+﻿# Kundenfeedback - V2 - Review ready for Aly
 
 **Runde:** 2026-08-01-2052  
 **Offene Punkte:** 95 auf 6 Seiten  
@@ -405,7 +405,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-28 08:19
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12126559/
 
-### [ ] #148 - desktop (1904px) - Thorsten Sigges
+### [x] #148 - desktop (1904px) - Thorsten Sigges
 
 > SRO als maschinenlesbarer Export
 > 
@@ -415,7 +415,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-28 08:21
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12126562/
 
-### [ ] #149 - desktop (1904px) - Thorsten Sigges
+### [x] #149 - desktop (1904px) - Thorsten Sigges
 
 > Die Entscheidung als vollständiges, verlustfreies Objekt.
 > 
@@ -425,7 +425,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-28 08:26
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12126574/
 
-### [ ] #150 - desktop (1904px) - Thorsten Sigges
+### [x] #150 - desktop (1904px) - Thorsten Sigges
 
 > Hier die 6 Elemente einfügen Headline plus Text - in der richtigen Reihenfolge 01-06:
 
@@ -433,7 +433,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-28 08:28
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12126582/
 
-### [ ] #151 - desktop (1904px) - Thorsten Sigges
+### [x] #151 - desktop (1904px) - Thorsten Sigges
 
 > 01
 > Anforderungen
@@ -449,7 +449,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-28 08:29
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12126586/
 
-### [ ] #152 - desktop (1604px) - Thorsten Sigges
+### [x] #152 - desktop (1604px) - Thorsten Sigges
 
 > 02
 > Kandidaten & Herleitung
@@ -465,7 +465,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-28 08:30
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12126589/
 
-### [ ] #153 - desktop (1604px) - Thorsten Sigges
+### [x] #153 - desktop (1604px) - Thorsten Sigges
 
 > 03
 > Offene Entscheidungen
@@ -481,7 +481,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-28 08:31
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12126590/
 
-### [ ] #154 - desktop (1604px) - Thorsten Sigges
+### [x] #154 - desktop (1604px) - Thorsten Sigges
 
 > 04
 > Eskalation an den Menschen
@@ -497,7 +497,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-28 08:31
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12126591/
 
-### [ ] #155 - desktop (1604px) - Thorsten Sigges
+### [x] #155 - desktop (1604px) - Thorsten Sigges
 
 > 05
 > Annahmen
@@ -513,7 +513,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-28 08:32
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12126593/
 
-### [ ] #156 - desktop (1604px) - Thorsten Sigges
+### [x] #156 - desktop (1604px) - Thorsten Sigges
 
 > 06
 > Provenance
@@ -530,7 +530,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-28 08:33
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12126594/
 
-### [ ] #157 - desktop (1604px) - Thorsten Sigges
+### [x] #157 - desktop (1604px) - Thorsten Sigges
 
 > Grafik beibehalten... anderer Inhalt!
 > oben nur SRO... darunter:
