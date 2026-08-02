@@ -205,7 +205,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 15:30
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119581/
 
-### [ ] #129 - desktop (1604px) - Thorsten Sigges
+### [x] #129 - desktop (1604px) - Thorsten Sigges
 
 > 02 — Wissensgraph
 > Das auditierbare Substrat des Kerns: Domänenwissen, Regeln und Normen als strukturierter, relationaler Graph statt loser Dokumente. Hier liegt die nachvollziehbare Herleitung – referenzierbar und präziser als reine Embedding-Similarity. (DE)

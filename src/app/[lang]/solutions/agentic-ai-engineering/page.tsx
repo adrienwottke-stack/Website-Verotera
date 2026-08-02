@@ -131,9 +131,9 @@ const COPY: Record<
           text: "Verantwortlich für den Ablauf: zerlegt die Aufgabe in Teilschritte, leitet jeden Schritt an den zuständigen Bereich und führt den Zustand des Workflows – welcher Schritt läuft, was offen ist, was entschieden wurde. Sie koordiniert, ohne selbst zu bewerten.",
         },
         {
-          tag: "Layer 02",
-          title: "Spezialisierter KI-Agenten-Pool",
-          text: "Fachspezifische KI-Agenten für Simulationssteuerung, Datenblattanalyse, Topologiesynthese, Compliance-Prüfung und parametrische Designraum-Exploration – parallel in simultanen Pipelines. Funktionale Sicherheits- und Cybersecurity-Agenten prüfen automatisch gegen IEC 61508, ISO 26262 (ASIL) sowie IEC 62443 und ISO/SAE 21434 – und kennzeichnen sicherheitskritische Zielkonflikte, unvollständige FMEA-Abdeckung und Cybersecurity-Risiken an jedem Lifecycle-Gate.",
+          tag: "02",
+          title: "Wissensgraph",
+          text: "Das auditierbare Substrat des Kerns: Domänenwissen, Regeln und Normen als strukturierter, relationaler Graph statt loser Dokumente. Hier liegt die nachvollziehbare Herleitung – referenzierbar und präziser als reine Embedding-Similarity.",
         },
         {
           tag: "Layer 03",
@@ -307,9 +307,9 @@ const COPY: Record<
           text: "Responsible for the flow: breaks the task into steps, routes each step to the relevant area, and maintains the state of the workflow – which step is running, what is open, what has been decided. It coordinates without assessing anything itself.",
         },
         {
-          tag: "Layer 02",
-          title: "Specialist Agent Pool",
-          text: "Domain-specific AI agents for simulation control, datasheet analysis, topology synthesis, compliance checking and parametric design-space exploration — running concurrently in parallel pipelines. Functional-safety and cybersecurity agents check automatically against IEC 61508, ISO 26262 (ASIL) as well as IEC 62443 and ISO/SAE 21434 — flagging safety-critical trade-offs, incomplete FMEA coverage and cybersecurity risks at every lifecycle gate.",
+          tag: "02",
+          title: "Knowledge Graph",
+          text: "The auditable substrate of the core: domain knowledge, rules and standards held as a structured, relational graph rather than loose documents. This is where the traceable derivation lives – referenceable and more precise than embedding similarity alone.",
         },
         {
           tag: "Layer 03",
