@@ -811,7 +811,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 10:56
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12118248/
 
-### [ ] #106 - desktop (1604px) - Thorsten Sigges
+### [x] #106 - desktop (1604px) - Thorsten Sigges
 
 > „VEROTERA strukturiert die folgenreichste Entscheidung der frühen Entwicklungsphase: die Wide-Bandgap-Technologieauswahl – bewertet, begründet und auf ihre Quellen zurückführbar.“ (DE)
 > „VEROTERA brings structure to the most consequential decision of the early development phase: the Wide-Bandgap technology choice – assessed, justified and traceable to ist sources.“ (EN)

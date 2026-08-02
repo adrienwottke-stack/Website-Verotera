@@ -28,7 +28,7 @@ const COPY: Record<
     title: "Human-in-the-Loop by design",
     eyebrow: "Lösungen",
     intro:
-      "VEROTERA stellt KI-gestützte Methoden, intelligente Agenten und modellbasierte Frameworks bereit – und ermöglicht damit:",
+      "VEROTERA strukturiert die folgenreichste Entscheidung der frühen Entwicklungsphase: die Wide-Bandgap-Technologieauswahl – bewertet, begründet und auf ihre Quellen zurückführbar.",
     bullets: [
       "Schnellere und zuverlässigere Systementwicklung",
       "Nahtlose Zusammenarbeit zwischen Teams und Technologien",
@@ -47,7 +47,7 @@ const COPY: Record<
     title: "Human-in-the-Loop by design",
     eyebrow: "Solutions",
     intro:
-      "VEROTERA provides AI-powered methods, intelligent agents and model-based frameworks — enabling:",
+      "VEROTERA brings structure to the most consequential decision of the early development phase: the Wide-Bandgap technology choice – assessed, justified and traceable to its sources.",
     bullets: [
       "Faster, more reliable system development",
       "Seamless collaboration across teams and technologies",
