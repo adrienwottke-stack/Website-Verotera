@@ -136,9 +136,9 @@ const COPY: Record<
           text: "Das auditierbare Substrat des Kerns: Domänenwissen, Regeln und Normen als strukturierter, relationaler Graph statt loser Dokumente. Hier liegt die nachvollziehbare Herleitung – referenzierbar und präziser als reine Embedding-Similarity.",
         },
         {
-          tag: "Layer 03",
-          title: "Tool- & Knowledge-Schicht",
-          text: "RAG-gestützte Recherche über Engineering-Standards (IEC, JEDEC, AEC-Q …), Simulations-APIs (SPICE, FEM, Polarion …), Komponentendatenbanken (SAP-Stammdaten) und proprietäre Design-Bibliotheken.",
+          tag: "03",
+          title: "Interpretation",
+          text: "Interpretiert und normalisiert die Eingaben, legt implizite Annahmen und Zielkonflikte offen und plant die mehrstufige Bewertung. Das Modell versteht den Kontext; die Herleitung selbst liefert der Wissensgraph.",
         },
         {
           tag: "Layer 04",
@@ -312,9 +312,9 @@ const COPY: Record<
           text: "The auditable substrate of the core: domain knowledge, rules and standards held as a structured, relational graph rather than loose documents. This is where the traceable derivation lives – referenceable and more precise than embedding similarity alone.",
         },
         {
-          tag: "Layer 03",
-          title: "Tool & Knowledge Layer",
-          text: "RAG-powered retrieval across engineering standards (IEC, JEDEC, AEC-Q …), simulation APIs (SPICE, FEM, Polarion …), component databases (SAP master data) and proprietary design libraries.",
+          tag: "03",
+          title: "Interpretation",
+          text: "Interprets and normalizes the inputs, surfaces implicit assumptions and conflicting objectives, and plans the multi-step assessment. The model understands the context; the derivation itself comes from the knowledge graph.",
         },
         {
           tag: "Layer 04",
