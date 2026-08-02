@@ -90,6 +90,25 @@ bleibt erhalten, drei Sektionen entfallen (`wbg`, `roadmap`, `solutions`).
 
 **Zwischensumme:** 48 UMSETZBAR · 1 ENTSCHEIDUNG · 1 ASSET_FEHLT
 
+**Status 2026-08-02:** Alle 48 UMSETZBAR-Punkte sind umgesetzt, in FEEDBACK.md abgehakt und
+committet (`feedback(2026-08-01-2052): #NR …`). Offen bleiben #112 (ENTSCHEIDUNG) und
+#160 (ASSET_FEHLT). Umbauten über die reine Textänderung hinaus:
+
+- `LAYER_ICONS` neu belegt (`Workflow, Network, BrainCircuit, ShieldCheck, Bot`) für fünf Bereiche.
+- Neuer COPY-Key `architecture.body` + `<p>` unter der H2 (#127); `hitl.subEyebrow` gestrichen (#121).
+- Drei Sektionen entfernt (#142 `wbg`, #143 `roadmap`, #159 `solutions`) inkl. COPY-Blöcke,
+  `TOOL_ICONS` und verwaister lucide-Importe.
+- `VModelInteractive.tsx` gelöscht und durch die neue Server-Komponente
+  `src/components/SroObject.tsx` ersetzt (#147/#150): sechs abgerundete Karten 01–06 plus
+  JSON-Rechteck in der bisherigen Terminal-Optik, Kopfzeile nur noch „SRO".
+- Neuer COPY-Key `vmodel.statement` für das Abschluss-Statement (#158).
+- **#117 nur textlich umgesetzt** — die gewünschte gestalterische Aufwertung des Process-Flows
+  ist eine offene Frage an Adrien (Rückfrage 3).
+- **#133–#141 wie geliefert umgesetzt**, der Widerspruch aus Konflikt 2 (Header „Time-to-Market"
+  über den sechs Wissensgraph-Bausteinen) besteht damit im Code — Rückfrage 2 bleibt offen.
+- Tippfehler der gelieferten EN-Texte still korrigiert (`assessemnt`, `assessement`, `ist`→`its`,
+  `stanf`→`stand`, `people´s hand`→`people's hands`) — konsistent zur Landing-Page-Runde.
+
 ---
 
 ## Seite `/` (Landing Page) — 34 Punkte
@@ -162,6 +181,16 @@ und je Punkt einzeln committet (`feedback(2026-08-01-2052): #NR …`). Die 14 ü
 | #168 | UMSETZBAR | `RPD` → Sektion 4 (Z. 384–436), `s4Teaser`/`s4Headline`/`s4Stats`/`s4Features` | beides | Der gestrichelte Rahmen umschließt die komplette Sektion „800 VDC vs. konventionelle AC/DC Architekturen" (linke, rechte und obere Kante sichtbar); „komplett erstmal rausnehmen" ist eindeutig. |
 
 **Zwischensumme:** 2 UMSETZBAR · 1 ASSET_FEHLT
+
+**Status 2026-08-02:** #165 und #168 sind umgesetzt und committet, #167 bleibt offen (ASSET_FEHLT).
+
+- #165: `s2Cards[].text` ist jetzt ein Absatz-Array, weil der neue Text zwei Absätze hat;
+  EN selbst übersetzt (SKELETON.md §0.4). **Achtung Konflikt 3:** der neue Text zitiert
+  ausdrücklich die Internationale Energieagentur, während #89 die IEA-Quelle auf der Landing Page
+  bereits entfernt hat (Commit `ecd5bd9`). Die IEA steht damit weiterhin hier und in
+  `applications/automotive-emobility` — muss einheitlich entschieden werden.
+- #168: Sektion 4 komplett entfernt inkl. `s4Teaser`/`s4Headline`/`s4Stats`/`s4Features`,
+  `S4_ICONS` und der verwaisten lucide-Importe.
 
 ---
 
