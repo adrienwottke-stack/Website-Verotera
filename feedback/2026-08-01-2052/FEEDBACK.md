@@ -147,7 +147,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 13:58
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119032/
 
-### [ ] #123 - desktop (1604px) - Thorsten Sigges
+### [x] #123 - desktop (1604px) - Thorsten Sigges
 
 > Neuer Text: 
 > „Collaborative Intelligence bedeutet nicht, dem Menschen Arbeit abzunehmen, sondern ihm eine Entscheidung zu geben, die er verantworten kann.“ (DE)

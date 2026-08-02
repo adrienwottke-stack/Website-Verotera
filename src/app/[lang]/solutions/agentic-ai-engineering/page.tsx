@@ -115,7 +115,7 @@ const COPY: Record<
       body: "Wir liefern die Grundlage, nicht das Urteil. Das System trifft keine Technologieentscheidung – es ist nicht dafür ausgelegt. Es liefert bewertete Optionen, offengelegte Annahmen und eine Risikoübersicht: Entscheidungsgrundlagen, keine Entscheidung. Die Wahl trifft der Ingenieur, der sie verantwortet – und weil jede Bewertung auf ihre Regeln und Quellen zurückführbar ist, kann er sie prüfen, hinterfragen und vor einem Review vertreten.",
       title: "Der Mensch bleibt stets zentral",
       paragraphs: [
-        "Durch die Kombination von künstlicher Intelligenz und autonomen Steuerungsmethoden entstehen adaptive Systeme, die komplexe Aufgaben eigenständig analysieren und zielgerichtet ausführen.",
+        "Collaborative Intelligence bedeutet nicht, dem Menschen Arbeit abzunehmen, sondern ihm eine Entscheidung zu geben, die er verantworten kann.",
         "Als Human-in-the-Loop trifft der Mensch die finalen Entscheidungen, steuert den Prozess aktiv und prägt die Qualität der Ergebnisse maßgeblich durch sein Fachwissen und Urteilsvermögen.",
       ],
       imageAlt: "Agentische KI im Systems Engineering",
@@ -291,7 +291,7 @@ const COPY: Record<
       body: "We provide the basis, not the decision. The system makes no technology decision – it is not built to. It delivers assessed options, disclosed assumptions and a risk overview. The choice is made by the engineer, who is accountable for it – and because every assessment is traceable to its rules and sources, it can be examined, challenged and defended in review.",
       title: "The human remains central",
       paragraphs: [
-        "Combining artificial intelligence with autonomous control methods creates adaptive systems that independently analyse complex tasks and execute them purposefully.",
+        "Collaborative Intelligence does not mean taking work off people's hands – it means giving them a decision they can stand behind.",
         "As the human-in-the-loop, the engineer makes the final decisions, actively steers the process and decisively shapes the quality of the results through expertise and judgement.",
       ],
       imageAlt: "Agentic AI in systems engineering",
