@@ -8,12 +8,12 @@ import {
   CheckCircle2,
   ChevronDown,
   CircuitBoard,
-  Database,
   GitBranch,
-  Layers,
   Network,
   Scale,
   Share2,
+  ShieldCheck,
+  Workflow,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -25,7 +25,7 @@ import ContactSection from "@/components/ContactSection";
 import { hasLang, localePath, type Lang } from "@/lib/i18n";
 import { buildMetadata, type PageMeta } from "@/lib/seo";
 
-const LAYER_ICONS = [Network, Bot, Layers, Database];
+const LAYER_ICONS = [Workflow, Network, BrainCircuit, ShieldCheck, Bot];
 const TOOL_ICONS = [Scale, CircuitBoard, GitBranch, Share2];
 
 const COPY: Record<
@@ -144,6 +144,11 @@ const COPY: Record<
           tag: "04",
           title: "Absicherung",
           text: "Belastbarkeit statt Plausibilität: prüft die Ergebnisse gegen Evidenz, hinterlegte Regeln und definierte Prüfkriterien. Was die Prüfung nicht besteht, wird markiert und eskaliert – keine ungeprüfte Ausgabe.",
+        },
+        {
+          tag: "05",
+          title: "Agent",
+          text: "Der WBG-Agent führt die Bewertung aus: wendet die Regeln an, prüft Constraints und durchläuft den Zyklus aus Planung, Werkzeugaufruf, Prüfung und Iteration. Jeder Schritt bleibt an Orchestrierung und Regelwerk gebunden.",
         },
       ],
     },
@@ -320,6 +325,11 @@ const COPY: Record<
           tag: "04",
           title: "Assurance",
           text: "Substantiated, not merely plausible: checks the results against evidence, encoded rules and defined acceptance criteria. Anything that fails the check is flagged and escalated – no unchecked output.",
+        },
+        {
+          tag: "05",
+          title: "Agent",
+          text: "The WBG agent carries out the assessment: applies the rules, checks constraints, and runs the cycle of planning, tool call, verification and iteration. Every step stays bound to the orchestration and the rule set.",
         },
       ],
     },

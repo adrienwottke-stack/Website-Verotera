@@ -240,7 +240,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 15:32
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119596/
 
-### [ ] #132 - desktop (1604px) - Thorsten Sigges
+### [x] #132 - desktop (1604px) - Thorsten Sigges
 
 > Verantwortungsbereich 5 hinzufügen!
 > 05 — Agent
