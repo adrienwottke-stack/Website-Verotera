@@ -112,7 +112,7 @@ const COPY: Record<
     },
     hitl: {
       eyebrow: "Human-in-the-Loop",
-      headline: "KI transformiert MBSE",
+      headline: "Entscheidungen brauchen Nachvollziehbarkeit",
       body: "KI-Agenten sind autonome Softwareeinheiten, die in definierten Umgebungen wahrnehmen, entscheiden und handeln.",
       subEyebrow: "Model-Based Systems Engineering",
       title: "Der Mensch bleibt stets zentral",
@@ -289,7 +289,7 @@ const COPY: Record<
     },
     hitl: {
       eyebrow: "Human-in-the-Loop",
-      headline: "AI transforms MBSE",
+      headline: "Decisions need traceability",
       body: "AI agents are autonomous software entities that perceive, decide and act within defined environments.",
       subEyebrow: "Model-Based Systems Engineering",
       title: "The human remains central",

@@ -99,7 +99,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 13:24
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12118899/
 
-### [ ] #118 - desktop (1604px) - Thorsten Sigges
+### [x] #118 - desktop (1604px) - Thorsten Sigges
 
 > Header
 > „Entscheidungen brauchen Nachvollziehbarkeit“ (DE)
