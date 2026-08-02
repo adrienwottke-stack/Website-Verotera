@@ -33,7 +33,6 @@ const COPY: Record<
     support: {
       title: "Support",
       links: [
-        { label: "Technische Unterstützung", href: "/contacts" },
         { label: "Kontakt", href: "/contacts" },
       ],
     },
@@ -69,7 +68,6 @@ const COPY: Record<
     support: {
       title: "Support",
       links: [
-        { label: "Technical Support", href: "/contacts" },
         { label: "Contact", href: "/contacts" },
       ],
     },
