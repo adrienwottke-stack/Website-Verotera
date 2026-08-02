@@ -37,7 +37,7 @@ const COPY: Record<
     s1ImageAlt: string;
     s2Teaser: string;
     s2Headline: string;
-    s2Cards: { title: string; text: string }[];
+    s2Cards: { title: string; text: string[] }[];
     s2ImageAlt: string;
     s3Teaser: string;
     s3Headline: string;
@@ -64,15 +64,22 @@ const COPY: Record<
     s2Cards: [
       {
         title: "KI",
-        text: "Künstliche Intelligenz verändert nahezu alle Branchen in einem noch nie dagewesenen Tempo – und die Rechenzentren, die diese Revolution antreiben, wachsen ebenso rasant. Das Training eines einzelnen großen Sprachmodells kann so viel Strom verbrauchen wie hunderte von Haushalten in einem Jahr. Da KI-Workloads in allen Sektoren zunehmen, wird der kumulierte Einfluss auf die globalen Energiesysteme immer deutlicher. Die Internationale Energieagentur prognostiziert, dass der Stromverbrauch von Rechenzentren von 415 TWh im Jahr 2024 auf rund 945 TWh bis 2030 ansteigen wird.",
+        text: [
+          "Künstliche Intelligenz verändert nahezu alle Branchen in einem noch nie dagewesenen Tempo – und die Rechenzentren, die diese Revolution antreiben, wachsen ebenso rasant. Während das Training früherer, kleinerer KI-Modelle noch dem Jahresverbrauch von rund 100 bis 200 Haushalten entsprach, ziehen moderne KI-Trainingscluster heute dauerhaft 100 bis 300 Megawatt Leistung – das entspricht dem Strombedarf von zehntausenden Haushalten. Einzelne neue Rechenzentrumsprojekte erreichen sogar Leistungen von 300 bis 500 Megawatt, was dem Verbrauch mittelgroßer Städte mit mehreren hunderttausend Einwohnern gleichkommt.",
+          "Da KI-Workloads in allen Sektoren zunehmen, wird der kumulierte Einfluss auf die globalen Energiesysteme immer deutlicher. Große Rechenzentrumsbetreiber sind für einen Großteil dieses Wachstums verantwortlich und investieren weltweit Milliardenbeträge in neue, KI-optimierte Infrastruktur. Die Internationale Energieagentur prognostiziert, dass der weltweite Stromverbrauch von Rechenzentren von 415 Terawattstunden im Jahr 2024 auf rund 945 Terawattstunden bis 2030 ansteigen wird – eine Verdopplung, die vor allem durch den Ausbau KI-spezifischer Rechenkapazitäten getrieben wird.",
+        ],
       },
       {
         title: "Nachhaltige KI",
-        text: "Die zentrale Herausforderung ist nicht nur das schiere Ausmaß – sondern die Effizienz. In konventionellen KI-Rechenzentrumsarchitekturen durchläuft Energie mehrere Wandlungsstufen zwischen dem Versorgungsnetz und dem Prozessor, mit kumulierten Verlusten von 14 bis 18 Prozent. Bei Rack-Leistungsniveaus von nahezu einem Megawatt entspricht das Hunderten von Kilowatt verschwendeter Energie pro Rack – direkt übersetzt in CO₂-Emissionen und Kühlinfrastruktur.",
+        text: [
+          "Die zentrale Herausforderung ist nicht nur das schiere Ausmaß – sondern die Effizienz. In konventionellen KI-Rechenzentrumsarchitekturen durchläuft Energie mehrere Wandlungsstufen zwischen dem Versorgungsnetz und dem Prozessor, mit kumulierten Verlusten von 14 bis 18 Prozent. Bei Rack-Leistungsniveaus von nahezu einem Megawatt entspricht das Hunderten von Kilowatt verschwendeter Energie pro Rack – direkt übersetzt in CO₂-Emissionen und Kühlinfrastruktur.",
+        ],
       },
       {
         title: "800 VDC Architektur",
-        text: "Der Übergang zur 800-VDC-Rack-Verteilung verändert diese Gleichung grundlegend. Durch die Bereitstellung von Hochspannungsgleichstrom von der Anlagenebene bis zum Rack werden die Wandlungsstufen von vier oder fünf auf drei reduziert – die Gesamtverluste sinken auf rund 5 bis 6 Prozent. Im Mittelpunkt dieser Architektur steht die Smart PDU – ein Full-GaN DC/DC-Wandler mit einem Wirkungsgrad von 98 % und mehr, speziell entwickelt für 800-VDC-Rack-Infrastrukturen und darauf ausgelegt, hochdichte KI-Rechenleistung technisch realisierbar und energetisch verantwortungsvoll zu machen.",
+        text: [
+          "Der Übergang zur 800-VDC-Rack-Verteilung verändert diese Gleichung grundlegend. Durch die Bereitstellung von Hochspannungsgleichstrom von der Anlagenebene bis zum Rack werden die Wandlungsstufen von vier oder fünf auf drei reduziert – die Gesamtverluste sinken auf rund 5 bis 6 Prozent. Im Mittelpunkt dieser Architektur steht die Smart PDU – ein Full-GaN DC/DC-Wandler mit einem Wirkungsgrad von 98 % und mehr, speziell entwickelt für 800-VDC-Rack-Infrastrukturen und darauf ausgelegt, hochdichte KI-Rechenleistung technisch realisierbar und energetisch verantwortungsvoll zu machen.",
+        ],
       },
     ],
     s2ImageAlt: "KI-Rechenzentrum-Infrastruktur – Stromversorgungskette vom Transformator bis zum Compute Rack",
@@ -147,15 +154,22 @@ const COPY: Record<
     s2Cards: [
       {
         title: "AI",
-        text: "Artificial intelligence is transforming nearly every industry at an unprecedented pace — and the data centers powering this revolution are growing just as rapidly. Training a single large language model can consume as much electricity as hundreds of households in a year. As AI workloads increase across all sectors, the cumulative impact on global energy systems becomes ever more apparent. The International Energy Agency projects that data center electricity consumption will rise from 415 TWh in 2024 to around 945 TWh by 2030.",
+        text: [
+          "Artificial intelligence is transforming nearly every industry at an unprecedented pace — and the data centers powering this revolution are growing just as rapidly. Where training earlier, smaller AI models equated to the annual consumption of roughly 100 to 200 households, today's AI training clusters draw 100 to 300 megawatts continuously — the electricity demand of tens of thousands of households. Individual new data center projects even reach 300 to 500 megawatts, comparable to the consumption of mid-sized cities with several hundred thousand inhabitants.",
+          "As AI workloads increase across all sectors, the cumulative impact on global energy systems becomes ever more apparent. Large data center operators account for much of this growth, investing billions worldwide in new, AI-optimized infrastructure. The International Energy Agency projects that global data center electricity consumption will rise from 415 terawatt-hours in 2024 to around 945 terawatt-hours by 2030 — a doubling driven above all by the build-out of AI-specific compute capacity.",
+        ],
       },
       {
         title: "Sustainable AI",
-        text: "The central challenge is not just sheer scale — it is efficiency. In conventional AI data center architectures, energy passes through multiple conversion stages between the utility grid and the processor, with cumulative losses of 14 to 18 percent. At rack power levels approaching one megawatt, that equates to hundreds of kilowatts of wasted energy per rack — translating directly into CO₂ emissions and cooling infrastructure.",
+        text: [
+          "The central challenge is not just sheer scale — it is efficiency. In conventional AI data center architectures, energy passes through multiple conversion stages between the utility grid and the processor, with cumulative losses of 14 to 18 percent. At rack power levels approaching one megawatt, that equates to hundreds of kilowatts of wasted energy per rack — translating directly into CO₂ emissions and cooling infrastructure.",
+        ],
       },
       {
         title: "800 VDC Architecture",
-        text: "The transition to 800 VDC rack distribution fundamentally changes this equation. By delivering high-voltage direct current from the facility level to the rack, conversion stages are reduced from four or five to three — total losses fall to around 5 to 6 percent. At the heart of this architecture is the Smart PDU — a Full-GaN DC/DC converter with 98%+ efficiency, purpose-built for 800 VDC rack infrastructures and designed to make high-density AI compute technically feasible and energetically responsible.",
+        text: [
+          "The transition to 800 VDC rack distribution fundamentally changes this equation. By delivering high-voltage direct current from the facility level to the rack, conversion stages are reduced from four or five to three — total losses fall to around 5 to 6 percent. At the heart of this architecture is the Smart PDU — a Full-GaN DC/DC converter with 98%+ efficiency, purpose-built for 800 VDC rack infrastructures and designed to make high-density AI compute technically feasible and energetically responsible.",
+        ],
       },
     ],
     s2ImageAlt: "AI data center infrastructure — power chain from transformer to compute rack",
@@ -331,7 +345,14 @@ export default async function RackPowerDistributionPage({
                           {card.title}
                         </h3>
                       </div>
-                      <p className="font-sans text-sm text-brand-navy/60 leading-relaxed">{card.text}</p>
+                      {card.text.map((p) => (
+                        <p
+                          key={p}
+                          className="font-sans text-sm text-brand-navy/60 leading-relaxed mb-4 last:mb-0"
+                        >
+                          {p}
+                        </p>
+                      ))}
                     </div>
                   </Reveal>
                 );

@@ -877,7 +877,7 @@ _Hinfaellig durch die Thread-Antwort unten: bleibt englisch. Keine Code-Aenderun
 - **Erstellt:** 2026-07-28 08:50
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12126646/
 
-### [ ] #162 - desktop (1688px) - Aly Mashaly
+### [x] #162 - desktop (1688px) - Aly Mashaly
 
 > Support, Technische Unterstützung und Kontakt. m. E. reicht nur eine der drei aus.
 
@@ -959,7 +959,7 @@ https://website-verotera.vercel.app/solutions/wbg-power-modules
 ## Seite `https://website-verotera.vercel.app/solutions/rack-power-distribution` (3 Punkte)
 
 https://website-verotera.vercel.app/solutions/rack-power-distribution
-### [ ] #165 - desktop (1406px) - Aly Mashaly
+### [x] #165 - desktop (1406px) - Aly Mashaly
 
 > Künstliche Intelligenz verändert nahezu alle Branchen in einem noch nie dagewesenen Tempo – und die Rechenzentren, die diese Revolution antreiben, wachsen ebenso rasant. Während das Training früherer, kleinerer KI-Modelle noch dem Jahresverbrauch von rund 100 bis 200 Haushalten entsprach, ziehen moderne KI-Trainingscluster heute dauerhaft 100 bis 300 Megawatt Leistung – das entspricht dem Strombedarf von zehntausenden Haushalten. Einzelne neue Rechenzentrumsprojekte erreichen sogar Leistungen von 300 bis 500 Megawatt, was dem Verbrauch mittelgroßer Städte mit mehreren hunderttausend Einwohnern gleichkommt.
 > 
