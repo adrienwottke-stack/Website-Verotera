@@ -977,7 +977,7 @@ https://website-verotera.vercel.app/solutions/rack-power-distribution
 - **Erstellt:** 2026-07-31 11:43
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12155220/
 
-### [ ] #168 - desktop (1688px) - Aly Mashaly
+### [x] #168 - desktop (1688px) - Aly Mashaly
 
 > Ich würde diesen Teil komplett erstmal rausnehmen.
 

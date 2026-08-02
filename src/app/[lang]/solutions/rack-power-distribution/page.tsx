@@ -1,15 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import {
-  Server,
-  BrainCircuit,
-  Leaf,
-  Zap,
-  Cpu,
-  RefreshCcw,
-  Droplets,
-  PlugZap,
-} from "lucide-react";
+import { Server, BrainCircuit, Leaf, Zap } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
@@ -21,7 +12,6 @@ import { hasLang, type Lang } from "@/lib/i18n";
 import { buildMetadata, type PageMeta } from "@/lib/seo";
 
 const S2_ICONS = [BrainCircuit, Leaf, Zap];
-const S4_ICONS = [Cpu, RefreshCcw, Droplets, PlugZap];
 
 const COPY: Record<
   Lang,
@@ -42,10 +32,6 @@ const COPY: Record<
     s3Teaser: string;
     s3Headline: string;
     s3Body: string;
-    s4Teaser: string;
-    s4Headline: string;
-    s4Stats: { title: string; value: string; label: string; text: string }[];
-    s4Features: { title: string; subtag: string; text: string }[];
   }
 > = {
   de: {
@@ -87,56 +73,6 @@ const COPY: Record<
     s3Headline: "Vom Utility Grid bis zum Compute Rack Level",
     s3Body:
       "Der Leistungspfad der 800-VDC-Architektur über alle drei Ebenen: vom Versorgungsnetz über das Facility Level bis zur Smart PDU im Compute Rack.",
-    s4Teaser: "KI-Rechenzentrum – Rack Power Distribution Unit (PDU)",
-    s4Headline: "800 VDC vs. konventionelle AC/DC Architekturen",
-    s4Stats: [
-      {
-        title: "Einstufige Wandlung",
-        value: "≥ 98,0 %",
-        label: "Spitzenwirkungsgrad",
-        text: "Kein PFC-Eingang erforderlich – die 800-VDC-Einspeisung geht direkt in den LLC-DCX. Eine Wandlungsstufe weniger gegenüber AC/DC-Designs.",
-      },
-      {
-        title: "Höhere Leistungsdichte",
-        value: "6×",
-        label: "kW pro HE vs. 18-kW-AC-Shelf",
-        text: "> 12 kW pro Modul im Full-Brick-Formfaktor. Die flüssigkeitsgekühlte Kühlplatte ermöglicht 3–4-fach höhere Leistung pro Rack-Einheit im Vergleich zu luftgekühlten AC-Shelves.",
-      },
-      {
-        title: "Reduzierte I²R-Verluste",
-        value: "−45 %",
-        label: "vs. 54 VDC Busbar",
-        text: "800-VDC-Verteilung führt bei gleicher Leistung 6-mal weniger Strom als 48 VDC – Kabelverluste um den Faktor 36 reduziert.",
-      },
-      {
-        title: "Zentrale Verwaltung",
-        value: "1 vs. 4",
-        label: "Verwaltungseinheiten",
-        text: "Ein Shelf, ein PMBus-Controller, ein Ethernet-Port – gegenüber vier parallelen AC-Shelves für die gleiche Leistung.",
-      },
-    ],
-    s4Features: [
-      {
-        title: "GaN Technologie",
-        subtag: "~1 MHz Schaltfrequenz",
-        text: "E-Mode GaN 650 V auf der Primärseite ermöglicht MHz-Schaltfrequenz – planare Magnetics, kleinere Passivkomponenten und höhere Leistungsdichte gegenüber Si-basierten AC-Wandlern.",
-      },
-      {
-        title: "Aktive Hot-Swap Sequenzierung",
-        subtag: "8+1 · N+1 Redundanz",
-        text: "ISOP-spezifische, koordinierte Anlauf- und Einfügungssteuerung verhindert Spannungsspitzen im Reihenstapel.",
-      },
-      {
-        title: "Flüssigkeitskühlung",
-        subtag: "2 HE für 96 kW netto",
-        text: "Obligatorische Flüssigkeitskühlung ermöglicht stabilen Hochfrequenzbetrieb und eine kompakte Bauform – kein Lüfterlärm, keine Luftstromabhängigkeit.",
-      },
-      {
-        title: "Native HVDC Architektur",
-        subtag: "800 VDC Direkteinspeisung",
-        text: "Von Grund auf für 800 VDC ausgelegt – keine AC/DC-Vorstufe im Rack. Kompatibel mit den NVIDIA-MGX- und OCP-Kyber-Ökosystem-Roadmaps.",
-      },
-    ],
   },
   en: {
     heroEyebrow: "Rack Power Distribution – Smart PDU",
@@ -177,56 +113,6 @@ const COPY: Record<
     s3Headline: "From the utility grid to the compute rack level",
     s3Body:
       "The power path of the 800 VDC architecture across all three levels: from the utility grid through the facility level to the Smart PDU in the compute rack.",
-    s4Teaser: "AI Data Center – Rack Power Distribution Unit (PDU)",
-    s4Headline: "800 VDC vs. conventional AC/DC architectures",
-    s4Stats: [
-      {
-        title: "Single-Stage Conversion",
-        value: "≥ 98.0%",
-        label: "peak efficiency",
-        text: "No PFC front end required — the 800 VDC feed goes straight into the LLC-DCX. One conversion stage fewer than AC/DC designs.",
-      },
-      {
-        title: "Higher Power Density",
-        value: "6×",
-        label: "kW per rack unit vs. 18 kW AC shelf",
-        text: "> 12 kW per module in a full-brick form factor. The liquid-cooled cold plate enables 3–4× higher power per rack unit compared with air-cooled AC shelves.",
-      },
-      {
-        title: "Reduced I²R Losses",
-        value: "−45%",
-        label: "vs. 54 VDC busbar",
-        text: "At equal power, 800 VDC distribution carries 6× less current than 48 VDC — cutting cable losses by a factor of 36.",
-      },
-      {
-        title: "Centralized Management",
-        value: "1 vs. 4",
-        label: "management units",
-        text: "One shelf, one PMBus controller, one Ethernet port — versus four parallel AC shelves for the same power.",
-      },
-    ],
-    s4Features: [
-      {
-        title: "GaN Technology",
-        subtag: "~1 MHz switching frequency",
-        text: "650 V e-mode GaN on the primary side enables MHz switching — planar magnetics, smaller passives and higher power density than Si-based AC converters.",
-      },
-      {
-        title: "Active Hot-Swap Sequencing",
-        subtag: "8+1 · N+1 redundancy",
-        text: "ISOP-specific coordinated start-up and insertion control prevents voltage spikes across the series stack.",
-      },
-      {
-        title: "Liquid Cooling",
-        subtag: "2 RU for 96 kW net",
-        text: "Mandatory liquid cooling enables stable high-frequency operation and a compact form factor — no fan noise, no airflow dependency.",
-      },
-      {
-        title: "Native HVDC Architecture",
-        subtag: "800 VDC direct feed",
-        text: "Designed for 800 VDC from the ground up — no AC/DC front end in the rack. Compatible with the NVIDIA MGX and OCP Kyber ecosystem roadmaps.",
-      },
-    ],
   },
 };
 
@@ -394,66 +280,6 @@ export default async function RackPowerDistributionPage({
             </Reveal>
 
             <PduPowerArchitecture />
-          </div>
-        </section>
-
-        {/* Section 4 — Pattern D + C: 800 VDC vs. AC/DC (Folie 21) */}
-        <section className="relative py-20 sm:py-28 bg-white overflow-hidden">
-          <BrandWatermark position="top-right" tint="blue" size={460} opacity={0.05} />
-          <div className="absolute bottom-0 left-0 w-[450px] h-[450px] bg-brand-blue/[0.05] rounded-full blur-[120px] pointer-events-none" />
-
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <Reveal className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
-                {t.s4Teaser}
-              </span>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight">
-                {t.s4Headline}
-              </h2>
-            </Reveal>
-
-            {/* Stat-Spalten (Pattern D) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {t.s4Stats.map((stat, i) => (
-                <Reveal key={stat.title} delay={i * 0.12} className="h-full">
-                  <div className="h-full flex flex-col items-center text-center">
-                    <h3 className="font-display text-base font-semibold text-brand-navy leading-snug mb-6 min-h-[3rem]">
-                      {stat.title}
-                    </h3>
-                    <p className="font-display text-4xl sm:text-5xl font-extrabold text-brand-cyan leading-none mb-3">
-                      {stat.value}
-                    </p>
-                    <p className="font-sans text-base text-brand-navy/70 mb-3">{stat.label}</p>
-                    <p className="font-sans text-sm text-brand-navy/60 leading-relaxed">{stat.text}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-
-            {/* Technologie-Merkmale (Pattern C) */}
-            <div className="mt-16 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {t.s4Features.map((feature, i) => {
-                const Icon = S4_ICONS[i];
-                return (
-                  <Reveal key={feature.title} delay={i * 0.1} className="h-full">
-                    <div className="group h-full p-6 rounded-2xl border border-brand-navy/8 bg-white shadow-sm transition-all duration-300 hover:border-brand-cyan/40 hover:shadow-[0_4px_24px_rgba(16,166,226,0.12)] hover:-translate-y-0.5">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="p-2.5 rounded-lg bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan">
-                          <Icon className="w-5 h-5" />
-                        </div>
-                        <h3 className="font-display text-base font-bold text-brand-navy leading-tight group-hover:text-brand-cyan transition-colors">
-                          {feature.title}
-                        </h3>
-                      </div>
-                      <span className="text-[9px] font-bold text-brand-navy tracking-wider uppercase block mb-3">
-                        {feature.subtag}
-                      </span>
-                      <p className="font-sans text-sm text-brand-navy/60 leading-relaxed">{feature.text}</p>
-                    </div>
-                  </Reveal>
-                );
-              })}
-            </div>
           </div>
         </section>
 
