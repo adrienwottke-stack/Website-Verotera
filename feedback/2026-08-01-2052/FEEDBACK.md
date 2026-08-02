@@ -1024,3 +1024,45 @@ https://website-verotera.vercel.app/solutions/technology-spotlight-gallium-nitri
 ## Rueckfragen an den Kunden
 
 _(hier eintragen, was nicht eindeutig war - kommt als Reply zurueck ins Pastel-Canvas)_
+
+### Seite `/` (Landingpage)
+
+**Warten auf Bilddateien** - die genannten Dateien liegen weder in `public/images/` noch sonst
+im Repo, nur als SharePoint-Link im Kommentar:
+
+- **#78** - `aa_data_center_new`, `aa_emobilit_new`, `aa_hydrogen_new`, `aa_renewable_new`,
+  `aa_robotics_new` fuer die 5 Kacheln der Mission-Sektion.
+- **#109** - `aa-engineering-core` fuer die Agentic-Ecosystem-Sektion.
+- **#166** - `aa-wafer-dies-sic.png` fuer die WBG-Modulloesungen-Sektion.
+- **#75** - "Bildstil nicht einheitlich" haengt an #78: solange die neuen Bilder fehlen, gibt es
+  keine Stil-Referenz. Zusatzfrage: welcher Stil gilt als verbindlich, und wer liefert die Bilder
+  fuer die uebrigen Sektionen?
+
+**Fehlende Zielvorgabe** - Kommentar nennt kein Ergebnis, jede Umsetzung waere geraten:
+
+- **#83** - "Diese Botschaft muss geaendert bzw. angepasst werden" (Karte 1 "Vom Chip bis zum
+  System" / FULL STACK). Kein Ersatztext geliefert. Haengt mit #88 zusammen, das dieselbe Karte
+  evtl. ganz loeschen will.
+- **#88** - "Dieser Abschnitt evtl. Komplett entfernen": Rahmen sitzt nur auf dem Titel von
+  Karte 1, der Text spricht von "Abschnitt". Gemeint ist nur diese eine Karte, das ganze
+  Karten-Grid (aktuell 3 Karten, nach #161) oder die komplette Sektion?
+- **#90** - "Diese Zahlen passen m.E. eher auf Praesentation": Rahmen umschliesst nur die Karte
+  "100+ Entwickelte Produkte", der Text sagt "diese Zahlen" (Plural). Alle vier Kennzahlen raus,
+  nur die markierte, oder die ganze Sektion inkl. Gruender-Zitat?
+- **#164** - "Dieser Teil sollte anderes dargestellt werden" (Advanced Packaging): Wie soll der
+  Block stattdessen aussehen?
+
+**Umgesetzt unter Annahme - bitte gegenpruefen:**
+
+- **#89** - IEA-Quellenangabe nur auf der Landingpage entfernt. Die IEA steht auch in
+  `/solutions/rack-power-distribution` und `/applications/automotive-emobility` - dort nicht
+  angefasst, weil nicht Teil dieses Abschnitts. Achtung: der neue Text aus #165 zitiert die IEA
+  ausdruecklich. Die Rechtefrage muss fuer alle Stellen gleich beantwortet werden.
+- **#102** - Variante "rechte V-Seite visuell zurueckgenommen" gewaehlt (statt "out of scope"
+  betiteln). Die drei Kacheln im unteren Trunk sind unveraendert, weil der Kommentar explizit
+  "rechte V-Seite" sagt - soll der Trunk mit zurueckgenommen werden?
+- **#162** - Von den drei genannten Eintraegen ist "Technische Unterstuetzung" entfernt; "Support"
+  bleibt als Spaltenueberschrift, "Kontakt" als Link. Grund: beide Links zeigten auf dieselbe
+  Route `/contacts`.
+- **#86** - Die obere Dublette (Abschlusssatz der Mission-Sektion) ist entfernt, die Aufzaehlung
+  der Anwendungsfelder im Abschnitt darunter bleibt stehen.
