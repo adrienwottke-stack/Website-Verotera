@@ -30,7 +30,7 @@
 ## Seite `https://website-verotera.vercel.app/solutions/agentic-ai-engineering` (50 Punkte)
 
 https://website-verotera.vercel.app/solutions/agentic-ai-engineering
-### [ ] #111 - desktop (1604px) - Thorsten Sigges
+### [x] #111 - desktop (1604px) - Thorsten Sigges
 
 > auch hier "AI-Enhanced WBG Semiconductor Engineering" einfügen
 

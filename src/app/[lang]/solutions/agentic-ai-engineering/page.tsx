@@ -93,7 +93,7 @@ const COPY: Record<
   }
 > = {
   de: {
-    heroEyebrow: "AI Systems Engineering",
+    heroEyebrow: "AI-Enhanced WBG Semiconductor Engineering",
     heroTitle: "Agentische KI im Systems Engineering",
     heroSubtitle:
       "Wie KI-Agenten komplexe Engineering-Workflows zielgerichtet transformieren.",
@@ -270,7 +270,7 @@ const COPY: Record<
     },
   },
   en: {
-    heroEyebrow: "AI Systems Engineering",
+    heroEyebrow: "AI-Enhanced WBG Semiconductor Engineering",
     heroTitle: "Agentic AI in Systems Engineering",
     heroSubtitle:
       "How AI agents purposefully transform complex engineering workflows.",
