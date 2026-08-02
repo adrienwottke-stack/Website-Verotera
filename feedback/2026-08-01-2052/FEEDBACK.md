@@ -651,7 +651,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-24 14:40
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12108635/
 
-### [ ] #81 - desktop (1904px) - Thorsten Sigges
+### [x] #81 - desktop (1904px) - Thorsten Sigges
 
 > (Bereich: "Value Proposition") "Technologiepfade früh bewerten, die Begründung inklusive - aus Regeln, Normen und Annahmen" (DE) "Evaluate technology paths early - reasoning included, grounded in rules, standards and assumptions" (EN)
 
