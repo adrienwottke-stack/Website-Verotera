@@ -11,7 +11,6 @@ const COPY: Record<
     eyebrow: string;
     headline: string;
     body: string;
-    closing: string;
     alts: string[];
   }
 > = {
@@ -20,8 +19,6 @@ const COPY: Record<
     headline: "Der Wert einer Technologie zeigt sich in dem, was sie ermöglicht.",
     body:
       "Bei VEROTERA überführen wir Wide-Bandgap-Bauelemente SiC & GaN in robuste, effiziente Leistungssysteme und verbinden Bauteil-Know-how mit Applikations-Engineering, damit unsere Kunden Systeme entwickeln, die effizienter, zuverlässiger und nachhaltiger sind.",
-    closing:
-      "Vom Prototyp bis zur Serie treiben wir die Elektrifizierung von Mobilität, Industrie, Energie und Rechenzentren voran.",
     alts: [
       "Erneuerbare Energien – Wind- und Solarkraft",
       "KI-Rechenzentrum Rack Power Distribution",
@@ -35,8 +32,6 @@ const COPY: Record<
     headline: "The value of a technology lies in what it makes possible.",
     body:
       "At VEROTERA, we turn wide-bandgap SiC & GaN devices into robust, efficient power systems — combining component know-how with application engineering so our customers can build systems that are more efficient, more reliable and more sustainable.",
-    closing:
-      "From prototype to series production, we drive the electrification of mobility, industry, energy and data centers.",
     alts: [
       "Renewable energy – wind and solar power",
       "AI data center rack power distribution",
@@ -71,11 +66,8 @@ export default function ValueStatement() {
             <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight mb-6">
               {t.headline}
             </h2>
-            <p className="font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed max-w-3xl mx-auto mb-6">
+            <p className="font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed max-w-3xl mx-auto">
               {t.body}
-            </p>
-            <p className="font-sans text-base sm:text-lg font-semibold text-brand-navy leading-relaxed max-w-3xl mx-auto">
-              {t.closing}
             </p>
           </div>
         </Reveal>
