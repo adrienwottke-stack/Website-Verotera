@@ -37,6 +37,14 @@ Der Aufwand steckt woanders: **17 Punkte brauchen erst eine Antwort**, bevor sie
 **76 von 95 Punkten sind abgehakt und committet, 19 sind offen.** Umgesetzt wurde nur, was
 eindeutig war; kein Punkt wurde geraten.
 
+Die Runde ist auf drei Dokumente verteilt — jedes hat genau eine Aufgabe:
+
+| Datei | Inhalt |
+|---|---|
+| [FEEDBACK.md](FEEDBACK.md) | Die 95 Kundenkommentare mit Screenshot-Pfad und Abhak-Status; unten die ausformulierten Rückfragen zum Einfügen ins Pastel-Canvas |
+| **PLAN.md** (dieses Dokument) | Einordnung jedes Punktes, Zählstand, Konflikte, offene Entscheidungen |
+| [UMSETZUNG.md](UMSETZUNG.md) | Protokoll auf Code-Ebene: welche Datei wurde warum wie geändert, wie wurde verifiziert |
+
 | Seite | Punkte | abgehakt | offen | offene Nummern |
 |---|---|---|---|---|
 | `/solutions/agentic-ai-engineering` | 50 | 48 | 2 | #112, #160 |
