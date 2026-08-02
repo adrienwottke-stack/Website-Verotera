@@ -101,7 +101,7 @@ const COPY: Record<
       eyebrow: "Vom Kontext zum Konzept",
       headline:
         "Wie wird aus einer Anforderung eine belegte Technologieentscheidung?",
-      body: "Agentenbasierte KI verdichtet Entwicklungszyklen durch parallele Verarbeitung von Expertenwissen – von der Topologieauswahl über die Verlustmodellierung bis hin zu Compliance-Prüfungen.",
+      body: "Die Technologiebewertung läuft in vier klar abgegrenzten Schritten ab: vom strukturierten Kontext über die abgeleiteten Bewertungskriterien und die Bewertung der Optionen samt Risiken bis zum System Design Concept. Der Ablauf ist iterativ und in jedem Schritt nachvollziehbar. Die Entscheidungsverantwortung bleibt beim Menschen.",
       pipeline: [
         "Anforderungsanalyse",
         "Funktionale Sicherheit",
@@ -278,7 +278,7 @@ const COPY: Record<
       eyebrow: "From Context to Concept",
       headline:
         "How does a requirement become an evidence-based technology decision?",
-      body: "Agent-based AI compresses development cycles through parallel processing of expert knowledge — from topology selection and loss modelling to compliance checks.",
+      body: "The technology assessment runs in four clearly defined steps: from structured context, through the derived evaluation criteria and the assessment of the options and their risks, to the System Design Concept. The process is iterative and traceable at every step. Decision responsibility remains with the engineer.",
       pipeline: [
         "Requirements Analysis",
         "Functional Safety",

@@ -77,7 +77,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 13:14
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12118864/
 
-### [ ] #116 - desktop (1604px) - Thorsten Sigges
+### [x] #116 - desktop (1604px) - Thorsten Sigges
 
 > Text
 > „Die Technologiebewertung läuft in vier klar abgegrenzten Schritten ab: vom strukturierten Kontext über die abgeleiteten Bewertungskriterien und die Bewertung der Optionen samt Risiken bis zum System Design Concept. Der Ablauf ist iterativ und in jedem Schritt nachvollziehbar. Die Entscheidungsverantwortung bleibt beim Menschen.“ (DE)
