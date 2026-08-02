@@ -261,7 +261,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 15:41
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119662/
 
-### [ ] #134 - desktop (1604px) - Thorsten Sigges
+### [x] #134 - desktop (1604px) - Thorsten Sigges
 
 > "Time-to-Market entscheidet sich in der Konzeptphase – nicht am Ende." (DE)
 > 
