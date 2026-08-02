@@ -683,7 +683,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-24 17:13
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12109995/
 
-### [ ] #85 - desktop (1582px) - Aly Mashaly
+### [x] #85 - desktop (1582px) - Aly Mashaly
 
 > der zweite Satz (Vom Chip bis zum System....) kann auch weg.
 

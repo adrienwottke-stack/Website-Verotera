@@ -24,7 +24,7 @@ const SLIDES: Record<Lang, Slide[]> = {
       alt: "Halbleiterfertigung mit Robotik",
       title: "Advanced Semiconductor Technologies",
       subtitle: "Wide-Bandgap at the Core",
-      text: "Hocheffiziente WBG Leistungsmodullösungen für eine nachhaltige Zukunft\nVom Chip bis zum System – Technologiekompetenz für die elektrifizierte Welt.",
+      text: "Hocheffiziente WBG Leistungsmodullösungen für eine nachhaltige Zukunft",
       ctaHref: "/solutions/wbg-power-modules",
     },
     {
@@ -50,7 +50,7 @@ const SLIDES: Record<Lang, Slide[]> = {
       alt: "Semiconductor manufacturing with robotics",
       title: "Advanced Semiconductor Technologies",
       subtitle: "Wide-Bandgap at the Core",
-      text: "Highly efficient WBG power module solutions for a sustainable future.\nFrom chip to system — technology expertise for the electrified world.",
+      text: "Highly efficient WBG power module solutions for a sustainable future.",
       ctaHref: "/solutions/wbg-power-modules",
     },
     {
