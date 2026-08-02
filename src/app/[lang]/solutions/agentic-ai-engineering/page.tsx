@@ -185,8 +185,8 @@ const COPY: Record<
         },
         {
           step: "06",
-          title: "Qualifikation & Freigabe",
-          text: "KI-gestützte Qualifikationsmatrix (AEC-Q, IEC 60747). Agenten prüfen die Testabdeckung, generieren Compliance-Dokumentation und kennzeichnen offene Zuverlässigkeitsrisiken – Review & Approval bleibt beim Menschen.",
+          title: "Anforderungen",
+          text: "Zielgrößen und Randbedingungen als strukturierte Objekte – normalisiert, auf Zielkonflikte geprüft und mit den übrigen Bausteinen verknüpft.",
         },
       ],
       gates: [
@@ -366,8 +366,8 @@ const COPY: Record<
         },
         {
           step: "06",
-          title: "Qualification & Release",
-          text: "AI-assisted qualification matrix (AEC-Q, IEC 60747). Agents cross-check test coverage, generate compliance documentation and flag open reliability risks — review & approval stays with the human.",
+          title: "Requirements",
+          text: "Target values and constraints as structured objects – normalized, checked for conflicting objectives, and linked to the other building blocks.",
         },
       ],
       gates: [

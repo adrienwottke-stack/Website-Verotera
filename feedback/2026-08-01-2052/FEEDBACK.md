@@ -341,7 +341,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 16:07
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119835/
 
-### [ ] #141 - desktop (1604px) - Thorsten Sigges
+### [x] #141 - desktop (1604px) - Thorsten Sigges
 
 > 06 — Anforderungen
 > Zielgrößen und Randbedingungen als strukturierte Objekte – normalisiert, auf Zielkonflikte geprüft und mit den übrigen Bausteinen verknüpft.
