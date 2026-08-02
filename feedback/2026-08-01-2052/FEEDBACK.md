@@ -643,7 +643,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-24 14:40
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12108629/
 
-### [ ] #80 - desktop (1904px) - Thorsten Sigges
+### [x] #80 - desktop (1904px) - Thorsten Sigges
 
 > (Bereich Sub-Header) "Collaborative Intelligence - das System begründet, der Mensch entscheidet und verantwortet" (DE) "Collaborative Intelligence - the system provides the reasoning, the engineer decides and is accountable" (EN)
 
