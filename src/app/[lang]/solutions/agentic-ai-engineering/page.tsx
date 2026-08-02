@@ -177,7 +177,7 @@ const COPY: Record<
       ],
     },
     vmodel: {
-      eyebrow: "Agentische KI im V-Modell",
+      eyebrow: "Structured Requirement Object",
       headline: "Schneller. Präziser. Besser.",
       body: "Produktentwicklung mit agentischer KI: Orchestrierte Intelligenz begleitet jede Phase des V-Modells – von der Use-Case-Definition über Safety & Security, Design-Exploration und Systemarchitektur bis zu Verifikation, Validierung und Release.",
     },
@@ -303,7 +303,7 @@ const COPY: Record<
       ],
     },
     vmodel: {
-      eyebrow: "Agentic AI across the V-model",
+      eyebrow: "Structured Requirement Object",
       headline: "Faster. More precise. Better.",
       body: "Product development with agentic AI: orchestrated intelligence supports every phase of the V-model — from use-case definition, safety & security and design exploration to system architecture, verification, validation and release.",
     },

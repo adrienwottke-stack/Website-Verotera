@@ -369,7 +369,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 16:22
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119981/
 
-### [ ] #144 - desktop (1604px) - Thorsten Sigges
+### [x] #144 - desktop (1604px) - Thorsten Sigges
 
 > Structured Requirement Object (DE/EN)
 
