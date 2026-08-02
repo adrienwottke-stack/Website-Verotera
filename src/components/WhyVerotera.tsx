@@ -2,12 +2,12 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Layers, ShieldAlert, Workflow, Zap } from "lucide-react";
+import { Layers, ShieldAlert, Workflow } from "lucide-react";
 import { useLang } from "@/components/LangProvider";
 import type { Lang } from "@/lib/i18n";
 
-const BADGE_ICONS = [Layers, ShieldAlert, Workflow, Zap];
-const BADGE_HIGHLIGHTS = ["Full Stack", "System-Level", "Industry Bridge", "Fast Execution"];
+const BADGE_ICONS = [Layers, ShieldAlert, Workflow];
+const BADGE_HIGHLIGHTS = ["Full Stack", "System-Level", "Industry Bridge"];
 
 const COPY: Record<
   Lang,
@@ -49,11 +49,6 @@ const COPY: Record<
         description:
           "Wir fungieren als direkte physische Brücke und übersetzen modernste Wafer-Innovationen in einsatzbereite, robuste Pakete für Tier-1-OEMs.",
       },
-      {
-        title: "Beschleunigte Entwicklungszyklen mit KI",
-        description:
-          "Mit unseren KI-Design-Agenten simulieren wir Physik und validieren Schaltkreis-Sicherheitslayouts in Stunden – und halbieren die Prototypisierungszeit.",
-      },
     ],
   },
   en: {
@@ -82,11 +77,6 @@ const COPY: Record<
         title: "Bridging Demand & Innovation",
         description:
           "We act as a direct physical bridge, translating cutting-edge wafer innovations into deployment-ready, rugged packages for tier-1 OEMs.",
-      },
-      {
-        title: "AI-Accelerated Development Cycles",
-        description:
-          "Our AI design agents simulate physics and validate circuit safety layouts in hours — cutting prototyping time in half.",
       },
     ],
   },
@@ -151,8 +141,8 @@ export default function WhyVerotera() {
 
         </div>
 
-        {/* 4 Advantage Badges (CSV: Full Stack / System-Level / Industry Bridge / Fast Execution) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 3 Advantage Badges (CSV: Full Stack / System-Level / Industry Bridge) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {t.badges.map((badge, index) => {
             const Icon = BADGE_ICONS[index];
             return (

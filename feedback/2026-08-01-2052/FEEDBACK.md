@@ -863,7 +863,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 12:19
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12118587/
 
-### [ ] #161 - desktop (1604px) - Thorsten Sigges
+### [x] #161 - desktop (1604px) - Thorsten Sigges
 
 > Komplett löschen... wir gehen auf das Thema im Bereich "Engineering Core" ein - an dieser Stelle nur der Fokus auf WBG
 
