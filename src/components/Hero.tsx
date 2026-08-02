@@ -77,7 +77,7 @@ const UI: Record<Lang, { cta: string; prev: string; next: string }> = {
   en: { cta: "Learn more", prev: "Previous slide", next: "Next slide" },
 };
 
-const AUTO_MS = 6500;
+const AUTO_MS = 5000;
 
 export default function Hero() {
   const lang = useLang();

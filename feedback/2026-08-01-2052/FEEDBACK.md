@@ -611,7 +611,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-24 12:38
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12108274/
 
-### [ ] #76 - desktop (1582px) - Aly Mashaly
+### [x] #76 - desktop (1582px) - Aly Mashaly
 
 > Ich würde hier die Zeit des Wechsels redzieren
 
