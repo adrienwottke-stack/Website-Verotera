@@ -138,6 +138,24 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/50" />
       </div>
 
+      {/* Prev / Next — flanking the image, vertically centred (desktop) */}
+      <button
+        type="button"
+        onClick={() => go(-1)}
+        aria-label={ui.prev}
+        className="hidden lg:flex absolute left-4 xl:left-8 top-1/2 -translate-y-1/2 z-20 items-center justify-center w-14 h-14 rounded-full bg-brand-navy/70 backdrop-blur-md border border-white/25 text-white hover:bg-brand-cyan hover:border-brand-cyan transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
+      >
+        <ChevronLeft className="w-7 h-7" />
+      </button>
+      <button
+        type="button"
+        onClick={() => go(1)}
+        aria-label={ui.next}
+        className="hidden lg:flex absolute right-4 xl:right-8 top-1/2 -translate-y-1/2 z-20 items-center justify-center w-14 h-14 rounded-full bg-brand-navy/70 backdrop-blur-md border border-white/25 text-white hover:bg-brand-cyan hover:border-brand-cyan transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
+      >
+        <ChevronRight className="w-7 h-7" />
+      </button>
+
       {/* Main content area */}
       <div className="relative z-10 flex-1 flex items-center pt-16 pb-24">
         <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -215,8 +233,8 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* Prev / Next */}
-          <div className="flex items-center gap-2">
+          {/* Prev / Next — small screens only; desktop uses the flanking buttons above */}
+          <div className="flex lg:hidden items-center gap-2">
             <button
               type="button"
               onClick={() => go(-1)}

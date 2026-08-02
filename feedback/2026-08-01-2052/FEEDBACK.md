@@ -619,7 +619,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-24 14:04
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12108477/
 
-### [ ] #77 - desktop (1582px) - Aly Mashaly
+### [x] #77 - desktop (1582px) - Aly Mashaly
 
 > die Pfeile waren für mich nicht sofort sichtbar. Am besten die Pfeile nach oben schieben, etwas vergrößen und rechts und links vom Bild platzieren. Sodass sie sichtbarer werden.
 
