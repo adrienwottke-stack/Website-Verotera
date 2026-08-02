@@ -14,7 +14,6 @@ const COPY: Record<
     lead: string;
     imageAlt: string;
     title: string;
-    sub: string;
     eyebrow: string;
     intro: string;
     bullets: string[];
@@ -26,8 +25,7 @@ const COPY: Record<
     lead:
       "Die KI erweitert das Ingenieururteil – Von der Empfehlung zur belegten Entscheidungsgrundlage – nachvollziehbar und reproduzierbar.",
     imageAlt: "Agentische KI im Systems Engineering",
-    title: "Agentische KI im Systems Engineering",
-    sub: "Smarter Design Decision",
+    title: "Human-in-the-Loop by design",
     eyebrow: "Lösungen",
     intro:
       "VEROTERA stellt KI-gestützte Methoden, intelligente Agenten und modellbasierte Frameworks bereit – und ermöglicht damit:",
@@ -46,8 +44,7 @@ const COPY: Record<
     lead:
       "AI extends engineering judgment – turning a recommendation into a documented basis for decisions: traceable and reproducible.",
     imageAlt: "Agentic AI in systems engineering",
-    title: "Agentic AI in Systems Engineering",
-    sub: "Smarter Design Decisions",
+    title: "Human-in-the-Loop by design",
     eyebrow: "Solutions",
     intro:
       "VEROTERA provides AI-powered methods, intelligent agents and model-based frameworks — enabling:",
@@ -105,12 +102,9 @@ export default function AgenticEcosystem() {
           {/* Text panel */}
           <Reveal delay={0.1} className="lg:col-span-6">
             <div className="lg:pl-10 h-full flex flex-col justify-center py-6">
-              <h3 className="font-display text-2xl sm:text-3xl font-bold text-brand-navy mb-1 leading-tight">
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-brand-navy mb-8 leading-tight">
                 {t.title}
               </h3>
-              <p className="text-brand-blue font-semibold text-base mb-8">
-                {t.sub}
-              </p>
 
               <span className="text-brand-blue text-xs font-bold uppercase tracking-wider block mb-3">
                 {t.eyebrow}
