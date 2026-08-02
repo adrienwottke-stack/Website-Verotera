@@ -397,7 +397,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 16:25
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12120009/
 
-### [ ] #147 - desktop (1904px) - Thorsten Sigges
+### [x] #147 - desktop (1904px) - Thorsten Sigges
 
 > An dieser Stelle bitte 6 Feld-Paare einfügen... im gleichen Design wie aktuelle, d.h. Grafik-Elemente Rechtecke mit abgerundeten Kanten. Dazu ein Beispiel eine SRO - als maschinenlesbarer Export (JSON) auch in einem Rechteck.
 
@@ -695,7 +695,7 @@ bleibt so. Keine Code-Aenderung._
 - **Erstellt:** 2026-07-24 17:17
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12110039/
 
-### [ ] #86 - desktop (1582px) - Aly Mashaly
+### [x] #86 - desktop (1582px) - Aly Mashaly
 
 > Dieser Teil wird nochmal im nächsten Teil unten wiederholt. Entweder hier weg lassen oder unten entfernen
 
@@ -703,9 +703,11 @@ bleibt so. Keine Code-Aenderung._
 - **Erstellt:** 2026-07-24 17:53
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12110366/
 
-### [ ] #87 - desktop (1582px) - Aly Mashaly
+### [x] #87 - desktop (1582px) - Aly Mashaly
 
 > Das muss auf deutsch für diese Seite sein.
+
+_Hinfaellig durch die Thread-Antwort unten: bleibt englisch. Keine Code-Aenderung._
 
 > [!WARNING]
 > **ANTWORT IM THREAD:** (2026-07-28 08:45) Thorsten Sigges: Das wurde bewusst in englisch ausgeführt - da es sich auf deutsch nicht wirklich gut anhört - ist ein durchaus akzeptables Stilmittel und findet sich an anderen Stellen auch

@@ -16,7 +16,7 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import BrandWatermark from "@/components/BrandWatermark";
-import VModelInteractive from "@/components/VModelInteractive";
+import SroObject from "@/components/SroObject";
 import ContactSection from "@/components/ContactSection";
 import { hasLang, localePath, type Lang } from "@/lib/i18n";
 import { buildMetadata, type PageMeta } from "@/lib/seo";
@@ -594,7 +594,7 @@ export default async function AgenticAiEngineeringPage({
             </Reveal>
 
             <Reveal delay={0.12}>
-              <VModelInteractive />
+              <SroObject lang={lang} />
             </Reveal>
           </div>
         </section>
