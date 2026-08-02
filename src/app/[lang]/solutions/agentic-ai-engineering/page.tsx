@@ -175,8 +175,8 @@ const COPY: Record<
         },
         {
           step: "04",
-          title: "WBG Power Module Design",
-          text: "Autonomes Co-Design von Gate-Treiber, Stromschiene, Wärmeübergang und Packaging. KI-Agenten iterieren über Parasiten-Extraktion, Kriechstreckenprüfung und thermische FEM.",
+          title: "Regeln",
+          text: "Kodierte Ingenieurslogik: Bedingungen, die Technologien, Topologien und Anforderungen verknüpfen – prüfbar, versioniert, nachvollziehbar.",
         },
         {
           step: "05",
@@ -356,8 +356,8 @@ const COPY: Record<
         },
         {
           step: "04",
-          title: "WBG Power Module Design",
-          text: "Autonomous co-design of gate driver, busbar, thermal interface and packaging. AI agents iterate on parasitic extraction, creepage checks and thermal FEM.",
+          title: "Rules",
+          text: "Encoded engineering logic: conditions that link technologies, topologies and requirements – checkable, versioned, traceable.",
         },
         {
           step: "05",
