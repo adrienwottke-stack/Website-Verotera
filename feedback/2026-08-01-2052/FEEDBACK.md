@@ -109,7 +109,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 13:56
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119027/
 
-### [ ] #119 - desktop (1604px) - Thorsten Sigges
+### [x] #119 - desktop (1604px) - Thorsten Sigges
 
 > Eyebrow
 > „Human-in-the-Loop“ (DE/EN)
