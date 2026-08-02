@@ -675,7 +675,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-24 15:05
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12108754/
 
-### [ ] #84 - desktop (1582px) - Aly Mashaly
+### [x] #84 - desktop (1582px) - Aly Mashaly
 
 > der Satz vom Smart PDU kann komplett weg
 

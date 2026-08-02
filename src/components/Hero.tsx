@@ -32,7 +32,7 @@ const SLIDES: Record<Lang, Slide[]> = {
       alt: "KI-Rechenzentrum mit Wide-Bandgap-Leistungselektronik",
       title: "AI Data Center – Rack Power Distribution",
       subtitle: "SiC/GaN Technologie maximiert Effizienz und Leistungsdichte",
-      text: "Smart PDU – Leistungskonvertierung im Herz des 800 VDC Rack.\nFull-GaN DC-DC Wandler.",
+      text: "Full-GaN DC-DC Wandler.",
       ctaHref: "/solutions/rack-power-distribution",
     },
     {
@@ -58,7 +58,7 @@ const SLIDES: Record<Lang, Slide[]> = {
       alt: "AI data center with wide-bandgap power electronics",
       title: "AI Data Center – Rack Power Distribution",
       subtitle: "SiC/GaN technology maximizes efficiency and power density",
-      text: "Smart PDU — power conversion at the heart of the 800 VDC rack.\nFull-GaN DC-DC converters.",
+      text: "Full-GaN DC-DC converters.",
       ctaHref: "/solutions/rack-power-distribution",
     },
     {
