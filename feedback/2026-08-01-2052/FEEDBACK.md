@@ -879,7 +879,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-28 10:10
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12127076/
 
-### [ ] #163 - desktop (1688px) - Aly Mashaly
+### [x] #163 - desktop (1688px) - Aly Mashaly
 
 > Patente muss man nicht extra schreiben.
 
