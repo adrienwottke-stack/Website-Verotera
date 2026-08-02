@@ -837,7 +837,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 11:26
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12118371/
 
-### [ ] #108 - desktop (1604px) - Thorsten Sigges
+### [x] #108 - desktop (1604px) - Thorsten Sigges
 
 > „So wird aus einer riskanten Frühentscheidung eine dokumentierte, überprüfbare Grundlage – die einem Review standhält“ (DE)
 > 

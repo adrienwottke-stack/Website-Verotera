@@ -36,7 +36,7 @@ const COPY: Record<
       "On-Premise-Betrieb: eigene Daten und IP bleiben im Haus, DSGVO-konform",
     ],
     closing:
-      "Unsere Lösungen verwandeln Komplexität in Klarheit – sie beschleunigen Innovation und erschließen die kollektive Intelligenz von Engineering-Organisationen.",
+      "So wird aus einer riskanten Frühentscheidung eine dokumentierte, überprüfbare Grundlage – die einem Review standhält.",
   },
   en: {
     sectionEyebrow: "Collaborative Intelligence – a neurosymbolic approach",
@@ -54,7 +54,7 @@ const COPY: Record<
       "On-premise operation: your data and IP stay in-house, GDPR-compliant",
     ],
     closing:
-      "Our solutions turn complexity into clarity — accelerating innovation and unlocking the collective intelligence of engineering organizations.",
+      "A risky early decision becomes a documented, verifiable basis – one that holds up in review.",
   },
 };
 
