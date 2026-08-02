@@ -124,7 +124,7 @@ const EN_OVERRIDES: Record<string, { detail: string; lines?: string[] }> = {
 };
 
 // Signet sits in the widest (top) part of the central notch so the
-// "Agentic AI" lockup never overlaps the surrounding tiles.
+// "AI-Enhanced Engineering" lockup never overlaps the surrounding tiles.
 const SIGNET: Pt = [476, 74];
 
 // Phase connection nodes:
@@ -193,7 +193,7 @@ export default function VModelFunnel() {
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
-          {/* Individual paths: each left-arm tile centre → Agentic AI signet */}
+          {/* Individual paths: each left-arm tile centre → V-signet */}
           {ALL_PATHS.map((d, i) => (
             <path key={i} id={`vm-path-${i}`} d={d} />
           ))}
@@ -309,11 +309,13 @@ export default function VModelFunnel() {
           ))}
         </g>
 
-        {/* Central brand V-signet + Agentic AI label — kept inside the open notch */}
+        {/* Central brand V-signet + AI-Enhanced Engineering label — kept inside the open notch.
+            Set on two lines: one line would run into the right-hand tiles. */}
         <image href="/images/v-signet-transparent.png" x={SIGNET[0] - 28} y={SIGNET[1] - 28} width="56" height="56" />
-        <text x={SIGNET[0] + 38} y={SIGNET[1] + 8} fontSize="25" fontStyle="italic" fontWeight="800" fontFamily="var(--font-display, system-ui, sans-serif)">
-          <tspan fill={NAVY}>Agentic </tspan>
+        <text x={SIGNET[0] + 38} y={SIGNET[1] - 2} fontSize="25" fontStyle="italic" fontWeight="800" fontFamily="var(--font-display, system-ui, sans-serif)">
           <tspan fill={BLUE}>AI</tspan>
+          <tspan fill={NAVY}>-Enhanced</tspan>
+          <tspan x={SIGNET[0] + 38} dy="26" fill={NAVY}>Engineering</tspan>
         </text>
       </svg>
 

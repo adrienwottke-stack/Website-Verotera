@@ -765,7 +765,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 09:56
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12117991/
 
-### [ ] #101 - desktop (1904px) - Thorsten Sigges
+### [x] #101 - desktop (1904px) - Thorsten Sigges
 
 > „AI-Enhanced Engineering“  statt "Agentic AI"
 
