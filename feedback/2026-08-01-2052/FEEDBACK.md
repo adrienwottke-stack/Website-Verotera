@@ -281,7 +281,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 15:50
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119723/
 
-### [ ] #136 - desktop (1604px) - Thorsten Sigges
+### [x] #136 - desktop (1604px) - Thorsten Sigges
 
 > 01 — Technologieklassen
 > Si, SiC und GaN als strukturierte Klassen mit ihren Eigenschaften und Einsatzgrenzen – nicht als Datenblatt, sondern als vergleichbare, referenzierbare Objekte.

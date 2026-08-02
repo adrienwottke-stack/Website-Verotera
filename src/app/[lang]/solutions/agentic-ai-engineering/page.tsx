@@ -160,8 +160,8 @@ const COPY: Record<
       steps: [
         {
           step: "01",
-          title: "Anforderungen & Kontext",
-          text: "Der KI-Agent analysiert Normen, Vorschriften und Spezifikationen. Automatisierte Extraktion von Randbedingungen und ontologisches Mapping in den Engineering-Wissensgraph.",
+          title: "Technologieklassen",
+          text: "Si, SiC und GaN als strukturierte Klassen mit ihren Eigenschaften und Einsatzgrenzen – nicht als Datenblatt, sondern als vergleichbare, referenzierbare Objekte.",
         },
         {
           step: "02",
@@ -341,8 +341,8 @@ const COPY: Record<
       steps: [
         {
           step: "01",
-          title: "Requirements & Context",
-          text: "The AI agent mines standards, regulations and specifications. Automated constraint extraction and ontology mapping into the engineering knowledge graph.",
+          title: "Technology Classes",
+          text: "Si, SiC and GaN as structured classes with their properties and application limits – not a datasheet, but comparable, referenceable objects.",
         },
         {
           step: "02",
