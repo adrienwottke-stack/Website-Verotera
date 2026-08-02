@@ -45,7 +45,6 @@ const COPY: Record<
       eyebrow: string;
       headline: string;
       body: string;
-      subEyebrow: string;
       title: string;
       paragraphs: string[];
       imageAlt: string;
@@ -114,7 +113,6 @@ const COPY: Record<
       eyebrow: "Human-in-the-Loop",
       headline: "Entscheidungen brauchen Nachvollziehbarkeit",
       body: "Wir liefern die Grundlage, nicht das Urteil. Das System trifft keine Technologieentscheidung – es ist nicht dafür ausgelegt. Es liefert bewertete Optionen, offengelegte Annahmen und eine Risikoübersicht: Entscheidungsgrundlagen, keine Entscheidung. Die Wahl trifft der Ingenieur, der sie verantwortet – und weil jede Bewertung auf ihre Regeln und Quellen zurückführbar ist, kann er sie prüfen, hinterfragen und vor einem Review vertreten.",
-      subEyebrow: "Model-Based Systems Engineering",
       title: "Der Mensch bleibt stets zentral",
       paragraphs: [
         "Durch die Kombination von künstlicher Intelligenz und autonomen Steuerungsmethoden entstehen adaptive Systeme, die komplexe Aufgaben eigenständig analysieren und zielgerichtet ausführen.",
@@ -291,7 +289,6 @@ const COPY: Record<
       eyebrow: "Human-in-the-Loop",
       headline: "Decisions need traceability",
       body: "We provide the basis, not the decision. The system makes no technology decision – it is not built to. It delivers assessed options, disclosed assumptions and a risk overview. The choice is made by the engineer, who is accountable for it – and because every assessment is traceable to its rules and sources, it can be examined, challenged and defended in review.",
-      subEyebrow: "Model-Based Systems Engineering",
       title: "The human remains central",
       paragraphs: [
         "Combining artificial intelligence with autonomous control methods creates adaptive systems that independently analyse complex tasks and execute them purposefully.",
@@ -583,9 +580,6 @@ export default async function AgenticAiEngineeringPage({
               </Reveal>
 
               <Reveal delay={0.12} className="lg:col-span-6 lg:order-1">
-                <span className="text-xs font-bold uppercase tracking-wider text-brand-navy/40 block mb-3">
-                  {t.hitl.subEyebrow}
-                </span>
                 <h3 className="font-display text-2xl sm:text-3xl font-bold text-brand-navy leading-tight mb-6">
                   {t.hitl.title}
                 </h3>
