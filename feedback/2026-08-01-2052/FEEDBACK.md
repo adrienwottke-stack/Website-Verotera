@@ -57,7 +57,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 12:48
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12118744/
 
-### [ ] #114 - desktop (1604px) - Thorsten Sigges
+### [x] #114 - desktop (1604px) - Thorsten Sigges
 
 > Eyebrow
 > „Vom Kontext zum Konzept“ (DE)

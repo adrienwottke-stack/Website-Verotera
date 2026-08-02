@@ -98,7 +98,7 @@ const COPY: Record<
     heroSubtitle:
       "Die Begründung entsteht aus Regeln und Standards, nicht im Sprachmodell – jede Bewertung ist auf ihre Herleitung zurückführbar.",
     intro: {
-      eyebrow: "Agentic AI Ecosystem Architecture · Kognitive Orchestrierung",
+      eyebrow: "Vom Kontext zum Konzept",
       headline:
         "Was passiert, wenn die KI den Engineering-Prozess für SiC & GaN übernimmt?",
       body: "Agentenbasierte KI verdichtet Entwicklungszyklen durch parallele Verarbeitung von Expertenwissen – von der Topologieauswahl über die Verlustmodellierung bis hin zu Compliance-Prüfungen.",
@@ -275,7 +275,7 @@ const COPY: Record<
     heroSubtitle:
       "The justification comes from rules and standards, not from the language model — every assessment is traceable to its derivation.",
     intro: {
-      eyebrow: "Agentic AI Ecosystem Architecture · Cognitive Orchestration",
+      eyebrow: "From Context to Concept",
       headline:
         "What happens when AI takes over the engineering process for SiC & GaN?",
       body: "Agent-based AI compresses development cycles through parallel processing of expert knowledge — from topology selection and loss modelling to compliance checks.",
