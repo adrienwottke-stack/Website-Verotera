@@ -305,7 +305,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 16:06
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119823/
 
-### [ ] #138 - desktop (1604px) - Thorsten Sigges
+### [x] #138 - desktop (1604px) - Thorsten Sigges
 
 > 03 — Topologien
 > Schaltungstopologien als eigenständige Objekte, mit ihren Spannungsstressfaktoren und Eignungsgrenzen – die Brücke zwischen Technologiewahl und Architektur.

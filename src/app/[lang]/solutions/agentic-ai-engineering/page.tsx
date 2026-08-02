@@ -170,8 +170,8 @@ const COPY: Record<
         },
         {
           step: "03",
-          title: "Architektur & Topologie",
-          text: "Der KI-Agent exploriert Wandler-Topologien (LLC, DAB, 3-Level-NPC, CHB) und Antriebsstrangarchitekturen. Parallele Co-Optimierung von Verlusten, EMV und Leistungsdichte.",
+          title: "Topologien",
+          text: "Schaltungstopologien als eigenständige Objekte, mit ihren Spannungsstressfaktoren und Eignungsgrenzen – die Brücke zwischen Technologiewahl und Architektur.",
         },
         {
           step: "04",
@@ -351,8 +351,8 @@ const COPY: Record<
         },
         {
           step: "03",
-          title: "Architecture & Topology",
-          text: "The AI agent explores converter topologies (LLC, DAB, 3-level NPC, CHB) and drive-train architectures. Parallel co-optimisation of losses, EMI and power density.",
+          title: "Topologies",
+          text: "Circuit topologies as objects in their own right, with their voltage stress factors and suitability limits – the bridge between technology choice and architecture.",
         },
         {
           step: "04",
