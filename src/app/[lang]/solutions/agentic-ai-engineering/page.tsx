@@ -100,7 +100,7 @@ const COPY: Record<
     intro: {
       eyebrow: "Vom Kontext zum Konzept",
       headline:
-        "Was passiert, wenn die KI den Engineering-Prozess für SiC & GaN übernimmt?",
+        "Wie wird aus einer Anforderung eine belegte Technologieentscheidung?",
       body: "Agentenbasierte KI verdichtet Entwicklungszyklen durch parallele Verarbeitung von Expertenwissen – von der Topologieauswahl über die Verlustmodellierung bis hin zu Compliance-Prüfungen.",
       pipeline: [
         "Anforderungsanalyse",
@@ -277,7 +277,7 @@ const COPY: Record<
     intro: {
       eyebrow: "From Context to Concept",
       headline:
-        "What happens when AI takes over the engineering process for SiC & GaN?",
+        "How does a requirement become an evidence-based technology decision?",
       body: "Agent-based AI compresses development cycles through parallel processing of expert knowledge — from topology selection and loss modelling to compliance checks.",
       pipeline: [
         "Requirements Analysis",
