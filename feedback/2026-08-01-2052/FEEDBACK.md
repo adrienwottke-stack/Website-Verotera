@@ -271,7 +271,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 15:49
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119717/
 
-### [ ] #135 - desktop (1604px) - Thorsten Sigges
+### [x] #135 - desktop (1604px) - Thorsten Sigges
 
 > "Je später eine Technologieentscheidung revidiert werden muss, desto teurer wird sie – in Redesign-Schleifen, Requalifizierung und verlorener Zeit. Der Engineering Core sichert die SiC/GaN-Entscheidung schon früh ab: nachvollziehbar begründet, mit offengelegten Risiken. Das verkürzt nicht einen einzelnen Arbeitsschritt, sondern verhindert die Umwege, die die Time-to-Market wirklich kosten." (DE)
 > 

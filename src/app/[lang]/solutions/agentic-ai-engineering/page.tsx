@@ -156,7 +156,7 @@ const COPY: Record<
       eyebrow: "Time-to-Market",
       headline:
         "Time-to-Market entscheidet sich in der Konzeptphase – nicht am Ende.",
-      body: "Moderne agentische KI-Systeme wandeln sich durch Large Language Models (LLMs) und Reinforcement Learning von einfachen, reaktiven Chatbots zu autonom handelnden Agenten. Diese Kombination löst komplexe, mehrstufige Probleme, indem Sprachverständnis mit gezielter Handlungsplanung und kontinuierlicher Optimierung verknüpft wird.",
+      body: "Je später eine Technologieentscheidung revidiert werden muss, desto teurer wird sie – in Redesign-Schleifen, Requalifizierung und verlorener Zeit. Der Engineering Core sichert die SiC/GaN-Entscheidung schon früh ab: nachvollziehbar begründet, mit offengelegten Risiken. Das verkürzt nicht einen einzelnen Arbeitsschritt, sondern verhindert die Umwege, die die Time-to-Market wirklich kosten.",
       steps: [
         {
           step: "01",
@@ -337,7 +337,7 @@ const COPY: Record<
       eyebrow: "Time-to-Market",
       headline:
         "Time-to-market is decided in the concept phase – not at the end.",
-      body: "Powered by large language models (LLMs) and reinforcement learning, modern agentic AI systems evolve from simple, reactive chatbots into autonomously acting agents. This combination solves complex, multi-step problems by linking language understanding with targeted action planning and continuous optimisation.",
+      body: "The later a technology decision has to be reversed, the more it costs – in redesign loops, requalification and lost time. The Engineering Core de-risks the SiC/GaN decision early: with traceable justification and disclosed risks. It doesn't shorten a single task – it prevents the detours that truly cost time-to-market.",
       steps: [
         {
           step: "01",
