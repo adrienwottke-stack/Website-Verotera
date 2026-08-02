@@ -46,7 +46,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 12:21
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12118602/
 
-### [ ] #113 - desktop (1604px) - Thorsten Sigges
+### [x] #113 - desktop (1604px) - Thorsten Sigges
 
 > Sub-Headline
 > "Die Begründung entsteht aus Regeln und Standards, nicht im Sprachmodell – jede Bewertung ist auf ihre Herleitung zurückführbar.“ (DE)

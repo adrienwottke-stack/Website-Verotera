@@ -96,7 +96,7 @@ const COPY: Record<
     heroEyebrow: "AI-Enhanced WBG Semiconductor Engineering",
     heroTitle: "Agentische KI im Systems Engineering",
     heroSubtitle:
-      "Wie KI-Agenten komplexe Engineering-Workflows zielgerichtet transformieren.",
+      "Die Begründung entsteht aus Regeln und Standards, nicht im Sprachmodell – jede Bewertung ist auf ihre Herleitung zurückführbar.",
     intro: {
       eyebrow: "Agentic AI Ecosystem Architecture · Kognitive Orchestrierung",
       headline:
@@ -273,7 +273,7 @@ const COPY: Record<
     heroEyebrow: "AI-Enhanced WBG Semiconductor Engineering",
     heroTitle: "Agentic AI in Systems Engineering",
     heroSubtitle:
-      "How AI agents purposefully transform complex engineering workflows.",
+      "The justification comes from rules and standards, not from the language model — every assessment is traceable to its derivation.",
     intro: {
       eyebrow: "Agentic AI Ecosystem Architecture · Cognitive Orchestration",
       headline:
