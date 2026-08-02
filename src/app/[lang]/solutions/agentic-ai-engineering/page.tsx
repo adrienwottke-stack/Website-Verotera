@@ -52,6 +52,7 @@ const COPY: Record<
     architecture: {
       eyebrow: string;
       headline: string;
+      body: string;
       layers: { tag: string; title: string; text: string }[];
     };
     lifecycle: {
@@ -122,6 +123,7 @@ const COPY: Record<
     architecture: {
       eyebrow: "Engineering Core",
       headline: "Ein neuro-symbolischer Kern – auditierbar von Grund auf.",
+      body: "Der Kern besteht aus fünf Verantwortungsbereichen, die ein Prinzip teilen: Interpretation und Herleitung sind getrennt. Das Sprachmodell versteht den Kontext, aber die nachvollziehbare Begründung entsteht im Wissensgraph und in den Regeln – nicht im Modell verborgen.",
       layers: [
         {
           tag: "Layer 01",
@@ -297,6 +299,7 @@ const COPY: Record<
     architecture: {
       eyebrow: "Engineering Core",
       headline: "A neurosymbolic core – auditable by design.",
+      body: "The core consists of five areas of responsibility that share one principle: interpretation and derivation are kept apart. The language model understands the context, but the traceable justification is built in the knowledge graph and the rules – not hidden inside the model.",
       layers: [
         {
           tag: "Layer 01",
@@ -603,9 +606,12 @@ export default async function AgenticAiEngineeringPage({
               <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
                 {t.architecture.eyebrow}
               </span>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight">
+              <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight mb-6">
                 {t.architecture.headline}
               </h2>
+              <p className="font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed max-w-3xl mx-auto">
+                {t.architecture.body}
+              </p>
             </Reveal>
 
             <div className="max-w-4xl mx-auto">

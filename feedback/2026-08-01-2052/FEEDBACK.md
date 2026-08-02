@@ -183,7 +183,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 15:28
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119573/
 
-### [ ] #127 - desktop (1604px) - Thorsten Sigges
+### [x] #127 - desktop (1604px) - Thorsten Sigges
 
 > Der Kern besteht aus fünf Verantwortungsbereichen, die ein Prinzip teilen: Interpretation und Herleitung sind getrennt. Das Sprachmodell versteht den Kontext, aber die nachvollziehbare Begründung entsteht im Wissensgraph und in den Regeln – nicht im Modell verborgen. (DE)
 > 
