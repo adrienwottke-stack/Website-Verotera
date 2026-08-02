@@ -178,7 +178,8 @@ const COPY: Record<
     },
     vmodel: {
       eyebrow: "Structured Requirement Object",
-      headline: "Schneller. Präziser. Besser.",
+      headline:
+        "Physik begründet, Evidenz validiert, Ingenieursregeln führen – und Collaborative Intelligence macht das Ergebnis nachvollziehbar.",
       body: "Produktentwicklung mit agentischer KI: Orchestrierte Intelligenz begleitet jede Phase des V-Modells – von der Use-Case-Definition über Safety & Security, Design-Exploration und Systemarchitektur bis zu Verifikation, Validierung und Release.",
     },
     solutions: {
@@ -304,7 +305,8 @@ const COPY: Record<
     },
     vmodel: {
       eyebrow: "Structured Requirement Object",
-      headline: "Faster. More precise. Better.",
+      headline:
+        "Engineering truth is established by physics, validated by evidence, governed by engineering rules, and communicated through Collaborative Intelligence.",
       body: "Product development with agentic AI: orchestrated intelligence supports every phase of the V-model — from use-case definition, safety & security and design exploration to system architecture, verification, validation and release.",
     },
     solutions: {

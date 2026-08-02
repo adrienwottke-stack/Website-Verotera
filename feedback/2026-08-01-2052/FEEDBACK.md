@@ -377,7 +377,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 16:23
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119991/
 
-### [ ] #145 - desktop (1604px) - Thorsten Sigges
+### [x] #145 - desktop (1604px) - Thorsten Sigges
 
 > Physik begründet, Evidenz validiert, Ingenieursregeln führen – und Collaborative Intelligence macht das Ergebnis nachvollziehbar. (DE)
 > 
@@ -659,9 +659,13 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-24 14:42
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12108643/
 
-### [ ] #82 - desktop (1582px) - Aly Mashaly
+### [x] #82 - desktop (1582px) - Aly Mashaly
 
 > Hier wird Englisch und Deutsch dargestellt
+
+_Hinfaellig: betrifft dieselbe Sektion wie #87 ("Collaborative Intelligence" / "Powered by People
+and Precision"). Thread-Antwort von Thorsten Sigges (2026-07-28) gilt auch hier: bewusst englisch,
+bleibt so. Keine Code-Aenderung._
 
 - **Screenshot:** `feedback/2026-08-01-2052/screens/82.jpg`
 - **Erstellt:** 2026-07-24 15:04
