@@ -34,7 +34,7 @@ Der Aufwand steckt woanders: **17 Punkte brauchen erst eine Antwort**, bevor sie
 
 ## Status der Runde (Stand 2026-08-02)
 
-**76 von 95 Punkten sind abgehakt und committet, 19 sind offen.** Umgesetzt wurde nur, was
+**75 von 95 Punkten sind abgehakt und committet, 20 sind offen.** Umgesetzt wurde nur, was
 eindeutig war; kein Punkt wurde geraten.
 
 Die Runde ist auf drei Dokumente verteilt — jedes hat genau eine Aufgabe:
@@ -47,19 +47,19 @@ Die Runde ist auf drei Dokumente verteilt — jedes hat genau eine Aufgabe:
 
 | Seite | Punkte | abgehakt | offen | offene Nummern |
 |---|---|---|---|---|
-| `/solutions/agentic-ai-engineering` | 50 | 48 | 2 | #112, #160 |
+| `/solutions/agentic-ai-engineering` | 50 | 47 | 3 | #112, #117, #160 |
 | `/` (Landing Page) | 34 | 26 | 8 | #75, #78, #83, #88, #90, #109, #164, #166 |
 | `/solutions/wbg-power-modules` | 5 | 0 | 5 | #91, #92, #93, #94, #95 |
 | `/solutions/rack-power-distribution` | 3 | 2 | 1 | #167 |
 | `/resources/patents` | 2 | 0 | 2 | #96, #97 |
 | `/solutions/technology-spotlight-gallium-nitride` | 1 | 0 | 1 | #169 |
-| **Summe** | **95** | **76** | **19** | |
+| **Summe** | **95** | **75** | **20** | |
 
-Die 19 offenen Punkte teilen sich in zwei Gruppen — beide liegen beim Kunden, nicht bei uns:
+Die 20 offenen Punkte teilen sich in zwei Gruppen — beide liegen beim Kunden, nicht bei uns:
 
 | Grund | Anzahl | Nummern |
 |---|---|---|
-| **ENTSCHEIDUNG** — braucht eine Antwort | 13 | #75, #83, #88, #90, #91, #92, #93, #95, #96, #97, #112, #164, #169 |
+| **ENTSCHEIDUNG** — braucht eine Antwort | 14 | #75, #83, #88, #90, #91, #92, #93, #95, #96, #97, #112, #117, #164, #169 |
 | **ASSET_FEHLT** — braucht eine Datei | 6 | #78, #94, #109, #160, #166, #167 |
 
 Von den ursprünglich 17 ENTSCHEIDUNG-Punkten sind vier inzwischen entschieden und umgesetzt
@@ -94,7 +94,7 @@ bleibt erhalten, drei Sektionen entfallen (`wbg`, `roadmap`, `solutions`).
 | #114 | UMSETZBAR | `AAE` → `intro.eyebrow` | beides | „Vom Kontext zum Konzept" / „From Context to Concept" ersetzt den alten Eyebrow. |
 | #115 | UMSETZBAR | `AAE` → `intro.headline` | beides | Neue Frage-Headline liegt in DE und EN vor. |
 | #116 | UMSETZBAR | `AAE` → `intro.body` | beides | Neuer Body-Text liegt in DE und EN vor. |
-| #117 | UMSETZBAR | `AAE` → `intro.pipeline[0..3]` | beides | Alle vier Pipeline-Labels sind in DE und EN geliefert; die zusätzlich gewünschte Design-Aufwertung ist eine offene Frage an dich (→ Rückfragen). |
+| #117 | **ENTSCHEIDUNG** | `AAE` → `intro.pipeline[0..3]` | beides | Alle vier Pipeline-Labels sind in DE und EN geliefert, aber der Kommentar verlangt zusätzlich eine gestalterische Aufwertung des Process-Flows und adressiert das ausdrücklich an dich („Adrien: Hast Du eine Idee?"). Ohne gewählte Variante bleibt der Punkt als Ganzes offen (→ Rückfragen). |
 | #118 | UMSETZBAR | `AAE` → `hitl.headline` | beides | „Entscheidungen brauchen Nachvollziehbarkeit" / „Decisions need traceability". |
 | #119 | UMSETZBAR *(No-Op)* | `AAE` → `hitl.eyebrow` | beides | Steht bereits auf „Human-in-the-Loop" in DE und EN — nur abhaken, keine Code-Änderung. |
 | #120 | UMSETZBAR | `AAE` → `hitl.body` | beides | Neuer Text in DE und EN vorhanden (Tippfehler → Rückfragen). |
@@ -139,11 +139,11 @@ bleibt erhalten, drei Sektionen entfallen (`wbg`, `roadmap`, `solutions`).
 | #159 | UMSETZBAR | `AAE` → ganze `solutions`-Navy-Sektion (Z. 835–880) + `COPY.*.solutions` | beides | „Auch diesen Bereich entfernen" — komplette Navy-Sektion inkl. Bild `ai-systems-gui.jpg` entfällt. |
 | #160 | **ASSET_FEHLT** | — | — | Verweist auf ein Word-Dokument in SharePoint, das nicht im Repo liegt; ohne die Datei ist weder der gemeinte „Bereich" noch der Volltext prüfbar (kein Rahmen im Screenshot). |
 
-**Zwischensumme:** 48 UMSETZBAR · 1 ENTSCHEIDUNG · 1 ASSET_FEHLT
+**Zwischensumme:** 47 UMSETZBAR · 2 ENTSCHEIDUNG · 1 ASSET_FEHLT
 
-**Status 2026-08-02:** Alle 48 UMSETZBAR-Punkte sind umgesetzt, in FEEDBACK.md abgehakt und
-committet (`feedback(2026-08-01-2052): #NR …`). Offen bleiben #112 (ENTSCHEIDUNG) und
-#160 (ASSET_FEHLT). Umbauten über die reine Textänderung hinaus:
+**Status 2026-08-02:** Alle 47 UMSETZBAR-Punkte sind umgesetzt, in FEEDBACK.md abgehakt und
+committet (`feedback(2026-08-01-2052): #NR …`). Offen bleiben #112 (ENTSCHEIDUNG), #117
+(ENTSCHEIDUNG) und #160 (ASSET_FEHLT). Umbauten über die reine Textänderung hinaus:
 
 - `LAYER_ICONS` neu belegt (`Workflow, Network, BrainCircuit, ShieldCheck, Bot`) für fünf Bereiche.
 - Neuer COPY-Key `architecture.body` + `<p>` unter der H2 (#127); `hitl.subEyebrow` gestrichen (#121).
@@ -153,8 +153,10 @@ committet (`feedback(2026-08-01-2052): #NR …`). Offen bleiben #112 (ENTSCHEIDU
   `src/components/SroObject.tsx` ersetzt (#147/#150): sechs abgerundete Karten 01–06 plus
   JSON-Rechteck in der bisherigen Terminal-Optik, Kopfzeile nur noch „SRO".
 - Neuer COPY-Key `vmodel.statement` für das Abschluss-Statement (#158).
-- **#117 nur textlich umgesetzt** — die gewünschte gestalterische Aufwertung des Process-Flows
-  ist eine offene Frage an Adrien (Rückfrage 3).
+- **#117 als ENTSCHEIDUNG geführt, nicht abgehakt.** Die vier Pipeline-Labels stehen zwar bereits
+  im Code (Text war eindeutig geliefert), der Punkt gilt aber erst als erledigt, wenn zusammen mit
+  der gewünschten gestalterischen Aufwertung des Process-Flows entschieden ist — die Frage ist im
+  Kommentar ausdrücklich an Adrien adressiert (Rückfrage, drei Vorschläge zur Wahl).
 - **#133–#141 wie geliefert umgesetzt**, der Widerspruch aus Konflikt 2 (Header „Time-to-Market"
   über den sechs Wissensgraph-Bausteinen) besteht damit im Code — Rückfrage 2 bleibt offen.
 - Tippfehler der gelieferten EN-Texte still korrigiert (`assessemnt`, `assessement`, `ist`→`its`,
@@ -379,15 +381,16 @@ Diese Punkte sind einzeln umsetzbar, kollidieren aber miteinander:
 
 ## Rückfragen an den Kunden
 
-Ursprünglich blockierten diese Fragen 17 ENTSCHEIDUNG-Punkte. Vier davon sind inzwischen
-entschieden und umgesetzt, 13 sind offen — dazu drei Fragen, die zwar an bereits umgesetzten
+Ursprünglich blockierten diese Fragen 17 ENTSCHEIDUNG-Punkte, dazu ist #117 nachträglich von
+UMSETZBAR auf ENTSCHEIDUNG umgestuft worden (18 insgesamt). Vier davon sind inzwischen
+entschieden und umgesetzt, 14 sind offen — dazu zwei Fragen, die zwar an bereits umgesetzten
 Punkten hängen, aber weiter beantwortet werden müssen.
 
 **Die ausformulierten Kommentare stehen in [FEEDBACK.md](FEEDBACK.md)**, fertig zum Einfügen ins
 Pastel-Canvas: Landingpage-Block auf Deutsch, alles andere in DE **und** EN. Die Liste hier ist
 nur die Übersicht.
 
-### Offen — Antwort nötig (13 Punkte)
+### Offen — Antwort nötig (14 Punkte)
 
 | Nr | Seite | Frage in einem Satz |
 |---|---|---|
@@ -397,6 +400,7 @@ nur die Übersicht.
 | #90 | Landing | Alle vier Kennzahlen raus oder nur die markierte „100+"? |
 | #164 | Landing | Wie soll der Advanced-Packaging-Block stattdessen aussehen? |
 | #112 | AAE | Trägt die Eyebrow-Pill oder die H1 den Begriff „AI-Enhanced WBG Semiconductor Engineering"? |
+| #117 | AAE | Welche der drei Varianten für die gestalterische Aufwertung des Process-Flows? Labels stehen bereits im Code, der Punkt gilt aber erst mit gewählter Variante als erledigt. |
 | #91 | WBG | Welches konkrete Referenzbild zeigt den Zielstil? |
 | #92 | WBG | Ersatztext für den Absatz unter „Wide-Bandgap at the Core" (DE + EN). |
 | #93 | WBG | Was soll das neue Bild zeigen, und wer liefert es? |
@@ -405,12 +409,11 @@ nur die Übersicht.
 | #97 | Patente | Entlinken + `noindex` oder löschen + Redirect? |
 | #169 | GaN/SiC | Wie #97, plus: was passiert mit den sechs Verlinkungen? |
 
-### Offen — Fragen zu bereits umgesetzten Punkten (3)
+### Offen — Fragen zu bereits umgesetzten Punkten (2)
 
 | Nr | Seite | Warum trotzdem offen |
 |---|---|---|
 | #133–#141 | AAE | Wie geliefert umgesetzt — der Header „Time-to-Market" steht damit über den sechs Wissensgraph-Bausteinen (Konflikt 2). Eine Sektion oder zwei? |
-| #117 | AAE | Nur textlich umgesetzt; die gewünschte gestalterische Aufwertung des Process-Flows ist offen — drei Varianten stehen zur Wahl. |
 | #165 + #89 | RPD / Landing | Der neue RPD-Text nennt die IEA, während #89 die IEA-Quelle auf der Landingpage entfernt hat (Konflikt 3). Antwort muss für alle drei Fundstellen gleich ausfallen. |
 
 ### Offen — Datei nötig (6 Punkte)

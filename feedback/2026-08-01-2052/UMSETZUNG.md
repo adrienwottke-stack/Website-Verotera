@@ -4,7 +4,7 @@ Was am Code passiert ist. Die fachlichen Rückfragen an den Kunden stehen in
 [FEEDBACK.md](FEEDBACK.md) (Abschnitte „Rueckfragen"), die Triage der 95 Punkte in
 [PLAN.md](PLAN.md). Dieses Dokument beantwortet nur: **welche Datei wurde warum wie geändert.**
 
-Stand 2026-08-02 · 76 von 95 Punkten abgehakt · 19 offen (alle ENTSCHEIDUNG oder ASSET_FEHLT).
+Stand 2026-08-02 · 75 von 95 Punkten abgehakt · 20 offen (alle ENTSCHEIDUNG oder ASSET_FEHLT).
 
 ---
 
@@ -42,7 +42,7 @@ entfallen**, eine wird ersetzt.
 | Sektion (COPY-Key) | vorher | nachher |
 |---|---|---|
 | PageHero | „AI Systems Engineering" / „Agentische KI im Systems Engineering" | Eyebrow → „AI-Enhanced WBG Semiconductor Engineering" (#111); **H1 unverändert**, weil #112 offen |
-| `intro` | Agentic-AI-Ecosystem-Pitch | „Vom Kontext zum Konzept" + Frage-Headline + Vier-Schritte-Text (#114–#116), Process-Flow-Labels neu (#117) |
+| `intro` | Agentic-AI-Ecosystem-Pitch | „Vom Kontext zum Konzept" + Frage-Headline + Vier-Schritte-Text (#114–#116); Process-Flow-Labels im Code neu (Textteil von #117), Punkt selbst als **ENTSCHEIDUNG** geführt und nicht abgehakt — die verlangte gestalterische Aufwertung fehlt noch |
 | `hitl` | „KI transformiert MBSE", 2 Absätze | „Entscheidungen brauchen Nachvollziehbarkeit", Sub-Eyebrow raus, **1 Absatz** (#118–#124) |
 | `architecture` | 4 Layer „Layer 01–04" | „Engineering Core", neuer Body, **5 Verantwortungsbereiche 01–05** (#125–#132) |
 | `lifecycle` | Agentic Product Development Lifecycle | „Time-to-Market" + 6 Wissensgraph-Bausteine (#133–#141) |
@@ -125,14 +125,15 @@ Diese Punkte waren im Detail nicht vorgegeben — so wurde entschieden:
    (#100, #106–#108). Betroffen: `assessemnt`/`assessement` → assessment, `ist` → its (2×),
    `stanf` → stand, `people´s hand` → people's hands, „Wie liefern" → „Wir liefern",
    `and risk overview` → `and a risk overview`. Aufgelistet in FEEDBACK.md unter Rückfragen.
-2. **#117 nur textlich umgesetzt.** Die vier Labels sind gesetzt; die gewünschte gestalterische
-   Aufwertung des Process-Flows ist im Kommentar ausdrücklich an Adrien adressiert und wartet
-   auf einen Vorschlag. Die Pills stehen unverändert im Bestandsdesign.
-3. **#133–#141 wörtlich wie geliefert.** Der Widerspruch (Header „Time-to-Market" über sechs
+2. **#133–#141 wörtlich wie geliefert.** Der Widerspruch (Header „Time-to-Market" über sechs
    Wissensgraph-Bausteinen) ist damit im Code sichtbar statt still geglättet — genau so lässt
    er sich beim Kunden klären.
-4. **#112 nicht geraten.** Eyebrow und H1 sollen laut #111/#112 denselben String tragen; die H1
+3. **#112 nicht geraten.** Eyebrow und H1 sollen laut #111/#112 denselben String tragen; die H1
    steht deshalb weiterhin auf „Agentische KI im Systems Engineering".
+4. **#117 nachträglich auf ENTSCHEIDUNG umgestuft, nicht abgehakt.** Die vier Pipeline-Labels
+   sind textlich gesetzt (eindeutig geliefert), der Punkt zählt aber erst als erledigt, wenn
+   zusammen mit der im Kommentar an Adrien adressierten gestalterischen Aufwertung des
+   Process-Flows entschieden ist. Siehe Abschnitt 5.
 
 ---
 
@@ -147,7 +148,12 @@ Energieagentur ausdrücklich. Die IEA steht damit weiterhin an zwei Stellen:
 
 Die Antwort muss für alle Stellen gleich ausfallen.
 
-**Sektionslogik der Lifecycle-Sektion** — siehe Entscheidung 3 oben.
+**Sektionslogik der Lifecycle-Sektion** — siehe Entscheidung 2 oben.
+
+**Process-Flow-Design (#117).** Die vier Pipeline-Labels in `intro.pipeline` sind im Code, aber
+der Punkt ist als ENTSCHEIDUNG geführt und in FEEDBACK.md nicht abgehakt: der Kommentar verlangt
+zusätzlich eine gestalterische Aufwertung, die noch aussteht. Solange keine Variante gewählt ist,
+gilt #117 als offen, auch wenn der Text bereits im Code steht.
 
 ---
 

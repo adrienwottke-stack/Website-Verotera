@@ -87,7 +87,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 13:15
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12118866/
 
-### [x] #117 - desktop (1604px) - Thorsten Sigges
+### [ ] #117 - desktop (1604px) - Thorsten Sigges
 
 > Process-Flow 
 > Kontext erfassen –> Kriterien ableiten –> Optionen & Risiken –> System Design Concept (DE)
