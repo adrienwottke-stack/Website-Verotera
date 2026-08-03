@@ -1,4 +1,4 @@
-# Umsetzungsplan — Runde 2026-08-01-2052
+﻿# Umsetzungsplan — Runde 2026-08-01-2052
 
 Zuordnung aller 95 Punkte aus [FEEDBACK.md](FEEDBACK.md).
 
@@ -32,10 +32,15 @@ Der Aufwand steckt woanders: **17 Punkte brauchen erst eine Antwort**, bevor sie
 
 ---
 
-## Status der Runde (Stand 2026-08-02)
+## Status der Runde (Stand 2026-08-03)
 
-**75 von 95 Punkten sind abgehakt und committet, 20 sind offen.** Umgesetzt wurde nur, was
-eindeutig war; kein Punkt wurde geraten.
+**64 von 95 Punkten sind abgehakt, 31 sind offen.** Umgesetzt wurde nur, was eindeutig war;
+kein Punkt wurde geraten.
+
+> **Änderung am 2026-08-03:** #128–#132 (Engineering-Core-Verantwortungsbereiche) und
+> #136–#141 (Wissensgraph-Bausteine) wurden nachträglich wieder geöffnet. Der gelieferte Text
+> steht bereits im Code — die Punkte gelten trotzdem als **nicht erledigt** und werden
+> überarbeitet. Ebenso #117, das von UMSETZBAR auf ENTSCHEIDUNG umgestuft wurde.
 
 Die Runde ist auf drei Dokumente verteilt — jedes hat genau eine Aufgabe:
 
@@ -47,20 +52,25 @@ Die Runde ist auf drei Dokumente verteilt — jedes hat genau eine Aufgabe:
 
 | Seite | Punkte | abgehakt | offen | offene Nummern |
 |---|---|---|---|---|
-| `/solutions/agentic-ai-engineering` | 50 | 47 | 3 | #112, #117, #160 |
+| `/solutions/agentic-ai-engineering` | 50 | 36 | 14 | #112, #117, #128–#132, #136–#141, #160 |
 | `/` (Landing Page) | 34 | 26 | 8 | #75, #78, #83, #88, #90, #109, #164, #166 |
 | `/solutions/wbg-power-modules` | 5 | 0 | 5 | #91, #92, #93, #94, #95 |
 | `/solutions/rack-power-distribution` | 3 | 2 | 1 | #167 |
 | `/resources/patents` | 2 | 0 | 2 | #96, #97 |
 | `/solutions/technology-spotlight-gallium-nitride` | 1 | 0 | 1 | #169 |
-| **Summe** | **95** | **75** | **20** | |
+| **Summe** | **95** | **64** | **31** | |
 
-Die 20 offenen Punkte teilen sich in zwei Gruppen — beide liegen beim Kunden, nicht bei uns:
+Die 31 offenen Punkte teilen sich in drei Gruppen:
 
-| Grund | Anzahl | Nummern |
-|---|---|---|
-| **ENTSCHEIDUNG** — braucht eine Antwort | 14 | #75, #83, #88, #90, #91, #92, #93, #95, #96, #97, #112, #117, #164, #169 |
-| **ASSET_FEHLT** — braucht eine Datei | 6 | #78, #94, #109, #160, #166, #167 |
+| Grund | Anzahl | Nummern | Liegt bei |
+|---|---|---|---|
+| **ENTSCHEIDUNG** — braucht eine Antwort | 14 | #75, #83, #88, #90, #91, #92, #93, #95, #96, #97, #112, #117, #164, #169 | Kunde |
+| **ERNEUT GEÖFFNET** — Inhalt wird überarbeitet | 11 | #128–#132, #136–#141 | uns |
+| **ASSET_FEHLT** — braucht eine Datei | 6 | #78, #94, #109, #160, #166, #167 | Kunde |
+
+**ERNEUT GEÖFFNET** heißt: Der gelieferte Text ist eingebaut und im Commit-Verlauf nachvollziehbar,
+der Punkt zählt aber nicht als erledigt, weil der Inhalt noch überarbeitet wird. Der Code bleibt
+vorerst unverändert stehen — es wurde nichts zurückgerollt.
 
 Von den ursprünglich 17 ENTSCHEIDUNG-Punkten sind vier inzwischen entschieden und umgesetzt
 (#86, #89, #102, #162) — jeweils unter einer dokumentierten Annahme, die noch gegengeprüft
@@ -105,20 +115,20 @@ bleibt erhalten, drei Sektionen entfallen (`wbg`, `roadmap`, `solutions`).
 | #125 | UMSETZBAR | `AAE` → `architecture.eyebrow` | beides | Eyebrow wird zu „Engineering Core" (DE/EN identisch). |
 | #126 | UMSETZBAR | `AAE` → `architecture.headline` | beides | Neue Headline liegt in DE und EN vor. |
 | #127 | UMSETZBAR | `AAE` → neuer Key `architecture.body` | beides | Text liegt vor; die Sektion hat bisher keinen Body — neuer COPY-Key + `<p>` unter der H2 (+ `mb-6` an der H2). |
-| #128 | UMSETZBAR | `AAE` → `architecture.layers[0]` | beides | Tag/Titel/Text komplett ersetzt („01 — Orchestrierung"), DE und EN geliefert. |
-| #129 | UMSETZBAR | `AAE` → `architecture.layers[1]` | beides | Ersetzt durch „02 — Wissensgraph", DE und EN geliefert. |
-| #130 | UMSETZBAR | `AAE` → `architecture.layers[2]` | beides | Ersetzt durch „03 — Interpretation", DE und EN geliefert. |
-| #131 | UMSETZBAR | `AAE` → `architecture.layers[3]` | beides | Ersetzt durch „04 — Absicherung", DE und EN geliefert. |
-| #132 | UMSETZBAR | `AAE` → neues `architecture.layers[4]` + `LAYER_ICONS` (Z. 28) | beides | Fünfter Bereich „05 — Agent" wird ergänzt; `LAYER_ICONS` hat nur 4 Einträge und braucht ein fünftes lucide-Icon, sonst ist `Icon` undefined. |
+| #128 | **ERNEUT GEÖFFNET** | `AAE` → `architecture.layers[0]` | beides | Tag/Titel/Text komplett ersetzt („01 — Orchestrierung"), DE und EN geliefert. |
+| #129 | **ERNEUT GEÖFFNET** | `AAE` → `architecture.layers[1]` | beides | Ersetzt durch „02 — Wissensgraph", DE und EN geliefert. |
+| #130 | **ERNEUT GEÖFFNET** | `AAE` → `architecture.layers[2]` | beides | Ersetzt durch „03 — Interpretation", DE und EN geliefert. |
+| #131 | **ERNEUT GEÖFFNET** | `AAE` → `architecture.layers[3]` | beides | Ersetzt durch „04 — Absicherung", DE und EN geliefert. |
+| #132 | **ERNEUT GEÖFFNET** | `AAE` → neues `architecture.layers[4]` + `LAYER_ICONS` (Z. 28) | beides | Fünfter Bereich „05 — Agent" wird ergänzt; `LAYER_ICONS` hat nur 4 Einträge und braucht ein fünftes lucide-Icon, sonst ist `Icon` undefined. |
 | #133 | UMSETZBAR | `AAE` → `lifecycle.eyebrow` | beides | Eyebrow wird zu „Time-to-Market" (DE/EN identisch). |
 | #134 | UMSETZBAR | `AAE` → `lifecycle.headline` | beides | Neue Headline liegt in DE und EN vor. |
 | #135 | UMSETZBAR | `AAE` → `lifecycle.body` | beides | Neuer Body-Text liegt in DE und EN vor. |
-| #136 | UMSETZBAR | `AAE` → `lifecycle.steps[0]` | beides | Karte 01 wird zu „Technologieklassen", DE und EN geliefert (→ Rückfrage zur Sektionslogik). |
-| #137 | UMSETZBAR | `AAE` → `lifecycle.steps[1]` | beides | Karte 02 wird zu „Funktionsblöcke", DE und EN geliefert. |
-| #138 | UMSETZBAR | `AAE` → `lifecycle.steps[2]` | beides | Karte 03 wird zu „Topologien", DE und EN geliefert. |
-| #139 | UMSETZBAR | `AAE` → `lifecycle.steps[3]` | beides | Karte 04 wird zu „Regeln", DE und EN geliefert. |
-| #140 | UMSETZBAR | `AAE` → `lifecycle.steps[4]` | beides | Karte 05 wird zu „Parametrische Modelle", DE und EN geliefert. |
-| #141 | UMSETZBAR | `AAE` → `lifecycle.steps[5]` | beides | Karte 06 wird zu „Anforderungen", DE und EN geliefert. |
+| #136 | **ERNEUT GEÖFFNET** | `AAE` → `lifecycle.steps[0]` | beides | Karte 01 wird zu „Technologieklassen", DE und EN geliefert (→ Rückfrage zur Sektionslogik). |
+| #137 | **ERNEUT GEÖFFNET** | `AAE` → `lifecycle.steps[1]` | beides | Karte 02 wird zu „Funktionsblöcke", DE und EN geliefert. |
+| #138 | **ERNEUT GEÖFFNET** | `AAE` → `lifecycle.steps[2]` | beides | Karte 03 wird zu „Topologien", DE und EN geliefert. |
+| #139 | **ERNEUT GEÖFFNET** | `AAE` → `lifecycle.steps[3]` | beides | Karte 04 wird zu „Regeln", DE und EN geliefert. |
+| #140 | **ERNEUT GEÖFFNET** | `AAE` → `lifecycle.steps[4]` | beides | Karte 05 wird zu „Parametrische Modelle", DE und EN geliefert. |
+| #141 | **ERNEUT GEÖFFNET** | `AAE` → `lifecycle.steps[5]` | beides | Karte 06 wird zu „Anforderungen", DE und EN geliefert. |
 | #142 | UMSETZBAR | `AAE` → ganze `wbg`-Sektion (Z. 721–801) + `COPY.*.wbg` + `TOOL_ICONS` | beides | „Diesen Bereich löschen" — Rahmen sitzt auf dem Eyebrow, gemeint ist die komplette Sektion inkl. 2 Bilder, 2 Stats und 4 Tool-Cards. |
 | #143 | UMSETZBAR | `AAE` → ganze `roadmap`-Sektion (Z. 803–833) + `COPY.*.roadmap` | beides | „Auch diesen Bereich löschen" — komplette Roadmap-Sektion mit den 4 Schritten entfällt. |
 | #144 | UMSETZBAR | `AAE` → `vmodel.eyebrow` | beides | Eyebrow wird zu „Structured Requirement Object" (DE/EN identisch). |
@@ -139,11 +149,22 @@ bleibt erhalten, drei Sektionen entfallen (`wbg`, `roadmap`, `solutions`).
 | #159 | UMSETZBAR | `AAE` → ganze `solutions`-Navy-Sektion (Z. 835–880) + `COPY.*.solutions` | beides | „Auch diesen Bereich entfernen" — komplette Navy-Sektion inkl. Bild `ai-systems-gui.jpg` entfällt. |
 | #160 | **ASSET_FEHLT** | — | — | Verweist auf ein Word-Dokument in SharePoint, das nicht im Repo liegt; ohne die Datei ist weder der gemeinte „Bereich" noch der Volltext prüfbar (kein Rahmen im Screenshot). |
 
-**Zwischensumme:** 47 UMSETZBAR · 2 ENTSCHEIDUNG · 1 ASSET_FEHLT
+**Zwischensumme:** 36 UMSETZBAR · 2 ENTSCHEIDUNG · 11 ERNEUT GEÖFFNET · 1 ASSET_FEHLT
 
-**Status 2026-08-02:** Alle 47 UMSETZBAR-Punkte sind umgesetzt, in FEEDBACK.md abgehakt und
-committet (`feedback(2026-08-01-2052): #NR …`). Offen bleiben #112 (ENTSCHEIDUNG), #117
-(ENTSCHEIDUNG) und #160 (ASSET_FEHLT). Umbauten über die reine Textänderung hinaus:
+**Status 2026-08-03:** Alle 36 UMSETZBAR-Punkte sind umgesetzt, in FEEDBACK.md abgehakt und
+committet (`feedback(2026-08-01-2052): #NR …`). Offen bleiben #112 und #117 (ENTSCHEIDUNG),
+#128–#132 und #136–#141 (ERNEUT GEÖFFNET) sowie #160 (ASSET_FEHLT).
+
+Die elf erneut geöffneten Punkte betreffen zwei zusammenhängende Blöcke derselben Seite:
+
+- **#128–#132** — die fünf Verantwortungsbereiche der Engineering-Core-Sektion
+  (Orchestrierung, Wissensgraph, Interpretation, Absicherung, Agent).
+- **#136–#141** — die sechs Wissensgraph-Bausteine (Technologieklassen, Funktionsblöcke,
+  Topologien, Regeln, Parametrische Modelle, Anforderungen). Hier greift zusätzlich Konflikt 2:
+  die Sektionsüberschrift „Time-to-Market" passt nicht zu den Karten.
+
+Der gelieferte Text steht in beiden Blöcken bereits im Code (Commits `0547c85`–`815a63a` und
+`1f0a958`–`4322cf0`); zurückgerollt wurde nichts. Umbauten über die reine Textänderung hinaus:
 
 - `LAYER_ICONS` neu belegt (`Workflow, Network, BrainCircuit, ShieldCheck, Bot`) für fünf Bereiche.
 - Neuer COPY-Key `architecture.body` + `<p>` unter der H2 (#127); `hitl.subEyebrow` gestrichen (#121).
@@ -157,8 +178,9 @@ committet (`feedback(2026-08-01-2052): #NR …`). Offen bleiben #112 (ENTSCHEIDU
   im Code (Text war eindeutig geliefert), der Punkt gilt aber erst als erledigt, wenn zusammen mit
   der gewünschten gestalterischen Aufwertung des Process-Flows entschieden ist — die Frage ist im
   Kommentar ausdrücklich an Adrien adressiert (Rückfrage, drei Vorschläge zur Wahl).
-- **#133–#141 wie geliefert umgesetzt**, der Widerspruch aus Konflikt 2 (Header „Time-to-Market"
+- **#133–#141 wie geliefert eingebaut**, der Widerspruch aus Konflikt 2 (Header „Time-to-Market"
   über den sechs Wissensgraph-Bausteinen) besteht damit im Code — Rückfrage 2 bleibt offen.
+  #133–#135 (der Header) bleiben abgehakt, #136–#141 (die Karten) sind wieder geöffnet.
 - Tippfehler der gelieferten EN-Texte still korrigiert (`assessemnt`, `assessement`, `ist`→`its`,
   `stanf`→`stand`, `people´s hand`→`people's hands`) — konsistent zur Landing-Page-Runde.
 
@@ -383,8 +405,11 @@ Diese Punkte sind einzeln umsetzbar, kollidieren aber miteinander:
 
 Ursprünglich blockierten diese Fragen 17 ENTSCHEIDUNG-Punkte, dazu ist #117 nachträglich von
 UMSETZBAR auf ENTSCHEIDUNG umgestuft worden (18 insgesamt). Vier davon sind inzwischen
-entschieden und umgesetzt, 14 sind offen — dazu zwei Fragen, die zwar an bereits umgesetzten
+entschieden und umgesetzt, 14 sind offen — dazu zwei Fragen, die zwar an bereits eingebauten
 Punkten hängen, aber weiter beantwortet werden müssen.
+
+Die elf am 2026-08-03 erneut geöffneten Punkte (#128–#132, #136–#141) sind **keine** Rückfragen
+an den Kunden — sie werden von uns überarbeitet.
 
 **Die ausformulierten Kommentare stehen in [FEEDBACK.md](FEEDBACK.md)**, fertig zum Einfügen ins
 Pastel-Canvas: Landingpage-Block auf Deutsch, alles andere in DE **und** EN. Die Liste hier ist
@@ -409,12 +434,18 @@ nur die Übersicht.
 | #97 | Patente | Entlinken + `noindex` oder löschen + Redirect? |
 | #169 | GaN/SiC | Wie #97, plus: was passiert mit den sechs Verlinkungen? |
 
-### Offen — Fragen zu bereits umgesetzten Punkten (2)
+### Offen — Fragen zu bereits eingebauten Punkten (2)
 
 | Nr | Seite | Warum trotzdem offen |
 |---|---|---|
-| #133–#141 | AAE | Wie geliefert umgesetzt — der Header „Time-to-Market" steht damit über den sechs Wissensgraph-Bausteinen (Konflikt 2). Eine Sektion oder zwei? |
+| #133–#141 | AAE | Wie geliefert eingebaut — der Header „Time-to-Market" steht damit über den sechs Wissensgraph-Bausteinen (Konflikt 2). Eine Sektion oder zwei? #136–#141 sind zusätzlich als ERNEUT GEÖFFNET geführt, weil die Karteninhalte überarbeitet werden. |
 | #165 + #89 | RPD / Landing | Der neue RPD-Text nennt die IEA, während #89 die IEA-Quelle auf der Landingpage entfernt hat (Konflikt 3). Antwort muss für alle drei Fundstellen gleich ausfallen. |
+
+### Erneut geöffnet — keine Kundenfrage (11 Punkte)
+
+#128–#132 und #136–#141 warten auf keine Antwort des Kunden, sondern auf unsere Überarbeitung.
+Sie stehen deshalb bewusst **nicht** in der Kundenfassung der Rückfragen. Einzige Ausnahme ist die
+Sektionslogik aus Konflikt 2, die #136–#141 mitbetrifft und oben als Frage geführt wird.
 
 ### Offen — Datei nötig (6 Punkte)
 

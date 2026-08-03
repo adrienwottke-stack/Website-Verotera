@@ -4,7 +4,12 @@ Was am Code passiert ist. Die fachlichen Rückfragen an den Kunden stehen in
 [FEEDBACK.md](FEEDBACK.md) (Abschnitte „Rueckfragen"), die Triage der 95 Punkte in
 [PLAN.md](PLAN.md). Dieses Dokument beantwortet nur: **welche Datei wurde warum wie geändert.**
 
-Stand 2026-08-02 · 75 von 95 Punkten abgehakt · 20 offen (alle ENTSCHEIDUNG oder ASSET_FEHLT).
+Stand 2026-08-03 · 64 von 95 Punkten abgehakt · 31 offen.
+
+> **Wichtig für das Lesen dieses Dokuments:** #128–#132 und #136–#141 wurden am 2026-08-03
+> wieder geöffnet. Der unten beschriebene Code-Stand stimmt weiterhin — der gelieferte Text ist
+> eingebaut und nichts wurde zurückgerollt —, aber die elf Punkte gelten **nicht als erledigt**
+> und werden inhaltlich überarbeitet. Details in [PLAN.md](PLAN.md) → „Status der Runde".
 
 ---
 
@@ -44,8 +49,8 @@ entfallen**, eine wird ersetzt.
 | PageHero | „AI Systems Engineering" / „Agentische KI im Systems Engineering" | Eyebrow → „AI-Enhanced WBG Semiconductor Engineering" (#111); **H1 unverändert**, weil #112 offen |
 | `intro` | Agentic-AI-Ecosystem-Pitch | „Vom Kontext zum Konzept" + Frage-Headline + Vier-Schritte-Text (#114–#116); Process-Flow-Labels im Code neu (Textteil von #117), Punkt selbst als **ENTSCHEIDUNG** geführt und nicht abgehakt — die verlangte gestalterische Aufwertung fehlt noch |
 | `hitl` | „KI transformiert MBSE", 2 Absätze | „Entscheidungen brauchen Nachvollziehbarkeit", Sub-Eyebrow raus, **1 Absatz** (#118–#124) |
-| `architecture` | 4 Layer „Layer 01–04" | „Engineering Core", neuer Body, **5 Verantwortungsbereiche 01–05** (#125–#132) |
-| `lifecycle` | Agentic Product Development Lifecycle | „Time-to-Market" + 6 Wissensgraph-Bausteine (#133–#141) |
+| `architecture` | 4 Layer „Layer 01–04" | „Engineering Core", neuer Body, **5 Verantwortungsbereiche 01–05** (#125–#132). Eyebrow/Headline/Body (#125–#127) abgehakt, die fünf Bereiche selbst (**#128–#132**) am 03.08. wieder geöffnet |
+| `lifecycle` | Agentic Product Development Lifecycle | „Time-to-Market" + 6 Wissensgraph-Bausteine (#133–#141). Header (#133–#135) abgehakt, die sechs Karten (**#136–#141**) am 03.08. wieder geöffnet |
 | `vmodel` | interaktives V-Modell-Widget | „Structured Requirement Object" + neuer SRO-Block (#144–#158) |
 | `wbg` | SiC & GaN Leistungselektronik | **entfernt** (#142) |
 | `roadmap` | Strategische Roadmap | **entfernt** (#143) |
@@ -149,6 +154,13 @@ Energieagentur ausdrücklich. Die IEA steht damit weiterhin an zwei Stellen:
 Die Antwort muss für alle Stellen gleich ausfallen.
 
 **Sektionslogik der Lifecycle-Sektion** — siehe Entscheidung 2 oben.
+
+**Erneut geöffnete Inhalte (#128–#132, #136–#141).** Die fünf Engineering-Core-Verantwortungs-
+bereiche und die sechs Wissensgraph-Bausteine stehen wie geliefert im Code, sind seit dem
+03.08. aber wieder als offen geführt, weil die Inhalte überarbeitet werden. Am Code wurde
+deshalb nichts zurückgerollt — `LAYER_ICONS`, das aufgeteilte `tag`/`title`-Format und die
+Kartenstruktur bleiben unverändert nutzbar, egal wie die neuen Texte aussehen. Nur wenn sich
+die **Anzahl** der Bereiche oder Karten ändert, muss `LAYER_ICONS` (Zeile 28) mitgezogen werden.
 
 **Process-Flow-Design (#117).** Die vier Pipeline-Labels in `intro.pipeline` sind im Code, aber
 der Punkt ist als ENTSCHEIDUNG geführt und in FEEDBACK.md nicht abgehakt: der Kommentar verlangt

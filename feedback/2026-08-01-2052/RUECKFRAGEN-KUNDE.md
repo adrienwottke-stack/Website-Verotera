@@ -2,11 +2,18 @@
 
 **Feedback-Runde vom 01.08.2026** · Stand 03.08.2026
 
-Vielen Dank für das ausführliche Feedback — 95 Kommentare auf sechs Seiten. **75 davon sind
-umgesetzt.** Die restlichen 20 können wir nicht guten Gewissens umsetzen, ohne vorher eine
-Antwort von euch zu haben: Entweder fehlt die inhaltliche Vorgabe, oder es fehlt eine Datei.
-Wir raten grundsätzlich nicht — lieber einmal kurz nachfragen als etwas bauen, das wieder
-zurückgedreht werden muss.
+Vielen Dank für das ausführliche Feedback — 95 Kommentare auf sechs Seiten. **64 davon sind
+abgeschlossen.**
+
+**20 Punkte brauchen eine Antwort von euch**, bevor wir sie anfassen können: Entweder fehlt die
+inhaltliche Vorgabe, oder es fehlt eine Datei. Wir raten grundsätzlich nicht — lieber einmal
+kurz nachfragen als etwas bauen, das wieder zurückgedreht werden muss. Genau um diese Punkte
+geht es in diesem Dokument.
+
+**11 weitere Punkte liegen bei uns** (#128–#132 und #136–#141 auf der Seite „Agentische KI im
+Systems Engineering"): Die gelieferten Texte für die fünf Engineering-Core-Bereiche und die
+sechs Wissensgraph-Bausteine sind eingebaut, wir überarbeiten die Darstellung aber noch einmal
+und kommen dazu mit einem eigenen Vorschlag auf euch zu. Hier ist von eurer Seite nichts zu tun.
 
 Dazu kommen vier Punkte, die wir bereits umgesetzt haben, bei denen der Kommentar aber eine
 Wahlmöglichkeit offenließ. Dort haben wir eine Variante gewählt und bitten um eine kurze
@@ -21,12 +28,13 @@ Die Nummern (#75, #112 …) entsprechen den Kommentarnummern in Pastel.
 
 ## Auf einen Blick
 
-| Kategorie | Anzahl | Nummern |
-|---|---|---|
-| Entscheidung nötig | 14 | #75, #83, #88, #90, #91, #92, #93, #95, #96, #97, #112, #117, #164, #169 |
-| Fragen zu bereits umgesetzten Punkten | 2 | #133–#141, #165 + #89 |
-| Datei fehlt | 6 | #78, #94, #109, #160, #166, #167 |
-| Umgesetzt unter Annahme — bitte bestätigen | 4 | #86, #89, #102, #162 |
+| Kategorie | Anzahl | Nummern | Aktion bei euch? |
+|---|---|---|---|
+| Entscheidung nötig | 14 | #75, #83, #88, #90, #91, #92, #93, #95, #96, #97, #112, #117, #164, #169 | ja |
+| Fragen zu bereits eingebauten Punkten | 2 | #133–#141, #165 + #89 | ja |
+| Datei fehlt | 6 | #78, #94, #109, #160, #166, #167 | ja |
+| Umgesetzt unter Annahme — bitte bestätigen | 4 | #86, #89, #102, #162 | kurz gegenlesen |
+| In Überarbeitung bei uns | 11 | #128–#132, #136–#141 | nein |
 
 ---
 
@@ -204,9 +212,9 @@ in vier News-Beiträgen.
 
 ---
 
-# 2. Fragen zu bereits umgesetzten Punkten
+# 2. Fragen zu bereits eingebauten Punkten
 
-Diese Punkte sind wie geliefert umgesetzt — beim Einbauen ist uns aber jeweils ein Widerspruch
+Diese Punkte sind wie geliefert eingebaut — beim Umsetzen ist uns aber jeweils ein Widerspruch
 aufgefallen, den wir nicht still geglättet haben.
 
 ### #133–#141 — Sektionsüberschrift passt nicht zu den sechs Karten
@@ -226,6 +234,10 @@ Anforderungen. Inhaltlich sind das die Bausteine des Wissensgraphen — nicht Ti
 **Zusatzfrage:** Unter den Karten stehen noch drei Labels aus der alten Fassung
 („Human-in-the-Loop Gates", „Audit-Ready Traceability", „Continuous Knowledge Capture").
 Bleiben, ersetzen oder entfernen?
+
+*Hinweis: Die sechs Karten selbst (#136–#141) überarbeiten wir ohnehin noch — siehe Abschnitt 6.
+Für die Sektionsstruktur brauchen wir eure Antwort trotzdem, weil davon abhängt, ob es eine
+Sektion bleibt oder zwei werden.*
 
 ### #165 + #89 — Darf die IEA genannt werden?
 
@@ -312,10 +324,31 @@ ebenfalls entfallen?
 
 ---
 
+# 6. In Überarbeitung bei uns — keine Aktion nötig
+
+Elf Punkte auf der Seite „Agentische KI im Systems Engineering" sind noch nicht abgeschlossen,
+warten aber **nicht** auf euch:
+
+| Nr | Betrifft |
+|---|---|
+| **#128–#132** | Die fünf Verantwortungsbereiche der Engineering-Core-Sektion: Orchestrierung, Wissensgraph, Interpretation, Absicherung, Agent |
+| **#136–#141** | Die sechs Wissensgraph-Bausteine: Technologieklassen, Funktionsblöcke, Topologien, Regeln, Parametrische Modelle, Anforderungen |
+
+Die gelieferten Texte sind in beiden Blöcken eingebaut und auf der Seite sichtbar. Wir gehen die
+Darstellung aber noch einmal durch und melden uns dazu mit einem eigenen Vorschlag — deshalb
+führen wir die Punkte weiter als offen, damit sie nicht durchs Raster fallen.
+
+Einzige Ausnahme: Die Frage nach der Sektionsstruktur oberhalb der sechs Bausteine (#133–#141,
+Abschnitt 2) brauchen wir trotzdem von euch, weil davon abhängt, ob daraus eine Sektion bleibt
+oder zwei werden.
+
+---
+
 ## Was danach passiert
 
 Sobald die Antworten da sind, arbeiten wir die 20 offenen Punkte in einem Durchgang ab. Die
 Punkte aus Abschnitt 3 (fehlende Dateien) können wir unabhängig davon einbauen, sobald die
-Dateien vorliegen — dafür braucht es keine weitere Abstimmung.
+Dateien vorliegen — dafür braucht es keine weitere Abstimmung. Die elf Punkte aus Abschnitt 6
+kommen als eigener Vorschlag von uns zurück.
 
 Bei Rückfragen zu diesem Dokument: einfach direkt melden.

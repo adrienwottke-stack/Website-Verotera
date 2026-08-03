@@ -193,7 +193,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 15:29
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119580/
 
-### [x] #128 - desktop (1604px) - Thorsten Sigges
+### [ ] #128 - desktop (1604px) - Thorsten Sigges
 
 > 01 — Orchestrierung
 > Verantwortlich für den Ablauf: zerlegt die Aufgabe in Teilschritte, leitet jeden Schritt an den zuständigen Bereich und führt den Zustand des Workflows – welcher Schritt läuft, was offen ist, was entschieden wurde. Sie koordiniert, ohne selbst zu bewerten. (DE)
@@ -205,7 +205,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 15:30
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119581/
 
-### [x] #129 - desktop (1604px) - Thorsten Sigges
+### [ ] #129 - desktop (1604px) - Thorsten Sigges
 
 > 02 — Wissensgraph
 > Das auditierbare Substrat des Kerns: Domänenwissen, Regeln und Normen als strukturierter, relationaler Graph statt loser Dokumente. Hier liegt die nachvollziehbare Herleitung – referenzierbar und präziser als reine Embedding-Similarity. (DE)
@@ -217,7 +217,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 15:30
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119585/
 
-### [x] #130 - desktop (1604px) - Thorsten Sigges
+### [ ] #130 - desktop (1604px) - Thorsten Sigges
 
 > 03 — Interpretation
 > Interpretiert und normalisiert die Eingaben, legt implizite Annahmen und Zielkonflikte offen und plant die mehrstufige Bewertung. Das Modell versteht den Kontext; die Herleitung selbst liefert der Wissensgraph. (DE)
@@ -229,7 +229,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 15:31
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119591/
 
-### [x] #131 - desktop (1604px) - Thorsten Sigges
+### [ ] #131 - desktop (1604px) - Thorsten Sigges
 
 > 04 — Absicherung
 > Belastbarkeit statt Plausibilität: prüft die Ergebnisse gegen Evidenz, hinterlegte Regeln und definierte Prüfkriterien. Was die Prüfung nicht besteht, wird markiert und eskaliert – keine ungeprüfte Ausgabe. (DE)
@@ -240,7 +240,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 15:32
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119596/
 
-### [x] #132 - desktop (1604px) - Thorsten Sigges
+### [ ] #132 - desktop (1604px) - Thorsten Sigges
 
 > Verantwortungsbereich 5 hinzufügen!
 > 05 — Agent
@@ -281,7 +281,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 15:50
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119723/
 
-### [x] #136 - desktop (1604px) - Thorsten Sigges
+### [ ] #136 - desktop (1604px) - Thorsten Sigges
 
 > 01 — Technologieklassen
 > Si, SiC und GaN als strukturierte Klassen mit ihren Eigenschaften und Einsatzgrenzen – nicht als Datenblatt, sondern als vergleichbare, referenzierbare Objekte.
@@ -293,7 +293,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 16:06
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119818/
 
-### [x] #137 - desktop (1604px) - Thorsten Sigges
+### [ ] #137 - desktop (1604px) - Thorsten Sigges
 
 > 02 — Funktionsblöcke
 > Wiederkehrende Bausteine der Leistungselektronik – Gate-Treiber, Kühlpfad, Filter – als definierte Blöcke mit Schnittstellen und Randbedingungen.
@@ -305,7 +305,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 16:06
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119823/
 
-### [x] #138 - desktop (1604px) - Thorsten Sigges
+### [ ] #138 - desktop (1604px) - Thorsten Sigges
 
 > 03 — Topologien
 > Schaltungstopologien als eigenständige Objekte, mit ihren Spannungsstressfaktoren und Eignungsgrenzen – die Brücke zwischen Technologiewahl und Architektur.
@@ -317,7 +317,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 16:06
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119828/
 
-### [x] #139 - desktop (1604px) - Thorsten Sigges
+### [ ] #139 - desktop (1604px) - Thorsten Sigges
 
 > 04 — Regeln
 > Kodierte Ingenieurslogik: Bedingungen, die Technologien, Topologien und Anforderungen verknüpfen – prüfbar, versioniert, nachvollziehbar.
@@ -329,7 +329,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 16:07
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119831/
 
-### [x] #140 - desktop (1604px) - Thorsten Sigges
+### [ ] #140 - desktop (1604px) - Thorsten Sigges
 
 > 05 — Parametrische Modelle
 > Physikalische Zusammenhänge als parametrische Objekte – getrennt von den Regeln, sodass Berechnung und Entscheidungslogik nicht vermischt werden.
@@ -341,7 +341,7 @@ https://website-verotera.vercel.app/solutions/agentic-ai-engineering
 - **Erstellt:** 2026-07-27 16:07
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12119835/
 
-### [x] #141 - desktop (1604px) - Thorsten Sigges
+### [ ] #141 - desktop (1604px) - Thorsten Sigges
 
 > 06 — Anforderungen
 > Zielgrößen und Randbedingungen als strukturierte Objekte – normalisiert, auf Zielkonflikte geprüft und mit den übrigen Bausteinen verknüpft.
