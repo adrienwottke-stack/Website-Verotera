@@ -407,7 +407,7 @@ https://website-verotera.vercel.app/solutions/technology-spotlight-gallium-nitri
 - **Erstellt:** 2026-08-03 09:23
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12163949/
 
-### [ ] #173 - desktop (1904px) - Thorsten Sigges
+### [x] #173 - desktop (1904px) - Thorsten Sigges
 
 > Diesen Teil ebenso entfernen
 

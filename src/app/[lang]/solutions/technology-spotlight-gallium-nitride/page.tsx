@@ -81,13 +81,6 @@ const COPY: Record<
       ctaSub: string;
       ctaButton: string;
     };
-    consolidation: {
-      eyebrow: string;
-      headline: string;
-      events: { year: string; text: string }[];
-      stats: { value: string; title: string; label: string }[];
-      source: string;
-    };
     advantages: {
       eyebrow: string;
       headline: string;
@@ -226,38 +219,6 @@ const COPY: Record<
       ctaTitle: "800-VDC-Architektur im Detail",
       ctaSub: "Wie die Smart PDU und der Full-GaN-DC/DC-Wandler das AI-Rack versorgen.",
       ctaButton: "Zur Rack Power Distribution Unit",
-    },
-    consolidation: {
-      eyebrow: "Marktstruktur",
-      headline: "Marktstruktur & Ökosystem-Konsolidierung",
-      events: [
-        {
-          year: "2023",
-          text: "Infineon übernimmt GaN Systems ($830 Mio.) – vertikale Integration vom Bauelement bis zum Systemdesign.",
-        },
-        {
-          year: "2023",
-          text: "Renesas übernimmt Transphorm ($339 Mio.) – stärkt das Automotive- und Industrie-GaN-Portfolio.",
-        },
-        {
-          year: "2024",
-          text: "Innoscience erreicht 30 % Marktanteil. Liefert Epi-Wafer und fertige Bauelemente – größter vollintegrierter GaN-Hersteller.",
-        },
-        {
-          year: "2024",
-          text: "Infineon stellt die erste 300-mm-GaN-Wafertechnologie vor – Volumenfertigung ab 2025, klare Kostensenkungs-Trajektorie.",
-        },
-        {
-          year: "2025",
-          text: "NVIDIA formiert die 800-VDC-Lieferallianz: GaN-Chiphersteller werden strategische Partner für Rack-Leistung im MW-Maßstab bis 2027.",
-        },
-      ],
-      stats: [
-        { value: ">50 %", title: "Consumer / Mobile", label: "Anteil am Gesamtmarkt 2030" },
-        { value: "73 %", title: "Automotive", label: "CAGR 2024–2030" },
-        { value: "53 %", title: "Data Center + Telekom", label: "CAGR 2024–2030" },
-      ],
-      source: "Quelle: Yole Group Power GaN 2025; Bodo's Wide Bandgap Event 2025; Semiconductor Today, Okt. 2025",
     },
     advantages: {
       eyebrow: "Entscheidende Vorteile",
@@ -453,38 +414,6 @@ const COPY: Record<
       ctaTitle: "The 800 VDC architecture in detail",
       ctaSub: "How the smart PDU and the full-GaN DC/DC converter power the AI rack.",
       ctaButton: "Explore the rack power distribution unit",
-    },
-    consolidation: {
-      eyebrow: "Market Structure",
-      headline: "Market Structure & Ecosystem Consolidation",
-      events: [
-        {
-          year: "2023",
-          text: "Infineon acquires GaN Systems ($830M) — vertical integration from device to system-level design.",
-        },
-        {
-          year: "2023",
-          text: "Renesas acquires Transphorm ($339M) — strengthens the automotive and industrial GaN portfolio.",
-        },
-        {
-          year: "2024",
-          text: "Innoscience reaches 30% market share. Supplies epi wafers and finished devices — the largest fully integrated GaN manufacturer.",
-        },
-        {
-          year: "2024",
-          text: "Infineon introduces the first 300 mm GaN wafer technology — volume production in 2025, a clear cost-reduction trajectory.",
-        },
-        {
-          year: "2025",
-          text: "NVIDIA forms the 800 VDC supplier alliance: GaN chipmakers become strategic partners for MW-scale rack power by 2027.",
-        },
-      ],
-      stats: [
-        { value: ">50%", title: "Consumer / mobile", label: "Share of total 2030 market" },
-        { value: "73%", title: "Automotive", label: "CAGR 2024–2030" },
-        { value: "53%", title: "Data center + telecom", label: "CAGR 2024–2030" },
-      ],
-      source: "Source: Yole Group Power GaN 2025; Bodo's Wide Bandgap Event 2025; Semiconductor Today, Oct 2025",
     },
     advantages: {
       eyebrow: "Key Advantages",
@@ -862,49 +791,6 @@ export default async function GaNSpotlightPage({
                 {t.trend2.ctaButton} <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
-          </div>
-        </section>
-
-        {/* 8 — Marktstruktur & Konsolidierung (Timeline + Pattern D Stats) */}
-        <section className="relative py-24 sm:py-32 bg-white overflow-hidden">
-          <BrandWatermark position="top-right" tint="blue" size={460} opacity={0.05} />
-
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <Reveal className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
-                {t.consolidation.eyebrow}
-              </span>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight">
-                {t.consolidation.headline}
-              </h2>
-            </Reveal>
-
-            <div className="max-w-3xl mx-auto space-y-4">
-              {t.consolidation.events.map((event, i) => (
-                <Reveal key={event.text} delay={i * 0.12}>
-                  <div className="flex items-start gap-5 p-6 rounded-2xl border border-brand-navy/8 bg-white shadow-sm">
-                    <span className="font-display text-lg font-bold text-brand-cyan leading-none shrink-0 w-14 pt-0.5">
-                      {event.year}
-                    </span>
-                    <p className="font-sans text-sm sm:text-base text-brand-navy/70 leading-relaxed">{event.text}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-
-            <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-12 max-w-4xl mx-auto">
-              {t.consolidation.stats.map((stat, i) => (
-                <Reveal key={stat.title} delay={i * 0.12} className="flex flex-col items-center text-center">
-                  <span className="font-display text-4xl sm:text-5xl font-extrabold text-brand-cyan leading-none mb-3">
-                    {stat.value}
-                  </span>
-                  <span className="font-sans text-base text-brand-navy/70">{stat.title}</span>
-                  <p className="font-sans text-sm text-brand-navy/40">{stat.label}</p>
-                </Reveal>
-              ))}
-            </div>
-
-            <p className="mt-14 text-center font-sans text-sm text-brand-navy/40">{t.consolidation.source}</p>
           </div>
         </section>
 
