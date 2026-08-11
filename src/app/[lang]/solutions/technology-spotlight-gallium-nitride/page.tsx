@@ -7,7 +7,6 @@ import {
   Atom,
   Box,
   Check,
-  CheckCircle2,
   ChevronRight,
   CircuitBoard,
   Coins,
@@ -86,14 +85,6 @@ const COPY: Record<
       headline: string;
       cards: { title: string; text: string }[];
       source: string;
-    };
-    roadmap: {
-      eyebrow: string;
-      headline: string;
-      body: string;
-      phases: { period: string; items: string[] }[];
-      quote: string;
-      quoteSource: string;
     };
   }
 > = {
@@ -260,43 +251,6 @@ const COPY: Record<
       source:
         "Quellen: Bodo's Power Systems Okt. 2024 (EPC, Fraunhofer IAF); Yole Group 2025; Power Integrations; Navitas; STMicroelectronics; Renesas",
     },
-    roadmap: {
-      eyebrow: "Ausblick & Technologie-Roadmap",
-      headline: "Von der Technologieverheißung zur Produktionsrealität",
-      body: "Das Jahrzehnt der Leistungselektronik-Transformation.",
-      phases: [
-        {
-          period: "Jetzt – 2026",
-          items: [
-            "800-VDC-KI-Rack-Deployments starten (NVIDIA, OCP)",
-            "650-V-GaN Standard in AC-DC- und DC-DC-PSUs",
-            "GaN-OBCs gehen in Automotive-Serienproduktion",
-            "300-mm-GaN-on-Si-Volumenanlauf (Infineon 2025)",
-          ],
-        },
-        {
-          period: "2026 – 2028",
-          items: [
-            "1.250-V-GaN weitverbreitet in 800-VDC-Rechenzentren",
-            "Automotive-GaN-Traktionswechselrichter-Prototypen",
-            "Vertikale GaN-CAVETs in der Vorserie",
-            "GaN-Stückkosten nähern sich Si-IGBT im mittleren Leistungsbereich",
-          ],
-        },
-        {
-          period: "2028 – 2030+",
-          items: [
-            "Power-GaN-Markt ~$3 Mrd. (Yole Group)",
-            "Vertikales GaN fordert SiC oberhalb von 1.200 V heraus",
-            "Vollständige End-to-End-HVDC-Architektur im KI-Rechenzentrum",
-            "GaN Standardwahl für Leistungskonvertierung <800 V",
-          ],
-        },
-      ],
-      quote:
-        "“The combination of AI, electrification, and sustainable development goals makes GaN indispensable in next-generation server and telecommunications power systems.”",
-      quoteSource: "— Roy Dagher, Yole Group",
-    },
   },
   en: {
     heroEyebrow: "Solutions",
@@ -454,43 +408,6 @@ const COPY: Record<
       ],
       source:
         "Sources: Bodo's Power Systems Oct 2024 (EPC, Fraunhofer IAF); Yole Group 2025; Power Integrations; Navitas; STMicroelectronics; Renesas",
-    },
-    roadmap: {
-      eyebrow: "Outlook & Technology Roadmap",
-      headline: "From promise to production reality",
-      body: "The decade of power electronics transformation.",
-      phases: [
-        {
-          period: "Now – 2026",
-          items: [
-            "800 VDC AI rack deployments begin (NVIDIA, OCP)",
-            "650 V GaN standard in AC-DC and DC-DC PSUs",
-            "GaN OBCs enter automotive mass production",
-            "300 mm GaN-on-Si volume ramp (Infineon 2025)",
-          ],
-        },
-        {
-          period: "2026 – 2028",
-          items: [
-            "1,250 V GaN widespread in 800 VDC data centers",
-            "Automotive GaN traction inverter pilots",
-            "Vertical GaN CAVETs at pre-commercial stage",
-            "GaN unit cost approaches Si IGBT in mid-power",
-          ],
-        },
-        {
-          period: "2028 – 2030+",
-          items: [
-            "Power GaN market ~$3B (Yole Group)",
-            "Vertical GaN challenges SiC above 1,200 V",
-            "Full end-to-end HVDC data center architecture",
-            "GaN default choice for <800 V power conversion",
-          ],
-        },
-      ],
-      quote:
-        "“The combination of AI, electrification, and sustainable development goals makes GaN indispensable in next-generation server and telecommunications power systems.”",
-      quoteSource: "— Roy Dagher, Yole Group",
     },
   },
 };
@@ -826,53 +743,6 @@ export default async function GaNSpotlightPage({
             </div>
 
             <p className="mt-10 text-center font-sans text-sm text-brand-navy/40">{t.advantages.source}</p>
-          </div>
-        </section>
-
-        {/* 10 — Ausblick & Technologie-Roadmap (Pattern C: 3 Phasen + Zitat) */}
-        <section className="relative py-24 sm:py-32 bg-white overflow-hidden">
-          <BrandWatermark position="bottom-left" tint="navy" size={460} opacity={0.045} />
-          <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-brand-blue/[0.05] rounded-full blur-[120px] pointer-events-none" />
-
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <Reveal className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
-                {t.roadmap.eyebrow}
-              </span>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight mb-6">
-                {t.roadmap.headline}
-              </h2>
-              <p className="font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed max-w-3xl mx-auto">
-                {t.roadmap.body}
-              </p>
-            </Reveal>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {t.roadmap.phases.map((phase, i) => (
-                <Reveal key={phase.period} delay={i * 0.12}>
-                  <div className="h-full p-6 rounded-2xl border border-brand-navy/8 bg-white shadow-sm">
-                    <h3 className="font-display text-lg font-bold text-brand-navy leading-tight mb-4">
-                      {phase.period}
-                    </h3>
-                    <ul className="space-y-2.5">
-                      {phase.items.map((item) => (
-                        <li key={item} className="flex items-start gap-2.5">
-                          <CheckCircle2 className="w-5 h-5 text-brand-cyan shrink-0 mt-0.5" />
-                          <span className="font-sans text-sm text-brand-navy/70">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-
-            <Reveal className="mt-16 sm:mt-20">
-              <blockquote className="font-display text-2xl sm:text-3xl font-bold text-brand-navy text-center max-w-4xl mx-auto leading-snug">
-                {t.roadmap.quote}
-              </blockquote>
-              <p className="mt-4 text-center font-sans text-sm text-brand-navy/40">{t.roadmap.quoteSource}</p>
-            </Reveal>
           </div>
         </section>
 
