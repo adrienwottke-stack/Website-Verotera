@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   Activity,
-  ArrowDown,
   ArrowRight,
   Atom,
   Bot,
@@ -73,17 +72,6 @@ const COPY: Record<
       eyebrow: string;
       headline: string;
       body: string;
-      source: string;
-    };
-    trend1: {
-      eyebrow: string;
-      headline: string;
-      body: string;
-      blocks: { title: string; text: string }[];
-      stackTitle: string;
-      stackLayers: string[];
-      stackFlow: string;
-      stackAdvantage: string;
       source: string;
     };
     trend2: {
@@ -212,41 +200,6 @@ const COPY: Record<
       headline: "Schlüsselparameter im Vergleich",
       body: "Hervorgehobene Zellen markieren den stärksten Vorteil in der jeweiligen Kategorie.",
       source: "Quelle: Yole Group; EPC; Infineon; Fraunhofer IAF",
-    },
-    trend1: {
-      eyebrow: "Trend 1 · Fraunhofer IAF – Bodo's Power Systems, Oktober 2024",
-      headline: "Vertikale GaN Power-ICs",
-      body: "Ko-Integration lateraler HEMT-Gate-Treiber mit vertikalen CAVET-Transistoren auf einem einzigen GaN-on-GaN-Chip.",
-      blocks: [
-        {
-          title: "Das Problem",
-          text: "Laterale GaN-HEMTs sind auf ~650 V Durchbruchspannung begrenzt – das schränkt den Einsatz in Systemen höherer Leistung ein. In lateralen Strukturen muss die Chipfläche linear mit der Spannung wachsen.",
-        },
-        {
-          title: "Die CAVET-Struktur",
-          text: "Der Current Aperture Vertical Electron Transistor erhöht die Durchbruchspannung ohne Vergrößerung der Chipfläche. Die Feldspitze wandert von der Oberfläche in das Substrat – Zuverlässigkeit und Thermomanagement verbessern sich.",
-        },
-        {
-          title: "Fraunhofer-IAF-Resultat",
-          text: "500 kHz / 40 V Schaltbetrieb im Doppelpuls-Test demonstriert. Ko-integrierter HEMT-Push-Pull-Gate-Treiber plus Sense-CAVET zur Stromüberwachung – alles auf einem einzigen 2-Zoll-GaN-on-GaN-Wafer.",
-        },
-        {
-          title: "Kommerzialisierungsbarriere",
-          text: "GaN-Substratkosten von ~$40–60/cm² vs. ~$7/cm² bei SiC und ~$1/cm² bei GaN-on-Si. Die Kostensenkung nativer GaN-Substrate ist der kritische Pfad zur kommerziellen Reife.",
-        },
-      ],
-      stackTitle: "CAVET + HEMT – vereinfachter Schichtaufbau",
-      stackLayers: [
-        "AlGaN/GaN-Cap – HEMT-Gate",
-        "uid-GaN-Kanal",
-        "p-GaN-Stromsperrschicht (Mg)",
-        "n⁻-GaN-Driftzone",
-        "n⁺-GaN-Substrat (Homoepitaxie)",
-      ],
-      stackFlow: "Vertikaler Stromfluss (Source → Drain)",
-      stackAdvantage: "Kernvorteil: Spannungsskalierung ohne Wachstum der Chipfläche",
-      source:
-        "Ref: Basler, Reiner, Mönch, Döring – Fraunhofer IAF. Bodo's Power Systems, Okt. 2024. IEEE Electron Device Letters, doi:10.1109/LED.2023.3290608",
     },
     trend2: {
       eyebrow: "Trend 2 · AI Data Centers – OCP Global Summit 2025",
@@ -512,41 +465,6 @@ const COPY: Record<
       headline: "Key parameters compared",
       body: "Highlighted cells mark the strongest advantage in each category.",
       source: "Source: Yole Group; EPC; Infineon; Fraunhofer IAF",
-    },
-    trend1: {
-      eyebrow: "Trend 1 · Fraunhofer IAF — Bodo's Power Systems, October 2024",
-      headline: "Vertical GaN Power ICs",
-      body: "Co-integrating lateral HEMT gate drivers with vertical CAVET transistors on a single GaN-on-GaN chip.",
-      blocks: [
-        {
-          title: "The problem",
-          text: "Lateral GaN HEMTs are limited to ~650 V breakdown voltage, constraining use in higher-power systems. In lateral structures, chip area must grow linearly with voltage.",
-        },
-        {
-          title: "The CAVET structure",
-          text: "The Current Aperture Vertical Electron Transistor increases breakdown voltage without enlarging chip area. The peak electric field moves from the surface into the bulk substrate — improving reliability and thermal management.",
-        },
-        {
-          title: "Fraunhofer IAF result",
-          text: "500 kHz / 40 V switching demonstrated in a double-pulse test setup. Co-integrated HEMT push-pull gate driver plus sense CAVET for current monitoring — all on a single 2-inch GaN-on-GaN wafer.",
-        },
-        {
-          title: "Key commercialization barrier",
-          text: "GaN substrate cost of ~$40–60/cm² vs. ~$7/cm² for SiC and ~$1/cm² for GaN-on-Si. Cost reduction of native GaN substrates is the critical path to commercial viability.",
-        },
-      ],
-      stackTitle: "CAVET + HEMT — simplified layer stack",
-      stackLayers: [
-        "AlGaN/GaN cap — HEMT gate",
-        "uid GaN channel",
-        "p-GaN current blocking (Mg)",
-        "n⁻ GaN drift zone",
-        "n⁺ GaN substrate (homoepitaxy)",
-      ],
-      stackFlow: "Vertical current flow (source → drain)",
-      stackAdvantage: "Key advantage: voltage scalability without chip area growth",
-      source:
-        "Ref: Basler, Reiner, Mönch, Döring — Fraunhofer IAF. Bodo's Power Systems, Oct 2024. IEEE Electron Device Letters, doi:10.1109/LED.2023.3290608",
     },
     trend2: {
       eyebrow: "Trend 2 · AI Data Centers — OCP Global Summit 2025",
@@ -957,73 +875,6 @@ export default async function GaNSpotlightPage({
             </Reveal>
 
             <p className="mt-10 text-center font-sans text-sm text-brand-navy/40">{t.matrix.source}</p>
-          </div>
-        </section>
-
-        {/* 5 — Trend 1: Vertikale GaN Power-ICs (Pattern B: Split Diagramm ↔ Text) */}
-        <section className="relative py-24 sm:py-32 bg-white overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <Reveal className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
-                {t.trend1.eyebrow}
-              </span>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight mb-6">
-                {t.trend1.headline}
-              </h2>
-              <p className="font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed max-w-3xl mx-auto">
-                {t.trend1.body}
-              </p>
-            </Reveal>
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-              {/* Layer-Stack-Diagramm (links) */}
-              <Reveal className="lg:col-span-5">
-                <div className="p-6 rounded-2xl border border-brand-navy/8 bg-white shadow-sm">
-                  <h3 className="font-display text-base font-bold text-brand-navy leading-tight mb-4 text-center">
-                    {t.trend1.stackTitle}
-                  </h3>
-                  <div className="space-y-1.5">
-                    {t.trend1.stackLayers.map((layer, i) => (
-                      <div
-                        key={layer}
-                        className={`rounded-lg border px-4 py-2.5 text-center font-sans text-xs sm:text-sm ${
-                          i === 0
-                            ? "border-brand-cyan/20 bg-brand-cyan/10 font-semibold text-brand-navy"
-                            : "border-brand-navy/8 bg-surface-light text-brand-navy/70"
-                        }`}
-                      >
-                        {layer}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-4 flex items-center justify-center gap-2">
-                    <ArrowDown className="w-4 h-4 text-brand-cyan shrink-0" />
-                    <span className="font-sans text-xs font-semibold text-brand-navy/70">{t.trend1.stackFlow}</span>
-                  </div>
-                  <p className="mt-4 pt-4 border-t border-brand-navy/8 text-center font-sans text-xs font-semibold text-brand-navy">
-                    {t.trend1.stackAdvantage}
-                  </p>
-                </div>
-              </Reveal>
-
-              {/* Textblöcke (rechts) */}
-              <Reveal delay={0.12} className="lg:col-span-7">
-                <div className="space-y-6">
-                  {t.trend1.blocks.map((block) => (
-                    <div key={block.title}>
-                      <h3 className="font-display text-base font-bold text-brand-navy leading-tight mb-1.5">
-                        {block.title}
-                      </h3>
-                      <p className="font-sans text-sm sm:text-base text-brand-navy/70 leading-relaxed">
-                        {block.text}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </Reveal>
-            </div>
-
-            <p className="mt-10 text-center font-sans text-xs text-brand-navy/55">{t.trend1.source}</p>
           </div>
         </section>
 
