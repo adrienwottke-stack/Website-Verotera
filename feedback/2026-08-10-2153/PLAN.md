@@ -123,10 +123,10 @@ nächsten Eyebrow. Ausgelassen wurde bewusst „Trend 2" (800-VDC-Rack mit CTA a
 | Nr | Kategorie | Datei / Stelle | Sprache | Stand | Begründung |
 |---|---|---|---|---|---|
 | #169 | **ENTSCHEIDUNG** | `GAN` + `SIC` (ganze Seiten) + 6 Verweisstellen | — | ⬜ | Wie bei #97 offen, ob gelöscht oder nur entlinkt wird — mit SEO- und Redirect-Folgen. |
-| #171 | UMSETZBAR | `GAN` JSX 963–1028 + COPY 216–250 (de) / 516–550 (en) + Typ 78–88 | beides | ⬜ | Rahmen auf „TREND 1 · FRAUNHOFER IAF" = Sektion „Vertikale GaN Power-ICs", reine Fremdquelle. |
-| #172 | UMSETZBAR | `GAN` JSX 1104–1152 + COPY 288–325 / 588–625 + Typ 100–106 | beides | ⬜ | Rahmen auf „TREND 3 · EPC" = Sektion „GaN in humanoider Robotik" (3 Karten). |
-| #173 | UMSETZBAR | `GAN` JSX 1154–1195 + COPY 326–357 / 626–657 + Typ 107–113 | beides | ⬜ | Rahmen auf „MARKTSTRUKTUR" = Sektion „Marktstruktur & Ökosystem-Konsolidierung". |
-| #174 | UMSETZBAR | `GAN` JSX 1232–1277 + COPY 398–435 / 698–735 + Typ 120–127 | beides | ⬜ | Rahmen auf „AUSBLICK & TECHNOLOGIE-ROADMAP" = Sektion „Von der Technologieverheißung zur Produktionsrealität". |
+| #171 | UMSETZBAR | `GAN` JSX 963–1028 + COPY 216–250 (de) / 516–550 (en) + Typ 78–88 | beides | ✅ | Rahmen auf „TREND 1 · FRAUNHOFER IAF" = Sektion „Vertikale GaN Power-ICs", reine Fremdquelle. |
+| #172 | UMSETZBAR | `GAN` JSX 1104–1152 + COPY 288–325 / 588–625 + Typ 100–106 | beides | ✅ | Rahmen auf „TREND 3 · EPC" = Sektion „GaN in humanoider Robotik" (3 Karten). |
+| #173 | UMSETZBAR | `GAN` JSX 1154–1195 + COPY 326–357 / 626–657 + Typ 107–113 | beides | ✅ | Rahmen auf „MARKTSTRUKTUR" = Sektion „Marktstruktur & Ökosystem-Konsolidierung". |
+| #174 | UMSETZBAR | `GAN` JSX 1232–1277 + COPY 398–435 / 698–735 + Typ 120–127 | beides | ✅ | Rahmen auf „AUSBLICK & TECHNOLOGIE-ROADMAP" = Sektion „Von der Technologieverheißung zur Produktionsrealität". |
 
 **Zwischensumme:** 4 UMSETZBAR · 1 ENTSCHEIDUNG
 
@@ -283,10 +283,14 @@ der ganze Wasserstoff-Abschnitt der SiC-Seite, sowie die Keywords in `layout.tsx
 
 | Stand | Anzahl | Nummern |
 |---|---|---|
-| ✅ umgesetzt und verifiziert | **22** | #76, #77, #79, #80, #81, #84, #85, #98, #99, #100, #101, #103, #104, #105, #106, #107, #108, #110, #161, #163, #165, #168 |
+| ✅ umgesetzt und verifiziert | **26** | #76, #77, #79, #80, #81, #84, #85, #98, #99, #100, #101, #103, #104, #105, #106, #107, #108, #110, #161, #163, #165, #168 + **#171–#174 (am 2026-08-11 in dieser Runde umgesetzt)** |
 | ⚠️ umgesetzt unter einer Annahme | **5** | #86, #89, #102, #117, #162 |
-| ⬜ offen, **machbar** | **4** | #171, #172, #173, #174 |
 | ⬜ offen, **blockiert** | **22** | 14 × ENTSCHEIDUNG, 5 × ASSET_FEHLT, 2 × HINFÄLLIG, 1 × UNKLAR |
+
+> **Update 2026-08-11:** #171–#174 wurden auf ausdrückliche Anweisung umgesetzt, obwohl #169
+> (Seiten löschen oder entlinken?) noch offen ist. Wird #169 mit „löschen" beantwortet, sind die
+> vier Commits obsolet — sie kosten dann nichts, die Seite verschwindet ohnehin. In FEEDBACK.md
+> sind alle 26 UMSETZBAR-Punkte abgehakt (22 davon stammen aus der Vorrunde 2026-08-01-2052).
 
 ---
 
@@ -312,7 +316,7 @@ der ganze Wasserstoff-Abschnitt der SiC-Seite, sowie die Keywords in `layout.tsx
 
 ## Was jetzt zu tun ist
 
-**Ohne Rückfrage machbar (4 Punkte):** #171, #172, #173, #174 — aber erst, wenn #169 beantwortet ist.
+**Ohne Rückfrage machbar (4 Punkte):** #171, #172, #173, #174 — ✅ **erledigt am 2026-08-11** (auf Anweisung vor der #169-Antwort; siehe Update oben).
 
 **Antwort nötig (14 Punkte):** #75, #83, #88, #90, #91, #92, #93, #95, #96, #97, #164, #169, #175, #176
 Davon sind #169, #175, #176 neu und blockieren jeweils weitere Punkte — sie zuerst.

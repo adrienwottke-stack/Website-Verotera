@@ -41,7 +41,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-24 12:38
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12108274/
 
-### [ ] #76 - desktop (1582px) - Aly Mashaly
+### [x] #76 - desktop (1582px) - Aly Mashaly
 
 > Ich würde hier die Zeit des Wechsels redzieren
 
@@ -49,7 +49,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-24 14:04
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12108477/
 
-### [ ] #77 - desktop (1582px) - Aly Mashaly
+### [x] #77 - desktop (1582px) - Aly Mashaly
 
 > die Pfeile waren für mich nicht sofort sichtbar. Am besten die Pfeile nach oben schieben, etwas vergrößen und rechts und links vom Bild platzieren. Sodass sie sichtbarer werden.
 
@@ -65,7 +65,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-24 14:19
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12108537/
 
-### [ ] #79 - desktop (1904px) - Thorsten Sigges
+### [x] #79 - desktop (1904px) - Thorsten Sigges
 
 > (Bereich: Hero-Header) "AI-Enhanced WBG Semiconductor Engineering" (DE und EN)
 
@@ -73,7 +73,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-24 14:40
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12108629/
 
-### [ ] #80 - desktop (1904px) - Thorsten Sigges
+### [x] #80 - desktop (1904px) - Thorsten Sigges
 
 > (Bereich Sub-Header) "Collaborative Intelligence - das System begründet, der Mensch entscheidet und verantwortet" (DE) "Collaborative Intelligence - the system provides the reasoning, the engineer decides and is accountable" (EN)
 
@@ -81,7 +81,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-24 14:40
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12108635/
 
-### [ ] #81 - desktop (1904px) - Thorsten Sigges
+### [x] #81 - desktop (1904px) - Thorsten Sigges
 
 > (Bereich: "Value Proposition") "Technologiepfade früh bewerten, die Begründung inklusive - aus Regeln, Normen und Annahmen" (DE) "Evaluate technology paths early - reasoning included, grounded in rules, standards and assumptions" (EN)
 
@@ -105,7 +105,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-24 15:05
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12108754/
 
-### [ ] #84 - desktop (1582px) - Aly Mashaly
+### [x] #84 - desktop (1582px) - Aly Mashaly
 
 > der Satz vom Smart PDU kann komplett weg
 
@@ -113,7 +113,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-24 17:13
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12109995/
 
-### [ ] #85 - desktop (1582px) - Aly Mashaly
+### [x] #85 - desktop (1582px) - Aly Mashaly
 
 > der zweite Satz (Vom Chip bis zum System....) kann auch weg.
 
@@ -164,7 +164,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-24 17:59
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12110412/
 
-### [ ] #98 - desktop (1604px) - Thorsten Sigges
+### [x] #98 - desktop (1604px) - Thorsten Sigges
 
 > Eyebrow (kleine Schrift)
 > „Früher. Belegbar. Belastbar.“ (DE)
@@ -174,7 +174,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 09:54
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12117985/
 
-### [ ] #99 - desktop (1904px) - Thorsten Sigges
+### [x] #99 - desktop (1904px) - Thorsten Sigges
 
 > Headline
 > „Technologieentscheidungen in der Konzeptphase“ (DE)
@@ -184,7 +184,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 09:56
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12117990/
 
-### [ ] #100 - desktop (1904px) - Thorsten Sigges
+### [x] #100 - desktop (1904px) - Thorsten Sigges
 
 > Text
 > „In der sehr frühen Konzeptphase werden Systemanforderungen und Randbedingungen normalisiert, implizite Annahmen und Zielkonflikte identifiziert und SiC/GaN-Technologiepfade gegen abgeleitete Kriterien bewertet – qualitativ bis semi-quantitativ, mit expliziter Unsicherheitskennzeichnung. Ausgabe ist ein System Design Concept samt Trade-off-Bewertung, Annahmen- und Risikoübersicht. Die Entscheidungsverantwortung verbleibt beim Ingenieur.“
@@ -195,7 +195,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 09:56
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12117991/
 
-### [ ] #101 - desktop (1904px) - Thorsten Sigges
+### [x] #101 - desktop (1904px) - Thorsten Sigges
 
 > „AI-Enhanced Engineering“  statt "Agentic AI"
 
@@ -211,7 +211,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 10:02
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12118015/
 
-### [ ] #103 - desktop (1604px) - Thorsten Sigges
+### [x] #103 - desktop (1604px) - Thorsten Sigges
 
 > Eyebrow
 > Collaborative Intelligence – ein neuro-symbolischer Ansatz (DE)
@@ -221,7 +221,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 10:52
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12118229/
 
-### [ ] #104 - desktop (1604px) - Thorsten Sigges
+### [x] #104 - desktop (1604px) - Thorsten Sigges
 
 > Headline
 > „Die KI erweitert das Ingenieururteil – Von der Empfehlung zur belegten Entscheidungsgrundlage – nachvollziehbar und reproduzierbar.“ (DE)
@@ -231,7 +231,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 10:52
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12118231/
 
-### [ ] #105 - desktop (1604px) - Thorsten Sigges
+### [x] #105 - desktop (1604px) - Thorsten Sigges
 
 > Header
 > „Human-in-the-Loop by design“ (DE/EN)
@@ -241,7 +241,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 10:56
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12118248/
 
-### [ ] #106 - desktop (1604px) - Thorsten Sigges
+### [x] #106 - desktop (1604px) - Thorsten Sigges
 
 > „VEROTERA strukturiert die folgenreichste Entscheidung der frühen Entwicklungsphase: die Wide-Bandgap-Technologieauswahl – bewertet, begründet und auf ihre Quellen zurückführbar.“ (DE)
 > „VEROTERA brings structure to the most consequential decision of the early development phase: the Wide-Bandgap technology choice – assessed, justified and traceable to ist sources.“ (EN)
@@ -250,7 +250,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 11:25
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12118369/
 
-### [ ] #107 - desktop (1604px) - Thorsten Sigges
+### [x] #107 - desktop (1604px) - Thorsten Sigges
 
 > Nur 4 Punkte auflisten:
 > •	Weniger teure und zeitintensive Redesign-Schleifen durch belastbare Frühentscheidungen
@@ -267,7 +267,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 11:26
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12118371/
 
-### [ ] #108 - desktop (1604px) - Thorsten Sigges
+### [x] #108 - desktop (1604px) - Thorsten Sigges
 
 > „So wird aus einer riskanten Frühentscheidung eine dokumentierte, überprüfbare Grundlage – die einem Review standhält“ (DE)
 > 
@@ -285,7 +285,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 12:16
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12118568/
 
-### [ ] #110 - desktop (1604px) - Thorsten Sigges
+### [x] #110 - desktop (1604px) - Thorsten Sigges
 
 > Hier "AI-Enhanced WBG Semiconductor Engineering" einfügen
 
@@ -293,7 +293,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 12:19
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12118587/
 
-### [ ] #161 - desktop (1604px) - Thorsten Sigges
+### [x] #161 - desktop (1604px) - Thorsten Sigges
 
 > Komplett löschen... wir gehen auf das Thema im Bereich "Engineering Core" ein - an dieser Stelle nur der Fokus auf WBG
 
@@ -309,7 +309,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-28 10:10
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12127076/
 
-### [ ] #163 - desktop (1688px) - Aly Mashaly
+### [x] #163 - desktop (1688px) - Aly Mashaly
 
 > Patente muss man nicht extra schreiben.
 
@@ -428,7 +428,7 @@ https://website-verotera.vercel.app/solutions/technology-spotlight-gallium-nitri
 ## Seite `https://website-verotera.vercel.app/solutions/rack-power-distribution` (3 Punkte)
 
 https://website-verotera.vercel.app/solutions/rack-power-distribution
-### [ ] #165 - desktop (1406px) - Aly Mashaly
+### [x] #165 - desktop (1406px) - Aly Mashaly
 
 > Künstliche Intelligenz verändert nahezu alle Branchen in einem noch nie dagewesenen Tempo – und die Rechenzentren, die diese Revolution antreiben, wachsen ebenso rasant. Während das Training früherer, kleinerer KI-Modelle noch dem Jahresverbrauch von rund 100 bis 200 Haushalten entsprach, ziehen moderne KI-Trainingscluster heute dauerhaft 100 bis 300 Megawatt Leistung – das entspricht dem Strombedarf von zehntausenden Haushalten. Einzelne neue Rechenzentrumsprojekte erreichen sogar Leistungen von 300 bis 500 Megawatt, was dem Verbrauch mittelgroßer Städte mit mehreren hunderttausend Einwohnern gleichkommt.
 > 
@@ -446,7 +446,7 @@ https://website-verotera.vercel.app/solutions/rack-power-distribution
 - **Erstellt:** 2026-07-31 11:43
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12155220/
 
-### [ ] #168 - desktop (1688px) - Aly Mashaly
+### [x] #168 - desktop (1688px) - Aly Mashaly
 
 > Ich würde diesen Teil komplett erstmal rausnehmen.
 
