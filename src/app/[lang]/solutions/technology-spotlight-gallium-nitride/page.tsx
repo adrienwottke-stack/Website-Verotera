@@ -5,19 +5,16 @@ import {
   Activity,
   ArrowRight,
   Atom,
-  Bot,
   Box,
   Check,
   CheckCircle2,
   ChevronRight,
   CircuitBoard,
   Coins,
-  Cpu,
   Factory,
   Gauge,
   Globe,
   Layers,
-  Radar,
   Thermometer,
   Zap,
 } from "lucide-react";
@@ -32,7 +29,6 @@ import { hasLang, localePath, type Lang } from "@/lib/i18n";
 import { buildMetadata, type PageMeta } from "@/lib/seo";
 
 const PHYSICS_ICONS = [Atom, Layers, Zap, Coins];
-const ROBOTICS_ICONS = [Bot, Radar, Cpu];
 const ADVANTAGE_ICONS = [Zap, Gauge, Box, Activity, CircuitBoard, Factory, Thermometer, Globe];
 
 const COPY: Record<
@@ -84,13 +80,6 @@ const COPY: Record<
       ctaTitle: string;
       ctaSub: string;
       ctaButton: string;
-    };
-    trend3: {
-      eyebrow: string;
-      headline: string;
-      body: string;
-      cards: { title: string; subtitle: string; items: string[] }[];
-      source: string;
     };
     consolidation: {
       eyebrow: string;
@@ -237,44 +226,6 @@ const COPY: Record<
       ctaTitle: "800-VDC-Architektur im Detail",
       ctaSub: "Wie die Smart PDU und der Full-GaN-DC/DC-Wandler das AI-Rack versorgen.",
       ctaButton: "Zur Rack Power Distribution Unit",
-    },
-    trend3: {
-      eyebrow: "Trend 3 · EPC – Bodo's Power Systems, Oktober 2024",
-      headline: "GaN in humanoider Robotik",
-      body: "Drei Leistungsdomänen, ein Technologiewechsel: Motorsteuerung, LiDAR und Onboard-DC-DC.",
-      cards: [
-        {
-          title: "Motorsteuerung",
-          subtitle: "~40 BLDC-Motoren pro Roboter",
-          items: [
-            "10–100-mal schnelleres Schalten als Si-MOSFETs",
-            "QRR = 0: Totzeiten im Nanosekundenbereich, keine akustischen Störgeräusche",
-            "EPC23102: monolithisches GaN-IC – Transistor, Treiber und Schutz auf einem Die",
-            "EPC9176: 400-W-Dreiphasen-Inverter, 14–85 V, 20 A Ausgangsstrom",
-          ],
-        },
-        {
-          title: "LiDAR",
-          subtitle: "3D-Raumerfassung",
-          items: [
-            "100-mal schneller als Si – höhere Auflösung und Framerate",
-            "Höhere Stromdichte für Laserpulse mit großer Reichweite",
-            "EPC21601: 15-A/40-V-GaN-Lasertreiber, Betrieb >100 MHz",
-            "Chip-Scale-Package mit 1 mm × 1,5 mm: minimale parasitäre Induktivität",
-          ],
-        },
-        {
-          title: "AI-Brain DC-DC",
-          subtitle: "Onboard-Rechenleistung",
-          items: [
-            "GaN-DC-DC-Wandler mit >5.000 W/in³ Leistungsdichte",
-            "EPC9159-Referenz: 23 × 18 mm Board, 1 kW Dauerleistung",
-            "Spitzenwirkungsgrad >97,5 % bei 12 V / 1 kW",
-            "Gleiche Architektur wie in AI-Server-Netzteilen",
-          ],
-        },
-      ],
-      source: "Quelle: Alex Lidow, Ph.D. (EPC CEO) – Bodo's Power Systems Cover Story, Oktober 2024",
     },
     consolidation: {
       eyebrow: "Marktstruktur",
@@ -502,44 +453,6 @@ const COPY: Record<
       ctaTitle: "The 800 VDC architecture in detail",
       ctaSub: "How the smart PDU and the full-GaN DC/DC converter power the AI rack.",
       ctaButton: "Explore the rack power distribution unit",
-    },
-    trend3: {
-      eyebrow: "Trend 3 · EPC — Bodo's Power Systems, October 2024",
-      headline: "GaN in Humanoid Robotics",
-      body: "Three power domains, one technology shift: motor control, LiDAR and onboard DC-DC.",
-      cards: [
-        {
-          title: "Motor control",
-          subtitle: "~40 BLDC motors per robot",
-          items: [
-            "10–100× faster switching than Si MOSFETs",
-            "QRR = 0: deadtime down to nanoseconds, no acoustic noise",
-            "EPC23102: monolithic GaN IC — transistor, driver and protection on one die",
-            "EPC9176: 400 W 3-phase inverter, 14–85 V, 20 A output",
-          ],
-        },
-        {
-          title: "LiDAR",
-          subtitle: "3D spatial sensing",
-          items: [
-            "100× faster than Si — higher resolution and frame rate",
-            "Higher current density for long-range laser pulses",
-            "EPC21601: 15 A / 40 V GaN laser driver, >100 MHz operation",
-            "1 mm × 1.5 mm chip-scale package: minimal parasitic inductance",
-          ],
-        },
-        {
-          title: "AI brain DC-DC",
-          subtitle: "Onboard compute power",
-          items: [
-            "GaN DC-DC converters with >5,000 W/in³ power density",
-            "EPC9159 reference: 23 × 18 mm board, 1 kW continuous",
-            "Peak efficiency >97.5% at 12 V / 1 kW output",
-            "Same architecture as AI server PSUs",
-          ],
-        },
-      ],
-      source: "Source: Alex Lidow, Ph.D. (EPC CEO) — Bodo's Power Systems cover story, October 2024",
     },
     consolidation: {
       eyebrow: "Market Structure",
@@ -949,56 +862,6 @@ export default async function GaNSpotlightPage({
                 {t.trend2.ctaButton} <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
-          </div>
-        </section>
-
-        {/* 7 — Trend 3: GaN in humanoider Robotik (Pattern C: 3 Cards mit Checklisten) */}
-        <section className="relative py-24 sm:py-32 bg-white overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <Reveal className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
-                {t.trend3.eyebrow}
-              </span>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight mb-6">
-                {t.trend3.headline}
-              </h2>
-              <p className="font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed max-w-3xl mx-auto">
-                {t.trend3.body}
-              </p>
-            </Reveal>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {t.trend3.cards.map((card, i) => {
-                const Icon = ROBOTICS_ICONS[i];
-                return (
-                  <Reveal key={card.title} delay={i * 0.12}>
-                    <div className="h-full p-6 rounded-2xl border border-brand-navy/8 bg-white shadow-sm">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="p-2.5 rounded-lg bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan">
-                          <Icon className="w-5 h-5" />
-                        </div>
-                        <h3 className="font-display text-base font-bold text-brand-navy leading-tight">
-                          {card.title}
-                        </h3>
-                      </div>
-                      <span className="text-[9px] font-bold text-brand-navy tracking-wider uppercase block mb-4">
-                        {card.subtitle}
-                      </span>
-                      <ul className="space-y-2.5">
-                        {card.items.map((item) => (
-                          <li key={item} className="flex items-start gap-2.5">
-                            <Check className="w-5 h-5 text-brand-cyan shrink-0 mt-0.5" />
-                            <span className="font-sans text-sm text-brand-navy/70">{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </Reveal>
-                );
-              })}
-            </div>
-
-            <p className="mt-10 text-center font-sans text-sm text-brand-navy/40">{t.trend3.source}</p>
           </div>
         </section>
 
