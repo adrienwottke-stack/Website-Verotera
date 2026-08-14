@@ -1036,7 +1036,7 @@ im Repo, nur als SharePoint-Link im Kommentar:
 - **#166** - `aa-wafer-dies-sic.png` fuer die WBG-Modulloesungen-Sektion.
 - **#75** - "Bildstil nicht einheitlich" haengt an #78: solange die neuen Bilder fehlen, gibt es
   keine Stil-Referenz. Zusatzfrage: welcher Stil gilt als verbindlich, und wer liefert die Bilder
-  fuer die uebrigen Sektionen?
+  fuer die uebrigen Sektionen - ihr oder ich?
 
 **Fehlende Zielvorgabe** - Kommentar nennt kein Ergebnis, jede Umsetzung waere geraten:
 
@@ -1087,7 +1087,7 @@ markiert sind) plus der jeweilige Screenshot.
 > „Agentische KI im Systems Engineering")
 > B) Die H1 bekommt den Begriff, die Pill wird ein kurzes Label (z. B. „Lösungen" oder
 > „AI Systems Engineering").
-> C) Bewusst identisch – dann setzen wir es 1:1 so um.
+> C) Bewusst identisch – dann setze ich es 1:1 so um.
 
 **EN:**
 > #111 is done – the pill above the headline now reads "AI-Enhanced WBG Semiconductor
@@ -1097,7 +1097,7 @@ markiert sind) plus der jeweilige Screenshot.
 > "Agentic AI in Systems Engineering")
 > B) The H1 takes the term and the pill becomes a short label (e.g. "Solutions" or
 > "AI Systems Engineering").
-> C) Deliberately identical – then we implement it exactly as specified.
+> C) Deliberately identical – then I implement it exactly as specified.
 
 #### #133-#141 - Sektionsheader passt nicht zu den sechs Karten (kommentiert an #136)
 
@@ -1108,7 +1108,7 @@ markiert sind) plus der jeweilige Screenshot.
 > Anforderungen). Inhaltlich sind das die Bausteine des Wissensgraphen, nicht Time-to-Market.
 > Wie ist es gemeint?
 > A) Zwei Sektionen: „Time-to-Market" bleibt als reine Aussage (Header + Text, ohne Karten), die
-> sechs Bausteine bekommen eine eigene Sektion – dafür brauchen wir Eyebrow, Headline und
+> sechs Bausteine bekommen eine eigene Sektion – dafür brauche ich Eyebrow, Headline und
 > Einleitungstext in DE und EN.
 > B) Eine Sektion – dann bitte einen Header, der zu den sechs Bausteinen passt.
 > C) So gewollt, bleibt wie es ist.
@@ -1123,7 +1123,7 @@ markiert sind) plus der jeweilige Screenshot.
 > In substance those are the knowledge-graph building blocks, not time-to-market. How is it
 > meant?
 > A) Two sections: "Time-to-Market" stays a pure statement (header + text, no cards) and the six
-> building blocks get their own section – for that we need an eyebrow, headline and intro text
+> building blocks get their own section – for that I need an eyebrow, headline and intro text
 > in German and English.
 > B) One section – then please supply a header that fits the six building blocks.
 > C) Intentional, leave as is.
@@ -1136,7 +1136,7 @@ markiert sind) plus der jeweilige Screenshot.
 **DE:**
 > Die vier Labels sind gesetzt. Offen ist der Zusatz „Process-Flow design-technisch etwas
 > aufwerten". Drei Vorschläge – welcher soll es werden?
-> A) (Empfehlung) Nummerierte Prozessleiste: 01–04 als Cyan-Kreise auf einer durchgehenden
+> A) (meine Empfehlung) Nummerierte Prozessleiste: 01–04 als Cyan-Kreise auf einer durchgehenden
 > Linie, Label darunter, auf dem Handy untereinander.
 > B) Vier Karten mit Icon, Nummer und Label, verbunden durch Cyan-Pfeile – visuell identisch zu
 > den Karten der Engineering-Core-Sektion weiter unten.
@@ -1145,7 +1145,7 @@ markiert sind) plus der jeweilige Screenshot.
 **EN:**
 > The four labels are in place. What is still open is the note "make the process flow visually
 > stronger". Three options – which one?
-> A) (Recommended) Numbered process bar: 01–04 as cyan circles on a continuous line, labels
+> A) (My recommendation) Numbered process bar: 01–04 as cyan circles on a continuous line, labels
 > underneath, stacked vertically on mobile.
 > B) Four cards with icon, number and label, connected by cyan arrows – visually identical to
 > the cards in the Engineering Core section further down.
@@ -1154,13 +1154,13 @@ markiert sind) plus der jeweilige Screenshot.
 #### #160 - Word-Dokument in SharePoint nicht zugaenglich
 
 **DE:**
-> Wir kommen an das verlinkte Word-Dokument nicht heran – SharePoint verlangt einen
+> Ich komme an das verlinkte Word-Dokument nicht heran – SharePoint verlangt einen
 > Verotera-Login. Bitte entweder als .docx oder .pdf schicken oder den Zugriff freigeben.
 > Und: Der Kommentar hängt oben im Seitenkopf, ohne einen markierten Bereich – bezieht sich
 > „dieser Bereich" auf die gesamte Agentic-AI-Seite oder auf eine bestimmte Sektion?
 
 **EN:**
-> We cannot open the linked Word document – SharePoint requires a Verotera login. Please either
+> I cannot open the linked Word document – SharePoint requires a Verotera login. Please either
 > send it as .docx or .pdf or grant access. Also: the comment sits at the top of the page
 > without a marked element – does "this area" refer to the entire Agentic AI page or to one
 > specific section?
@@ -1168,25 +1168,25 @@ markiert sind) plus der jeweilige Screenshot.
 #### #113, #116, #120, #123 - Tippfehler in den gelieferten Texten
 
 **DE:**
-> In den gelieferten Texten waren ein paar Vertipper. Wir haben sie stillschweigend korrigiert:
+> In den gelieferten Texten waren ein paar Vertipper. Ich habe sie stillschweigend korrigiert:
 > #120 DE „Wie liefern die Grundlage" → „Wir liefern die Grundlage"
 > #120 EN „traceable to ist rules" → „its rules"
 > #113 EN „every assessemnt traceable" → „every assessment is traceable"
 > #116 EN „technology assessement" → „technology assessment"
 > #123 EN „people´s hand" → „people's hands" und „a decision they can stanf behind" →
 > „stand behind"
-> Bitte kurz bestätigen. Und generell für die nächsten Runden: Tippfehler still korrigieren oder
-> Texte wörtlich übernehmen und zurückmelden?
+> Bitte kurz bestätigen. Und generell für die nächsten Runden: Soll ich Tippfehler still
+> korrigieren oder Texte wörtlich übernehmen und zurückmelden?
 
 **EN:**
-> The supplied texts contained a few typos. We corrected them silently:
+> The supplied texts contained a few typos. I corrected them silently:
 > #120 DE "Wie liefern die Grundlage" → "Wir liefern die Grundlage"
 > #120 EN "traceable to ist rules" → "its rules"
 > #113 EN "every assessemnt traceable" → "every assessment is traceable"
 > #116 EN "technology assessement" → "technology assessment"
 > #123 EN "people´s hand" → "people's hands" and "a decision they can stanf behind" →
 > "stand behind"
-> Please confirm. And as a general rule for the coming rounds: should we correct typos silently
+> Please confirm. And as a general rule for the coming rounds: should I correct typos silently
 > or copy the text verbatim and flag it back to you?
 
 ### Seite `/solutions/wbg-power-modules`
@@ -1195,9 +1195,9 @@ markiert sind) plus der jeweilige Screenshot.
 
 **DE:**
 > Markiert ist die helle Strichgrafik (Fahrzeug mit SiC-/GaN-Modulen) in der Sektion
-> „Technologie- & Systempartner". „Bildstil wie auf der Landingpage" reicht uns als Vorgabe noch
+> „Technologie- & Systempartner". „Bildstil wie auf der Landingpage" reicht mir als Vorgabe noch
 > nicht: Auf der Landingpage steht der Bildstil selbst zur Diskussion (#75), und die dort
-> gewünschten neuen Dateien (aa_data_center_new, aa_emobilit_new usw.) liegen uns nicht vor.
+> gewünschten neuen Dateien (aa_data_center_new, aa_emobilit_new usw.) liegen mir nicht vor.
 > Bitte ein konkretes Referenzbild benennen, das den Zielstil zeigt – und wer liefert den Ersatz
 > für diese Grafik?
 
@@ -1205,7 +1205,7 @@ markiert sind) plus der jeweilige Screenshot.
 > The marked element is the light line drawing (vehicle with SiC/GaN modules) in the
 > "Technology & System Partner" section. "Same image style as the landing page" is not yet
 > enough to work from: the landing page style is itself under discussion (#75), and the new
-> files requested there (aa_data_center_new, aa_emobilit_new etc.) have not reached us.
+> files requested there (aa_data_center_new, aa_emobilit_new etc.) have not reached me.
 > Please name one concrete reference image that shows the target style – and who supplies the
 > replacement for this graphic?
 
@@ -1213,28 +1213,28 @@ markiert sind) plus der jeweilige Screenshot.
 
 **DE:**
 > Markiert ist der Absatz „VEROTERA begleitet Kunden von den frühesten Entwicklungsphasen an …"
-> unter „Wide-Bandgap at the Core". „Text ändern" ohne Ersatztext können wir nicht raten. Bitte
+> unter „Wide-Bandgap at the Core". „Text ändern" ohne Ersatztext kann ich nicht raten. Bitte
 > den neuen Text in DE und EN liefern – oder kurz sagen, was stört (zu allgemein, inhaltlich
-> falsch, zu lang), dann machen wir einen Vorschlag.
+> falsch, zu lang), dann mache ich einen Vorschlag.
 
 **EN:**
 > The marked element is the paragraph "VEROTERA supports customers from the earliest development
-> phases …" under "Wide-Bandgap at the Core". "Change text" without a replacement leaves us
-> guessing. Please supply the new text in German and English – or tell us briefly what is wrong
-> with it (too generic, factually off, too long) and we will draft a proposal.
+> phases …" under "Wide-Bandgap at the Core". "Change text" without a replacement leaves me
+> guessing. Please supply the new text in German and English – or tell me briefly what is wrong
+> with it (too generic, factually off, too long) and I will draft a proposal.
 
 #### #93 - "Bild aendern" ohne Zielbild
 
 **DE:**
 > Markiert ist das dunkelblaue Render (Wafer unter Laser) neben „Die Brücke zwischen Nachfrage
 > und Innovation". „Bild ändern" sagt nicht, wohin. Was soll das neue Bild zeigen, und kommt die
-> Datei von euch oder sollen wir einen Vorschlag machen? Bitte zusammen mit #91 beantworten,
+> Datei von euch oder soll ich einen Vorschlag machen? Bitte zusammen mit #91 beantworten,
 > damit beide Bilder im selben Stil landen.
 
 **EN:**
 > The marked element is the dark blue render (wafer under a laser) next to "The bridge between
 > demand and innovation". "Change image" does not say what to. What should the new image show,
-> and will the file come from you or should we propose one? Please answer together with #91 so
+> and will the file come from you or should I propose one? Please answer together with #91 so
 > both images end up in the same style.
 
 #### #95 - LinkedIn-Link tot
@@ -1242,13 +1242,13 @@ markiert sind) plus der jeweilige Screenshot.
 **DE:**
 > Der LinkedIn-Link im Footer zeigt auf https://www.linkedin.com/company/verotera – unter dieser
 > Adresse existiert keine Seite. Bitte die korrekte URL der Unternehmensseite schicken. Falls es
-> noch keine gibt: Sollen wir den LinkedIn-Block vorerst ausblenden? Der Link steht im Footer,
+> noch keine gibt: Soll ich den LinkedIn-Block vorerst ausblenden? Der Link steht im Footer,
 > also auf jeder Seite.
 
 **EN:**
 > The LinkedIn link in the footer points to https://www.linkedin.com/company/verotera – there is
 > no page at that address. Please send the correct company page URL. If there is none yet:
-> should we hide the LinkedIn block for now? The link lives in the footer, so it appears on
+> should I hide the LinkedIn block for now? The link lives in the footer, so it appears on
 > every page.
 
 ### Seite `/solutions/rack-power-distribution`
@@ -1256,12 +1256,12 @@ markiert sind) plus der jeweilige Screenshot.
 #### #165 - IEA-Zitierung widerspricht #89
 
 **DE:**
-> Der neue Text ist eingepflegt, die englische Fassung haben wir übersetzt. Er nennt ausdrücklich
-> „Die Internationale Energieagentur" mit der Prognose 415 → 945 TWh. Gleichzeitig haben wir nach
-> #89 die IEA-Quellenangabe auf der Landingpage entfernt, weil unklar war, ob wir zitieren
-> dürfen. Beides zusammen ist widersprüchlich – was gilt?
-> A) Die IEA darf genannt werden → wir setzen die Quellenangabe auf der Landingpage wieder ein.
-> B) Die IEA wird nirgends genannt → wir formulieren den Satz hier neutral um (z. B. „Prognosen
+> Der neue Text ist eingepflegt, die englische Fassung habe ich übersetzt. Er nennt ausdrücklich
+> „Die Internationale Energieagentur" mit der Prognose 415 → 945 TWh. Gleichzeitig habe ich nach
+> #89 die IEA-Quellenangabe auf der Landingpage entfernt, weil unklar war, ob VEROTERA die IEA
+> zitieren darf. Beides zusammen ist widersprüchlich – was gilt?
+> A) Die IEA darf genannt werden → ich setze die Quellenangabe auf der Landingpage wieder ein.
+> B) Die IEA wird nirgends genannt → ich formuliere den Satz hier neutral um (z. B. „Prognosen
 > gehen davon aus, dass …"). Bitte die Ersatzformulierung bestätigen.
 > C) Nennung im Fließtext ist in Ordnung, aber keine Report-Quellenangabe („World Energy
 > Outlook 2025").
@@ -1269,12 +1269,12 @@ markiert sind) plus der jeweilige Screenshot.
 > Text.
 
 **EN:**
-> The new text is in place and we translated the English version. It explicitly names "the
+> The new text is in place and I translated the English version. It explicitly names "the
 > International Energy Agency" with the 415 → 945 TWh projection. At the same time, following
-> #89 we removed the IEA source line from the landing page because it was unclear whether we may
-> cite it. The two contradict each other – which is it?
-> A) The IEA may be named → we restore the source line on the landing page.
-> B) The IEA is not named anywhere → we reword the sentence here neutrally (e.g. "projections
+> #89 I removed the IEA source line from the landing page because it was unclear whether VEROTERA
+> may cite the IEA. The two contradict each other – which is it?
+> A) The IEA may be named → I restore the source line on the landing page.
+> B) The IEA is not named anywhere → I reword the sentence here neutrally (e.g. "projections
 > indicate that …"). Please confirm the replacement wording.
 > C) Naming it in running text is fine, but no report citation ("World Energy Outlook 2025").
 > The answer also applies to `/applications/automotive-emobility`, where the IEA appears in the
@@ -1304,18 +1304,18 @@ markiert sind) plus der jeweilige Screenshot.
 
 **DE:**
 > „Erstmal weglassen" lässt zwei Wege offen – bitte einen wählen:
-> A) (Empfehlung, weil „erstmal") Die Seite bleibt bestehen, wird aber aus Navigation, Sitemap
-> und Google genommen. Reversibel, keine toten Links.
-> B) Die Seite wird gelöscht. Dann richten wir eine Weiterleitung auf `/resources` oder die
+> A) (meine Empfehlung, weil „erstmal") Die Seite bleibt bestehen, wird aber aus Navigation,
+> Sitemap und Google genommen. Reversibel, keine toten Links.
+> B) Die Seite wird gelöscht. Dann richte ich eine Weiterleitung auf `/resources` oder die
 > Startseite ein, sonst laufen bereits indexierte Links ins Leere.
 > Der Footer-Link ist mit #163 schon entfernt; übrig sind die Einträge in der Sitemap und auf der
 > Site-Map-Seite.
 
 **EN:**
 > "Leave it out for now" allows two routes – please pick one:
-> A) (Recommended, because it is temporary) The page stays online but is removed from the
+> A) (My recommendation, because it is temporary) The page stays online but is removed from the
 > navigation, the sitemap and Google. Reversible, no dead links.
-> B) The page is deleted. In that case we add a redirect to `/resources` or the homepage,
+> B) The page is deleted. In that case I add a redirect to `/resources` or the homepage,
 > otherwise already-indexed links break.
 > The footer link is already gone with #163; what remains are the entries in the sitemap and on
 > the site map page.

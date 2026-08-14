@@ -545,53 +545,53 @@ _(hier eintragen, was nicht eindeutig war - kommt als Reply zurueck ins Pastel-C
 
 **(DE)** Der Screenshot zu diesem Kommentar enthaelt keine Markierung eines Zielbereichs, und der
 Pin sitzt neben den physikalischen Grundlagen ("Bandluecke: 3,3 eV") — das passt nicht zum
-Kommentartext ueber News-Beitraege. Unsere Lesart: Gemeint ist der Abschnitt **"Berichtet in
+Kommentartext ueber News-Beitraege. Meine Lesart: Gemeint ist der Abschnitt **"Berichtet in
 Bodo's Power Systems / Schluesseltrends"** — das stilistische Gegenstueck zu den vier Abschnitten,
-die wir auf der GaN-Seite bereits entfernt haben (#171-#174). Bitte kurz bestaetigen, ob diese
+die ich auf der GaN-Seite bereits entfernt habe (#171-#174). Bitte kurz bestaetigen, ob diese
 Lesart stimmt — oder ob die ganze SiC-Seite gemeint ist (dann waere das Teil der Frage zu #169:
 entlinken oder loeschen?).
 
 **(EN)** The screenshot for this comment does not mark a target area, and the pin sits next to the
 physics fundamentals ("bandgap: 3.3 eV") — which does not match the comment about news-style
-content. Our reading: you mean the section **"Reported in Bodo's Power Systems / Key Trends"** —
-the stylistic counterpart of the four sections we already removed on the GaN page (#171-#174).
-Please confirm — or tell us if you mean the entire SiC page (which would fold into the #169
+content. My reading: you mean the section **"Reported in Bodo's Power Systems / Key Trends"** —
+the stylistic counterpart of the four sections I already removed on the GaN page (#171-#174).
+Please confirm — or let me know if you mean the entire SiC page (which would fold into the #169
 question: unlink or delete?).
 
 ### #175 — News-Bereich: entlinken oder loeschen?
 
-**(DE)** "Vorerst raus" lassen wir uns gern bestaetigen, bevor wir loeschen — gleiche Frage wie
-bei der Patent-Seite (#97): **A) (unsere Empfehlung, weil "vorerst")** Seite bleibt bestehen,
+**(DE)** "Vorerst raus" lasse ich mir gern bestaetigen, bevor ich loesche — gleiche Frage wie
+bei der Patent-Seite (#97): **A) (meine Empfehlung, weil "vorerst")** Seite bleibt bestehen,
 fliegt aber aus Navigation, Sitemap und Google — jederzeit reversibel, die Inhalte bleiben fuer
 den spaeteren VEROTERA-News-Bereich erhalten. **B)** Seite und News-Daten werden geloescht; dann
-richten wir eine Weiterleitung von /news auf die Startseite ein. Zur Einordnung: Keiner der sechs
+richte ich eine Weiterleitung von /news auf die Startseite ein. Zur Einordnung: Keiner der sechs
 aktuellen News-Teaser ist eine echte VEROTERA-Meldung — die Liste waere nach eurem Kriterium
 ("nur Neuigkeiten mit Bezug zu VEROTERA") ohnehin leer. Die Startseite ist nicht betroffen (dort
 wird kein News-Block angezeigt).
 
-**(EN)** Before deleting we would like to confirm what "for now" means — same question as for the
-patents page (#97): **A) (our recommendation, given "for now")** the page stays but is removed
+**(EN)** Before deleting I would like to confirm what "for now" means — same question as for the
+patents page (#97): **A) (my recommendation, given "for now")** the page stays but is removed
 from navigation, sitemap and Google — fully reversible, and the content remains available for the
-future VEROTERA news section. **B)** page and news data are deleted; we then redirect /news to the
+future VEROTERA news section. **B)** page and news data are deleted; I then redirect /news to the
 home page. For context: none of the six current news teasers is a genuine VEROTERA announcement —
 by your criterion ("only news related to VEROTERA") the list would be empty anyway. The landing
 page is unaffected (it renders no news block).
 
 ### #176 — Gruener Wasserstoff: nur die Seite, oder das Thema ueberall?
 
-**(DE)** Die Seite /applications/hydrogen samt Navigation und Sitemap-Eintrag nehmen wir raus,
+**(DE)** Die Seite /applications/hydrogen samt Navigation und Sitemap-Eintrag nehme ich raus,
 sobald A/B wie bei #175 geklaert ist (entlinken oder loeschen + Redirect). Offen ist der Umfang:
 Das Thema "Gruener Wasserstoff" taucht auch ausserhalb der Seite auf — in der Mission-Sektion und
 den Anwendungsfeldern der Startseite, auf der Ueber-uns-Seite (eigene "Green Hydrogen"-Karte),
 im Wasserstoff-Abschnitt der SiC-Seite und in den SEO-Keywords. **Bitte waehlen: A)** Nur die
 Seite verschwindet, die Erwaehnungen bleiben (Wasserstoff bleibt ein genanntes Anwendungsfeld,
-nur ohne eigene Seite), oder **B)** das Thema wird ueberall entfernt — dann listen wir die
+nur ohne eigene Seite), oder **B)** das Thema wird ueberall entfernt — dann liste ich euch die
 Stellen vorher einzeln zur Freigabe auf.
 
-**(EN)** We will remove the /applications/hydrogen page including navigation and sitemap entry
+**(EN)** I will remove the /applications/hydrogen page including navigation and sitemap entry
 once A/B is decided as for #175 (unlink or delete + redirect). What remains open is the scope:
 "green hydrogen" also appears outside that page — in the mission section and application areas on
 the landing page, on the About page (its own "Green Hydrogen" card), in the hydrogen section of
 the SiC page, and in the SEO keywords. **Please choose: A)** only the page goes and the mentions
 stay (hydrogen remains a listed application area, just without its own page), or **B)** the topic
-is removed everywhere — in that case we will list every occurrence for sign-off first.
+is removed everywhere — in that case I will list every occurrence for sign-off first.

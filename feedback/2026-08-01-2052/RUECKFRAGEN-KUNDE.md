@@ -5,22 +5,22 @@
 Vielen Dank für das ausführliche Feedback — 95 Kommentare auf sechs Seiten. **64 davon sind
 abgeschlossen.**
 
-**20 Punkte brauchen eine Antwort von euch**, bevor wir sie anfassen können: Entweder fehlt die
-inhaltliche Vorgabe, oder es fehlt eine Datei. Wir raten grundsätzlich nicht — lieber einmal
+**20 Punkte brauchen eine Antwort von euch**, bevor ich sie anfassen kann: Entweder fehlt die
+inhaltliche Vorgabe, oder es fehlt eine Datei. Ich rate grundsätzlich nicht — lieber einmal
 kurz nachfragen als etwas bauen, das wieder zurückgedreht werden muss. Genau um diese Punkte
 geht es in diesem Dokument.
 
-**11 weitere Punkte liegen bei uns** (#128–#132 und #136–#141 auf der Seite „Agentische KI im
+**11 weitere Punkte liegen bei mir** (#128–#132 und #136–#141 auf der Seite „Agentische KI im
 Systems Engineering"): Die gelieferten Texte für die fünf Engineering-Core-Bereiche und die
-sechs Wissensgraph-Bausteine sind eingebaut, wir überarbeiten die Darstellung aber noch einmal
-und kommen dazu mit einem eigenen Vorschlag auf euch zu. Hier ist von eurer Seite nichts zu tun.
+sechs Wissensgraph-Bausteine sind eingebaut, ich gehe die Darstellung aber noch einmal durch
+und komme dazu mit einem eigenen Vorschlag auf euch zu. Hier ist von eurer Seite nichts zu tun.
 
-Dazu kommen vier Punkte, die wir bereits umgesetzt haben, bei denen der Kommentar aber eine
-Wahlmöglichkeit offenließ. Dort haben wir eine Variante gewählt und bitten um eine kurze
+Dazu kommen vier Punkte, die ich bereits umgesetzt habe, bei denen der Kommentar aber eine
+Wahlmöglichkeit offenließ. Dort habe ich eine Variante gewählt und bitte um eine kurze
 Bestätigung.
 
-**Bitte beachten:** Alle Texte brauchen wir in **Deutsch und Englisch**. Wo nur eine Sprache
-geliefert wird, übersetzen wir selbst — dann bitte gegenlesen.
+**Bitte beachten:** Alle Texte brauche ich in **Deutsch und Englisch**. Wo nur eine Sprache
+geliefert wird, übersetze ich selbst — dann bitte gegenlesen.
 
 Die Nummern (#75, #112 …) entsprechen den Kommentarnummern in Pastel.
 
@@ -34,23 +34,23 @@ Die Nummern (#75, #112 …) entsprechen den Kommentarnummern in Pastel.
 | Fragen zu bereits eingebauten Punkten | 2 | #133–#141, #165 + #89 | ja |
 | Datei fehlt | 6 | #78, #94, #109, #160, #166, #167 | ja |
 | Umgesetzt unter Annahme — bitte bestätigen | 4 | #86, #89, #102, #162 | kurz gegenlesen |
-| In Überarbeitung bei uns | 11 | #128–#132, #136–#141 | nein |
+| In Überarbeitung bei mir | 11 | #128–#132, #136–#141 | nein |
 
 ---
 
-# 1. Entscheidungen, die wir brauchen
+# 1. Entscheidungen, die ich brauche
 
 ## Startseite
 
 ### #75 — Welcher Bildstil gilt?
 
-Der Kommentar sagt, der Bildstil sei nicht einheitlich. Das stimmt — nur fehlt uns die
+Der Kommentar sagt, der Bildstil sei nicht einheitlich. Das stimmt — nur fehlt mir die
 Zielvorgabe. Der Punkt hängt außerdem an #78: Solange die dort gewünschten neuen Bilder nicht
-vorliegen, gibt es keine Referenz, an der wir uns ausrichten können.
+vorliegen, gibt es keine Referenz, an der ich mich ausrichten kann.
 
 **Bitte klären:**
 1. Welches konkrete Bild (oder welche Seite) gilt als verbindliche Stil-Referenz?
-2. Wer liefert die Bilder für die übrigen Sektionen — ihr oder wir?
+2. Wer liefert die Bilder für die übrigen Sektionen — ihr oder ich?
 
 Der Punkt betrifft zusätzlich #91, #93 und #166 auf anderen Seiten. Sinnvoll ist eine
 Entscheidung für alle fünf zusammen.
@@ -61,7 +61,7 @@ Kommentar: „Diese Botschaft muss geändert bzw. angepasst werden." Ein Ersatzt
 dabei.
 
 **Bitte liefern:** den neuen Text (DE + EN) — oder kurz beschreiben, was an der jetzigen
-Botschaft nicht passt, dann machen wir einen Vorschlag.
+Botschaft nicht passt, dann mache ich einen Vorschlag.
 
 Hinweis: #88 will dieselbe Karte möglicherweise komplett entfernen. Falls die Karte ohnehin
 verschwindet, erledigt sich dieser Punkt.
@@ -77,7 +77,7 @@ nur auf dem Titel der ersten Karte.
   bereits raus ist)
 - **C)** Die komplette Sektion entfernen
 
-Und: Das „evtl." im Kommentar lesen wir als noch nicht entschieden — bitte kurz bestätigen, ob
+Und: Das „evtl." im Kommentar lese ich als noch nicht entschieden — bitte kurz bestätigen, ob
 überhaupt etwas entfernt werden soll.
 
 ### #90 — Kennzahlen: alle vier oder nur eine?
@@ -92,11 +92,11 @@ Kommentar: „Diese Zahlen passen m. E. eher auf eine Präsentation." Markiert i
 
 ### #164 — Advanced-Packaging-Block: wie stattdessen?
 
-Kommentar: „Dieser Teil sollte anders dargestellt werden." Ohne Zielbild können wir nur raten.
+Kommentar: „Dieser Teil sollte anders dargestellt werden." Ohne Zielbild kann ich nur raten.
 
 **Bitte beschreiben:** Was stört an der jetzigen Darstellung, und wie soll der Block stattdessen
 aussehen? Ein grober Hinweis reicht (z. B. „als Grafik statt als Zahlenreihe", „kompakter",
-„mit Bild") — den Rest gestalten wir.
+„mit Bild") — den Rest gestalte ich.
 
 ## Seite „Agentische KI im Systems Engineering"
 
@@ -111,16 +111,16 @@ die große Überschrift direkt darunter — dann stünde derselbe Begriff zweima
   (aktuell: „Agentische KI im Systems Engineering" / „Agentic AI in Systems Engineering")
 - **B)** Die Überschrift bekommt den Begriff, die Pill wird ein kurzes Label
   (z. B. „Lösungen" oder „AI Systems Engineering")
-- **C)** Bewusst identisch — dann setzen wir es exakt so um
+- **C)** Bewusst identisch — dann setze ich es exakt so um
 
 ### #117 — Gestaltung des Process-Flows
 
 Die vier neuen Labels sind gesetzt: *Kontext erfassen → Kriterien ableiten → Optionen & Risiken
 → System Design Concept*. Offen ist der Zusatz im Kommentar, den Process-Flow
-„design-technisch etwas aufzuwerten" (an Adrien adressiert).
+„design-technisch etwas aufzuwerten" (an mich adressiert).
 
 **Drei Vorschläge — bitte einen wählen:**
-- **A) (unsere Empfehlung)** Nummerierte Prozessleiste: 01–04 als Kreise auf einer durchgehenden
+- **A) (meine Empfehlung)** Nummerierte Prozessleiste: 01–04 als Kreise auf einer durchgehenden
   Linie, Beschriftung darunter, auf dem Handy untereinander gestapelt
 - **B)** Vier Karten mit Icon, Nummer und Label, verbunden durch Pfeile — visuell identisch zu
   den Karten der Engineering-Core-Sektion weiter unten auf derselben Seite
@@ -145,7 +145,7 @@ co-entwickelt WBG Leistungsmodullösungen der nächsten Generation …". Der Kom
 „Text ändern".
 
 **Bitte liefern:** den neuen Text (DE + EN) — oder kurz sagen, was stört (zu allgemein,
-inhaltlich nicht korrekt, zu lang), dann schlagen wir etwas vor.
+inhaltlich nicht korrekt, zu lang), dann schlage ich etwas vor.
 
 ### #93 — Welches Bild soll es werden?
 
@@ -160,7 +160,7 @@ mit #91 beantworten, damit beide Bilder im selben Stil landen.
 Der Link im Footer zeigt auf `linkedin.com/company/verotera` — unter dieser Adresse existiert
 keine Seite.
 
-**Bitte liefern:** die korrekte URL der Unternehmensseite. Falls es noch keine gibt: Sollen wir
+**Bitte liefern:** die korrekte URL der Unternehmensseite. Falls es noch keine gibt: Soll ich
 den LinkedIn-Block vorerst ausblenden?
 
 *Hinweis: Der Link steht im Footer und damit auf jeder Seite der Website, nicht nur auf dieser.*
@@ -186,9 +186,9 @@ Kommentar: „Ich würde die Landingpage zum Thema Patente erstmal weglassen. Da
 „Erstmal" lässt zwei Wege offen, die technisch sehr unterschiedlich sind.
 
 **Bitte wählen:**
-- **A) (unsere Empfehlung, weil „erstmal")** Die Seite bleibt bestehen, wird aber aus Navigation,
+- **A) (meine Empfehlung, weil „erstmal")** Die Seite bleibt bestehen, wird aber aus Navigation,
   Sitemap und Google genommen. Jederzeit reversibel, keine toten Links.
-- **B)** Die Seite wird gelöscht. Dann richten wir zusätzlich eine Weiterleitung ein — sonst
+- **B)** Die Seite wird gelöscht. Dann richte ich zusätzlich eine Weiterleitung ein — sonst
   laufen bereits von Google erfasste Links ins Leere (Fehlerseite).
 
 *Der Link im Footer ist über #163 bereits entfernt.*
@@ -214,8 +214,8 @@ in vier News-Beiträgen.
 
 # 2. Fragen zu bereits eingebauten Punkten
 
-Diese Punkte sind wie geliefert eingebaut — beim Umsetzen ist uns aber jeweils ein Widerspruch
-aufgefallen, den wir nicht still geglättet haben.
+Diese Punkte sind wie geliefert eingebaut — beim Umsetzen ist mir aber jeweils ein Widerspruch
+aufgefallen, den ich nicht still geglättet habe.
 
 ### #133–#141 — Sektionsüberschrift passt nicht zu den sechs Karten
 
@@ -226,7 +226,7 @@ Anforderungen. Inhaltlich sind das die Bausteine des Wissensgraphen — nicht Ti
 
 **Bitte wählen:**
 - **A)** Zwei Sektionen: „Time-to-Market" bleibt als reine Aussage (Überschrift + Text, ohne
-  Karten), die sechs Bausteine bekommen eine eigene Sektion. Dafür brauchen wir Eyebrow,
+  Karten), die sechs Bausteine bekommen eine eigene Sektion. Dafür brauche ich Eyebrow,
   Überschrift und Einleitungstext (DE + EN).
 - **B)** Eine Sektion — dann bitte eine Überschrift, die zu den sechs Bausteinen passt.
 - **C)** So gewollt, bleibt wie es ist.
@@ -235,8 +235,8 @@ Anforderungen. Inhaltlich sind das die Bausteine des Wissensgraphen — nicht Ti
 („Human-in-the-Loop Gates", „Audit-Ready Traceability", „Continuous Knowledge Capture").
 Bleiben, ersetzen oder entfernen?
 
-*Hinweis: Die sechs Karten selbst (#136–#141) überarbeiten wir ohnehin noch — siehe Abschnitt 6.
-Für die Sektionsstruktur brauchen wir eure Antwort trotzdem, weil davon abhängt, ob es eine
+*Hinweis: Die sechs Karten selbst (#136–#141) überarbeite ich ohnehin noch — siehe Abschnitt 6.
+Für die Sektionsstruktur brauche ich eure Antwort trotzdem, weil davon abhängt, ob es eine
 Sektion bleibt oder zwei werden.*
 
 ### #165 + #89 — Darf die IEA genannt werden?
@@ -244,13 +244,13 @@ Sektion bleibt oder zwei werden.*
 Hier widersprechen sich zwei Kommentare aus derselben Runde:
 
 - **#89** (Startseite): Die Quellenangabe „IEA World Energy Outlook 2025" sollte sicherheitshalber
-  raus, weil unklar war, ob wir zitieren dürfen. → **ist umgesetzt**
+  raus, weil unklar war, ob VEROTERA die IEA zitieren darf. → **ist umgesetzt**
 - **#165** (Rack Power Distribution): Der neu gelieferte Text nennt ausdrücklich „Die
   Internationale Energieagentur" mit der Prognose 415 → 945 TWh. → **ist ebenfalls umgesetzt**
 
 **Bitte klären — die Antwort muss für alle Stellen gleich ausfallen:**
-- **A)** Die IEA darf genannt werden → wir setzen die Quellenangabe auf der Startseite wieder ein
-- **B)** Die IEA wird nirgends genannt → wir formulieren den Satz im Rack-Power-Text neutral um
+- **A)** Die IEA darf genannt werden → ich setze die Quellenangabe auf der Startseite wieder ein
+- **B)** Die IEA wird nirgends genannt → ich formuliere den Satz im Rack-Power-Text neutral um
   (z. B. „Prognosen gehen davon aus, dass …"). Bitte die Ersatzformulierung bestätigen.
 - **C)** Nennung im Fließtext ist in Ordnung, aber keine Angabe eines konkreten Reports
 
@@ -259,29 +259,29 @@ Hier widersprechen sich zwei Kommentare aus derselben Runde:
 
 ---
 
-# 3. Dateien, die uns fehlen
+# 3. Dateien, die mir fehlen
 
-Diese sechs Punkte sind inhaltlich klar — es fehlt nur die Datei. Bitte direkt an uns schicken
+Diese sechs Punkte sind inhaltlich klar — es fehlt nur die Datei. Bitte direkt an mich schicken
 oder im gemeinsamen Ordner ablegen.
 
-| Nr | Seite | Was wir brauchen |
+| Nr | Seite | Was ich brauche |
 |---|---|---|
 | **#78** | Startseite | `aa_data_center_new`, `aa_emobilit_new`, `aa_hydrogen_new`, `aa_renewable_new`, `aa_robotics_new` — die fünf Kacheln der Mission-Sektion |
 | **#109** | Startseite | `aa-engineering-core` für die Agentic-Ecosystem-Sektion |
 | **#166** | Startseite | `aa-wafer-dies-sic.png` (verbesserte Wafer-/Dies-Darstellung) |
-| **#160** | Agentische KI | Das verlinkte Word-Dokument aus SharePoint — wir haben keinen Zugriff (Login erforderlich). Bitte als `.docx` oder `.pdf` schicken oder freigeben. **Zusatzfrage:** Der Kommentar sitzt oben im Seitenkopf ohne markierten Bereich — bezieht sich „dieser Bereich" auf die gesamte Seite oder auf eine bestimmte Sektion? |
-| **#94** | WBG Power Modules | Eine überarbeitete Fassung des Modul-Bildes ohne die seitlichen Pins. Die gewünschte Änderung ist klar, wir haben aber nur die Originaldatei — die Retusche müsste von eurer Seite kommen. |
+| **#160** | Agentische KI | Das verlinkte Word-Dokument aus SharePoint — ich habe keinen Zugriff (Login erforderlich). Bitte als `.docx` oder `.pdf` schicken oder freigeben. **Zusatzfrage:** Der Kommentar sitzt oben im Seitenkopf ohne markierten Bereich — bezieht sich „dieser Bereich" auf die gesamte Seite oder auf eine bestimmte Sektion? |
+| **#94** | WBG Power Modules | Eine überarbeitete Fassung des Modul-Bildes ohne die seitlichen Pins. Die gewünschte Änderung ist klar, ich habe aber nur die Originaldatei — die Retusche müsste von eurer Seite kommen. |
 | **#167** | Rack Power Distribution | Das Blockdiagramm aus der PPT, das das jetzige Diagramm ersetzen soll |
 
 ---
 
 # 4. Umgesetzt unter Annahme — bitte kurz gegenprüfen
 
-Bei diesen vier Punkten ließ der Kommentar eine Wahl offen. Wir haben jeweils die naheliegende
-Variante gewählt und umgesetzt, damit die Runde nicht blockiert. Wenn ihr es anders wollt, drehen
-wir es problemlos zurück.
+Bei diesen vier Punkten ließ der Kommentar eine Wahl offen. Ich habe jeweils die naheliegende
+Variante gewählt und umgesetzt, damit die Runde nicht blockiert. Wenn ihr es anders wollt, drehe
+ich es problemlos zurück.
 
-| Nr | Was wir gemacht haben | Offene Rückfrage dazu |
+| Nr | Was ich gemacht habe | Offene Rückfrage dazu |
 |---|---|---|
 | **#86** | Die obere der beiden Dubletten entfernt (Abschlusssatz der Mission-Sektion); die Aufzählung der Anwendungsfelder darunter bleibt stehen. | War die obere die richtige? |
 | **#89** | IEA-Quellenangabe nur auf der Startseite entfernt. | Siehe #165 oben — die Rechtefrage ist damit noch nicht abschließend geklärt. |
@@ -294,7 +294,7 @@ wir es problemlos zurück.
 
 ### Tippfehler in den gelieferten Texten
 
-In den gelieferten Texten waren einige Vertipper. Wir haben sie beim Einpflegen still korrigiert:
+In den gelieferten Texten waren einige Vertipper. Ich habe sie beim Einpflegen still korrigiert:
 
 | Punkt | Original | Korrigiert zu |
 |---|---|---|
@@ -308,7 +308,7 @@ In den gelieferten Texten waren einige Vertipper. Wir haben sie beim Einpflegen 
 | #107 (EN) | „early **decisons**" · „documented **explicity**" | „early **decisions**" · „documented **explicitly**" |
 | #108 (EN) | „risky early **decison**" · „**verifable** basis" | „risky early **decision**" · „**verifiable** basis" |
 
-**Bitte bestätigen** — und für die kommenden Runden festlegen: Sollen wir Tippfehler still
+**Bitte bestätigen** — und für die kommenden Runden festlegen: Soll ich Tippfehler still
 korrigieren oder die Texte wörtlich übernehmen und zurückmelden?
 
 ### #100 — Ein Satz nur in der englischen Fassung
@@ -316,7 +316,7 @@ korrigieren oder die Texte wörtlich übernehmen und zurückmelden?
 Die englische Fassung enthält einen Einleitungssatz, den die deutsche nicht hat:
 „…the impact of decisions is highest and the available data is most limited."
 
-Wir haben ihn **nicht** ins Deutsche übernommen, um beide Sprachfassungen deckungsgleich zu
+Ich habe ihn **nicht** ins Deutsche übernommen, um beide Sprachfassungen deckungsgleich zu
 halten.
 
 **Bitte klären:** Soll der Satz auf Deutsch ergänzt werden — oder in der englischen Fassung
@@ -324,7 +324,7 @@ ebenfalls entfallen?
 
 ---
 
-# 6. In Überarbeitung bei uns — keine Aktion nötig
+# 6. In Überarbeitung bei mir — keine Aktion nötig
 
 Elf Punkte auf der Seite „Agentische KI im Systems Engineering" sind noch nicht abgeschlossen,
 warten aber **nicht** auf euch:
@@ -334,21 +334,21 @@ warten aber **nicht** auf euch:
 | **#128–#132** | Die fünf Verantwortungsbereiche der Engineering-Core-Sektion: Orchestrierung, Wissensgraph, Interpretation, Absicherung, Agent |
 | **#136–#141** | Die sechs Wissensgraph-Bausteine: Technologieklassen, Funktionsblöcke, Topologien, Regeln, Parametrische Modelle, Anforderungen |
 
-Die gelieferten Texte sind in beiden Blöcken eingebaut und auf der Seite sichtbar. Wir gehen die
-Darstellung aber noch einmal durch und melden uns dazu mit einem eigenen Vorschlag — deshalb
-führen wir die Punkte weiter als offen, damit sie nicht durchs Raster fallen.
+Die gelieferten Texte sind in beiden Blöcken eingebaut und auf der Seite sichtbar. Ich gehe die
+Darstellung aber noch einmal durch und melde mich dazu mit einem eigenen Vorschlag — deshalb
+führe ich die Punkte weiter als offen, damit sie nicht durchs Raster fallen.
 
 Einzige Ausnahme: Die Frage nach der Sektionsstruktur oberhalb der sechs Bausteine (#133–#141,
-Abschnitt 2) brauchen wir trotzdem von euch, weil davon abhängt, ob daraus eine Sektion bleibt
+Abschnitt 2) brauche ich trotzdem von euch, weil davon abhängt, ob daraus eine Sektion bleibt
 oder zwei werden.
 
 ---
 
 ## Was danach passiert
 
-Sobald die Antworten da sind, arbeiten wir die 20 offenen Punkte in einem Durchgang ab. Die
-Punkte aus Abschnitt 3 (fehlende Dateien) können wir unabhängig davon einbauen, sobald die
+Sobald die Antworten da sind, arbeite ich die 20 offenen Punkte in einem Durchgang ab. Die
+Punkte aus Abschnitt 3 (fehlende Dateien) kann ich unabhängig davon einbauen, sobald die
 Dateien vorliegen — dafür braucht es keine weitere Abstimmung. Die elf Punkte aus Abschnitt 6
-kommen als eigener Vorschlag von uns zurück.
+kommen als eigener Vorschlag von mir zurück.
 
 Bei Rückfragen zu diesem Dokument: einfach direkt melden.
