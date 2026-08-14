@@ -1,0 +1,43 @@
+{
+  "baseUrl": "http://localhost:3001",
+  "minBytes": 2000,
+  "routes": [
+    {
+      "label": "GaN-Spotlight",
+      "urls": {
+        "de": "/solutions/technology-spotlight-gallium-nitride",
+        "en": "/en/solutions/technology-spotlight-gallium-nitride"
+      },
+      "gone": [
+        { "point": "#171 Trend 1 Vertikale GaN Power-ICs", "de": "Vertikale GaN Power-ICs", "en": "Vertical GaN Power ICs" },
+        { "point": "#171 CAVET-Schichtaufbau", "de": "Vertikaler Stromfluss", "en": "Vertical current flow" },
+        { "point": "#172 Trend 3 Humanoide Robotik", "de": "humanoider Robotik", "en": "Humanoid Robotics" },
+        { "point": "#172 EPC-Karten", "text": "EPC23102" },
+        { "point": "#173 Marktstruktur", "de": "Ökosystem-Konsolidierung", "en": "Ecosystem Consolidation" },
+        { "point": "#173 Infineon-Timeline", "text": "GaN Systems" },
+        { "point": "#174 Roadmap", "de": "Produktionsrealität", "en": "production reality" },
+        { "point": "#174 Yole-Zitat", "text": "Roy Dagher" }
+      ],
+      "present": [
+        { "label": "Trend 2 / 800-VDC-Rack bleibt", "de": "800-VDC-Rack", "en": "800 VDC Rack" },
+        { "label": "CTA zur Rack-PDU bleibt", "text": "rack-power-distribution" },
+        { "label": "Entscheidende Vorteile bleibt", "de": "Kein QRR", "en": "Zero QRR" },
+        { "label": "Parametermatrix bleibt", "de": "Schlüsselparameter", "en": "Key parameters" },
+        { "label": "Globaler Markt bleibt", "de": "Globaler Markt GaN Devices", "en": "Global GaN Device Market" }
+      ]
+    },
+    {
+      "label": "Rack Power Distribution (#168 Sektion 4 raus, #165 KI-Karte neu)",
+      "urls": {
+        "de": "/solutions/rack-power-distribution",
+        "en": "/en/solutions/rack-power-distribution"
+      },
+      "gone": [
+        { "point": "#168 Sektion 800 VDC vs. AC/DC", "de": "konventionelle AC/DC", "en": "conventional AC/DC" }
+      ],
+      "present": [
+        { "label": "#165 neue KI-Karte", "de": "Terawattstunden", "en": "terawatt-hours" }
+      ]
+    }
+  ]
+}
