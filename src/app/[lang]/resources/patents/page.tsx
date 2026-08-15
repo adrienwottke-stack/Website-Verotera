@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Lightbulb, Cpu, Layers, Bot, ArrowRight } from "lucide-react";
+import { Lightbulb, Cpu, Layers, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import { hasLang, localePath, type Lang } from "@/lib/i18n";
 import { buildMetadata, type PageMeta } from "@/lib/seo";
 
-const AREA_ICONS = [Cpu, Layers, Bot];
+const AREA_ICONS = [Cpu, Layers];
 
 const COPY: Record<
   Lang,
@@ -27,10 +27,10 @@ const COPY: Record<
     heroEyebrow: "Ressourcen",
     heroTitle: "Patente",
     heroSubtitle:
-      "Geschützte Innovationen entlang des gesamten Stacks – vom Halbleiter über das Packaging bis zum KI-gestützten Systems Engineering.",
+      "Geschützte Innovationen vom Halbleiter bis zum Packaging.",
     introTitle: "Innovation als Fundament",
     introBody:
-      "Geistiges Eigentum ist ein zentraler Bestandteil der Wertschöpfung von VEROTERA. Unser Portfolio umfasst Technologien in der Wide-Bandgap-Leistungselektronik, im Packaging und im agentischen Systems Engineering.",
+      "Geistiges Eigentum ist ein zentraler Bestandteil der Wertschöpfung von VEROTERA. Unser Portfolio umfasst Technologien in der Wide-Bandgap-Leistungselektronik und im Packaging.",
     introNote: "Hinweis: Eine detaillierte Übersicht des Patentportfolios wird hier sukzessive ergänzt.",
     areas: [
       {
@@ -41,10 +41,6 @@ const COPY: Record<
         title: "Packaging-Technologie",
         text: "Verfahren für höhere Leistungsdichte, bessere Wärmeabfuhr und gesteigerte Zuverlässigkeit.",
       },
-      {
-        title: "KI-gestütztes Engineering",
-        text: "Methoden im agentischen Systems Engineering zur Beschleunigung der Entwicklung.",
-      },
     ],
     ctaText: "Interesse an Technologie-Kooperationen oder Lizenzthemen?",
     ctaButton: "Kontakt aufnehmen",
@@ -53,10 +49,10 @@ const COPY: Record<
     heroEyebrow: "Resources",
     heroTitle: "Patents",
     heroSubtitle:
-      "Protected innovations across the entire stack — from the semiconductor and packaging to AI-assisted systems engineering.",
+      "Protected innovations from the semiconductor to the packaging.",
     introTitle: "Innovation as a foundation",
     introBody:
-      "Intellectual property is a core part of VEROTERA's value creation. Our portfolio covers technologies in wide-bandgap power electronics, packaging and agentic systems engineering.",
+      "Intellectual property is a core part of VEROTERA's value creation. Our portfolio covers technologies in wide-bandgap power electronics and packaging.",
     introNote: "Note: a detailed overview of the patent portfolio will be added here over time.",
     areas: [
       {
@@ -66,10 +62,6 @@ const COPY: Record<
       {
         title: "Packaging Technology",
         text: "Processes for higher power density, better heat dissipation and increased reliability.",
-      },
-      {
-        title: "AI-Assisted Engineering",
-        text: "Methods in agentic systems engineering that accelerate development.",
       },
     ],
     ctaText: "Interested in technology cooperations or licensing?",
@@ -81,13 +73,13 @@ const META: Record<Lang, PageMeta> = {
   de: {
     title: "Patente | VEROTERA",
     description:
-      "Geistiges Eigentum und Patente von VEROTERA in der Wide-Bandgap-Leistungselektronik, im Packaging und im KI-gestützten Systems Engineering.",
+      "Geistiges Eigentum und Patente von VEROTERA in der Wide-Bandgap-Leistungselektronik und im Packaging.",
     keywords: ["Patente", "Geistiges Eigentum", "Innovation", "WBG"],
   },
   en: {
     title: "Patents | VEROTERA",
     description:
-      "VEROTERA's intellectual property and patents in wide-bandgap power electronics, packaging and AI-assisted systems engineering.",
+      "VEROTERA's intellectual property and patents in wide-bandgap power electronics and packaging.",
     keywords: ["Patents", "Intellectual property", "Innovation", "WBG"],
   },
 };
@@ -136,7 +128,7 @@ export default async function PatentsPage({
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {t.areas.map((a, i) => {
                 const Icon = AREA_ICONS[i];
                 return (
