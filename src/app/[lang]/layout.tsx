@@ -32,7 +32,6 @@ const META: Record<Lang, { title: string; description: string; keywords: string[
       "Netzteile",
       "KI-Rechenzentren",
       "Elektromobilität",
-      "Grüner Wasserstoff",
     ],
   },
   en: {
@@ -48,7 +47,6 @@ const META: Record<Lang, { title: string; description: string; keywords: string[
       "Power supplies",
       "AI data centers",
       "E-mobility",
-      "Green hydrogen",
     ],
   },
 };

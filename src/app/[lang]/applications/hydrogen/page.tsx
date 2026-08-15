@@ -70,6 +70,9 @@ const META: Record<Lang, PageMeta> = {
       "DC power conversion",
       "wide-bandgap semiconductors",
     ],
+    // #176: Thema vorerst raus — Seite bleibt bestehen, aber unverlinkt und
+    // nicht indexiert, bis die offenen technischen Fragen geklaert sind.
+    noindex: true,
   },
   en: {
     title: "Efficient Power Electronics for Green Hydrogen",
@@ -82,6 +85,9 @@ const META: Record<Lang, PageMeta> = {
       "DC power conversion",
       "wide-bandgap semiconductors",
     ],
+    // #176: Thema vorerst raus — Seite bleibt bestehen, aber unverlinkt und
+    // nicht indexiert, bis die offenen technischen Fragen geklaert sind.
+    noindex: true,
   },
 };
 

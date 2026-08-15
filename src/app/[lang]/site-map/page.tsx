@@ -39,7 +39,6 @@ const COPY: Record<
           { label: "WBG Leistungsmodule & Technologie", href: "/solutions/wbg-power-modules" },
           { label: "AI Data Center", href: "/solutions/rack-power-distribution" },
           { label: "Automotive & E-Mobilität", href: "/applications/automotive-emobility" },
-          { label: "Grüner Wasserstoff", href: "/applications/hydrogen" },
         ],
       },
       {
@@ -95,7 +94,6 @@ const COPY: Record<
           { label: "WBG Power Modules & Technology", href: "/solutions/wbg-power-modules" },
           { label: "AI Data Center", href: "/solutions/rack-power-distribution" },
           { label: "Automotive & E-Mobility", href: "/applications/automotive-emobility" },
-          { label: "Green Hydrogen", href: "/applications/hydrogen" },
         ],
       },
       {

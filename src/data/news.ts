@@ -43,17 +43,6 @@ export const NEWS_ITEMS: Record<Lang, NewsItem[]> = {
       featured: true,
     },
     {
-      href: "/applications/hydrogen",
-      category: "Applikationen",
-      date: "14. Mai 2026",
-      title: "Effiziente Leistungselektronik für grünen Wasserstoff",
-      excerpt:
-        "Der Wirkungsgrad der grünen Wasserstoffproduktion hängt an der Leistungselektronik – Wide-Bandgap-Halbleiter steigern Effizienz und Leistungsdichte.",
-      image: "/images/green-hydrogen.png",
-      imageAlt: "Effiziente Leistungselektronik für grünen Wasserstoff",
-      featured: true,
-    },
-    {
       href: "/solutions/technology-spotlight-gallium-nitride",
       category: "Technologie",
       date: "2. Mai 2026",
@@ -69,7 +58,7 @@ export const NEWS_ITEMS: Record<Lang, NewsItem[]> = {
       date: "18. April 2026",
       title: "SiC – der Leistungshalbleiter der Elektrifizierungsära",
       excerpt:
-        "Vom Bauelement zum System: SiC treibt Effizienz in Elektrofahrzeugen, Solarenergie und grünem Wasserstoff.",
+        "Vom Bauelement zum System: SiC treibt Effizienz in Elektrofahrzeugen, Solarenergie und industriellen Antrieben.",
       image: "/images/power-module-sic.png",
       imageAlt: "WBG-Leistungsmodul mit SiC",
     },
@@ -108,17 +97,6 @@ export const NEWS_ITEMS: Record<Lang, NewsItem[]> = {
       featured: true,
     },
     {
-      href: "/applications/hydrogen",
-      category: "Applications",
-      date: "May 14, 2026",
-      title: "Efficient Power Electronics for Green Hydrogen",
-      excerpt:
-        "The efficiency of green hydrogen production depends on power electronics — wide-bandgap semiconductors boost efficiency and power density.",
-      image: "/images/green-hydrogen.png",
-      imageAlt: "Efficient power electronics for green hydrogen",
-      featured: true,
-    },
-    {
       href: "/solutions/technology-spotlight-gallium-nitride",
       category: "Technology",
       date: "May 2, 2026",
@@ -134,7 +112,7 @@ export const NEWS_ITEMS: Record<Lang, NewsItem[]> = {
       date: "April 18, 2026",
       title: "SiC — the Power Semiconductor of the Electrification Era",
       excerpt:
-        "From device to system: SiC drives efficiency in electric vehicles, solar power and green hydrogen.",
+        "From device to system: SiC drives efficiency in electric vehicles, solar power and industrial drives.",
       image: "/images/power-module-sic.png",
       imageAlt: "WBG power module with SiC",
     },

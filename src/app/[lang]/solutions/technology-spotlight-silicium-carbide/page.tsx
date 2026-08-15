@@ -97,7 +97,7 @@ const COPY: Record<
     market: {
       teaser: "Globaler Markt SiC-Devices",
       headline: "Auf dem Weg zum 10-Milliarden-Dollar-Markt",
-      body: "SiC: Die Wide-Bandgap-Plattform, die Effizienz in Elektrofahrzeugen, Solarenergie und grünem Wasserstoff vorantreibt – vom Bauelement bis zum System.",
+      body: "SiC: Die Wide-Bandgap-Plattform, die Effizienz in Elektrofahrzeugen, Solarenergie und industriellen Antrieben vorantreibt – vom Bauelement bis zum System.",
       stats: [
         { value: "$10,3 Mrd.", label: "SiC-Bauteilmarkt 2030" },
         { value: "20 %", label: "CAGR 2026–2030" },
@@ -259,14 +259,13 @@ const COPY: Record<
     },
     roadmap: {
       subEyebrow: "Ausblick & Technologie-Roadmap",
-      title: "SiC in erneuerbaren Energien & grünem Wasserstoff",
-      body: "Neue Bauelementearchitekturen gestalten die Zukunft der Leistungskonvertierung – von Utility-Scale-Photovoltaik über netzgekoppelte Speicher bis zur Wasserstoff-Elektrolyse.",
+      title: "SiC in erneuerbaren Energien & netzgekoppelten Speichern",
+      body: "Neue Bauelementearchitekturen gestalten die Zukunft der Leistungskonvertierung – von Utility-Scale-Photovoltaik bis zu netzgekoppelten Speichern.",
       bullets: [
         "1.500-V-Utility-Scale-PV: SiC-ANPC-Topologie bei 48 kHz ermöglicht über 99 % Spitzenwirkungsgrad",
         "Netzmaßstäbliche ESS: bidirektionale Wandler mit 1.200-V-SiC-MOSFETs in 3-Level-Topologie ersetzen IGBT + FRD",
-        "Grüner Wasserstoff: SiC ermöglicht LLC-Gleichrichter im MW-Maßstab für Elektrolyseur-Netzteile",
       ],
-      imageAlt: "Grüne Wasserstoffproduktion mit SiC-Leistungselektronik",
+      imageAlt: "Erneuerbare Energien und netzgekoppelte Speicher mit SiC-Leistungselektronik",
     },
   },
   en: {
@@ -277,7 +276,7 @@ const COPY: Record<
     market: {
       teaser: "Global SiC Device Market",
       headline: "On the way to a $10 billion market",
-      body: "SiC: the wide-bandgap platform driving efficiency in electric vehicles, solar energy and green hydrogen — from device to system.",
+      body: "SiC: the wide-bandgap platform driving efficiency in electric vehicles, solar energy and industrial drives — from device to system.",
       stats: [
         { value: "$10.3B", label: "SiC device market 2030" },
         { value: "20%", label: "CAGR 2026–2030" },
@@ -439,14 +438,13 @@ const COPY: Record<
     },
     roadmap: {
       subEyebrow: "Outlook & Technology Roadmap",
-      title: "SiC in renewable energy & green hydrogen",
-      body: "New device architectures are shaping the future of power conversion — from utility-scale photovoltaics and grid-tied storage to hydrogen electrolysis.",
+      title: "SiC in renewable energy & grid-tied storage",
+      body: "New device architectures are shaping the future of power conversion — from utility-scale photovoltaics to grid-tied storage.",
       bullets: [
         "1,500 V utility-scale PV: SiC ANPC topology at 48 kHz enables >99% peak efficiency",
         "Grid-scale ESS: bidirectional converters with 1,200 V SiC MOSFETs in 3-level topology replace IGBT + FRD",
-        "Green hydrogen: SiC enables MW-scale LLC rectifiers for electrolyzer power supplies",
       ],
-      imageAlt: "Green hydrogen production powered by SiC power electronics",
+      imageAlt: "Renewable energy and grid-tied storage powered by SiC power electronics",
     },
   },
 };
@@ -455,13 +453,13 @@ const META: Record<Lang, PageMeta> = {
   de: {
     title: "SiC – Power Semiconductor of the Electrification Age",
     description:
-      "SiC: The Wide-Bandgap Platform Driving Efficiency in Electric Vehicles, Solar Energy, and Green Hydrogen – From Device to System",
+      "SiC: The Wide-Bandgap Platform Driving Efficiency in Electric Vehicles, Solar Energy, and Industrial Drives – From Device to System",
     keywords: ["silicium carbide - SiC", "powertrain", "electrification", "aux-inverter", "power modules"],
   },
   en: {
     title: "SiC – Power Semiconductor of the Electrification Age",
     description:
-      "SiC: The Wide-Bandgap Platform Driving Efficiency in Electric Vehicles, Solar Energy, and Green Hydrogen – From Device to System",
+      "SiC: The Wide-Bandgap Platform Driving Efficiency in Electric Vehicles, Solar Energy, and Industrial Drives – From Device to System",
     keywords: ["silicium carbide - SiC", "powertrain", "electrification", "aux-inverter", "power modules"],
   },
 };
@@ -817,7 +815,7 @@ export default async function SiCSpotlightPage({
               <Reveal delay={0.12} className="lg:col-span-6 order-2 lg:order-1">
                 <div className="relative min-h-[260px] lg:min-h-[420px] rounded-3xl overflow-hidden border border-white/10 bg-brand-navy-light shadow-lg">
                   <Image
-                    src="/images/green-hydrogen.png"
+                    src="/images/renewables-solar-wind.png"
                     alt={t.roadmap.imageAlt}
                     fill
                     className="object-cover"

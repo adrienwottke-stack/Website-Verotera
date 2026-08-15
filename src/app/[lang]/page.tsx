@@ -30,7 +30,6 @@ const META: Record<Lang, PageMeta> = {
       "Netzteile",
       "KI-Rechenzentren",
       "Elektromobilität",
-      "Grüner Wasserstoff",
     ],
   },
   en: {
@@ -46,7 +45,6 @@ const META: Record<Lang, PageMeta> = {
       "Power supplies",
       "AI data centers",
       "E-mobility",
-      "Green hydrogen",
     ],
   },
 };

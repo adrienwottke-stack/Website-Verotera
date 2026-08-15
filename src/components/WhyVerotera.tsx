@@ -26,7 +26,7 @@ const COPY: Record<
     headline:
       "Wir gestalten den industriellen Wandel mit innovativen Wide-Bandgap-Halbleiter-Packaging-Technologien.",
     body:
-      "VEROTERAs fortschrittliche WBG-Leistungsmodule sind darauf ausgelegt, höchste Leistung zu liefern – für intelligentere und effizientere Systeme in KI-Rechenzentren, E-Mobilität, erneuerbaren Energien, grünem Wasserstoff oder der Industrie-Automation.",
+      "VEROTERAs fortschrittliche WBG-Leistungsmodule sind darauf ausgelegt, höchste Leistung zu liefern – für intelligentere und effizientere Systeme in KI-Rechenzentren, E-Mobilität, erneuerbaren Energien oder der Industrie-Automation.",
     imageAlt: "Collaborative Intelligence – Menschen und Präzision in der WBG-Fertigung",
     panelEyebrow: "Innovative Wide-Bandgap Halbleitermodule",
     panelTitle: "Collaborative Intelligence",
@@ -50,7 +50,7 @@ const COPY: Record<
     headline:
       "We shape the industrial transformation with innovative wide-bandgap semiconductor packaging technologies.",
     body:
-      "VEROTERA's advanced WBG power modules are engineered to deliver peak performance — enabling smarter, more efficient systems in AI data centers, e-mobility, renewable energy, green hydrogen and industrial automation.",
+      "VEROTERA's advanced WBG power modules are engineered to deliver peak performance — enabling smarter, more efficient systems in AI data centers, e-mobility, renewable energy and industrial automation.",
     imageAlt: "Collaborative intelligence — people and precision in WBG manufacturing",
     panelEyebrow: "Innovative Wide-Bandgap Semiconductor Modules",
     panelTitle: "Collaborative Intelligence",

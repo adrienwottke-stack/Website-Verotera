@@ -13,7 +13,7 @@ const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.S
   { path: "/solutions/technology-spotlight-silicium-carbide", priority: 0.8, changeFrequency: "monthly" },
   { path: "/solutions", priority: 0.7, changeFrequency: "monthly" },
   { path: "/applications/automotive-emobility", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/applications/hydrogen", priority: 0.8, changeFrequency: "monthly" },
+  // /applications/hydrogen: per #176 entlinkt und auf noindex — bewusst nicht hier.
   { path: "/about", priority: 0.7, changeFrequency: "monthly" },
   { path: "/contacts", priority: 0.7, changeFrequency: "yearly" },
   { path: "/careers", priority: 0.6, changeFrequency: "weekly" },

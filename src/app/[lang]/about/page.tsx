@@ -6,7 +6,6 @@ import {
   CheckCircle2,
   Cog,
   Compass,
-  Droplets,
   Factory,
   Layers,
   Leaf,
@@ -29,7 +28,7 @@ import { buildMetadata, type PageMeta } from "@/lib/seo";
 
 const PILLAR_ICONS = [Layers, Cog, Network, Rocket];
 const VALUE_ICONS = [Users, Award, Leaf];
-const IMPACT_ICONS = [Server, Car, Sun, Factory, Droplets];
+const IMPACT_ICONS = [Server, Car, Sun, Factory];
 
 const COPY: Record<
   Lang,
@@ -80,7 +79,7 @@ const COPY: Record<
     s1SubEyebrow: "Applikationen",
     s1SubTitle: "Powered by People and Precision – Connecting Global Expertise",
     s1P1:
-      "VEROTERAs fortschrittliche WBG-Leistungsmodule sind darauf ausgelegt, höchste Leistung zu liefern – für intelligentere und effizientere Systeme in KI-Rechenzentren, E-Mobilität, erneuerbaren Energien, grünem Wasserstoff und der industriellen Automatisierung.",
+      "VEROTERAs fortschrittliche WBG-Leistungsmodule sind darauf ausgelegt, höchste Leistung zu liefern – für intelligentere und effizientere Systeme in KI-Rechenzentren, E-Mobilität, erneuerbaren Energien und der industriellen Automatisierung.",
     s1P2:
       "Wir gestalten die Zukunft des Engineerings durch intelligente Zusammenarbeit zwischen Menschen, Systemen und künstlicher Intelligenz – mit adaptiven, resilienten und nachhaltigen Lösungen, die mit ihrer Umgebung wachsen.",
     s1ImageAlt: "Wide-Bandgap SiC-Leistungsmodul für fortschrittliche Leistungselektronik",
@@ -154,10 +153,6 @@ const COPY: Record<
         title: "Industrial Electrification",
         text: "Höhere Leistungsdichte und Zuverlässigkeit für die industrielle Automatisierung.",
       },
-      {
-        title: "Green Hydrogen",
-        text: "Effiziente Leistungselektronik für Elektrolyseur-Systeme und DC-basierte Energiepfade.",
-      },
     ],
     rdTitle: "R&D-Center Meerbusch (NRW), Deutschland",
     rdBody:
@@ -174,7 +169,7 @@ const COPY: Record<
     s1SubEyebrow: "Applications",
     s1SubTitle: "Powered by People and Precision — Connecting Global Expertise",
     s1P1:
-      "VEROTERA's advanced WBG power modules are engineered to deliver peak performance — for smarter, more efficient systems in AI data centers, e-mobility, renewable energy, green hydrogen and industrial automation.",
+      "VEROTERA's advanced WBG power modules are engineered to deliver peak performance — for smarter, more efficient systems in AI data centers, e-mobility, renewable energy and industrial automation.",
     s1P2:
       "We shape the future of engineering through intelligent collaboration between people, systems and artificial intelligence — with adaptive, resilient and sustainable solutions that grow with their environment.",
     s1ImageAlt: "Wide-bandgap semiconductor SiC power module for advanced power electronics",
@@ -247,10 +242,6 @@ const COPY: Record<
       {
         title: "Industrial Electrification",
         text: "Higher power density and reliability for industrial automation.",
-      },
-      {
-        title: "Green Hydrogen",
-        text: "Efficient power electronics for electrolyzer systems and DC-based energy paths.",
       },
     ],
     rdTitle: "R&D Center Meerbusch (NRW), Germany",
