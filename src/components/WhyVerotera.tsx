@@ -2,12 +2,12 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Layers, ShieldAlert, Workflow } from "lucide-react";
+import { ShieldAlert, Workflow } from "lucide-react";
 import { useLang } from "@/components/LangProvider";
 import type { Lang } from "@/lib/i18n";
 
-const BADGE_ICONS = [Layers, ShieldAlert, Workflow];
-const BADGE_HIGHLIGHTS = ["Full Stack", "System-Level", "Industry Bridge"];
+const BADGE_ICONS = [ShieldAlert, Workflow];
+const BADGE_HIGHLIGHTS = ["System-Level", "Industry Bridge"];
 
 const COPY: Record<
   Lang,
@@ -35,11 +35,6 @@ const COPY: Record<
       "Wir gestalten die Zukunft des Engineerings durch intelligente Zusammenarbeit zwischen Menschen, Systemen und künstlicher Intelligenz – mit adaptiven, resilienten und nachhaltigen Lösungen, die mit ihrer Umgebung wachsen.",
     badges: [
       {
-        title: "Vom Chip bis zum System",
-        description:
-          "Wir verstehen den gesamten Stack. Von der Halbleiterphysik bis zur Wärmeleitmasse und industriellen Fahrzeugmontage.",
-      },
-      {
         title: "Tiefes Systemverständnis",
         description:
           "Unser Engineering zielt auf optimale Systemkosten, funktionale Sicherheit (ISO 26262) und Gesamteffizienz – nicht nur auf isolierte Moduloptimierungen.",
@@ -63,11 +58,6 @@ const COPY: Record<
     panelBody:
       "We shape the future of engineering through intelligent collaboration between people, systems and artificial intelligence — with adaptive, resilient and sustainable solutions that grow with their environment.",
     badges: [
-      {
-        title: "From Chip to System",
-        description:
-          "We understand the entire stack — from semiconductor physics to thermal interface materials and industrial vehicle assembly.",
-      },
       {
         title: "Deep System Understanding",
         description:
@@ -141,8 +131,8 @@ export default function WhyVerotera() {
 
         </div>
 
-        {/* 3 Advantage Badges (CSV: Full Stack / System-Level / Industry Bridge) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {/* 2 Advantage Badges (System-Level / Industry Bridge) — #88: erste Karte entfernt */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {t.badges.map((badge, index) => {
             const Icon = BADGE_ICONS[index];
             return (
