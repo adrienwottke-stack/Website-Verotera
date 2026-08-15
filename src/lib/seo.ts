@@ -59,6 +59,12 @@ export type PageMeta = {
   title: string;
   description: string;
   keywords?: string[];
+  /**
+   * Page stays reachable but is kept out of search results ("entlinken statt
+   * loeschen"). Also remove the route from src/app/sitemap.ts and from the
+   * Site-Map page when setting this.
+   */
+  noindex?: boolean;
 };
 
 /**
@@ -72,6 +78,7 @@ export function buildMetadata(lang: Lang, path: string, meta: PageMeta): Metadat
     title: meta.title,
     description: meta.description,
     keywords: meta.keywords,
+    ...(meta.noindex ? { robots: { index: false, follow: false } } : {}),
     alternates: {
       canonical: url,
       languages: {

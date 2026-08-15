@@ -57,7 +57,6 @@ const COPY: Record<
           { label: "Produktdokumentation", href: "/resources/product-documentation" },
           { label: "Qualität & Zertifizierungen", href: "/resources/quality-certifications" },
           { label: "Garantie", href: "/resources/warranty" },
-          { label: "Patente", href: "/resources/patents" },
         ],
       },
       {
@@ -115,7 +114,6 @@ const COPY: Record<
           { label: "Product Documentation", href: "/resources/product-documentation" },
           { label: "Quality & Certifications", href: "/resources/quality-certifications" },
           { label: "Warranty", href: "/resources/warranty" },
-          { label: "Patents", href: "/resources/patents" },
         ],
       },
       {

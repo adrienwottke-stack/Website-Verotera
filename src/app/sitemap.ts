@@ -22,7 +22,7 @@ const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.S
   { path: "/resources/product-documentation", priority: 0.5, changeFrequency: "monthly" },
   { path: "/resources/quality-certifications", priority: 0.5, changeFrequency: "yearly" },
   { path: "/resources/warranty", priority: 0.4, changeFrequency: "yearly" },
-  { path: "/resources/patents", priority: 0.4, changeFrequency: "yearly" },
+  // /resources/patents: per #97 entlinkt und auf noindex — bewusst nicht hier.
   { path: "/site-map", priority: 0.3, changeFrequency: "yearly" },
   { path: "/legal/imprint", priority: 0.2, changeFrequency: "yearly" },
   { path: "/legal/privacy-policy", priority: 0.2, changeFrequency: "yearly" },

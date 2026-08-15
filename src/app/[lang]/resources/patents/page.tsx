@@ -75,12 +75,15 @@ const META: Record<Lang, PageMeta> = {
     description:
       "Geistiges Eigentum und Patente von VEROTERA in der Wide-Bandgap-Leistungselektronik und im Packaging.",
     keywords: ["Patente", "Geistiges Eigentum", "Innovation", "WBG"],
+    // #97: Seite bleibt bestehen, aber nicht verlinkt und nicht indexiert.
+    noindex: true,
   },
   en: {
     title: "Patents | VEROTERA",
     description:
       "VEROTERA's intellectual property and patents in wide-bandgap power electronics and packaging.",
     keywords: ["Patents", "Intellectual property", "Innovation", "WBG"],
+    noindex: true,
   },
 };
 
