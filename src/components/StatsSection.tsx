@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { Award, GraduationCap, Quote } from "lucide-react";
 import BrandWatermark from "./BrandWatermark";
@@ -15,7 +14,6 @@ const COPY: Record<
     headlineA: string;
     headlineB: string;
     intro: string;
-    stats: { label: string; value: number; suffix: string }[];
     founderRole: string;
     founderFact1: string;
     founderFact2: string;
@@ -28,12 +26,6 @@ const COPY: Record<
     headlineB: "als Technologie-Schlagworte",
     intro:
       "Wir fokussieren uns auf messbare Engineering-Leistungen. Unser Team hat aktiv Elektronik weltweit für industrielle Stromnetze und sicherheitskritische Plattformen entwickelt, simuliert, zertifiziert und eingesetzt.",
-    stats: [
-      { label: "Entwickelte Produkte", value: 100, suffix: "+" },
-      { label: "Kunden weltweit", value: 1500, suffix: "+" },
-      { label: "Jahre Expertise", value: 25, suffix: "+" },
-      { label: "Patente in Halbleitertechnologie", value: 18, suffix: "+" },
-    ],
     founderRole: "Gründer & Geschäftsführer",
     founderFact1: "25+ Jahre Halbleiterinnovation",
     founderFact2: "Wide-Bandgap (SiC/GaN) Experte",
@@ -46,12 +38,6 @@ const COPY: Record<
     headlineB: "than technology buzzwords",
     intro:
       "We focus on measurable engineering results. Our team has actively developed, simulated, certified and deployed electronics worldwide for industrial power grids and safety-critical platforms.",
-    stats: [
-      { label: "Products developed", value: 100, suffix: "+" },
-      { label: "Customers worldwide", value: 1500, suffix: "+" },
-      { label: "Years of expertise", value: 25, suffix: "+" },
-      { label: "Semiconductor technology patents", value: 18, suffix: "+" },
-    ],
     founderRole: "Founder & Managing Director",
     founderFact1: "25+ years of semiconductor innovation",
     founderFact2: "Wide-bandgap (SiC/GaN) expert",
@@ -60,50 +46,9 @@ const COPY: Record<
   },
 };
 
-interface CounterProps {
-  value: number;
-  suffix?: string;
-  duration?: number;
-}
-
-function SafeCounter({ value, suffix = "", duration = 2 }: CounterProps) {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  useEffect(() => {
-    if (!isInView) return;
-
-    let start = 0;
-    const end = value;
-    const totalMiliseconds = duration * 1000;
-    const incrementTime = Math.max(Math.floor(totalMiliseconds / end), 15);
-
-    const timer = setInterval(() => {
-      start += Math.ceil(end / (totalMiliseconds / incrementTime));
-      if (start >= end) {
-        setCount(end);
-        clearInterval(timer);
-      } else {
-        setCount(start);
-      }
-    }, incrementTime);
-
-    return () => clearInterval(timer);
-  }, [isInView, value, duration]);
-
-  return (
-    <span ref={ref} className="font-display text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-blue">
-      {count}
-      {suffix}
-    </span>
-  );
-}
-
 export default function StatsSection() {
   const lang = useLang();
   const t = COPY[lang];
-  const statsList = t.stats;
 
   return (
     <section id="about" className="relative py-24 sm:py-32 bg-white border-t border-brand-blue/10 overflow-hidden">
@@ -114,7 +59,7 @@ export default function StatsSection() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
 
-          {/* Left Area: Stats Counts */}
+          {/* Left Area: Section Header (#90: Kennzahlen-Raster entfernt) */}
           <div className="lg:col-span-6 flex flex-col justify-center">
             <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
               {t.eyebrow}
@@ -123,23 +68,9 @@ export default function StatsSection() {
               {t.headlineA} <br className="hidden sm:inline" />
               {t.headlineB}
             </h2>
-            <p className="font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed mb-12">
+            <p className="font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed">
               {t.intro}
             </p>
-
-            {/* Grid of numbers */}
-            <div className="grid grid-cols-2 gap-8">
-              {statsList.map((stat) => (
-                <div key={stat.label} className="p-6 rounded-2xl border border-brand-navy/8 bg-white shadow-sm">
-                  <div className="mb-2">
-                    <SafeCounter value={stat.value} suffix={stat.suffix} />
-                  </div>
-                  <span className="font-sans text-xs sm:text-sm font-semibold text-brand-navy/50">
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Right Area: Founder Spotlight */}
