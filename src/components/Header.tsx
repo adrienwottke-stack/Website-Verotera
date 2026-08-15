@@ -33,13 +33,6 @@ const NAV: Record<Lang, NavItem[]> = {
       ],
     },
     {
-      label: "Support",
-      children: [
-        { label: "Technische Unterstützung", href: "/contacts" },
-        { label: "Kontakte", href: "/contacts" },
-      ],
-    },
-    {
       label: "Über uns",
       children: [
         { label: "Über VEROTERA", href: "/about" },
@@ -70,13 +63,6 @@ const NAV: Record<Lang, NavItem[]> = {
         { label: "AI Data Center", href: "/solutions/rack-power-distribution" },
         { label: "Automotive & E-Mobility", href: "/applications/automotive-emobility" },
         { label: "Green Hydrogen", href: "/applications/hydrogen" },
-      ],
-    },
-    {
-      label: "Support",
-      children: [
-        { label: "Technical Support", href: "/contacts" },
-        { label: "Contacts", href: "/contacts" },
       ],
     },
     {
