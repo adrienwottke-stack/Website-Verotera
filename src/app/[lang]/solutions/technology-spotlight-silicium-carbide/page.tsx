@@ -6,9 +6,6 @@ import {
   Zap,
   Thermometer,
   CircuitBoard,
-  Cpu,
-  Car,
-  BatteryCharging,
   Gauge,
   Flame,
   Timer,
@@ -28,7 +25,6 @@ import { hasLang, type Lang } from "@/lib/i18n";
 import { buildMetadata, type PageMeta } from "@/lib/seo";
 
 const FOUNDATION_ICONS = [Atom, Zap, Thermometer, CircuitBoard];
-const TREND_ICONS = [Cpu, Car, BatteryCharging];
 const ADVANTAGE_ICONS = [Gauge, Thermometer, Flame, Timer, TrendingDown, PlugZap];
 
 const COPY: Record<
@@ -42,7 +38,6 @@ const COPY: Record<
       headline: string;
       body: string;
       stats: { value: string; label: string }[];
-      source: string;
     };
     profile: {
       teaser: string;
@@ -61,12 +56,6 @@ const COPY: Record<
       teaser: string;
       headline: string;
       cards: { title: string; text: string }[];
-      source: string;
-    };
-    trends: {
-      teaser: string;
-      headline: string;
-      cards: { tag: string; title: string; points: string[]; source: string }[];
     };
     outlook: {
       teaser: string;
@@ -77,7 +66,6 @@ const COPY: Record<
       teaser: string;
       headline: string;
       cards: { title: string; text: string }[];
-      sources: string;
       closing: string;
     };
     roadmap: {
@@ -104,7 +92,6 @@ const COPY: Record<
         { value: "$6,3 Mrd.", label: "Automotive 2030" },
         { value: "$1,0 Mrd.", label: "Renewables & Energie 2030" },
       ],
-      source: "Quelle: Yole Group – Power SiC 2025",
     },
     profile: {
       teaser: "Anwendungsprofil",
@@ -157,46 +144,6 @@ const COPY: Record<
           text: "Niedriger RDS(on), bidirektionaler Strom (1. und 3. Quadrant), keine Minoritätsträgerspeicherung – kein Schweifstrom. Überlegen gegenüber IGBT bei Teillast.",
         },
       ],
-      source: "Quelle: Microchip Technology; Bodo's Power Systems Sep. 2024; Yole Group",
-    },
-    trends: {
-      teaser: "Berichtet in Bodo's Power Systems",
-      headline: "Schlüsseltrends 2024 / 2025",
-      cards: [
-        {
-          tag: "ROHM EcoSiC · April 2026",
-          title: "SiC-MOSFETs der 5. Generation",
-          points: [
-            "RDS(on) um ~30 % reduziert bei Tj = 175 °C vs. 4. Generation – bei gleicher Sperrspannung und Chipfläche",
-            "Trench-SiC-MOSFET-Architektur: kleinere Zellteilung, optimiertes Trägerdotierungsprofil",
-            "Zielanwendungen: xEV-Traktionswechselrichter, OBCs, DC-DC-Wandler, KI-Server-Netzteile, PV, ESS, UPS, eVTOL",
-            "Waferdurchmesser wächst weiter: 6-Zoll (150 mm) Mainstream, 8-Zoll (200 mm) in Qualifikation",
-          ],
-          source: "ROHM EcoSiC 5th Gen – Bodo's Power Systems, April 2026",
-        },
-        {
-          tag: "PCIM-2025-Panel · Automotive",
-          title: "SiC in 800-V-EV-Traktionswechselrichtern",
-          points: [
-            "800-V-EV-Plattformen zeigen höhere SiC-Durchdringung als 400-V-Flotten – mehr 800-V-Modelle in 2025 eingeführt",
-            "ST Gen-4 STPOWER SiC: 750-V- und 1.200-V-Klassen für Traktionswechselrichter; Gen-5-Planarstruktur in Entwicklung",
-            "Vollständiges SiC-Modul (SiC-MOSFET + SiC-Diode) senkt die Gesamtwechselrichterverluste um ~44 % vs. Si-IGBT + FRD",
-            "Automotive bleibt bis 2030 ~70 % der globalen SiC-Nachfrage – trotz kurzfristiger EV-Marktabschwächung",
-          ],
-          source: "STMicroelectronics Sep. 2024; Bodo's PCIM-2025-SiC-Panel; Yole Group",
-        },
-        {
-          tag: "Bodo's Sep. 2024 · Industrie",
-          title: "Hochvolt-SiC-Battery-Disconnect-Schalter",
-          points: [
-            "SiC-MOSFET ideal für Solid-State-Disconnect an 400–1.000-V-DC-Bussen: niedriger RDS(on), bidirektional, kein Latch-up",
-            "Wärmeleitfähigkeit 3× Si: niedrigerer Rth junction-to-case – mehr Strom oder einfachere Kühlung",
-            "mSiC-Module (Microchip): AlN-Substrat + Cu-Bodenplatte Standard; Si₃N₄ + AlSiC-Bodenplatte für DO-160-Qualifikation",
-            "Keine Lichtbogen-Degradation vs. Relais/Schütze – unbegrenzte Schaltzyklen, vorgelagerte Sicherung entfällt",
-          ],
-          source: "Microchip Technology / Bodo's Power Systems, September 2024",
-        },
-      ],
     },
     outlook: {
       teaser: "Marktausblick",
@@ -210,7 +157,7 @@ const COPY: Record<
         {
           title: "8-Zoll-Wafer-Übergang",
           stat: "200 mm",
-          text: "Wolfspeed erzielt bereits mehr Umsatz mit 8-Zoll- als mit 6-Zoll-Wafern; Infineon und Bosch starten 2025 in die 8-Zoll-Produktion.",
+          text: "Der Umsatzanteil von 8-Zoll-Wafern übersteigt bereits den von 6-Zoll; weitere Hersteller starten 2025 in die 8-Zoll-Produktion.",
         },
         {
           title: "Vertikale Integration",
@@ -253,8 +200,6 @@ const COPY: Record<
           text: "Spannungsbereich jenseits von GaN. Dominiert Traktion, EV-Ladetechnik, PV, ESS und Halbleiter-Leistungsschalter.",
         },
       ],
-      sources:
-        "Quellen: Bodo's Power Systems Sep. 2024 & Apr. 2026; ROHM; STMicroelectronics; Yole Group Power SiC 2025; Microchip Technology",
       closing: "SiC wird zum Leistungshalbleiter des Elektrifizierungszeitalters.",
     },
     roadmap: {
@@ -283,7 +228,6 @@ const COPY: Record<
         { value: "$6.3B", label: "Automotive 2030" },
         { value: "$1.0B", label: "Renewables & energy 2030" },
       ],
-      source: "Source: Yole Group – Power SiC 2025",
     },
     profile: {
       teaser: "Application Profile",
@@ -336,46 +280,6 @@ const COPY: Record<
           text: "Low RDS(on), bidirectional current (1st and 3rd quadrant), no minority-carrier storage — no tail current. Superior to IGBTs at partial load.",
         },
       ],
-      source: "Source: Microchip Technology; Bodo's Power Systems Sep. 2024; Yole Group",
-    },
-    trends: {
-      teaser: "Reported in Bodo's Power Systems",
-      headline: "Key Trends 2024 / 2025",
-      cards: [
-        {
-          tag: "ROHM EcoSiC · April 2026",
-          title: "5th-generation SiC MOSFETs",
-          points: [
-            "RDS(on) reduced by ~30% at Tj = 175 °C vs. 4th gen — at equivalent breakdown voltage and chip area",
-            "Trench SiC MOSFET architecture: lower cell pitch, optimized carrier doping profile",
-            "Targets xEV traction inverters, OBCs, DC-DC converters, AI server power supplies, PV, ESS, UPS, eVTOL",
-            "Wafer diameters keep growing: 6-inch (150 mm) mainstream, 8-inch (200 mm) in qualification",
-          ],
-          source: "ROHM EcoSiC 5th Gen — Bodo's Power Systems, April 2026",
-        },
-        {
-          tag: "PCIM 2025 panel · Automotive",
-          title: "SiC in 800 V EV traction inverters",
-          points: [
-            "800 V EV platforms show higher SiC penetration than 400 V fleets — more 800 V models launched in 2025",
-            "ST Gen-4 STPOWER SiC: 750 V and 1,200 V classes targeting traction inverters; Gen-5 planar structure in development",
-            "A full SiC module (SiC MOSFET + SiC diode) cuts total inverter losses by ~44% vs. Si IGBT + FRD",
-            "Automotive remains ~70% of global SiC demand through 2030 — despite the short-term EV slowdown",
-          ],
-          source: "STMicroelectronics Sep. 2024; Bodo's PCIM 2025 SiC panel; Yole Group",
-        },
-        {
-          tag: "Bodo's Sep. 2024 · Industrial",
-          title: "High-voltage SiC battery disconnect switches",
-          points: [
-            "SiC MOSFETs are ideal for solid-state disconnects on 400–1,000 V DC buses: low RDS(on), bidirectional, no latch-up",
-            "Thermal conductivity 3× Si: lower junction-to-case Rth — higher current or simpler cooling",
-            "mSiC modules (Microchip): AlN substrate + Cu baseplate standard; Si₃N₄ + AlSiC baseplate for DO-160 qualification",
-            "No arcing degradation vs. relays/contactors — unlimited switching cycles, no upstream fuse required",
-          ],
-          source: "Microchip Technology / Bodo's Power Systems, September 2024",
-        },
-      ],
     },
     outlook: {
       teaser: "Market Outlook",
@@ -389,7 +293,7 @@ const COPY: Record<
         {
           title: "8-inch wafer transition",
           stat: "200 mm",
-          text: "Wolfspeed already generates more revenue on 8-inch than on 6-inch wafers; Infineon and Bosch enter 8-inch production in 2025.",
+          text: "Revenue from 8-inch wafers already exceeds 6-inch; further manufacturers enter 8-inch production in 2025.",
         },
         {
           title: "Vertical integration",
@@ -432,8 +336,6 @@ const COPY: Record<
           text: "A voltage range beyond GaN. Dominates traction, EV charging, PV, ESS and solid-state breakers.",
         },
       ],
-      sources:
-        "Sources: Bodo's Power Systems Sep. 2024 & Apr. 2026; ROHM; STMicroelectronics; Yole Group Power SiC 2025; Microchip Technology",
       closing: "SiC is becoming the power semiconductor of the electrification age.",
     },
     roadmap: {
@@ -528,11 +430,6 @@ export default async function SiCSpotlightPage({
               ))}
             </div>
 
-            <Reveal delay={0.2}>
-              <p className="font-sans text-sm text-brand-navy/40 text-center mt-12">
-                {t.market.source}
-              </p>
-            </Reveal>
           </div>
         </section>
 
@@ -663,63 +560,10 @@ export default async function SiCSpotlightPage({
               <SpotlightTable />
             </Reveal>
 
-            <Reveal delay={0.2}>
-              <p className="font-sans text-sm text-brand-navy/40 text-center mt-8">
-                {t.foundation.source}
-              </p>
-            </Reveal>
           </div>
         </section>
 
-        {/* Schlüsseltrends 2024/2025 — Pattern C (3 Karten) */}
-        <section className="relative py-24 sm:py-32 bg-surface-light border-y border-brand-navy/8 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <Reveal className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
-                {t.trends.teaser}
-              </span>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight">
-                {t.trends.headline}
-              </h2>
-            </Reveal>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {t.trends.cards.map((card, i) => {
-                const Icon = TREND_ICONS[i];
-                return (
-                  <Reveal key={card.title} delay={i * 0.12}>
-                    <div className="h-full p-6 rounded-2xl border border-brand-navy/8 bg-white shadow-sm flex flex-col">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="p-2.5 rounded-lg bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan shrink-0">
-                          <Icon className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <span className="text-[9px] font-bold text-brand-navy tracking-wider uppercase block mb-1">
-                            {card.tag}
-                          </span>
-                          <h3 className="font-display text-lg font-bold text-brand-navy leading-tight">
-                            {card.title}
-                          </h3>
-                        </div>
-                      </div>
-                      <ul className="space-y-3 list-none m-0 p-0">
-                        {card.points.map((point) => (
-                          <li key={point} className="flex items-start gap-2.5">
-                            <Check className="w-5 h-5 text-brand-cyan shrink-0 mt-0.5" />
-                            <span className="font-sans text-sm text-brand-navy/70">{point}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <p className="font-sans text-xs text-brand-navy/55 mt-auto pt-5">
-                        {card.source}
-                      </p>
-                    </div>
-                  </Reveal>
-                );
-              })}
-            </div>
-          </div>
-        </section>
+        {/* #170: Sektion "Berichtet in Bodo's Power Systems / Schlüsseltrends" entfernt */}
 
         {/* Marktausblick — Pattern D (Stat-Spalten) */}
         <section className="relative py-24 sm:py-32 bg-white overflow-hidden">
@@ -791,12 +635,6 @@ export default async function SiCSpotlightPage({
                 );
               })}
             </div>
-
-            <Reveal delay={0.15}>
-              <p className="font-sans text-sm text-brand-navy/40 text-center mt-10">
-                {t.advantages.sources}
-              </p>
-            </Reveal>
 
             <Reveal delay={0.2}>
               <p className="font-display text-2xl sm:text-3xl font-bold text-brand-navy text-center max-w-4xl mx-auto mt-16 sm:mt-20 leading-snug">
