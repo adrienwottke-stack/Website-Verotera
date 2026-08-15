@@ -41,7 +41,7 @@ const COPY: Record<
       headline: string;
       body: string;
       closing: string;
-      stats: { title: string; value: string; label: string; source: string }[];
+      stats: { title: string; value: string; label: string }[];
     };
     profile: {
       eyebrow: string;
@@ -61,13 +61,11 @@ const COPY: Record<
       headline: string;
       body: string;
       cards: { title: string; text: string }[];
-      source: string;
     };
     matrix: {
       eyebrow: string;
       headline: string;
       body: string;
-      source: string;
     };
     trend2: {
       eyebrow: string;
@@ -75,7 +73,6 @@ const COPY: Record<
       body: string;
       flow: { label: string; sub?: string; accent?: boolean }[];
       cards: { name: string; stat: string; statLabel: string; text: string }[];
-      source: string;
       ctaTitle: string;
       ctaSub: string;
       ctaButton: string;
@@ -84,7 +81,6 @@ const COPY: Record<
       eyebrow: string;
       headline: string;
       cards: { title: string; text: string }[];
-      source: string;
     };
   }
 > = {
@@ -96,18 +92,17 @@ const COPY: Record<
     market: {
       eyebrow: "Technologie Spotlight",
       headline: "Globaler Markt GaN Devices",
-      body: "Ausgehend von $355 Mio. im Jahr 2024 wächst der Markt für Power-GaN-Bauelemente bis 2030 auf rund $3 Mrd. (Yole Group).",
+      body: "Ausgehend von $355 Mio. im Jahr 2024 wächst der Markt für Power-GaN-Bauelemente bis 2030 auf rund $3 Mrd.",
       closing:
-        "GaN in der KI-Rechenzentrums-Stromverteilung: NVIDIAs 800-VDC-Rack-Architektur ist ein struktureller Wendepunkt für GaN.",
+        "Die 800-VDC-Rack-Architektur ist ein struktureller Wendepunkt für GaN in der Stromverteilung von KI-Rechenzentren.",
       stats: [
-        { title: "GaN-Bauteilmarkt", value: "$3,0 Mrd.", label: "Prognose 2030", source: "Quelle: Yole Group" },
-        { title: "Wachstum", value: "42 %", label: "CAGR 2026–2030", source: "Quelle: Yole Group" },
-        { title: "Automotive", value: "$0,54 Mrd.", label: "Prognose 2030", source: "Quelle: Yole Group" },
+        { title: "GaN-Bauteilmarkt", value: "$3,0 Mrd.", label: "Prognose 2030" },
+        { title: "Wachstum", value: "42 %", label: "CAGR 2026–2030" },
+        { title: "Automotive", value: "$0,54 Mrd.", label: "Prognose 2030" },
         {
           title: "AI Data Center",
           value: "$4,2 Mrd.",
           label: "PDU-Gesamtmarkt 2031",
-          source: "Quelle: Mordor Intelligence",
         },
       ],
     },
@@ -166,18 +161,16 @@ const COPY: Record<
           text: "Epitaxie auf 8-Zoll-Si-Wafern reduziert die Substratkosten auf ~$1/cm². Kompatibel mit bestehenden CMOS-Fabs. Ermöglicht Volumenpreise für Massenanwendungen.",
         },
       ],
-      source: "Quelle: Fraunhofer IAF; EPC; Innoscience – veröffentlicht in Bodo's Power Systems",
     },
     matrix: {
       eyebrow: "GaN vs. Si vs. SiC",
       headline: "Schlüsselparameter im Vergleich",
       body: "Hervorgehobene Zellen markieren den stärksten Vorteil in der jeweiligen Kategorie.",
-      source: "Quelle: Yole Group; EPC; Infineon; Fraunhofer IAF",
     },
     trend2: {
-      eyebrow: "Trend 2 · AI Data Centers – OCP Global Summit 2025",
+      eyebrow: "Trend 2 · AI Data Centers",
       headline: "GaN & 800-VDC-Rack-Architektur",
-      body: "Vom AC-Netz bis zur Serverschiene: Im 800-VDC-Rack übernimmt der GaN-DC-DC-Wandler die direkte Wandlung auf 48 V / 12 V – demonstriert von Power Integrations, Navitas und STMicroelectronics/NVIDIA.",
+      body: "Vom AC-Netz bis zur Serverschiene: Im 800-VDC-Rack übernimmt der GaN-DC-DC-Wandler die direkte Wandlung auf 48 V / 12 V – in aktueller Hardware bereits demonstriert.",
       flow: [
         { label: "AC-Netz", sub: "480 VAC" },
         { label: "SST / Gleichrichter" },
@@ -187,26 +180,24 @@ const COPY: Record<
       ],
       cards: [
         {
-          name: "Power Integrations – 1.250 V PowiGaN",
+          name: "1.250-V-GaN-HEMTs",
           stat: "1.250 V",
           statLabel: "GaN-HEMTs in Volumenproduktion",
           text: "Branchenweit erste 1.250-V- und 1.700-V-GaN-HEMTs in Volumenproduktion. Direkt von 800 V auf 12 V in einer einfachen Halbbrücke, Wirkungsgrad >98 %. Ein einzelnes Bauelement übertrifft gestapelte 650-V-GaN- oder konkurrierende 1.200-V-SiC-Alternativen; die Cascode-Architektur verbessert die Kurzschlussfestigkeit.",
         },
         {
-          name: "Navitas – 10-kW-Full-Brick 800 V–50 V",
+          name: "10-kW-Full-Brick 800 V–50 V",
           stat: "10 kW",
           statLabel: "bei 1 MHz und 98 % Wirkungsgrad",
-          text: "3-Level-Halbbrücke mit 650-V-GaN-FETs auf der Primärseite, 100-V-GaN-SR sekundär. 8:1-Matrixtransformator, Schaltfrequenz 1 MHz, Systemwirkungsgrad 98 %. Demonstriert auf PCIM und OCP 2025; Multi-Output-LLC-Topologie minimiert sekundäre Leitverluste.",
+          text: "3-Level-Halbbrücke mit 650-V-GaN-FETs auf der Primärseite, 100-V-GaN-SR sekundär. 8:1-Matrixtransformator, Schaltfrequenz 1 MHz, Systemwirkungsgrad 98 %. In Demonstrationshardware gezeigt; die Multi-Output-LLC-Topologie minimiert sekundäre Leitverluste.",
         },
         {
-          name: "STMicroelectronics / NVIDIA",
+          name: "In-Rack Power-Delivery-Board",
           stat: "12 kW",
           statLabel: "In-Rack Power-Delivery-Board",
-          text: "650-V-GaN in gestapelter Halbbrücke, STM32G4-MCU mit unter 200 ps Timer-Auflösung für die SR-Regelung. 6-kW-Variante: 800 V auf 12 V bei 850 kHz, Spitzenwirkungsgrad 97,5 %, 2.500 W/in³ Leistungsdichte. Prototyp auf der OCP 2025.",
+          text: "650-V-GaN in gestapelter Halbbrücke, MCU-Regelung mit unter 200 ps Timer-Auflösung für die Synchrongleichrichtung. 6-kW-Variante: 800 V auf 12 V bei 850 kHz, Spitzenwirkungsgrad 97,5 %, 2.500 W/in³ Leistungsdichte.",
         },
       ],
-      source:
-        "Quellen: Power Integrations OCP-2025-Whitepaper; Navitas Semiconductor; STMicroelectronics / NVIDIA OCP 2025; Renesas, Oktober 2025",
       ctaTitle: "800-VDC-Architektur im Detail",
       ctaSub: "Wie die Smart PDU und der Full-GaN-DC/DC-Wandler das AI-Rack versorgen.",
       ctaButton: "Zur Rack Power Distribution Unit",
@@ -225,7 +216,7 @@ const COPY: Record<
         },
         {
           title: "Leistungsdichte >5.000 W/in³",
-          text: "EPC9159: 1 kW in 23 × 18 mm. AI-PSUs: 4,5 kW im CRPS185-Formfaktor – 40 % mehr Leistung bei gleicher Baugröße.",
+          text: "Referenzdesigns: 1 kW in 23 × 18 mm. AI-PSUs: 4,5 kW im CRPS185-Formfaktor – 40 % mehr Leistung bei gleicher Baugröße.",
         },
         {
           title: "MHz-Schalten – kleinere Magnetics",
@@ -248,8 +239,6 @@ const COPY: Record<
           text: "Bewährt in Schnellladen, AI-Server-PSUs, LiDAR, Motorantrieben und OBCs. Expansion in Industriewechselrichter und E-Mobility-Traktion.",
         },
       ],
-      source:
-        "Quellen: Bodo's Power Systems Okt. 2024 (EPC, Fraunhofer IAF); Yole Group 2025; Power Integrations; Navitas; STMicroelectronics; Renesas",
     },
   },
   en: {
@@ -260,18 +249,17 @@ const COPY: Record<
     market: {
       eyebrow: "Technology Spotlight",
       headline: "Global GaN Device Market",
-      body: "Starting from $355M in 2024, the power GaN device market grows to roughly $3B by 2030 (Yole Group).",
+      body: "Starting from $355M in 2024, the power GaN device market grows to roughly $3B by 2030.",
       closing:
-        "GaN in AI data center power distribution: NVIDIA's 800 VDC rack architecture is a structural inflection point for GaN.",
+        "The 800 VDC rack architecture is a structural inflection point for GaN in AI data center power distribution.",
       stats: [
-        { title: "GaN device market", value: "$3.0B", label: "Forecast 2030", source: "Source: Yole Group" },
-        { title: "Growth", value: "42%", label: "CAGR 2026–2030", source: "Source: Yole Group" },
-        { title: "Automotive", value: "$0.54B", label: "Forecast 2030", source: "Source: Yole Group" },
+        { title: "GaN device market", value: "$3.0B", label: "Forecast 2030" },
+        { title: "Growth", value: "42%", label: "CAGR 2026–2030" },
+        { title: "Automotive", value: "$0.54B", label: "Forecast 2030" },
         {
           title: "AI data center",
           value: "$4.2B",
           label: "Total PDU market 2031",
-          source: "Source: Mordor Intelligence",
         },
       ],
     },
@@ -324,18 +312,16 @@ const COPY: Record<
           text: "Epitaxy on 8-inch Si wafers reduces substrate cost to ~$1/cm². Compatible with existing CMOS fabs. Enables volume pricing for mass-market applications.",
         },
       ],
-      source: "Source: Fraunhofer IAF; EPC; Innoscience — reported in Bodo's Power Systems",
     },
     matrix: {
       eyebrow: "GaN vs. Si vs. SiC",
       headline: "Key parameters compared",
       body: "Highlighted cells mark the strongest advantage in each category.",
-      source: "Source: Yole Group; EPC; Infineon; Fraunhofer IAF",
     },
     trend2: {
-      eyebrow: "Trend 2 · AI Data Centers — OCP Global Summit 2025",
+      eyebrow: "Trend 2 · AI Data Centers",
       headline: "GaN & the 800 VDC Rack Power Architecture",
-      body: "From the AC grid to the server rail: in the 800 VDC rack, the GaN DC-DC converter handles the direct conversion down to 48 V / 12 V — demonstrated by Power Integrations, Navitas and STMicroelectronics/NVIDIA.",
+      body: "From the AC grid to the server rail: in the 800 VDC rack, the GaN DC-DC converter handles the direct conversion down to 48 V / 12 V — already demonstrated in current hardware.",
       flow: [
         { label: "AC grid", sub: "480 VAC" },
         { label: "SST / rectifier" },
@@ -345,26 +331,24 @@ const COPY: Record<
       ],
       cards: [
         {
-          name: "Power Integrations — 1,250 V PowiGaN",
+          name: "1,250 V GaN HEMTs",
           stat: "1,250 V",
           statLabel: "GaN HEMTs in volume production",
           text: "Industry-first 1,250 V and 1,700 V GaN HEMTs in volume production. Direct 800 V to 12 V in a simple half-bridge, efficiency >98%. A single device outperforms stacked 650 V GaN or competing 1,200 V SiC alternatives; the cascode architecture improves short-circuit tolerance.",
         },
         {
-          name: "Navitas — 10 kW full-brick 800 V–50 V",
+          name: "10 kW full-brick 800 V–50 V",
           stat: "10 kW",
           statLabel: "at 1 MHz and 98% efficiency",
-          text: "3-level half-bridge using 650 V GaN FETs on the primary, 100 V GaN SR on the secondary. 8:1 matrix transformer, switching at 1 MHz, 98% system efficiency. Demonstrated at PCIM and OCP 2025; the multi-output LLC topology minimizes secondary conduction losses.",
+          text: "3-level half-bridge using 650 V GaN FETs on the primary, 100 V GaN SR on the secondary. 8:1 matrix transformer, switching at 1 MHz, 98% system efficiency. Shown in demonstration hardware; the multi-output LLC topology minimizes secondary conduction losses.",
         },
         {
-          name: "STMicroelectronics / NVIDIA",
+          name: "In-rack power delivery board",
           stat: "12 kW",
           statLabel: "in-rack power delivery board",
-          text: "650 V GaN in a stacked half-bridge, STM32G4 MCU with sub-200 ps timer resolution for SR control. 6 kW variant: 800 V to 12 V at 850 kHz, peak efficiency 97.5%, 2,500 W/in³ power density. Prototype at OCP 2025.",
+          text: "650 V GaN in a stacked half-bridge, MCU control with sub-200 ps timer resolution for synchronous rectification. 6 kW variant: 800 V to 12 V at 850 kHz, peak efficiency 97.5%, 2,500 W/in³ power density.",
         },
       ],
-      source:
-        "Sources: Power Integrations OCP 2025 whitepaper; Navitas Semiconductor; STMicroelectronics / NVIDIA OCP 2025; Renesas, October 2025",
       ctaTitle: "The 800 VDC architecture in detail",
       ctaSub: "How the smart PDU and the full-GaN DC/DC converter power the AI rack.",
       ctaButton: "Explore the rack power distribution unit",
@@ -383,7 +367,7 @@ const COPY: Record<
         },
         {
           title: "Power density >5,000 W/in³",
-          text: "EPC9159: 1 kW in 23 × 18 mm. AI PSUs: 4.5 kW in the CRPS185 form factor — 40% more power from the same footprint.",
+          text: "Reference designs: 1 kW in 23 × 18 mm. AI PSUs: 4.5 kW in the CRPS185 form factor — 40% more power from the same footprint.",
         },
         {
           title: "MHz switching — smaller magnetics",
@@ -406,8 +390,6 @@ const COPY: Record<
           text: "Proven in fast chargers, AI server PSUs, LiDAR, motor drives and OBCs. Expanding into industrial inverters and EV traction.",
         },
       ],
-      source:
-        "Sources: Bodo's Power Systems Oct 2024 (EPC, Fraunhofer IAF); Yole Group 2025; Power Integrations; Navitas; STMicroelectronics; Renesas",
     },
   },
 };
@@ -416,13 +398,13 @@ const META: Record<Lang, PageMeta> = {
   de: {
     title: "GaN in AI data center power distribution",
     description:
-      "GaN in AI data center power distribution: NVIDIA's 800 VDC rack architecture is a structural inflection point for GaN.",
+      "GaN in AI data center power distribution: the 800 VDC rack architecture is a structural inflection point for GaN.",
     keywords: ["gallium nitride - GaN", "charging systems", "power conversion", "dc-dc-converter", "full-GaN"],
   },
   en: {
     title: "GaN in AI data center power distribution",
     description:
-      "GaN in AI data center power distribution: NVIDIA's 800 VDC rack architecture is a structural inflection point for GaN.",
+      "GaN in AI data center power distribution: the 800 VDC rack architecture is a structural inflection point for GaN.",
     keywords: ["gallium nitride - GaN", "charging systems", "power conversion", "dc-dc-converter", "full-GaN"],
   },
 };
@@ -490,7 +472,6 @@ export default async function GaNSpotlightPage({
                     {stat.value}
                   </span>
                   <span className="font-sans text-base text-brand-navy/70 mb-2">{stat.label}</span>
-                  <p className="font-sans text-sm text-brand-navy/40">{stat.source}</p>
                 </Reveal>
               ))}
             </div>
@@ -610,7 +591,6 @@ export default async function GaNSpotlightPage({
               })}
             </div>
 
-            <p className="mt-10 text-center font-sans text-sm text-brand-navy/40">{t.physics.source}</p>
           </div>
         </section>
 
@@ -633,7 +613,6 @@ export default async function GaNSpotlightPage({
               <SpotlightTable />
             </Reveal>
 
-            <p className="mt-10 text-center font-sans text-sm text-brand-navy/40">{t.matrix.source}</p>
           </div>
         </section>
 
@@ -691,7 +670,6 @@ export default async function GaNSpotlightPage({
               ))}
             </div>
 
-            <p className="mt-10 text-center font-sans text-xs text-white/50">{t.trend2.source}</p>
 
             {/* CTA-Bar */}
             <div className="mt-16 pt-10 border-t border-white/10 flex flex-col sm:flex-row items-center gap-6">
@@ -742,7 +720,6 @@ export default async function GaNSpotlightPage({
               })}
             </div>
 
-            <p className="mt-10 text-center font-sans text-sm text-brand-navy/40">{t.advantages.source}</p>
           </div>
         </section>
 
