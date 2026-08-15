@@ -69,7 +69,7 @@ export default function WbgModuleSolutions() {
             {/* Image half */}
             <div className="relative lg:col-span-5 min-h-[260px] lg:min-h-[480px] rounded-2xl overflow-hidden border border-brand-navy/8">
               <Image
-                src="/images/chip-fabrication.png"
+                src="/images/aa-wafer-dies-sic.png"
                 alt={t.imageAlt}
                 fill
                 quality={90}

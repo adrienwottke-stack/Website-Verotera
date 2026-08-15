@@ -43,11 +43,11 @@ const COPY: Record<
 };
 
 const IMAGE_SOURCES = [
-  "/images/renewables-solar-wind.png",
-  "/images/ai-data-center-rack.png",
-  "/images/emobility-automotive.png",
-  "/images/green-hydrogen.png",
-  "/images/automation-robotics.png",
+  "/images/aa_renewable_new.png",
+  "/images/aa_data_center_new.png",
+  "/images/aa_emobility_new.png",
+  "/images/aa_hydrogen_new.png",
+  "/images/aa_robotics_new.png",
 ];
 
 export default function ValueStatement() {
