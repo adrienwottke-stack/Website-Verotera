@@ -48,7 +48,7 @@ export const NEWS_ITEMS: Record<Lang, NewsItem[]> = {
       date: "2. Mai 2026",
       title: "GaN in der 800-VDC-Rack-Architektur für KI-Rechenzentren",
       excerpt:
-        "NVIDIAs 800-VDC-Rack-Architektur ist ein struktureller Wendepunkt für GaN in der Stromverteilung von KI-Rechenzentren.",
+        "Die 800-VDC-Rack-Architektur ist ein struktureller Wendepunkt für GaN in der Stromverteilung von KI-Rechenzentren.",
       image: "/images/power-module-gan-white.png",
       imageAlt: "WBG-Leistungsmodul mit GaN",
     },
@@ -102,7 +102,7 @@ export const NEWS_ITEMS: Record<Lang, NewsItem[]> = {
       date: "May 2, 2026",
       title: "GaN in the 800 VDC Rack Architecture for AI Data Centers",
       excerpt:
-        "NVIDIA's 800 VDC rack architecture is a structural turning point for GaN in AI data center power distribution.",
+        "The 800 VDC rack architecture is a structural turning point for GaN in AI data center power distribution.",
       image: "/images/power-module-gan-white.png",
       imageAlt: "WBG power module with GaN",
     },
