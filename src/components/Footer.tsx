@@ -24,9 +24,6 @@ const COPY: Record<
     resources: {
       title: "Ressourcen",
       links: [
-        { label: "Produktdokumentation", href: "/resources/product-documentation" },
-        { label: "Qualität & Zertifizierungen", href: "/resources/quality-certifications" },
-        { label: "Garantie", href: "/resources/warranty" },
         { label: "Site Map", href: "/site-map" },
       ],
     },
@@ -59,9 +56,6 @@ const COPY: Record<
     resources: {
       title: "Resources",
       links: [
-        { label: "Product Documentation", href: "/resources/product-documentation" },
-        { label: "Quality & Certifications", href: "/resources/quality-certifications" },
-        { label: "Warranty", href: "/resources/warranty" },
         { label: "Site Map", href: "/site-map" },
       ],
     },
