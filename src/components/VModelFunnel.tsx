@@ -35,9 +35,9 @@ type Tile = {
   fill: string;
   fillHi: string;
   text: string; // text colour
-  /** Right V-arm: outside our scope (early concept phase) — rendered visually
-   *  recessed so the five left phases carry the message. Full opacity on hover
-   *  so the tiles stay readable and their captions still work. */
+  /** Right V-arm und unterer Trunk: outside our scope (early concept phase) —
+   *  rendered visually recessed so the five left phases carry the message. Full
+   *  opacity on hover so the tiles stay readable and their captions still work. */
   muted?: boolean;
 };
 
@@ -107,7 +107,7 @@ const TILES: Tile[] = [
     text: NAVY,
     muted: true,
   })),
-  ...TRUNK.map((t) => ({ ...t, fill: BLUE, fillHi: BLUE_HI, text: NAVY })),
+  ...TRUNK.map((t) => ({ ...t, fill: BLUE, fillHi: BLUE_HI, text: NAVY, muted: true })),
 ];
 
 // English hover captions (tile titles are already English); "Testphase" also
