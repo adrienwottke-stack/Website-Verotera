@@ -243,7 +243,7 @@ export default async function WbgPowerModulesPage({
               <Reveal delay={0.12} className="lg:col-span-5">
                 <div className="relative min-h-[260px] lg:min-h-[480px] rounded-2xl overflow-hidden border border-brand-navy/8 bg-surface-light shadow-sm">
                   <Image
-                    src="/images/power-module-ai-fol-2.png"
+                    src="/images/aa-wafer-dies-sic.png"
                     alt={t.s1ImageAlt}
                     fill
                     className="object-cover object-left"
@@ -356,7 +356,7 @@ export default async function WbgPowerModulesPage({
               <Reveal delay={0.12} className="lg:col-span-6">
                 <div className="relative aspect-[16/10] rounded-3xl overflow-hidden border border-white/10 bg-brand-navy-light shadow-lg">
                   <Image
-                    src="/images/power-electronics-emobility-automotive.png"
+                    src="/images/application-emobility.png"
                     alt={t.s3ImageAlt}
                     fill
                     className="object-cover"
