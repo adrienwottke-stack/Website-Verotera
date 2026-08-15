@@ -1,42 +1,175 @@
 {
-  "baseUrl": "http://localhost:3001",
+  "baseUrl": "http://localhost:3002",
   "minBytes": 2000,
   "routes": [
     {
-      "label": "GaN-Spotlight",
-      "urls": {
-        "de": "/solutions/technology-spotlight-gallium-nitride",
-        "en": "/en/solutions/technology-spotlight-gallium-nitride"
-      },
+      "label": "Startseite (#83/#88, #90, #176, #78, #166) + Header/Footer (#162, #175, #178-180)",
+      "urls": { "de": "/", "en": "/en" },
       "gone": [
-        { "point": "#171 Trend 1 Vertikale GaN Power-ICs", "de": "Vertikale GaN Power-ICs", "en": "Vertical GaN Power ICs" },
-        { "point": "#171 CAVET-Schichtaufbau", "de": "Vertikaler Stromfluss", "en": "Vertical current flow" },
-        { "point": "#172 Trend 3 Humanoide Robotik", "de": "humanoider Robotik", "en": "Humanoid Robotics" },
-        { "point": "#172 EPC-Karten", "text": "EPC23102" },
-        { "point": "#173 Marktstruktur", "de": "Ökosystem-Konsolidierung", "en": "Ecosystem Consolidation" },
-        { "point": "#173 Infineon-Timeline", "text": "GaN Systems" },
-        { "point": "#174 Roadmap", "de": "Produktionsrealität", "en": "production reality" },
-        { "point": "#174 Yole-Zitat", "text": "Roy Dagher" }
+        { "point": "#83/#88 erste Karte", "de": "bis zur Wärmeleitmasse", "en": "to thermal interface materials" },
+        { "point": "#90 Kennzahlen", "de": "Entwickelte Produkte", "en": "Products developed" },
+        { "point": "#90 Kennzahlen", "de": "Jahre Expertise", "en": "Years of expertise" },
+        { "point": "#176 Wasserstoff", "de": "grünem Wasserstoff", "en": "green hydrogen" },
+        { "point": "#176 Bildkachel", "text": "aa_hydrogen_new" },
+        { "point": "#178 Footer Garantie", "de": "Garantie", "en": "Warranty" },
+        { "point": "#179 Footer Produktdoku", "de": "Produktdokumentation", "en": "Product Documentation" },
+        { "point": "#180 Footer Qualitaet", "de": "Qualität & Zertifizierungen", "en": "Quality & Certifications" },
+        { "point": "#162 Support-Dropdown", "de": "Technische Unterstützung", "en": "Technical Support" },
+        { "point": "#175 News entlinkt", "text": "/news" },
+        { "point": "#97 Patente entlinkt", "text": "/resources/patents" },
+        { "point": "#177 alte Route", "text": "agentic-ai-engineering\"" }
       ],
       "present": [
-        { "label": "Trend 2 / 800-VDC-Rack bleibt", "de": "800-VDC-Rack", "en": "800 VDC Rack" },
-        { "label": "CTA zur Rack-PDU bleibt", "text": "rack-power-distribution" },
-        { "label": "Entscheidende Vorteile bleibt", "de": "Kein QRR", "en": "Zero QRR" },
-        { "label": "Parametermatrix bleibt", "de": "Schlüsselparameter", "en": "Key parameters" },
-        { "label": "Globaler Markt bleibt", "de": "Globaler Markt GaN Devices", "en": "Global GaN Device Market" }
+        { "label": "#88 zweite Karte bleibt", "de": "Tiefes Systemverständnis", "en": "Deep System Understanding" },
+        { "label": "#90 Gruender-Zitat bleibt", "text": "Aly Mashaly" },
+        { "label": "#78 neue Mission-Kacheln", "text": "aa_renewable_new" },
+        { "label": "#166 neues Wafer-Bild", "text": "aa-wafer-dies-sic" },
+        { "label": "#162 Kontakt bleibt", "de": "Kontakt", "en": "Contact" },
+        { "label": "#178-180 Site Map bleibt", "text": "Site Map" },
+        { "label": "#177 neue Route verlinkt", "text": "deterministic-engineering-core" }
       ]
     },
     {
-      "label": "Rack Power Distribution (#168 Sektion 4 raus, #165 KI-Karte neu)",
-      "urls": {
-        "de": "/solutions/rack-power-distribution",
-        "en": "/en/solutions/rack-power-distribution"
-      },
+      "label": "WBG Power Modules (#92, #93, #94)",
+      "urls": { "de": "/solutions/wbg-power-modules", "en": "/en/solutions/wbg-power-modules" },
       "gone": [
-        { "point": "#168 Sektion 800 VDC vs. AC/DC", "de": "konventionelle AC/DC", "en": "conventional AC/DC" }
+        { "point": "#92 alter Text", "de": "VEROTERA begleitet Kunden von den frühesten", "en": "VEROTERA accompanies customers from the earliest" },
+        { "point": "#93 altes Bild", "text": "power-module-ai-fol-2" },
+        { "point": "#94 altes Bild", "text": "power-electronics-emobility-automotive" }
       ],
       "present": [
-        { "label": "#165 neue KI-Karte", "de": "Terawattstunden", "en": "terawatt-hours" }
+        { "label": "#92 neuer Text", "de": "Wir bündeln globales Fachwissen", "en": "We connect global domain expertise" },
+        { "label": "#93 neues Bild", "text": "aa-wafer-dies-sic" },
+        { "label": "#94 neues Bild", "text": "application-emobility" },
+        { "label": "#91 Grafik unveraendert (offene Rueckfrage)", "text": "sic-gan-car" }
+      ]
+    },
+    {
+      "label": "Patente (#96 reduziert, #97 noindex)",
+      "urls": { "de": "/resources/patents", "en": "/en/resources/patents" },
+      "gone": [
+        { "point": "#96 KI-Karte", "de": "KI-gestütztes Engineering", "en": "AI-Assisted Engineering" },
+        { "point": "#96 Unterzeile", "de": "bis zum KI-gestützten Systems Engineering", "en": "to AI-assisted systems engineering" }
+      ],
+      "present": [
+        { "label": "#96 Halbleiter bleibt", "de": "Halbleiter &amp; Module", "en": "Semiconductors &amp; Modules" },
+        { "label": "#96 Packaging bleibt", "de": "Packaging-Technologie", "en": "Packaging Technology" },
+        { "label": "#97 noindex gesetzt", "text": "noindex" }
+      ]
+    },
+    {
+      "label": "News (#175 noindex, #89 keine Firmennamen)",
+      "urls": { "de": "/news", "en": "/en/news" },
+      "gone": [
+        { "point": "#89 NVIDIA", "text": "NVIDIA" },
+        { "point": "#176 Wasserstoff-Beitrag", "de": "grünen Wasserstoff", "en": "Green Hydrogen" }
+      ],
+      "present": [
+        { "label": "#175 noindex gesetzt", "text": "noindex" },
+        { "label": "#177 neuer Teaser-Titel", "de": "Deterministischer Engineering Core", "en": "Deterministic Engineering Core" }
+      ]
+    },
+    {
+      "label": "Gruener Wasserstoff (#176 entlinkt, Seite bleibt)",
+      "urls": { "de": "/applications/hydrogen", "en": "/en/applications/hydrogen" },
+      "gone": [],
+      "present": [
+        { "label": "#176 noindex gesetzt", "text": "noindex" }
+      ]
+    },
+    {
+      "label": "Deterministischer Engineering Core (#177 Route/Titel, #117 Prozessleiste)",
+      "urls": { "de": "/solutions/deterministic-engineering-core", "en": "/en/solutions/deterministic-engineering-core" },
+      "gone": [
+        { "point": "#177 alter Titel", "de": "Agentische KI im Systems Engineering", "en": "Agentic AI in Systems Engineering" },
+        { "point": "#177 Begriff Agentic AI", "text": "Agentic AI" }
+      ],
+      "present": [
+        { "label": "#177 neuer Titel", "de": "Deterministischer Engineering Core", "en": "Deterministic Engineering Core" },
+        { "label": "#117 Prozessleiste Schritt 1", "de": "Kontext erfassen", "en": "Understand the context" },
+        { "label": "#117 Prozessleiste Schritt 4", "text": "System Design Concept" },
+        { "label": "#117 Nummerierung", "text": "01" }
+      ]
+    },
+    {
+      "label": "SiC-Spotlight (#170 Quellen/Namen, #176 Wasserstoff)",
+      "urls": { "de": "/solutions/technology-spotlight-silicium-carbide", "en": "/en/solutions/technology-spotlight-silicium-carbide" },
+      "gone": [
+        { "point": "#170 Bodo's Power Systems", "text": "Bodo" },
+        { "point": "#170 Yole", "text": "Yole" },
+        { "point": "#170 Wolfspeed", "text": "Wolfspeed" },
+        { "point": "#170 Microchip", "text": "Microchip" },
+        { "point": "#170 Schluesseltrends-Sektion", "de": "Schlüsseltrends", "en": "Key Trends" },
+        { "point": "#176 Wasserstoff", "de": "Wasserstoff", "en": "hydrogen" }
+      ],
+      "present": [
+        { "label": "Tabelle bleibt (Kundenvorgabe)", "de": "Interaktive Parametermatrix", "en": "Interactive Parameter Matrix" },
+        { "label": "Physik-Sektion bleibt", "de": "Bandlücke", "en": "Bandgap" },
+        { "label": "Marktzahlen bleiben", "text": "CAGR 2026" }
+      ]
+    },
+    {
+      "label": "GaN-Spotlight (#89 Quellen/Namen)",
+      "urls": { "de": "/solutions/technology-spotlight-gallium-nitride", "en": "/en/solutions/technology-spotlight-gallium-nitride" },
+      "gone": [
+        { "point": "#89 NVIDIA", "text": "NVIDIA" },
+        { "point": "#89 Navitas", "text": "Navitas" },
+        { "point": "#89 Power Integrations", "text": "Power Integrations" },
+        { "point": "#89 Yole", "text": "Yole" },
+        { "point": "#89 STMicroelectronics", "text": "STMicro" }
+      ],
+      "present": [
+        { "label": "Trend 2 bleibt", "de": "800-VDC-Rack", "en": "800 VDC rack" },
+        { "label": "Kennzahlen bleiben", "text": "CAGR 2026" },
+        { "label": "CTA zur Rack-PDU bleibt", "text": "rack-power-distribution" }
+      ]
+    },
+    {
+      "label": "Rack Power Distribution (#89 IEA)",
+      "urls": { "de": "/solutions/rack-power-distribution", "en": "/en/solutions/rack-power-distribution" },
+      "gone": [
+        { "point": "#89 IEA", "de": "Internationale Energieagentur", "en": "International Energy Agency" }
+      ],
+      "present": [
+        { "label": "#165 Text bleibt", "de": "Terawattstunden", "en": "terawatt-hours" },
+        { "label": "#165 Zahl bleibt", "text": "945" }
+      ]
+    },
+    {
+      "label": "Automotive & E-Mobility (#89 IEA)",
+      "urls": { "de": "/applications/automotive-emobility", "en": "/en/applications/automotive-emobility" },
+      "gone": [
+        { "point": "#89 IEA-Zitierung", "text": "IEA:" }
+      ],
+      "present": [
+        { "label": "Aussage bleibt", "de": "Ladeinfrastruktur", "en": "Charging Infrastructure" },
+        { "label": "Zahl bleibt", "text": "2030" }
+      ]
+    },
+    {
+      "label": "Ueber uns (#176 Wasserstoff, #177 Agentic AI)",
+      "urls": { "de": "/about", "en": "/en/about" },
+      "gone": [
+        { "point": "#176 Green-Hydrogen-Karte", "text": "Green Hydrogen" },
+        { "point": "#176 Wasserstoff im Text", "de": "grünem Wasserstoff", "en": "green hydrogen" },
+        { "point": "#177 Begriff Agentic AI", "text": "Agentic AI Ecosystem" }
+      ],
+      "present": [
+        { "label": "Uebrige Impact-Karten bleiben", "text": "Industrial Electrification" },
+        { "label": "#177 Ersatzbegriff", "text": "AI-Enhanced Engineering" }
+      ]
+    },
+    {
+      "label": "Site Map (#97, #175, #176 Eintraege entfernt)",
+      "urls": { "de": "/site-map", "en": "/en/site-map" },
+      "gone": [
+        { "point": "#97 Patente", "de": "Patente", "en": "Patents" },
+        { "point": "#175 News", "text": "News &amp; Insights" },
+        { "point": "#176 Wasserstoff", "de": "Grüner Wasserstoff", "en": "Green Hydrogen" }
+      ],
+      "present": [
+        { "label": "#177 neuer Eintrag", "de": "Deterministischer Engineering Core", "en": "Deterministic Engineering Core" },
+        { "label": "Uebrige Ressourcen bleiben", "de": "Garantie", "en": "Warranty" }
       ]
     }
   ]
