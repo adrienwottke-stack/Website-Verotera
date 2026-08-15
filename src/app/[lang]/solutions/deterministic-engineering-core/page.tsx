@@ -369,19 +369,31 @@ export default async function DeterministicEngineeringCorePage({
               </p>
             </Reveal>
 
-            <Reveal delay={0.12} className="mt-12">
-              <div className="flex flex-wrap items-center justify-center gap-3">
+            {/* #117 Variante A — nummerierte Prozessleiste: 01–04 auf einer
+                durchgehenden Linie, Beschriftung darunter, mobil gestapelt. */}
+            <Reveal delay={0.12} className="mt-14">
+              <ol className="relative mx-auto max-w-4xl list-none m-0 p-0 flex flex-col gap-8 sm:flex-row sm:gap-0">
+                <span
+                  aria-hidden
+                  className="hidden sm:block absolute left-[12.5%] right-[12.5%] top-6 h-px bg-brand-navy/8"
+                />
                 {t.intro.pipeline.map((step, i) => (
-                  <span key={step} className="flex items-center gap-3">
-                    <span className="inline-flex items-center px-4 py-2 rounded-full border border-brand-navy/8 bg-white shadow-sm font-sans text-sm font-semibold text-brand-navy/70">
+                  <li
+                    key={step}
+                    className="relative flex items-center gap-4 sm:flex-1 sm:flex-col sm:gap-0 sm:text-center"
+                  >
+                    {i < t.intro.pipeline.length - 1 && (
+                      <span aria-hidden className="sm:hidden absolute left-6 top-12 h-8 w-px bg-brand-navy/8" />
+                    )}
+                    <span className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-brand-cyan/25 bg-white font-display text-sm font-bold text-brand-cyan shadow-sm">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="font-sans text-sm font-semibold text-brand-navy/70 sm:mt-4 sm:px-2">
                       {step}
                     </span>
-                    {i < t.intro.pipeline.length - 1 && (
-                      <ArrowRight className="w-4 h-4 text-brand-cyan shrink-0" />
-                    )}
-                  </span>
+                  </li>
                 ))}
-              </div>
+              </ol>
             </Reveal>
 
             <Reveal delay={0.24} className="mt-12 text-center">
