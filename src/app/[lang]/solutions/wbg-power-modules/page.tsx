@@ -73,7 +73,7 @@ const COPY: Record<
     s2SubEyebrow: "Advanced Semiconductor Technologies",
     s2SplitTitle: "Wide-Bandgap at the Core",
     s2Body:
-      "VEROTERA begleitet Kunden von den frühesten Entwicklungsphasen an und co-entwickelt WBG Leistungsmodullösungen der nächsten Generation. Wir agieren über den gesamten Stack und entwickeln Technologien, die den tatsächlichen Anforderungen und Randbedingungen moderner Applikationen entsprechen.",
+      "Wir bündeln globales Fachwissen aus den Bereichen Leistungselektronik, WBG-Technologien und Systemanwendungen, um fundierte technische Entscheidungen zu ermöglichen. Unsere Lösungen verwandeln Komplexität in Klarheit – sie beschleunigen Innovationen und erschließen die kollektive Intelligenz von Entwicklungsabteilungen.",
     s2ImageAlt:
       "SiC- und GaN-Leistungsmodule im Elektrofahrzeug – Traktionswechselrichter, Onboard-Charger und DC-DC-Wandler",
     cards: [
@@ -127,7 +127,7 @@ const COPY: Record<
     s2SubEyebrow: "Advanced Semiconductor Technologies",
     s2SplitTitle: "Wide-Bandgap at the Core",
     s2Body:
-      "VEROTERA accompanies customers from the earliest development stages and co-develops next-generation WBG power module solutions. We operate across the full stack, engineering technologies that match the actual requirements and constraints of modern applications.",
+      "We connect global domain expertise across power electronics, WBG technologies, and system applications to enable high confidence engineering decisions. Our solutions turn complexity into clarity – accelerating innovation and unlocking the collective intelligence of engineering organizations.",
     s2ImageAlt:
       "SiC and GaN power modules in an electric vehicle — traction inverter, onboard charger and DC-DC converter",
     cards: [
