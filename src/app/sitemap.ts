@@ -17,7 +17,7 @@ const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.S
   { path: "/about", priority: 0.7, changeFrequency: "monthly" },
   { path: "/contacts", priority: 0.7, changeFrequency: "yearly" },
   { path: "/careers", priority: 0.6, changeFrequency: "weekly" },
-  { path: "/news", priority: 0.7, changeFrequency: "weekly" },
+  // /news: per #175 vorerst entlinkt und auf noindex — bewusst nicht hier.
   { path: "/ethics-compliance", priority: 0.4, changeFrequency: "yearly" },
   { path: "/resources/product-documentation", priority: 0.5, changeFrequency: "monthly" },
   { path: "/resources/quality-certifications", priority: 0.5, changeFrequency: "yearly" },

@@ -20,7 +20,6 @@ const COPY: Record<
         heading: "Allgemein",
         links: [
           { label: "Startseite", href: "/" },
-          { label: "News & Insights", href: "/news" },
           { label: "Kontakt", href: "/contacts" },
         ],
       },
@@ -77,7 +76,6 @@ const COPY: Record<
         heading: "General",
         links: [
           { label: "Homepage", href: "/" },
-          { label: "News & Insights", href: "/news" },
           { label: "Contact", href: "/contacts" },
         ],
       },

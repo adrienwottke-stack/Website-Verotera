@@ -34,12 +34,16 @@ const META: Record<Lang, PageMeta> = {
     description:
       "Bleiben Sie auf dem Laufenden: aktuelle News zu WBG-Halbleitern, Applikationen und Lösungen. Regelmäßig neue Beiträge.",
     keywords: ["News", "Insights", "Neuigkeiten", "WBG", "Halbleiter"],
+    // #175: Bereich vorerst raus — Seite bleibt bestehen, aber unverlinkt
+    // und nicht indexiert, damit die Struktur fuer spaetere VEROTERA-News steht.
+    noindex: true,
   },
   en: {
     title: "News & Insights | VEROTERA",
     description:
       "Stay up to date: the latest news on WBG semiconductors, applications and solutions. New articles regularly.",
     keywords: ["News", "Insights", "WBG", "Semiconductors"],
+    noindex: true,
   },
 };
 
