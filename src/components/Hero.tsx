@@ -37,11 +37,11 @@ const SLIDES: Record<Lang, Slide[]> = {
     },
     {
       image: "/images/agentic-ai.png",
-      alt: "Agentische KI im Systems Engineering",
+      alt: "Deterministischer Engineering Core",
       title: "AI-Enhanced WBG Semiconductor Engineering",
       subtitle: "Collaborative Intelligence – das System begründet, der Mensch entscheidet und verantwortet",
       text: "Technologiepfade früh bewerten, die Begründung inklusive – aus Regeln, Normen und Annahmen",
-      ctaHref: "/solutions/agentic-ai-engineering",
+      ctaHref: "/solutions/deterministic-engineering-core",
     },
   ],
   en: [
@@ -63,11 +63,11 @@ const SLIDES: Record<Lang, Slide[]> = {
     },
     {
       image: "/images/agentic-ai.png",
-      alt: "Agentic AI in systems engineering",
+      alt: "Deterministic Engineering Core",
       title: "AI-Enhanced WBG Semiconductor Engineering",
       subtitle: "Collaborative Intelligence – the system provides the reasoning, the engineer decides and is accountable",
       text: "Evaluate technology paths early – reasoning included, grounded in rules, standards and assumptions",
-      ctaHref: "/solutions/agentic-ai-engineering",
+      ctaHref: "/solutions/deterministic-engineering-core",
     },
   ],
 };

@@ -18,7 +18,7 @@ const NAV: Record<Lang, NavItem[]> = {
       children: [
         { label: "WBG-Leistungsmodule", href: "/solutions/wbg-power-modules" },
         { label: "Stromverteilereinheit (Rack PDU)", href: "/solutions/rack-power-distribution" },
-        { label: "AI-Enhanced WBG Semiconductor Engineering", href: "/solutions/agentic-ai-engineering" },
+        { label: "AI-Enhanced WBG Semiconductor Engineering", href: "/solutions/deterministic-engineering-core" },
         { label: "Spotlight: Galliumnitrid (GaN)", href: "/solutions/technology-spotlight-gallium-nitride" },
         { label: "Spotlight: Siliziumkarbid (SiC)", href: "/solutions/technology-spotlight-silicium-carbide" },
       ],
@@ -49,7 +49,7 @@ const NAV: Record<Lang, NavItem[]> = {
       children: [
         { label: "WBG Power Modules", href: "/solutions/wbg-power-modules" },
         { label: "Power Distribution Unit (Rack PDU)", href: "/solutions/rack-power-distribution" },
-        { label: "AI-Enhanced WBG Semiconductor Engineering", href: "/solutions/agentic-ai-engineering" },
+        { label: "AI-Enhanced WBG Semiconductor Engineering", href: "/solutions/deterministic-engineering-core" },
         { label: "Spotlight: Gallium Nitride (GaN)", href: "/solutions/technology-spotlight-gallium-nitride" },
         { label: "Spotlight: Silicon Carbide (SiC)", href: "/solutions/technology-spotlight-silicium-carbide" },
       ],

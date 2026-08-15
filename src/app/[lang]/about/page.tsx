@@ -73,7 +73,7 @@ const COPY: Record<
     heroEyebrow: "Wide-Bandgap at the Core",
     heroTitle: "About VEROTERA",
     heroSubtitle:
-      "VEROTERA entwickelt Wide-Bandgap-Halbleitertechnologien mit tiefem Systemverständnis – für eine effizientere, nachhaltigere Welt. Durch die Verbindung von SiC/GaN-Technologien, innovativem Packaging und agentischer KI schaffen wir eine Brücke zwischen technologischer Komplexität und industrieller Umsetzung.",
+      "VEROTERA entwickelt Wide-Bandgap-Halbleitertechnologien mit tiefem Systemverständnis – für eine effizientere, nachhaltigere Welt. Durch die Verbindung von SiC/GaN-Technologien, innovativem Packaging und KI-gestütztem Engineering schaffen wir eine Brücke zwischen technologischer Komplexität und industrieller Umsetzung.",
     s1Teaser: "Collaborative Intelligence",
     s1Title: "Innovative Wide-Bandgap Halbleitermodule",
     s1SubEyebrow: "Applikationen",
@@ -110,24 +110,24 @@ const COPY: Record<
     ],
     visionTeaser: "Unsere Vision",
     visionTitle:
-      "Ein globaler Deep-Tech-Enabler für Wide-Bandgap-Leistungselektronik und agentische KI-gestützte Engineering-Systeme",
+      "Ein globaler Deep-Tech-Enabler für Wide-Bandgap-Leistungselektronik und KI-gestützte Engineering-Systeme",
     visionBody:
       "Wir wollen fortschrittliche Halbleitertechnologien in reale, skalierbare und zertifizierbare Anwendungen überführen. Wide-Bandgap-Technologien sehen wir als Kernbaustein für eine effizientere, resilientere und elektrifizierte industrielle Zukunft.",
     visionClosing:
-      "Engineering Excellence Driven by Agentic AI – unser Anspruch, technologische Tiefe mit intelligent orchestrierten Engineering-Prozessen zu verbinden.",
+      "Engineering Excellence Driven by AI-Enhanced Engineering – unser Anspruch, technologische Tiefe mit intelligent orchestrierten Engineering-Prozessen zu verbinden.",
     missionTeaser: "Unsere Mission",
     missionTitle: "Komplexe Entwicklungsaufgaben schneller, nachvollziehbarer und systematischer lösen",
     missionBody:
-      "VEROTERA verbindet SiC- und GaN-Technologien, innovatives Packaging und eine Agentic AI Ecosystem Architecture. Cognitive Orchestration bildet dabei den methodischen Kern: Wissen, Expertenagenten, Engineering-Workflows und Entscheidungslogik werden in einer kontrollierten Architektur zusammengeführt.",
+      "VEROTERA verbindet SiC- und GaN-Technologien, innovatives Packaging und eine Engineering-Core-Architektur. Cognitive Orchestration bildet dabei den methodischen Kern: Wissen, Expertenagenten, Engineering-Workflows und Entscheidungslogik werden in einer kontrollierten Architektur zusammengeführt.",
     goalsLabel: "Unsere Ziele",
     goals: [
       "Leistungsdichte erhöhen und Bauraum auf Systemebene reduzieren.",
       "Wirkungsgrad steigern und thermische Verlustleistung minimieren.",
       "Zuverlässigkeit, Nachvollziehbarkeit und Zertifizierbarkeit von WBG-Lösungen stärken.",
-      "Entwicklungszyklen durch agentische KI, strukturierte Wissensmodelle und Human-in-the-Loop-Prozesse beschleunigen.",
+      "Entwicklungszyklen durch KI-gestütztes Engineering, strukturierte Wissensmodelle und Human-in-the-Loop-Prozesse beschleunigen.",
       "Europäische und globale Wertschöpfung in kritischen Elektrifizierungsanwendungen unterstützen.",
     ],
-    missionImageAlt: "Agentic AI Ecosystem – KI-gestütztes Systems Engineering bei VEROTERA",
+    missionImageAlt: "Engineering Core – KI-gestütztes Systems Engineering bei VEROTERA",
     whyTeaser: "Warum es relevant ist",
     whyTitle: "Integration entscheidet über die nächste Phase der Elektrifizierung",
     whyBody:
@@ -163,7 +163,7 @@ const COPY: Record<
     heroEyebrow: "Wide-Bandgap at the Core",
     heroTitle: "About VEROTERA",
     heroSubtitle:
-      "VEROTERA develops wide-bandgap semiconductor technologies with deep system understanding — for a more efficient, more sustainable world. By combining SiC/GaN technologies, innovative packaging and agentic AI, we bridge technological complexity and industrial implementation.",
+      "VEROTERA develops wide-bandgap semiconductor technologies with deep system understanding — for a more efficient, more sustainable world. By combining SiC/GaN technologies, innovative packaging and AI-enhanced engineering, we bridge technological complexity and industrial implementation.",
     s1Teaser: "Collaborative Intelligence",
     s1Title: "Innovative Wide-Bandgap Semiconductor Modules",
     s1SubEyebrow: "Applications",
@@ -200,24 +200,24 @@ const COPY: Record<
     ],
     visionTeaser: "Our Vision",
     visionTitle:
-      "A global deep-tech enabler for wide-bandgap power electronics and agentic AI-assisted engineering systems",
+      "A global deep-tech enabler for wide-bandgap power electronics and AI-assisted engineering systems",
     visionBody:
       "We aim to translate advanced semiconductor technologies into real, scalable and certifiable applications. We see wide-bandgap technologies as a core foundation for a more efficient, resilient and electrified industrial future.",
     visionClosing:
-      "Engineering Excellence Driven by Agentic AI — our ambition to combine technological depth with intelligently orchestrated engineering processes.",
+      "Engineering Excellence Driven by AI-Enhanced Engineering — our ambition to combine technological depth with intelligently orchestrated engineering processes.",
     missionTeaser: "Our Mission",
     missionTitle: "Solving complex development tasks faster, more systematically and with higher traceability",
     missionBody:
-      "VEROTERA combines SiC and GaN technologies, innovative packaging and an Agentic AI Ecosystem Architecture. Cognitive Orchestration forms the methodological core: knowledge, expert agents, engineering workflows and decision logic are brought together within a controlled architecture.",
+      "VEROTERA combines SiC and GaN technologies, innovative packaging and an Engineering Core architecture. Cognitive Orchestration forms the methodological core: knowledge, expert agents, engineering workflows and decision logic are brought together within a controlled architecture.",
     goalsLabel: "Our Objectives",
     goals: [
       "Increase power density and reduce system-level space requirements.",
       "Improve efficiency and minimize thermal losses.",
       "Strengthen reliability, traceability and certifiability of WBG-based solutions.",
-      "Accelerate development cycles through agentic AI, structured knowledge models and human-in-the-loop processes.",
+      "Accelerate development cycles through AI-enhanced engineering, structured knowledge models and human-in-the-loop processes.",
       "Support European and global value creation in critical electrification applications.",
     ],
-    missionImageAlt: "Agentic AI ecosystem — AI-assisted systems engineering at VEROTERA",
+    missionImageAlt: "Engineering Core — AI-assisted systems engineering at VEROTERA",
     whyTeaser: "Why It Matters",
     whyTitle: "Integration decides the next phase of electrification",
     whyBody:

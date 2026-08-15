@@ -183,8 +183,8 @@ export default function VModelFunnel() {
         role="img"
         aria-label={
           lang === "en"
-            ? "Interactive V-model of the development cycle with agentic AI"
-            : "Interaktives V-Modell des Entwicklungszyklus mit agentischer KI"
+            ? "Interactive V-model of the development cycle with AI-enhanced engineering"
+            : "Interaktives V-Modell des Entwicklungszyklus mit KI-gestuetztem Engineering"
         }
       >
         <defs>

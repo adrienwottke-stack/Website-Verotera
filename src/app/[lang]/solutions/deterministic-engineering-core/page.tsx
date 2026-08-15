@@ -67,7 +67,7 @@ const COPY: Record<
 > = {
   de: {
     heroEyebrow: "AI-Enhanced WBG Semiconductor Engineering",
-    heroTitle: "Agentische KI im Systems Engineering",
+    heroTitle: "Deterministischer Engineering Core",
     heroSubtitle:
       "Die Begründung entsteht aus Regeln und Standards, nicht im Sprachmodell – jede Bewertung ist auf ihre Herleitung zurückführbar.",
     intro: {
@@ -91,7 +91,7 @@ const COPY: Record<
       paragraphs: [
         "Collaborative Intelligence bedeutet nicht, dem Menschen Arbeit abzunehmen, sondern ihm eine Entscheidung zu geben, die er verantworten kann.",
       ],
-      imageAlt: "Agentische KI im Systems Engineering",
+      imageAlt: "Deterministischer Engineering Core",
     },
     architecture: {
       eyebrow: "Engineering Core",
@@ -179,7 +179,7 @@ const COPY: Record<
   },
   en: {
     heroEyebrow: "AI-Enhanced WBG Semiconductor Engineering",
-    heroTitle: "Agentic AI in Systems Engineering",
+    heroTitle: "Deterministic Engineering Core",
     heroSubtitle:
       "The justification comes from rules and standards, not from the language model — every assessment is traceable to its derivation.",
     intro: {
@@ -203,7 +203,7 @@ const COPY: Record<
       paragraphs: [
         "Collaborative Intelligence does not mean taking work off people's hands – it means giving them a decision they can stand behind.",
       ],
-      imageAlt: "Agentic AI in systems engineering",
+      imageAlt: "Deterministic Engineering Core",
     },
     architecture: {
       eyebrow: "Engineering Core",
@@ -293,9 +293,9 @@ const COPY: Record<
 
 const META: Record<Lang, PageMeta> = {
   de: {
-    title: "How Agentic AI Accelerates SiC & GaN Engineering",
+    title: "Deterministic Engineering Core for SiC & GaN Engineering",
     description:
-      "Agentic AI ecosystem architecture: shift from passive AI copilots to autonomous agents that reason, plan and act to deliver complex engineering outcomes.",
+      "A deterministic engineering core: interpretation and derivation kept apart, so every technology assessment stays traceable to rules, standards and evidence.",
     keywords: [
       "ai-driven systems engineering",
       "human-in-the-loop",
@@ -306,9 +306,9 @@ const META: Record<Lang, PageMeta> = {
     ],
   },
   en: {
-    title: "How Agentic AI Accelerates SiC & GaN Engineering",
+    title: "Deterministic Engineering Core for SiC & GaN Engineering",
     description:
-      "Agentic AI ecosystem architecture: shift from passive AI copilots to autonomous agents that reason, plan and act to deliver complex engineering outcomes.",
+      "A deterministic engineering core: interpretation and derivation kept apart, so every technology assessment stays traceable to rules, standards and evidence.",
     keywords: [
       "ai-driven systems engineering",
       "human-in-the-loop",
@@ -327,10 +327,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const l = hasLang(lang) ? lang : "de";
-  return buildMetadata(l, "/solutions/agentic-ai-engineering", META[l]);
+  return buildMetadata(l, "/solutions/deterministic-engineering-core", META[l]);
 }
 
-export default async function AgenticAiEngineeringPage({
+export default async function DeterministicEngineeringCorePage({
   params,
 }: {
   params: Promise<{ lang: string }>;
@@ -494,7 +494,7 @@ export default async function AgenticAiEngineeringPage({
           </div>
         </section>
 
-        {/* Slide 24 — Pattern C: Agentic Product Development Lifecycle */}
+        {/* Slide 24 — Pattern C: Product Development Lifecycle */}
         <section className="relative py-24 sm:py-32 bg-surface-light border-y border-brand-navy/8 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <Reveal className="text-center max-w-4xl mx-auto mb-14 sm:mb-16">

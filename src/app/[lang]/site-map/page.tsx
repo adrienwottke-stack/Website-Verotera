@@ -28,7 +28,7 @@ const COPY: Record<
         links: [
           { label: "WBG-Leistungsmodule", href: "/solutions/wbg-power-modules" },
           { label: "Rack Power Distribution", href: "/solutions/rack-power-distribution" },
-          { label: "Agentische KI im Systems Engineering", href: "/solutions/agentic-ai-engineering" },
+          { label: "Deterministischer Engineering Core", href: "/solutions/deterministic-engineering-core" },
           { label: "Spotlight: Galliumnitrid (GaN)", href: "/solutions/technology-spotlight-gallium-nitride" },
           { label: "Spotlight: Siliziumkarbid (SiC)", href: "/solutions/technology-spotlight-silicium-carbide" },
         ],
@@ -83,7 +83,7 @@ const COPY: Record<
         links: [
           { label: "WBG Power Modules", href: "/solutions/wbg-power-modules" },
           { label: "Rack Power Distribution", href: "/solutions/rack-power-distribution" },
-          { label: "Agentic AI in Systems Engineering", href: "/solutions/agentic-ai-engineering" },
+          { label: "Deterministic Engineering Core", href: "/solutions/deterministic-engineering-core" },
           { label: "Spotlight: Gallium Nitride (GaN)", href: "/solutions/technology-spotlight-gallium-nitride" },
           { label: "Spotlight: Silicon Carbide (SiC)", href: "/solutions/technology-spotlight-silicium-carbide" },
         ],

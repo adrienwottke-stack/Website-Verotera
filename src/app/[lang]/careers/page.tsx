@@ -34,7 +34,7 @@ const COPY: Record<
     heroEyebrow: "Karriere",
     heroTitle: "Ihre Karriere im Kern der WBG-Innovation",
     heroSubtitle:
-      "Werden Sie Teil eines Teams, das die Brücke zwischen Halbleiterphysik und realer Elektrifizierung baut – mit Wide-Bandgap-Technologie und agentischer KI.",
+      "Werden Sie Teil eines Teams, das die Brücke zwischen Halbleiterphysik und realer Elektrifizierung baut – mit Wide-Bandgap-Technologie und KI-gestütztem Engineering.",
     cultureEyebrow: "Unsere Kultur",
     cultureTitle: "Engineering Excellence, gemeinsam vorangetrieben",
     cultureBody:
@@ -42,7 +42,7 @@ const COPY: Record<
     values: [
       {
         title: "Deep-Tech mit Wirkung",
-        text: "Wir arbeiten an der Schnittstelle von Halbleiterphysik, Leistungselektronik und agentischer KI – an Technologien, die die Elektrifizierung real beschleunigen.",
+        text: "Wir arbeiten an der Schnittstelle von Halbleiterphysik, Leistungselektronik und KI-gestütztem Engineering – an Technologien, die die Elektrifizierung real beschleunigen.",
       },
       {
         title: "Kleines Team, große Hebel",
@@ -67,11 +67,11 @@ const COPY: Record<
           "Sie verantworten die Auslegung und Validierung kompletter WBG-Leistungssysteme – von der Topologie über das Moduldesign bis zur funktionalen Sicherheit nach ISO 26262.",
       },
       {
-        title: "AI Developer – Agentic Systems",
+        title: "AI Developer – Engineering Core",
         type: "Vollzeit",
         location: "Meerbusch (NRW) / remote",
         description:
-          "Sie entwickeln unsere Agentic-AI-Ecosystem-Architektur weiter: Orchestrierung von Spezialagenten, RAG über Engineering-Standards und Knowledge-Graphs für die Leistungselektronik.",
+          "Sie entwickeln unsere Engineering-Core-Architektur weiter: Orchestrierung von Spezialagenten, RAG über Engineering-Standards und Knowledge-Graphs für die Leistungselektronik.",
       },
       {
         title: "Working Student – Semiconductor Simulation",
@@ -86,7 +86,7 @@ const COPY: Record<
     heroEyebrow: "Careers",
     heroTitle: "Your Career at the Core of WBG Innovation",
     heroSubtitle:
-      "Join a team building the bridge between semiconductor physics and real-world electrification — with wide-bandgap technology and agentic AI.",
+      "Join a team building the bridge between semiconductor physics and real-world electrification — with wide-bandgap technology and AI-enhanced engineering.",
     cultureEyebrow: "Our Culture",
     cultureTitle: "Engineering excellence, driven together",
     cultureBody:
@@ -94,7 +94,7 @@ const COPY: Record<
     values: [
       {
         title: "Deep tech with impact",
-        text: "We work at the intersection of semiconductor physics, power electronics and agentic AI — on technologies that genuinely accelerate electrification.",
+        text: "We work at the intersection of semiconductor physics, power electronics and AI-enhanced engineering — on technologies that genuinely accelerate electrification.",
       },
       {
         title: "Small team, big leverage",
@@ -119,11 +119,11 @@ const COPY: Record<
           "You own the design and validation of complete WBG power systems — from topology and module design to functional safety per ISO 26262.",
       },
       {
-        title: "AI Developer – Agentic Systems",
+        title: "AI Developer – Engineering Core",
         type: "Full-time",
         location: "Meerbusch (NRW) / remote",
         description:
-          "You evolve our agentic AI ecosystem architecture: orchestrating specialist agents, RAG over engineering standards and knowledge graphs for power electronics.",
+          "You evolve our Engineering Core architecture: orchestrating specialist agents, RAG over engineering standards and knowledge graphs for power electronics.",
       },
       {
         title: "Working Student – Semiconductor Simulation",

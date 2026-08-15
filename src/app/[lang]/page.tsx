@@ -92,10 +92,10 @@ export default function Home() {
           {/* Slide 10 — Hocheffiziente WBG Leistungsmodullösungen */}
           <WbgModuleSolutions />
 
-          {/* Slide 11 — Agentische KI / V-Modell */}
+          {/* Slide 11 — Engineering Core / V-Modell */}
           <FeaturesAgenticAI />
 
-          {/* Slide 12 — Agentic AI Ecosystem Architecture */}
+          {/* Slide 12 — Engineering-Core-Architektur */}
           <AgenticEcosystem />
 
           {/* Slide 13 — Stats + Founder */}

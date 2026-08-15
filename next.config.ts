@@ -16,6 +16,18 @@ const nextConfig: NextConfig = {
       { source: "/impressum", destination: "/legal/imprint", permanent: true },
       { source: "/privacy-policy", destination: "/legal/privacy-policy", permanent: true },
       { source: "/cookie-policy", destination: "/legal/privacy-policy", permanent: true },
+      // #177: "Agentic AI" wird nicht mehr verwendet — alte Route umgeleitet,
+      // damit bereits indexierte Links nicht ins Leere laufen.
+      {
+        source: "/solutions/agentic-ai-engineering",
+        destination: "/solutions/deterministic-engineering-core",
+        permanent: true,
+      },
+      {
+        source: "/en/solutions/agentic-ai-engineering",
+        destination: "/en/solutions/deterministic-engineering-core",
+        permanent: true,
+      },
     ];
   },
 };

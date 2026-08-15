@@ -21,14 +21,14 @@ export type NewsItem = {
 export const NEWS_ITEMS: Record<Lang, NewsItem[]> = {
   de: [
     {
-      href: "/solutions/agentic-ai-engineering",
+      href: "/solutions/deterministic-engineering-core",
       category: "Lösungen",
       date: "12. Juni 2026",
-      title: "Agentische KI im Systems Engineering",
+      title: "Deterministischer Engineering Core",
       excerpt:
         "Wie autonome KI-Agenten den Wandel von passiven Copiloten hin zu planenden, handelnden Systemen in der SiC- und GaN-Entwicklung beschleunigen.",
       image: "/images/agentic-ai-engineering.png",
-      imageAlt: "Agentische KI im Systems Engineering",
+      imageAlt: "Deterministischer Engineering Core",
       featured: true,
     },
     {
@@ -75,14 +75,14 @@ export const NEWS_ITEMS: Record<Lang, NewsItem[]> = {
   ],
   en: [
     {
-      href: "/solutions/agentic-ai-engineering",
+      href: "/solutions/deterministic-engineering-core",
       category: "Solutions",
       date: "June 12, 2026",
-      title: "Agentic AI in Systems Engineering",
+      title: "Deterministic Engineering Core",
       excerpt:
         "How autonomous AI agents accelerate the shift from passive copilots to planning, acting systems in SiC and GaN development.",
       image: "/images/agentic-ai-engineering.png",
-      imageAlt: "Agentic AI in systems engineering",
+      imageAlt: "Deterministic Engineering Core",
       featured: true,
     },
     {
