@@ -52,7 +52,7 @@ const COPY: Record<
         title: "KI",
         text: [
           "Künstliche Intelligenz verändert nahezu alle Branchen in einem noch nie dagewesenen Tempo – und die Rechenzentren, die diese Revolution antreiben, wachsen ebenso rasant. Während das Training früherer, kleinerer KI-Modelle noch dem Jahresverbrauch von rund 100 bis 200 Haushalten entsprach, ziehen moderne KI-Trainingscluster heute dauerhaft 100 bis 300 Megawatt Leistung – das entspricht dem Strombedarf von zehntausenden Haushalten. Einzelne neue Rechenzentrumsprojekte erreichen sogar Leistungen von 300 bis 500 Megawatt, was dem Verbrauch mittelgroßer Städte mit mehreren hunderttausend Einwohnern gleichkommt.",
-          "Da KI-Workloads in allen Sektoren zunehmen, wird der kumulierte Einfluss auf die globalen Energiesysteme immer deutlicher. Große Rechenzentrumsbetreiber sind für einen Großteil dieses Wachstums verantwortlich und investieren weltweit Milliardenbeträge in neue, KI-optimierte Infrastruktur. Die Internationale Energieagentur prognostiziert, dass der weltweite Stromverbrauch von Rechenzentren von 415 Terawattstunden im Jahr 2024 auf rund 945 Terawattstunden bis 2030 ansteigen wird – eine Verdopplung, die vor allem durch den Ausbau KI-spezifischer Rechenkapazitäten getrieben wird.",
+          "Da KI-Workloads in allen Sektoren zunehmen, wird der kumulierte Einfluss auf die globalen Energiesysteme immer deutlicher. Große Rechenzentrumsbetreiber sind für einen Großteil dieses Wachstums verantwortlich und investieren weltweit Milliardenbeträge in neue, KI-optimierte Infrastruktur. Prognosen gehen davon aus, dass der weltweite Stromverbrauch von Rechenzentren von 415 Terawattstunden im Jahr 2024 auf rund 945 Terawattstunden bis 2030 ansteigen wird – eine Verdopplung, die vor allem durch den Ausbau KI-spezifischer Rechenkapazitäten getrieben wird.",
         ],
       },
       {
@@ -92,7 +92,7 @@ const COPY: Record<
         title: "AI",
         text: [
           "Artificial intelligence is transforming nearly every industry at an unprecedented pace — and the data centers powering this revolution are growing just as rapidly. Where training earlier, smaller AI models equated to the annual consumption of roughly 100 to 200 households, today's AI training clusters draw 100 to 300 megawatts continuously — the electricity demand of tens of thousands of households. Individual new data center projects even reach 300 to 500 megawatts, comparable to the consumption of mid-sized cities with several hundred thousand inhabitants.",
-          "As AI workloads increase across all sectors, the cumulative impact on global energy systems becomes ever more apparent. Large data center operators account for much of this growth, investing billions worldwide in new, AI-optimized infrastructure. The International Energy Agency projects that global data center electricity consumption will rise from 415 terawatt-hours in 2024 to around 945 terawatt-hours by 2030 — a doubling driven above all by the build-out of AI-specific compute capacity.",
+          "As AI workloads increase across all sectors, the cumulative impact on global energy systems becomes ever more apparent. Large data center operators account for much of this growth, investing billions worldwide in new, AI-optimized infrastructure. Projections indicate that global data center electricity consumption will rise from 415 terawatt-hours in 2024 to around 945 terawatt-hours by 2030 — a doubling driven above all by the build-out of AI-specific compute capacity.",
         ],
       },
       {

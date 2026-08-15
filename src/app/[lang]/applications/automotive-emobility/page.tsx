@@ -92,7 +92,7 @@ const COPY: Record<
       {
         num: "04",
         title: "Ausbau der Ladeinfrastruktur",
-        text: "Europa: Masterplan Ladeinfrastruktur 2030. Bis zu 1.410 Ladepunkte für schwere E-Lkw an über 120 Autobahnraststätten. AFIF-EU-Kofinanzierung. IEA: Verdopplung öffentlicher Ladepunkte in Europa auf 2 Mio. bis 2030.",
+        text: "Europa: Masterplan Ladeinfrastruktur 2030. Bis zu 1.410 Ladepunkte für schwere E-Lkw an über 120 Autobahnraststätten. AFIF-EU-Kofinanzierung. Prognostiziert wird eine Verdopplung öffentlicher Ladepunkte in Europa auf 2 Mio. bis 2030.",
       },
       {
         num: "05",
@@ -149,7 +149,7 @@ const COPY: Record<
       {
         num: "04",
         title: "Charging Infrastructure Build-Out",
-        text: "Europe: Charging Infrastructure Masterplan 2030. Up to 1,410 charging points for heavy e-trucks at more than 120 motorway service areas. AFIF EU co-funding. IEA: public charging points in Europe to double to 2 million by 2030.",
+        text: "Europe: Charging Infrastructure Masterplan 2030. Up to 1,410 charging points for heavy e-trucks at more than 120 motorway service areas. AFIF EU co-funding. Public charging points in Europe are projected to double to 2 million by 2030.",
       },
       {
         num: "05",
