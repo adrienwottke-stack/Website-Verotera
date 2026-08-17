@@ -17,7 +17,9 @@
         { "point": "#162 Support-Dropdown", "de": "Technische Unterstützung", "en": "Technical Support" },
         { "point": "#175 News entlinkt", "text": "/news" },
         { "point": "#97 Patente entlinkt", "text": "/resources/patents" },
-        { "point": "#177 alte Route", "text": "agentic-ai-engineering\"" }
+        { "point": "#177 alte Route", "text": "agentic-ai-engineering\"" },
+        { "point": "#177 Begriff Agentic AI (Bild-Alt AgenticEcosystem)", "de": "Agentische KI", "en": "Agentic AI" },
+        { "point": "#89 IEA", "de": "Internationale Energieagentur", "en": "International Energy Agency" }
       ],
       "present": [
         { "label": "#88 zweite Karte bleibt", "de": "Tiefes Systemverständnis", "en": "Deep System Understanding" },
@@ -26,7 +28,20 @@
         { "label": "#166 neues Wafer-Bild", "text": "aa-wafer-dies-sic" },
         { "label": "#162 Kontakt bleibt", "de": "Kontakt", "en": "Contact" },
         { "label": "#178-180 Site Map bleibt", "text": "Site Map" },
-        { "label": "#177 neue Route verlinkt", "text": "deterministic-engineering-core" }
+        { "label": "#177 neue Route verlinkt", "text": "deterministic-engineering-core" },
+        { "label": "#102 zurueckgenommene Kacheln (opacity 0.42)", "text": "opacity=\"0.42\"" },
+        { "label": "#169 GaN weiterhin im Menue (darf nicht vorweggenommen sein)", "text": "technology-spotlight-gallium-nitride" },
+        { "label": "#169 SiC weiterhin im Menue (darf nicht vorweggenommen sein)", "text": "technology-spotlight-silicium-carbide" }
+      ]
+    },
+    {
+      "label": "#177 Weiterleitung der alten Route (permanent, 308)",
+      "urls": { "de": "/solutions/agentic-ai-engineering", "en": "/en/solutions/agentic-ai-engineering" },
+      "gone": [
+        { "point": "#177 alte Ueberschrift", "de": "Agentische KI im Systems Engineering", "en": "Agentic AI in Systems Engineering" }
+      ],
+      "present": [
+        { "label": "#177 landet auf der neuen Seite", "de": "Deterministischer Engineering Core", "en": "Deterministic Engineering Core" }
       ]
     },
     {
@@ -100,7 +115,8 @@
         { "point": "#170 Wolfspeed", "text": "Wolfspeed" },
         { "point": "#170 Microchip", "text": "Microchip" },
         { "point": "#170 Schluesseltrends-Sektion", "de": "Schlüsseltrends", "en": "Key Trends" },
-        { "point": "#176 Wasserstoff", "de": "Wasserstoff", "en": "hydrogen" }
+        { "point": "#176 Wasserstoff", "de": "Wasserstoff", "en": "hydrogen" },
+        { "point": "#169 unbeantwortet — Seite darf NICHT auf noindex stehen", "text": "noindex" }
       ],
       "present": [
         { "label": "Tabelle bleibt (Kundenvorgabe)", "de": "Interaktive Parametermatrix", "en": "Interactive Parameter Matrix" },
@@ -116,12 +132,16 @@
         { "point": "#89 Navitas", "text": "Navitas" },
         { "point": "#89 Power Integrations", "text": "Power Integrations" },
         { "point": "#89 Yole", "text": "Yole" },
-        { "point": "#89 STMicroelectronics", "text": "STMicro" }
+        { "point": "#89 STMicroelectronics", "text": "STMicro" },
+        { "point": "#89 Renesas", "text": "Renesas" },
+        { "point": "#169 unbeantwortet — Seite darf NICHT auf noindex stehen", "text": "noindex" }
       ],
       "present": [
         { "label": "Trend 2 bleibt", "de": "800-VDC-Rack", "en": "800 VDC rack" },
         { "label": "Kennzahlen bleiben", "text": "CAGR 2026" },
-        { "label": "CTA zur Rack-PDU bleibt", "text": "rack-power-distribution" }
+        { "label": "CTA zur Rack-PDU bleibt", "text": "rack-power-distribution" },
+        { "label": "#89 Trend-2-Ersatzbegriff 1 (offene Bestaetigung)", "de": "1.250-V-GaN-HEMTs", "en": "1,250 V GaN HEMTs" },
+        { "label": "#89 Trend-2-Ersatzbegriff 3 (offene Bestaetigung)", "de": "In-Rack Power-Delivery-Board", "en": "In-rack power delivery board" }
       ]
     },
     {
@@ -169,7 +189,9 @@
       ],
       "present": [
         { "label": "#177 neuer Eintrag", "de": "Deterministischer Engineering Core", "en": "Deterministic Engineering Core" },
-        { "label": "Uebrige Ressourcen bleiben", "de": "Garantie", "en": "Warranty" }
+        { "label": "Uebrige Ressourcen bleiben", "de": "Garantie", "en": "Warranty" },
+        { "label": "#169 GaN weiterhin gelistet (darf nicht vorweggenommen sein)", "text": "technology-spotlight-gallium-nitride" },
+        { "label": "#169 SiC weiterhin gelistet (darf nicht vorweggenommen sein)", "text": "technology-spotlight-silicium-carbide" }
       ]
     }
   ]
