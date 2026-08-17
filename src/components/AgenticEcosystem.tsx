@@ -24,7 +24,7 @@ const COPY: Record<
     sectionEyebrow: "Collaborative Intelligence – ein neuro-symbolischer Ansatz",
     lead:
       "Die KI erweitert das Ingenieururteil – Von der Empfehlung zur belegten Entscheidungsgrundlage – nachvollziehbar und reproduzierbar.",
-    imageAlt: "Agentische KI im Systems Engineering",
+    imageAlt: "KI-gestütztes Systems Engineering",
     title: "Human-in-the-Loop by design",
     eyebrow: "Lösungen",
     intro:
@@ -42,7 +42,7 @@ const COPY: Record<
     sectionEyebrow: "Collaborative Intelligence – a neurosymbolic approach",
     lead:
       "AI extends engineering judgment – turning a recommendation into a documented basis for decisions: traceable and reproducible.",
-    imageAlt: "Agentic AI in systems engineering",
+    imageAlt: "AI-enhanced systems engineering",
     title: "Human-in-the-Loop by design",
     eyebrow: "Solutions",
     intro:

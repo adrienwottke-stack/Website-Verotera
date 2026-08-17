@@ -184,7 +184,7 @@ export default function VModelFunnel() {
         aria-label={
           lang === "en"
             ? "Interactive V-model of the development cycle with AI-enhanced engineering"
-            : "Interaktives V-Modell des Entwicklungszyklus mit KI-gestuetztem Engineering"
+            : "Interaktives V-Modell des Entwicklungszyklus mit KI-gestütztem Engineering"
         }
       >
         <defs>
