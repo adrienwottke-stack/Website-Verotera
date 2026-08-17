@@ -97,7 +97,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-24 15:04
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12108750/
 
-### [ ] #83 - desktop (1582px) - Aly Mashaly
+### [x] #83 - desktop (1582px) - Aly Mashaly
 
 > Diese Botschaft muss geändert bzw. angepasst werden
 
@@ -140,7 +140,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-24 17:53
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12110371/
 
-### [ ] #88 - desktop (1582px) - Aly Mashaly
+### [x] #88 - desktop (1582px) - Aly Mashaly
 
 > Dieser Abschnitt evtl. Komplett entfernen.
 
@@ -203,7 +203,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-27 09:57
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12117995/
 
-### [ ] #102 - desktop (1604px) - Thorsten Sigges
+### [x] #102 - desktop (1604px) - Thorsten Sigges
 
 > Wir gehen hier nicht auf die einzelnen Phasen ein - die Grafik soll aufzeigen, dass wir in einer sehr frühen Phase (die fünf linken Phasen) begleiten - die rechte V-Seite kann optional visuell etwas zurück genommen werden (oder "out of scope" betiteln)
 
@@ -325,7 +325,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-31 10:12
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12154935/
 
-### [ ] #166 - desktop (1264px) - Thorsten Sigges
+### [x] #166 - desktop (1264px) - Thorsten Sigges
 
 > Hier bitte eine neues Image einfügen (verbesserte Wafer/Dies Darstellung) siehe immages/aa-wafer-dies-sic.png
 
@@ -354,7 +354,7 @@ https://website-verotera.vercel.app/solutions/wbg-power-modules
 - **Erstellt:** 2026-07-24 22:45
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12112633/
 
-### [ ] #93 - desktop (1688px) - Aly Mashaly
+### [x] #93 - desktop (1688px) - Aly Mashaly
 
 > Bild ändern
 
@@ -459,7 +459,7 @@ https://website-verotera.vercel.app/solutions/rack-power-distribution
 ## Seite `https://website-verotera.vercel.app/resources/patents` (2 Punkte)
 
 https://website-verotera.vercel.app/resources/patents
-### [ ] #96 - desktop (1688px) - Aly Mashaly
+### [x] #96 - desktop (1688px) - Aly Mashaly
 
 > Stimmt das wirklich, dass wir die KI-Systems Engineering patentieren?
 
@@ -467,7 +467,7 @@ https://website-verotera.vercel.app/resources/patents
 - **Erstellt:** 2026-07-24 22:48
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12112652/
 
-### [ ] #97 - desktop (1688px) - Aly Mashaly
+### [x] #97 - desktop (1688px) - Aly Mashaly
 
 > Ich würde die Landingpage zum Thema Patente erstmal weglassen. Das ist zu früh, diese hier zu veröffentlichen.
 
@@ -480,7 +480,7 @@ https://website-verotera.vercel.app/resources/patents
 ## Seite `https://website-verotera.vercel.app/solutions/agentic-ai-engineering` (1 Punkt)
 
 https://website-verotera.vercel.app/solutions/agentic-ai-engineering
-### [ ] #117 - desktop (1604px) - Thorsten Sigges
+### [x] #117 - desktop (1604px) - Thorsten Sigges
 
 > Process-Flow 
 > Kontext erfassen –> Kriterien ableiten –> Optionen & Risiken –> System Design Concept (DE)
