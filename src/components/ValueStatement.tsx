@@ -23,6 +23,7 @@ const COPY: Record<
       "Erneuerbare Energien – Wind- und Solarkraft",
       "KI-Rechenzentrum Rack Power Distribution",
       "Elektromobilität und Automotive",
+      "Erneuerbare Energie und grüner Wasserstoff",
       "Industrielle Automatisierung und Robotik",
     ],
   },
@@ -35,6 +36,7 @@ const COPY: Record<
       "Renewable energy – wind and solar power",
       "AI data center rack power distribution",
       "E-mobility and automotive",
+      "Renewable energy and green hydrogen",
       "Industrial automation and robotics",
     ],
   },
@@ -44,6 +46,7 @@ const IMAGE_SOURCES = [
   "/images/aa_renewable_new.png",
   "/images/aa_data_center_new.png",
   "/images/aa_emobility_new.png",
+  "/images/aa_hydrogen_new.png",
   "/images/aa_robotics_new.png",
 ];
 
@@ -70,7 +73,7 @@ export default function ValueStatement() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+          <div className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-5">
             {IMAGE_SOURCES.map((src, i) => (
               <div
                 key={src}
