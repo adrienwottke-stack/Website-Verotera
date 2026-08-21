@@ -19,7 +19,8 @@ Abschnitt 5, was noch offen ist in [RUECKFRAGEN-KUNDE.md](RUECKFRAGEN-KUNDE.md).
 | ✅ Durch die Antworten umgesetzt (18 Commits) | #83, #88, #89, #90, #92, #93, #94, #96, #97, #102, #117, #162, #170, #175, #176, #177, #178, #179, #180 |
 | ✅ Erledigt, weil die Datei doch im Repo lag | #78, #166 (und damit #93/#94) |
 | ✅ Ohne Änderung bestätigt | #82, #86, #87, #164 |
-| ⚠️ Umgesetzt unter Annahme, Bestätigung offen | #89 (GaN-Trend-2), #90 (Überschrift), #92 (Sektionsdopplung), #176 (Seite bleibt), #177 (Slug + EN-Titel + Begriffe außerhalb der Seite) |
+| ⚠️ Umgesetzt unter Annahme, Bestätigung offen | #89 (GaN-Trend-2), #90 (Überschrift), #92 (Sektionsdopplung), #176 (Seite bleibt) |
+| ✅ Abgeschlossen, im Board auf `resolved` | #177 — Annahmen am 2026-08-21 abgenickt, Karriere-Stellentitel ausdrücklich unstrittig |
 | 🔴 Unbeantwortet, blockiert zwei Seiten | **#169** |
 | ⬜ Datei fehlt weiterhin | #109, #167 |
 | ⬜ Altlasten Vorrunde, weiterhin ohne Antwort | #91, #95, #100, #112, #133–#141, #160, Tippfehler-Regel |

@@ -225,7 +225,8 @@ in anderer Form vor. Nach Korrektur der Suchbegriffe grün.
 | Kategorie | Punkte |
 |---|---|
 | Unbeantwortet, blockiert Arbeit an zwei Seiten | **#169** |
-| Umgesetzt unter Annahme, warten auf Bestätigung | #177 (Slug/EN-Titel + Begriffe außerhalb der Seite), #89 (GaN-Trend-2), #176 (Seite bleibt bestehen), #90 (Überschrift), #92 (Sektionsdopplung) |
+| Umgesetzt unter Annahme, warten auf Bestätigung | #89 (GaN-Trend-2), #176 (Seite bleibt bestehen), #90 (Überschrift), #92 (Sektionsdopplung) |
+| Abgeschlossen, Board auf `resolved` (2026-08-21) | #177 — Slug, EN-Titel und die Begriffe außerhalb der Seite bleiben wie umgesetzt |
 | Datei fehlt | #109, #167 |
 | Altlasten Vorrunde, weiterhin ohne Antwort | #91 (Ersatzbild), #95 (LinkedIn-URL), #100, #112, #133–#141, #160, Tippfehler-Regel |
 
