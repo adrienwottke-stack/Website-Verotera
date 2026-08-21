@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { ArrowBigDown, ArrowBigRight, ArrowDown, ArrowLeftRight, ArrowRight, UtilityPole } from "lucide-react";
+import { ArrowBigDown, ArrowBigRight } from "lucide-react";
 import { useLang } from "@/components/LangProvider";
 import type { Lang } from "@/lib/i18n";
 
@@ -83,7 +82,7 @@ const COPY: Record<Lang, Copy> = {
     smartPduSub: "Full-GaN DC-DC Wandler",
     smartPduTag: "Full-GaN",
     stepDownLabel: "54/48 VDC",
-    polLabel: "PoL Stages",
+    polLabel: "PoL stages",
     polStages: [
       { name: "IBC", tone: "emerald" },
       { voltage: "12/6 VDC", name: "VRM", tone: "emerald" },
@@ -122,7 +121,7 @@ const COPY: Record<Lang, Copy> = {
     smartPduSub: "Full-GaN DC-DC converter",
     smartPduTag: "Full-GaN",
     stepDownLabel: "54/48 VDC",
-    polLabel: "PoL Stages",
+    polLabel: "PoL stages",
     polStages: [
       { name: "IBC", tone: "emerald" },
       { voltage: "12/6 VDC", name: "VRM", tone: "emerald" },
@@ -142,7 +141,7 @@ const pop = (delay: number) => ({
 function PanelHeader({ title, range, dark }: { title: string; range: string; dark?: boolean }) {
   return (
     <div className="text-center mb-5">
-      <h3 className={`font-display text-base font-bold leading-tight ${dark ? "text-white" : "text-brand-navy"}`}>
+      <h3 className={`font-display text-lg font-bold leading-tight ${dark ? "text-white" : "text-brand-navy"}`}>
         {title}
       </h3>
       <p className="font-sans text-xs font-semibold text-brand-cyan mt-1">{range}</p>
@@ -155,7 +154,7 @@ function BusRail({ label, tone }: { label: string; tone: "navy" | "cyan" }) {
   const toneClasses =
     tone === "cyan"
       ? "bg-brand-cyan shadow-[0_0_24px_rgba(16,166,226,0.35)]"
-      : "bg-brand-navy";
+      : "bg-brand-navy-light";
   return (
     <div className={`flex items-center justify-center rounded-lg px-3 py-2 lg:px-2 lg:py-4 shrink-0 ${toneClasses}`}>
       <span className="font-display text-xs font-bold uppercase tracking-widest text-white whitespace-nowrap lg:[writing-mode:vertical-rl] lg:rotate-180">
@@ -165,25 +164,50 @@ function BusRail({ label, tone }: { label: string; tone: "navy" | "cyan" }) {
   );
 }
 
+/** Stylised lattice transmission tower, as on the customer's slide. */
+function PylonGraphic({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 80 140"
+      aria-hidden="true"
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={3}
+      strokeLinecap="round"
+    >
+      <path d="M40 0v12M34 12h12M14 140 34 12M66 140 46 12" />
+      <path d="M6 32h68M10 32v9M70 32v9" />
+      <path d="M14 58h52M18 58v8M62 58v8" />
+      <path d="M27 62 53 86M53 62 27 86M22 92 58 120M58 92 22 120" />
+    </svg>
+  );
+}
+
+/** Fat double-headed coupling arrow (node ↔ busbar), like the slide's block arrows. */
+function FatArrowLR({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 26 14" aria-hidden="true" className={className} fill="currentColor">
+      <path d="M6.5 0 0 7l6.5 7v-4h13v4L26 7 19.5 0v4h-13V0z" />
+    </svg>
+  );
+}
+
 function UtilityNodeCard({ node }: { node: UtilityNode }) {
   const emerald = node.accent === "emerald";
   return (
     <div
-      className={`relative overflow-hidden rounded-xl border bg-white px-4 py-2.5 shadow-sm ${
-        emerald ? "border-brand-emerald/40" : "border-brand-navy/8"
+      className={`relative overflow-hidden rounded-lg border bg-white px-4 py-2.5 shadow-sm text-center ${
+        emerald ? "border-brand-emerald/50" : "border-brand-navy/15"
       }`}
     >
       {emerald && (
-        <>
-          {/* Weiße Basis + Emerald-Schleier = flächig hellgrüne Kachel wie auf der Folie,
-              ohne dass der dunkle Panel-Hintergrund durchscheint. */}
-          <span aria-hidden="true" className="absolute inset-0 bg-brand-emerald/15" />
-          <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1 bg-brand-emerald" />
-        </>
+        /* Weiße Basis + Emerald-Schleier = flächig hellgrüne Kachel wie auf der Folie. */
+        <span aria-hidden="true" className="absolute inset-0 bg-brand-emerald/20" />
       )}
       <span className="relative font-display text-sm font-bold text-brand-navy leading-tight">{node.name}</span>
       {node.sub && (
-        <p className="relative font-sans text-xs text-brand-navy/55 leading-relaxed mt-0.5">{node.sub}</p>
+        <p className="relative font-sans text-xs text-brand-navy/60 leading-snug mt-0.5">{node.sub}</p>
       )}
     </div>
   );
@@ -193,18 +217,18 @@ function UtilityNodeCard({ node }: { node: UtilityNode }) {
 function FacilityNodeCard({ node }: { node: FacilityNode }) {
   return (
     <div className="flex items-center gap-2 min-w-0">
-      <div className="flex-1 min-w-0">
-        <p className="font-sans text-[10px] font-semibold text-brand-navy/55 mb-1">{node.label}</p>
-        <div className="rounded-xl border border-brand-navy/8 bg-white shadow-sm overflow-hidden">
+      <div className="flex-1 min-w-0 text-center">
+        <p className="font-sans text-[10px] font-semibold text-brand-navy/60 mb-1">{node.label}</p>
+        <div className="rounded-lg border border-brand-navy/15 bg-white shadow-sm overflow-hidden">
           <div className="px-3 py-2">
             <span className="font-display text-sm font-bold text-brand-navy leading-tight">{node.name}</span>
           </div>
-          <div className="border-t border-brand-navy/8 bg-brand-blue/10 px-3 py-1 text-center">
-            <span className="text-[9px] font-bold uppercase tracking-wider text-brand-blue">{node.conv}</span>
+          <div className="border-t border-brand-navy/10 bg-brand-blue/15 px-3 py-1">
+            <span className="text-[10px] font-bold tracking-wide text-brand-navy/70">{node.conv}</span>
           </div>
         </div>
       </div>
-      <ArrowLeftRight aria-hidden="true" className="w-4 h-4 text-brand-cyan shrink-0 rotate-90 lg:rotate-0" />
+      <FatArrowLR className="w-6 h-3.5 text-brand-cyan shrink-0 rotate-90 lg:rotate-0" />
     </div>
   );
 }
@@ -221,7 +245,7 @@ function Connector() {
 /**
  * Pattern-J diagram: the customer's PPT block diagram of the 800 VDC power path
  * (utility grid → facility level → compute rack level), rebuilt 1:1 in topology —
- * dark utility panel with grid pylon, light facility panel with HV-PDU rail,
+ * dark utility panel with grid pylon, light-blue facility panel with HV-PDU rail,
  * navy rack panel with 800 VDC busbar rail — restyled in the brand tokens.
  */
 export default function PduPowerArchitecture() {
@@ -234,11 +258,11 @@ export default function PduPowerArchitecture() {
         {/* Level 1: Utility Grid (dark teal panel, PPT: pylon + source stack) */}
         <motion.div {...pop(0)} className="flex-1 rounded-2xl bg-brand-navy-light p-5 shadow-sm flex flex-col">
           <PanelHeader dark title={t.utilityTitle} range={t.utilityRange} />
-          <div className="flex gap-4 flex-1">
-            <div className="hidden sm:flex items-center justify-center shrink-0">
-              <UtilityPole aria-hidden="true" className="w-16 h-28 text-white/25" strokeWidth={1.25} />
+          <div className="flex gap-4 flex-1 items-center">
+            <div className="hidden sm:block shrink-0">
+              <PylonGraphic className="w-20 h-36 text-white/30" />
             </div>
-            <div className="flex-1 space-y-3">
+            <div className="flex-1 space-y-3 min-w-0">
               {t.utilityNodes.map((node) => (
                 <UtilityNodeCard key={node.name} node={node} />
               ))}
@@ -252,31 +276,31 @@ export default function PduPowerArchitecture() {
 
         <Connector />
 
-        {/* Level 2: Facility Level (light panel, PPT: HV-PDU rail + PDU + converter column) */}
+        {/* Level 2: Facility Level (light-blue panel, PPT: HV-PDU rail + PDU + converter column) */}
         <motion.div
           {...pop(0.12)}
-          className="flex-[1.25] rounded-2xl border border-brand-cyan/20 bg-brand-cyan/10 p-5 flex flex-col"
+          className="flex-[1.2] rounded-2xl border border-brand-cyan/25 bg-brand-cyan/20 p-5 flex flex-col"
         >
           <PanelHeader title={t.facilityTitle} range={t.facilityRange} />
           <div className="flex flex-col lg:flex-row gap-3 flex-1">
             <BusRail label={t.facilityFeed} tone="navy" />
 
             {/* PDU + distribution board */}
-            <div className="flex-1 flex flex-col justify-center min-w-0">
-              <p className="font-sans text-[10px] font-semibold text-brand-navy/55 mb-1">{t.pduLabel}</p>
-              <div className="rounded-xl border border-brand-navy/8 bg-white px-3 py-3 shadow-sm text-center">
+            <div className="flex-1 flex flex-col justify-center min-w-0 text-center">
+              <p className="font-sans text-[10px] font-semibold text-brand-navy/60 mb-1">{t.pduLabel}</p>
+              <div className="rounded-lg border border-brand-navy/15 bg-white px-3 py-3.5 shadow-sm">
                 <span className="font-display text-sm font-bold text-brand-navy">{t.pduName}</span>
               </div>
-              <div className="mt-3">
-                <p className="font-sans text-[11px] font-bold text-brand-navy/75">{t.pduBoardTitle}</p>
+              <div className="mt-4">
+                <p className="font-sans text-[11px] font-bold text-brand-navy/80">{t.pduBoardTitle}</p>
                 <p className="font-sans text-[11px] text-brand-navy/60 leading-relaxed">{t.pduBoardDesc}</p>
               </div>
             </div>
 
             {/* PDU → HV PSU feed */}
             <div aria-hidden="true" className="flex items-center justify-center text-brand-cyan">
-              <ArrowRight className="hidden lg:block w-4 h-4" />
-              <ArrowDown className="block lg:hidden w-4 h-4" />
+              <ArrowBigRight className="hidden lg:block w-6 h-6 fill-current" strokeWidth={1} />
+              <ArrowBigDown className="block lg:hidden w-6 h-6 fill-current" strokeWidth={1} />
             </div>
 
             {/* Converters coupled to the 800 VDC busbar */}
@@ -289,41 +313,38 @@ export default function PduPowerArchitecture() {
         </motion.div>
 
         {/* Level 3: Compute Rack Level (navy panel, PPT: busbar rail + hot swap + Smart PDU + PoL) */}
-        <motion.div {...pop(0.24)} className="flex-[1.1] rounded-2xl bg-brand-navy p-5 shadow-sm flex flex-col">
+        <motion.div {...pop(0.24)} className="flex-[1.2] rounded-2xl bg-brand-navy p-5 shadow-sm flex flex-col">
           <PanelHeader dark title={t.rackTitle} range={t.rackRange} />
           <div className="flex flex-col lg:flex-row gap-3 flex-1">
             <BusRail label={t.busbar} tone="cyan" />
 
             <div className="flex-1 flex flex-col min-w-0">
               {/* Busbar → hot swap */}
-              <div className="flex items-center gap-2">
-                <ArrowRight aria-hidden="true" className="hidden lg:block w-4 h-4 text-brand-cyan shrink-0" />
-                <ArrowDown aria-hidden="true" className="block lg:hidden w-4 h-4 text-brand-cyan shrink-0" />
-                <span className="rounded-lg border border-white/10 bg-brand-navy-light px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white">
+              <div className="flex items-center gap-2 text-brand-cyan">
+                <ArrowBigRight aria-hidden="true" className="hidden lg:block w-6 h-6 fill-current shrink-0" strokeWidth={1} />
+                <ArrowBigDown aria-hidden="true" className="block lg:hidden w-6 h-6 fill-current shrink-0" strokeWidth={1} />
+                <span className="rounded-lg border border-white/10 bg-brand-navy-light px-3.5 py-2 font-display text-xs font-bold text-white">
                   {t.hotSwap}
                 </span>
               </div>
 
-              <div aria-hidden="true" className="flex justify-center py-1.5">
-                <ArrowDown className="w-4 h-4 text-brand-cyan" />
+              {/* Stretchy connector: fills the panel height like the slide's long arrow */}
+              <div aria-hidden="true" className="flex-1 min-h-6 flex items-center justify-center py-1">
+                <ArrowBigDown className="w-6 h-6 fill-current text-brand-cyan" strokeWidth={1} />
               </div>
 
-              {/* Smart PDU (highlighted, with brand signet as in the PPT) */}
+              {/* Smart PDU (highlighted, brand signet next to the name as on the slide) */}
               <div className="rounded-xl border border-brand-cyan/40 bg-white px-4 py-3 shadow-[0_4px_24px_rgba(16,166,226,0.25)]">
                 <div className="flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2 min-w-0">
-                    <span className="flex items-center justify-center bg-brand-navy rounded-md p-1 shrink-0">
-                      <Image
-                        src="/images/v-signet-transparent.png"
-                        alt="VEROTERA Signet"
-                        width={16}
-                        height={16}
-                        className="w-4 h-4 object-contain"
-                      />
-                    </span>
-                    <span className="font-display text-sm font-bold text-brand-navy leading-tight">
+                    <span className="font-display text-base font-bold text-brand-navy leading-tight">
                       {t.smartPduName}
                     </span>
+                    <span
+                      aria-hidden="true"
+                      className="v-watermark inline-block shrink-0"
+                      style={{ width: 20, height: 20, backgroundColor: "var(--color-brand-cyan)" }}
+                    />
                   </div>
                   <span className="text-[9px] font-bold uppercase tracking-wider text-brand-cyan shrink-0">
                     {t.smartPduTag}
@@ -332,36 +353,38 @@ export default function PduPowerArchitecture() {
                 <p className="font-sans text-xs text-brand-navy/55 leading-relaxed mt-1">{t.smartPduSub}</p>
               </div>
 
-              {/* Step-down to PoL */}
-              <div aria-hidden="true" className="flex items-center justify-center gap-2 py-2">
-                <ArrowDown className="w-4 h-4 text-brand-cyan" />
-                <span className="font-sans text-[10px] font-semibold text-white/60">{t.stepDownLabel}</span>
+              {/* Stretchy step-down to PoL */}
+              <div aria-hidden="true" className="flex-1 min-h-6 flex items-center justify-center gap-2 py-1">
+                <ArrowBigDown className="w-5 h-5 fill-current text-brand-cyan" strokeWidth={1} />
+                <span className="font-sans text-[10px] font-semibold text-white/70">{t.stepDownLabel}</span>
               </div>
 
-              {/* PoL stages: IBC → VRM → GPU */}
-              <div className="mt-auto">
-                <p className="text-[9px] font-bold uppercase tracking-wider text-white/50 text-center mb-2">
-                  {t.polLabel}
-                </p>
+              {/* PoL stages: IBC → VRM → GPU (light chips with dark text, as on the slide) */}
+              <div>
+                <p className="font-display text-sm font-semibold text-white/85 text-center mb-2">{t.polLabel}</p>
                 <div className="flex items-center justify-center gap-1.5 flex-wrap">
                   {t.polStages.map((stage) => (
                     <div key={stage.name} className="flex items-center gap-1.5">
                       {stage.voltage && (
                         <div className="flex flex-col items-center px-0.5" aria-hidden="true">
-                          <span className="font-sans text-[9px] font-semibold text-white/60 whitespace-nowrap">
+                          <span className="font-sans text-[9px] font-semibold text-white/70 whitespace-nowrap">
                             {stage.voltage}
                           </span>
-                          <ArrowRight className="w-3.5 h-3.5 text-brand-cyan" />
+                          <ArrowBigRight className="w-5 h-5 fill-current text-brand-cyan" strokeWidth={1} />
                         </div>
                       )}
                       <span
-                        className={`rounded-lg border px-3 py-2 font-display text-xs font-bold text-white ${
-                          stage.tone === "cyan"
-                            ? "border-brand-cyan/40 bg-brand-cyan/20"
-                            : "border-brand-emerald/40 bg-brand-emerald/15"
+                        className={`relative overflow-hidden rounded-lg border bg-white px-3.5 py-2 font-display text-xs font-bold text-brand-navy ${
+                          stage.tone === "cyan" ? "border-brand-cyan/50" : "border-brand-emerald/50"
                         }`}
                       >
-                        {stage.name}
+                        <span
+                          aria-hidden="true"
+                          className={`absolute inset-0 ${
+                            stage.tone === "cyan" ? "bg-brand-cyan/20" : "bg-brand-emerald/20"
+                          }`}
+                        />
+                        <span className="relative">{stage.name}</span>
                       </span>
                     </div>
                   ))}

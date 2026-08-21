@@ -274,6 +274,18 @@ Was gegenüber der alten Fassung neu aus der Folie übernommen wurde:
   `brand-emerald/15`-Schleier + Streifen) statt nur weißer Kachel mit Streifen.
   Im Browser gegen die laufende Vorschau verifiziert (Panels dunkel/hell/dunkel, Rails
   vertikal mit gedrehtem Text, mobil horizontal ohne Overflow, PoL-Chips grün/grün/cyan).
+- **Angleichungs-Runde (3. Commit, nach Seite-an-Seite-Vergleich Folie ↔ Render):**
+  Facility-Panel kräftiger hellblau (`bg-brand-cyan/20` statt `/10`), HV-PDU-Leiste teal
+  (`brand-navy-light` statt fast-schwarzem `brand-navy`), Gittermast als eigene SVG-Grafik
+  statt dünnem lucide-`UtilityPole`, alle Fluss-Pfeile als gefüllte Blockpfeile (inkl.
+  eigener fetter ↔-SVG für die Busbar-Kopplungen und PoL-Kettenpfeile), PoL-Chips hell mit
+  Navy-Text (weiße Basis + Farbschleier, wie die hellgrünen/hellblauen Folien-Boxen) statt
+  dunkler Chips, V-Signet als cyanfarbene Mask-Grafik direkt neben „Smart PDU" (der
+  Navy-Chip davor las sich wie eine Checkbox), Rack-Inhalt per Stretch-Zonen über die volle
+  Panelhöhe verteilt (Hot Swap oben, Smart PDU Mitte, PoL unten — vorher großes Loch),
+  Boxen-Text zentriert und Kanten enger (`rounded-lg`, Border `/15`) wie auf der Folie,
+  Rack-Panel auf Facility-Breite gebracht, Panel-Titel auf `text-lg`, „PoL stages" in
+  Folien-Schreibweise. Geometrie/Farben erneut im Live-Render (Desktop + 375 px) verifiziert.
 
 COPY-Struktur DE+EN entsprechend erweitert (`utilityOutlookLabel/-Value`, `pduLabel`,
 `pduBoardTitle/-Desc`, Wandler-Knoten mit `label`/`conv`, PoL-Stufen mit `tone`).
