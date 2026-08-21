@@ -383,7 +383,7 @@ https://website-verotera.vercel.app/solutions/wbg-power-modules
 ## Seite `https://website-verotera.vercel.app/solutions/technology-spotlight-gallium-nitride` (5 Punkte)
 
 https://website-verotera.vercel.app/solutions/technology-spotlight-gallium-nitride
-### [ ] #169 - desktop (1688px) - Aly Mashaly
+### [x] #169 - desktop (1688px) - Aly Mashaly
 
 > die zwei Seiten von GaN und SiC rausnehmen.
 

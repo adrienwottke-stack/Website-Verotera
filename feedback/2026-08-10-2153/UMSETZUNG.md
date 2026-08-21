@@ -320,3 +320,46 @@ Einzeiler, sobald der Kunde es bestätigt.
 
 Prüfung: `npx tsc --noEmit` grün, `npm run lint` ohne neue Befunde (eine vorbestehende Warnung in
 `VModelFunnel.tsx`).
+
+---
+
+# 7. Nachtrag 2026-08-21 — #169 GaN- und SiC-Spotlight gelöscht
+
+Thorsten Sigges hat die Rückfrage vom 14.08. („entlinken oder löschen?") am 2026-08-21 um 08:52
+im Pastel-Thread mit **„B)"** beantwortet: Seiten löschen, Weiterleitung auf „WBG Power Modules".
+
+## 7.1 Änderungen
+
+| Datei | Änderung |
+|---|---|
+| `solutions/technology-spotlight-gallium-nitride/page.tsx` | **Gelöscht** (ganze Seite, DE+EN). |
+| `solutions/technology-spotlight-silicium-carbide/page.tsx` | **Gelöscht** (ganze Seite, DE+EN). |
+| `components/SpotlightTable.tsx` | **Gelöscht** — wurde ausschließlich von den beiden Spotlight-Seiten importiert. |
+| `next.config.ts` | Vier permanente Redirects (je Route DE + `/en`) auf `/solutions/wbg-power-modules`, nach dem Muster von #177. |
+| `components/Header.tsx` | Beide Spotlight-Einträge aus dem Lösungen-/Solutions-Dropdown entfernt (DE+EN). |
+| `app/[lang]/site-map/page.tsx` | Beide Spotlight-Einträge entfernt (DE+EN). |
+| `app/sitemap.ts` | Beide Routen aus der XML-Sitemap entfernt (mit Begründungskommentar). |
+| `data/news.ts` | Die vier Teaser-Links (2 Artikel × DE/EN) von den Spotlight-Routen auf `/solutions/wbg-power-modules` umgezeigt. |
+| `pruefung.json` | Die „#169 darf nicht vorweggenommen sein"-Zusicherungen invertiert (Menü/Site-Map: jetzt `gone`), die beiden Spotlight-Routenblöcke durch Redirect-Prüfungen ersetzt, News-Teaser-Entlinkung ergänzt. |
+
+## 7.2 Annahmen und bewusste Nebenwirkungen
+
+- **Die Zusatzfrage „Verweise entfernen oder auf WBG zeigen?" blieb unbeantwortet.** Umsetzung:
+  Navigations-/Sitemap-Einträge **entfernt** (ein Menüpunkt, der auf eine Weiterleitung führt,
+  wäre irreführend), die beiden News-Teaser dagegen **umgezeigt** statt gelöscht — sie sind
+  Inhalt, dessen Löschung nicht beauftragt war, und zeigen jetzt auf dasselbe Ziel wie die
+  Redirects. Leicht zu ändern, falls anders gewünscht.
+- Damit verlinken zwei News-Teaser („GaN in der 800-VDC-Rack-Architektur…", „SiC – der
+  Leistungshalbleiter…") auf dieselbe WBG-Seite. Die News-Seite ist ohnehin entlinkt + noindex (#175).
+- **Die Arbeit aus #170/#171–#174 und die Quellen-Bereinigung (#89) auf diesen Seiten ist damit
+  obsolet** — wie in der Rückfrage angekündigt; die Commits kosten nichts, die Seiten sind weg.
+- `components/Solutions.tsx` (tote, nirgends importierte Komponente) referenziert die alten
+  Routen weiterhin — rendert nicht, bleibt wie in §5.4 dokumentiert eine eigene Aufräumaufgabe.
+- Bilder der beiden Seiten bleiben in `public/images/` (werden teils von anderen Seiten genutzt;
+  Aufräumen nicht beauftragt).
+
+## 7.3 Verifikation
+
+Prüfung: `npx tsc --noEmit` grün, `npm run lint` ohne neue Befunde. Kein eigener
+Dev-Server/Build (Port 3001 fest vergeben, geteilter `.next`-Ordner); die Redirect-Prüfungen
+laufen beim nächsten `verify-runde.mjs`-Lauf gegen den Produktionsbuild mit.

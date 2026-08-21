@@ -22,7 +22,7 @@ Abschnitt 5, was noch offen ist in [RUECKFRAGEN-KUNDE.md](RUECKFRAGEN-KUNDE.md).
 | ⚠️ Umgesetzt unter Annahme, Bestätigung offen | #89 (GaN-Trend-2), #90 (Überschrift), #92 (Sektionsdopplung) |
 | ✅ Abgeschlossen, im Board auf `resolved` | #177 — Annahmen am 2026-08-21 abgenickt, Karriere-Stellentitel ausdrücklich unstrittig |
 | ✅ Antwort vom 2026-08-21 umgesetzt | #176 — Wasserstoff überall raus; Kachel „Erneuerbare Energien" bleibt (Seite weiterhin nur entlinkt + noindex) |
-| 🔴 Unbeantwortet, blockiert zwei Seiten | **#169** |
+| ✅ Antwort „B" vom 2026-08-21 umgesetzt | **#169** — GaN- und SiC-Spotlight gelöscht, Redirects auf WBG Power Modules, alle Verweise entfernt (UMSETZUNG.md §7) |
 | ✅ Asset per Chat nachgereicht, umgesetzt am 2026-08-21 | #167 (Blockdiagramm) |
 | ⬜ Datei fehlt weiterhin | #109 |
 | ⬜ Altlasten Vorrunde, weiterhin ohne Antwort | #91, #95, #100, #112, #133–#141, #160, Tippfehler-Regel |
@@ -147,7 +147,7 @@ nächsten Eyebrow. Ausgelassen wurde bewusst „Trend 2" (800-VDC-Rack mit CTA a
 
 | Nr | Kategorie | Datei / Stelle | Sprache | Stand | Begründung |
 |---|---|---|---|---|---|
-| #169 | **ENTSCHEIDUNG** | `GAN` + `SIC` (ganze Seiten) + 6 Verweisstellen | — | ⬜ | Wie bei #97 offen, ob gelöscht oder nur entlinkt wird — mit SEO- und Redirect-Folgen. |
+| #169 | **ENTSCHEIDUNG** | `GAN` + `SIC` (ganze Seiten) + 6 Verweisstellen | beides | ✅ | Wie bei #97 offen, ob gelöscht oder nur entlinkt wird — am 2026-08-21 mit „B" beantwortet: Seiten gelöscht, permanente Redirects auf WBG Power Modules, Verweise entfernt. |
 | #171 | UMSETZBAR | `GAN` JSX 963–1028 + COPY 216–250 (de) / 516–550 (en) + Typ 78–88 | beides | ✅ | Rahmen auf „TREND 1 · FRAUNHOFER IAF" = Sektion „Vertikale GaN Power-ICs", reine Fremdquelle. |
 | #172 | UMSETZBAR | `GAN` JSX 1104–1152 + COPY 288–325 / 588–625 + Typ 100–106 | beides | ✅ | Rahmen auf „TREND 3 · EPC" = Sektion „GaN in humanoider Robotik" (3 Karten). |
 | #173 | UMSETZBAR | `GAN` JSX 1154–1195 + COPY 326–357 / 626–657 + Typ 107–113 | beides | ✅ | Rahmen auf „MARKTSTRUKTUR" = Sektion „Marktstruktur & Ökosystem-Konsolidierung". |
@@ -345,6 +345,7 @@ der ganze Wasserstoff-Abschnitt der SiC-Seite, sowie die Keywords in `layout.tsx
 
 **Antwort nötig (14 Punkte):** #75, #83, #88, #90, #91, #92, #93, #95, #96, #97, #164, #169, #175, #176
 Davon sind #169, #175, #176 neu und blockieren jeweils weitere Punkte — sie zuerst.
+*(#169 am 2026-08-21 mit „B" beantwortet und umgesetzt — Seiten gelöscht, Redirects gesetzt; siehe UMSETZUNG.md §7.)*
 
 **Datei nötig (5 Punkte):** #78, #94, #109, #166, #167 — davon #167 am 2026-08-21 erledigt (Folien-Screenshot per Chat nachgereicht)
 

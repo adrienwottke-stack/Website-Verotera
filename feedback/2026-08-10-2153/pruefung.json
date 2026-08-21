@@ -19,7 +19,9 @@
         { "point": "#97 Patente entlinkt", "text": "/resources/patents" },
         { "point": "#177 alte Route", "text": "agentic-ai-engineering\"" },
         { "point": "#177 Begriff Agentic AI (Bild-Alt AgenticEcosystem)", "de": "Agentische KI", "en": "Agentic AI" },
-        { "point": "#89 IEA", "de": "Internationale Energieagentur", "en": "International Energy Agency" }
+        { "point": "#89 IEA", "de": "Internationale Energieagentur", "en": "International Energy Agency" },
+        { "point": "#169 GaN aus dem Menue entfernt", "text": "technology-spotlight-gallium-nitride" },
+        { "point": "#169 SiC aus dem Menue entfernt", "text": "technology-spotlight-silicium-carbide" }
       ],
       "present": [
         { "label": "#88 zweite Karte bleibt", "de": "Tiefes Systemverständnis", "en": "Deep System Understanding" },
@@ -29,9 +31,7 @@
         { "label": "#162 Kontakt bleibt", "de": "Kontakt", "en": "Contact" },
         { "label": "#178-180 Site Map bleibt", "text": "Site Map" },
         { "label": "#177 neue Route verlinkt", "text": "deterministic-engineering-core" },
-        { "label": "#102 zurueckgenommene Kacheln (opacity 0.42)", "text": "opacity=\"0.42\"" },
-        { "label": "#169 GaN weiterhin im Menue (darf nicht vorweggenommen sein)", "text": "technology-spotlight-gallium-nitride" },
-        { "label": "#169 SiC weiterhin im Menue (darf nicht vorweggenommen sein)", "text": "technology-spotlight-silicium-carbide" }
+        { "label": "#102 zurueckgenommene Kacheln (opacity 0.42)", "text": "opacity=\"0.42\"" }
       ]
     },
     {
@@ -77,7 +77,8 @@
       "urls": { "de": "/news", "en": "/en/news" },
       "gone": [
         { "point": "#89 NVIDIA", "text": "NVIDIA" },
-        { "point": "#176 Wasserstoff-Beitrag", "de": "grünen Wasserstoff", "en": "Green Hydrogen" }
+        { "point": "#176 Wasserstoff-Beitrag", "de": "grünen Wasserstoff", "en": "Green Hydrogen" },
+        { "point": "#169 News-Teaser entlinkt", "text": "technology-spotlight" }
       ],
       "present": [
         { "label": "#175 noindex gesetzt", "text": "noindex" },
@@ -107,41 +108,23 @@
       ]
     },
     {
-      "label": "SiC-Spotlight (#170 Quellen/Namen, #176 Wasserstoff)",
+      "label": "#169 Weiterleitung SiC-Spotlight auf WBG Power Modules (permanent, 308)",
       "urls": { "de": "/solutions/technology-spotlight-silicium-carbide", "en": "/en/solutions/technology-spotlight-silicium-carbide" },
       "gone": [
-        { "point": "#170 Bodo's Power Systems", "text": "Bodo" },
-        { "point": "#170 Yole", "text": "Yole" },
-        { "point": "#170 Wolfspeed", "text": "Wolfspeed" },
-        { "point": "#170 Microchip", "text": "Microchip" },
-        { "point": "#170 Schluesseltrends-Sektion", "de": "Schlüsseltrends", "en": "Key Trends" },
-        { "point": "#176 Wasserstoff", "de": "Wasserstoff", "en": "hydrogen" },
-        { "point": "#169 unbeantwortet — Seite darf NICHT auf noindex stehen", "text": "noindex" }
+        { "point": "#169 alte SiC-Seite", "de": "Interaktive Parametermatrix", "en": "Interactive Parameter Matrix" }
       ],
       "present": [
-        { "label": "Tabelle bleibt (Kundenvorgabe)", "de": "Interaktive Parametermatrix", "en": "Interactive Parameter Matrix" },
-        { "label": "Physik-Sektion bleibt", "de": "Bandlücke", "en": "Bandgap" },
-        { "label": "Marktzahlen bleiben", "text": "CAGR 2026" }
+        { "label": "#169 landet auf WBG Power Modules", "de": "Wir bündeln globales Fachwissen", "en": "We connect global domain expertise" }
       ]
     },
     {
-      "label": "GaN-Spotlight (#89 Quellen/Namen)",
+      "label": "#169 Weiterleitung GaN-Spotlight auf WBG Power Modules (permanent, 308)",
       "urls": { "de": "/solutions/technology-spotlight-gallium-nitride", "en": "/en/solutions/technology-spotlight-gallium-nitride" },
       "gone": [
-        { "point": "#89 NVIDIA", "text": "NVIDIA" },
-        { "point": "#89 Navitas", "text": "Navitas" },
-        { "point": "#89 Power Integrations", "text": "Power Integrations" },
-        { "point": "#89 Yole", "text": "Yole" },
-        { "point": "#89 STMicroelectronics", "text": "STMicro" },
-        { "point": "#89 Renesas", "text": "Renesas" },
-        { "point": "#169 unbeantwortet — Seite darf NICHT auf noindex stehen", "text": "noindex" }
+        { "point": "#169 alte GaN-Seite", "de": "1.250-V-GaN-HEMTs", "en": "1,250 V GaN HEMTs" }
       ],
       "present": [
-        { "label": "Trend 2 bleibt", "de": "800-VDC-Rack", "en": "800 VDC rack" },
-        { "label": "Kennzahlen bleiben", "text": "CAGR 2026" },
-        { "label": "CTA zur Rack-PDU bleibt", "text": "rack-power-distribution" },
-        { "label": "#89 Trend-2-Ersatzbegriff 1 (offene Bestaetigung)", "de": "1.250-V-GaN-HEMTs", "en": "1,250 V GaN HEMTs" },
-        { "label": "#89 Trend-2-Ersatzbegriff 3 (offene Bestaetigung)", "de": "In-Rack Power-Delivery-Board", "en": "In-rack power delivery board" }
+        { "label": "#169 landet auf WBG Power Modules", "de": "Wir bündeln globales Fachwissen", "en": "We connect global domain expertise" }
       ]
     },
     {
@@ -185,13 +168,13 @@
       "gone": [
         { "point": "#97 Patente", "de": "Patente", "en": "Patents" },
         { "point": "#175 News", "text": "News &amp; Insights" },
-        { "point": "#176 Wasserstoff", "de": "Grüner Wasserstoff", "en": "Green Hydrogen" }
+        { "point": "#176 Wasserstoff", "de": "Grüner Wasserstoff", "en": "Green Hydrogen" },
+        { "point": "#169 GaN aus der Site-Map entfernt", "text": "technology-spotlight-gallium-nitride" },
+        { "point": "#169 SiC aus der Site-Map entfernt", "text": "technology-spotlight-silicium-carbide" }
       ],
       "present": [
         { "label": "#177 neuer Eintrag", "de": "Deterministischer Engineering Core", "en": "Deterministic Engineering Core" },
-        { "label": "Uebrige Ressourcen bleiben", "de": "Garantie", "en": "Warranty" },
-        { "label": "#169 GaN weiterhin gelistet (darf nicht vorweggenommen sein)", "text": "technology-spotlight-gallium-nitride" },
-        { "label": "#169 SiC weiterhin gelistet (darf nicht vorweggenommen sein)", "text": "technology-spotlight-silicium-carbide" }
+        { "label": "Uebrige Ressourcen bleiben", "de": "Garantie", "en": "Warranty" }
       ]
     }
   ]

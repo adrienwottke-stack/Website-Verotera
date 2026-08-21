@@ -43,7 +43,7 @@ export const NEWS_ITEMS: Record<Lang, NewsItem[]> = {
       featured: true,
     },
     {
-      href: "/solutions/technology-spotlight-gallium-nitride",
+      href: "/solutions/wbg-power-modules",
       category: "Technologie",
       date: "2. Mai 2026",
       title: "GaN in der 800-VDC-Rack-Architektur für KI-Rechenzentren",
@@ -53,7 +53,7 @@ export const NEWS_ITEMS: Record<Lang, NewsItem[]> = {
       imageAlt: "WBG-Leistungsmodul mit GaN",
     },
     {
-      href: "/solutions/technology-spotlight-silicium-carbide",
+      href: "/solutions/wbg-power-modules",
       category: "Technologie",
       date: "18. April 2026",
       title: "SiC – der Leistungshalbleiter der Elektrifizierungsära",
@@ -97,7 +97,7 @@ export const NEWS_ITEMS: Record<Lang, NewsItem[]> = {
       featured: true,
     },
     {
-      href: "/solutions/technology-spotlight-gallium-nitride",
+      href: "/solutions/wbg-power-modules",
       category: "Technology",
       date: "May 2, 2026",
       title: "GaN in the 800 VDC Rack Architecture for AI Data Centers",
@@ -107,7 +107,7 @@ export const NEWS_ITEMS: Record<Lang, NewsItem[]> = {
       imageAlt: "WBG power module with GaN",
     },
     {
-      href: "/solutions/technology-spotlight-silicium-carbide",
+      href: "/solutions/wbg-power-modules",
       category: "Technology",
       date: "April 18, 2026",
       title: "SiC — the Power Semiconductor of the Electrification Era",

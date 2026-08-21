@@ -9,8 +9,7 @@ const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.S
   { path: "/solutions/wbg-power-modules", priority: 0.9, changeFrequency: "monthly" },
   { path: "/solutions/rack-power-distribution", priority: 0.9, changeFrequency: "monthly" },
   { path: "/solutions/deterministic-engineering-core", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/solutions/technology-spotlight-gallium-nitride", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/solutions/technology-spotlight-silicium-carbide", priority: 0.8, changeFrequency: "monthly" },
+  // GaN-/SiC-Spotlights: per #169 gelöscht, Redirects auf /solutions/wbg-power-modules.
   { path: "/solutions", priority: 0.7, changeFrequency: "monthly" },
   { path: "/applications/automotive-emobility", priority: 0.8, changeFrequency: "monthly" },
   // /applications/hydrogen: per #176 entlinkt und auf noindex — bewusst nicht hier.

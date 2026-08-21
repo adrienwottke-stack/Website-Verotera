@@ -15,6 +15,10 @@ an denen ich unter einer Annahme gebaut habe, und die Altlasten aus der Vorrunde
 
 ### #169 — GaN- und SiC-Seite: entlinken oder löschen?
 
+> **Beantwortet am 2026-08-21 (Thorsten Sigges im Pastel-Thread): „B)"** — beide Seiten wurden
+> gelöscht, permanente Weiterleitungen auf „WBG Power Modules" eingerichtet, alle Verweise
+> entfernt bzw. umgezeigt. Details: UMSETZUNG.md §7.
+
 Diese Frage steht seit dem 14.08. unbeantwortet, während alle anderen beantwortet wurden — ich
 vermute, sie ist untergegangen. Sie ist die teuerste offene Frage: An beiden Seiten habe ich
 inzwischen gearbeitet (#170, #171–#174 und die Quellen-Bereinigung), und wenn die Seiten ganz

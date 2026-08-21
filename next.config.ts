@@ -28,6 +28,29 @@ const nextConfig: NextConfig = {
         destination: "/en/solutions/deterministic-engineering-core",
         permanent: true,
       },
+      // #169: GaN- und SiC-Technologie-Spotlights entfernt (Kundenantwort "B" vom
+      // 2026-08-21) — alte Routen auf WBG Power Modules umgeleitet, damit bereits
+      // indexierte Links nicht ins Leere laufen.
+      {
+        source: "/solutions/technology-spotlight-gallium-nitride",
+        destination: "/solutions/wbg-power-modules",
+        permanent: true,
+      },
+      {
+        source: "/en/solutions/technology-spotlight-gallium-nitride",
+        destination: "/en/solutions/wbg-power-modules",
+        permanent: true,
+      },
+      {
+        source: "/solutions/technology-spotlight-silicium-carbide",
+        destination: "/solutions/wbg-power-modules",
+        permanent: true,
+      },
+      {
+        source: "/en/solutions/technology-spotlight-silicium-carbide",
+        destination: "/en/solutions/wbg-power-modules",
+        permanent: true,
+      },
     ];
   },
 };
