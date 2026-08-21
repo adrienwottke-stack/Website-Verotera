@@ -11,8 +11,6 @@ type FooterLink = { label: string; href: string };
 const COPY: Record<
   Lang,
   {
-    resources: { title: string; links: FooterLink[] };
-    support: { title: string; links: FooterLink[] };
     corporate: { title: string; links: FooterLink[] };
     legal: FooterLink[];
     tagline: string;
@@ -21,24 +19,13 @@ const COPY: Record<
   }
 > = {
   de: {
-    resources: {
-      title: "Ressourcen",
-      links: [
-        { label: "Site Map", href: "/site-map" },
-      ],
-    },
-    support: {
-      title: "Support",
-      links: [
-        { label: "Kontakt", href: "/contacts" },
-      ],
-    },
     corporate: {
       title: "Corporate",
       links: [
         { label: "Über VEROTERA", href: "/about" },
         { label: "Karriere", href: "/careers" },
         { label: "Ethik & Compliance", href: "/ethics-compliance" },
+        { label: "Kontakt", href: "/contacts" },
       ],
     },
     legal: [
@@ -46,6 +33,7 @@ const COPY: Record<
       { label: "Datenschutzerklärung", href: "/legal/privacy-policy" },
       { label: "Nutzungsbedingungen", href: "/legal/terms-of-use" },
       { label: "Barrierefreiheitserklärung", href: "/legal/accessibility" },
+      { label: "Site Map", href: "/site-map" },
     ],
     tagline:
       "VEROTERA entwickelt Wide-Bandgap-Halbleitertechnologien mit tiefem Systemverständnis – für eine effizientere, nachhaltigere Welt.",
@@ -53,24 +41,13 @@ const COPY: Record<
     rights: "© 2026 VEROTERA GmbH – Alle Rechte vorbehalten.",
   },
   en: {
-    resources: {
-      title: "Resources",
-      links: [
-        { label: "Site Map", href: "/site-map" },
-      ],
-    },
-    support: {
-      title: "Support",
-      links: [
-        { label: "Contact", href: "/contacts" },
-      ],
-    },
     corporate: {
       title: "Corporate",
       links: [
         { label: "About VEROTERA", href: "/about" },
         { label: "Careers", href: "/careers" },
         { label: "Ethics & Compliance", href: "/ethics-compliance" },
+        { label: "Contact", href: "/contacts" },
       ],
     },
     legal: [
@@ -78,6 +55,7 @@ const COPY: Record<
       { label: "Privacy Policy", href: "/legal/privacy-policy" },
       { label: "Terms of Use", href: "/legal/terms-of-use" },
       { label: "Accessibility Statement", href: "/legal/accessibility" },
+      { label: "Site Map", href: "/site-map" },
     ],
     tagline:
       "VEROTERA develops wide-bandgap semiconductor technologies with deep system understanding — for a more efficient, more sustainable world.",
@@ -170,10 +148,8 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Right: 3 link columns */}
-          <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8 w-full">
-            <LinkColumn title={t.resources.title} links={t.resources.links} p={p} />
-            <LinkColumn title={t.support.title} links={t.support.links} p={p} />
+          {/* Right: link column */}
+          <div className="lg:col-span-8 flex lg:justify-end w-full">
             <LinkColumn title={t.corporate.title} links={t.corporate.links} p={p} />
           </div>
         </div>

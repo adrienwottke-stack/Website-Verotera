@@ -301,7 +301,7 @@ https://website-verotera.vercel.app/
 - **Erstellt:** 2026-07-28 08:50
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12126646/
 
-### [ ] #162 - desktop (1688px) - Aly Mashaly
+### [x] #162 - desktop (1688px) - Aly Mashaly
 
 > Support, Technische Unterstützung und Kontakt. m. E. reicht nur eine der drei aus.
 

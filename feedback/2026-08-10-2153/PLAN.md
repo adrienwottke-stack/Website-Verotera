@@ -126,7 +126,7 @@ Der Umsetzungsstand steht in der Spalte `Stand`:
 | #109 | **ASSET_FEHLT** | `AgenticEcosystem.tsx` → `<Image src="/images/agentic-ai-system.png">` | — | ⬜ | `aa-engineering-core` liegt in SharePoint, nicht in `public/images/`. |
 | #110 | UMSETZBAR | `Header.tsx` → `NAV` Lösungen-Dropdown | beides | ✅ | Umbenennung in beiden Sprach-Arrays. |
 | #161 | UMSETZBAR | `WhyVerotera.tsx` → `badges[3]` + Icons/Highlights | beides | ✅ | Vierte Karte entfernt, Grid auf `md:grid-cols-3`, `Zap`-Import weg. |
-| #162 | **ENTSCHEIDUNG** | `Footer.tsx` → `support` | — | ⚠️ | „Nur eine der drei reicht" sagt nicht, welche bleibt; entfernt wurde der doppelte Footer-Link, Header-Dubletten stehen noch. |
+| #162 | **ENTSCHEIDUNG** | `Footer.tsx` | beides | ✅ | Kunde hat Variante A gewählt: Support-Spalte entfällt, „Kontakt" steht unter „Corporate", Site Map in der Rechtsleiste. |
 | #163 | UMSETZBAR | `Footer.tsx` → `resources.links[3]` | beides | ✅ | Footer-Link „Patente"/„Patents" entfernt. |
 | #164 | **ENTSCHEIDUNG** | `AdvancedPackaging.tsx` → ganze Sektion | — | ⬜ | „Sollte anders dargestellt werden" ohne Zielform. |
 | #166 | **ASSET_FEHLT** | `WbgModuleSolutions.tsx` → `<Image src="/images/chip-fabrication.png">` | — | ⬜ | `aa-wafer-dies-sic.png` liegt nicht im Repo. |
@@ -307,7 +307,7 @@ der ganze Wasserstoff-Abschnitt der SiC-Seite, sowie die Keywords in `layout.tsx
 | Stand | Anzahl | Nummern |
 |---|---|---|
 | ✅ umgesetzt und verifiziert | **26** | #76, #77, #79, #80, #81, #84, #85, #98, #99, #100, #101, #103, #104, #105, #106, #107, #108, #110, #161, #163, #165, #168 + **#171–#174 (am 2026-08-11 in dieser Runde umgesetzt)** |
-| ⚠️ umgesetzt unter einer Annahme | **5** | #86, #89, #102, #117, #162 |
+| ⚠️ umgesetzt unter einer Annahme | **4** | #86, #89, #102, #117 |
 | ⬜ offen, **blockiert** | **22** | 14 × ENTSCHEIDUNG, 5 × ASSET_FEHLT, 2 × HINFÄLLIG, 1 × UNKLAR |
 
 > **Update 2026-08-11:** #171–#174 wurden auf ausdrückliche Anweisung umgesetzt, obwohl #169
@@ -346,7 +346,7 @@ Davon sind #169, #175, #176 neu und blockieren jeweils weitere Punkte — sie zu
 
 **Datei nötig (5 Punkte):** #78, #94, #109, #166, #167
 
-**Nur zur Bestätigung (5 Punkte):** #86, #89, #102, #117, #162 — umgesetzt, aber unter einer Annahme.
+**Nur zur Bestätigung (4 Punkte):** #86, #89, #102, #117 — umgesetzt, aber unter einer Annahme.
 
 **Zurückgestellt (2 Punkte):** #82, #87 — durch die Thread-Antwort erledigt.
 
