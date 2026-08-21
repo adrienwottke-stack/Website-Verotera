@@ -25,7 +25,7 @@ const COPY: Record<
     headlineA: "Mehr Effizienz. Weniger Gewicht.",
     headlineB: "Schnellere Entwicklung.",
     lead:
-      "Standard-Silizium-Leistungselektronik bremst moderne Systeme aus. OEMs in E-Mobilität, KI-Rechenzentren und grünem Wasserstoff stoßen an Effizienz-, Gewichts- und Entwicklungsgrenzen. Unsere Wide-Bandgap-Systeme verschieben diese Grenzen – messbar:",
+      "Standard-Silizium-Leistungselektronik bremst moderne Systeme aus. OEMs in E-Mobilität, KI-Rechenzentren und erneuerbaren Energien stoßen an Effizienz-, Gewichts- und Entwicklungsgrenzen. Unsere Wide-Bandgap-Systeme verschieben diese Grenzen – messbar:",
     cta: "Use Case besprechen",
     outcomes: [
       {
@@ -56,7 +56,7 @@ const COPY: Record<
     headlineA: "More efficiency. Less weight.",
     headlineB: "Faster development.",
     lead:
-      "Standard silicon power electronics hold modern systems back. OEMs in e-mobility, AI data centers and green hydrogen keep hitting efficiency, weight and development limits. Our wide-bandgap systems push those limits — measurably:",
+      "Standard silicon power electronics hold modern systems back. OEMs in e-mobility, AI data centers and renewable energy keep hitting efficiency, weight and development limits. Our wide-bandgap systems push those limits — measurably:",
     cta: "Discuss your use case",
     outcomes: [
       {

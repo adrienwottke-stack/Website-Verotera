@@ -523,7 +523,7 @@ https://website-verotera.vercel.app/news
 ## Seite `https://website-verotera.vercel.app/applications/hydrogen` (1 Punkt)
 
 https://website-verotera.vercel.app/applications/hydrogen
-### [ ] #176 - desktop (1904px) - Thorsten Sigges
+### [x] #176 - desktop (1904px) - Thorsten Sigges
 
 > Das Thema "Grüner Wasserstoff" nehmen wir auch raus... hier müssen erst noch weitere technische Frage geklärt werden (und Lösungsideen entwickelt werden)
 

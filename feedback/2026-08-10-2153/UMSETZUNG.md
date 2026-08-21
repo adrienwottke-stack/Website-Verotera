@@ -225,7 +225,7 @@ in anderer Form vor. Nach Korrektur der Suchbegriffe grün.
 | Kategorie | Punkte |
 |---|---|
 | Unbeantwortet, blockiert Arbeit an zwei Seiten | **#169** |
-| Umgesetzt unter Annahme, warten auf Bestätigung | #89 (GaN-Trend-2), #176 (Seite bleibt bestehen), #90 (Überschrift), #92 (Sektionsdopplung) |
+| Umgesetzt unter Annahme, warten auf Bestätigung | #89 (GaN-Trend-2), #90 (Überschrift), #92 (Sektionsdopplung) |
 | Abgeschlossen, Board auf `resolved` (2026-08-21) | #177 — Slug, EN-Titel und die Begriffe außerhalb der Seite bleiben wie umgesetzt |
 | Datei fehlt | #109 — #167 wurde am 2026-08-21 nachgereicht und umgesetzt (§6) |
 | Altlasten Vorrunde, weiterhin ohne Antwort | #91 (Ersatzbild), #95 (LinkedIn-URL), #100, #112, #133–#141, #160, Tippfehler-Regel |
@@ -289,3 +289,29 @@ Fluss-Pfeile drehen auf vertikal.
 - PoL-Kette steht unter der Smart-PDU-Karte statt rechts daneben (Platzverhältnis im
   Drei-Panel-Layout; Reihenfolge und Spannungslabels identisch zur Folie).
 - Flache Panels mit Radius/Schatten statt 3D-Extrusion der PowerPoint-Boxen.
+
+---
+
+## 6. Nachtrag 2026-08-21 — #176 zweite Runde
+
+Antwort im Thread (21.08., 08:58): „Wir nehmen Hydrogen erst einmal komplett raus — ich sehe hier
+derzeit kein Anwendungsfeld für VEROTERA. Erneuerbare Energien bleibt aber als Bildkachel
+zumindest." Damit ist die Freigabe für die zweite Liste aus der Rückfrage erteilt, mit einer
+Einschränkung: die Kachel „Erneuerbare Energien" bleibt.
+
+| Datei | Änderung |
+|---|---|
+| `components/ValueStatement.tsx` | Mission-Kachel „Erneuerbare Energie und grüner Wasserstoff" (`aa_hydrogen_new.png`) entfernt, DE+EN; Raster 5 → 4 Spalten, `sizes` auf 25vw. Kachel 1 „Erneuerbare Energien – Wind- und Solarkraft" (`aa_renewable_new.png`) bleibt — das ist die vom Kunden erhaltene Kachel. |
+| `components/ExplainSection.tsx` | Lead-Satz: „grünem Wasserstoff" → „erneuerbaren Energien", „green hydrogen" → „renewable energy". |
+| `components/Industries.tsx` | Bild der Karte „Erneuerbare Energien" war `green-hydrogen.png` (Elektrolyseur mit sichtbarem „H₂"); ersetzt durch `renewable-energy.png` (Wind + Solar, gleicher dunkler Bildstil, bisher ungenutzt). Kartentext war schon vorher rein erneuerbar. |
+
+Damit steht „Wasserstoff"/„hydrogen" in `src/` nur noch in der Seite
+`applications/hydrogen/page.tsx` selbst und in einem Begründungskommentar in `app/sitemap.ts`.
+
+**Bewusst nicht gemacht:** die Seite `/applications/hydrogen` ist weiterhin nur entlinkt und auf
+`noindex` — nicht gelöscht. „Erst einmal" liest sich als reversibel, und die Seite ist über kein
+Menü, keine Sitemap und keine Suchmaschine mehr erreichbar. Das Löschen samt Weiterleitung ist ein
+Einzeiler, sobald der Kunde es bestätigt.
+
+Prüfung: `npx tsc --noEmit` grün, `npm run lint` ohne neue Befunde (eine vorbestehende Warnung in
+`VModelFunnel.tsx`).

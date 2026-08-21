@@ -19,8 +19,9 @@ Abschnitt 5, was noch offen ist in [RUECKFRAGEN-KUNDE.md](RUECKFRAGEN-KUNDE.md).
 | ✅ Durch die Antworten umgesetzt (18 Commits) | #83, #88, #89, #90, #92, #93, #94, #96, #97, #102, #117, #162, #170, #175, #176, #177, #178, #179, #180 |
 | ✅ Erledigt, weil die Datei doch im Repo lag | #78, #166 (und damit #93/#94) |
 | ✅ Ohne Änderung bestätigt | #82, #86, #87, #164 |
-| ⚠️ Umgesetzt unter Annahme, Bestätigung offen | #89 (GaN-Trend-2), #90 (Überschrift), #92 (Sektionsdopplung), #176 (Seite bleibt) |
+| ⚠️ Umgesetzt unter Annahme, Bestätigung offen | #89 (GaN-Trend-2), #90 (Überschrift), #92 (Sektionsdopplung) |
 | ✅ Abgeschlossen, im Board auf `resolved` | #177 — Annahmen am 2026-08-21 abgenickt, Karriere-Stellentitel ausdrücklich unstrittig |
+| ✅ Antwort vom 2026-08-21 umgesetzt | #176 — Wasserstoff überall raus; Kachel „Erneuerbare Energien" bleibt (Seite weiterhin nur entlinkt + noindex) |
 | 🔴 Unbeantwortet, blockiert zwei Seiten | **#169** |
 | ✅ Asset per Chat nachgereicht, umgesetzt am 2026-08-21 | #167 (Blockdiagramm) |
 | ⬜ Datei fehlt weiterhin | #109 |

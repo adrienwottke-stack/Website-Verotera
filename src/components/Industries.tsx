@@ -10,7 +10,7 @@ import type { Lang } from "@/lib/i18n";
 const INDUSTRY_ICONS = [Car, Sun, Server];
 const INDUSTRY_IMAGES = [
   "/images/emobility-automotive.png",
-  "/images/green-hydrogen.png",
+  "/images/renewable-energy.png",
   "/images/ai-data-center-infrastructure.png",
 ];
 
