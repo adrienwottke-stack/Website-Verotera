@@ -158,7 +158,7 @@ export default function Footer() {
 
             <p className="text-sm font-semibold text-brand-cyan mb-3">{t.follow}</p>
             <a
-              href="https://www.linkedin.com/company/verotera"
+              href="https://www.linkedin.com/company/verotera/posts/?feedView=all"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm"
