@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowDown, ArrowLeftRight, ArrowRight, UtilityPole } from "lucide-react";
+import { ArrowBigDown, ArrowBigRight, ArrowDown, ArrowLeftRight, ArrowRight, UtilityPole } from "lucide-react";
 import { useLang } from "@/components/LangProvider";
 import type { Lang } from "@/lib/i18n";
 
@@ -166,14 +166,24 @@ function BusRail({ label, tone }: { label: string; tone: "navy" | "cyan" }) {
 }
 
 function UtilityNodeCard({ node }: { node: UtilityNode }) {
+  const emerald = node.accent === "emerald";
   return (
-    <div className="relative overflow-hidden rounded-xl border border-brand-navy/8 bg-white px-4 py-2.5 shadow-sm">
-      {node.accent === "emerald" && (
-        <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1 bg-brand-emerald" />
+    <div
+      className={`relative overflow-hidden rounded-xl border bg-white px-4 py-2.5 shadow-sm ${
+        emerald ? "border-brand-emerald/40" : "border-brand-navy/8"
+      }`}
+    >
+      {emerald && (
+        <>
+          {/* Weiße Basis + Emerald-Schleier = flächig hellgrüne Kachel wie auf der Folie,
+              ohne dass der dunkle Panel-Hintergrund durchscheint. */}
+          <span aria-hidden="true" className="absolute inset-0 bg-brand-emerald/15" />
+          <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1 bg-brand-emerald" />
+        </>
       )}
-      <span className="font-display text-sm font-bold text-brand-navy leading-tight">{node.name}</span>
+      <span className="relative font-display text-sm font-bold text-brand-navy leading-tight">{node.name}</span>
       {node.sub && (
-        <p className="font-sans text-xs text-brand-navy/55 leading-relaxed mt-0.5">{node.sub}</p>
+        <p className="relative font-sans text-xs text-brand-navy/55 leading-relaxed mt-0.5">{node.sub}</p>
       )}
     </div>
   );
@@ -202,8 +212,8 @@ function FacilityNodeCard({ node }: { node: FacilityNode }) {
 function Connector() {
   return (
     <div aria-hidden="true" className="flex items-center justify-center shrink-0 text-brand-cyan py-1 lg:py-0">
-      <ArrowRight className="hidden lg:block w-6 h-6" />
-      <ArrowDown className="block lg:hidden w-6 h-6" />
+      <ArrowBigRight className="hidden lg:block w-9 h-9 fill-current" strokeWidth={1} />
+      <ArrowBigDown className="block lg:hidden w-9 h-9 fill-current" strokeWidth={1} />
     </div>
   );
 }

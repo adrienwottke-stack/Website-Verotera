@@ -268,6 +268,12 @@ Was gegenüber der alten Fassung neu aus der Folie übernommen wurde:
   freigestelltes Platinen-Foto liegt nicht im Repo, daher Karte + Signet statt Foto).
 - **PoL-Kette** 54/48 VDC → IBC → 12/6 VDC → VRM → 0,7–1,0 VDC → GPU; IBC/VRM als
   Emerald-Chips, GPU als Cyan-Chip (Folie: grün/grün/blau).
+- **Nachschärfung (2. Commit, nach Review gegen die Folie):** Verbindungspfeil
+  Utility→Facility als gefüllter Blockpfeil (`ArrowBigRight`/`ArrowBigDown`, wie der fette
+  Folien-Pfeil statt Strichpfeil) und Renewables-Kachel flächig grün (weiße Basis +
+  `brand-emerald/15`-Schleier + Streifen) statt nur weißer Kachel mit Streifen.
+  Im Browser gegen die laufende Vorschau verifiziert (Panels dunkel/hell/dunkel, Rails
+  vertikal mit gedrehtem Text, mobil horizontal ohne Overflow, PoL-Chips grün/grün/cyan).
 
 COPY-Struktur DE+EN entsprechend erweitert (`utilityOutlookLabel/-Value`, `pduLabel`,
 `pduBoardTitle/-Desc`, Wandler-Knoten mit `label`/`conv`, PoL-Stufen mit `tone`).
