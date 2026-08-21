@@ -88,7 +88,7 @@ export default function AgenticEcosystem() {
           <Reveal className="lg:col-span-6">
             <div className="relative h-full min-h-[320px] lg:min-h-[480px] rounded-2xl overflow-hidden border border-brand-navy/8">
               <Image
-                src="/images/agentic-ai-system.png"
+                src="/images/agentic-ai-engineering-core.png"
                 alt={t.imageAlt}
                 fill
                 className="object-cover"
