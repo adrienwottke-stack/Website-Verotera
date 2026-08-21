@@ -305,6 +305,11 @@ Einschränkung: die Kachel „Erneuerbare Energien" bleibt.
 | `components/ExplainSection.tsx` | Lead-Satz: „grünem Wasserstoff" → „erneuerbaren Energien", „green hydrogen" → „renewable energy". |
 | `components/Industries.tsx` | Bild der Karte „Erneuerbare Energien" war `green-hydrogen.png` (Elektrolyseur mit sichtbarem „H₂"); ersetzt durch `renewable-energy.png` (Wind + Solar, gleicher dunkler Bildstil, bisher ungenutzt). Kartentext war schon vorher rein erneuerbar. |
 
+**Wichtig zur Einordnung:** `Industries.tsx` und `ExplainSection.tsx` sind aktuell in keiner
+Seite eingebunden — sie liegen als tote Komponenten im Repo. Die beiden Änderungen dort sind also
+Vorsorge für den Fall, dass die Komponenten wieder eingehängt werden; sichtbar auf der Website war
+nur die Mission-Kachel. Ob die beiden Dateien bleiben sollen, ist eine offene Aufräumfrage.
+
 Damit steht „Wasserstoff"/„hydrogen" in `src/` nur noch in der Seite
 `applications/hydrogen/page.tsx` selbst und in einem Begründungskommentar in `app/sitemap.ts`.
 
