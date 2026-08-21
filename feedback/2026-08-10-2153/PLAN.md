@@ -22,7 +22,8 @@ Abschnitt 5, was noch offen ist in [RUECKFRAGEN-KUNDE.md](RUECKFRAGEN-KUNDE.md).
 | ⚠️ Umgesetzt unter Annahme, Bestätigung offen | #89 (GaN-Trend-2), #90 (Überschrift), #92 (Sektionsdopplung), #176 (Seite bleibt) |
 | ✅ Abgeschlossen, im Board auf `resolved` | #177 — Annahmen am 2026-08-21 abgenickt, Karriere-Stellentitel ausdrücklich unstrittig |
 | 🔴 Unbeantwortet, blockiert zwei Seiten | **#169** |
-| ⬜ Datei fehlt weiterhin | #109, #167 |
+| ✅ Asset per Chat nachgereicht, umgesetzt am 2026-08-21 | #167 (Blockdiagramm) |
+| ⬜ Datei fehlt weiterhin | #109 |
 | ⬜ Altlasten Vorrunde, weiterhin ohne Antwort | #91, #95, #100, #112, #133–#141, #160, Tippfehler-Regel |
 
 Prüfnachweis: `pruefung.json` → **150 Prüfungen, 0 Abweichungen**, `npm run lint` und
@@ -181,7 +182,7 @@ Nach den Löschungen werden folgende Importe verwaist (sonst ESLint-Fehler):
 | Nr | Kategorie | Datei / Stelle | Sprache | Stand | Begründung |
 |---|---|---|---|---|---|
 | #165 | UMSETZBAR | `RPD` → `s2Cards[0].text` (de) + EN-Pendant | **DE geliefert, EN selbst übersetzt** | ✅ | Text lag nur auf Deutsch vor; EN nach SKELETON.md §0.4 selbst übersetzt. `text` ist jetzt ein Absatz-Array. |
-| #167 | **ASSET_FEHLT** | `RPD` → `PduPowerArchitecture.tsx` | — | ⬜ | „Blockdiagramm aus der PPT" — die PPT liegt nicht im Repo (`Kunden Input/` enthält keine). |
+| #167 | **ASSET_FEHLT** | `RPD` → `PduPowerArchitecture.tsx` | beides | ✅ | „Blockdiagramm aus der PPT" — Folien-Screenshot am 2026-08-21 per Chat nachgereicht; Diagramm topologisch 1:1 nachgebaut, gestylt in Website-Tokens (siehe UMSETZUNG.md §6). |
 | #168 | UMSETZBAR | `RPD` → Sektion 4 „800 VDC vs. AC/DC" | beides | ✅ | Sektion inkl. `s4*`-COPY, `S4_ICONS` und verwaister Importe entfernt. |
 
 **Zwischensumme:** 2 UMSETZBAR · 1 ASSET_FEHLT
@@ -344,7 +345,7 @@ der ganze Wasserstoff-Abschnitt der SiC-Seite, sowie die Keywords in `layout.tsx
 **Antwort nötig (14 Punkte):** #75, #83, #88, #90, #91, #92, #93, #95, #96, #97, #164, #169, #175, #176
 Davon sind #169, #175, #176 neu und blockieren jeweils weitere Punkte — sie zuerst.
 
-**Datei nötig (5 Punkte):** #78, #94, #109, #166, #167
+**Datei nötig (5 Punkte):** #78, #94, #109, #166, #167 — davon #167 am 2026-08-21 erledigt (Folien-Screenshot per Chat nachgereicht)
 
 **Nur zur Bestätigung (4 Punkte):** #86, #89, #102, #117 — umgesetzt, aber unter einer Annahme.
 

@@ -438,7 +438,7 @@ https://website-verotera.vercel.app/solutions/rack-power-distribution
 - **Erstellt:** 2026-07-31 10:52
 - **In Pastel:** https://usepastel.com/link/onxnqep4/comment/12155072/
 
-### [ ] #167 - desktop (1900px) - Aly Mashaly
+### [x] #167 - desktop (1900px) - Aly Mashaly
 
 > hier würde ich eher das Blockdiagramm aus der PPT ersetzen.
 

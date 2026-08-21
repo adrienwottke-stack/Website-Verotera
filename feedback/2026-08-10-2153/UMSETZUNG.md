@@ -227,7 +227,65 @@ in anderer Form vor. Nach Korrektur der Suchbegriffe grün.
 | Unbeantwortet, blockiert Arbeit an zwei Seiten | **#169** |
 | Umgesetzt unter Annahme, warten auf Bestätigung | #89 (GaN-Trend-2), #176 (Seite bleibt bestehen), #90 (Überschrift), #92 (Sektionsdopplung) |
 | Abgeschlossen, Board auf `resolved` (2026-08-21) | #177 — Slug, EN-Titel und die Begriffe außerhalb der Seite bleiben wie umgesetzt |
-| Datei fehlt | #109, #167 |
+| Datei fehlt | #109 — #167 wurde am 2026-08-21 nachgereicht und umgesetzt (§6) |
 | Altlasten Vorrunde, weiterhin ohne Antwort | #91 (Ersatzbild), #95 (LinkedIn-URL), #100, #112, #133–#141, #160, Tippfehler-Regel |
 
 Kundenfassung: [RUECKFRAGEN-KUNDE.md](RUECKFRAGEN-KUNDE.md).
+
+---
+
+# 6. Nachtrag 2026-08-21 — #167 Blockdiagramm nachgebaut
+
+Das fehlende Asset (die PPT-Folie mit dem Blockdiagramm „Utility Grid → Facility Level →
+Compute Rack Level") wurde per Chat als Screenshot nachgereicht. Auftrag: so nah wie möglich
+an der Folie bleiben, aber ans Website-Design angleichen.
+
+## 6.1 Änderung
+
+| Datei | Änderung |
+|---|---|
+| `components/PduPowerArchitecture.tsx` | Komplett neu aufgebaut (+216/−138 Zeilen). Das Diagramm folgt jetzt topologisch 1:1 der Folie statt der bisherigen freien Interpretation (drei gleichförmige graue Spalten). |
+
+Was gegenüber der alten Fassung neu aus der Folie übernommen wurde:
+
+- **Drei-Farb-Rhythmus der Panels** wie auf der Folie: Utility Grid dunkel
+  (`bg-brand-navy-light`, Folie: mittleres Teal), Facility Level hell (`bg-brand-cyan/10`,
+  Folie: Hellblau), Compute Rack Level dunkel (`bg-brand-navy`, Folie: dunkles Navy).
+- **Strommast** im Utility-Panel (lucide `UtilityPole` als dezente weiße Grafik, Folie:
+  Freileitungsmast); „Outlook / „ALL-DC-Grid"" unten links im Panel wie auf der Folie.
+- **Vertikale HV-PDU-Leiste** am linken Rand des Facility-Panels (Folie: dunkle vertikale
+  Leiste; mobil wird sie zur horizontalen Leiste).
+- **PDU in eigener Spalte** mit Label „Power Distribution Unit" darüber und dem Text
+  „Power Distribution Board: Protection, Metering, Fusing, Monitoring" darunter, Pfeil
+  PDU → Wandler-Spalte (Folie: PDU → HV PSU).
+- **Wandler-Boxen mit AC-DC/DC-DC-Streifen** (PLSS, HV PSU, BESS/BBU; Streifen in
+  `brand-blue/10` wie die hellblauen Sub-Boxen der Folie) und **bidirektionalen
+  Kopplungspfeilen** (`ArrowLeftRight`) Richtung Busbar.
+- **Vertikale 800-VDC-Busbar-Leiste** am linken Rand des Rack-Panels. Das Gold der Folie ist
+  kein Brand-Token — ersetzt durch `bg-brand-cyan` mit Glow (bewusste Design-Angleichung).
+- **Hot-Swap-Kachel** zwischen Busbar und Smart PDU (Folie: Hot-Swap-Box).
+- **Smart-PDU-Karte** mit V-Signet im Navy-Lockup (Folie: Platinen-Foto + V-Logo; ein
+  freigestelltes Platinen-Foto liegt nicht im Repo, daher Karte + Signet statt Foto).
+- **PoL-Kette** 54/48 VDC → IBC → 12/6 VDC → VRM → 0,7–1,0 VDC → GPU; IBC/VRM als
+  Emerald-Chips, GPU als Cyan-Chip (Folie: grün/grün/blau).
+
+COPY-Struktur DE+EN entsprechend erweitert (`utilityOutlookLabel/-Value`, `pduLabel`,
+`pduBoardTitle/-Desc`, Wandler-Knoten mit `label`/`conv`, PoL-Stufen mit `tone`).
+Mobil stapeln die drei Panels untereinander, die Leisten werden horizontal, alle
+Fluss-Pfeile drehen auf vertikal.
+
+## 6.2 Verifikation
+
+- `npx tsc --noEmit` grün, `npm run lint` 0 Fehler (nur die bekannte Alt-Warnung in
+  `VModelFunnel.tsx`).
+- Kein eigener Dev-Server/Build gestartet (Port 3001 hart verdrahtet, geteilter
+  `.next`-Ordner) — Sichtprüfung in der laufenden Live-Ansicht des Nutzers.
+
+## 6.3 Bewusste Abweichungen von der Folie
+
+- Busbar cyan statt gold (kein Gold-Token im Design-System).
+- Smart PDU als hervorgehobene Karte mit V-Signet statt Platinen-Foto (kein passendes
+  freigestelltes Foto im Repo; neues Foto könnte nachgerüstet werden).
+- PoL-Kette steht unter der Smart-PDU-Karte statt rechts daneben (Platzverhältnis im
+  Drei-Panel-Layout; Reihenfolge und Spannungslabels identisch zur Folie).
+- Flache Panels mit Radius/Schatten statt 3D-Extrusion der PowerPoint-Boxen.
