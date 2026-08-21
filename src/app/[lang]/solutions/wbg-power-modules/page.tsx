@@ -75,7 +75,7 @@ const COPY: Record<
     s2Body:
       "Wir bündeln globales Fachwissen aus den Bereichen Leistungselektronik, WBG-Technologien und Systemanwendungen, um fundierte technische Entscheidungen zu ermöglichen. Unsere Lösungen verwandeln Komplexität in Klarheit – sie beschleunigen Innovationen und erschließen die kollektive Intelligenz von Entwicklungsabteilungen.",
     s2ImageAlt:
-      "SiC- und GaN-Leistungsmodule im Elektrofahrzeug – Traktionswechselrichter, Onboard-Charger und DC-DC-Wandler",
+      "WBG-Leistungsmodule im Rechenzentrum – Stromversorgung auf Rack-Ebene",
     cards: [
       { title: "Höhere Effizienz", text: "Minimierte Schaltverluste für optimale Energieeinsparung." },
       { title: "Hohe Leistungsdichte", text: "Reduzierte Baugröße und geringeres Gewicht für platzkritische Systeme." },
@@ -129,7 +129,7 @@ const COPY: Record<
     s2Body:
       "We connect global domain expertise across power electronics, WBG technologies, and system applications to enable high confidence engineering decisions. Our solutions turn complexity into clarity – accelerating innovation and unlocking the collective intelligence of engineering organizations.",
     s2ImageAlt:
-      "SiC and GaN power modules in an electric vehicle — traction inverter, onboard charger and DC-DC converter",
+      "WBG power modules in a data center — rack-level power delivery",
     cards: [
       { title: "Higher Efficiency", text: "Minimized switching losses for optimal energy savings." },
       { title: "High Power Density", text: "Reduced size and weight for space-critical systems." },
@@ -287,7 +287,7 @@ export default async function WbgPowerModulesPage({
                 <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-brand-navy/8 bg-white shadow-sm p-6">
                   <div className="relative w-full h-full">
                     <Image
-                      src="/images/sic-gan-car.png"
+                      src="/images/ai-data-center-rack-level.png"
                       alt={t.s2ImageAlt}
                       fill
                       className="object-contain"
