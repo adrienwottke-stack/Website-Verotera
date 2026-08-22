@@ -25,7 +25,6 @@ const COPY: Record<
     s1SubEyebrow: string;
     s1SplitTitle: string;
     s1Paragraphs: string[];
-    s1Closing: string;
     s1ImageAlt: string;
     /* Sektion 2 — Folie 15 */
     s2Teaser: string;
@@ -63,8 +62,6 @@ const COPY: Record<
       "Von fortschrittlichen WBG-Technologien über innovative Packaging-Lösungen bis hin zu hocheffizienten Gesamtsystemen – wir entwickeln Lösungen, die nicht nur technisch überzeugen, sondern in der Praxis den Unterschied machen.",
       "Diese einzigartige Positionierung ermöglicht es, Integrationskosten zu senken, Entwicklungszyklen zu beschleunigen und höhere Systemeffizienz zu liefern. Mit starken Branchennetzwerken und ausgewiesener Glaubwürdigkeit in der OEM- und Halbleiterwelt bauen wir die Brücke zwischen Nachfrage und Innovation – für eine schnelle Validierung, strategische Partnerschaften und eine zielgerichtete Markteinführung.",
     ],
-    s1Closing:
-      "VEROTERA entwickelt in Deutschland die Leistungshalbleiterlösungen, die Europa für die Elektrifizierung von Mobilität und Industrie braucht. SiC und GaN sind keine Importware – sie sind unsere Kerntechnologie: entwickelt hier, skaliert für Europa.",
     s1ImageAlt:
       "Halbleiter-Wafer in der Fertigung – Ausgangspunkt der WBG-Leistungselektronik",
 
@@ -117,8 +114,6 @@ const COPY: Record<
       "From advanced WBG technologies and innovative packaging solutions to highly efficient complete systems — we develop solutions that are not only technically convincing, but make a real difference in practice.",
       "This unique positioning makes it possible to lower integration costs, accelerate development cycles and deliver higher system efficiency. With strong industry networks and proven credibility in the OEM and semiconductor world, we build the bridge between demand and innovation — for fast validation, strategic partnerships and a targeted market launch.",
     ],
-    s1Closing:
-      "VEROTERA develops in Germany the power semiconductor solutions Europe needs for the electrification of mobility and industry. SiC and GaN are not imported goods — they are our core technology: developed here, scaled for Europe.",
     s1ImageAlt:
       "Semiconductor wafer in fabrication — the starting point of WBG power electronics",
 
@@ -235,9 +230,6 @@ export default async function WbgPowerModulesPage({
                     {paragraph}
                   </p>
                 ))}
-                <p className="font-sans text-base sm:text-lg font-semibold text-brand-navy leading-relaxed mt-6">
-                  {t.s1Closing}
-                </p>
               </Reveal>
 
               <Reveal delay={0.12} className="lg:col-span-5">
