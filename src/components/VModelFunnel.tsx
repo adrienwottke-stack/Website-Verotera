@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { useLang } from "@/components/LangProvider";
 
 /* ---------------------------------------------------------------------------
@@ -22,9 +21,7 @@ const outer = (y: number) => inner(y) - 234;
 type Pt = [number, number];
 
 const NAVY = "#234554";
-const NAVY_HI = "#2f5d72";
 const BLUE = "#45b1e1";
-const BLUE_HI = "#5ec4ef";
 
 type Tile = {
   id: string;
@@ -33,7 +30,6 @@ type Tile = {
   detail: string;
   pts: Pt[];
   fill: string;
-  fillHi: string;
   text: string; // text colour
   /** Right V-arm und unterer Trunk: outside our scope (early concept phase) —
    *  rendered visually recessed so the five left phases carry the message. Full
@@ -45,6 +41,9 @@ const centroid = (pts: Pt[]): Pt => [
   pts.reduce((s, p) => s + p[0], 0) / pts.length,
   pts.reduce((s, p) => s + p[1], 0) / pts.length,
 ];
+/** Klemmt die Innenkante auf die Mittelachse: ohne das ueberlappen linker und
+ *  rechter Arm an der V-Spitze um rund 16 Einheiten (#184). */
+const clampInner = (pts: Pt[]): Pt[] => pts.map(([x, y]) => [Math.min(x, CX), y] as Pt);
 const mirror = (pts: Pt[]): Pt[] => pts.map(([x, y]) => [VB_W - x, y] as Pt);
 const toStr = (pts: Pt[]) => pts.map((p) => p.join(",")).join(" ");
 
@@ -73,41 +72,40 @@ function trunk(yt: number): Pt[] {
 }
 
 // ── Left arm (specification — navy, white text) ────────────────────────────
-const LEFT: Omit<Tile, "fill" | "fillHi" | "text">[] = [
+const LEFT: Omit<Tile, "fill" | "text">[] = [
   { id: "pi", lines: ["Product Innovation", "Ideation"], detail: "KI-gestützte Ideenfindung und Innovations-Screening zum Projektstart.", pts: arm(8, 166, 40) },
   { id: "sra", lines: ["System Requirements", "Analysis"], detail: "Automatisierte Extraktion und Validierung der Systemanforderungen.", pts: arm(176, 350, 40) },
   { id: "ucd", lines: ["Use Case Definition"], sub: "Safety & Security", detail: "Use-Cases inkl. Safety- & Security-Zielen modellbasiert abgeleitet.", pts: arm(outer(108), inner(108), 108) },
-  { id: "rs", lines: ["Requirements Specification"], detail: "Vollständige, konfliktfreie Spezifikation per Engineering-Knowledge-Graph.", pts: arm(outer(178), inner(178), 178) },
-  { id: "sad", lines: ["System Architecture Design"], detail: "Topologie- und Architektur-Exploration mit KI-Design-Agenten.", pts: arm(outer(248), inner(248), 248) },
+  { id: "rs", lines: ["Requirements", "Specification"], detail: "Vollständige, konfliktfreie Spezifikation per Engineering-Knowledge-Graph.", pts: arm(outer(178), inner(178), 178) },
+  { id: "sad", lines: ["System Architecture", "Design"], detail: "Topologie- und Architektur-Exploration mit KI-Design-Agenten.", pts: clampInner(arm(outer(248), inner(248), 248)) },
 ];
 
 // ── Right arm (validation — blue, navy text) — mirror of the left arm ──────
 const RIGHT_LABELS: { id: string; lines: string[]; detail: string }[] = [
   { id: "eol", lines: ["EoL"], detail: "Nachhaltiges End-of-Life: Recycling- und Re-Use-Strategie." },
   { id: "om", lines: ["Operation &", "Maintenance"], detail: "Predictive Maintenance über den gesamten Betrieb." },
-  { id: "pq", lines: ["Performance Qualification"], detail: "Performance- und Zuverlässigkeits-Qualifikation nach AEC-Q / IEC." },
-  { id: "vv", lines: ["Verification & Validation"], detail: "Verifikation & Validierung gegen die Spezifikation – 100 % Coverage." },
+  { id: "pq", lines: ["Performance", "Qualification"], detail: "Performance- und Zuverlässigkeits-Qualifikation nach AEC-Q / IEC." },
+  { id: "vv", lines: ["Verification &", "Validation"], detail: "Verifikation & Validierung gegen die Spezifikation – 100 % Coverage." },
   { id: "testphase", lines: ["Testphase"], detail: "Doppelpuls- und Lasttests virtuell vorqualifiziert." },
 ];
 
 // ── Bottom trunk (realisation — blue, navy text) ───────────────────────────
-const TRUNK: Omit<Tile, "fill" | "fillHi" | "text">[] = [
+const TRUNK: Omit<Tile, "fill" | "text">[] = [
   { id: "she", lines: ["Software-, Hardware-Engineering"], detail: "Co-Design von Software und Hardware in einem durchgängigen Flow.", pts: trunk(312) },
   { id: "md", lines: ["Mechanical Design"], detail: "Mechanik- und Thermik-Design parametrisch optimiert.", pts: trunk(376) },
   { id: "ir", lines: ["Integration & Release"], detail: "Integration und Release mit automatisierter Qualifikation.", pts: trunk(440) },
 ];
 
 const TILES: Tile[] = [
-  ...LEFT.map((t) => ({ ...t, fill: NAVY, fillHi: NAVY_HI, text: "#ffffff" })),
+  ...LEFT.map((t) => ({ ...t, fill: NAVY, text: "#ffffff" })),
   ...RIGHT_LABELS.map((r, i) => ({
     ...r,
     pts: mirror(LEFT[i].pts),
     fill: BLUE,
-    fillHi: BLUE_HI,
     text: NAVY,
     muted: true,
   })),
-  ...TRUNK.map((t) => ({ ...t, fill: BLUE, fillHi: BLUE_HI, text: NAVY, muted: true })),
+  ...TRUNK.map((t) => ({ ...t, fill: BLUE, text: NAVY, muted: true })),
 ];
 
 // English hover captions (tile titles are already English); "Testphase" also
@@ -165,15 +163,21 @@ const convPath = ([nx, ny]: Pt): string => {
 
 const ALL_PATHS = [N0_PATH, ...NODES.slice(1).map(convPath)];
 
+/** Mittlere Breite einer Kachel: Arm-Parallelogramme sind auf jeder Hoehe
+ *  gleich breit, die Trunk-Trapeze verjuengen sich nach unten. */
+const midWidth = (pts: Pt[]) =>
+  ((pts[1][0] - pts[0][0]) + (pts[2][0] - pts[3][0])) / 2;
+
+/** Feste Textbreite pro Zeile. Ohne sie haengt die Beschriftung von der
+ *  tatsaechlich geladenen Schrift ab und stand beim Kunden ueber die Kachel
+ *  hinaus (#183). Mit textLength rendert jede Schrift identisch. */
+const fitLen = (s: string, fontSize: number, avail: number) =>
+  Math.round(Math.min(s.length * fontSize * 0.55, avail) * 10) / 10;
+
 export default function VModelFunnel() {
   const lang = useLang();
   const tiles =
     lang === "en" ? TILES.map((t) => ({ ...t, ...EN_OVERRIDES[t.id] })) : TILES;
-  const [hovered, setHovered] = useState<string | null>(null);
-  const activeTile = tiles.find((t) => t.id === hovered) ?? null;
-  const [acx, acy] = activeTile ? centroid(activeTile.pts) : [0, 0];
-  // place caption above the tile, but below it for the very top rows
-  const above = acy > 150;
 
   return (
     <div className="relative w-full select-none">
@@ -183,8 +187,8 @@ export default function VModelFunnel() {
         role="img"
         aria-label={
           lang === "en"
-            ? "Interactive V-model of the development cycle with AI-enhanced engineering"
-            : "Interaktives V-Modell des Entwicklungszyklus mit KI-gestütztem Engineering"
+            ? "V-model of the development cycle with AI-enhanced engineering"
+            : "V-Modell des Entwicklungszyklus mit KI-gestütztem Engineering"
         }
       >
         <defs>
@@ -198,7 +202,7 @@ export default function VModelFunnel() {
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
-          {/* Individual paths: each left-arm tile centre → V-signet */}
+          {/* Individual paths: each left-arm tile centre to the V-signet */}
           {ALL_PATHS.map((d, i) => (
             <path key={i} id={`vm-path-${i}`} d={d} />
           ))}
@@ -219,57 +223,47 @@ export default function VModelFunnel() {
           ))}
         </g>
 
-        {/* Tiles — hovered one is rendered last so it sits on top */}
-        {[...tiles.filter((t) => t.id !== hovered), ...tiles.filter((t) => t.id === hovered)].map((t) => {
+        {/* Kacheln — statisch, ohne Hover-Zustand und ohne Einblend-Text (#182) */}
+        {tiles.map((t) => {
           const [cx, cy] = centroid(t.pts);
-          const isHover = t.id === hovered;
-          const scale = isHover ? 1.06 : 1;
+          const avail = midWidth(t.pts) * 0.86;
+          const lineCount = t.lines.length + (t.sub ? 1 : 0);
+          const startY = cy - ((lineCount - 1) * 17) / 2 + 5;
           return (
-            <g
-              key={t.id}
-              transform={`translate(${cx} ${cy}) scale(${scale}) translate(${-cx} ${-cy})`}
-              opacity={t.muted && !isHover ? 0.42 : 1}
-              style={{
-                transition: "transform .25s ease, opacity .25s ease",
-                cursor: "pointer",
-              }}
-              onMouseEnter={() => setHovered(t.id)}
-              onMouseLeave={() => setHovered((h) => (h === t.id ? null : h))}
-            >
+            <g key={t.id} opacity={t.muted ? 0.42 : 1}>
               <polygon
                 points={toStr(t.pts)}
-                fill={isHover ? t.fillHi : t.fill}
-                stroke={isHover ? "#22d3ee" : "rgba(255,255,255,.85)"}
-                strokeWidth={isHover ? 2.5 : 1.5}
-                style={{ transition: "fill .2s ease, stroke .2s ease" }}
+                fill={t.fill}
+                stroke="rgba(255,255,255,.85)"
+                strokeWidth={1.5}
               />
-              {t.lines.map((ln, i) => {
-                const lineCount = t.lines.length + (t.sub ? 1 : 0);
-                const startY = cy - ((lineCount - 1) * 17) / 2 + 5;
-                return (
-                  <text
-                    key={i}
-                    x={cx}
-                    y={startY + i * 17}
-                    textAnchor="middle"
-                    fill={t.text}
-                    fontSize="15"
-                    fontWeight="600"
-                    fontFamily="var(--font-sans, system-ui, sans-serif)"
-                  >
-                    {ln}
-                  </text>
-                );
-              })}
+              {t.lines.map((ln, i) => (
+                <text
+                  key={i}
+                  x={cx}
+                  y={startY + i * 17}
+                  textAnchor="middle"
+                  fill={t.text}
+                  fontSize="14"
+                  fontWeight="600"
+                  fontFamily="var(--font-sans, system-ui, sans-serif)"
+                  textLength={fitLen(ln, 14, avail)}
+                  lengthAdjust="spacingAndGlyphs"
+                >
+                  {ln}
+                </text>
+              ))}
               {t.sub && (
                 <text
                   x={cx}
-                  y={cy - ((t.lines.length + 1 - 1) * 17) / 2 + 5 + t.lines.length * 17}
+                  y={startY + t.lines.length * 17}
                   textAnchor="middle"
                   fill={t.text}
                   fontSize="11"
                   opacity="0.8"
                   fontFamily="var(--font-sans, system-ui, sans-serif)"
+                  textLength={fitLen(t.sub, 11, avail)}
+                  lengthAdjust="spacingAndGlyphs"
                 >
                   {t.sub}
                 </text>
@@ -324,26 +318,6 @@ export default function VModelFunnel() {
           <tspan x={SIGNET[0] + 38} dy="26" fill={NAVY}>Engineering</tspan>
         </text>
       </svg>
-
-      {/* Hover detail caption (HTML overlay, positioned at the active tile) */}
-      {activeTile && (
-        <div
-          className="pointer-events-none absolute z-20 w-[230px] rounded-xl border border-brand-navy/10 bg-white px-4 py-3 shadow-lg transition-opacity duration-200"
-          style={{
-            left: `${(acx / VB_W) * 100}%`,
-            top: `${(acy / VB_H) * 100}%`,
-            transform: `translate(-50%, ${above ? "calc(-100% - 14px)" : "14px"})`,
-          }}
-        >
-          <p className="font-display text-sm font-bold text-brand-navy leading-snug m-0">
-            {activeTile.lines.join(" ")}
-            {activeTile.sub ? ` · ${activeTile.sub}` : ""}
-          </p>
-          <p className="font-sans text-xs text-brand-navy/60 leading-relaxed mt-1 mb-0">
-            {activeTile.detail}
-          </p>
-        </div>
-      )}
     </div>
   );
 }
