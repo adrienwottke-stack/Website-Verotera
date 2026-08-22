@@ -128,7 +128,7 @@ const EN_OVERRIDES: Record<string, { detail: string; lines?: string[] }> = {
 
 // Signet sits in the widest (top) part of the central notch so the
 // "AI-Enhanced Engineering" lockup never overlaps the surrounding tiles.
-const SIGNET: Pt = [476, 74];
+const SIGNET: Pt = [CX, 74];
 
 // Phase connection nodes:
 //   N0 (PI): midpoint of top edge (pts[0]↔pts[1]) — arc arrives from above
@@ -309,14 +309,9 @@ export default function VModelFunnel() {
           ))}
         </g>
 
-        {/* Central brand V-signet + AI-Enhanced Engineering label — kept inside the open notch.
-            Set on two lines: one line would run into the right-hand tiles. */}
-        <image href="/images/v-signet-transparent.png" x={SIGNET[0] - 28} y={SIGNET[1] - 28} width="56" height="56" />
-        <text x={SIGNET[0] + 38} y={SIGNET[1] - 2} fontSize="25" fontStyle="italic" fontWeight="800" fontFamily="var(--font-display, system-ui, sans-serif)">
-          <tspan fill={BLUE}>AI</tspan>
-          <tspan fill={NAVY}>-Enhanced</tspan>
-          <tspan x={SIGNET[0] + 38} dy="26" fill={NAVY}>Engineering</tspan>
-        </text>
+        {/* Brand V-signet in der offenen Kerbe — der Schriftzug steht seit #185
+            als Headline ueber dem Diagramm, nicht mehr im Diagramm. */}
+        <image href="/images/v-signet-transparent.png" x={SIGNET[0] - 36} y={SIGNET[1] - 36} width="72" height="72" />
       </svg>
     </div>
   );
