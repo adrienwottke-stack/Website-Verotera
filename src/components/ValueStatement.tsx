@@ -41,10 +41,10 @@ const COPY: Record<
 };
 
 const IMAGE_SOURCES = [
-  "/images/aa_renewable_new.png",
-  "/images/aa_data_center_new.png",
-  "/images/aa_emobility_new.png",
-  "/images/aa_robotics_new.png",
+  "/images/aa_renewable_v2.png",
+  "/images/aa_data_center_v2.png",
+  "/images/aa_emobility_v2.png",
+  "/images/aa_robotics_v2.png",
 ];
 
 export default function ValueStatement() {
