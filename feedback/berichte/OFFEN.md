@@ -1,4 +1,4 @@
-# Offene Punkte — Stand 2026-08-22-1207
+# Offene Punkte — Stand 2026-08-23-1113 (unveraendert seit 2026-08-22-1207)
 
 Alle Punkte, die auf dem Pastel-Board (Canvas 929322) nicht auf `resolved` stehen.
 Wird bei jedem Lauf ueberschrieben.
