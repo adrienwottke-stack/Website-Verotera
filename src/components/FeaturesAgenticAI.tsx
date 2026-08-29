@@ -23,7 +23,7 @@ const COPY: Record<
     teaser: "Früher. Belegbar. Belastbar.",
     headline: "Technologieentscheidungen in der Konzeptphase",
     body:
-      "In der sehr frühen Konzeptphase werden Systemanforderungen und Randbedingungen normalisiert, implizite Annahmen und Zielkonflikte identifiziert und SiC/GaN-Technologiepfade gegen abgeleitete Kriterien bewertet – qualitativ bis semi-quantitativ, mit expliziter Unsicherheitskennzeichnung. Ausgabe ist ein System Design Concept samt Trade-off-Bewertung, Annahmen- und Risikoübersicht. Die Entscheidungsverantwortung verbleibt beim Ingenieur.",
+      "In der frühen Konzeptphase werden Anforderungen und Randbedingungen strukturiert, implizite Annahmen und Zielkonflikte sichtbar gemacht und SiC/GaN-Technologiepfade gegen abgeleitete Kriterien bewertet, mit expliziter Unsicherheitskennzeichnung. Ergebnis ist eine belegte Entscheidungsgrundlage mit Trade-off-Bewertung, Annahmen- und Risikoübersicht. Die Entscheidung, und das Konzept, verantwortet der Ingenieur.",
     lockup: "AI-Enhanced Engineering",
     boxTitle: "Frühe Konzept- und Architekturphase",
     boxLead: "Hier setzt AI-enhanced engineering an",
@@ -36,7 +36,7 @@ const COPY: Record<
     teaser: "Earlier. Documented. Dependable.",
     headline: "Technology decisions in the concept phase",
     body:
-      "In the early concept phase, the impact of decisions is highest and the available data is most limited. System requirements and constraints are normalized, implicit assumptions and conflicting objectives are identified, and SiC/GaN technology paths are assessed against derived criteria – qualitatively to semi-qualitatively, with explicit flagging of uncertainty. The output is a System Design Concept with a trade-off assessment and an overview of assumptions and risks. Decision responsibility remains with the engineer.",
+      "In the early concept phase, requirements and constraints are structured, implicit assumptions and conflicting goals are surfaced, and SiC/GaN technology paths are assessed against derived criteria, with explicit uncertainty labelling. The result is an evidenced decision basis with a trade-off assessment and an overview of assumptions and risks. The decision, and the concept, remain the engineer's responsibility.",
     lockup: "AI-Enhanced Engineering",
     boxTitle: "Early concept and architecture phase",
     boxLead: "This is where AI-enhanced engineering comes in",
