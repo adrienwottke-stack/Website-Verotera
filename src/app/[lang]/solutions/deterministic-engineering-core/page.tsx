@@ -67,7 +67,7 @@ const COPY: Record<
 > = {
   de: {
     heroEyebrow: "AI-Enhanced WBG Semiconductor Engineering",
-    heroTitle: "Deterministischer Engineering Core",
+    heroTitle: "VEROTERA Engineering Core",
     heroSubtitle:
       "Die Begründung entsteht aus Regeln und Standards, nicht im Sprachmodell – jede Bewertung ist auf ihre Herleitung zurückführbar.",
     intro: {
@@ -179,7 +179,7 @@ const COPY: Record<
   },
   en: {
     heroEyebrow: "AI-Enhanced WBG Semiconductor Engineering",
-    heroTitle: "Deterministic Engineering Core",
+    heroTitle: "VEROTERA Engineering Core",
     heroSubtitle:
       "The justification comes from rules and standards, not from the language model — every assessment is traceable to its derivation.",
     intro: {
