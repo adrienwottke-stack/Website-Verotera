@@ -12,6 +12,7 @@ const COPY: Record<
   {
     sectionEyebrow: string;
     lead: string;
+    leadBody: string;
     imageAlt: string;
     title: string;
     eyebrow: string;
@@ -23,7 +24,9 @@ const COPY: Record<
   de: {
     sectionEyebrow: "Collaborative Intelligence – ein neuro-symbolischer Ansatz",
     lead:
-      "Die KI erweitert das Ingenieururteil – Von der Empfehlung zur belegten Entscheidungsgrundlage – nachvollziehbar und reproduzierbar.",
+      "Von der Empfehlung zur belegten Entscheidungsgrundlage",
+    leadBody:
+      "Neuro-symbolisch heißt: Ein Sprachmodell versteht den Kontext einer Anforderung, doch die Bewertung entsteht in Regeln und einem Wissensgraph, nicht im Modell. So erweitert die KI das Ingenieururteil, ohne es zu ersetzen: nachvollziehbar und reproduzierbar.",
     imageAlt: "KI-gestütztes Systems Engineering",
     title: "Human-in-the-Loop by design",
     eyebrow: "Lösungen",
@@ -31,7 +34,7 @@ const COPY: Record<
       "VEROTERA strukturiert die folgenreichste Entscheidung der frühen Entwicklungsphase: die Wide-Bandgap-Technologieauswahl – bewertet, begründet und auf ihre Quellen zurückführbar.",
     bullets: [
       "Weniger teure und zeitintensive Redesign-Schleifen durch belastbare Frühentscheidungen",
-      "SiC/GaN-Technologiepfade nachvollziehbar bewertet – nicht aus dem Bauch",
+      "SiC/GaN-Technologiepfade nachvollziehbar und kriteriengestützt bewertet",
       "Annahmen und Risiken explizit dokumentiert, die Herleitung aus Regeln und Standards nachvollziehbar – kein Blackbox-Modell",
       "On-Premise-Betrieb: eigene Daten und IP bleiben im Haus, DSGVO-konform",
     ],
@@ -41,7 +44,9 @@ const COPY: Record<
   en: {
     sectionEyebrow: "Collaborative Intelligence – a neurosymbolic approach",
     lead:
-      "AI extends engineering judgment – turning a recommendation into a documented basis for decisions: traceable and reproducible.",
+      "From recommendation to an evidenced decision basis",
+    leadBody:
+      "Neuro-symbolic means: a language model understands the context of a requirement, but the assessment arises in rules and a knowledge graph, not in the model. In this way, AI extends engineering judgement without replacing it: traceable and reproducible.",
     imageAlt: "AI-enhanced systems engineering",
     title: "Human-in-the-Loop by design",
     eyebrow: "Solutions",
@@ -49,7 +54,7 @@ const COPY: Record<
       "VEROTERA brings structure to the most consequential decision of the early development phase: the Wide-Bandgap technology choice – assessed, justified and traceable to its sources.",
     bullets: [
       "Fewer costly redesign loops through dependable early decisions",
-      "SiC/GaN technology paths assessed transparently – not from good feeling",
+      "SiC/GaN technology paths assessed transparently and against criteria",
       "Assumptions and risks documented explicitly, the derivation traceable to rules and standards – no black-box-model",
       "On-premise operation: your data and IP stay in-house, GDPR-compliant",
     ],
@@ -77,9 +82,12 @@ export default function AgenticEcosystem() {
           <span className="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4 block">
             {t.sectionEyebrow}
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-brand-navy leading-tight mb-6">
             {t.lead}
           </h2>
+          <p className="font-sans text-base sm:text-lg text-brand-navy/60 leading-relaxed max-w-3xl mx-auto">
+            {t.leadBody}
+          </p>
         </Reveal>
 
         {/* Split: image left, navy panel right */}
@@ -100,13 +108,13 @@ export default function AgenticEcosystem() {
           {/* Text panel */}
           <Reveal delay={0.1} className="lg:col-span-6">
             <div className="lg:pl-10 h-full flex flex-col justify-center py-6">
-              <h3 className="font-display text-2xl sm:text-3xl font-bold text-brand-navy mb-8 leading-tight">
-                {t.title}
-              </h3>
-
               <span className="text-brand-blue text-xs font-bold uppercase tracking-wider block mb-3">
                 {t.eyebrow}
               </span>
+
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-brand-navy mb-6 leading-tight">
+                {t.title}
+              </h3>
               <p className="text-brand-navy/70 text-sm sm:text-base leading-relaxed mb-6">
                 {t.intro}
               </p>
