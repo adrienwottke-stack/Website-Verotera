@@ -74,12 +74,12 @@ const COPY: Record<
       eyebrow: "Vom Kontext zum Konzept",
       headline:
         "Wie wird aus einer Anforderung eine belegte Technologieentscheidung?",
-      body: "Die Technologiebewertung läuft in vier klar abgegrenzten Schritten ab: vom strukturierten Kontext über die abgeleiteten Bewertungskriterien und die Bewertung der Optionen samt Risiken bis zum System Design Concept. Der Ablauf ist iterativ und in jedem Schritt nachvollziehbar. Die Entscheidungsverantwortung bleibt beim Menschen.",
+      body: "Die Technologiebewertung läuft in vier klar abgegrenzten Schritten ab: vom strukturierten Kontext über die abgeleiteten Bewertungskriterien und die Bewertung der Optionen samt Risiken bis zur belegten Entscheidungsgrundlage. Der Ablauf ist iterativ und in jedem Schritt nachvollziehbar. Das Konzept selbst leitet der Ingenieur daraus ab, der Engineering Core generiert es nicht.",
       pipeline: [
         "Kontext erfassen",
         "Kriterien ableiten",
         "Optionen & Risiken",
-        "System Design Concept",
+        "Belegte Entscheidungsgrundlage",
       ],
       cta: "Kontakt aufnehmen",
     },
@@ -186,12 +186,12 @@ const COPY: Record<
       eyebrow: "From Context to Concept",
       headline:
         "How does a requirement become an evidence-based technology decision?",
-      body: "The technology assessment runs in four clearly defined steps: from structured context, through the derived evaluation criteria and the assessment of the options and their risks, to the System Design Concept. The process is iterative and traceable at every step. Decision responsibility remains with the engineer.",
+      body: "The technology assessment runs in four clearly separated steps: from structured context, through the derived assessment criteria and the assessment of the options including their risks, to the evidenced decision basis. The process is iterative and traceable at every step. The engineer derives the concept from it, the Core does not generate it.",
       pipeline: [
         "Understand the context",
         "Derive criteria",
         "Options & Risks",
-        "System Design Concept",
+        "Evidenced decision basis",
       ],
       cta: "Get in contact",
     },
