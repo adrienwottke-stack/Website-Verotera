@@ -28,9 +28,9 @@ const COPY: Record<
   },
   en: {
     eyebrow: "Our Mission",
-    headline: "The value of a technology lies in what it makes possible.",
+    headline: "The Measure of a Technology is What it Makes Possible.",
     body:
-      "At VEROTERA, we turn wide-bandgap SiC & GaN devices into robust, efficient power systems — combining component know-how with application engineering so our customers can build systems that are more efficient, more reliable and more sustainable.",
+      "At VEROTERA, we bring wide-bandgap semiconductor devices – SiC & GaN – into robust, efficient power systems, pairing device-level know-how with application engineering so our customers can build systems that are more efficient, more reliable, and more sustainable.",
     alts: [
       "Renewable energy – wind and solar power",
       "AI data center rack power distribution",
