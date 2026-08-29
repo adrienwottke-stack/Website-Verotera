@@ -428,7 +428,7 @@ export default async function DeterministicEngineeringCorePage({
               <Reveal className="lg:col-span-6 lg:order-2">
                 <div className="relative min-h-[260px] lg:min-h-[480px] h-full rounded-2xl overflow-hidden border border-brand-navy/8 bg-surface-light shadow-sm">
                   <Image
-                    src="/images/agentic-ai-engineering.png"
+                    src="/images/agentic-ai-engineering-core.png"
                     alt={t.hitl.imageAlt}
                     fill
                     className="object-cover"
