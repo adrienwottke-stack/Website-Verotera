@@ -37,7 +37,7 @@ const COPY: Record<
       {
         title: "Tiefes Systemverständnis",
         description:
-          "Unser Engineering zielt auf optimale Systemkosten, funktionale Sicherheit (ISO 26262) und Gesamteffizienz – nicht nur auf isolierte Moduloptimierungen.",
+          "Unser Engineering zielt auf optimale Systemkosten, Gesamteffizienz und funktionale Sicherheit, nicht auf isolierte Moduloptimierung.",
       },
       {
         title: "Brücke zwischen Nachfrage & Innovation",
@@ -61,7 +61,7 @@ const COPY: Record<
       {
         title: "Deep System Understanding",
         description:
-          "Our engineering targets optimal system cost, functional safety (ISO 26262) and overall efficiency — not just isolated module optimizations.",
+          "Our engineering targets optimal system cost, overall efficiency and functional safety, not isolated module optimisation.",
       },
       {
         title: "Bridging Demand & Innovation",
