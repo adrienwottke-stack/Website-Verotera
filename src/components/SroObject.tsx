@@ -1,4 +1,3 @@
-import { Terminal } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import type { Lang } from "@/lib/i18n";
 
@@ -11,7 +10,7 @@ type SroField = {
 
 const UI: Record<
   Lang,
-  { eyebrow: string; title: string; elements: SroField[]; caption: string }
+  { eyebrow: string; title: string; elements: SroField[] }
 > = {
   de: {
     eyebrow: "SRO als maschinenlesbarer Export",
@@ -59,7 +58,6 @@ const UI: Record<
         fields: "Je Aussage: Quelle, angewandte Regel, Modellversion, Stand/Zeitpunkt.",
       },
     ],
-    caption: "Kanonische Form – Basis für Exportsichten (ReqIF, SysML).",
   },
   en: {
     eyebrow: "SRO as a machine-readable export",
@@ -107,64 +105,13 @@ const UI: Record<
         fields: "Per statement: source, rule applied, model version, timestamp.",
       },
     ],
-    caption: "Canonical form – the basis for export views (ReqIF, SysML).",
   },
 };
 
-/** Beispiel-SRO als maschinenlesbarer Export — Inhalt aus dem Kundenfeedback. */
-const JSON_LINES = [
-  "{",
-  '  "requirement_id": "<string>",',
-  '  "use_case": "<string>",',
-  '  "operating_point": {',
-  '    "Vin": "<voltage>",',
-  '    "Vout": "<voltage>",',
-  '    "Pout": "<power>",',
-  '    "isolation": "<bool>"',
-  "  },",
-  '  "candidates": [',
-  "    {",
-  '      "technology_path": "<enum: Si | SiC | GaN>",',
-  '      "assessment": "<qualitative | semi-quantitative>",',
-  '      "trade_offs": ["<string>"],',
-  '      "derived_from": { "rule": "<rule_ref>", "model": "<model_ref>" }',
-  "    }",
-  "  ],",
-  '  "open_decisions": ["<string>"],',
-  '  "escalation": {',
-  '    "criterion": "<string>",',
-  '    "reason": "<string>",',
-  '    "requires": "human_review"',
-  "  },",
-  '  "assumptions": ["<string>"],',
-  '  "provenance": {',
-  '    "source": "<ref>",',
-  '    "rule_version": "<semver>",',
-  '    "timestamp": "<ISO-8601>"',
-  "  }",
-  "}",
-];
 
-/** Färbt Schlüssel cyan, Werte hell, Struktur gedämpft. */
-function JsonLine({ line }: { line: string }) {
-  const match = line.match(/^(\s*)("[^"]+")(\s*:\s*)(.*)$/);
-  if (!match) {
-    return <div className="text-white/45">{line}</div>;
-  }
-  const [, indent, key, colon, value] = match;
-  return (
-    <div>
-      <span className="text-white/45">{indent}</span>
-      <span className="text-brand-cyan">{key}</span>
-      <span className="text-white/45">{colon}</span>
-      <span className="text-white/75">{value}</span>
-    </div>
-  );
-}
 
 /**
- * Structured Requirement Object: sechs Bestandteile als abgerundete Karten,
- * darunter das Beispiel-Objekt als maschinenlesbarer JSON-Export.
+ * Structured Requirement Object: sechs Bestandteile als abgerundete Karten.
  */
 export default function SroObject({ lang }: { lang: Lang }) {
   const ui = UI[lang];
@@ -200,26 +147,6 @@ export default function SroObject({ lang }: { lang: Lang }) {
           </Reveal>
         ))}
       </div>
-
-      <Reveal delay={0.12} className="mt-10 sm:mt-12 max-w-3xl mx-auto">
-        <div className="rounded-2xl border border-brand-navy/15 bg-brand-navy overflow-hidden shadow-lg">
-          <div className="flex items-center gap-2 px-4 py-2.5 border-b border-white/10 bg-white/5">
-            <span className="w-2.5 h-2.5 rounded-full bg-red-400/70" />
-            <span className="w-2.5 h-2.5 rounded-full bg-amber-400/70" />
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/70" />
-            <span className="ml-3 flex items-center gap-1.5 text-[11px] font-mono text-white/60">
-              <Terminal className="w-3.5 h-3.5" />
-              SRO
-            </span>
-          </div>
-          <div className="p-5 font-mono text-xs leading-relaxed whitespace-pre overflow-x-auto">
-            {JSON_LINES.map((line, i) => (
-              <JsonLine key={i} line={line} />
-            ))}
-          </div>
-        </div>
-        <p className="font-sans text-sm text-brand-navy/40 text-center mt-4">{ui.caption}</p>
-      </Reveal>
     </div>
   );
 }
