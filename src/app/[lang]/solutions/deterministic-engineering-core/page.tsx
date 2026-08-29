@@ -86,7 +86,7 @@ const COPY: Record<
     hitl: {
       eyebrow: "Human-in-the-Loop",
       headline: "Entscheidungen brauchen Nachvollziehbarkeit",
-      body: "Wir liefern die Grundlage, nicht das Urteil. Das System trifft keine Technologieentscheidung – es ist nicht dafür ausgelegt. Es liefert bewertete Optionen, offengelegte Annahmen und eine Risikoübersicht: Entscheidungsgrundlagen, keine Entscheidung. Die Wahl trifft der Ingenieur, der sie verantwortet – und weil jede Bewertung auf ihre Regeln und Quellen zurückführbar ist, kann er sie prüfen, hinterfragen und vor einem Review vertreten.",
+      body: "Der Engineering Core liefert die Grundlage, nicht das Urteil. Das System trifft keine Technologieentscheidung, es ist nicht dafür ausgelegt. Es liefert bewertete Optionen, offengelegte Annahmen und eine Risikoübersicht. Die Wahl trifft der Ingenieur, der sie verantwortet, und weil jede Bewertung auf ihre Regeln und Quellen zurückführbar ist, kann er sie prüfen, hinterfragen und vor einem Review vertreten.",
       title: "Der Mensch bleibt stets zentral",
       paragraphs: [
         "Collaborative Intelligence bedeutet nicht, dem Menschen Arbeit abzunehmen, sondern ihm eine Entscheidung zu geben, die er verantworten kann.",
@@ -121,7 +121,7 @@ const COPY: Record<
         {
           tag: "05",
           title: "Agent",
-          text: "Der WBG-Agent führt die Bewertung aus: wendet die Regeln an, prüft Constraints und durchläuft den Zyklus aus Planung, Werkzeugaufruf, Prüfung und Iteration. Jeder Schritt bleibt an Orchestrierung und Regelwerk gebunden.",
+          text: "Der WBG-Agent führt die Bewertung aus: wendet die kodierten Regeln an, prüft Constraints und dokumentiert das Ergebnis. Er entwirft nichts selbst und entscheidet nichts, jeder Schritt bleibt an Orchestrierung und Regelwerk gebunden.",
         },
       ],
     },
@@ -129,7 +129,7 @@ const COPY: Record<
       eyebrow: "Time-to-Market",
       headline:
         "Time-to-Market entscheidet sich in der Konzeptphase – nicht am Ende.",
-      body: "Je später eine Technologieentscheidung revidiert werden muss, desto teurer wird sie – in Redesign-Schleifen, Requalifizierung und verlorener Zeit. Der Engineering Core sichert die SiC/GaN-Entscheidung schon früh ab: nachvollziehbar begründet, mit offengelegten Risiken. Das verkürzt nicht einen einzelnen Arbeitsschritt, sondern verhindert die Umwege, die die Time-to-Market wirklich kosten.",
+      body: "Je später eine Technologieentscheidung revidiert werden muss, desto teurer wird sie, in Redesign-Schleifen, Requalifizierung und verlorener Zeit. Der Engineering Core sichert die SiC/GaN-Entscheidung früh ab: nachvollziehbar begründet, mit offengelegten Risiken. Das verkürzt nicht einen einzelnen Arbeitsschritt, sondern verhindert die Umwege, die die Time-to-Market wirklich kosten. Möglich wird die frühe Absicherung durch ein strukturiertes Substrat:",
       steps: [
         {
           step: "01",
@@ -198,7 +198,7 @@ const COPY: Record<
     hitl: {
       eyebrow: "Human-in-the-Loop",
       headline: "Decisions need traceability",
-      body: "We provide the basis, not the decision. The system makes no technology decision – it is not built to. It delivers assessed options, disclosed assumptions and a risk overview. The choice is made by the engineer, who is accountable for it – and because every assessment is traceable to its rules and sources, it can be examined, challenged and defended in review.",
+      body: "The Engineering Core provides the basis, not the verdict. The system makes no technology decision, it is not designed to. It delivers assessed options, disclosed assumptions and a risk overview. The engineer makes the choice and owns it, and because every assessment is traceable to its rules and sources, they can check it, question it and defend it in a review.",
       title: "The human remains central",
       paragraphs: [
         "Collaborative Intelligence does not mean taking work off people's hands – it means giving them a decision they can stand behind.",
@@ -233,7 +233,7 @@ const COPY: Record<
         {
           tag: "05",
           title: "Agent",
-          text: "The WBG agent carries out the assessment: applies the rules, checks constraints, and runs the cycle of planning, tool call, verification and iteration. Every step stays bound to the orchestration and the rule set.",
+          text: "The WBG agent carries out the assessment: it applies the coded rules, checks constraints and documents the result. It designs nothing on its own and decides nothing, every step stays bound to the orchestration and the rule set.",
         },
       ],
     },
@@ -241,7 +241,7 @@ const COPY: Record<
       eyebrow: "Time-to-Market",
       headline:
         "Time-to-market is decided in the concept phase – not at the end.",
-      body: "The later a technology decision has to be reversed, the more it costs – in redesign loops, requalification and lost time. The Engineering Core de-risks the SiC/GaN decision early: with traceable justification and disclosed risks. It doesn't shorten a single task – it prevents the detours that truly cost time-to-market.",
+      body: "The later a technology decision has to be revised, the more expensive it becomes, in redesign loops, requalification and lost time. The Engineering Core secures the SiC/GaN decision early: justified transparently, with disclosed risks. That does not shorten a single work step; it prevents the detours that really cost time-to-market. This early assurance is made possible by a structured substrate:",
       steps: [
         {
           step: "01",
