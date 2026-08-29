@@ -169,12 +169,12 @@ const COPY: Record<
       ],
     },
     vmodel: {
-      eyebrow: "Structured Requirement Object",
+      eyebrow: "Das Ausgabeartefakt, Structured Requirement Object",
       headline:
         "Physik begründet, Evidenz validiert, Ingenieursregeln führen – und Collaborative Intelligence macht das Ergebnis nachvollziehbar.",
-      body: "Ein maschinenlesbares Artefakt, das die bewertete Entscheidung samt Herleitung, Annahmen und Risiken trägt – in kanonischer Form, aus der sich Exportsichten wie ReqIF oder SysML ableiten.",
+      body: "Ein maschinenlesbares Artefakt, das die bewertete Entscheidung samt Herleitung, Annahmen und Risiken in kanonischer Form trägt. Exportsichten wie ReqIF oder SysML lassen sich daraus ableiten (Roadmap).",
       statement:
-        "Die kanonische Form ist maßgeblich. SysML und ReqIF sind Exportsichten. Herleitung, Eskalation und Provenance sind in keinem Zielformat nativ abbildbar – nur die kanonische Form trägt sie vollständig.",
+        "Die kanonische Form ist maßgeblich. Exportsichten wie SysML oder ReqIF werden daraus abgeleitet. Herleitung, Eskalation und Provenance sind in keinem Zielformat nativ abbildbar – nur die kanonische Form trägt sie vollständig.",
     },
   },
   en: {
@@ -207,7 +207,7 @@ const COPY: Record<
     },
     architecture: {
       eyebrow: "Engineering Core",
-      headline: "A neurosymbolic core – auditable by design.",
+      headline: "A neuro-symbolic core, auditable from the ground up",
       body: "The core consists of five areas of responsibility that share one principle: interpretation and derivation are kept apart. The language model understands the context, but the traceable justification is built in the knowledge graph and the rules – not hidden inside the model.",
       layers: [
         {
@@ -281,12 +281,12 @@ const COPY: Record<
       ],
     },
     vmodel: {
-      eyebrow: "Structured Requirement Object",
+      eyebrow: "The output artefact, Structured Requirement Object",
       headline:
-        "Engineering truth is established by physics, validated by evidence, governed by engineering rules, and communicated through Collaborative Intelligence.",
-      body: "A machine-readable artifact that carries the assessed decision together with its derivation, assumptions and risks – in a canonical form from which export views such as ReqIF or SysML are derived.",
+        "Physics justifies, evidence validates, engineering rules lead, and Collaborative Intelligence makes the result traceable",
+      body: "A machine-readable artefact that carries the assessed decision together with its derivation, assumptions and risks in canonical form. Export views such as ReqIF or SysML can be derived from it (roadmap).",
       statement:
-        "The canonical form is authoritative. SysML and ReqIF are export views. Derivation, escalation and provenance cannot be represented natively in any target format – only the canonical form carries them in full.",
+        "The canonical form is authoritative. Export views such as SysML or ReqIF are derived from it. Derivation, escalation and provenance cannot be natively represented in any target format, only the canonical form carries them in full.",
     },
   },
 };
