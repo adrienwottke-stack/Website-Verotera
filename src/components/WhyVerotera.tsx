@@ -28,7 +28,7 @@ const COPY: Record<
     body:
       "VEROTERAs fortschrittliche WBG-Leistungsmodule sind darauf ausgelegt, höchste Leistung zu liefern – für intelligentere und effizientere Systeme in KI-Rechenzentren, E-Mobilität, erneuerbaren Energien oder der Industrie-Automation.",
     imageAlt: "Collaborative Intelligence – Menschen und Präzision in der WBG-Fertigung",
-    panelEyebrow: "Innovative Wide-Bandgap Halbleitermodule",
+    panelEyebrow: "Innovative Wide-Bandgap-Leistungsmodule",
     panelTitle: "Collaborative Intelligence",
     panelMeta: "Powered by People and Precision – Connecting Global Expertise",
     panelBody:
@@ -52,7 +52,7 @@ const COPY: Record<
     body:
       "VEROTERA's advanced WBG power modules are engineered to deliver peak performance — enabling smarter, more efficient systems in AI data centers, e-mobility, renewable energy and industrial automation.",
     imageAlt: "Collaborative intelligence — people and precision in WBG manufacturing",
-    panelEyebrow: "Innovative Wide-Bandgap Semiconductor Modules",
+    panelEyebrow: "Innovative Wide-Bandgap Power Modules",
     panelTitle: "Collaborative Intelligence",
     panelMeta: "Powered by People and Precision – Connecting Global Expertise",
     panelBody:
