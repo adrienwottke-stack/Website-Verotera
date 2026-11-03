@@ -1,0 +1,53 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "npm ci --prefix site-tools --omit=dev --ignore-scripts --no-audit --no-fund",
+  "buildCommand": "node site-tools/build.mjs",
+  "outputDirectory": "dist",
+  "regions": ["fra1"],
+  "functions": { "api/contact.mjs": { "maxDuration": 15 } },
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/de/index.html", "destination": "/de/", "permanent": true },
+    { "source": "/about", "destination": "/about.html", "permanent": true },
+    { "source": "/contacts", "destination": "/contact.html", "permanent": true },
+    { "source": "/solutions", "destination": "/solutions.html", "permanent": true },
+    { "source": "/solutions/deterministic-engineering-core", "destination": "/engineering-core.html", "permanent": true },
+    { "source": "/solutions/agentic-ai-engineering", "destination": "/engineering-core.html", "permanent": true },
+    { "source": "/solutions/:path*", "destination": "/solutions.html", "permanent": true },
+    { "source": "/applications/:path*", "destination": "/solutions.html", "permanent": true },
+    { "source": "/legal/imprint", "destination": "/imprint.html", "permanent": true },
+    { "source": "/impressum", "destination": "/de/imprint.html", "permanent": true },
+    { "source": "/legal/privacy-policy", "destination": "/privacy.html", "permanent": true },
+    { "source": "/privacy-policy", "destination": "/privacy.html", "permanent": true },
+    { "source": "/cookie-policy", "destination": "/privacy.html", "permanent": true },
+    { "source": "/legal/terms-of-use", "destination": "/terms.html", "permanent": true },
+    { "source": "/en", "destination": "/", "permanent": true },
+    { "source": "/en/about", "destination": "/about.html", "permanent": true },
+    { "source": "/en/contacts", "destination": "/contact.html", "permanent": true },
+    { "source": "/en/solutions/deterministic-engineering-core", "destination": "/engineering-core.html", "permanent": true },
+    { "source": "/en/solutions/:path*", "destination": "/solutions.html", "permanent": true },
+    { "source": "/en/legal/imprint", "destination": "/imprint.html", "permanent": true },
+    { "source": "/en/legal/privacy-policy", "destination": "/privacy.html", "permanent": true },
+    { "source": "/en/legal/terms-of-use", "destination": "/terms.html", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "no-referrer" },
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000" },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'none'; connect-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; media-src 'self' data:; base-uri 'none'; form-action 'self'; frame-ancestors 'self'; object-src 'none'"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": ".*\\.vercel\\.app" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    }
+  ]
+}

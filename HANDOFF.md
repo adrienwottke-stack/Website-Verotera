@@ -1,4 +1,30 @@
-# VEROTERA Website — Handoff / Statusbericht (Stand: 2026-06-14)
+# Aktueller Stand – 2026-11-03
+
+Die aktive Website basiert auf `VEROTERA_Website_v20` von Thorsten Sigges.
+`site-v20/` enthält die redaktionelle Vorlage mit ergänzter Bedienlogik;
+`site-tools/build.mjs` erzeugt daraus 16 lokalisierte Seiten und die Fehlerseite
+unter `dist/`. `api/contact.mjs` ergänzt den vorbereiteten Formularversand.
+Arbeitsadresse: https://website-verotera.vercel.app/.
+
+Aktuelle Funktionen, Prüfungen, Deployment-Nachweis und verbleibende Einrichtung:
+[`docs/VEROTERA-FERTIGSTELLUNG-2026-11-03.md`](docs/VEROTERA-FERTIGSTELLUNG-2026-11-03.md).
+Die unveränderte Erstübernahme ist separat im älteren v20-Importbericht dokumentiert.
+
+Lokal: `npm ci --prefix site-tools`, dann `npm run dev` (Port 5185).
+Prüfen: `npm run build`, `npm run check`, `npm test`.
+`vercel.json` installiert nur die isolierte Toolchain und veröffentlicht deren
+Ausgabe samt Node-Funktion. Die alte Next.js-Anwendung ist unter den Befehlen
+`dev:legacy`, `build:legacy`, `start:legacy` und `lint:legacy` erhalten.
+
+Offen durch externe Einrichtung: gültiger Resend-Zugang/verifizierter Absender,
+abschließende Bestätigung der Firmen-/Rechtsangaben und die Domainumstellung
+durch VEROTERAs Domainverwalter. Bis dahin bleiben Vorschauzugang und `noindex`
+bestehen. Kein echter Testversand und keine DNS-Änderung wurden vorgenommen.
+Der aktuelle Git- und Deployment-Stand steht im oben verlinkten Bericht.
+
+---
+
+# Historischer Handoff / Statusbericht (Stand: 2026-06-14)
 
 > Zweck: Übergabe in ein neues Claude-Code-Kontextfenster. Enthält **IST-Zustand**
 > (was aktuell im Code existiert) und **SOLL-Zustand** (aus der Kunden-CSV

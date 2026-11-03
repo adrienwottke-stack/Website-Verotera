@@ -3,10 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --webpack -p 3001",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "dev": "node site-tools/build.mjs && node site-tools/preview.mjs",
+    "build": "node site-tools/build.mjs",
+    "start": "node site-tools/preview.mjs",
+    "check": "node site-tools/check.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "dev:legacy": "next dev --webpack -p 3001",
+    "build:legacy": "next build",
+    "start:legacy": "next start",
+    "lint:legacy": "eslint"
   },
   "dependencies": {
     "@sentry/nextjs": "^10.57.0",

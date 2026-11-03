@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VEROTERA Website
 
-## Getting Started
+Die aktuelle Website basiert auf Thorsten Sigges' abgestimmter Vorlage
+`VEROTERA_Website_v20` vom 29. Oktober 2026. Die Fertigstellungsrunde ergänzt
+Bedienung, Sprachadressen, SEO, Rechtsseiten als Entwurf und einen vorbereiteten
+Kontakt-Endpunkt. Die Marketingtexte und technischen Beispiele bleiben aus v20.
 
-First, run the development server:
+- Arbeitsvorschau: https://website-verotera.vercel.app/
+- Quellvorlage und gemeinsame Browserdateien: `site-v20/`
+- Reproduzierbarer Generator: `site-tools/build.mjs`
+- Ausgabe: `dist/` (generiert, nicht in Git)
+- Formular-Endpunkt: `api/contact.mjs`
+- Aktueller Prüf- und Übergabestand: [Fertigstellung vom 3. November](docs/VEROTERA-FERTIGSTELLUNG-2026-11-03.md)
+- Historischer Importnachweis: [Unveränderte v20-Erstübernahme](docs/VEROTERA-V20-VERCEL-2026-11-03.md)
 
-```bash
+## Lokal starten
+
+Node.js 24.11 oder neuer verwenden. Die aktive Website hat eine isolierte,
+festgeschriebene Toolchain; die alten Next.js-Abhängigkeiten sind nicht nötig.
+
+```powershell
+npm ci --prefix site-tools
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Danach http://127.0.0.1:5185/ öffnen. Nach Änderungen `npm run build` ausführen
+und die Seite neu laden. `npm start` startet die bereits gebaute Ausgabe.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```powershell
+npm run build
+npm run check
+npm test
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`check` prüft die 16 Sprachseiten und die Fehlerseite einschließlich lokaler Links,
+Anker, Sprachangaben und Skriptsyntax. Die Formular-Tests verwenden ausschließlich
+einen simulierten Mailanbieter. Der lokale Vorschau-Server liest keine `.env`-Datei
+automatisch ein und verschickt in der Standardkonfiguration keine E-Mails.
 
-## Learn More
+## Inhalte und Sprachen
 
-To learn more about Next.js, take a look at the following resources:
+Englisch liegt unter `/`, Deutsch unter `/de/`; Unterseiten heißen beispielsweise
+`/about.html` und `/de/about.html`. Die Sprachadresse bestimmt den Inhalt auch ohne
+JavaScript. Ein bewusster Sprachwechsel führt zur entsprechenden anderen Adresse
+und erhält den Themenanker. Claims und Säulennamen bleiben gemäß Übergabe Englisch.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Die Inhaltspaare in den Skripts der v20-HTML-Dateien sind die redaktionelle Quelle
+für die Themen. Der Build rendert beide Sprachen vor und hält die sichtbaren
+Themen, Metadaten und HTML-Ausgabe konsistent. Zusätzliche Rechtsseiten werden in
+`site-tools/legal-content.mjs` gepflegt. Bilder bleiben lokal; der Build erzeugt
+optimierte WebP-Dateien und begrenzt unnötig große Kartenbilder.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Vercel und noch offene Einrichtung
 
-## Deploy on Vercel
+`vercel.json` installiert nur `site-tools`, baut `dist/` und stellt zusätzlich die
+Node-Funktion bereit. `.vercelignore` begrenzt CLI-Uploads auf diese Quellen.
+Umgebungsdateien und interne Kundenunterlagen werden nicht hochgeladen.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Die Vorschau bleibt bei `PUBLIC_RELEASE=false` mit `noindex` und der bestehenden
+Vercel-Zugangsregel. Die spätere kanonische Adresse ist `https://www.verotera.com`;
+DNS liegt laut Adrien bei VEROTERA und ist derzeit nicht umstellbar.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Für den echten Versand fehlen noch ein gültiger Resend-Zugang und ein verifizierter
+Absender. Benötigte serverseitige Variablen: `RESEND_API_KEY`, `CONTACT_FROM`,
+`CONTACT_TO`. Ohne vollständige Konfiguration zeigt die Seite den Einrichtungshinweis
+und `info@verotera.com`. Die Anbieterannahme einer Nachricht wird erst nach einer
+erfolgreichen Antwort als Erfolg angezeigt; eine Zustellung ins Postfach ist separat
+zu prüfen. Keine Schlüssel in Repository, Chat oder Dokumentation eintragen.
+
+Impressum, Datenschutz und Nutzungshinweise sind überprüfbare Entwürfe, noch ohne
+abschließende Unternehmens-/Rechtsfreigabe. Vor einem öffentlichen Start sind die
+Firmendaten, Hosting-/Versandvereinbarungen und die aktualisierte Datenschutzerklärung
+zu bestätigen. Danach `LEGAL_APPROVED=true` setzen; `PUBLIC_RELEASE=true` schaltet
+die Indexierung beim nächsten Build ein. Ein öffentlicher Build ohne bestätigte
+Rechtsfreigabe bricht ab. Siehe die konkreten Schritte im Fertigstellungsbericht.
+
+## Frühere Implementierung
+
+Die ältere Next.js-Anwendung unter `src/` und `public/` bleibt als historische
+Implementierung erhalten. Ihre Befehle heißen `dev:legacy`, `build:legacy`,
+`start:legacy` und `lint:legacy`; sie gehören nicht zur aktuellen Vercel-Website.

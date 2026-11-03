@@ -1,0 +1,8 @@
+# Upload source templates, the isolated build toolchain and the contact function.
+/*
+!vercel.json
+!site-v20
+!site-tools
+!api
+site-v20/README.md
+site-tools/node_modules
