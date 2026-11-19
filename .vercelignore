@@ -6,3 +6,5 @@
 !api
 site-v20/README.md
 site-tools/node_modules
+!verotera-varianten
+verotera-varianten/public
