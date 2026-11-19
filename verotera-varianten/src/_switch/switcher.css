@@ -1,0 +1,20 @@
+/* Review-only version switcher bar */
+html.has-vswitch body{padding-top:44px!important}
+html.has-vswitch .site-nav{top:44px!important}
+.vswitch{position:fixed;top:0;left:0;right:0;height:44px;z-index:2147483000;display:flex;align-items:center;justify-content:center;gap:16px;padding:0 12px;
+  background:#f4f8fa;color:#0b2230;border-bottom:1px solid rgba(11,34,48,.12);font:500 13px/1 Inter,system-ui,sans-serif;box-shadow:0 4px 20px rgba(0,0,0,.25)}
+.vswitch .vs-label{opacity:.6;letter-spacing:.02em;white-space:nowrap}
+.vswitch .vs-seg{display:flex;padding:3px;gap:2px;background:rgba(11,34,48,.08);border-radius:999px}
+.vswitch .vs-seg a{display:block;padding:8px 14px;border-radius:999px;color:#0b2230;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}
+.vswitch .vs-seg a:hover{background:rgba(11,34,48,.08)}
+.vswitch .vs-seg a[aria-current]{background:#0b2230;color:#fff;box-shadow:0 2px 8px rgba(11,34,48,.3)}
+.vswitch .vs-seg a:focus-visible,.vswitch .vs-x:focus-visible{outline:2px solid #008cd1;outline-offset:2px}
+.vswitch .vs-short{display:none}
+.vswitch .vs-x{position:absolute;right:10px;top:8px;width:28px;height:28px;border:0;border-radius:50%;background:transparent;color:#0b2230;font-size:20px;line-height:1;cursor:pointer;opacity:.55}
+.vswitch .vs-x:hover{opacity:1;background:rgba(11,34,48,.08)}
+@media (max-width:640px){
+  .vswitch .vs-label{display:none}
+  .vswitch .vs-long{display:none}.vswitch .vs-short{display:inline}
+  .vswitch .vs-seg a{padding:8px 18px}
+}
+@media print{.vswitch{display:none}html.has-vswitch body{padding-top:0!important}}
