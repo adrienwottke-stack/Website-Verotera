@@ -27,27 +27,29 @@
 /* ---------- canvas atmosphere ---------------------------------------- */
 
 html.vx body{background:var(--x-bg)!important}
-/* film grain */
+/* film grain: light specks with plain alpha (no blend mode, so scrolling stays on the compositor) */
 html.vx body::after{
-  content:"";position:fixed;inset:-50%;z-index:2147482000;pointer-events:none;opacity:.055;mix-blend-mode:overlay;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  content:"";position:fixed;inset:-10%;z-index:2147482000;pointer-events:none;opacity:.07;will-change:transform;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.4 -.5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   animation:vx-grain 1.2s steps(6) infinite;
 }
 @keyframes vx-grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
-/* blueprint grid that only appears under the light (cursor) */
-html.vx body::before{
-  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:
-    linear-gradient(rgba(126,200,236,.16) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(126,200,236,.16) 1px,transparent 1px);
-  background-size:56px 56px;
-  -webkit-mask-image:radial-gradient(280px circle at var(--cx,-999px) var(--cy,-999px),#000 0%,transparent 100%);
-          mask-image:radial-gradient(280px circle at var(--cx,-999px) var(--cy,-999px),#000 0%,transparent 100%);
+/* blueprint grid that only appears under the light (cursor): a small masked window moved by
+   transform; the sheet inside moves back by the remainder, so the lines stay fixed to the page */
+html.vx .vx-grid{
+  position:fixed;left:0;top:0;width:560px;height:560px;margin:-280px 0 0 -280px;z-index:0;pointer-events:none;overflow:hidden;
+  opacity:0;transition:opacity .4s;will-change:transform;
+  -webkit-mask-image:radial-gradient(closest-side,#000 0%,transparent 100%);mask-image:radial-gradient(closest-side,#000 0%,transparent 100%)
+}
+html.vx .vx-grid>i{
+  position:absolute;left:0;top:0;width:616px;height:616px;will-change:transform;
+  background-image:linear-gradient(rgba(126,200,236,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(126,200,236,.16) 1px,transparent 1px);
+  background-size:56px 56px
 }
 html.vx .vx-light{
   position:fixed;left:0;top:0;width:720px;height:720px;margin:-360px 0 0 -360px;z-index:1;pointer-events:none;
   background:radial-gradient(closest-side,rgba(74,211,246,.10),rgba(0,140,209,.05) 45%,transparent 70%);
-  transform:translate3d(var(--cx,-999px),var(--cy,-999px),0);transition:opacity .4s;mix-blend-mode:screen
+  opacity:0;transition:opacity .4s;will-change:transform
 }
 html.vx .shell{position:relative;z-index:2}
 html.vx ::selection{background:rgba(74,211,246,.4);color:#fff}
@@ -68,11 +70,11 @@ html.vx .vx-pre-bar::after{content:"";position:absolute;inset:0;background:var(-
 /* ---------- navigation: glass over the hero ---------------------------- */
 html.vx .site-nav{
   background:rgba(11,34,48,.55)!important;border-bottom-color:transparent!important;
-  -webkit-backdrop-filter:saturate(160%) blur(16px);backdrop-filter:saturate(160%) blur(16px);
+  -webkit-backdrop-filter:saturate(160%) blur(10px);backdrop-filter:saturate(160%) blur(10px);
   transition:background .4s,border-color .4s
 }
 html.vx .site-nav.vx-solid{background:rgba(11,34,48,.9)!important;border-bottom-color:var(--x-line)!important}
-html.vx .vx-progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;transform-origin:left;transform:scaleX(var(--p,0));background:var(--x-grad);box-shadow:0 0 12px rgba(74,211,246,.9);pointer-events:none}
+html.vx .vx-progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;transform-origin:left;transform:scaleX(0);background:var(--x-grad);box-shadow:0 0 12px rgba(74,211,246,.9);pointer-events:none;will-change:transform}
 html.vx .sn-links a:not(.sn-cta){position:relative}
 html.vx .sn-links a:not(.sn-cta)::after{content:"";position:absolute;left:14%;right:14%;bottom:-5px;height:1px;background:var(--x-grad);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--x-ease);box-shadow:0 0 10px var(--x-cyan)}
 html.vx .sn-links a:not(.sn-cta):hover::after{transform:scaleX(1)}
@@ -85,7 +87,8 @@ html.vx .shell>header{
 }
 html.vx.has-vswitch .shell>header{min-height:calc(100svh - 114px)!important}
 html.vx body:not(.page-home) .shell>header{min-height:min(78svh,760px)!important}
-html.vx .shell>header>.hdr-bg{opacity:.42;filter:saturate(.7) brightness(.8)}
+/* dimmed by opacity only: a filter on the zooming image would cost a full-hero GPU pass per frame */
+html.vx .shell>header>.hdr-bg{opacity:.34}
 html.vx .shell>header::before{ /* deep vignette above image, below canvas */
   content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:radial-gradient(120% 90% at 70% 40%,transparent 20%,rgba(6,22,32,.75) 75%),linear-gradient(90deg,rgba(6,22,32,.85),rgba(6,22,32,.2) 60%)
@@ -113,11 +116,12 @@ html.vx .vx-hud i:nth-child(4){right:0;bottom:0;border-right-width:1px;border-bo
 
 /* ---------- kinetic words (JS wraps words; copy unchanged) ------------ */
 html.vx .vx-w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
-html.vx .vx-w>span{display:inline-block;transform:translate3d(0,108%,0) rotate(4deg);transform-origin:0 100%;transition:transform 1.1s var(--x-ease);transition-delay:calc(var(--i,0) * 55ms + var(--d,0ms))}
+html.vx .vx-w>span{display:inline-block;transform:translate(0,108%) rotate(4deg);transform-origin:0 100%;transition:transform 1.1s var(--x-ease);transition-delay:calc(var(--i,0) * 55ms + var(--d,0ms))}
 html.vx .vx-on .vx-w>span{transform:none}
 
 /* ---------- buttons: magnetic, light sweep ---------------------------- */
-html.vx .nav-bezel{position:relative;overflow:hidden;transition:transform .5s var(--x-ease),box-shadow .4s!important;will-change:transform}
+html.vx .nav-bezel{position:relative;overflow:hidden;transition:box-shadow .4s!important}
+html.vx .vx-mag{will-change:transform} /* magnetic: moved by a JS spring, no CSS transform transition */
 html.vx .nav-bezel::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);transition:transform .9s var(--x-ease);pointer-events:none}
 html.vx .nav-bezel:hover::before{transform:translateX(120%)}
 html.vx .nav-bezel.primary:hover{box-shadow:0 16px 40px -12px rgba(22,120,200,.95),0 0 0 1px rgba(74,211,246,.35)!important}
@@ -138,7 +142,7 @@ html.vx .vmx-vision{
   line-height:1.14!important;letter-spacing:-.03em!important;max-width:22ch;margin-left:auto!important;margin-right:auto!important
 }
 html.vx .vx-fill .vx-fw{color:rgba(232,242,247,.26);transition:color .25s}
-html.vx .vx-fill .vx-fw.lit{color:#fff;text-shadow:0 0 28px rgba(74,211,246,.25)}
+html.vx .vx-fill .vx-fw.lit{color:#fff}
 html.vx .vmx-mission{font-size:clamp(17px,1.35vw,21px)!important;line-height:1.65!important;max-width:62ch;margin-left:auto!important;margin-right:auto!important}
 html.vx .hl-method{background:var(--x-grad);-webkit-background-clip:text;background-clip:text;color:transparent!important;-webkit-text-fill-color:transparent}
 html.vx .vmx-pt{position:relative;transition:transform .6s var(--x-ease)}
@@ -151,47 +155,47 @@ html.vx .deeptech h2{
   font-size:clamp(38px,6vw,96px)!important;line-height:.98!important;letter-spacing:-.045em!important;max-width:16ch;margin-left:auto!important;margin-right:auto!important;
   background:linear-gradient(100deg,#ffffff 0%,#ffffff 38%,#4ad3f6 48%,#ffffff 58%,#ffffff 100%);background-size:250% 100%;
   -webkit-background-clip:text;background-clip:text;color:transparent!important;-webkit-text-fill-color:transparent;
-  animation:vx-sweep 6s linear infinite
+  background-position:120% 0;animation:vx-sweep 6s cubic-bezier(.45,0,.25,1) infinite paused
 }
+html.vx .deeptech h2.vx-inview{animation-play-state:running;will-change:transform} /* only repaints while on screen, on its own layer */
 html.vx .deeptech h2 *{-webkit-text-fill-color:transparent}
-@keyframes vx-sweep{from{background-position:120% 0}to{background-position:-130% 0}}
-html.vx .deeptech::before{content:"";position:absolute;left:50%;top:50%;width:min(1000px,95vw);height:420px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(0,140,209,.28),transparent);z-index:-1;pointer-events:none;filter:blur(10px)}
+/* the sweep crosses in 2.6 s, then holds still (no repaint) until the next pass */
+@keyframes vx-sweep{0%{background-position:120% 0}44%,100%{background-position:-130% 0}}
+html.vx .deeptech::before{content:"";position:absolute;left:50%;top:50%;width:min(1000px,95vw);height:420px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(0,140,209,.28),transparent);z-index:-1;pointer-events:none}
 
 /* ---------- cards: tilt + glare + travelling border -------------------- */
 html.vx .vx-tilt{transition:transform .6s var(--x-ease)!important}
 html.vx .vx-tilt:hover{transform:translateY(-6px)}
-html.vx .vx-glare{position:absolute;inset:0;z-index:5;pointer-events:none;opacity:0;transition:opacity .4s;background:radial-gradient(460px circle at var(--mx,50%) var(--my,50%),rgba(74,211,246,.16),transparent 45%)}
+/* flashlight: a soft blob that JS slides under the cursor (transform only) */
+html.vx .vx-glare{position:absolute;inset:0;z-index:5;pointer-events:none;opacity:0;transition:opacity .4s;overflow:hidden}
+html.vx .vx-glare>i{position:absolute;left:0;top:0;width:920px;height:920px;margin:-460px 0 0 -460px;background:radial-gradient(closest-side,rgba(74,211,246,.16),transparent 45%)}
 html.vx .vx-tilt:hover .vx-glare{opacity:1}
-/* glowing effect: an arc of light on the border that turns towards the cursor */
-@property --ga{syntax:"<angle>";inherits:true;initial-value:0deg}
-html.vx .vx-tilt{transition:transform .6s var(--x-ease),--ga .35s cubic-bezier(.16,1,.3,1)!important}
-html.vx .vx-glow{position:absolute;inset:-1px;z-index:6;pointer-events:none;padding:1.5px;opacity:0;transition:opacity .5s;
-  background:conic-gradient(from calc(var(--ga,0deg) - 55deg),transparent 0deg,rgba(0,140,209,.7) 25deg,#4ad3f6 55deg,rgba(0,140,209,.7) 85deg,transparent 110deg,transparent 360deg);
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
-  filter:drop-shadow(0 0 6px rgba(74,211,246,.6))}
-html.vx .vx-near .vx-glow{opacity:.75}
+html.vx .vx-tilt:hover .vx-glare>i{will-change:transform}
+/* glowing effect: an arc of light on the border that turns towards the cursor.
+   The conic sheet rotates (compositor) inside a border-shaped mask; no per-frame repaint. */
+html.vx .vx-glow{position:absolute;inset:-1px;z-index:6;pointer-events:none;padding:2px;opacity:0;transition:opacity .5s;overflow:hidden;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+html.vx .vx-glow>i{position:absolute;left:50%;top:50%;width:200%;height:200%;translate:-50% -50%;
+  background:conic-gradient(from -55deg,transparent 0deg,rgba(0,140,209,.75) 25deg,#4ad3f6 55deg,rgba(0,140,209,.75) 85deg,transparent 110deg,transparent 360deg)}
+html.vx .vx-near .vx-glow{opacity:.8}
+html.vx .vx-near .vx-glow>i{will-change:transform}
 html.vx .vx-tilt:hover .vx-glow{opacity:1}
-html.vx .cta>.vx-beam-on{opacity:1}
 html.vx .vx-flicker{position:absolute;inset:0;width:100%;height:100%;z-index:0;-webkit-mask-image:radial-gradient(ellipse 60% 70% at 50% 40%,#000 10%,transparent 75%);mask-image:radial-gradient(ellipse 60% 70% at 50% 40%,#000 10%,transparent 75%)}
 html.vx .vx-giant img{position:relative;z-index:1}
-html.vx .vx-beam{position:absolute;inset:0;z-index:6;pointer-events:none;padding:1px;opacity:0;transition:opacity .5s;
-  background:conic-gradient(from var(--a,0deg),transparent 0 70%,rgba(74,211,246,.95) 82%,#008cd1 88%,transparent 96%);
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:vx-spin 3.2s linear infinite}
-html.vx .vx-tilt:hover .vx-beam{opacity:1}
-@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
-@keyframes vx-spin{to{--a:360deg}}
 html.vx .explore>a{overflow:hidden;position:relative}
-html.vx .explore>a>img{transition:transform 1.4s var(--x-ease)!important;transform:scale(1.08) translate3d(0,var(--py,0px),0)}
-html.vx .explore>a:hover>img{transform:scale(1.14) translate3d(0,var(--py,0px),0)}
-html.vx .explore{perspective:1200px}
+/* zoom on its own channel (scale, transitioned); parallax on another (translate, set per frame) */
+html.vx .explore>a>img{transform:none!important;scale:1.08;transition:scale 1.4s var(--x-ease)!important}
+html.vx .explore>a>img.vx-px{will-change:transform}
+html.vx .explore>a:hover>img{scale:1.14}
 
 /* ---------- applications: pinned horizontal journey ------------------- */
 html.vx .vx-hz{position:relative}
 html.vx .vx-hz-sticky{position:sticky;top:70px;height:calc(100vh - 70px);overflow:hidden;display:flex;flex-direction:column;justify-content:center}
 html.vx.has-vswitch .vx-hz-sticky{top:114px;height:calc(100vh - 114px)}
-html.vx .vx-hz .fields.five{display:flex!important;gap:24px!important;width:max-content;will-change:transform;transform:translate3d(var(--tx,0px),0,0);grid-template-columns:none!important;padding:0 6vw}
+html.vx .vx-hz .fields.five{display:flex!important;gap:24px!important;width:max-content;will-change:transform;grid-template-columns:none!important;padding:0 6vw}
 html.vx .vx-hz .field-tile{flex:0 0 auto;width:min(62vw,820px)!important;height:min(64vh,560px)!important;margin:0!important;position:relative;overflow:hidden;border:1px solid var(--x-line)}
-html.vx .vx-hz .field-tile img{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:cover;transform:scale(1.12) translate3d(var(--ix,0px),0,0);transition:filter .6s}
+html.vx .vx-hz .field-tile img{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:cover;transform:none;scale:1.12}
+html.vx .vx-hz.vx-live .field-tile img,html.vx .vx-hz.vx-live .vx-hz-bar::after{will-change:transform}
 html.vx .vx-hz .field-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(6,22,32,.95));pointer-events:none}
 html.vx .vx-hz figcaption{position:absolute!important;left:0;right:0;bottom:0;z-index:2;padding:clamp(22px,3vw,40px)!important;background:none!important;font-size:clamp(24px,2.6vw,42px)!important;line-height:1.05!important;letter-spacing:-.02em;font-family:Poppins,Inter,sans-serif;font-weight:600}
 html.vx .vx-hz figcaption .ft-sub{display:block!important;margin-top:12px;font:400 clamp(14px,1.05vw,17px)/1.5 Inter,sans-serif!important;letter-spacing:0;color:rgba(232,242,247,.78)!important;max-width:40ch}
@@ -215,15 +219,21 @@ html.vx .vx-giant img{display:block;width:100%;height:auto;opacity:.9;
   filter:drop-shadow(0 0 40px rgba(74,211,246,.15))}
 
 /* ---------- subpages ------------------------------------------------- */
-html.vx .split img,html.vx .hy-img img,html.vx .ap-img img,html.vx .kn-img img,html.vx .ec-split img{transition:transform 1.4s var(--x-ease),clip-path 1.4s var(--x-ease)}
+html.vx .split img,html.vx .hy-img img,html.vx .ap-img img,html.vx .kn-img img,html.vx .ec-split img,html.vx .vx-clip{transition:transform 1.4s var(--x-ease),clip-path 1.4s var(--x-ease)}
 html.vx .vx-clip{clip-path:inset(12% 12% 12% 12%);transform:scale(1.15)}
 html.vx .vx-clip.vx-on{clip-path:inset(0 0 0 0);transform:none}
 html.vx .stages .stage{transition:transform .5s var(--x-ease)!important}
 html.vx .stages .stage:hover{transform:translateY(-4px)}
 
 /* ---------- generic reveal ------------------------------------------- */
-html.vx .vx-rv{opacity:0;transform:translate3d(0,40px,0);transition:opacity 1s var(--x-ease),transform 1.2s var(--x-ease);transition-delay:var(--d,0s)}
+/* !important: cards and buttons carry their own hover transitions; while revealing, the reveal
+   wins (otherwise they pop in without fading). JS removes .vx-rv once the reveal is done. */
+html.vx .vx-rv{opacity:.01;transform:translate(0,40px);transition:opacity 1s var(--x-ease),transform 1.2s var(--x-ease)!important;transition-delay:var(--d,0s)!important}
 html.vx .vx-rv.vx-on{opacity:1;transform:none}
+/* Starts at 1 % opacity (invisible to the eye): at 0 % the GPU skips the layer and must raster
+   it all at once on arrival. 2D offsets: hidden blocks are not GPU layers from page load. About one screen before a
+   block arrives it gets a layer (.vx-pre), so its raster happens off screen, not on arrival. */
+html.vx .vx-rv.vx-pre{will-change:opacity,transform}
 
 /* ---------- responsive ----------------------------------------------- */
 @media (max-width:860px){
@@ -240,7 +250,7 @@ html.vx .vx-rv.vx-on{opacity:1;transform:none}
   html.vx .cta-brand img:first-child{height:60px!important}
   html.vx .cta-brand img:last-child{height:36px!important}
 }
-@media (hover:none),(pointer:coarse){html.vx body::before,html.vx .vx-light{display:none}}
+@media (hover:none),(pointer:coarse){html.vx .vx-grid,html.vx .vx-light{display:none}}
 @media (prefers-reduced-motion:reduce){
   html.vx *,html.vx *::before,html.vx *::after{animation:none!important;transition:none!important}
   html.vx .vx-w>span,html.vx .vx-rv,html.vx .vx-clip{transform:none!important;opacity:1!important;clip-path:none!important}
@@ -248,19 +258,20 @@ html.vx .vx-rv.vx-on{opacity:1;transform:none}
   html.vx .vx-fill .vx-fw{color:inherit}
   html.vx body::after{display:none}
 }
-@media print{html.vx body::before,html.vx body::after,html.vx .vx-light,html.vx .vx-circuit,html.vx .vx-pre{display:none!important}}
+@media print{html.vx .vx-grid,html.vx body::after,html.vx .vx-light,html.vx .vx-circuit,html.vx .vx-pre{display:none!important}}
 
 /* ---------- research round: engineering details ------------------------ */
 /* corner ticks: cards read as cells of one measured grid */
 html.vx .vx-ticks{position:absolute;inset:-1px;z-index:7;pointer-events:none}
-html.vx .vx-ticks i{position:absolute;width:10px;height:10px;border:0 solid rgba(74,211,246,.6);transition:all .5s var(--x-ease)}
-html.vx .vx-ticks i:nth-child(1){left:0;top:0;border-left-width:1px;border-top-width:1px}
-html.vx .vx-ticks i:nth-child(2){right:0;top:0;border-right-width:1px;border-top-width:1px}
-html.vx .vx-ticks i:nth-child(3){left:0;bottom:0;border-left-width:1px;border-bottom-width:1px}
-html.vx .vx-ticks i:nth-child(4){right:0;bottom:0;border-right-width:1px;border-bottom-width:1px}
-html.vx .vx-tilt:hover .vx-ticks i{width:18px;height:18px;border-color:var(--x-cyan)}
+/* brackets grow by scale from their own corner (compositor), not by width/height (repaint) */
+html.vx .vx-ticks i{position:absolute;width:10px;height:10px;border:0 solid var(--x-cyan);opacity:.6;transition:transform .5s var(--x-ease),opacity .5s}
+html.vx .vx-ticks i:nth-child(1){left:0;top:0;border-left-width:1px;border-top-width:1px;transform-origin:0 0}
+html.vx .vx-ticks i:nth-child(2){right:0;top:0;border-right-width:1px;border-top-width:1px;transform-origin:100% 0}
+html.vx .vx-ticks i:nth-child(3){left:0;bottom:0;border-left-width:1px;border-bottom-width:1px;transform-origin:0 100%}
+html.vx .vx-ticks i:nth-child(4){right:0;bottom:0;border-right-width:1px;border-bottom-width:1px;transform-origin:100% 100%}
+html.vx .vx-tilt:hover .vx-ticks i{transform:scale(1.8);opacity:1}
 /* mono index on cards (numbers only, no copy) */
-html.vx .vx-ix{position:absolute;top:14px;left:16px;z-index:7;font:500 11px/1 var(--x-mono);letter-spacing:.22em;color:rgba(232,242,247,.85);padding:6px 8px;background:rgba(6,22,32,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+html.vx .vx-ix{position:absolute;top:14px;left:16px;z-index:7;font:500 11px/1 var(--x-mono);letter-spacing:.22em;color:rgba(232,242,247,.85);padding:6px 8px;background:rgba(6,22,32,.72)} /* solid, no backdrop blur: one GPU pass less per frame */
 /* contact: precision form, focus line draws across */
 html.vx .contact-form input,html.vx .contact-form select,html.vx .contact-form textarea{
   background-color:rgba(6,22,32,.35)!important;border:0!important;border-bottom:1px solid var(--x-line2)!important;border-radius:0!important;

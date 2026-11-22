@@ -32,7 +32,7 @@ html.v2 body::before{
 html.v2 .shell{position:relative;z-index:1}
 
 /* ---------- navigation: unchanged, plus a scroll-progress light --------- */
-html.v2 .v2-progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;transform-origin:left;transform:scaleX(var(--p,0));background:var(--v-grad);box-shadow:0 0 10px rgba(74,211,246,.8);pointer-events:none;z-index:2}
+html.v2 .v2-progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;transform-origin:left;transform:scaleX(var(--p,0));background:var(--v-grad);box-shadow:0 0 10px rgba(74,211,246,.8);pointer-events:none;z-index:2;will-change:transform} /* own layer: no nav repaint while scrolling */
 
 /* ---------- buttons: v26 colours, only a little more life on hover ------ */
 html.v2 .nav-bezel{transition:transform .3s var(--v-ease),box-shadow .3s,filter .3s!important}
@@ -51,17 +51,17 @@ html.v2 .vmx-pt:hover{transform:translateY(-3px)}
 
 /* ---------- spotlight ("flashlight") on cards ---------------------------- */
 html.v2 .v2-spot{position:relative;isolation:isolate}
-html.v2 .v2-spot::after{
-  content:"";position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0;transition:opacity .4s;
-  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(74,211,246,.12),transparent 45%);
-}
-html.v2 .v2-spot:hover::after{opacity:1}
-html.v2 .v2-spot .v2-edge{
-  position:absolute;inset:0;z-index:4;pointer-events:none;padding:1px;opacity:0;transition:opacity .4s;
-  background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(74,211,246,.95),rgba(0,140,209,.35) 40%,transparent 70%);
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
-}
-html.v2 .v2-spot:hover .v2-edge{opacity:1}
+/* the light is two blobs that JS slides under the cursor (transform only, no repaint):
+   a soft glow over the card and a brighter one that only shows through a border-shaped mask */
+html.v2 .v2-spot .v2-glare,html.v2 .v2-spot .v2-edge{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s;overflow:hidden}
+html.v2 .v2-spot .v2-glare{z-index:3}
+html.v2 .v2-spot .v2-edge{z-index:4;padding:1px;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+html.v2 .v2-spot .v2-glare>i,html.v2 .v2-spot .v2-edge>i{position:absolute;left:0;top:0}
+html.v2 .v2-spot .v2-glare>i{width:840px;height:840px;margin:-420px 0 0 -420px;background:radial-gradient(closest-side,rgba(74,211,246,.12),transparent 45%)}
+html.v2 .v2-spot .v2-edge>i{width:520px;height:520px;margin:-260px 0 0 -260px;background:radial-gradient(closest-side,rgba(74,211,246,.95),rgba(0,140,209,.35) 40%,transparent 70%)}
+html.v2 .v2-spot:hover .v2-glare,html.v2 .v2-spot:hover .v2-edge{opacity:1}
+html.v2 .v2-spot:hover .v2-glare>i,html.v2 .v2-spot:hover .v2-edge>i{will-change:transform}
 
 /* ---------- explore cards: lift + slow image zoom ------------------------ */
 html.v2 .explore>a{overflow:hidden;transition:transform .5s var(--v-ease)!important}
@@ -86,7 +86,10 @@ html.v2 .fields.five .field-tile:hover img{transform:scale(1.04)}
 html.v2 .fields.five .field-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(8,29,41,.92) 100%);pointer-events:none}
 html.v2 .fields.five figcaption{position:absolute!important;left:0;right:0;bottom:0;z-index:2;padding:22px 20px!important;background:none!important}
 html.v2 .fields.five figcaption{transition:opacity .4s}
-@media (min-width:861px){html.v2 .fields.five:hover .field-tile:not(:hover) figcaption{opacity:0}}
+@media (min-width:861px){
+  html.v2 .fields.five:hover .field-tile:not(:hover) figcaption{opacity:0}
+  html.v2 .fields.five{contain:layout paint} /* the expanding tiles re-lay out only inside the gallery */
+}
 html.v2 .fields.five figcaption .ft-sub{display:block!important;max-height:0;opacity:0;overflow:hidden;transition:max-height .7s var(--v-ease),opacity .5s .1s}
 html.v2 .fields.five .field-tile:hover .ft-sub{max-height:120px;opacity:1}
 html.v2 .fields.five figcaption::before{content:"";display:block;width:24px;height:1px;background:var(--v-grad);margin-bottom:12px;box-shadow:0 0 8px rgba(74,211,246,.9);transition:width .6s var(--v-ease)}
@@ -116,8 +119,15 @@ html.v2 .stages .stage{transition:transform .4s var(--v-ease)!important}
 html.v2 .stages .stage:hover{transform:translateY(-3px)}
 
 /* ---------- reveal on scroll (JS adds .v2-rv, then .v2-in) -------------- */
-html.v2 .v2-rv{opacity:0;transform:translate3d(0,28px,0);transition:opacity .9s var(--v-ease),transform .9s var(--v-ease);transition-delay:var(--d,0s)}
+/* !important: cards/buttons have their own hover transitions; during the reveal the fade must
+   win (otherwise they pop in). JS removes .v2-rv afterwards. */
+html.v2 .v2-rv{opacity:.01;transform:translate(0,28px);transition:opacity .9s var(--v-ease),transform .9s var(--v-ease)!important;transition-delay:var(--d,0s)!important}
 html.v2 .v2-rv.v2-in{opacity:1;transform:none}
+/* Starts at 1 % opacity (invisible to the eye): at 0 % the GPU skips the layer and must raster
+   it all at once on arrival, which made the gallery hitch. 2D offset: hidden blocks are not GPU
+   layers from page load; about one screen before a block
+   arrives it gets a layer (.v2-pre), so its raster happens off screen, not on arrival. */
+html.v2 .v2-rv.v2-pre{will-change:opacity,transform}
 
 /* ---------- responsive ------------------------------------------------ */
 @media (max-width:860px){
