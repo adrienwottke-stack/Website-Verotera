@@ -33,6 +33,7 @@ await copyDir(path.join(SRC, '_switch'), path.join(OUT, '_switch'));
 const variants = [
   { id: 'v26', layers: [], htmlSrc: 'v26' },
   { id: 'v26-design', layers: ['v2'], htmlClass: 'v2', htmlSrc: 'v26' },
+  { id: 'v26-showcase', layers: ['vx'], htmlClass: 'vx', htmlSrc: 'v26' },
 ];
 
 for (const v of variants) {
@@ -48,7 +49,9 @@ for (const v of variants) {
     const cssFile = path.join(dir, 'assets', layer + '.css');
     if (await exists(cssFile)) {
       let css = await fs.readFile(cssFile, 'utf8');
-      css = css.replace(/html\.v2(\.v3)? body/g, (m, v3) => `html.v2${v3 || ''} body:not(#v2)`).replace(/html\.v2(\.v3)? (?!body)/g, (m, v3) => `html.v2${v3 || ''} body:not(#v2) `);
+      css = css
+        .replace(/html\.(v2|vx)((?:\.[\w-]+)*) body/g, (m, a, b) => `html.${a}${b} body:not(#v2)`)
+        .replace(/html\.(v2|vx)((?:\.[\w-]+)*) (?!body)/g, (m, a, b) => `html.${a}${b} body:not(#v2) `);
       await fs.writeFile(cssFile, css);
     }
   }

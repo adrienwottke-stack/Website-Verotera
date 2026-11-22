@@ -4,9 +4,10 @@
   try{if(sessionStorage.getItem('vswitch-hidden')==='1')return;}catch(e){}
   var V=[
     {id:'v26',en:'V26 · Original',de:'V26 · Original',short:'Original'},
-    {id:'v26-design',en:'V26 · Design',de:'V26 · Design',short:'Design'}
+    {id:'v26-design',en:'V26 · Design',de:'V26 · Design',short:'Design'},
+    {id:'v26-showcase',en:'V26 · Showcase',de:'V26 · Showcase',short:'Showcase'}
   ];
-  var m=location.pathname.match(/^(.*\/)(v26-design|v26)\/(.*)$/);if(!m)return;
+  var m=location.pathname.match(/^(.*\/)(v26-showcase|v26-design|v26)\/(.*)$/);if(!m)return;
   var base=m[1],cur=m[2],page=m[3]||'index.html';
   var de=(root.getAttribute('data-lang')||root.lang)==='de';
   var bar=d.createElement('div');bar.className='vswitch';bar.setAttribute('role','navigation');bar.setAttribute('aria-label','Design versions');

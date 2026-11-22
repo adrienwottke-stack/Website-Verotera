@@ -6,6 +6,7 @@ Two versions of the same website, switchable via the bar at the top:
 |---|---|
 | `v26`        | Customer package v26, unchanged (only the review bar + `noindex` injected) |
 | `v26-design` | Same copy, same pages, same sitemap. Only the design layer `src/v2/assets/v2.css` + `v2.js` |
+| `v26-showcase` | Same copy, same pages, v26 palette. "No limits" layer `src/vx/assets/vx.css` + `vx.js`: live circuit hero switched by the cursor's light, kinetic headlines, scroll-lit vision statement, light-arc cards, pinned horizontal application journey, circuit CTA with border beam, giant wordmark footer, grain, intro, page transitions. Everything respects `prefers-reduced-motion`. |
 
 Feedback round 20 Nov 2026 (Thorsten), implemented in the design layer:
 header and colours as in v26 · no signal curve in the header · spotlight on cards,
