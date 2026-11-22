@@ -31,8 +31,9 @@ var APP=[
  ['On-board charger, DC/DC','On-Board-Charger, DC/DC',7e3,2.2e4,5e4,6e5,'SiC, GaN','plug','r'],
  ['AI data center power supply','Stromversorgung KI-Rechenzentrum',3e3,1.2e4,1e5,1e6,'GaN, SiC','server','r'],
  ['Robot and servo drives','Roboter- und Servoantriebe',2e2,1.5e3,4e4,1.5e5,'GaN','robot','l']];
-function fmtW(w){return w>=1e6?(w/1e6)+' MW':w>=1e3?(w/1e3)+' kW':w+' W'}
-function fmtF(f){return f>=1e6?(f/1e6)+' MHz':(f/1e3)+' kHz'}
+function dec(n){var s=String(n);return LANG()==='de'?s.replace('.',','):s}
+function fmtW(w){return w>=1e6?dec(w/1e6)+' MW':w>=1e3?dec(w/1e3)+' kW':dec(w)+' W'}
+function fmtF(f){return f>=1e6?dec(f/1e6)+' MHz':dec(f/1e3)+' kHz'}
 function render(el){
  var W=Math.max(300,el.clientWidth),small=W<640;
  var H=small?Math.round(W*1.05):Math.round(Math.min(640,W*.58));

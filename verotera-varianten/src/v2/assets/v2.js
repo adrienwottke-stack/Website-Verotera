@@ -21,29 +21,16 @@
     window.addEventListener('scroll',onScroll,{passive:true});onScroll();
   }
 
-  /* hero: switching square-wave signal with a travelling pulse of light */
-  var hero=d.querySelector('.shell>header');
-  if(hero){
-    var W=2400,H=64,y0=48,y1=16,x=0,path='M0 '+y0,steps=[90,46,140,46,60,46,180,46,90,46,120,46,70,46,200,46,90,46,150,46,80,46,110,46,160,46,90,46,130];
-    var high=false;
-    for(var i=0;i<steps.length&&x<W;i++){x+=steps[i];path+=' H'+x;high=!high;path+=' V'+(high?y1:y0);}
-    path+=' H'+W;
-    var sig=d.createElement('div');sig.className='v2-signal';sig.setAttribute('aria-hidden','true');
-    sig.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none"><defs><linearGradient id="v2sig" x1="0" x2="1"><stop offset="0" stop-color="#4ad3f6" stop-opacity="0"/><stop offset=".5" stop-color="#4ad3f6"/><stop offset="1" stop-color="#008cd1"/></linearGradient></defs><path class="base" d="'+path+'"/><path class="pulse" d="'+path+'"/><path class="pulse p2" d="'+path+'"/></svg>';
-    hero.appendChild(sig);
-    var cue=d.createElement('span');cue.className='v2-scrollcue';cue.setAttribute('aria-hidden','true');hero.appendChild(cue);
-  }
-
-  /* headline light rules */
+  /* headline light rules (header stays as in v26: no additions there) */
   $$('.home-section>h2,.glance-head h2,.world>h2,.apps-headline,.topic>h2,.shell>section>h2').forEach(function(h){
     if(h.closest('header')||h.nextElementSibling&&h.nextElementSibling.classList.contains('v2-rule'))return;
     var r=d.createElement('span');r.className='v2-rule';r.setAttribute('aria-hidden','true');
-    var cs=getComputedStyle(h);if(cs.textAlign==='center'){r.style.marginLeft='auto';r.style.marginRight='auto';r.style.transformOrigin='center';}
+    var cs=getComputedStyle(h);if(cs.textAlign!=='center'){r.style.marginLeft='0';r.style.transformOrigin='left';}
     h.insertAdjacentElement('afterend',r);
   });
 
   /* spotlight cards */
-  var spot='.explore>a,.gp,.card,.ch-card,.ec-step,.pillar,.cred,.contact-form,.contact-side';
+  var spot='.explore>a,.gp,.card,.ch-card,.ec-step,.rm-stage,.pillar,.cred,.contact-form,.contact-side';
   $$(spot).forEach(function(el){
     el.classList.add('v2-spot');
     var e=d.createElement('span');e.className='v2-edge';e.setAttribute('aria-hidden','true');el.appendChild(e);

@@ -1,13 +1,12 @@
-/* Review-only version switcher (V25 / V2 / V3). Keeps page, language and anchor. */
+/* Review-only version switcher (V26 original / V26 design). Keeps page, language and anchor. */
 (function(){
   var d=document,root=d.documentElement;
   try{if(sessionStorage.getItem('vswitch-hidden')==='1')return;}catch(e){}
   var V=[
-    {id:'v25',en:'V25 · Original',de:'V25 · Original',short:'V25'},
-    {id:'v2', en:'V2 · Design',de:'V2 · Design',short:'V2'},
-    {id:'v3', en:'V3 · Design + Copy',de:'V3 · Design + Texte',short:'V3'}
+    {id:'v26',en:'V26 · Original',de:'V26 · Original',short:'Original'},
+    {id:'v26-design',en:'V26 · Design',de:'V26 · Design',short:'Design'}
   ];
-  var m=location.pathname.match(/^(.*\/)(v25|v2|v3)\/(.*)$/);if(!m)return;
+  var m=location.pathname.match(/^(.*\/)(v26-design|v26)\/(.*)$/);if(!m)return;
   var base=m[1],cur=m[2],page=m[3]||'index.html';
   var de=(root.getAttribute('data-lang')||root.lang)==='de';
   var bar=d.createElement('div');bar.className='vswitch';bar.setAttribute('role','navigation');bar.setAttribute('aria-label','Design versions');

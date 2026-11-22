@@ -1,13 +1,14 @@
-# VEROTERA Website: Template Package v25 (alternative to v24)
+# VEROTERA Website: Template Package v26
 
 Static website, no build tools and no server logic. It runs on any web host as is: upload the whole folder, keep the structure, open `index.html`.
+v26 (20 November 2026), based on v25: darker page background (#081d29), taller headers with a soft transition into the page and a slow zoom of the header image (off with reduced motion). Hybrid AI page reworked: The Principle (new headline and claim line), The Hidden Cost, The Approach (Capture · Evaluate · Trace), explainer video, Outlook with the full V-model. The V-model on Hybrid AI and in Solutions Phase 05 is the same inline SVG from 1200 px (slanted tiles forming the V). Home and About: pillar cards restyled (icon in a circle, number, dot lists). All changes against v25 are listed in `CHANGELOG_v26.md`.
 v25 (16 November 2026): Hybrid AI page reworked (shorter, capabilities worded as design goals, five stages in one compact section, no interactive examples, principle as in v24 at the top, new sections "Time to Market Is Decided in the Concept Phase", "Outlook" (V-model with today, next and vision) and "Engineering Core · R&D Phase" with the button "Become a Pilot Partner"); on all pages, repeated texts removed after the team review (Home credentials block, About quote, standard contact text). The CEO decides whether v24 or v25 goes live. v24 was released after the final review by CEO and team (12 November 2026). Details, open points and the step-by-step list: see the handover document "VEROTERA Website: Übergabe an Adrien".
 
 ## Pages
 - `index.html`: Home
 - `about.html`: About VEROTERA (5 topics: Who We Are, Why Wide-Bandgap, What We Build, How We Work, Leadership)
 - `solutions.html`: Solutions (Our Approach, Applications, Phases 01 to 05)
-- `engineering-core.html`: Hybrid AI (principle, challenge, three roles, value, five stages, inside the Engineering Core, outlook, R&D status)
+- `engineering-core.html`: Hybrid AI (The Principle, The Hidden Cost, The Approach: Capture · Evaluate · Trace, video, Outlook with V-model)
 - `contact.html`: contact form with two modes, message and callback request (not connected yet, see below)
 - `robots.txt`, `sitemap.xml`: for https://www.verotera.com/ (adjust if the domain or paths differ)
 
@@ -18,12 +19,15 @@ v25 (16 November 2026): Hybrid AI page reworked (shorter, capabilities worded as
 - `assets/dark.js`: back-to-top button
 - `assets/wbg-chart.js` / `wbg-chart.css`: interactive chart on About (Si, SiC and GaN by power and switching frequency)
 - `assets/fonts/`: Inter and Poppins, self-hosted (SIL Open Font License 1.1, licence files included)
+- `assets/video/engineering-core-explainer.mp4`: explainer video on Hybrid AI (explainer v15, 1:38 min, self-hosted, H.264, no sound, about 11 MB, web-optimised with faststart, loads only on play; poster `assets/img/ec-video-poster.jpg`)
 - `assets/img/`: all images; AI-generated illustrations except the CEO portrait (note in every footer)
 
 ## How the pages work
 - All texts are in the HTML in English and German (`.l-en` / `.l-de`, or per-language strings in the page script). Page titles, eyebrows and claims stay English in both languages.
 - About, Solutions and Hybrid AI show their five topics one below the other; tiles and the topic bar jump to a topic.
-- Hybrid AI (v25): static page without interactive examples; the five stages are shown side by side with Your Benefit.
+- Hybrid AI (v26): static page; the video starts on click (play button); the V-model is inline SVG from 1200 px (HTML version below); all texts in both languages.
+- Solutions (v26): Phase 05 shows the same V-model SVG; it sits both in the static HTML and in the page script template, so it survives the language switch and re-rendering.
+- Header (v26): `site.js` copies the header background into a `.hdr-bg` layer, which zooms slowly once on load; with `prefers-reduced-motion` it stays still.
 - No cookies, no tracking, no external requests. A Content-Security-Policy meta tag in each page enforces this; set the same policy as HTTP header on the server.
 - Accessibility: skip link ("Skip to content"), visible focus, menu button with `aria-expanded`, alt texts in both languages, minimum text size 14 px (running text 16 px).
 
