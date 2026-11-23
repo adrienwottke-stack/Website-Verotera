@@ -26,7 +26,7 @@
 
 /* ---------- canvas atmosphere ---------------------------------------- */
 
-html.vx body{background:var(--x-bg)!important}
+html.vx body{background:var(--x-bg)!important;overflow-x:clip}
 /* film grain: light specks with plain alpha (no blend mode, so scrolling stays on the compositor) */
 html.vx body::after{
   content:"";position:fixed;inset:-10%;z-index:2147482000;pointer-events:none;opacity:.07;will-change:transform;
