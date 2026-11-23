@@ -40,7 +40,7 @@ html.v2 .nav-bezel:hover{transform:translateY(-2px)}
 html.v2 .nav-bezel.primary:hover{box-shadow:0 12px 32px -10px rgba(22,120,200,.85)!important}
 
 /* ---------- section headings: light rule that ignites on reveal --------- */
-html.v2 .v2-rule{display:block;height:1px;width:120px;margin:22px auto 0;background:var(--v-grad);box-shadow:0 0 14px rgba(74,211,246,.7);transform:scaleX(0);transform-origin:center;transition:transform 1.1s var(--v-ease) .15s}
+html.v2 .v2-rule{display:block;height:1px;width:120px;margin:20px auto 24px;background:var(--v-grad);box-shadow:0 0 14px rgba(74,211,246,.7);transform:scaleX(0);transform-origin:center;transition:transform 1.1s var(--v-ease) .15s}
 html.v2 .v2-rule.v2-in{transform:scaleX(1)}
 
 /* ---------- vision / mission: a clearer typographic hierarchy ----------- */

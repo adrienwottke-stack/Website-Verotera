@@ -4,6 +4,33 @@
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function $$(s,c){return [].slice.call((c||d).querySelectorAll(s));}
 
+  /* Light rules sit a fixed distance (up) under their heading and keep at least (down) to the next block.
+     Where the original layout had more room between heading and block, that room stays below the rule.
+     Measured from layout offsets (transforms of reveal animations don't count), in batched read/write
+     passes; redone when the width or the language changes. */
+  function fitRules(list,up,down){
+    if(!list.length)return;
+    function top(e){var t=0;for(;e;e=e.offsetParent)t+=e.offsetTop;return t;}
+    function nextShown(e){for(e=e.nextElementSibling;e;e=e.nextElementSibling)if(e.getClientRects().length)return e;return null;}
+    /* inline values go in with priority: some neighbours set their margins with !important */
+    function imp(e,p,v){e.style.setProperty(p,v,'important');}
+    function keep(e,p){return [e.style.getPropertyValue(p),e.style.getPropertyPriority(p)];}
+    function put(e,p,s){if(s&&s[0])e.style.setProperty(p,s[0],s[1]);else e.style.removeProperty(p);}
+    function run(){
+      var L=list.filter(function(o){return o.h.isConnected;});
+      L.forEach(function(o){if(o.n)put(o.n,'margin-top',o.nm);put(o.h,'margin-bottom',o.hm);imp(o.r,'display','none');});
+      L.forEach(function(o){var n=nextShown(o.r);o.n=n;o.nm=n?keep(n,'margin-top'):null;o.on=o.h.getClientRects().length>0;
+        o.g=!o.on?down:n?top(n)-top(o.h)-o.h.offsetHeight:parseFloat(getComputedStyle(o.h).marginBottom)||down;});
+      L.forEach(function(o){o.r.style.removeProperty('display');if(!o.on)return;imp(o.r,'margin-top','0px');imp(o.r,'margin-bottom','0px');imp(o.h,'margin-bottom','0px');if(o.n)imp(o.n,'margin-top','0px');});
+      L.forEach(function(o){if(!o.on)return;var rt=top(o.r);o.a=rt-top(o.h)-o.h.offsetHeight;o.rh=o.r.offsetHeight;o.b=o.n?top(o.n)-rt-o.rh:0;});
+      L.forEach(function(o){if(!o.on)return;imp(o.r,'margin-top',(up-o.a)+'px');imp(o.r,'margin-bottom',(Math.max(down,o.g-up-o.rh)-o.b)+'px');});
+    }
+    run();
+    var w=window.innerWidth,t=0;
+    window.addEventListener('resize',function(){if(window.innerWidth===w)return;w=window.innerWidth;clearTimeout(t);t=setTimeout(run,120);},{passive:true});
+    if('MutationObserver' in window)new MutationObserver(run).observe(root,{attributes:true,attributeFilter:['data-lang','lang']});
+  }
+
   /* nav: glass state + scroll progress light */
   var nav=d.querySelector('.site-nav');
   if(nav){
@@ -22,12 +49,14 @@
   }
 
   /* headline light rules (header stays as in v26: no additions there) */
+  var fits=[];
   $$('.home-section>h2,.glance-head h2,.world>h2,.apps-headline,.topic>h2,.shell>section>h2').forEach(function(h){
     if(h.closest('header')||h.nextElementSibling&&h.nextElementSibling.classList.contains('v2-rule'))return;
     var r=d.createElement('span');r.className='v2-rule';r.setAttribute('aria-hidden','true');
     var cs=getComputedStyle(h);if(cs.textAlign!=='center'){r.style.marginLeft='0';r.style.transformOrigin='left';}
-    h.insertAdjacentElement('afterend',r);
+    h.insertAdjacentElement('afterend',r);fits.push({h:h,r:r,hm:[h.style.getPropertyValue('margin-bottom'),h.style.getPropertyPriority('margin-bottom')]});
   });
+  fitRules(fits,20,24);
 
   /* images never block a frame while decoding, and are decoded ahead of time,
      about one and a half screens before they scroll into view (no first-sight hitch) */

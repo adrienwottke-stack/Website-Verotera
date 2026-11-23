@@ -243,11 +243,38 @@
   if(hero){var hh=hero.querySelector('h1');if(hh){hh.style.setProperty('--d','250ms');setTimeout(function(){hh.classList.add('vx-on');},reduce?0:(d.querySelector('.vx-pre')?1500:150));}}
   onView(kinetic.filter(function(h){return !h.closest('header');}),function(h){h.classList.add('vx-on');});
   /* light rules under section headings */
+  var fits=[];
   $$('.home-section>h2,.glance-head h2,.world>h2,.shell>section>h2').forEach(function(h){
     if(h.closest('header'))return;var r=el('span','vx-rule',{'aria-hidden':'true'});
     if(getComputedStyle(h).textAlign!=='center'){r.style.marginLeft='0';r.style.transformOrigin='left';}
     h.insertAdjacentElement('afterend',r);onView([r],function(x){x.classList.add('vx-on');});
+    fits.push({h:h,r:r,hm:[h.style.getPropertyValue('margin-bottom'),h.style.getPropertyPriority('margin-bottom')]});
   });
+  /* rules sit 22px under their heading and keep at least 28px to the next block; where the original
+     layout had more room there, it stays below the rule. Layout offsets ignore the reveal transforms;
+     batched read/write passes; redone when the width or the language changes. */
+  (function(list,up,down){
+    if(!list.length)return;
+    function top(e){var t=0;for(;e;e=e.offsetParent)t+=e.offsetTop;return t;}
+    function nextShown(e){for(e=e.nextElementSibling;e;e=e.nextElementSibling)if(e.getClientRects().length)return e;return null;}
+    /* inline values go in with priority: some neighbours set their margins with !important */
+    function imp(e,p,v){e.style.setProperty(p,v,'important');}
+    function keep(e,p){return [e.style.getPropertyValue(p),e.style.getPropertyPriority(p)];}
+    function put(e,p,s){if(s&&s[0])e.style.setProperty(p,s[0],s[1]);else e.style.removeProperty(p);}
+    function run(){
+      var L=list.filter(function(o){return o.h.isConnected;});
+      L.forEach(function(o){if(o.n)put(o.n,'margin-top',o.nm);put(o.h,'margin-bottom',o.hm);imp(o.r,'display','none');});
+      L.forEach(function(o){var n=nextShown(o.r);o.n=n;o.nm=n?keep(n,'margin-top'):null;o.on=o.h.getClientRects().length>0;
+        o.g=!o.on?down:n?top(n)-top(o.h)-o.h.offsetHeight:parseFloat(getComputedStyle(o.h).marginBottom)||down;});
+      L.forEach(function(o){o.r.style.removeProperty('display');if(!o.on)return;imp(o.r,'margin-top','0px');imp(o.r,'margin-bottom','0px');imp(o.h,'margin-bottom','0px');if(o.n)imp(o.n,'margin-top','0px');});
+      L.forEach(function(o){if(!o.on)return;var rt=top(o.r);o.a=rt-top(o.h)-o.h.offsetHeight;o.rh=o.r.offsetHeight;o.b=o.n?top(o.n)-rt-o.rh:0;});
+      L.forEach(function(o){if(!o.on)return;imp(o.r,'margin-top',(up-o.a)+'px');imp(o.r,'margin-bottom',(Math.max(down,o.g-up-o.rh)-o.b)+'px');});
+    }
+    run();
+    var w=W.innerWidth,t=0;
+    W.addEventListener('resize',function(){if(W.innerWidth===w)return;w=W.innerWidth;clearTimeout(t);t=setTimeout(run,120);},{passive:true});
+    if('MutationObserver' in W)new MutationObserver(run).observe(d.documentElement,{attributes:true,attributeFilter:['data-lang','lang']});
+  })(fits,22,28);
   /* blocks rise in, staggered per group; afterwards the reveal styles are removed */
   var blocks=$$('.shell>header .intro,.shell>header .hero-actions,.vmx-mission,.vmx-pt,.home-section>p,.glance-head>p,.explore>a,.gp,.world>p,.cta-text>p,.cta-eyebrow,.cta-brand,.cta .cta-button,.card,.ch-card,.ec-step,.rm-stage,.key-note,.cred,.pillar,.contact-form,.contact-side,.stages .stage,.ec-video-pair>*,.ec-par,.sx');
   blocks=blocks.filter(function(b){return !b.closest('.unified-bar,.panel-navigation,.tour-dock');});

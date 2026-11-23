@@ -131,7 +131,7 @@ html.vx .shell>header .nav-bezel{min-height:52px!important;padding:0 28px!import
 html.vx .home-section>h2,html.vx .glance-head h2,html.vx .shell>section>h2,html.vx .apps-headline{
   font-size:clamp(32px,4vw,60px)!important;line-height:1.02!important;letter-spacing:-.035em!important
 }
-html.vx .vx-rule{display:block;height:1px;width:140px;margin:24px auto 0;background:var(--x-grad);box-shadow:0 0 14px rgba(74,211,246,.8);transform:scaleX(0);transition:transform 1.2s var(--x-ease) .2s}
+html.vx .vx-rule{display:block;height:1px;width:140px;margin:22px auto 28px;background:var(--x-grad);box-shadow:0 0 14px rgba(74,211,246,.8);transform:scaleX(0);transition:transform 1.2s var(--x-ease) .2s}
 html.vx .vx-rule.vx-on{transform:scaleX(1)}
 html.vx .vx-idx{display:block;font:500 12px/1 var(--x-mono);letter-spacing:.2em;color:rgba(74,211,246,.75);margin-bottom:18px}
 
