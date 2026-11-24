@@ -70,6 +70,10 @@
   var spot='.explore>a,.gp,.card,.ch-card,.ec-step,.rm-stage,.pillar,.cred,.contact-form,.contact-side';
   $$(spot).forEach(function(el){
     el.classList.add('v2-spot');
+    /* blocks that only borrow the card class (no border, no fill, e.g. Solutions phase 05) get a free
+       glow: no edge light tracing an invisible frame, and the glow fades out instead of stopping at the box */
+    var cs=getComputedStyle(el);
+    if(!parseFloat(cs.borderTopWidth)&&!parseFloat(cs.borderLeftWidth)&&cs.backgroundImage==='none'&&/rgba\(0, 0, 0, 0\)|transparent/.test(cs.backgroundColor))el.classList.add('v2-spot-free');
     function blob(c){var s=d.createElement('span');s.className=c;s.setAttribute('aria-hidden','true');var i=d.createElement('i');s.appendChild(i);el.appendChild(s);return i;}
     var g=blob('v2-glare'),e=blob('v2-edge'),px=0,py=0,queued=false;
     el.addEventListener('pointermove',function(ev){px=ev.clientX;py=ev.clientY;if(queued)return;queued=true;

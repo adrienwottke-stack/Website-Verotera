@@ -5,8 +5,8 @@
    Feedback round 2026-11-20 (Thorsten):
    - header (hero + navigation) and all colours stay as in v26
    - no signal curve in the header
-   - keep: spotlight on cards, image/scroll reveals, grid in the CTA
-   - V logo larger
+   - keep: spotlight on cards, image/scroll reveals
+   Feedback round 2026-11-23: closing CTA back to the v26 original (no grid, original logo size)
    Selectors are scoped to html.v2; build.mjs lifts them to ID specificity.
    ===================================================================== */
 
@@ -49,6 +49,17 @@ html.v2 .hl-method{background:var(--v-grad);-webkit-background-clip:text;backgro
 html.v2 .vmx-pt{position:relative;transition:transform .5s var(--v-ease)}
 html.v2 .vmx-pt:hover{transform:translateY(-3px)}
 
+/* ---------- header headline (feedback 23.11., #384) ------------------------
+   type from "V26 · Showcase" (Poppins SemiBold, tight tracking), smaller, white → silver-grey */
+html.v2 .shell>header h1{
+  font-family:Poppins,Inter,sans-serif!important;font-weight:600!important;
+  font-size:clamp(34px,3.6vw,56px)!important;line-height:1.04!important;letter-spacing:-.035em!important;
+  background:linear-gradient(100deg,#fff 0%,#fff 38%,#c4ced6 78%,#a9b5bf 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent!important;-webkit-text-fill-color:transparent;
+  text-shadow:none!important;filter:drop-shadow(0 2px 10px rgba(6,25,37,.55))
+}
+html.v2 body:not(.page-home) .shell>header h1{font-size:clamp(32px,3.2vw,48px)!important}
+
 /* ---------- spotlight ("flashlight") on cards ---------------------------- */
 html.v2 .v2-spot{position:relative;isolation:isolate}
 /* the light is two blobs that JS slides under the cursor (transform only, no repaint):
@@ -62,6 +73,10 @@ html.v2 .v2-spot .v2-glare>i{width:840px;height:840px;margin:-420px 0 0 -420px;b
 html.v2 .v2-spot .v2-edge>i{width:520px;height:520px;margin:-260px 0 0 -260px;background:radial-gradient(closest-side,rgba(74,211,246,.95),rgba(0,140,209,.35) 40%,transparent 70%)}
 html.v2 .v2-spot:hover .v2-glare,html.v2 .v2-spot:hover .v2-edge{opacity:1}
 html.v2 .v2-spot:hover .v2-glare>i,html.v2 .v2-spot:hover .v2-edge>i{will-change:transform}
+/* frameless blocks: glow is not clipped to the box and there is no border light */
+html.v2 .v2-spot-free .v2-glare{overflow:visible;inset:-60px;z-index:-1}
+html.v2 .v2-spot-free .v2-glare>i{left:60px;top:60px}
+html.v2 .v2-spot-free .v2-edge{display:none}
 
 /* ---------- explore cards: lift + slow image zoom ------------------------ */
 html.v2 .explore>a{overflow:hidden;transition:transform .5s var(--v-ease)!important}
@@ -70,6 +85,8 @@ html.v2 .explore>a>img{transition:transform 1.2s var(--v-ease),filter .6s!import
 html.v2 .explore>a:hover>img{transform:scale(1.06)}
 
 /* ---------- pillars (v26 design kept): lift on hover --------------------- */
+/* icon in the circle: an older site.css rule packs the grid track to the left (justify-content:flex-start) */
+html.v2 .glance-pillars .gp .gp-icon{justify-content:center!important;align-content:center!important}
 html.v2 .gp{transition:transform .5s var(--v-ease)!important}
 html.v2 .gp:hover{transform:translateY(-6px)}
 
@@ -95,20 +112,8 @@ html.v2 .fields.five .field-tile:hover .ft-sub{max-height:120px;opacity:1}
 html.v2 .fields.five figcaption::before{content:"";display:block;width:24px;height:1px;background:var(--v-grad);margin-bottom:12px;box-shadow:0 0 8px rgba(74,211,246,.9);transition:width .6s var(--v-ease)}
 html.v2 .fields.five .field-tile:hover figcaption::before{width:64px}
 
-/* ---------- closing CTA: v26 colours + grid + travelling light ----------- */
-html.v2 .cta{position:relative;overflow:hidden;isolation:isolate}
-html.v2 .cta::before{
-  content:"";position:absolute;inset:0;z-index:-1;opacity:1;pointer-events:none;
-  background-image:linear-gradient(rgba(140,220,255,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(140,220,255,.16) 1px,transparent 1px);background-size:48px 48px;
-  -webkit-mask-image:radial-gradient(ellipse 70% 90% at 70% 60%,#000 30%,transparent 85%);mask-image:radial-gradient(ellipse 70% 90% at 70% 60%,#000 30%,transparent 85%)
-}
-html.v2 .cta::after{
-  content:"";position:absolute;top:0;left:0;height:1px;width:30%;background:linear-gradient(90deg,transparent,var(--v-cyan),transparent);animation:v2-edge 5s linear infinite;box-shadow:0 0 12px var(--v-cyan);pointer-events:none
-}
-@keyframes v2-edge{from{transform:translateX(-100%)}to{transform:translateX(430%)}}
-/* V logo: a touch larger than v26 */
-html.v2 .cta-brand img:first-child{height:68px!important;width:auto!important}
-html.v2 .cta-brand img:last-child{height:44px!important;width:auto!important}
+/* ---------- closing CTA: as in V26 Original (feedback 23.11., #387) ------
+   no grid, no travelling light, logo and wordmark in their original size and colours */
 html.v2 .cta .cta-button{transition:transform .3s var(--v-ease),box-shadow .3s!important}
 html.v2 .cta .cta-button:hover{transform:translateY(-2px);box-shadow:0 14px 34px -10px rgba(0,0,0,.5)!important}
 
@@ -135,8 +140,6 @@ html.v2 .v2-rv.v2-pre{will-change:opacity,transform}
   html.v2 .fields.five::-webkit-scrollbar{display:none}
   html.v2 .fields.five .field-tile,html.v2 .fields.five:hover .field-tile,html.v2 .fields.five .field-tile:hover{flex:0 0 78vw!important;height:420px!important;scroll-snap-align:start}
   html.v2 .fields.five .ft-sub{max-height:120px!important;opacity:1!important}
-  html.v2 .cta-brand img:first-child{height:54px!important}
-  html.v2 .cta-brand img:last-child{height:34px!important}
 }
 @media (prefers-reduced-motion:reduce){
   html.v2 *,html.v2 *::before,html.v2 *::after{animation:none!important;transition:none!important}
