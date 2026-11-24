@@ -46,7 +46,9 @@ window.addEventListener('hashchange',()=>{if(hashSelf){hashSelf=false;return;}co
 /* Scroll mode (body.scroll-mode, used on About and Solutions): all topics stay visible one below
    the other. The tiles and the compact topic bar jump to a topic; the active tile follows the scroll position.
    Pages in scroll mode call renderTopics(fns, extra) instead of showTopic() and define topicNames() and progressUpdate(). */
-function renderTopics(fns,extra){const secs=document.querySelectorAll('#content .topic');if(!SCROLL){showTopic(fns[s.stage]()+extra(s.stage));return;}const cur=s.stage;secs.forEach((el,i)=>{s.stage=i;el.innerHTML=fns[i]()+extra(i);});s.stage=cur;buildTopicBar();}
+/* Sections marked data-i18n="static" already hold both languages (tools/bake-i18n.mjs); CSS switches them,
+   so they are never rebuilt: the language switch then works even where scripts are wrapped (Pastel review frame). */
+function renderTopics(fns,extra){const secs=document.querySelectorAll('#content .topic');if(!SCROLL){showTopic(fns[s.stage]()+extra(s.stage));return;}const cur=s.stage;secs.forEach((el,i)=>{if(el.hasAttribute('data-i18n'))return;s.stage=i;try{el.innerHTML=fns[i]()+extra(i);}catch(e){}});s.stage=cur;buildTopicBar();}
 function navHeight(){const n=document.querySelector('.site-nav');return n?n.getBoundingClientRect().height:0;}
 function topicOffset(){const b=document.getElementById('topicbar');return navHeight()+(b?b.getBoundingClientRect().height:0)+14;}
 function scrollToTopic(i,smooth=true){const el=document.querySelectorAll('#content .topic')[i];if(!el)return;spyHold=Date.now()+(smooth?1100:200);const h=el.querySelector('.stage-heading')||el;const y=h.getBoundingClientRect().top+window.scrollY-topicOffset()-26;window.scrollTo({top:Math.max(0,y),behavior:smooth?'smooth':'auto'});}

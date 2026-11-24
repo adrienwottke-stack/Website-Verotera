@@ -1,12 +1,11 @@
-# VEROTERA Website: V26 Original + V26 Design (Review)
+# VEROTERA Website: V26 Design (Review)
 
-Two versions of the same website, switchable via the bar at the top:
+One version of the website, built from the customer package `src/v26` plus the design layer
+`src/v2/assets/v2.css` + `v2.js`, served at `/v26-design/`.
 
-| Folder | Contents |
-|---|---|
-| `v26`        | Customer package v26, unchanged (only the review bar + `noindex` injected) |
-| `v26-design` | Same copy, same pages, same sitemap. Only the design layer `src/v2/assets/v2.css` + `v2.js` |
-| `v26-showcase` | Same copy, same pages, v26 palette. "No limits" layer `src/vx/assets/vx.css` + `vx.js`: live circuit hero switched by the cursor's light, kinetic headlines, scroll-lit vision statement, light-arc cards, pinned horizontal application journey, circuit CTA with border beam, giant wordmark footer, grain, intro, page transitions. Everything respects `prefers-reduced-motion`. |
+"V26 · Original" and "V26 · Showcase" were removed on 24 Nov 2026 (Adrien). Their old URLs
+(`/v26/…`, `/v26-showcase/…`) redirect to `/v26-design/…` (root `vercel.json` on the branch).
+The showcase layer (`src/vx`) and the review bar (`src/_switch`) are in git history (55a114d).
 
 Feedback round 20 Nov 2026 (Thorsten), implemented in the design layer:
 header and colours as in v26 · no signal curve in the header · spotlight on cards,
@@ -25,7 +24,12 @@ is the reference. Keep these when adding effects:
 - Canvases pause off screen and lower their quality when frames drop.
 
 ## Working on it
-- `node build.mjs` generates `public/` (both variants from `src/v26`).
+- `node build.mjs` generates `public/` (`v26-design` from `src/v26` + `src/v2`).
+- About and Solutions: the topic sections hold both languages (`.l-en` / `.l-de`, switched by CSS),
+  baked by `node tools/bake-i18n.mjs` from the dictionaries in the page scripts. Run it again after
+  changing those texts or importing a new customer package; `tour.js` no longer rebuilds sections
+  marked `data-i18n="static"`. Reason: inside the Pastel review frame the JS rebuild failed after
+  the tiles, so the topics stayed English (feedback 23 Nov, #398 #403).
 - Local preview: `node serve.mjs` → http://127.0.0.1:5190/
 - New customer package: replace `src/v26` (or add a new folder and adjust `build.mjs`).
 - Deployment:

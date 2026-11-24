@@ -56,7 +56,8 @@ html.v2 .shell>header h1{
   font-size:clamp(34px,3.6vw,56px)!important;line-height:1.04!important;letter-spacing:-.035em!important;
   background:linear-gradient(100deg,#fff 0%,#fff 38%,#c4ced6 78%,#a9b5bf 100%);
   -webkit-background-clip:text;background-clip:text;color:transparent!important;-webkit-text-fill-color:transparent;
-  text-shadow:none!important;filter:drop-shadow(0 2px 10px rgba(6,25,37,.55))
+  text-shadow:none!important;filter:drop-shadow(0 2px 10px rgba(6,25,37,.55));
+  white-space:normal!important;text-wrap:balance /* site.css keeps h1 on one line; Poppins is wider, long titles were clipped (About) */
 }
 html.v2 body:not(.page-home) .shell>header h1{font-size:clamp(32px,3.2vw,48px)!important}
 
